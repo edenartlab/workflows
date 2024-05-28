@@ -1,0 +1,69 @@
+name: Text to Video
+description: Generate a video from text
+tip: Use this to make videos from text prompts. It's better to use this instead of lerp because it doesn't use AnimateDiff.
+comfyui_output_node_id: 329
+parameters:
+- name: prompt
+  label: Prompt
+  description: Text prompt
+  type: string
+  comfyui: 
+    node_id: 290
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate
+  type: string
+  default: ugly, watermark, low-quality, signature, padding, margins, blurry, jpeg artifacts, poorly drawn, low-resolution, bad  
+  comfyui: 
+    node_id: 291
+    field: inputs
+    subfield: text
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 896
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 321
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 512
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 321
+    field: inputs
+    subfield: height
+- name: frame_rate
+  label: Frame rate
+  description: Video frames per second
+  type: int
+  default: 20
+  minimum: 4
+  maximum: 60
+  step: 1
+  comfyui: 
+    node_id: 329
+    field: inputs
+    subfield: frame_rate
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  type: int
+  default: random
+  minimum: 0
+  maximum: 10000000000000000
+  comfyui: 
+    node_id: 273
+    field: inputs
+    subfield: noise_seed
