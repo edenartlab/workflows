@@ -1,0 +1,89 @@
+name: Style Mixing
+description: Create a video from a set of style images (and optional shape guidance)
+tip: This workflow creates animations from a set of style images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video. Then there's optionally a conditioning shape guidance image or video that is used with controlnet to apply that shape guidance to the rendered video. Optionally, a trained concept LoRa can also be added.
+comfyui_output_node_id: 106
+parameters:
+- name: images
+  label: Style Images
+  description: Style images driving the stylistic content of the video with IP-adapter
+  type: image[]
+  min_length: 1
+  max_length: 6
+  comfyui: 
+    node_id: 74
+    field: inputs
+    subfield: folder
+    preprocessing: folder
+- name: prompt
+  label: prompt
+  description: Positive text prompt, what you want to generate
+  type: string
+  default: 4k, sharp details, uhd, sharp focus, high quality, masterpiece
+  comfyui: 
+    node_id: 28
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: negative prompt
+  description: Negative text prompt, what you do *not* want to generate
+  type: string
+  default: nsfw, nude, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality
+  comfyui: 
+    node_id: 27
+    field: inputs
+    subfield: text
+- name: n_frames
+  label: Frames
+  description: Number of video frames to generate (12 frames = 1 second of video, although the final video will be upsampled to 24 fps)
+  type: int
+  default: 64
+  comfyui: 
+    node_id: 198
+    field: inputs
+    subfield: total_frames
+- name: n_style_images
+  label: Number of Style Images
+  description: Number of style images that will be used (this determines how many colors will be generated in the driving motion mask video)
+  type: int
+  default: 3
+  comfyui: 
+    node_id: 198
+    field: inputs
+    subfield: num_colors
+- name: motion_mode
+  label: Motion Mode
+  description: Motion mode for the driving motion mask video (controls how the style images will get mapped onto the video)
+  type: string
+  choices: [horizontal_stripes, vertical_stripes, progressive_rotating_segment, rotating_segments, concentric_circles, concentric_rectangles]
+  default: horizontal_stripes
+  comfyui: 
+    node_id: 198
+    field: inputs
+    subfield: mode
+- name: invert_motion
+  label: Invert Motion Mask
+  description: Inverts the motion mask (moving inwards instead of outwards, up instead of down etc)
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 198
+    field: inputs
+    subfield: invert_motion
+- name: width
+  label: Width
+  description: Width of the video in n_pixels (final output video will be 2x this because there's a 2x upscale at the end)
+  type: int
+  default: 576
+  comfyui: 
+    node_id: 72
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height of the video in n_pixels (final output video will be 2x this because there's a 2x upscale at the end)
+  type: int
+  default: 576
+  comfyui: 
+    node_id: 72
+    field: inputs
+    subfield: height

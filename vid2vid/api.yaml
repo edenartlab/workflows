@@ -1,0 +1,43 @@
+name: Video to Video
+description: Use a style image to apply style-transfer to a video
+tip: This will create a new video with similar shapes / motions but different texture
+comfyui_output_node_id: 237
+parameters:
+- name: image
+  label: Style Image
+  description: Style Image
+  type: image
+  comfyui: 
+    node_id: 341
+    field: inputs
+    subfield: image   
+- name: video
+  label: Input video
+  description: Input video
+  type: video
+  comfyui: 
+    node_id: 238
+    field: inputs
+    subfield: video
+- name: control_strength
+  label: Shape guidance strength
+  description: Strength of the input videos shape guidance (recommended between 0.5-1.5)
+  type: float
+  default: 1.0
+  minimum: 0.0
+  maximum: 2.0
+  comfyui:
+    node_id: 132
+    field: inputs
+    subfield: strength
+- name: denoise
+  label: AI creativity
+  description: How strongly the AI will reimagine the source video (0.0 will return the original video, 1.0 will fully reimagine) recommended values (0.9 - 1.0)
+  type: float
+  default: 1.0
+  minimum: 0.5
+  maximum: 1.0
+  comfyui:
+    node_id: 58
+    field: inputs
+    subfield: denoise

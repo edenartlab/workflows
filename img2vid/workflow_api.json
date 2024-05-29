@@ -1,0 +1,505 @@
+{
+    "10": {
+      "inputs": {
+        "seed": 1,
+        "steps": 12,
+        "cfg": 1.5,
+        "sampler_name": "lcm",
+        "scheduler": "sgm_uniform",
+        "denoise": 0.8,
+        "preview_method": "none",
+        "vae_decode": "true",
+        "model": [
+          "493",
+          0
+        ],
+        "positive": [
+          "327",
+          0
+        ],
+        "negative": [
+          "327",
+          1
+        ],
+        "latent_image": [
+          "13",
+          3
+        ],
+        "optional_vae": [
+          "13",
+          4
+        ]
+      },
+      "class_type": "KSampler (Efficient)",
+      "_meta": {
+        "title": "KSampler (Efficient)"
+      }
+    },
+    "13": {
+      "inputs": {
+        "ckpt_name": "photonLCM_v10.safetensors",
+        "vae_name": "Baked VAE",
+        "clip_skip": -1,
+        "lora_name": "None",
+        "lora_model_strength": 1,
+        "lora_clip_strength": 1,
+        "positive": [
+          "504",
+          0
+        ],
+        "negative": "shutterstock, watermark, text, blurry, low-resolution, bad quality, ugly, embedding:BadDream.pt",
+        "token_normalization": "none",
+        "weight_interpretation": "comfy",
+        "empty_latent_width": [
+          "444",
+          1
+        ],
+        "empty_latent_height": [
+          "444",
+          2
+        ],
+        "batch_size": 32
+      },
+      "class_type": "Efficient Loader",
+      "_meta": {
+        "title": "Efficient Loader"
+      }
+    },
+    "16": {
+      "inputs": {
+        "model_name": "sd15_t2v_beta.ckpt",
+        "beta_schedule": "lcm >> sqrt_linear",
+        "motion_scale": 1.1500000000000001,
+        "apply_v2_models_properly": false,
+        "model": [
+          "13",
+          0
+        ],
+        "context_options": [
+          "17",
+          0
+        ],
+        "sample_settings": [
+          "213",
+          0
+        ]
+      },
+      "class_type": "ADE_AnimateDiffLoaderWithContext",
+      "_meta": {
+        "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+      }
+    },
+    "17": {
+      "inputs": {
+        "context_length": 16,
+        "context_stride": 1,
+        "context_overlap": 4,
+        "closed_loop": true,
+        "fuse_method": "flat",
+        "use_on_equal_length": false,
+        "start_percent": 0,
+        "guarantee_steps": 1
+      },
+      "class_type": "ADE_LoopedUniformContextOptions",
+      "_meta": {
+        "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+      }
+    },
+    "213": {
+      "inputs": {
+        "batch_offset": 0,
+        "noise_type": "FreeNoise",
+        "seed_gen": "comfy",
+        "seed_offset": 0,
+        "adapt_denoise_steps": true
+      },
+      "class_type": "ADE_AnimateDiffSamplingSettings",
+      "_meta": {
+        "title": "Sample Settings 🎭🅐🅓"
+      }
+    },
+    "237": {
+      "inputs": {
+        "interpolation": "LANCZOS",
+        "crop_position": "left",
+        "sharpening": 0.05,
+        "image": [
+          "444",
+          0
+        ]
+      },
+      "class_type": "PrepImageForClipVision",
+      "_meta": {
+        "title": "Prep Image For ClipVision"
+      }
+    },
+    "327": {
+      "inputs": {
+        "strength": 0.7000000000000001,
+        "start_percent": 0,
+        "end_percent": 0.6,
+        "positive": [
+          "13",
+          1
+        ],
+        "negative": [
+          "13",
+          2
+        ],
+        "control_net": [
+          "328",
+          0
+        ],
+        "image": [
+          "444",
+          0
+        ]
+      },
+      "class_type": "ControlNetApplyAdvanced",
+      "_meta": {
+        "title": "Apply ControlNet (Advanced)"
+      }
+    },
+    "328": {
+      "inputs": {
+        "control_net_name": "controlnet_checkpoint.ckpt"
+      },
+      "class_type": "ControlNetLoaderAdvanced",
+      "_meta": {
+        "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+      }
+    },
+    "334": {
+      "inputs": {
+        "seed": 0,
+        "steps": 10,
+        "cfg": 1.5,
+        "sampler_name": "lcm",
+        "scheduler": "sgm_uniform",
+        "denoise": 0.45,
+        "preview_method": "none",
+        "vae_decode": "true",
+        "model": [
+          "473",
+          0
+        ],
+        "positive": [
+          "10",
+          1
+        ],
+        "negative": [
+          "10",
+          2
+        ],
+        "latent_image": [
+          "335",
+          0
+        ],
+        "optional_vae": [
+          "10",
+          4
+        ]
+      },
+      "class_type": "KSampler (Efficient)",
+      "_meta": {
+        "title": "KSampler (Efficient)"
+      }
+    },
+    "335": {
+      "inputs": {
+        "upscale_method": "nearest-exact",
+        "scale_by": 1.5,
+        "samples": [
+          "10",
+          3
+        ]
+      },
+      "class_type": "LatentUpscaleBy",
+      "_meta": {
+        "title": "Upscale Latent By"
+      }
+    },
+    "353": {
+      "inputs": {
+        "model_name": "RealESRGAN_x2plus.pth"
+      },
+      "class_type": "UpscaleModelLoader",
+      "_meta": {
+        "title": "Load Upscale Model"
+      }
+    },
+    "354": {
+      "inputs": {
+        "upscale_model": [
+          "353",
+          0
+        ],
+        "image": [
+          "334",
+          5
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "Upscale Image (using Model)"
+      }
+    },
+    "355": {
+      "inputs": {
+        "ckpt_name": "rife47.pth",
+        "clear_cache_after_n_frames": 10,
+        "multiplier": 2,
+        "fast_mode": true,
+        "ensemble": true,
+        "scale_factor": 1,
+        "frames": [
+          "354",
+          0
+        ]
+      },
+      "class_type": "RIFE VFI",
+      "_meta": {
+        "title": "RIFE VFI (recommend rife47 and rife49)"
+      }
+    },
+    "440": {
+      "inputs": {
+        "image": "portrait of woman made of paint impasto abstract, artstation, beautifully lit, hyperdetailed, beautiful lighting, 4 k, a_0_16690339316_0.0.jpg_HD_0.70_euler_ancestral_00.jpg",
+        "upload": "image"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Load Image"
+      }
+    },
+    "444": {
+      "inputs": {
+        "width": 640,
+        "height": 640,
+        "interpolation": "bicubic",
+        "keep_proportion": true,
+        "condition": "always",
+        "multiple_of": 0,
+        "image": [
+          "440",
+          0
+        ]
+      },
+      "class_type": "ImageResize+",
+      "_meta": {
+        "title": "🔧 Image Resize"
+      }
+    },
+    "466": {
+      "inputs": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "img2vid",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 16,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "images": [
+          "355",
+          0
+        ]
+      },
+      "class_type": "VHS_VideoCombine",
+      "_meta": {
+        "title": "Video Combine 🎥🅥🅗🅢"
+      }
+    },
+    "471": {
+      "inputs": {
+        "preset": "PLUS (high strength)",
+        "model": [
+          "16",
+          0
+        ]
+      },
+      "class_type": "IPAdapterUnifiedLoader",
+      "_meta": {
+        "title": "IPAdapter Unified Loader"
+      }
+    },
+    "473": {
+      "inputs": {
+        "weight": 1.25,
+        "weight_type": "strong style transfer",
+        "combine_embeds": "average",
+        "start_at": 0,
+        "end_at": 0.75,
+        "embeds_scaling": "V only",
+        "model": [
+          "471",
+          0
+        ],
+        "ipadapter": [
+          "471",
+          1
+        ],
+        "image": [
+          "491",
+          0
+        ]
+      },
+      "class_type": "IPAdapterAdvanced",
+      "_meta": {
+        "title": "IPAdapter Advanced"
+      }
+    },
+    "476": {
+      "inputs": {
+        "Text": "stunning, sharp details, 4k, UHD, great composition, gorgeouos, award winning, trending on Artstation"
+      },
+      "class_type": "Text box",
+      "_meta": {
+        "title": "Text box"
+      }
+    },
+    "486": {
+      "inputs": {
+        "interpolation": "LANCZOS",
+        "crop_position": "right",
+        "sharpening": 0.05,
+        "image": [
+          "444",
+          0
+        ]
+      },
+      "class_type": "PrepImageForClipVision",
+      "_meta": {
+        "title": "Prep Image For ClipVision"
+      }
+    },
+    "487": {
+      "inputs": {
+        "interpolation": "LANCZOS",
+        "crop_position": "bottom",
+        "sharpening": 0.05,
+        "image": [
+          "444",
+          0
+        ]
+      },
+      "class_type": "PrepImageForClipVision",
+      "_meta": {
+        "title": "Prep Image For ClipVision"
+      }
+    },
+    "488": {
+      "inputs": {
+        "interpolation": "LANCZOS",
+        "crop_position": "center",
+        "sharpening": 0.05,
+        "image": [
+          "444",
+          0
+        ]
+      },
+      "class_type": "PrepImageForClipVision",
+      "_meta": {
+        "title": "Prep Image For ClipVision"
+      }
+    },
+    "490": {
+      "inputs": {
+        "image1": [
+          "237",
+          0
+        ],
+        "image2": [
+          "486",
+          0
+        ]
+      },
+      "class_type": "ImageBatch",
+      "_meta": {
+        "title": "Batch Images"
+      }
+    },
+    "491": {
+      "inputs": {
+        "image1": [
+          "490",
+          0
+        ],
+        "image2": [
+          "492",
+          0
+        ]
+      },
+      "class_type": "ImageBatch",
+      "_meta": {
+        "title": "Batch Images"
+      }
+    },
+    "492": {
+      "inputs": {
+        "image1": [
+          "487",
+          0
+        ],
+        "image2": [
+          "488",
+          0
+        ]
+      },
+      "class_type": "ImageBatch",
+      "_meta": {
+        "title": "Batch Images"
+      }
+    },
+    "493": {
+      "inputs": {
+        "weight": 1.25,
+        "weight_type": "ease in-out",
+        "combine_embeds": "average",
+        "start_at": 0,
+        "end_at": 0.75,
+        "embeds_scaling": "V only",
+        "model": [
+          "473",
+          0
+        ],
+        "ipadapter": [
+          "471",
+          1
+        ],
+        "image": [
+          "494",
+          0
+        ]
+      },
+      "class_type": "IPAdapterAdvanced",
+      "_meta": {
+        "title": "IPAdapter Advanced"
+      }
+    },
+    "494": {
+      "inputs": {
+        "interpolation": "LANCZOS",
+        "crop_position": "pad",
+        "sharpening": 0.05,
+        "image": [
+          "444",
+          0
+        ]
+      },
+      "class_type": "PrepImageForClipVision",
+      "_meta": {
+        "title": "Prep Image For ClipVision"
+      }
+    },
+    "504": {
+      "inputs": {
+        "Text": "eyes blinking"
+      },
+      "class_type": "Text box",
+      "_meta": {
+        "title": "Text box"
+      }
+    }
+  }

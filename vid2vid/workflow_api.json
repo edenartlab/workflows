@@ -1,0 +1,577 @@
+{
+  "4": {
+    "inputs": {
+      "ckpt_name": "photonLCM_v10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "shutterstock watermark, nude, naked, text, blurry, jpeg artifacts, low-resolution, bad quality, ugly, distorted, face, person",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "58",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "58": {
+    "inputs": {
+      "seed": 19,
+      "steps": 12,
+      "cfg": 1,
+      "sampler_name": "lcm",
+      "scheduler": "sgm_uniform",
+      "denoise": 1,
+      "model": [
+        "452",
+        0
+      ],
+      "positive": [
+        "132",
+        0
+      ],
+      "negative": [
+        "132",
+        1
+      ],
+      "latent_image": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "59": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 24,
+      "multiplier": 2,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "95": {
+    "inputs": {
+      "pixels": [
+        "240",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "132": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 0.8,
+      "positive": [
+        "432",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "control_net": [
+        "133",
+        0
+      ],
+      "image": [
+        "360",
+        0
+      ]
+    },
+    "class_type": "ACN_AdvancedControlNetApply",
+    "_meta": {
+      "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
+    }
+  },
+  "133": {
+    "inputs": {
+      "control_net_name": "v3_sd15_sparsectrl_scribble.ckpt"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "169": {
+    "inputs": {
+      "coarse": "disable",
+      "resolution": 1024,
+      "image": [
+        "240",
+        0
+      ]
+    },
+    "class_type": "LineArtPreprocessor",
+    "_meta": {
+      "title": "Realistic Lineart"
+    }
+  },
+  "173": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "or",
+      "destination": [
+        "316",
+        0
+      ],
+      "source": [
+        "320",
+        0
+      ]
+    },
+    "class_type": "MaskComposite",
+    "_meta": {
+      "title": "MaskComposite"
+    }
+  },
+  "177": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "268",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "178": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "180": {
+    "inputs": {
+      "mask": [
+        "173",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "237": {
+    "inputs": {
+      "frame_rate": 20,
+      "loop_count": 0,
+      "filename_prefix": "vid2vid",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 20,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "59",
+        0
+      ],
+      "audio": [
+        "238",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "238": {
+    "inputs": {
+      "video": "billie_wow.mp4",
+      "force_rate": 10,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 264,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "240": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "lanczos",
+      "keep_proportion": true,
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "238",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "268": {
+    "inputs": {
+      "safe": "enable",
+      "resolution": 1024,
+      "image": [
+        "240",
+        0
+      ]
+    },
+    "class_type": "FakeScribblePreprocessor",
+    "_meta": {
+      "title": "Fake Scribble Lines (aka scribble_hed)"
+    }
+  },
+  "316": {
+    "inputs": {
+      "expand": 2,
+      "tapered_corners": true,
+      "mask": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
+    }
+  },
+  "320": {
+    "inputs": {
+      "expand": -3,
+      "tapered_corners": true,
+      "mask": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
+    }
+  },
+  "334": {
+    "inputs": {
+      "mask": [
+        "320",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "341": {
+    "inputs": {
+      "image": "4c434dc2e7286d670c1c849a5d8891cf (2).jpeg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "344": {
+    "inputs": {
+      "text": "4k, sharp details, high quality, masterpiece",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "360": {
+    "inputs": {
+      "ANY": [
+        "427",
+        0
+      ],
+      "IF_TRUE": [
+        "180",
+        0
+      ],
+      "IF_FALSE": [
+        "334",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If (Eden)"
+    }
+  },
+  "416": {
+    "inputs": {
+      "prompt": ""
+    },
+    "class_type": "SeargePromptText",
+    "_meta": {
+      "title": "Optional Positive Prompt"
+    }
+  },
+  "420": {
+    "inputs": {
+      "text": [
+        "416",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "427": {
+    "inputs": {
+      "comparison": "a == b",
+      "a": [
+        "429",
+        0
+      ],
+      "b": [
+        "428",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Compare (Eden)"
+    }
+  },
+  "428": {
+    "inputs": {
+      "value": "fine"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "String (Eden)"
+    }
+  },
+  "429": {
+    "inputs": {
+      "value": "fine"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "String (Eden)"
+    }
+  },
+  "432": {
+    "inputs": {
+      "ANY": [
+        "416",
+        0
+      ],
+      "IF_TRUE": [
+        "420",
+        0
+      ],
+      "IF_FALSE": [
+        "344",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If (Eden)"
+    }
+  },
+  "437": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "452": {
+    "inputs": {
+      "beta_schedule": "lcm >> sqrt_linear",
+      "model": [
+        "460",
+        0
+      ],
+      "m_models": [
+        "454",
+        0
+      ],
+      "context_options": [
+        "461",
+        0
+      ],
+      "sample_settings": [
+        "458",
+        0
+      ]
+    },
+    "class_type": "ADE_UseEvolvedSampling",
+    "_meta": {
+      "title": "Use Evolved Sampling 🎭🅐🅓②"
+    }
+  },
+  "453": {
+    "inputs": {
+      "model_name": "AnimateLCM_sd15_t2v.ckpt"
+    },
+    "class_type": "ADE_LoadAnimateDiffModel",
+    "_meta": {
+      "title": "Load AnimateDiff Model 🎭🅐🅓②"
+    }
+  },
+  "454": {
+    "inputs": {
+      "start_percent": 0,
+      "end_percent": 1,
+      "motion_model": [
+        "453",
+        0
+      ],
+      "scale_multival": [
+        "457",
+        0
+      ]
+    },
+    "class_type": "ADE_ApplyAnimateDiffModel",
+    "_meta": {
+      "title": "Apply AnimateDiff Model (Adv.) 🎭🅐🅓②"
+    }
+  },
+  "457": {
+    "inputs": {
+      "float_val": 1.1500000000000001
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Multival Dynamic 🎭🅐🅓"
+    }
+  },
+  "458": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "FreeNoise",
+      "seed_gen": "comfy",
+      "seed_offset": 0,
+      "adapt_denoise_steps": false
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "460": {
+    "inputs": {
+      "weight": 1,
+      "weight_type": "ease in-out",
+      "combine_embeds": "norm average",
+      "start_at": 0,
+      "end_at": 1,
+      "sharpening": 0.05,
+      "embeds_scaling": "V only",
+      "model": [
+        "437",
+        0
+      ],
+      "ipadapter": [
+        "437",
+        1
+      ],
+      "image": [
+        "341",
+        0
+      ]
+    },
+    "class_type": "IPAdapterTiled",
+    "_meta": {
+      "title": "IPAdapter Tiled"
+    }
+  },
+  "461": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 6,
+      "closed_loop": false,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_LoopedUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  }
+}

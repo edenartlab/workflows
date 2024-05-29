@@ -8,7 +8,7 @@ parameters:
   description: Text prompt
   type: string
   comfyui: 
-    node_id: 6
+    node_id: 31
     field: inputs
     subfield: text
 - name: negative_prompt
@@ -56,3 +56,11 @@ parameters:
     node_id: 3
     field: inputs
     subfield: seed
+- name: lora
+  label: LoRA
+  description: Use a LoRA finetune on top of the base model.
+  type: lora
+  comfyui: 
+    node_id: 10
+    field: inputs
+    subfield: lora_name
