@@ -10,7 +10,7 @@
   },
   "7": {
     "inputs": {
-      "text": "shutterstock watermark, nude, naked, text, blurry, jpeg artifacts, low-resolution, bad quality, ugly, distorted, face, person",
+      "text": "shutterstock watermark, nude, naked, text, blurry, jpeg artifacts, low-resolution, bad quality, ugly, distorted",
       "clip": [
         "4",
         1
@@ -39,7 +39,7 @@
   },
   "58": {
     "inputs": {
-      "seed": 19,
+      "seed": 25,
       "steps": 12,
       "cfg": 1,
       "sampler_name": "lcm",
@@ -76,13 +76,38 @@
       "ensemble": true,
       "scale_factor": 1,
       "frames": [
-        "8",
+        "62",
         0
       ]
     },
     "class_type": "RIFE VFI",
     "_meta": {
       "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "62": {
+    "inputs": {
+      "upscale_model": [
+        "63",
+        0
+      ],
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "63": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
     }
   },
   "95": {
@@ -105,9 +130,9 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 0.8,
+      "end_percent": 1,
       "positive": [
-        "432",
+        "344",
         0
       ],
       "negative": [
@@ -210,7 +235,7 @@
   },
   "237": {
     "inputs": {
-      "frame_rate": 20,
+      "frame_rate": 24,
       "loop_count": 0,
       "filename_prefix": "vid2vid",
       "format": "video/h264-mp4",
@@ -236,11 +261,11 @@
   "238": {
     "inputs": {
       "video": "billie_wow.mp4",
-      "force_rate": 10,
+      "force_rate": 12,
       "force_size": "Disabled",
       "custom_width": 512,
       "custom_height": 512,
-      "frame_load_cap": 264,
+      "frame_load_cap": 64,
       "skip_first_frames": 0,
       "select_every_nth": 1
     },
@@ -361,32 +386,7 @@
     },
     "class_type": "If ANY execute A else B",
     "_meta": {
-      "title": "If (Eden)"
-    }
-  },
-  "416": {
-    "inputs": {
-      "prompt": ""
-    },
-    "class_type": "SeargePromptText",
-    "_meta": {
-      "title": "Optional Positive Prompt"
-    }
-  },
-  "420": {
-    "inputs": {
-      "text": [
-        "416",
-        0
-      ],
-      "clip": [
-        "4",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
+      "title": "If ANY execute A else B"
     }
   },
   "427": {
@@ -403,7 +403,7 @@
     },
     "class_type": "Eden_Compare",
     "_meta": {
-      "title": "Compare (Eden)"
+      "title": "Eden_Compare"
     }
   },
   "428": {
@@ -412,7 +412,7 @@
     },
     "class_type": "Eden_String",
     "_meta": {
-      "title": "String (Eden)"
+      "title": "Eden_String"
     }
   },
   "429": {
@@ -421,27 +421,7 @@
     },
     "class_type": "Eden_String",
     "_meta": {
-      "title": "String (Eden)"
-    }
-  },
-  "432": {
-    "inputs": {
-      "ANY": [
-        "416",
-        0
-      ],
-      "IF_TRUE": [
-        "420",
-        0
-      ],
-      "IF_FALSE": [
-        "344",
-        0
-      ]
-    },
-    "class_type": "If ANY execute A else B",
-    "_meta": {
-      "title": "If (Eden)"
+      "title": "Eden_String"
     }
   },
   "437": {
@@ -459,7 +439,7 @@
   },
   "452": {
     "inputs": {
-      "beta_schedule": "lcm >> sqrt_linear",
+      "beta_schedule": "lcm avg(sqrt_linear,linear)",
       "model": [
         "460",
         0
@@ -511,7 +491,7 @@
   },
   "457": {
     "inputs": {
-      "float_val": 1.1500000000000001
+      "float_val": 1.1
     },
     "class_type": "ADE_MultivalDynamic",
     "_meta": {
@@ -521,7 +501,7 @@
   "458": {
     "inputs": {
       "batch_offset": 0,
-      "noise_type": "FreeNoise",
+      "noise_type": "default",
       "seed_gen": "comfy",
       "seed_offset": 0,
       "adapt_denoise_steps": false
@@ -535,11 +515,11 @@
     "inputs": {
       "weight": 1,
       "weight_type": "ease in-out",
-      "combine_embeds": "norm average",
+      "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
       "sharpening": 0.05,
-      "embeds_scaling": "V only",
+      "embeds_scaling": "K+mean(V) w/ C penalty",
       "model": [
         "437",
         0
@@ -562,8 +542,8 @@
     "inputs": {
       "context_length": 16,
       "context_stride": 1,
-      "context_overlap": 6,
-      "closed_loop": false,
+      "context_overlap": 4,
+      "closed_loop": true,
       "fuse_method": "flat",
       "use_on_equal_length": false,
       "start_percent": 0,

@@ -44,6 +44,18 @@ parameters:
     node_id: 321
     field: inputs
     subfield: height
+- name: n_frames
+  label: Number of frames
+  description: The total number of frames to generate (controls the duration of the video together with the framerate, which should usually be kept fixed at 20)
+  type: int
+  default: 32
+  minimum: 16
+  maximum: 128
+  step: 8
+  comfyui: 
+    node_id: 321
+    field: inputs
+    subfield: batch_size
 - name: frame_rate
   label: Frame rate
   description: Video frames per second
