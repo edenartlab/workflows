@@ -1,6 +1,6 @@
 name: Video to Video
 description: Use a style image to apply style-transfer to a video
-tip: This will create a new video with similar shapes / motions but different texture
+tip: This will create a new video with similar shapes / motions as the input video but a different texture. It can be used to create stylistic re-interpretations of input videos.
 handler: comfyui
 comfyui_output_node_id: 237
 parameters:
@@ -14,7 +14,7 @@ parameters:
     subfield: image   
 - name: video
   label: Input video
-  description: Input video
+  description: Input video that is used as source of shape/motion
   type: video
   comfyui: 
     node_id: 238
