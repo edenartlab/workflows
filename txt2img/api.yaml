@@ -69,6 +69,7 @@ parameters:
 - name: lora_strength
   label: LoRA strength
   description: Strength of the LoRA
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
   type: float
   default: 0.5
   comfyui: 
