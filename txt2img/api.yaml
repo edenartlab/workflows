@@ -1,12 +1,14 @@
 name: Text to Image
 description: Generate an image from text
 tip: This is the most basic and common function which generates an image from text a prompt
+handler: comfyui
 comfyui_output_node_id: 9
 parameters:
 - name: prompt
   label: Prompt
   description: Text prompt
   type: string
+  required: true
   comfyui: 
     node_id: 31
     field: inputs
@@ -64,3 +66,12 @@ parameters:
     node_id: 10
     field: inputs
     subfield: lora_name
+- name: lora_strength
+  label: LoRA strength
+  description: Strength of the LoRA
+  type: float
+  default: 0.5
+  comfyui: 
+    node_id: 10
+    field: inputs
+    subfield: strength_model, strength_clip

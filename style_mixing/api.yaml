@@ -1,6 +1,7 @@
 name: Style Mixing
 description: Create a video from a set of style images (and optional shape guidance)
 tip: This workflow creates animations from a set of style images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video. Then there's optionally a conditioning shape guidance image or video that is used with controlnet to apply that shape guidance to the rendered video. Optionally, a trained concept LoRa can also be added.
+handler: comfyui
 comfyui_output_node_id: 106
 parameters:
 - name: images
