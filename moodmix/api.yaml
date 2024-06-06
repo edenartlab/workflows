@@ -1,0 +1,70 @@
+name: MoodMix
+description: Create an image from a set of style images and a prompt. Supports iterative improvement by starting from a prefered image (anchor image)
+tip: This workflow creates images by combining an input prompt (subtle influence) and random combinations of content/style images, 'the moodboard'. The workflow uses IPadapter to inject a random mixture of the style images into the generation. The most important param is "Exploration Strength" which controls how much variety the generated imgs will have (small values around 0.5 stay close to the anchor image, higher values like 0.7 yield more random variety). Then there is "Prompt Strength" which controls how much visual influence the prompt has vs the combined style images, usually this value is around 0.2. You can set this to 0.0 for a single generation to test the influence of the prompt in isolation. Then there's also some obvious inputs like "width", "height" and "n_samples"
+comfyui_output_node_id: 149
+parameters:
+- name: images
+  label: Style Images
+  description: MoodBoard Style images driving the stylistic content of the image
+  type: image[]
+  min_length: 1
+  max_length: 6
+  comfyui: 
+    node_id: 129
+    field: inputs
+    subfield: value
+    preprocessing: folder
+- name: prompt
+  label: prompt
+  description: Positive text prompt, what you want to generate
+  type: string
+  default: 4k, sharp details, uhd, sharp focus, high quality, masterpiece
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: negative prompt
+  description: Negative text prompt, what you do *not* want to generate
+  type: string
+  default: nsfw, nude, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
+- name: num_samples
+  label: Number of Images
+  description: Number of images to generate (each one will use a random combination of the style images from the moodboard) (almost always, num_samples is 4 or 6)
+  type: int
+  default: 4
+  comfyui: 
+    node_id: 160
+    field: inputs
+    subfield: num_samples
+- name: n_style_images
+  label: Number of Style Images
+  description: Number of style images that will be used per generation (this determines how many different visual elements are injected into each output img), (typical values are 1,2,3) (higher values tend to make outputs more homogeneous due to averaging all the style components)
+  type: int
+  default: 2
+  comfyui: 
+    node_id: 160
+    field: inputs
+    subfield: num_style_components
+- name: width
+  label: Width
+  description: Width of the generated images in n_pixels (always a multiple of 64)
+  type: int
+  default: 1024
+  comfyui: 
+    node_id: 89
+    field: inputs
+    subfield: value
+- name: height
+  label: Height
+  description: Height of the  generated images in n_pixels (always a multiple of 64)
+  type: int
+  default: 1024
+  comfyui: 
+    node_id: 90
+    field: inputs
+    subfield: value
