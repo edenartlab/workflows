@@ -1,6 +1,6 @@
 {
-  "last_node_id": 470,
-  "last_link_id": 803,
+  "last_node_id": 473,
+  "last_link_id": 805,
   "nodes": [
     {
       "id": 263,
@@ -884,50 +884,6 @@
       }
     },
     {
-      "id": 62,
-      "type": "ImageUpscaleWithModel",
-      "pos": [
-        2639.7176228781245,
-        -161.5898487277345
-      ],
-      "size": {
-        "0": 241.79998779296875,
-        "1": 46
-      },
-      "flags": {},
-      "order": 46,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "upscale_model",
-          "type": "UPSCALE_MODEL",
-          "link": 99,
-          "slot_index": 0
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 753
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            428
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageUpscaleWithModel"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 63,
       "type": "UpscaleModelLoader",
       "pos": [
@@ -1056,13 +1012,13 @@
         "1": 208.75563049316406
       },
       "flags": {},
-      "order": 47,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
           "name": "frames",
           "type": "IMAGE",
-          "link": 428
+          "link": 805
         },
         {
           "name": "optional_interpolation_states",
@@ -1930,7 +1886,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        26,
+        27,
         "increment",
         12,
         1,
@@ -2292,10 +2248,10 @@
       ],
       "size": [
         335.40704101562415,
-        290
+        471.5599905395503
       ],
       "flags": {},
-      "order": 48,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -2339,13 +2295,97 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "vid2vid_00005-audio.mp4",
+            "filename": "vid2vid_00001-audio.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4"
           }
         }
       }
+    },
+    {
+      "id": 62,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2639.7176228781245,
+        -161.5898487277345
+      ],
+      "size": [
+        226.8000030517578,
+        46
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 99,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 753
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            804
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 472,
+      "type": "ImageScaleBy",
+      "pos": [
+        2722,
+        -468
+      ],
+      "size": [
+        234.61418590932544,
+        82
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 804
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            805
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "lanczos",
+        0.75
+      ]
     }
   ],
   "links": [
@@ -2404,14 +2444,6 @@
       180,
       0,
       "MASK"
-    ],
-    [
-      428,
-      62,
-      0,
-      59,
-      0,
-      "IMAGE"
     ],
     [
       433,
@@ -2844,6 +2876,22 @@
       463,
       0,
       "*"
+    ],
+    [
+      804,
+      62,
+      0,
+      472,
+      0,
+      "IMAGE"
+    ],
+    [
+      805,
+      472,
+      0,
+      59,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [

@@ -10,7 +10,7 @@
   },
   "7": {
     "inputs": {
-      "text": "shutterstock watermark, nude, naked, text, blurry, jpeg artifacts, low-resolution, bad quality, ugly, distorted",
+      "text": "text watermark, nude, naked, text, blurry, jpeg artifacts, low-resolution, bad quality, ugly, distorted",
       "clip": [
         "4",
         1
@@ -39,7 +39,7 @@
   },
   "58": {
     "inputs": {
-      "seed": 25,
+      "seed": 27,
       "steps": 12,
       "cfg": 1,
       "sampler_name": "lcm",
@@ -76,7 +76,7 @@
       "ensemble": true,
       "scale_factor": 1,
       "frames": [
-        "62",
+        "472",
         0
       ]
     },
@@ -260,7 +260,7 @@
   },
   "238": {
     "inputs": {
-      "video": "billie_wow.mp4",
+      "video": "waking_life_short.mp4",
       "force_rate": 12,
       "force_size": "Disabled",
       "custom_width": 512,
@@ -348,7 +348,7 @@
   },
   "341": {
     "inputs": {
-      "image": "4c434dc2e7286d670c1c849a5d8891cf (2).jpeg",
+      "image": "aa11debf97a21fa94d8218a5ff5cc9cb.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -543,7 +543,7 @@
       "context_length": 16,
       "context_stride": 1,
       "context_overlap": 4,
-      "closed_loop": true,
+      "closed_loop": false,
       "fuse_method": "flat",
       "use_on_equal_length": false,
       "start_percent": 0,
@@ -552,6 +552,20 @@
     "class_type": "ADE_LoopedUniformContextOptions",
     "_meta": {
       "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "472": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.75,
+      "image": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Upscale Image By"
     }
   }
 }
