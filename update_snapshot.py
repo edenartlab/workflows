@@ -45,7 +45,7 @@ if __name__ == "__main__":
     
     """
 
-    original_workflow_path = "img2vid/snapshot.json"
+    original_workflow_path = "txt2vid_lora/snapshot.json"
     updated_workflow_path  = "updated_snapshot.json"
 
 
