@@ -1,0 +1,109 @@
+name: Video Upscaler
+description: Takes an input video and upscales it to a higher resolution and framerate, hopefully improving the quality and details of the video.
+tip: This will create a new video thats very similar to the input video but with higher quality. Expensive to run (takes a long time)!
+handler: comfyui
+comfyui_output_node_id: 243
+parameters:
+- name: input_video
+  label: Input Video
+  description: The Input Video to be upscaled
+  type: video
+  comfyui: 
+    node_id: 302
+    field: inputs
+    subfield: video  
+- name: prompt
+  label: Upscaling Prompt
+  description: Prompt used for upscaling. Can almost always be left at default.
+  type: string
+  default: 4k, sharp details, stunning, high quality, HD
+  comfyui: 
+    node_id: 363
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate (you can usually leave this at default)
+  type: string
+  default: ugly, watermark, low-quality, signature, padding, margins, blurry, jpeg artifacts, poorly drawn, low-resolution, bad  
+  comfyui: 
+    node_id: 364
+    field: inputs
+    subfield: text 
+- name: output_fps
+  label: Output FPS
+  description: The target framerate of the upscaled video
+  type: float
+  default: 24
+  minimum: 12
+  maximum: 30
+  comfyui: 
+    node_id: 389
+    field: inputs
+    subfield: output_fps
+- name: speedup_factor
+  label: Speed multiplier for output video (defaults at 1.0)
+  description: When desired you can eg slow down the output video by setting this to 0.5
+  type: float
+  default: 1.0
+  minimum: 0.25
+  maximum: 2.0
+  comfyui: 
+    node_id: 389
+    field: inputs
+    subfield: target_video_speedup_factor
+- name: max_source_sampling_fps
+  label: The maximum allowed sampling rate from the source video
+  description: Determines how many frames are sampled from the input video. Lower values will speed up the processing but may reduce quality. In most cases 12 is great, consider increasing this value if you are slowing things down (eg speedup_factor < 1.0) or if the input video has lots of scene cuts that cause visual artefacts.
+  type: float
+  default: 12
+  minimum: 8
+  maximum: 24
+  comfyui: 
+    node_id: 389
+    field: inputs
+    subfield: max_source_sampling_fps
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 1536
+  minimum: 1024
+  maximum: 2048
+  step: 32
+  comfyui: 
+    node_id: 360
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 1536
+  minimum: 1024
+  maximum: 2048
+  step: 32
+  comfyui: 
+    node_id: 360
+    field: inputs
+    subfield: height
+- name: keep_proportion
+  label: Keep the aspect ratio of the source video
+  description: You almost always want this enabled, unless you want to stretch the video to match a very specific target width x height
+  type: bool
+  default: true
+  comfyui: 
+    node_id: 360
+    field: inputs
+    subfield: keep_proportion
+- name: denoise
+  label: AI creativity
+  description: How much room to give the AI to imagine new details. (0.3 will be very subtle upscaling, staying close to the original, 0.5 will add a significant amount of new details, but may also stray away from the source) recommended values (0.35 - 0.45)
+  type: float
+  default: 0.35
+  minimum: 0.2
+  maximum: 0.7
+  comfyui:
+    node_id: 334
+    field: inputs
+    subfield: denoise
