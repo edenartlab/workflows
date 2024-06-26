@@ -102,3 +102,27 @@ parameters:
     node_id: 90
     field: inputs
     subfield: value
+- name: exploration_strength
+  label: Exploration Strength
+  description: How strongly to apply the style vectors on top of the anchor image. Higher values will result in more diverse outputs, while lower values will result in outputs more similar to the anchor image. Good values are 0.7 (high exploration) down to 0.5 (subtle, local exploration)
+  tip: Typically, this value starts off at 0.7 in the beginning of a creative session, and is gradually decreased to eg 0.5 while the user zooms in on a particular part of the latent space.
+  type: float
+  default: 0.7
+  minimum: 0.4
+  maximum: 1.0
+  comfyui: 
+    node_id: 164
+    field: inputs
+    subfield: value
+- name: prompt_strength
+  label: Prompt Strength
+  description: How strong the influence of the prompt is versus the style images. A value of 0.2 is a good default. Can be set to 1.0 to test the influence of the prompt in isolation of any style images.
+  tip: Often times, the user will start with a prompt, but then explore the latent space more freely by iterating through images visually, in that case, make sure the prompt strength is not too high (<0.25) to avoid the prompt dominating the output.
+  type: float
+  default: 0.2
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 182
+    field: inputs
+    subfield: value
