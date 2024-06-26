@@ -15,9 +15,42 @@ parameters:
     field: inputs
     subfield: value
     preprocessing: folder
+- name: preference_anchor
+  label: Preference Anchor Image
+  description: The previous image prefered by the user, serves as an anchor point for the next iteration. When no image is provided, will be ignored.
+  type: image[]
+  min_length: 0
+  max_length: 1
+  comfyui: 
+    node_id: 161
+    field: inputs
+    subfield: folder
+    preprocessing: folder
+- name: lora
+  label: LoRA
+  description: Use a LoRA finetune on top of the base model. Important, this must be a SDXL LoRa model.
+  tip: Unless explicitly specified, no LoRa will be used (lora_strength = 0.0), in which case this argument is ignored.
+  type: lora
+  default: SDXL_lora_xander.safetensors
+  comfyui: 
+    node_id: 109
+    field: inputs
+    subfield: lora_name
+- name: lora_strength
+  label: LoRA strength
+  description: Strength of the LoRA. The default strength of 0.0 will completely disable the LoRa. 0.5 is a good starting point to enable a LoRa.
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
+  type: float
+  default: 0.0
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 109
+    field: inputs
+    subfield: strength_model, strength_clip
 - name: prompt
   label: prompt
-  description: Positive text prompt, what you want to generate
+  description: Positive text prompt, what you want to generate. If a LoRa needs to be activated, the prompt must also trigger the corresponding LoRa token embedding.
   type: string
   default: 4k, sharp details, uhd, sharp focus, high quality, masterpiece
   comfyui: 

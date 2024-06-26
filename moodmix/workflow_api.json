@@ -12,7 +12,7 @@
     "inputs": {
       "text": "a stunning photo, sharp details, 4k",
       "clip": [
-        "4",
+        "109",
         1
       ]
     },
@@ -25,7 +25,7 @@
     "inputs": {
       "text": "low resolution, ugly, blurry, nude, naked",
       "clip": [
-        "4",
+        "109",
         1
       ]
     },
@@ -58,7 +58,7 @@
     "inputs": {
       "preset": "PLUS (high strength)",
       "model": [
-        "4",
+        "109",
         0
       ]
     },
@@ -69,7 +69,7 @@
   },
   "40": {
     "inputs": {
-      "seed": 743150901044600,
+      "seed": 1066191351389490,
       "steps": 4,
       "cfg": 2,
       "sampler_name": "dpmpp_sde_gpu",
@@ -151,6 +151,25 @@
       "title": "Empty Latent Image"
     }
   },
+  "109": {
+    "inputs": {
+      "lora_name": "SDXL_lora_xander.safetensors",
+      "strength_model": 0,
+      "strength_clip": 0,
+      "model": [
+        "4",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
   "112": {
     "inputs": {
       "images": [
@@ -198,7 +217,7 @@
   "126": {
     "inputs": {
       "max_num_images": 0,
-      "seed": 52234,
+      "seed": 99619,
       "sort": true,
       "loop_sequence": false,
       "filename": [
@@ -217,7 +236,7 @@
         "129",
         0
       ],
-      "seed": 233
+      "seed": 539
     },
     "class_type": "FolderScanner",
     "_meta": {
@@ -226,7 +245,7 @@
   },
   "129": {
     "inputs": {
-      "value": "/home/rednax/Downloads/styles/mars"
+      "value": "/home/rednax/Pictures/Wallpapers"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -351,10 +370,10 @@
   },
   "161": {
     "inputs": {
-      "folder": "output",
-      "filename_prefix": "Prefered_Images",
+      "folder": "preference_images",
+      "filename_prefix": "",
       "max_n_imgs": 1,
-      "seed": 214
+      "seed": 86
     },
     "class_type": "Get_Prefixed_Imgs",
     "_meta": {
