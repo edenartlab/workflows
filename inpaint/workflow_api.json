@@ -1,0 +1,318 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 356567643071811,
+      "steps": 30,
+      "cfg": 7,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "43",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "juggerxlInpaint_juggerInpaintV8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "darth vader",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark, ugly, low quality, blurry",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "10": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "11": {
+    "inputs": {
+      "image": "Eden-xander-The fellowship of the ring_ but everyone is Xander-656872b82e973be8b9a5d6e8 (1).jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "grow_mask_by": 12,
+      "pixels": [
+        "39",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ],
+      "mask": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "VAEEncodeForInpaint",
+    "_meta": {
+      "title": "VAE Encode (for Inpainting)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "filename_prefix": "ComfyUIHD",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "39": {
+    "inputs": {
+      "width": 1536,
+      "height": 1536,
+      "interpolation": "lanczos",
+      "keep_proportion": true,
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "43": {
+    "inputs": {
+      "weight": 0.5,
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "K+mean(V) w/ C penalty",
+      "model": [
+        "44",
+        0
+      ],
+      "ipadapter": [
+        "44",
+        1
+      ],
+      "image": [
+        "45",
+        0
+      ],
+      "attn_mask": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "44": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "45": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "46": {
+    "inputs": {
+      "mask": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "49": {
+    "inputs": {
+      "text": "face",
+      "image": [
+        "39",
+        0
+      ],
+      "clipseg_model": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "CLIPSeg Masking",
+    "_meta": {
+      "title": "CLIPSeg Masking"
+    }
+  },
+  "50": {
+    "inputs": {
+      "model": "CIDAS/clipseg-rd64-refined"
+    },
+    "class_type": "CLIPSeg Model Loader",
+    "_meta": {
+      "title": "CLIPSeg Model Loader"
+    }
+  },
+  "52": {
+    "inputs": {
+      "value": 0.2,
+      "mask": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "ThresholdMask",
+    "_meta": {
+      "title": "ThresholdMask"
+    }
+  },
+  "53": {
+    "inputs": {
+      "mask": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "67": {
+    "inputs": {
+      "kernel_size": 24,
+      "sigma": 16,
+      "mask": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "ImpactGaussianBlurMask",
+    "_meta": {
+      "title": "Gaussian Blur Mask"
+    }
+  },
+  "69": {
+    "inputs": {
+      "mask": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "79": {
+    "inputs": {
+      "expand": 32,
+      "tapered_corners": true,
+      "mask": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
+    }
+  }
+}
