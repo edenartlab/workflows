@@ -257,7 +257,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 13,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -286,7 +286,7 @@
       },
       "widgets_values": [
         "eden_images/xander_big",
-        539,
+        1883,
         "randomize"
       ]
     },
@@ -303,7 +303,7 @@
       },
       "flags": {},
       "order": 11,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "images",
@@ -677,44 +677,6 @@
       ]
     },
     {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -318,
-        78
-      ],
-      "size": {
-        "0": 279.8935241699219,
-        "1": 86.82402801513672
-      },
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 204
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            54
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "low resolution, ugly, blurry, nude, naked"
-      ]
-    },
-    {
       "id": 40,
       "type": "KSampler",
       "pos": [
@@ -765,7 +727,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1066191351389490,
+        703906714792190,
         "randomize",
         4,
         2,
@@ -837,7 +799,7 @@
       },
       "widgets_values": [
         0,
-        99619,
+        2752,
         "randomize",
         true,
         false
@@ -920,44 +882,6 @@
       ]
     },
     {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -713,
-        72
-      ],
-      "size": {
-        "0": 349.64276123046875,
-        "1": 106.9691162109375
-      },
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 205
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            88
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "a stunning photo, sharp details, 4k"
-      ]
-    },
-    {
       "id": 186,
       "type": "SimpleMath+",
       "pos": [
@@ -969,7 +893,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 10,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -1040,39 +964,6 @@
       ]
     },
     {
-      "id": 182,
-      "type": "Eden_Float",
-      "pos": [
-        3345,
-        -198
-      ],
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            309
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Prompt Strength",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        0.2
-      ]
-    },
-    {
       "id": 89,
       "type": "Eden_Int",
       "pos": [
@@ -1084,7 +975,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -1117,7 +1008,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -1136,6 +1027,168 @@
       },
       "widgets_values": [
         1024
+      ]
+    },
+    {
+      "id": 109,
+      "type": "LoraLoader",
+      "pos": [
+        -284,
+        230
+      ],
+      "size": {
+        "0": 246.63177490234375,
+        "1": 126
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 203
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 206
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            201
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            204,
+            205
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "SDXL_lora_xander.safetensors",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 129,
+      "type": "Eden_String",
+      "pos": [
+        -354,
+        -36
+      ],
+      "size": {
+        "0": 313.4732971191406,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            227,
+            231
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "MoodBoard Directory",
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "/home/rednax/SSD2TB/Github_repos/Eden/images/eden_logo"
+      ]
+    },
+    {
+      "id": 161,
+      "type": "Get_Prefixed_Imgs",
+      "pos": [
+        -358,
+        -263
+      ],
+      "size": {
+        "0": 318.80963134765625,
+        "1": 174
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "anchor_images",
+          "type": "IMAGE",
+          "links": [
+            282,
+            284
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "use_anchor",
+          "type": "FLOAT",
+          "links": [
+            285
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get_Prefixed_Imgs"
+      },
+      "widgets_values": [
+        "output",
+        "Prefered_Images",
+        1,
+        1154,
+        "randomize"
+      ]
+    },
+    {
+      "id": 149,
+      "type": "SaveImage",
+      "pos": [
+        3608,
+        174
+      ],
+      "size": {
+        "0": 397.84564208984375,
+        "1": 401.1008605957031
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 262
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "MoodMix_Outputs"
       ]
     },
     {
@@ -1192,55 +1245,143 @@
       },
       "widgets_values": [
         300,
-        4,
+        6,
         2,
         0.2
       ]
     },
     {
-      "id": 161,
-      "type": "Get_Prefixed_Imgs",
+      "id": 148,
+      "type": "SaveImageAdvanced",
       "pos": [
-        -358,
-        -263
+        3613,
+        -188
       ],
       "size": {
-        "0": 318.80963134765625,
-        "1": 174
+        "0": 315,
+        "1": 318
       },
       "flags": {},
-      "order": 6,
+      "order": 32,
       "mode": 0,
-      "outputs": [
+      "inputs": [
         {
-          "name": "anchor_images",
+          "name": "images",
           "type": "IMAGE",
-          "links": [
-            282,
-            284
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "use_anchor",
-          "type": "FLOAT",
-          "links": [
-            285
-          ],
-          "shape": 3,
-          "slot_index": 1
+          "link": 261
         }
       ],
       "properties": {
-        "Node name for S&R": "Get_Prefixed_Imgs"
+        "Node name for S&R": "SaveImageAdvanced"
       },
       "widgets_values": [
-        "preference_images",
-        "",
-        1,
-        86,
-        "randomize"
+        "Prefered_Images",
+        true,
+        false
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -713,
+        72
+      ],
+      "size": {
+        "0": 349.64276123046875,
+        "1": 106.9691162109375
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 205
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            88
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a simplistic vector logo showing a brain intertwined with a tree, circuitboard, minimal design, svg, simplistic"
+      ]
+    },
+    {
+      "id": 182,
+      "type": "Eden_Float",
+      "pos": [
+        3343,
+        -196
+      ],
+      "size": [
+        214.12481973958984,
+        58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            309
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Prompt Strength",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.25
+      ]
+    },
+    {
+      "id": 164,
+      "type": "Eden_Float",
+      "pos": [
+        3119,
+        -192
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            289
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Exploration Strength",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.65
       ]
     },
     {
@@ -1248,7 +1389,7 @@
       "type": "Preview Chooser",
       "pos": [
         2866,
-        -85
+        -84
       ],
       "size": {
         "0": 689.86376953125,
@@ -1256,7 +1397,7 @@
       },
       "flags": {},
       "order": 30,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "images",
@@ -1314,188 +1455,47 @@
       },
       "widgets_values": [
         "Always pause",
-        4,
+        6,
         "",
         ""
       ]
     },
     {
-      "id": 149,
-      "type": "SaveImage",
+      "id": 7,
+      "type": "CLIPTextEncode",
       "pos": [
-        3608,
-        174
+        -318,
+        78
       ],
       "size": {
-        "0": 397.84564208984375,
-        "1": 401.1008605957031
+        "0": 279.8935241699219,
+        "1": 86.82402801513672
       },
       "flags": {},
-      "order": 31,
+      "order": 15,
       "mode": 0,
       "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 262
-        }
-      ],
-      "properties": {},
-      "widgets_values": [
-        "MoodMix_Outputs"
-      ]
-    },
-    {
-      "id": 109,
-      "type": "LoraLoader",
-      "pos": [
-        -284,
-        230
-      ],
-      "size": {
-        "0": 246.63177490234375,
-        "1": 126
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 203
-        },
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 206
+          "link": 204
         }
       ],
       "outputs": [
         {
-          "name": "MODEL",
-          "type": "MODEL",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
           "links": [
-            201
+            54
           ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            204,
-            205
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoraLoader"
-      },
-      "widgets_values": [
-        "SDXL_lora_xander.safetensors",
-        0,
-        0
-      ]
-    },
-    {
-      "id": 129,
-      "type": "Eden_String",
-      "pos": [
-        -354,
-        -36
-      ],
-      "size": [
-        313.47328927750243,
-        58
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            227,
-            231
-          ],
-          "shape": 3,
           "slot_index": 0
         }
       ],
-      "title": "MoodBoard Directory",
       "properties": {
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "/home/rednax/Pictures/Wallpapers"
-      ]
-    },
-    {
-      "id": 164,
-      "type": "Eden_Float",
-      "pos": [
-        3119,
-        -192
-      ],
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            289
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Exploration Strength",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        0.7000000000000001
-      ]
-    },
-    {
-      "id": 148,
-      "type": "SaveImageAdvanced",
-      "pos": [
-        3613,
-        -188
-      ],
-      "size": {
-        "0": 315,
-        "1": 318
-      },
-      "flags": {},
-      "order": 32,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 261
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveImageAdvanced"
-      },
-      "widgets_values": [
-        "Prefered_Images",
-        true,
-        false
+        ""
       ]
     }
   ],
@@ -1891,10 +1891,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5054470284993562,
+      "scale": 0.5559917313493142,
       "offset": {
-        "0": 908.4238259350711,
-        "1": 505.8647109765968
+        "0": -2109.612899715773,
+        "1": 337.4230390707382
       }
     },
     "groupNodes": {}

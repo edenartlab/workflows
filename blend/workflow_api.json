@@ -1,0 +1,461 @@
+{
+  "4": {
+    "inputs": {
+      "ckpt_name": "dreamshaperXL_lightningDPMSDE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "202",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "58",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "25": {
+    "inputs": {
+      "clip_name": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "54": {
+    "inputs": {
+      "image": "eden-logo-2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image B"
+    }
+  },
+  "58": {
+    "inputs": {
+      "seed": 285,
+      "steps": 6,
+      "cfg": 2,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 0.9500000000000001,
+      "model": [
+        "407",
+        0
+      ],
+      "positive": [
+        "342",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "394",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "63": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "202": {
+    "inputs": {
+      "prompt1": [
+        "246",
+        0
+      ],
+      "separator": ", ",
+      "prompt2": "stunning, high quality, sharp details, 4k"
+    },
+    "class_type": "SeargePromptCombiner",
+    "_meta": {
+      "title": "Prompt combiner"
+    }
+  },
+  "246": {
+    "inputs": {
+      "mode": "fast",
+      "keep_model_alive": true,
+      "prepend_blip_caption": true,
+      "save_prompt_to_txt_file": "clip_interrogator_prompt.txt",
+      "image": [
+        "419",
+        0
+      ]
+    },
+    "class_type": "CLIP_Interrogator",
+    "_meta": {
+      "title": "CLIP_Interrogator"
+    }
+  },
+  "304": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "341": {
+    "inputs": {
+      "image": "eden-logo-4.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image A"
+    }
+  },
+  "342": {
+    "inputs": {
+      "conditioning_to_strength": [
+        "404",
+        0
+      ],
+      "conditioning_to": [
+        "344",
+        0
+      ],
+      "conditioning_from": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "ConditioningAverage"
+    }
+  },
+  "343": {
+    "inputs": {
+      "mode": "fast",
+      "keep_model_alive": true,
+      "prepend_blip_caption": true,
+      "save_prompt_to_txt_file": "clip_interrogator_prompt.txt",
+      "image": [
+        "418",
+        0
+      ]
+    },
+    "class_type": "CLIP_Interrogator",
+    "_meta": {
+      "title": "CLIP_Interrogator"
+    }
+  },
+  "344": {
+    "inputs": {
+      "text": [
+        "345",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "345": {
+    "inputs": {
+      "prompt1": [
+        "343",
+        0
+      ],
+      "separator": ", ",
+      "prompt2": "stunning, high quality, sharp details, 4k"
+    },
+    "class_type": "SeargePromptCombiner",
+    "_meta": {
+      "title": "Prompt combiner"
+    }
+  },
+  "349": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "341",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "378": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "392": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "lanczos",
+      "keep_proportion": false,
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "393",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "393": {
+    "inputs": {
+      "image1_weight": [
+        "404",
+        0
+      ],
+      "image1": [
+        "341",
+        0
+      ],
+      "image2": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "IMG_blender",
+    "_meta": {
+      "title": "IMG_blender"
+    }
+  },
+  "394": {
+    "inputs": {
+      "pixels": [
+        "392",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "404": {
+    "inputs": {
+      "value": 0.5
+    },
+    "class_type": "SeargeFloatConstant",
+    "_meta": {
+      "title": "Img A Weight (0-1)"
+    }
+  },
+  "407": {
+    "inputs": {
+      "weight": 1,
+      "weight_type": "ease out",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "4",
+        0
+      ],
+      "ipadapter": [
+        "412",
+        1
+      ],
+      "pos_embed": [
+        "411",
+        0
+      ],
+      "clip_vision": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEmbeds",
+    "_meta": {
+      "title": "IPAdapter Embeds"
+    }
+  },
+  "409": {
+    "inputs": {
+      "weight": 1,
+      "ipadapter": [
+        "412",
+        1
+      ],
+      "image": [
+        "349",
+        0
+      ],
+      "clip_vision": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEncoder",
+    "_meta": {
+      "title": "IPAdapter Encoder"
+    }
+  },
+  "411": {
+    "inputs": {
+      "a_strength": [
+        "404",
+        0
+      ],
+      "optional_target_norm": -1,
+      "a_embeds": [
+        "409",
+        0
+      ],
+      "b_embeds": [
+        "413",
+        0
+      ]
+    },
+    "class_type": "Linear_Combine_IP_Embeds",
+    "_meta": {
+      "title": "Linear_Combine_IP_Embeds"
+    }
+  },
+  "412": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "413": {
+    "inputs": {
+      "weight": 1,
+      "ipadapter": [
+        "412",
+        1
+      ],
+      "image": [
+        "304",
+        0
+      ],
+      "clip_vision": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEncoder",
+    "_meta": {
+      "title": "IPAdapter Encoder"
+    }
+  },
+  "418": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "pad",
+      "sharpening": 0,
+      "image": [
+        "341",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "419": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "pad",
+      "sharpening": 0,
+      "image": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  }
+}
