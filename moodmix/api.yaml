@@ -31,7 +31,6 @@ parameters:
   description: Use a LoRA finetune on top of the base model. Important, this must be a SDXL LoRa model.
   tip: Unless explicitly specified, no LoRa will be used (lora_strength = 0.0), in which case this argument is ignored.
   type: lora
-  default: SDXL_lora_xander.safetensors
   comfyui: 
     node_id: 109
     field: inputs
