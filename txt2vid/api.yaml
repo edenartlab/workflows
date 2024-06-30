@@ -16,7 +16,7 @@ parameters:
   label: Negative prompt
   description: Negative text prompt, what you do *not* want to generate
   type: string
-  default: ugly, watermark, low-quality, signature, padding, margins, blurry, jpeg artifacts, poorly drawn, low-resolution, bad  
+  default: ugly, watermark, low-quality, signature, padding, margins, blurry, jpeg artifacts, poorly drawn, low-resolution, bad, nude, naked
   comfyui: 
     node_id: 291
     field: inputs
@@ -25,32 +25,32 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
-  default: 896
+  default: 1280
   minimum: 256
   maximum: 2048
-  step: 8
+  step: 64
   comfyui: 
-    node_id: 321
+    node_id: 335
     field: inputs
     subfield: width
 - name: height
   label: Height
   description: Height in pixels
   type: int
-  default: 512
+  default: 896
   minimum: 256
   maximum: 2048
-  step: 8
+  step: 64
   comfyui: 
-    node_id: 321
+    node_id: 335
     field: inputs
     subfield: height
 - name: n_frames
   label: Number of frames
-  description: The total number of frames to generate (controls the duration of the video together with the framerate, which should usually be kept fixed at 20)
+  description: Number of video frames to generate (controls the duration of the video together with the framerate, which should usually be kept fixed at 24). So in general, the final video length will be 2 * n_frames / 24 seconds.
   type: int
-  default: 32
-  minimum: 16
+  default: 78
+  minimum: 24
   maximum: 128
   step: 8
   comfyui: 
@@ -59,9 +59,9 @@ parameters:
     subfield: batch_size
 - name: frame_rate
   label: Frame rate
-  description: Video frames per second
+  description: Video frames per second (almost always 24 is the best choice, but you can change it if you want to make a slow-motion or fast-motion video)
   type: int
-  default: 20
+  default: 24
   minimum: 4
   maximum: 60
   step: 1
@@ -75,8 +75,19 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 10000000000000000
+  maximum: 10000
   comfyui: 
     node_id: 273
     field: inputs
     subfield: noise_seed
+- name: motion_strength
+  label: Motion Strength
+  description: How strong the motion should be in the video (1.0 is very subtle motion, 1.1 is default, 1.2 is a lot of motion)
+  type: float
+  default: 1.1
+  minimum: 0.7
+  maximum: 1.3
+  comfyui: 
+    node_id: 330
+    field: inputs
+    subfield: float_val

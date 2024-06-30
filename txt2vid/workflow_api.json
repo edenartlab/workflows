@@ -2,7 +2,7 @@
   "10": {
     "inputs": {
       "samples": [
-        "273",
+        "333",
         0
       ],
       "vae": [
@@ -26,44 +26,11 @@
   },
   "251": {
     "inputs": {
-      "model_name": "sd15_t2v_beta.ckpt"
+      "model_name": "AnimateLCM_sd15_t2v.ckpt"
     },
     "class_type": "ADE_LoadAnimateDiffModel",
     "_meta": {
       "title": "Load AnimateDiff Model 🎭🅐🅓②"
-    }
-  },
-  "273": {
-    "inputs": {
-      "add_noise": "enable",
-      "noise_seed": 1,
-      "steps": 8,
-      "cfg": 1.6,
-      "sampler_name": "lcm",
-      "scheduler": "sgm_uniform",
-      "start_at_step": 0,
-      "end_at_step": 10000,
-      "return_with_leftover_noise": "disable",
-      "model": [
-        "280",
-        0
-      ],
-      "positive": [
-        "290",
-        0
-      ],
-      "negative": [
-        "291",
-        0
-      ],
-      "latent_image": [
-        "321",
-        0
-      ]
-    },
-    "class_type": "KSamplerAdvanced",
-    "_meta": {
-      "title": "KSampler (Advanced)"
     }
   },
   "278": {
@@ -85,8 +52,8 @@
       "context_stride": 1,
       "context_overlap": 4,
       "context_schedule": "uniform",
-      "closed_loop": false,
-      "fuse_method": "pyramid",
+      "closed_loop": true,
+      "fuse_method": "flat",
       "use_on_equal_length": false,
       "start_percent": 0,
       "guarantee_steps": 1
@@ -128,6 +95,10 @@
       "motion_model": [
         "251",
         0
+      ],
+      "scale_multival": [
+        "330",
+        0
       ]
     },
     "class_type": "ADE_ApplyAnimateDiffModel",
@@ -137,7 +108,7 @@
   },
   "290": {
     "inputs": {
-      "text": "mecha warrior suit, sci-fi, sharp details, 4k",
+      "text": "the garden of Eden, sunset, waterfall, lush vegetation, flowers, tree of life, stunning panorama, sharp details, masterpiece",
       "clip": [
         "110",
         1
@@ -150,7 +121,7 @@
   },
   "291": {
     "inputs": {
-      "text": "blurry, low quality, text, watermark, shutterstock",
+      "text": "nude, naked, blurry, low quality, text, watermark, shutterstock, artefacts, ugly",
       "clip": [
         "110",
         1
@@ -163,9 +134,15 @@
   },
   "321": {
     "inputs": {
-      "width": 768,
-      "height": 448,
-      "batch_size": 32
+      "width": [
+        "335",
+        0
+      ],
+      "height": [
+        "335",
+        1
+      ],
+      "batch_size": 78
     },
     "class_type": "EmptyLatentImage",
     "_meta": {
@@ -201,7 +178,7 @@
     "inputs": {
       "ckpt_name": "rife47.pth",
       "clear_cache_after_n_frames": 24,
-      "multiplier": 2,
+      "multiplier": 3,
       "fast_mode": true,
       "ensemble": true,
       "scale_factor": 1,
@@ -217,7 +194,7 @@
   },
   "329": {
     "inputs": {
-      "frame_rate": 20,
+      "frame_rate": 24,
       "loop_count": 0,
       "filename_prefix": "AnimateDIFF-LCM",
       "format": "video/h264-mp4",
@@ -234,6 +211,57 @@
     "class_type": "VHS_VideoCombine",
     "_meta": {
       "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "330": {
+    "inputs": {
+      "float_val": 1.1500000000000001
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Multival Dynamic 🎭🅐🅓"
+    }
+  },
+  "333": {
+    "inputs": {
+      "seed": 490365351196183,
+      "steps": 8,
+      "cfg": 1.6,
+      "sampler_name": "lcm",
+      "scheduler": "sgm_uniform",
+      "denoise": 1,
+      "model": [
+        "280",
+        0
+      ],
+      "positive": [
+        "290",
+        0
+      ],
+      "negative": [
+        "291",
+        0
+      ],
+      "latent_image": [
+        "321",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "335": {
+    "inputs": {
+      "width": 1280,
+      "height": 896,
+      "output_multiplier": 0.5,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
     }
   }
 }
