@@ -40,7 +40,7 @@
   },
   "6": {
     "inputs": {
-      "text": "darth vader",
+      "text": "japanese anime drawing of a man in a room with red eyes, devil eyes",
       "clip": [
         "4",
         1
@@ -94,7 +94,7 @@
   },
   "11": {
     "inputs": {
-      "image": "Eden-xander-The fellowship of the ring_ but everyone is Xander-656872b82e973be8b9a5d6e8 (1).jpg",
+      "image": "Eden-froyd_art-both eyes opening slightly-6686f8ca0863b775fb28a3f1.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -114,7 +114,7 @@
         2
       ],
       "mask": [
-        "52",
+        "79",
         0
       ]
     },
@@ -156,7 +156,7 @@
   },
   "43": {
     "inputs": {
-      "weight": 0.5,
+      "weight": 1,
       "weight_type": "ease in-out",
       "combine_embeds": "concat",
       "start_at": 0,
@@ -224,75 +224,10 @@
       "title": "InvertMask"
     }
   },
-  "49": {
-    "inputs": {
-      "text": "face",
-      "image": [
-        "39",
-        0
-      ],
-      "clipseg_model": [
-        "50",
-        0
-      ]
-    },
-    "class_type": "CLIPSeg Masking",
-    "_meta": {
-      "title": "CLIPSeg Masking"
-    }
-  },
-  "50": {
-    "inputs": {
-      "model": "CIDAS/clipseg-rd64-refined"
-    },
-    "class_type": "CLIPSeg Model Loader",
-    "_meta": {
-      "title": "CLIPSeg Model Loader"
-    }
-  },
-  "52": {
-    "inputs": {
-      "value": 0.2,
-      "mask": [
-        "79",
-        0
-      ]
-    },
-    "class_type": "ThresholdMask",
-    "_meta": {
-      "title": "ThresholdMask"
-    }
-  },
   "53": {
     "inputs": {
       "mask": [
-        "52",
-        0
-      ]
-    },
-    "class_type": "MaskPreview+",
-    "_meta": {
-      "title": "🔧 Mask Preview"
-    }
-  },
-  "67": {
-    "inputs": {
-      "kernel_size": 24,
-      "sigma": 16,
-      "mask": [
-        "49",
-        0
-      ]
-    },
-    "class_type": "ImpactGaussianBlurMask",
-    "_meta": {
-      "title": "Gaussian Blur Mask"
-    }
-  },
-  "69": {
-    "inputs": {
-      "mask": [
-        "49",
+        "79",
         0
       ]
     },
@@ -306,13 +241,65 @@
       "expand": 32,
       "tapered_corners": true,
       "mask": [
-        "67",
-        0
+        "82",
+        1
       ]
     },
     "class_type": "GrowMask",
     "_meta": {
       "title": "GrowMask"
+    }
+  },
+  "81": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinB (938MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "82": {
+    "inputs": {
+      "prompt": "eyes",
+      "threshold": 0.3,
+      "sam_model": [
+        "83",
+        0
+      ],
+      "grounding_dino_model": [
+        "81",
+        0
+      ],
+      "image": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "83": {
+    "inputs": {
+      "model_name": "sam_hq_vit_h (2.57GB)"
+    },
+    "class_type": "SAMModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAMModelLoader (segment anything)"
+    }
+  },
+  "85": {
+    "inputs": {
+      "mask": [
+        "82",
+        1
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
     }
   }
 }

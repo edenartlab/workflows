@@ -18,9 +18,9 @@ parameters:
   tip: Some examples of good masking prompts are 'background', 'face', 'roof of building', 'hair, headwear, hat', ...
   type: string
   comfyui: 
-    node_id: 49
+    node_id: 82
     field: inputs
-    subfield: text
+    subfield: prompt
 - name: inpainting_prompt
   label: inpainting prompt
   description: Positive text prompt, what you want to generate. This prompt will be used to inpaint the region highlighted by the masking prompt.
