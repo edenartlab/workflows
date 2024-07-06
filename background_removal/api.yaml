@@ -1,0 +1,52 @@
+name: Background Removal
+description: Remove the background from an image, and inpaint the background with a prompt. Currently returns only the background-extracted RGBA .png image
+tip: This workflow automatically removes the background from an image using rembg and returns a transparent image containing just the foreground.
+handler: comfyui
+comfyui_output_node_id: 97
+parameters:
+- name: image
+  label: Image
+  description: Input image to apply background-extraction to.
+  type: image
+  comfyui: 
+    node_id: 11
+    field: inputs
+    subfield: image
+- name: inpainting_prompt
+  label: inpainting prompt
+  description: Positive text prompt, what you want the final image to show. This prompt will be used to inpaint the background region of the image.
+  type: string
+  default: High quality, sharp details, stunning, masterpiece
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: negative prompt
+  description: Negative text prompt, what you do *not* want to generate
+  type: string
+  default: nsfw, nude, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
+- name: width
+  label: Width
+  description: Maximum width of the generated images in n_pixels
+  tip: Usually the default of 1536 is fine, but this value can be increased if a very high resolution inpaint is requested
+  type: int
+  default: 1536
+  comfyui: 
+    node_id: 39
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Maximum height of the generated images in n_pixels
+  tip: Usually the default of 1536 is fine, but this value can be increased if a very high resolution inpaint is requested
+  type: int
+  default: 1536
+  comfyui: 
+    node_id: 39
+    field: inputs
+    subfield: height
