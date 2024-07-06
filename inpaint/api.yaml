@@ -1,5 +1,5 @@
 name: Inpaint
-description: Inpaint a region of an image using a masking prompt and normal inpainting prompt.
+description: Inpaint (and replace) a region or object in an image using a masking prompt (to target a segment of the image) and normal inpainting prompt (to re-draw that area).
 tip: This workflow edits a specific region in the given image by first applying the masking prompt to highlight a specific region of the image, and then applying the inpainting prompt to fill (re-draw) in the highlighted region.
 handler: comfyui
 comfyui_output_node_id: 33
@@ -38,23 +38,3 @@ parameters:
     node_id: 7
     field: inputs
     subfield: text
-- name: width
-  label: Width
-  description: Maximum width of the generated images in n_pixels
-  tip: Usually the default of 1536 is fine, but this value can be increased if a very high resolution inpaint is requested
-  type: int
-  default: 1536
-  comfyui: 
-    node_id: 39
-    field: inputs
-    subfield: width
-- name: height
-  label: Height
-  description: Maximum height of the generated images in n_pixels
-  tip: Usually the default of 1536 is fine, but this value can be increased if a very high resolution inpaint is requested
-  type: int
-  default: 1536
-  comfyui: 
-    node_id: 39
-    field: inputs
-    subfield: height

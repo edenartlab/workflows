@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 356567643071823,
+      "seed": 356567643071844,
       "steps": 30,
       "cfg": 8,
       "sampler_name": "euler_ancestral",
@@ -40,7 +40,7 @@
   },
   "6": {
     "inputs": {
-      "text": "a massive chicken surrounded by people",
+      "text": "ancient chinese tower",
       "clip": [
         "4",
         1
@@ -94,7 +94,7 @@
   },
   "11": {
     "inputs": {
-      "image": "ComfyUI_temp_vuzqr_00094_.png",
+      "image": "waterfall4 (1).jpeg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -171,7 +171,7 @@
         1
       ],
       "image": [
-        "45",
+        "39",
         0
       ],
       "attn_mask": [
@@ -195,21 +195,6 @@
     "class_type": "IPAdapterUnifiedLoader",
     "_meta": {
       "title": "IPAdapter Unified Loader"
-    }
-  },
-  "45": {
-    "inputs": {
-      "interpolation": "LANCZOS",
-      "crop_position": "center",
-      "sharpening": 0.05,
-      "image": [
-        "39",
-        0
-      ]
-    },
-    "class_type": "PrepImageForClipVision",
-    "_meta": {
-      "title": "Prep Image For ClipVision"
     }
   },
   "46": {
@@ -261,8 +246,8 @@
   },
   "82": {
     "inputs": {
-      "prompt": "brain",
-      "threshold": 0.3,
+      "prompt": "waterfall",
+      "threshold": 0.25,
       "sam_model": [
         "83",
         0
