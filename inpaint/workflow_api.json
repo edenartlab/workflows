@@ -1,9 +1,9 @@
 {
   "3": {
     "inputs": {
-      "seed": 356567643071811,
+      "seed": 356567643071823,
       "steps": 30,
-      "cfg": 7,
+      "cfg": 8,
       "sampler_name": "euler_ancestral",
       "scheduler": "normal",
       "denoise": 1,
@@ -40,7 +40,7 @@
   },
   "6": {
     "inputs": {
-      "text": "japanese anime drawing of a man in a room with red eyes, devil eyes",
+      "text": "a massive chicken surrounded by people",
       "clip": [
         "4",
         1
@@ -94,7 +94,7 @@
   },
   "11": {
     "inputs": {
-      "image": "Eden-froyd_art-both eyes opening slightly-6686f8ca0863b775fb28a3f1.jpg",
+      "image": "ComfyUI_temp_vuzqr_00094_.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -104,7 +104,7 @@
   },
   "19": {
     "inputs": {
-      "grow_mask_by": 12,
+      "grow_mask_by": 24,
       "pixels": [
         "39",
         0
@@ -156,7 +156,7 @@
   },
   "43": {
     "inputs": {
-      "weight": 1,
+      "weight": 0.4,
       "weight_type": "ease in-out",
       "combine_embeds": "concat",
       "start_at": 0,
@@ -238,7 +238,7 @@
   },
   "79": {
     "inputs": {
-      "expand": 32,
+      "expand": 48,
       "tapered_corners": true,
       "mask": [
         "82",
@@ -261,7 +261,7 @@
   },
   "82": {
     "inputs": {
-      "prompt": "eyes",
+      "prompt": "brain",
       "threshold": 0.3,
       "sam_model": [
         "83",

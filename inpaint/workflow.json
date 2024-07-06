@@ -1,5 +1,5 @@
 {
-  "last_node_id": 89,
+  "last_node_id": 92,
   "last_link_id": 156,
   "nodes": [
     {
@@ -153,114 +153,6 @@
       "properties": {
         "Node name for S&R": "MaskPreview+"
       }
-    },
-    {
-      "id": 3,
-      "type": "KSampler",
-      "pos": [
-        863,
-        186
-      ],
-      "size": {
-        "0": 315,
-        "1": 262
-      },
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 81
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 4
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 6
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 28
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            7
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        356567643071811,
-        "fixed",
-        30,
-        7,
-        "euler_ancestral",
-        "normal",
-        1
-      ]
-    },
-    {
-      "id": 19,
-      "type": "VAEEncodeForInpaint",
-      "pos": [
-        535,
-        67
-      ],
-      "size": {
-        "0": 226.8000030517578,
-        "1": 98
-      },
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "pixels",
-          "type": "IMAGE",
-          "link": 70
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 26
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 112
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            28
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEEncodeForInpaint"
-      },
-      "widgets_values": [
-        12
-      ]
     },
     {
       "id": 4,
@@ -425,6 +317,206 @@
       ]
     },
     {
+      "id": 65,
+      "type": "Reroute",
+      "pos": [
+        247,
+        106
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 152,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MASK",
+          "links": [
+            112,
+            114
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 85,
+      "type": "MaskPreview+",
+      "pos": [
+        -558,
+        -710
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 149
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskPreview+"
+      }
+    },
+    {
+      "id": 46,
+      "type": "InvertMask",
+      "pos": [
+        237.7697853418364,
+        -166.18245973276072
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 142
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            153
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      }
+    },
+    {
+      "id": 33,
+      "type": "SaveImage",
+      "pos": [
+        1375,
+        188
+      ],
+      "size": {
+        "0": 266.86810302734375,
+        "1": 288.08203125
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 67
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUIHD"
+      ]
+    },
+    {
+      "id": 81,
+      "type": "GroundingDinoModelLoader (segment anything)",
+      "pos": [
+        -1034,
+        -718
+      ],
+      "size": {
+        "0": 361.20001220703125,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "GROUNDING_DINO_MODEL",
+          "type": "GROUNDING_DINO_MODEL",
+          "links": [
+            146
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GroundingDinoModelLoader (segment anything)"
+      },
+      "widgets_values": [
+        "GroundingDINO_SwinB (938MB)"
+      ]
+    },
+    {
+      "id": 79,
+      "type": "GrowMask",
+      "pos": [
+        -319,
+        -233
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 156
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            142,
+            152
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMask"
+      },
+      "widgets_values": [
+        48,
+        true
+      ]
+    },
+    {
       "id": 39,
       "type": "ImageResize+",
       "pos": [
@@ -485,191 +577,70 @@
       ]
     },
     {
-      "id": 79,
-      "type": "GrowMask",
+      "id": 3,
+      "type": "KSampler",
       "pos": [
-        -319,
-        -233
+        863,
+        186
       ],
       "size": {
-        "0": 210,
-        "1": 82
+        "0": 315,
+        "1": 262
       },
       "flags": {},
-      "order": 12,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
-          "name": "mask",
-          "type": "MASK",
-          "link": 156
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            142,
-            152
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GrowMask"
-      },
-      "widgets_values": [
-        32,
-        true
-      ]
-    },
-    {
-      "id": 65,
-      "type": "Reroute",
-      "pos": [
-        247,
-        106
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 152,
-          "slot_index": 0
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "MASK",
-          "links": [
-            112,
-            114
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      }
-    },
-    {
-      "id": 11,
-      "type": "LoadImage",
-      "pos": [
-        -1909,
-        -430
-      ],
-      "size": [
-        280.3663635253906,
-        314.00001525878906
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            71
-          ],
-          "shape": 3,
-          "slot_index": 0
+          "name": "model",
+          "type": "MODEL",
+          "link": 81
         },
         {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "Eden-froyd_art-both eyes opening slightly-6686f8ca0863b775fb28a3f1.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 85,
-      "type": "MaskPreview+",
-      "pos": [
-        -558,
-        -710
-      ],
-      "size": [
-        210,
-        246
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
         {
-          "name": "mask",
-          "type": "MASK",
-          "link": 149
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MaskPreview+"
-      }
-    },
-    {
-      "id": 46,
-      "type": "InvertMask",
-      "pos": [
-        237.7697853418364,
-        -166.18245973276072
-      ],
-      "size": {
-        "0": 210,
-        "1": 26
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
         {
-          "name": "mask",
-          "type": "MASK",
-          "link": 142
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 28
         }
       ],
       "outputs": [
         {
-          "name": "MASK",
-          "type": "MASK",
+          "name": "LATENT",
+          "type": "LATENT",
           "links": [
-            153
+            7
           ],
-          "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "InvertMask"
-      }
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        356567643071823,
+        "increment",
+        30,
+        8,
+        "euler_ancestral",
+        "normal",
+        1
+      ]
     },
     {
       "id": 43,
       "type": "IPAdapterAdvanced",
       "pos": [
-        468.76978534183644,
-        -380.1824597327608
+        469,
+        -380
       ],
       "size": {
         "0": 315,
@@ -725,7 +696,7 @@
         "Node name for S&R": "IPAdapterAdvanced"
       },
       "widgets_values": [
-        1,
+        0.4,
         "ease in-out",
         "concat",
         0,
@@ -734,101 +705,92 @@
       ]
     },
     {
-      "id": 33,
-      "type": "SaveImage",
+      "id": 19,
+      "type": "VAEEncodeForInpaint",
       "pos": [
-        1375,
-        188
+        535,
+        67
       ],
       "size": {
-        "0": 266.86810302734375,
-        "1": 288.08203125
+        "0": 226.8000030517578,
+        "1": 98
       },
       "flags": {},
-      "order": 20,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
+          "name": "pixels",
           "type": "IMAGE",
-          "link": 67
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUIHD"
-      ]
-    },
-    {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -1861.4564428856186,
-        -59.0433489369088
-      ],
-      "size": {
-        "0": 417.6235046386719,
-        "1": 105.25952911376953
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
+          "link": 70
+        },
         {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 3
+          "name": "vae",
+          "type": "VAE",
+          "link": 26
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 112
         }
       ],
       "outputs": [
         {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
+          "name": "LATENT",
+          "type": "LATENT",
           "links": [
-            4
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "japanese anime drawing of a man in a room with red eyes, devil eyes"
-      ]
-    },
-    {
-      "id": 81,
-      "type": "GroundingDinoModelLoader (segment anything)",
-      "pos": [
-        -1034,
-        -718
-      ],
-      "size": [
-        361.20001220703125,
-        58
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "GROUNDING_DINO_MODEL",
-          "type": "GROUNDING_DINO_MODEL",
-          "links": [
-            146
+            28
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "GroundingDinoModelLoader (segment anything)"
+        "Node name for S&R": "VAEEncodeForInpaint"
       },
       "widgets_values": [
-        "GroundingDINO_SwinB (938MB)"
+        24
+      ]
+    },
+    {
+      "id": 11,
+      "type": "LoadImage",
+      "pos": [
+        -1909,
+        -430
+      ],
+      "size": {
+        "0": 280.3663635253906,
+        "1": 314
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            71
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_temp_vuzqr_00094_.png",
+        "image"
       ]
     },
     {
@@ -838,10 +800,10 @@
         -1042,
         -485
       ],
-      "size": [
-        352.79998779296875,
-        122
-      ],
+      "size": {
+        "0": 352.79998779296875,
+        "1": 122
+      },
       "flags": {},
       "order": 10,
       "mode": 0,
@@ -884,8 +846,46 @@
         "Node name for S&R": "GroundingDinoSAMSegment (segment anything)"
       },
       "widgets_values": [
-        "eyes",
+        "brain",
         0.3
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1861.4564428856186,
+        -59.0433489369088
+      ],
+      "size": {
+        "0": 417.6235046386719,
+        "1": 105.25952911376953
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a massive chicken surrounded by people"
       ]
     }
   ],
@@ -1142,10 +1142,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6934334949441611,
+      "scale": 0.7627768444385965,
       "offset": {
-        "0": 1626.7978407406304,
-        "1": 903.8732108884187
+        "0": 985.0735355056851,
+        "1": 686.9924260702425
       }
     }
   },
