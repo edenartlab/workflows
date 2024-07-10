@@ -1,0 +1,780 @@
+{
+  "last_node_id": 23,
+  "last_link_id": 41,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        936,
+        -12
+      ],
+      "size": [
+        239.94226838999202,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            14
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "RealESRGAN_x2plus.pth"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        934,
+        103
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 46
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 14
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 10,
+      "type": "RIFE VFI",
+      "pos": [
+        933,
+        204
+      ],
+      "size": {
+        "0": 319.20001220703125,
+        "1": 198
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "optional_interpolation_states",
+          "type": "INTERPOLATION_STATES",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RIFE VFI"
+      },
+      "widgets_values": [
+        "rife47.pth",
+        10,
+        3,
+        true,
+        true,
+        1
+      ]
+    },
+    {
+      "id": 20,
+      "type": "MuseVPredictor V1 (comfyui_musev_evolved)",
+      "pos": [
+        535,
+        210
+      ],
+      "size": [
+        344.3999938964844,
+        26
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MUSEV_PREDICTOR",
+          "type": "MUSEV_PREDICTOR",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseVPredictor V1 (comfyui_musev_evolved)"
+      }
+    },
+    {
+      "id": 22,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1292,
+        204
+      ],
+      "size": [
+        315,
+        495.75
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff_ev",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": true,
+          "params": {
+            "filename": "AnimateDiff_ev_00007.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 19,
+      "type": "String Concatenate",
+      "pos": [
+        301,
+        322
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Prepend",
+          "type": "STRING",
+          "link": 29,
+          "widget": {
+            "name": "Prepend"
+          }
+        },
+        {
+          "name": "Append",
+          "type": "STRING",
+          "link": 30,
+          "widget": {
+            "name": "Append"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            31,
+            35
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        " "
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        -641,
+        202
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "00.png",
+        "image"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": [
+        -40,
+        -106
+      ],
+      "size": [
+        267.3112120639581,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadFlorence2Model"
+      },
+      "widgets_values": [
+        "microsoft/Florence-2-large",
+        "fp16",
+        "sdpa"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Text box",
+      "pos": [
+        -36,
+        -260
+      ],
+      "size": [
+        254.56666128270797,
+        94.19137365983812
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        "masterpiece, high quality, sharp details, depth of field, depth zooming, animation, camera motion"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Florence2Run",
+      "pos": [
+        -38,
+        44
+      ],
+      "size": [
+        267.0408019077081,
+        260
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 23
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Florence2Run"
+      },
+      "widgets_values": [
+        "",
+        "detailed_caption",
+        true,
+        false,
+        1024,
+        3,
+        true
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        192,
+        422
+      ],
+      "size": {
+        "0": 319.93658447265625,
+        "1": 132.73092651367188
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 31,
+          "dir": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ImageResize+",
+      "pos": [
+        -298,
+        200
+      ],
+      "size": [
+        210,
+        218
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 4
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 40,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 41,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            23,
+            34
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        640,
+        640,
+        "lanczos",
+        true,
+        "always",
+        32
+      ]
+    },
+    {
+      "id": 21,
+      "type": "MuseVImg2Vid V1 (comfyui_musev_evolved)",
+      "pos": [
+        545,
+        285
+      ],
+      "size": [
+        328.1357001797826,
+        490.37403181658044
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "musev_predictor",
+          "type": "MUSEV_PREDICTOR",
+          "link": 33
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "positive_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseVImg2Vid V1 (comfyui_musev_evolved)"
+      },
+      "widgets_values": [
+        24,
+        79,
+        "fixed",
+        12,
+        3.5,
+        0.55,
+        0.003,
+        8,
+        12,
+        1,
+        4,
+        true,
+        "(masterpiece, best quality, highres:1),(1girl, solo:1),(beautiful face, soft skin, costume:1),(eye blinks:1.8),(head wave:1.3)",
+        "(shutterstock:2), (watermark:2), text, ng_deepnegative_v1_75t, multiple heads, bad body, extra arms, blurry, deformed body, (worst quality:2), (low quality:2), lowres, mutated hands"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "Integer",
+      "pos": [
+        -301,
+        83
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            40,
+            41
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Resolution",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        768
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      2,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      7,
+      0,
+      8,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      18,
+      8,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      14,
+      0,
+      13,
+      1,
+      "FL2MODEL"
+    ],
+    [
+      23,
+      5,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      29,
+      13,
+      2,
+      19,
+      0,
+      "STRING"
+    ],
+    [
+      30,
+      18,
+      0,
+      19,
+      1,
+      "STRING"
+    ],
+    [
+      31,
+      19,
+      0,
+      17,
+      0,
+      "*"
+    ],
+    [
+      33,
+      20,
+      0,
+      21,
+      1,
+      "MUSEV_PREDICTOR"
+    ],
+    [
+      34,
+      5,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      19,
+      0,
+      21,
+      2,
+      "STRING"
+    ],
+    [
+      38,
+      21,
+      0,
+      8,
+      1,
+      "IMAGE"
+    ],
+    [
+      39,
+      10,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      40,
+      23,
+      0,
+      5,
+      1,
+      "INT"
+    ],
+    [
+      41,
+      23,
+      0,
+      5,
+      2,
+      "INT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5644739300537773,
+      "offset": [
+        669.4856342133851,
+        400.0661199981873
+      ]
+    }
+  },
+  "version": 0.4
+}

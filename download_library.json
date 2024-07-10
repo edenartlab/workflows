@@ -1,0 +1,34 @@
+{
+    "models": {
+        "RealESRGAN_x2plus": {
+            "source": "https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth",
+            "target": "models/upscale_models/RealESRGAN_x2plus.pth"
+        },
+        "rife47.pth": {
+            "source": "https://github.com/styler00dollar/VSGAN-tensorrt-docker/releases/download/models/rife47.pth",
+            "target": "custom_nodes/ComfyUI-Frame-Interpolation/ckpts/rife/rife47.pth"
+        }
+    },
+
+
+    "embeddings": {
+        "ng_deepnegative_v1_75t": {   
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/embeddings/ng_deepnegative_v1_75t.pt", 
+            "target": "models/embeddings/ng_deepnegative_v1_75t.pt"
+        }
+    },
+
+
+    "repositories": {
+        "Florence-2-large": {
+            "source": "git clone https://huggingface.co/microsoft/Florence-2-large",
+            "target": "/root/models/LLM/Florence-2-large"
+        },
+        
+        "musev_": {
+            "source": "git clone https://huggingface.co/TMElyralab/MuseV",
+            "target": "/root/models/diffusers/TMElyralab/MuseV"
+        }
+    }
+
+}
