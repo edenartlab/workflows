@@ -1,0 +1,32 @@
+name: Image to Video using MuseV
+description: Create a subtle, animated version of the input image. Higher width x height may improve the quality of the video, but take much longer to render. 
+tip: This will animate a single image with subtle, but realistic motion and will stay close to the original video.. Dont use this tool whenever you need to use multiple images to create a video.
+handler: comfyui
+comfyui_output_node_id: 22
+parameters:
+- name: image
+  label: Image
+  description: Input image to animate
+  type: image
+  comfyui: 
+    node_id: 2
+    field: inputs
+    subfield: image
+- name: resolution
+  label: Resolution
+  description: Resolution of the generated images in n_pixels (max(w,h)) (always a multiple of 64), recommended to just keep this at 768.
+  type: int
+  default: 768
+  comfyui: 
+    node_id: 27
+    field: inputs
+    subfield: value
+- name: num_frames
+  label: Number of frames
+  description: Number of frames to generate (num_frames/8 = length of the output video in seconds), should usually be around 24-64 frames. (More wont really create that much extra interesting motion...)
+  type: int
+  default: 36
+  comfyui: 
+    node_id: 21
+    field: inputs
+    subfield: time_size

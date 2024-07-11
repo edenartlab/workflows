@@ -1,0 +1,145 @@
+{
+  "2": {
+    "inputs": {
+      "image": "00.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "8": {
+    "inputs": {
+      "upscale_model": [
+        "7",
+        0
+      ],
+      "image": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 10,
+      "multiplier": 3,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "20": {
+    "inputs": {},
+    "class_type": "MuseVPredictor V1 (comfyui_musev_evolved)",
+    "_meta": {
+      "title": "MuseVPredictor V1 (comfyui_musev_evolved)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "time_size": 16,
+      "seed": 79,
+      "video_num_inference_steps": 12,
+      "video_guidance_scale": 3.5,
+      "w_ind_noise": 0.55,
+      "image_weight": 0.003,
+      "motion_speed": 8,
+      "context_frames": 12,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "output_shift_first_frame": true,
+      "positive_prompt": "(masterpiece, best quality, highres:1)",
+      "negative_prompt": "(shutterstock:2), (watermark:2), text, ng_deepnegative_v1_75t, multiple heads, bad body, extra arms, blurry, deformed body, (worst quality:2), (low quality:2), lowres, mutated hands",
+      "image": [
+        "29",
+        0
+      ],
+      "musev_predictor": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "MuseVImg2Vid V1 (comfyui_musev_evolved)",
+    "_meta": {
+      "title": "MuseVImg2Vid V1 (comfyui_musev_evolved)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff_ev",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "27": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "29": {
+    "inputs": {
+      "width": [
+        "27",
+        0
+      ],
+      "height": [
+        "27",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  }
+}
