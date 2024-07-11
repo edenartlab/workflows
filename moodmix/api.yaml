@@ -1,6 +1,7 @@
 name: MoodMix
 description: Create an image from a set of style images and a prompt. Supports iterative improvement by starting from a preferred anchor image
 tip: This workflow creates images by combining an input prompt (subtle influence) and random combinations of content-style images, referenced here as 'the moodboard'. The "Exploration Strength" controls how much variety the generated images will have; small values around 0.5 stay close to the anchor image, higher values like 0.7 yield more variety. "Prompt Strength" controls how much visual influence the prompt has vs the combined style images. It is usually around 0.2 but can be set to 0 to test the influence of the prompt in isolation.
+output_type: image[]
 handler: comfyui
 comfyui_output_node_id: 149
 parameters:
