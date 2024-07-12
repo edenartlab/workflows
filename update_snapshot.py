@@ -45,8 +45,8 @@ if __name__ == "__main__":
     
     """
 
-    original_workflow_path = "txt2vid_lora/snapshot.json"
-    updated_workflow_path  = "updated_snapshot.json"
+    original_snapshot_path = "img2vid_museV/snapshot.json"
+    updated_snapshot_path  = "img2vid_museV/new_snapshot.json"
 
 
     keys_to_update = [

@@ -1,5 +1,5 @@
 {
-    "comfyui": "8d3f979b633dab9824c59bf8a06c748a533eec0b",
+    "comfyui": "90389b3b8a69c08c3ed0bcc9d87a92246578a8e3",
     "git_custom_nodes": {
         "https://github.com/storyicon/comfyui_musev_evolved": {
             "hash": "0e79de4cc2a7f17e7c2b2c98f1f3838085461e38",
@@ -26,11 +26,11 @@
             "disabled": false
         },
         "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite": {
-            "hash": "e369cac458f977fab0ee5719ce5e4057dc04729f",
+            "hash": "29fae7510ff113011b4e09a47a0676735ed4957f",
             "disabled": false
         },
         "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation": {
-            "hash": "5e11679995c68f33891c306a393915feefe234b5",
+            "hash": "551de2ffb99d868405fe7021ef8069cad429df4b",
             "disabled": false
         },
         "https://github.com/cubiq/ComfyUI_IPAdapter_plus.git": {
@@ -47,11 +47,11 @@
     "post_install_commands": [
         "git lfs install",
         "git clone https://huggingface.co/TMElyralab/MuseV /root/models/diffusers/TMElyralab/MuseV",
+        "git clone https://huggingface.co/microsoft/Florence-2-large /root/models/LLM/Florence-2-large",
         "pip install librosa",
         "pip install ffmpeg-python",
         "pip install easydict",
-        "pip install omegaconf",
-        "pip install diffusers==0.27.2"
+        "pip install omegaconf"
     ],
     "pips": {
         "absl-py==2.1.0": "",

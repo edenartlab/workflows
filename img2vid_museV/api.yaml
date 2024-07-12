@@ -18,9 +18,9 @@ parameters:
   type: int
   default: 768
   comfyui: 
-    node_id: 23
+    node_id: 27
     field: inputs
-    subfield: Value
+    subfield: value
 - name: num_frames
   label: Number of frames
   description: Number of frames to generate (num_frames/8 = length of the output video in seconds), should usually be around 24-64 frames. (More wont really create that much extra interesting motion...)

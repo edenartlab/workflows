@@ -9,30 +9,6 @@
       "title": "Load Image"
     }
   },
-  "5": {
-    "inputs": {
-      "width": [
-        "23",
-        0
-      ],
-      "height": [
-        "23",
-        0
-      ],
-      "interpolation": "lanczos",
-      "keep_proportion": true,
-      "condition": "always",
-      "multiple_of": 32,
-      "image": [
-        "2",
-        0
-      ]
-    },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
-    }
-  },
   "7": {
     "inputs": {
       "model_name": "RealESRGAN_x2plus.pth"
@@ -85,8 +61,9 @@
       "max_new_tokens": 1024,
       "num_beams": 3,
       "do_sample": true,
+      "output_mask_select": "",
       "image": [
-        "5",
+        "29",
         0
       ],
       "florence2_model": [
@@ -110,45 +87,6 @@
       "title": "DownloadAndLoadFlorence2Model"
     }
   },
-  "17": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "19",
-        0
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
-  "18": {
-    "inputs": {
-      "Text": "masterpiece, high quality, sharp details, depth of field, depth zooming, animation, camera motion"
-    },
-    "class_type": "Text box",
-    "_meta": {
-      "title": "Text box"
-    }
-  },
-  "19": {
-    "inputs": {
-      "Prepend": [
-        "13",
-        2
-      ],
-      "Append": [
-        "18",
-        0
-      ],
-      "Delimiter": " "
-    },
-    "class_type": "String Concatenate",
-    "_meta": {
-      "title": "String Concatenate"
-    }
-  },
   "20": {
     "inputs": {},
     "class_type": "MuseVPredictor V1 (comfyui_musev_evolved)",
@@ -158,7 +96,7 @@
   },
   "21": {
     "inputs": {
-      "time_size": 24,
+      "time_size": 16,
       "seed": 79,
       "video_num_inference_steps": 12,
       "video_guidance_scale": 3.5,
@@ -170,12 +108,12 @@
       "context_overlap": 4,
       "output_shift_first_frame": true,
       "positive_prompt": [
-        "19",
+        "26",
         0
       ],
       "negative_prompt": "(shutterstock:2), (watermark:2), text, ng_deepnegative_v1_75t, multiple heads, bad body, extra arms, blurry, deformed body, (worst quality:2), (low quality:2), lowres, mutated hands",
       "image": [
-        "5",
+        "29",
         0
       ],
       "musev_predictor": [
@@ -209,13 +147,63 @@
       "title": "Video Combine 🎥🅥🅗🅢"
     }
   },
-  "23": {
+  "25": {
     "inputs": {
-      "Value": 768
+      "value": "masterpiece, high quality, sharp details, depth of field, depth zooming, animation, camera motion"
     },
-    "class_type": "Integer",
+    "class_type": "Eden_String",
     "_meta": {
-      "title": "Resolution"
+      "title": "Eden_String"
+    }
+  },
+  "26": {
+    "inputs": {
+      "prompt1": [
+        "13",
+        2
+      ],
+      "separator": " ",
+      "prompt2": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "SeargePromptCombiner",
+    "_meta": {
+      "title": "Prompt combiner"
+    }
+  },
+  "27": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "29": {
+    "inputs": {
+      "width": [
+        "27",
+        0
+      ],
+      "height": [
+        "27",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
     }
   }
 }
