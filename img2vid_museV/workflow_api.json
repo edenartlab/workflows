@@ -52,41 +52,6 @@
       "title": "RIFE VFI (recommend rife47 and rife49)"
     }
   },
-  "13": {
-    "inputs": {
-      "text_input": "",
-      "task": "detailed_caption",
-      "fill_mask": true,
-      "keep_model_loaded": false,
-      "max_new_tokens": 1024,
-      "num_beams": 3,
-      "do_sample": true,
-      "output_mask_select": "",
-      "image": [
-        "29",
-        0
-      ],
-      "florence2_model": [
-        "14",
-        0
-      ]
-    },
-    "class_type": "Florence2Run",
-    "_meta": {
-      "title": "Florence2Run"
-    }
-  },
-  "14": {
-    "inputs": {
-      "model": "microsoft/Florence-2-large",
-      "precision": "fp16",
-      "attention": "sdpa"
-    },
-    "class_type": "DownloadAndLoadFlorence2Model",
-    "_meta": {
-      "title": "DownloadAndLoadFlorence2Model"
-    }
-  },
   "20": {
     "inputs": {},
     "class_type": "MuseVPredictor V1 (comfyui_musev_evolved)",
@@ -107,10 +72,7 @@
       "context_stride": 1,
       "context_overlap": 4,
       "output_shift_first_frame": true,
-      "positive_prompt": [
-        "26",
-        0
-      ],
+      "positive_prompt": "(masterpiece, best quality, highres:1)",
       "negative_prompt": "(shutterstock:2), (watermark:2), text, ng_deepnegative_v1_75t, multiple heads, bad body, extra arms, blurry, deformed body, (worst quality:2), (low quality:2), lowres, mutated hands",
       "image": [
         "29",
@@ -145,32 +107,6 @@
     "class_type": "VHS_VideoCombine",
     "_meta": {
       "title": "Video Combine 🎥🅥🅗🅢"
-    }
-  },
-  "25": {
-    "inputs": {
-      "value": "masterpiece, high quality, sharp details, depth of field, depth zooming, animation, camera motion"
-    },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Eden_String"
-    }
-  },
-  "26": {
-    "inputs": {
-      "prompt1": [
-        "13",
-        2
-      ],
-      "separator": " ",
-      "prompt2": [
-        "25",
-        0
-      ]
-    },
-    "class_type": "SeargePromptCombiner",
-    "_meta": {
-      "title": "Prompt combiner"
     }
   },
   "27": {
