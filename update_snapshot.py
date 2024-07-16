@@ -1,11 +1,11 @@
 import os
 import json
 
-def update_workflow(original_workflow_path, updated_workflow_path, keys_to_update):
-    with open(original_workflow_path, "r") as f:
+def update_workflow(original_snapshot_path, updated_snapshot_path, keys_to_update):
+    with open(original_snapshot_path, "r") as f:
         original_workflow = json.load(f)
 
-    with open(updated_workflow_path, "r") as f:
+    with open(updated_snapshot_path, "r") as f:
         updated_workflow = json.load(f)
 
     for key in keys_to_update:
@@ -31,7 +31,7 @@ def update_workflow(original_workflow_path, updated_workflow_path, keys_to_updat
         else:
             print(f"Skipped {key} as it does not exist in both workflows")
         
-    output_workflow_path = original_workflow_path.replace(".json", "_updated.json")
+    output_workflow_path = original_snapshot_path.replace(".json", "_updated.json")
     with open(output_workflow_path, "w") as f:
         json.dump(original_workflow, f, indent=4)
     
@@ -45,8 +45,8 @@ if __name__ == "__main__":
     
     """
 
-    original_snapshot_path = "img2vid_museV/snapshot.json"
-    updated_snapshot_path  = "img2vid_museV/new_snapshot.json"
+    original_snapshot_path = "xhibit/remix/snapshot.json"
+    updated_snapshot_path  = "2024-07-12_02-41-28_snapshot.json"
 
 
     keys_to_update = [
@@ -54,4 +54,4 @@ if __name__ == "__main__":
             "git_custom_nodes"
             ]
     
-    update_workflow(original_workflow_path, updated_workflow_path, keys_to_update)
+    update_workflow(original_snapshot_path, updated_snapshot_path, keys_to_update)
