@@ -1,6 +1,6 @@
 {
-  "last_node_id": 29,
-  "last_link_id": 57,
+  "last_node_id": 30,
+  "last_link_id": 59,
   "nodes": [
     {
       "id": 7,
@@ -46,7 +46,7 @@
         "1": 46
       },
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -87,7 +87,7 @@
         "1": 198
       },
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -167,7 +167,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -225,103 +225,6 @@
       }
     },
     {
-      "id": 14,
-      "type": "DownloadAndLoadFlorence2Model",
-      "pos": [
-        -40,
-        -106
-      ],
-      "size": {
-        "0": 267.31121826171875,
-        "1": 106
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "florence2_model",
-          "type": "FL2MODEL",
-          "links": [
-            22
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DownloadAndLoadFlorence2Model"
-      },
-      "widgets_values": [
-        "microsoft/Florence-2-large",
-        "fp16",
-        "sdpa"
-      ]
-    },
-    {
-      "id": 13,
-      "type": "Florence2Run",
-      "pos": [
-        -38,
-        44
-      ],
-      "size": {
-        "0": 267.0408020019531,
-        "1": 284
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 57
-        },
-        {
-          "name": "florence2_model",
-          "type": "FL2MODEL",
-          "link": 22
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "caption",
-          "type": "STRING",
-          "links": [
-            43
-          ],
-          "shape": 3,
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Florence2Run"
-      },
-      "widgets_values": [
-        "",
-        "detailed_caption",
-        true,
-        false,
-        1024,
-        3,
-        true,
-        ""
-      ]
-    },
-    {
       "id": 25,
       "type": "Eden_String",
       "pos": [
@@ -333,7 +236,7 @@
         "1": 61.39679718017578
       },
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -365,13 +268,13 @@
         "1": 103.82532501220703
       },
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
           "name": "prompt1",
           "type": "STRING",
-          "link": 43,
+          "link": 59,
           "widget": {
             "name": "prompt1"
           }
@@ -417,7 +320,7 @@
         "1": 314
       },
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -445,79 +348,6 @@
       ]
     },
     {
-      "id": 29,
-      "type": "ImageResize+",
-      "pos": [
-        -301,
-        203
-      ],
-      "size": {
-        "0": 225.78781127929688,
-        "1": 170.25770568847656
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 55
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 53,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 54,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            56,
-            57
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        512,
-        512,
-        "lanczos",
-        "keep proportion",
-        "always",
-        32
-      ]
-    },
-    {
       "id": 27,
       "type": "Eden_Int",
       "pos": [
@@ -529,7 +359,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -562,7 +392,7 @@
         "1": 490.3740234375
       },
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -614,6 +444,127 @@
         "(masterpiece, best quality, highres:1),(1girl, solo:1),(beautiful face, soft skin, costume:1),(eye blinks:1.8),(head wave:1.3)",
         "(shutterstock:2), (watermark:2), text, ng_deepnegative_v1_75t, multiple heads, bad body, extra arms, blurry, deformed body, (worst quality:2), (low quality:2), lowres, mutated hands"
       ]
+    },
+    {
+      "id": 29,
+      "type": "ImageResize+",
+      "pos": [
+        -301,
+        203
+      ],
+      "size": {
+        "0": 225.78781127929688,
+        "1": 170.25770568847656
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 55
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 53,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 54,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            56,
+            58
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "lanczos",
+        "keep proportion",
+        "always",
+        32
+      ]
+    },
+    {
+      "id": 30,
+      "type": "CLIP_Interrogator",
+      "pos": [
+        -16,
+        103
+      ],
+      "size": [
+        231.38021105550416,
+        150
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "full_prompt",
+          "type": "STRING",
+          "links": [
+            59
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "blip_caption",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIP_Interrogator"
+      },
+      "widgets_values": [
+        "fast",
+        true,
+        true,
+        "clip_interrogator_prompt.txt"
+      ]
     }
   ],
   "links": [
@@ -632,14 +583,6 @@
       10,
       0,
       "IMAGE"
-    ],
-    [
-      22,
-      14,
-      0,
-      13,
-      1,
-      "FL2MODEL"
     ],
     [
       33,
@@ -664,14 +607,6 @@
       22,
       0,
       "IMAGE"
-    ],
-    [
-      43,
-      13,
-      2,
-      26,
-      0,
-      "STRING"
     ],
     [
       44,
@@ -722,22 +657,30 @@
       "IMAGE"
     ],
     [
-      57,
+      58,
       29,
       0,
-      13,
+      30,
       0,
       "IMAGE"
+    ],
+    [
+      59,
+      30,
+      0,
+      26,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6830134553650709,
+      "scale": 0.5644739300537773,
       "offset": [
-        720.7104829797801,
-        397.60455822839026
+        839.4670935010234,
+        422.09724016630133
       ]
     }
   },

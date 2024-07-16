@@ -12,6 +12,15 @@ parameters:
     node_id: 2
     field: inputs
     subfield: image
+- name: prompt
+  label: Prompt
+  description: Text prompt
+  type: string
+  default: masterpiece, best quality, highres
+  comfyui: 
+    node_id: 21
+    field: inputs
+    subfield: positive_prompt
 - name: resolution
   label: Resolution
   description: Resolution of the generated images in n_pixels (max(w,h)) (always a multiple of 64), recommended to just keep this at 768.
