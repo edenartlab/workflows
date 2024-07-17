@@ -44,7 +44,7 @@ parameters:
   label: Motion Strength
   description: How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion)
   type: float
-  default: 1.15
+  default: 1.2
   comfyui: 
     node_id: 16
     field: inputs
@@ -53,7 +53,7 @@ parameters:
   label: Control Strength
   description: How strong the video should adhere to the input image. 0.6 = default, increasing this value (to eg 0.8) also reduces video motion, recommended to leave at default. Lowering to eg 0.4 can improve output video quality at the cost of likeness to the input image.
   type: float
-  default: 0.6
+  default: 0.5
   comfyui: 
     node_id: 327
     field: inputs
