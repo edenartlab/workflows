@@ -1,5 +1,13 @@
 {
     "models": {
+        "zavychromaxl_v80": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/zavychromaxl_v80.safetensors",
+            "target": "models/checkpoints/zavychromaxl_v80.safetensors"
+        },
+        "hsxl_temporal_layers": {
+            "source": "https://huggingface.co/hotshotco/Hotshot-XL/resolve/main/hsxl_temporal_layers.f16.safetensors",
+            "target": "models/animatediff_models/hsxl_temporal_layers.f16.safetensors"
+        },
         "RealESRGAN_x2plus": {
             "source": "https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth",
             "target": "models/upscale_models/RealESRGAN_x2plus.pth"
@@ -8,6 +16,7 @@
             "source": "https://github.com/styler00dollar/VSGAN-tensorrt-docker/releases/download/models/rife47.pth",
             "target": "custom_nodes/ComfyUI-Frame-Interpolation/ckpts/rife/rife47.pth"
         }
+
     },
 
 
