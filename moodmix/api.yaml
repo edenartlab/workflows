@@ -59,9 +59,8 @@ parameters:
     subfield: text
 - name: negative_prompt
   label: negative prompt
-  description: Negative text prompt, what you do *not* want to generate
+  description: Negative text prompt, what you do *not* want to see in the image. Only add keywords here if you really want to make sure they do not show up in the generation.
   type: string
-  default: nsfw, nude, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality
   comfyui: 
     node_id: 7
     field: inputs
