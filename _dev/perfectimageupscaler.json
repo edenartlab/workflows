@@ -1,128 +1,7 @@
 {
-  "last_node_id": 40,
-  "last_link_id": 108,
+  "last_node_id": 41,
+  "last_link_id": 113,
   "nodes": [
-    {
-      "id": 3,
-      "type": "ImageUpscaleWithModel",
-      "pos": [
-        726,
-        494
-      ],
-      "size": {
-        "0": 241.79998779296875,
-        "1": 46
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "upscale_model",
-          "type": "UPSCALE_MODEL",
-          "link": 2
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 66
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            3
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageUpscaleWithModel"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 5,
-      "type": "ImageScaleBy",
-      "pos": [
-        1015,
-        483
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            71,
-            73,
-            97
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageScaleBy"
-      },
-      "widgets_values": [
-        "bilinear",
-        1
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 4,
-      "type": "UpscaleModelLoader",
-      "pos": [
-        324,
-        360
-      ],
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "UPSCALE_MODEL",
-          "type": "UPSCALE_MODEL",
-          "links": [
-            2
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "UpscaleModelLoader"
-      },
-      "widgets_values": [
-        "4x-AnimeSharp.pth"
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
     {
       "id": 6,
       "type": "ImpactMakeTileSEGS",
@@ -141,7 +20,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 71
+          "link": 110
         },
         {
           "name": "filter_in_segs_opt",
@@ -180,6 +59,308 @@
       "bgcolor": "#535"
     },
     {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        1004,
+        615
+      ],
+      "size": {
+        "0": 335.3074035644531,
+        "1": 58.96282196044922
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Image Defaults to 4x Upscale, Lower the Scale By Ratio to achieve smaller upscale resolutions\n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 23,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1050,
+        1050
+      ],
+      "size": {
+        "0": 238.201904296875,
+        "1": 109.61587524414062
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            102
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 22,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1050,
+        910
+      ],
+      "size": {
+        "0": 238.201904296875,
+        "1": 109.61587524414062
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            101
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "8k, hdr, detailed"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 39,
+      "type": "CR LoRA Stack",
+      "pos": [
+        285,
+        929
+      ],
+      "size": {
+        "0": 315,
+        "1": 342
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LORA_STACK",
+          "type": "LORA_STACK",
+          "links": [
+            104
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR LoRA Stack"
+      },
+      "widgets_values": [
+        "Off",
+        "None",
+        0,
+        0,
+        "Off",
+        "None",
+        0,
+        0,
+        "Off",
+        "None",
+        0,
+        0
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 4,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        324,
+        360
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 15,
+      "type": "Efficient Loader",
+      "pos": [
+        625,
+        912
+      ],
+      "size": {
+        "0": 400,
+        "1": 462
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": 104
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            92,
+            100
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            35
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            28,
+            29,
+            30,
+            93
+          ],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader"
+      },
+      "widgets_values": [
+        "dreamshaperXL_lightningDPMSDE.safetensors",
+        "sdxl_vae.safetensors",
+        -2,
+        "None",
+        1,
+        1,
+        "CLIP_POSITIVE",
+        "CLIP_NEGATIVE",
+        "none",
+        "comfy",
+        512,
+        512,
+        1
+      ],
+      "color": "#223322",
+      "bgcolor": "#335533",
+      "shape": 1
+    },
+    {
       "id": 1,
       "type": "LoadImage",
       "pos": [
@@ -191,7 +372,7 @@
         "1": 314
       },
       "flags": {},
-      "order": 1,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -214,25 +395,126 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "DALL·E 2024-06-02 14.33.12 - A ghost dragon decimating a hyper-dimensional landscape filled with QR codes and objects beyond comprehension. The scene is surreal and maximalist, wi.webp",
+        "flo.jpeg",
         "image"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
+      "id": 3,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        726,
+        494
+      ],
+      "size": [
+        226.8000030517578,
+        46
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            113
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 41,
+      "type": "ImageResize+",
+      "pos": [
+        1050,
+        326
+      ],
+      "size": [
+        262.1308084600603,
+        218
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 113
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            110,
+            111,
+            112
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        2048,
+        2048,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
+      ]
+    },
+    {
       "id": 37,
       "type": "IPAdapterModelHelper //Inspire",
       "pos": [
-        1296,
-        1450
+        1405,
+        1105
       ],
       "size": {
         "0": 342.5999755859375,
         "1": 294
       },
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -316,27 +598,34 @@
       ]
     },
     {
-      "id": 40,
-      "type": "Note",
+      "id": 25,
+      "type": "SaveImage",
       "pos": [
-        1004,
-        615
+        2592,
+        335
       ],
       "size": [
-        335.3074054915394,
-        58.96282200173596
+        639.2776297215751,
+        598.2629948939057
       ],
       "flags": {},
-      "order": 2,
+      "order": 13,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 36
+        }
+      ],
       "properties": {
-        "text": ""
+        "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "Image Defaults to 4x Upscale, Lower the Scale By Ratio to achieve smaller upscale resolutions\n"
+        "ComfyUI"
       ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 36,
@@ -366,7 +655,7 @@
         {
           "name": "reference_image",
           "type": "IMAGE",
-          "link": 97
+          "link": 111
         },
         {
           "name": "neg_image",
@@ -389,11 +678,11 @@
         "Node name for S&R": "ImpactIPAdapterApplySEGS"
       },
       "widgets_values": [
-        0.5,
+        0.7000000000000001,
         0.3,
         "original",
         0,
-        0.3,
+        0.5,
         false,
         false,
         1,
@@ -410,10 +699,10 @@
         2176,
         336
       ],
-      "size": [
-        352.0801194185201,
-        620
-      ],
+      "size": {
+        "0": 352.0801086425781,
+        "1": 620
+      },
       "flags": {},
       "order": 12,
       "mode": 0,
@@ -421,7 +710,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 73
+          "link": 112
         },
         {
           "name": "segs",
@@ -482,13 +771,13 @@
         384,
         true,
         1024,
-        480659148112446,
+        466977911896896,
         "randomize",
         4,
         1,
         "dpmpp_sde",
         "normal",
-        0.5,
+        0.2,
         5,
         true,
         true,
@@ -499,281 +788,6 @@
       ],
       "color": "#323",
       "bgcolor": "#535"
-    },
-    {
-      "id": 23,
-      "type": "CLIPTextEncode",
-      "pos": [
-        1050,
-        1050
-      ],
-      "size": {
-        "0": 238.201904296875,
-        "1": 109.61587524414062
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 29
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            102
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 22,
-      "type": "CLIPTextEncode",
-      "pos": [
-        1050,
-        910
-      ],
-      "size": {
-        "0": 238.201904296875,
-        "1": 109.61587524414062
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 28
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            101
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "8k, hdr, detailed"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 39,
-      "type": "CR LoRA Stack",
-      "pos": [
-        285,
-        929
-      ],
-      "size": {
-        "0": 315,
-        "1": 342
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "lora_stack",
-          "type": "LORA_STACK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LORA_STACK",
-          "type": "LORA_STACK",
-          "links": [
-            104
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "show_help",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CR LoRA Stack"
-      },
-      "widgets_values": [
-        "Off",
-        "None",
-        0,
-        0,
-        "Off",
-        "None",
-        0,
-        0,
-        "Off",
-        "None",
-        0,
-        0
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 15,
-      "type": "Efficient Loader",
-      "pos": [
-        625,
-        912
-      ],
-      "size": {
-        "0": 400,
-        "1": 462
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "lora_stack",
-          "type": "LORA_STACK",
-          "link": 104
-        },
-        {
-          "name": "cnet_stack",
-          "type": "CONTROL_NET_STACK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            92,
-            100
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CONDITIONING+",
-          "type": "CONDITIONING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "CONDITIONING-",
-          "type": "CONDITIONING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            35
-          ],
-          "shape": 3,
-          "slot_index": 4
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            28,
-            29,
-            30,
-            93
-          ],
-          "shape": 3,
-          "slot_index": 5
-        },
-        {
-          "name": "DEPENDENCIES",
-          "type": "DEPENDENCIES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Efficient Loader"
-      },
-      "widgets_values": [
-        "juggernautXL_v9Rdphoto2Lightning.safetensors",
-        "sdxl_vae.safetensors",
-        -2,
-        "None",
-        1,
-        1,
-        "CLIP_POSITIVE",
-        "CLIP_NEGATIVE",
-        "none",
-        "comfy",
-        512,
-        512,
-        1
-      ],
-      "color": "#223322",
-      "bgcolor": "#335533",
-      "shape": 1
-    },
-    {
-      "id": 25,
-      "type": "SaveImage",
-      "pos": [
-        2639,
-        302
-      ],
-      "size": {
-        "0": 315,
-        "1": 270
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 36
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
     }
   ],
   "links": [
@@ -784,14 +798,6 @@
       3,
       0,
       "UPSCALE_MODEL"
-    ],
-    [
-      3,
-      3,
-      0,
-      5,
-      0,
-      "IMAGE"
     ],
     [
       28,
@@ -842,22 +848,6 @@
       "IMAGE"
     ],
     [
-      71,
-      5,
-      0,
-      6,
-      0,
-      "IMAGE"
-    ],
-    [
-      73,
-      5,
-      0,
-      16,
-      0,
-      "IMAGE"
-    ],
-    [
       92,
       15,
       0,
@@ -880,14 +870,6 @@
       36,
       1,
       "IPADAPTER_PIPE"
-    ],
-    [
-      97,
-      5,
-      0,
-      36,
-      2,
-      "IMAGE"
     ],
     [
       100,
@@ -936,20 +918,51 @@
       16,
       1,
       "SEGS"
+    ],
+    [
+      110,
+      41,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      111,
+      41,
+      0,
+      36,
+      2,
+      "IMAGE"
+    ],
+    [
+      112,
+      41,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      113,
+      3,
+      0,
+      41,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
     {
       "title": "Relic's Perfect Image Upscaler",
       "bounding": [
-        266,
-        -54,
+        137,
+        -55,
         2763,
         277
       ],
       "color": "#3f789e",
-      "font_size": 200,
-      "locked": false
+      "font_size": 200
     },
     {
       "title": "Image Load + Upscale Size ",
@@ -960,8 +973,7 @@
         570
       ],
       "color": "#b58b2a",
-      "font_size": 24,
-      "locked": false
+      "font_size": 24
     },
     {
       "title": "Lora's and Ksampler",
@@ -972,8 +984,7 @@
         665
       ],
       "color": "#88A",
-      "font_size": 24,
-      "locked": false
+      "font_size": 24
     },
     {
       "title": "Tiling IPAdapter/ Sampling",
@@ -984,17 +995,16 @@
         801
       ],
       "color": "#a1309b",
-      "font_size": 24,
-      "locked": false
+      "font_size": 24
     }
   ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6588450000000005,
+      "scale": 0.8769226950000122,
       "offset": [
-        112.56229079990072,
-        188.24160122456655
+        111.44484779764349,
+        -289.9842434894123
       ]
     }
   },
