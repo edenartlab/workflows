@@ -40,7 +40,7 @@ parameters:
   description: Number of frames to generate (num_frames/12 = length of the output video in seconds), should usually be around 24-64 frames. (More wont really create that much extra interesting motion...)
   type: int
   default: 24
-  minimum: 12
+  minimum: 16
   maximum: 192
   comfyui: 
     node_id: 511
@@ -51,8 +51,8 @@ parameters:
   description: How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion)
   type: float
   default: 1.2
-  minimum: 0.5
-  maximum: 2.0
+  minimum: 0.75
+  maximum: 1.5
   comfyui: 
     node_id: 16
     field: inputs
@@ -63,7 +63,7 @@ parameters:
   type: float
   default: 0.5
   minimum: 0.0
-  maximum: 1.0
+  maximum: 1.2
   comfyui: 
     node_id: 327
     field: inputs
