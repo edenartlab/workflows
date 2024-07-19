@@ -3,7 +3,6 @@ description: Inpaint (and replace) a region or object in an image using a maskin
 tip: This workflow edits a specific region in the given image by first applying the masking prompt to highlight a specific region of the image, and then applying the inpainting prompt to fill (re-draw) in the highlighted region.
 output_type: image
 handler: comfyui
-private: false
 comfyui_output_node_id: 33
 parameters:
 - name: image

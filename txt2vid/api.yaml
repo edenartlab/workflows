@@ -3,7 +3,6 @@ description: Generate a video from text
 tip: Use this to make videos from text prompts. It's better to use this instead of lerp because it doesn't use AnimateDiff.
 output_type: video
 handler: comfyui
-private: false
 comfyui_output_node_id: 329
 parameters:
 - name: prompt
@@ -95,7 +94,8 @@ parameters:
     subfield: float_val
 - name: closed_loop
   label: Closed Loop Animation
-  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
+  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. 
+  tip: For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
   type: bool
   default: true
   comfyui: 

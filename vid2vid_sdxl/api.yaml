@@ -3,6 +3,7 @@ description: Use a style image to apply style-transfer to a video
 tip: This will create a new video with similar shapes / motions as the input video but a different texture. It can be used to create stylistic re-interpretations of input videos.
 output_type: video
 handler: comfyui
+private: false
 comfyui_output_node_id: 109
 parameters:
 - name: image
@@ -45,7 +46,8 @@ parameters:
     subfield: strength
 - name: closed_loop
   label: Closed Loop Animation
-  description: Wether or not to create a seamlessly looping animation where end frame is identical to starting frame. For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
+  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. 
+  tip: For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
   type: bool
   default: false
   comfyui: 
