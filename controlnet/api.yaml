@@ -1,19 +1,9 @@
-Questions: 
-- how to handle lists
-- how to handle bools vs switch (on off)
-- combo input
-- should we use a preprocessor with controls?
-- check naming
-- model version
----
-
 name: Controlnet
 description: Use controlnet guidance with an input image to direct the shape of the composition 
 tip: By using Canny to guide by Edge Detection, Midas for depth map estimation, or other controlnets such as scribble to guide by a crude line drawing, the composition of the image can be made to adhere to the shape of an input image, transferring the positioning to the output
 output_type: image
 handler: comfyui
 comfyui_output_node_id: 2
-
 parameters:
 - name: positive
   label: Prompt
@@ -33,15 +23,6 @@ parameters:
     node_id: 1
     field: inputs
     subfield: text
-# - name: model_version
-#   label: model_version
-#   description: choose the model version base we are employing, and set resolution variables based on this
-#   type: string
-#   default: SDXL 1024px
-#   comfyui: 
-#     node_id: 1
-#     field: inputs
-#     subfield: model version
 - name: width
   label: Width
   description: Width in pixels
@@ -78,24 +59,6 @@ parameters:
     node_id: 1
     field: inputs
     subfield: seed
-# - name: lora
-#   label: LoRA
-#   description: Use a LoRA finetune on top of the base model.
-#   type: lora
-#   comfyui: 
-#     node_id: 1
-#     field: inputs
-#     subfield: lora_name
-# - name: lora_strength
-#   label: LoRA strength
-#   description: Strength of the LoRA
-#   tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
-#   type: float
-#   default: 0.5
-#   comfyui: 
-#     node_id: 1
-#     field: inputs
-#     subfield: strength_model, strength_clip
 - name: init_image
   label: Starting image
   description: Initial image from which to start diffusion process
@@ -158,7 +121,7 @@ parameters:
 - name: preprocessor
   label: Preprocessor
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
-  tip:  'depth_midas' will recreate the approximate depth of your input scene, and is best for 3 dimensional compositions. 'canny' creates strong edge adherance to the shape of your image, whereas 'scribble' will create guidance towards a rougher shape of your input image. 
+  tip:  depth_midas will recreate the approximate depth of your input scene, and is best for 3 dimensional compositions. canny creates strong edge adherance to the shape of your image, whereas scribble will create guidance towards a rougher shape of your input image. 
   type: string
   default: canny
   choices: [canny, depth_midas, scribble, dwpose]
