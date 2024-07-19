@@ -1,0 +1,704 @@
+{
+  "last_node_id": 57,
+  "last_link_id": 94,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        233,
+        606
+      ],
+      "size": {
+        "0": 315,
+        "1": 314.0000305175781
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1,
+            36
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "fashion-happy-portrait-man-studio-with-confidence-attractive-crossed-arms-pride-confident-face-isolated-handsome-young-male-person-with-trendy-clothes-white-background_590464-197407.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "BboxDetectorSEGS",
+      "pos": [
+        634,
+        253
+      ],
+      "size": {
+        "0": 253.35008239746094,
+        "1": 212
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS",
+          "type": "SEGS",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BboxDetectorSEGS"
+      },
+      "widgets_values": [
+        0.5,
+        10,
+        5,
+        10,
+        "face"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "ImpactDecomposeSEGS",
+      "pos": [
+        961,
+        259
+      ],
+      "size": {
+        "0": 180.68357849121094,
+        "1": 46.38345718383789
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS_HEADER",
+          "type": "SEGS_HEADER",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "SEG_ELT",
+          "type": "SEG_ELT",
+          "links": [
+            7
+          ],
+          "shape": 6,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactDecomposeSEGS"
+      }
+    },
+    {
+      "id": 11,
+      "type": "ImpactFrom_SEG_ELT",
+      "pos": [
+        1193,
+        286
+      ],
+      "size": {
+        "0": 228.39999389648438,
+        "1": 166
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "seg_elt",
+          "type": "SEG_ELT",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "seg_elt",
+          "type": "SEG_ELT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cropped_image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "cropped_mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "crop_region",
+          "type": "SEG_ELT_crop_region",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "bbox",
+          "type": "SEG_ELT_bbox",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "control_net_wrapper",
+          "type": "SEG_ELT_control_net_wrapper",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "confidence",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "label",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactFrom_SEG_ELT"
+      }
+    },
+    {
+      "id": 13,
+      "type": "ImpactFrom_SEG_ELT_bbox",
+      "pos": [
+        1451,
+        372
+      ],
+      "size": {
+        "0": 210,
+        "1": 86
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bbox",
+          "type": "SEG_ELT_bbox",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "left",
+          "type": "INT",
+          "links": [
+            79
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "top",
+          "type": "INT",
+          "links": [
+            80
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "right",
+          "type": "INT",
+          "links": [
+            81
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "bottom",
+          "type": "INT",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactFrom_SEG_ELT_bbox"
+      }
+    },
+    {
+      "id": 56,
+      "type": "BBoxCrop",
+      "pos": [
+        1821,
+        365
+      ],
+      "size": {
+        "0": 246.72775268554688,
+        "1": 163.55023193359375
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "left",
+          "type": 0,
+          "link": 79,
+          "widget": {
+            "name": "left"
+          }
+        },
+        {
+          "name": "top",
+          "type": 0,
+          "link": 80,
+          "widget": {
+            "name": "top"
+          }
+        },
+        {
+          "name": "right",
+          "type": 0,
+          "link": 81,
+          "widget": {
+            "name": "right"
+          }
+        },
+        {
+          "name": "bottom",
+          "type": 0,
+          "link": 82,
+          "widget": {
+            "name": "bottom"
+          }
+        },
+        {
+          "name": "crop_width",
+          "type": "INT",
+          "link": 93,
+          "widget": {
+            "name": "crop_width"
+          }
+        },
+        {
+          "name": "crop_height",
+          "type": "INT",
+          "link": 94,
+          "widget": {
+            "name": "crop_height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            83
+          ],
+          "shape": 3
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            88
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BBoxCrop"
+      },
+      "widgets_values": [
+        0,
+        0,
+        100,
+        100,
+        1280,
+        1280
+      ]
+    },
+    {
+      "id": 26,
+      "type": "ImageCrop",
+      "pos": [
+        2280,
+        332
+      ],
+      "size": {
+        "0": 210,
+        "1": 114
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 36
+        },
+        {
+          "name": "x",
+          "type": "INT",
+          "link": 83,
+          "widget": {
+            "name": "x"
+          }
+        },
+        {
+          "name": "y",
+          "type": "INT",
+          "link": 88,
+          "widget": {
+            "name": "y"
+          }
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 89,
+          "widget": {
+            "name": "width"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 92,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        1280,
+        1280,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 34,
+      "type": "PreviewImage",
+      "pos": [
+        2547,
+        336
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 37
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 5,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        230,
+        260
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "bbox/face_yolov8m.pt"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "Primitive integer [Crystools]",
+      "pos": [
+        629,
+        522
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            89,
+            92,
+            93,
+            94
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Primitive integer [Crystools]"
+      },
+      "widgets_values": [
+        156
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      1,
+      "IMAGE"
+    ],
+    [
+      2,
+      5,
+      0,
+      2,
+      0,
+      "BBOX_DETECTOR"
+    ],
+    [
+      6,
+      2,
+      0,
+      9,
+      0,
+      "SEGS"
+    ],
+    [
+      7,
+      9,
+      1,
+      11,
+      0,
+      "SEG_ELT"
+    ],
+    [
+      9,
+      11,
+      4,
+      13,
+      0,
+      "SEG_ELT_bbox"
+    ],
+    [
+      36,
+      1,
+      0,
+      26,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      26,
+      0,
+      34,
+      0,
+      "IMAGE"
+    ],
+    [
+      79,
+      13,
+      0,
+      56,
+      0,
+      "INT"
+    ],
+    [
+      80,
+      13,
+      1,
+      56,
+      1,
+      "INT"
+    ],
+    [
+      81,
+      13,
+      2,
+      56,
+      2,
+      "INT"
+    ],
+    [
+      82,
+      13,
+      3,
+      56,
+      3,
+      "INT"
+    ],
+    [
+      83,
+      56,
+      0,
+      26,
+      1,
+      "INT"
+    ],
+    [
+      88,
+      56,
+      1,
+      26,
+      2,
+      "INT"
+    ],
+    [
+      89,
+      57,
+      0,
+      26,
+      3,
+      "INT"
+    ],
+    [
+      92,
+      57,
+      0,
+      26,
+      4,
+      "INT"
+    ],
+    [
+      93,
+      57,
+      0,
+      56,
+      4,
+      "INT"
+    ],
+    [
+      94,
+      57,
+      0,
+      56,
+      5,
+      "INT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.3310000000000004,
+      "offset": {
+        "0": -102.13282775878906,
+        "1": 194.34246826171875
+      }
+    }
+  },
+  "version": 0.4
+}
