@@ -5,7 +5,7 @@ output_type: image
 handler: comfyui
 comfyui_output_node_id: 2
 parameters:
-- name: positive
+- name: prompt
   label: Prompt
   description: Text prompt
   type: string
@@ -13,7 +13,7 @@ parameters:
   comfyui: 
     node_id: 1
     field: inputs
-    subfield: text
+    subfield: positive
 - name: negative
   label: Negative prompt
   description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
@@ -21,7 +21,7 @@ parameters:
   comfyui: 
     node_id: 1
     field: inputs
-    subfield: text
+    subfield: negative
 - name: width
   label: Width
   description: Width in pixels
@@ -51,7 +51,7 @@ parameters:
   description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
   tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
   type: int
-  default: -1
+  default: random
   minimum: 0
   maximum: 10000000000000000
   comfyui: 
@@ -125,29 +125,9 @@ parameters:
   default: canny
   choices: [canny, depth_midas, scribble, dwpose]
   comfyui: 
-    node_id: 14
+    node_id: 5
     field: inputs
     subfield: preprocessor_override
-- name: switch
-  label: ControlNet Active
-  description: master toggle enabling controlnet stack
-  tip:  leave on to use controlnet, toggle to 'Off' if controlnet guidance is not desired. do not use if no init image is provided
-  type: string
-  default: On
-  comfyui: 
-    node_id: 16
-    field: inputs
-    subfield: switch
-- name: switch_1
-  label: ControlNet1 Active
-  description: enable or bypass the controlnet in slot 1
-  tip:  toggle to off to bypass the slot 1 controlnet model in the stack
-  type: string
-  default: On
-  comfyui: 
-    node_id: 15
-    field: inputs
-    subfield: switch_1
 - name: controlnet_strength_1
   label: Controlnet Strength 1
   description: set the guidance strength of the controlnet model in slot 1
