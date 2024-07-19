@@ -66,6 +66,18 @@ parameters:
     node_id: 198
     field: inputs
     subfield: mode
+- name: motion_scale
+  label: Motion Scale
+  description: Motion scale for the animation, determines how much motion will be in the final video
+  tip: The default value of 1.1 is good for most cases. Lowering to eg 0.9 will result in very subtle motion, increasing to eg 1.2 will result in more motion. Going above 1.25 is almost never desirable.
+  type: float
+  default: 1.1
+  minimum: 0.8
+  maximum: 1.4
+  comfyui: 
+    node_id: 30
+    field: inputs
+    subfield: motion_scale
 - name: invert_motion
   label: Invert Motion Mask
   description: Inverts the motion mask (moving inwards instead of outwards, up instead of down etc)
