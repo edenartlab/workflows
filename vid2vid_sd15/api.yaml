@@ -3,6 +3,7 @@ description: Use a style image to apply style-transfer to a video
 tip: This will create a new video with similar shapes / motions as the input video but a different texture. It can be used to create stylistic re-interpretations of input videos.
 output_type: video
 handler: comfyui
+private: false
 comfyui_output_node_id: 237
 parameters:
 - name: image
@@ -69,6 +70,8 @@ parameters:
   description: How strong the texture-motion should be in the video (1.0 is very small motion, 1.1 is default, 1.25 is a lot of motion) (this motion is generated on top of the driving video's base motion)
   type: float
   default: 1.1
+  minimum: 0.5
+  maximum: 1.3
   comfyui: 
     node_id: 457
     field: inputs

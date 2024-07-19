@@ -3,6 +3,7 @@ description: Generate an image from text 2
 tip: This is the most basic and common function which generates an image from text a prompt
 output_type: image
 handler: comfyui
+private: false
 comfyui_output_node_id: 9
 parameters:
 - name: prompt
@@ -27,7 +28,7 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
-  default: 896
+  default: 1024
   minimum: 256
   maximum: 2048
   step: 8
@@ -39,7 +40,7 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
-  default: 512
+  default: 1024
   minimum: 256
   maximum: 2048
   step: 8
@@ -73,6 +74,8 @@ parameters:
   tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
   type: float
   default: 0.5
+  minimum: 0.0
+  maximum: 1.5
   comfyui: 
     node_id: 10
     field: inputs
@@ -91,6 +94,8 @@ parameters:
   tip: Decreasing denoise strength increases the influence of the init image
   type: float
   default: 1.0
+  minimum: 0.0
+  maximum: 1.0
   comfyui: 
     node_id: 3
     field: inputs

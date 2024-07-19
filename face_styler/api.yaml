@@ -1,8 +1,9 @@
 name: face styler
 description: Create a stylized picture of a person 
 tip: This pipeline takes an input picture of a person to extract their identity (using pulID) and a style image to extract stylistic elements / textures. It then generates an image of the same person in the referenced style. This workflow also takes an optional input prompt. By setting the style strength to zero and writing a good prompt, this pipeline can also be used to place the person in a specific situation without applying the style from the image, just using a prompt!
-output_type: image
 handler: comfyui
+private: false
+output_type: image
 comfyui_output_node_id: 74
 parameters:
 - name: person_image
@@ -36,6 +37,8 @@ parameters:
   description: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
   type: float
   default: 0.8
+  minimum: 0.0
+  maximum: 1.0
   comfyui: 
     node_id: 63
     field: inputs
@@ -45,6 +48,8 @@ parameters:
   description: Width of the generated image in n_pixels
   type: int
   default: 1024
+  minimum: 256
+  maximum: 2048
   comfyui: 
     node_id: 5
     field: inputs
@@ -54,6 +59,8 @@ parameters:
   description: Height of the generated image in n_pixels
   type: int
   default: 1024
+  minimum: 256
+  maximum: 2048
   comfyui: 
     node_id: 5
     field: inputs

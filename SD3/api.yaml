@@ -3,6 +3,7 @@ description: Text-to-Image with SD3 (medium)
 tip: This pipeline takes a single prompt and turns that into an amazing image using StableDiffusion3
 output_type: image
 handler: comfyui
+private: false
 comfyui_output_node_id: 273
 parameters:
 - name: prompt
@@ -18,6 +19,8 @@ parameters:
   description: Width of the generated image in n_pixels
   type: int
   default: 1024
+  minimum: 256
+  maximum: 2048
   comfyui: 
     node_id: 135
     field: inputs
@@ -27,6 +30,8 @@ parameters:
   description: Height of the generated image in n_pixels
   type: int
   default: 1024
+  minimum: 256
+  maximum: 2048
   comfyui: 
     node_id: 135
     field: inputs

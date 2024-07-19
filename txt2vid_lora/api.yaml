@@ -3,6 +3,7 @@ description: Generate a video from a prompt, while also loading a custom SD15 Lo
 tip: Use this to make videos from text prompts that also needs a custom referenced style model. Uses AnimateDiff for the animation.
 output_type: video
 handler: comfyui
+private: false
 comfyui_output_node_id: 32
 parameters:
 - name: prompt
@@ -113,3 +114,12 @@ parameters:
     node_id: 13
     field: inputs
     subfield: motion_scale
+- name: closed_loop
+  label: Closed Loop Animation
+  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
+  type: bool
+  default: true
+  comfyui: 
+    node_id: 29
+    field: inputs
+    subfield: closed_loop
