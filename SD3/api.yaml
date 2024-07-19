@@ -18,6 +18,8 @@ parameters:
   description: Width of the generated image in n_pixels
   type: int
   default: 1024
+  minimum: 256
+  maximum: 2048
   comfyui: 
     node_id: 135
     field: inputs
@@ -27,6 +29,8 @@ parameters:
   description: Height of the generated image in n_pixels
   type: int
   default: 1024
+  minimum: 256
+  maximum: 2048
   comfyui: 
     node_id: 135
     field: inputs

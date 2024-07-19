@@ -72,8 +72,6 @@ parameters:
   tip: Decreasing denoise strength increases the influence of the init image
   type: float
   default: 1.0
-  minimum: 0.0
-  maximum: 1.0
   comfyui: 
     node_id: 1
     field: inputs
@@ -84,8 +82,6 @@ parameters:
   tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image, or are using a specialized model.
   type: float
   default: 30
-  minimum: 1
-  maximum: 50
   comfyui: 
     node_id: 1
     field: inputs
@@ -137,8 +133,6 @@ parameters:
   tip:  a good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
   type: float
   default: .6
-  minimum: 0.0
-  maximum: 1.5
   comfyui: 
     node_id: 15
     field: inputs
@@ -149,7 +143,6 @@ parameters:
   tip:  .jpg is good unless otherwise required by the workflow, for instance background removal will require .png for alpha transparency
   type: string
   default: .jpg
-  choices: [.jpg, .png]
   comfyui: 
     node_id: 2
     field: inputs

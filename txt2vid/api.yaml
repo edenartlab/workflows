@@ -26,7 +26,7 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
-  default: 1280
+  default: 1024
   minimum: 256
   maximum: 2048
   step: 64
@@ -38,7 +38,7 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
-  default: 896
+  default: 576
   minimum: 256
   maximum: 2048
   step: 64
@@ -50,7 +50,7 @@ parameters:
   label: Number of frames
   description: Number of video frames to generate (controls the duration of the video together with the framerate, which should usually be kept fixed at 24). So in general, the final video length will be 2 * n_frames / 24 seconds.
   type: int
-  default: 78
+  default: 64
   minimum: 24
   maximum: 128
   step: 8
@@ -92,3 +92,13 @@ parameters:
     node_id: 330
     field: inputs
     subfield: float_val
+- name: closed_loop
+  label: Closed Loop Animation
+  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. 
+  tip: For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
+  type: bool
+  default: true
+  comfyui: 
+    node_id: 279
+    field: inputs
+    subfield: closed_loop

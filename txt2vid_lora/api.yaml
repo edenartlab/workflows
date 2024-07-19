@@ -113,3 +113,13 @@ parameters:
     node_id: 13
     field: inputs
     subfield: motion_scale
+- name: closed_loop
+  label: Closed Loop Animation
+  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. 
+  tip: For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
+  type: bool
+  default: true
+  comfyui: 
+    node_id: 29
+    field: inputs
+    subfield: closed_loop
