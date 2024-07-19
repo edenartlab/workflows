@@ -1,0 +1,285 @@
+{
+  "last_node_id": 29,
+  "last_link_id": 38,
+  "nodes": [
+    {
+      "id": 29,
+      "type": "PreViewVideo",
+      "pos": [
+        1511,
+        240
+      ],
+      "size": {
+        "0": 210,
+        "1": 842
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 35
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreViewVideo"
+      },
+      "widgets_values": [
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        },
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        },
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        },
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        },
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "type": "LoadAudio",
+      "pos": [
+        149,
+        650
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "do-the-trick.mp3",
+        "Audio",
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "LoadImagePath",
+      "pos": [
+        186.79112865526383,
+        213.9177497486035
+      ],
+      "size": [
+        315,
+        294.0000057220459
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImagePath"
+      },
+      "widgets_values": [
+        "Eden-drmbt-male model posing on the beach of the salton sea_ sports illustrated swimsuit edition-65a05b1346eefdd555c57ad0 (2).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "VExpress",
+      "pos": [
+        1132,
+        363
+      ],
+      "size": {
+        "0": 315,
+        "1": 506
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ref_img",
+          "type": "IMAGE",
+          "link": 36,
+          "slot_index": 0
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 37
+        },
+        {
+          "name": "target_video",
+          "type": "VIDEO",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            35
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VExpress"
+      },
+      "widgets_values": [
+        "naive_retarget",
+        "cuda",
+        0,
+        "fp16",
+        2,
+        16000,
+        512,
+        512,
+        30,
+        1876,
+        "randomize",
+        30,
+        3.5,
+        12,
+        1,
+        4,
+        0.95,
+        3
+      ]
+    },
+    {
+      "id": 27,
+      "type": "LoadVideo",
+      "pos": [
+        675,
+        421
+      ],
+      "size": {
+        "0": 315,
+        "1": 403
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "TDMovieOut.0.mp4",
+        "Video",
+        {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        }
+      ]
+    }
+  ],
+  "links": [
+    [
+      35,
+      28,
+      0,
+      29,
+      0,
+      "VIDEO"
+    ],
+    [
+      36,
+      25,
+      0,
+      28,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      26,
+      0,
+      28,
+      1,
+      "AUDIO"
+    ],
+    [
+      38,
+      27,
+      0,
+      28,
+      2,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6727499949325667,
+      "offset": {
+        "0": 544.3287421899446,
+        "1": 204.1266477374796
+      }
+    }
+  },
+  "version": 0.4
+}
