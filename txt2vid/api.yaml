@@ -9,6 +9,7 @@ parameters:
   label: Prompt
   description: Text prompt
   type: string
+  required: true
   comfyui: 
     node_id: 290
     field: inputs
@@ -26,6 +27,7 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
@@ -38,6 +40,7 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
+  required: true
   default: 576
   minimum: 256
   maximum: 2048

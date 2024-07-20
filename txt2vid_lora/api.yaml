@@ -10,6 +10,7 @@ parameters:
   description: Text prompt which also triggers the style model (LoRa) token
   tip: The LoRa should be triggered by constructing a prompt like this, 'in the style of (embedding:lora_embedding_name:0.5), rest of the prompt'. The number here is the lora_strength of the LoRa model, usually values between 0.3 and 0.7 are ideal.
   type: string
+  required: true
   comfyui: 
     node_id: 6
     field: inputs
@@ -27,6 +28,7 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
+  required: true
   default: 512
   minimum: 256
   maximum: 1024
@@ -39,6 +41,7 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
+  required: true
   default: 512
   minimum: 256
   maximum: 1024
@@ -86,6 +89,7 @@ parameters:
   label: LoRA
   description: Use a LoRA finetune on top of the base model. Important, this must be a SD15 LoRa model (SDXL and SD3 LoRa's will not work since this uses AnimateDiff)
   type: lora
+  required: true
   comfyui: 
     node_id: 10
     field: inputs
@@ -95,6 +99,7 @@ parameters:
   description: Strength of the LoRA
   tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
   type: float
+  required: true
   default: 0.5
   minimum: 0.0
   maximum: 1.0

@@ -9,6 +9,7 @@ parameters:
   label: Style Image
   description: Style Image
   type: image
+  required: true
   comfyui: 
     node_id: 341
     field: inputs
@@ -17,6 +18,7 @@ parameters:
   label: Input video
   description: Input video that is used as source of shape/motion
   type: video
+  required: true
   comfyui: 
     node_id: 238
     field: inputs

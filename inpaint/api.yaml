@@ -9,6 +9,7 @@ parameters:
   label: Image
   description: Input image to inpaint a region of
   type: image
+  required: true
   comfyui: 
     node_id: 11
     field: inputs
@@ -18,6 +19,7 @@ parameters:
   description: Textual description of the region to inpaint. This prompt will be used to highlight the region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences.
   tip: Some examples of good masking prompts are 'background', 'face', 'roof of building', 'hair, headwear, hat', ...
   type: string
+  required: true
   comfyui: 
     node_id: 82
     field: inputs
@@ -26,6 +28,7 @@ parameters:
   label: inpainting prompt
   description: Positive text prompt, what you want to generate. This prompt will be used to inpaint the region highlighted by the masking prompt.
   type: string
+  required: true
   comfyui: 
     node_id: 6
     field: inputs

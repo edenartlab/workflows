@@ -9,6 +9,7 @@ parameters:
   label: image of person
   description: Make sure the face is not too small in the picture
   type: image
+  required: true
   comfyui: 
     node_id: 12
     field: inputs
@@ -17,6 +18,7 @@ parameters:
   label: style image
   description: Stylistic image of an aesthetic style, texture or visual content you want to apply to the person
   type: image
+  required: true
   comfyui: 
     node_id: 48
     field: inputs
@@ -35,6 +37,7 @@ parameters:
   label: Strength of the style image (through IP_Adapter)
   description: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
   type: float
+  required: true
   default: 0.8
   minimum: 0.0
   maximum: 1.0
