@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "ckpt_name": "juggernaut_v6.safetensors",
+      "ckpt_name": "juggernautXL_version6Rundiffusion.safetensors",
       "vae_name": "baked VAE",
       "model_version": "SDXL 1024px",
       "config_name": "none",
@@ -94,10 +94,39 @@
       "title": "SD Prompt Saver"
     }
   },
+  "3": {
+    "inputs": {
+      "image": "0.000000_00000.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Controlnet Input"
+    }
+  },
+  "5": {
+    "inputs": {
+      "preprocessor": "canny",
+      "sd_version": "sdxl",
+      "resolution": [
+        "14",
+        0
+      ],
+      "preprocessor_override": "None",
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "AV_ControlNetPreprocessor",
+    "_meta": {
+      "title": "ControlNet Preprocessor"
+    }
+  },
   "6": {
     "inputs": {
       "images": [
-        "13",
+        "5",
         0
       ]
     },
@@ -145,11 +174,11 @@
         0
       ],
       "positive": [
-        "99",
+        "16",
         0
       ],
       "negative": [
-        "99",
+        "16",
         1
       ]
     },
@@ -180,7 +209,10 @@
         "9",
         14
       ],
-      "denoise": 1,
+      "denoise": [
+        "1",
+        9
+      ],
       "model": [
         "9",
         1
@@ -230,7 +262,7 @@
         0
       ],
       "on_false": [
-        "83",
+        "3",
         0
       ]
     },
@@ -254,6 +286,54 @@
     "class_type": "ImpactMinMax",
     "_meta": {
       "title": "ImpactMinMax"
+    }
+  },
+  "15": {
+    "inputs": {
+      "switch_1": "On",
+      "controlnet_1": "controlnet-union-sdxl-1.0\\diffusion_pytorch_model.safetensors",
+      "controlnet_strength_1": 0.6,
+      "start_percent_1": 0,
+      "end_percent_1": 1,
+      "switch_2": "Off",
+      "controlnet_2": "None",
+      "controlnet_strength_2": 1,
+      "start_percent_2": 0,
+      "end_percent_2": 1,
+      "switch_3": "Off",
+      "controlnet_3": "None",
+      "controlnet_strength_3": 1,
+      "start_percent_3": 0,
+      "end_percent_3": 1,
+      "image_1": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "CR Multi-ControlNet Stack",
+    "_meta": {
+      "title": "🕹️ CR Multi-ControlNet Stack"
+    }
+  },
+  "16": {
+    "inputs": {
+      "switch": "On",
+      "base_positive": [
+        "7",
+        4
+      ],
+      "base_negative": [
+        "7",
+        5
+      ],
+      "controlnet_stack": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "CR Apply Multi-ControlNet",
+    "_meta": {
+      "title": "🕹️ CR Apply Multi-ControlNet"
     }
   },
   "19": {
@@ -316,11 +396,11 @@
         4
       ],
       "positive": [
-        "51",
+        "23",
         0
       ],
       "negative": [
-        "65",
+        "24",
         0
       ],
       "latent": [
@@ -371,14 +451,60 @@
         "1",
         21
       ],
+      "text_pos_l": [
+        "23",
+        1
+      ],
       "text_neg_g": [
         "1",
         22
+      ],
+      "text_neg_l": [
+        "24",
+        1
       ]
     },
     "class_type": "Context Big (rgthree)",
     "_meta": {
       "title": "Context Big (rgthree)"
+    }
+  },
+  "23": {
+    "inputs": {
+      "mode": "Noodle Soup Prompts",
+      "noodle_key": "__",
+      "seed": 309103291933624,
+      "text": [
+        "1",
+        21
+      ],
+      "clip": [
+        "1",
+        3
+      ]
+    },
+    "class_type": "CLIPTextEncode (NSP)",
+    "_meta": {
+      "title": "CLIPTextEncode (NSP) Prompt"
+    }
+  },
+  "24": {
+    "inputs": {
+      "mode": "Noodle Soup Prompts",
+      "noodle_key": "__",
+      "seed": 235884607650855,
+      "text": [
+        "1",
+        22
+      ],
+      "clip": [
+        "1",
+        3
+      ]
+    },
+    "class_type": "CLIPTextEncode (NSP)",
+    "_meta": {
+      "title": "CLIPTextEncode (NSP) Prompt"
     }
   },
   "25": {
@@ -437,7 +563,7 @@
   },
   "29": {
     "inputs": {
-      "image": "black_dummy.jpg",
+      "image": "0.000000_00000.jpg",
       "upload": "image"
     },
     "class_type": "Load image with metadata [Crystools]",
@@ -675,96 +801,6 @@
     "class_type": "ImageResize+",
     "_meta": {
       "title": "🔧 Image Resize"
-    }
-  },
-  "51": {
-    "inputs": {
-      "text": [
-        "1",
-        21
-      ],
-      "clip": [
-        "1",
-        3
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "65": {
-    "inputs": {
-      "text": [
-        "1",
-        22
-      ],
-      "clip": [
-        "1",
-        3
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "83": {
-    "inputs": {
-      "color": "#000000",
-      "width": [
-        "42",
-        1
-      ],
-      "height": [
-        "42",
-        2
-      ]
-    },
-    "class_type": "Colored Image (mtb)",
-    "_meta": {
-      "title": "Colored Image (mtb)"
-    }
-  },
-  "99": {
-    "inputs": {
-      "positive": [
-        "7",
-        4
-      ],
-      "negative": [
-        "7",
-        5
-      ],
-      "cnet_stack": [
-        "100",
-        0
-      ]
-    },
-    "class_type": "Apply ControlNet Stack",
-    "_meta": {
-      "title": "Apply ControlNet Stack"
-    }
-  },
-  "100": {
-    "inputs": {
-      "control_net_name": "controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors",
-      "strength": 0.6,
-      "preprocessor": "canny",
-      "control_net_override": "None",
-      "resolution": [
-        "14",
-        0
-      ],
-      "enabled": true,
-      "image": [
-        "13",
-        0
-      ]
-    },
-    "class_type": "AV_ControlNetEfficientStackerSimple",
-    "_meta": {
-      "title": "ControlNet Stacker"
     }
   }
 }

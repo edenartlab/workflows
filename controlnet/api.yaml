@@ -26,6 +26,7 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
@@ -38,7 +39,8 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
-  default: 512
+  required: true
+  default: 1024
   minimum: 256
   maximum: 2048
   step: 8
@@ -62,10 +64,21 @@ parameters:
   label: Starting image
   description: Initial image from which to start diffusion process
   type: image
+  required: true
   comfyui: 
     node_id: 28
     field: inputs
     subfield: image
+- name: dummy_image
+  label: dummy_image
+  description: dummy image for text2vid
+  type: image
+  hidden: true
+  comfyui: 
+    node_id: 29
+    field: inputs
+    subfield: image
+
 - name: denoise
   label: Denoise strength
   description: Strength of denoising
@@ -75,7 +88,7 @@ parameters:
   minimum: 0.0
   maximum: 1.0
   comfyui: 
-    node_id: 1
+    node_id: 11
     field: inputs
     subfield: denoise
 - name: steps
@@ -125,14 +138,15 @@ parameters:
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
   tip:  depth_midas will recreate the approximate depth of your input scene, and is best for 3 dimensional compositions. canny creates strong edge adherance to the shape of your image, whereas scribble will create guidance towards a rougher shape of your input image. 
   type: string
+  required: true
   default: canny
   choices: [canny, depth_midas, scribble, dwpose]
   comfyui: 
-    node_id: 5
+    node_id: 100
     field: inputs
-    subfield: preprocessor_override
-- name: controlnet_strength_1
-  label: Controlnet Strength 1
+    subfield: preprocessor
+- name: controlnet_strength
+  label: Controlnet Strength
   description: set the guidance strength of the controlnet model in slot 1
   tip:  a good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
   type: float
@@ -140,9 +154,9 @@ parameters:
   minimum: 0.0
   maximum: 1.5
   comfyui: 
-    node_id: 15
+    node_id: 100
     field: inputs
-    subfield: controlnet_strength_1
+    subfield: strength
 - name: extension
   label: file extension
   description: choose the format you'd like your results returned in

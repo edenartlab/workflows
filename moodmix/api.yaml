@@ -52,6 +52,7 @@ parameters:
   label: prompt
   description: Positive text prompt, what you want to generate. If a LoRa needs to be activated, the prompt must also trigger the corresponding LoRa token embedding.
   type: string
+  required: true
   default: 4k, sharp details, uhd, sharp focus, high quality, masterpiece
   comfyui: 
     node_id: 6
@@ -69,6 +70,7 @@ parameters:
   label: Number of Images
   description: Number of images to generate (each one will use a random combination of the style images from the moodboard) (almost always, num_samples is 4 or 6)
   type: int
+  required: true
   default: 4
   comfyui: 
     node_id: 160
@@ -87,6 +89,7 @@ parameters:
   label: Width
   description: Width of the generated images in n_pixels (always a multiple of 64)
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
@@ -96,6 +99,7 @@ parameters:
     subfield: value
 - name: height
   label: Height
+  required: true
   description: Height of the  generated images in n_pixels (always a multiple of 64)
   type: int
   default: 1024
