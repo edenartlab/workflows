@@ -38,7 +38,7 @@ parameters:
     subfield: value
 - name: n_frames
   label: Number of frames
-  description: Number of animation frames to generate. The output video will be 1 second long for every 8 frames generated.
+  description: Number of animation frames to generate. The output video will be 1 second long for every 8 frames generated. (The default of 32 frames will thus generate a 4s animation)
   type: int
   default: 32
   minimum: 16
