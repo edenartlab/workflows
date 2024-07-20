@@ -4,10 +4,31 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/zavychromaxl_v80.safetensors",
             "target": "models/checkpoints/zavychromaxl_v80.safetensors"
         },
+
+
+        "juggerxlInpaint_juggerInpaintV8": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/juggerxlInpaint_juggerInpaintV8.safetensors",
+            "target": "models/checkpoints/juggerxlInpaint_juggerInpaintV8.safetensors"
+        },
+        "photonLCM_v10": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/photonLCM_v10.safetensors",
+            "target": "models/checkpoints/photonLCM_v10.safetensors"
+        },
+
+
+        
+        "AnimateLCM_sd15": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/animatediff_models/AnimateLCM_sd15_t2v.ckpt",
+            "target": "models/animatediff_models/AnimateLCM_sd15_t2v.ckpt"
+        },
+
         "hsxl_temporal_layers": {
             "source": "https://huggingface.co/hotshotco/Hotshot-XL/resolve/main/hsxl_temporal_layers.f16.safetensors",
             "target": "models/animatediff_models/hsxl_temporal_layers.f16.safetensors"
         },
+
+
+
         "RealESRGAN_x2plus": {
             "source": "https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth",
             "target": "models/upscale_models/RealESRGAN_x2plus.pth"
@@ -15,9 +36,27 @@
         "rife47.pth": {
             "source": "https://github.com/styler00dollar/VSGAN-tensorrt-docker/releases/download/models/rife47.pth",
             "target": "custom_nodes/ComfyUI-Frame-Interpolation/ckpts/rife/rife47.pth"
+        },
+
+        
+        "CLIP-ViT-H-14": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+            "target": "models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+        },
+        "ip-adapter-plus_sd15": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/ipadapter/ip-adapter-plus_sd15.safetensors",
+            "target": "models/ipadapter/ip-adapter-plus_sd15.safetensors"
+        },
+        "ip-adapter-plus_sdxl_vit-h": {
+            "source": "models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors",
+            "target": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors"
         }
 
+
     },
+
+
+
 
 
     "embeddings": {
@@ -26,6 +65,11 @@
             "target": "models/embeddings/ng_deepnegative_v1_75t.pt"
         }
     },
+
+
+
+
+
 
 
     "repositories": {

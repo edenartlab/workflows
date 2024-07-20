@@ -1,0 +1,16 @@
+name: Animate 3D
+description: Animate a single image with 3D depth motion, while staying visually close to the input image.
+tip: Use this tool to animate a single image when no other specific requirements are given.
+output_type: video
+handler: comfyui
+comfyui_output_node_id: 134
+parameters:
+- name: image
+  label: Image
+  description: Input image to animate
+  type: image
+  required: true
+  comfyui: 
+    node_id: 96
+    field: inputs
+    subfield: image
