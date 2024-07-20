@@ -1,0 +1,40 @@
+name: Remix
+description: Generate a remix of a given input image.
+tip: Use this tool to create a variation of a given image.
+output_type: image
+handler: comfyui
+comfyui_output_node_id: 16
+parameters:
+- name: image
+  label: Image
+  description: Input image to caption
+  type: image
+  required: true
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: image
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 17
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 17
+    field: inputs
+    subfield: height
