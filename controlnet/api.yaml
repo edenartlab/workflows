@@ -78,7 +78,6 @@ parameters:
     node_id: 29
     field: inputs
     subfield: image
-
 - name: denoise
   label: Denoise strength
   description: Strength of denoising
@@ -126,7 +125,7 @@ parameters:
 - name: input_img_is_controlnet
   label: Use init image for contolnet
   description: use the input image as the controlnet guidance image
-  tip:  this will usually be true unless you want to mix guidance from a different image while using an init with denoise < 1.0
+  tip: this will usually be true unless you want to mix guidance from a different image while using an init with denoise < 1.0
   type: bool  
   default: true
   comfyui: 
