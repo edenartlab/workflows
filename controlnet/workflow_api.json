@@ -14,7 +14,7 @@
       "scheduler": "karras",
       "positive_ascore": 6,
       "negative_ascore": 6,
-      "aspect_ratio": "1:1 - 512x512 | 768x768 | 1024x1024",
+      "aspect_ratio": "custom",
       "width": 1024,
       "height": 1024,
       "batch_size": 1,
@@ -748,7 +748,7 @@
   },
   "100": {
     "inputs": {
-      "control_net_name": "controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors",
+      "control_net_name": "controlnet-union-sdxl-promax-1.0\\diffusion_pytorch_model_promax.safetensors",
       "strength": 0.6,
       "preprocessor": "canny",
       "control_net_override": "None",

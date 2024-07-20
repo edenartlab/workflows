@@ -3004,256 +3004,6 @@
       ]
     },
     {
-      "id": 1,
-      "type": "SDParameterGenerator",
-      "pos": [
-        -80,
-        1144
-      ],
-      "size": {
-        "0": 420,
-        "1": 1220
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL_NAME",
-          "type": "COMBO",
-          "links": [
-            93
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "VAE_NAME",
-          "type": "COMBO",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            86
-          ],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            87,
-            148,
-            150
-          ],
-          "shape": 3,
-          "slot_index": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            88,
-            122,
-            123
-          ],
-          "shape": 3,
-          "slot_index": 4
-        },
-        {
-          "name": "SEED",
-          "type": "INT",
-          "links": [
-            89
-          ],
-          "shape": 3
-        },
-        {
-          "name": "STEPS",
-          "type": "INT",
-          "links": [
-            90
-          ],
-          "shape": 3,
-          "slot_index": 6
-        },
-        {
-          "name": "REFINER_START_STEP",
-          "type": "INT",
-          "links": [
-            91
-          ],
-          "shape": 3
-        },
-        {
-          "name": "CFG",
-          "type": "FLOAT",
-          "links": [
-            92
-          ],
-          "shape": 3,
-          "slot_index": 8
-        },
-        {
-          "name": "DENOISE",
-          "type": "FLOAT",
-          "links": [
-            50
-          ],
-          "shape": 3,
-          "slot_index": 9
-        },
-        {
-          "name": "SAMPLER_NAME",
-          "type": "COMBO",
-          "links": [
-            94
-          ],
-          "shape": 3
-        },
-        {
-          "name": "SCHEDULER",
-          "type": "COMBO",
-          "links": [
-            95
-          ],
-          "shape": 3,
-          "slot_index": 11
-        },
-        {
-          "name": "POSITIVE_ASCORE",
-          "type": "FLOAT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "NEGATIVE_ASCORE",
-          "type": "FLOAT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "WIDTH",
-          "type": "INT",
-          "links": [
-            107,
-            108
-          ],
-          "shape": 3,
-          "slot_index": 14
-        },
-        {
-          "name": "HEIGHT",
-          "type": "INT",
-          "links": [
-            106,
-            109
-          ],
-          "shape": 3,
-          "slot_index": 15
-        },
-        {
-          "name": "BATCH_SIZE",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "PARAMETERS",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "SIZE_FROM_INPUT",
-          "type": "BOOLEAN",
-          "links": [
-            104,
-            105
-          ],
-          "shape": 3,
-          "slot_index": 18
-        },
-        {
-          "name": "SDXL_ASPECT",
-          "type": "BOOLEAN",
-          "links": [
-            110,
-            111
-          ],
-          "shape": 3,
-          "slot_index": 19
-        },
-        {
-          "name": "INPUT_IMAGE_IS_CONTROLNET",
-          "type": "BOOLEAN",
-          "links": [
-            98
-          ],
-          "shape": 3,
-          "slot_index": 20
-        },
-        {
-          "name": "POSITIVE",
-          "type": "STRING",
-          "links": [
-            96,
-            149
-          ],
-          "shape": 3,
-          "slot_index": 21
-        },
-        {
-          "name": "NEGATIVE",
-          "type": "STRING",
-          "links": [
-            97,
-            151
-          ],
-          "shape": 3,
-          "slot_index": 22
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SDParameterGenerator"
-      },
-      "widgets_values": [
-        "juggernaut_v6.safetensors",
-        "baked VAE",
-        "SDXL 1024px",
-        "none",
-        -1,
-        30,
-        0.8,
-        7.5,
-        1,
-        "euler",
-        "karras",
-        6,
-        6,
-        "1:1 - 512x512 | 768x768 | 1024x1024",
-        1024,
-        1024,
-        1,
-        true,
-        true,
-        true,
-        "bioluminescant glass subterranean smokey abstract form, a vague idea of a butterfly woman a haute couture of a butterfly smoke ring, dramatic contrast, cinematic film still film grain tinted tangerine with a blade runner color scheme",
-        "",
-        "Total steps: 30,\nRefiner start at step: 24 (80%)",
-        "Optimal resolution for SDXL 1024px model\nwith aspect ratio 1:1: 1024 x 1024",
-        "",
-        "Total steps: 30,\nRefiner start at step: 24 (80%)",
-        "Optimal resolution for SDXL 1024px model\nwith aspect ratio 1:1: 1024 x 1024"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 7,
       "type": "Context Big (rgthree)",
       "pos": {
@@ -3934,6 +3684,256 @@
         512,
         true
       ]
+    },
+    {
+      "id": 1,
+      "type": "SDParameterGenerator",
+      "pos": [
+        -80,
+        1144
+      ],
+      "size": {
+        "0": 420,
+        "1": 1220
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL_NAME",
+          "type": "COMBO",
+          "links": [
+            93
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "VAE_NAME",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            86
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            87,
+            148,
+            150
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            88,
+            122,
+            123
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "SEED",
+          "type": "INT",
+          "links": [
+            89
+          ],
+          "shape": 3
+        },
+        {
+          "name": "STEPS",
+          "type": "INT",
+          "links": [
+            90
+          ],
+          "shape": 3,
+          "slot_index": 6
+        },
+        {
+          "name": "REFINER_START_STEP",
+          "type": "INT",
+          "links": [
+            91
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CFG",
+          "type": "FLOAT",
+          "links": [
+            92
+          ],
+          "shape": 3,
+          "slot_index": 8
+        },
+        {
+          "name": "DENOISE",
+          "type": "FLOAT",
+          "links": [
+            50
+          ],
+          "shape": 3,
+          "slot_index": 9
+        },
+        {
+          "name": "SAMPLER_NAME",
+          "type": "COMBO",
+          "links": [
+            94
+          ],
+          "shape": 3
+        },
+        {
+          "name": "SCHEDULER",
+          "type": "COMBO",
+          "links": [
+            95
+          ],
+          "shape": 3,
+          "slot_index": 11
+        },
+        {
+          "name": "POSITIVE_ASCORE",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "NEGATIVE_ASCORE",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "WIDTH",
+          "type": "INT",
+          "links": [
+            107,
+            108
+          ],
+          "shape": 3,
+          "slot_index": 14
+        },
+        {
+          "name": "HEIGHT",
+          "type": "INT",
+          "links": [
+            106,
+            109
+          ],
+          "shape": 3,
+          "slot_index": 15
+        },
+        {
+          "name": "BATCH_SIZE",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "PARAMETERS",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "SIZE_FROM_INPUT",
+          "type": "BOOLEAN",
+          "links": [
+            104,
+            105
+          ],
+          "shape": 3,
+          "slot_index": 18
+        },
+        {
+          "name": "SDXL_ASPECT",
+          "type": "BOOLEAN",
+          "links": [
+            110,
+            111
+          ],
+          "shape": 3,
+          "slot_index": 19
+        },
+        {
+          "name": "INPUT_IMAGE_IS_CONTROLNET",
+          "type": "BOOLEAN",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "slot_index": 20
+        },
+        {
+          "name": "POSITIVE",
+          "type": "STRING",
+          "links": [
+            96,
+            149
+          ],
+          "shape": 3,
+          "slot_index": 21
+        },
+        {
+          "name": "NEGATIVE",
+          "type": "STRING",
+          "links": [
+            97,
+            151
+          ],
+          "shape": 3,
+          "slot_index": 22
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDParameterGenerator"
+      },
+      "widgets_values": [
+        "juggernaut_v6.safetensors",
+        "baked VAE",
+        "SDXL 1024px",
+        "none",
+        -1,
+        30,
+        0.8,
+        7.5,
+        1,
+        "euler",
+        "karras",
+        6,
+        6,
+        "custom",
+        1024,
+        1024,
+        1,
+        true,
+        true,
+        true,
+        "bioluminescant glass subterranean smokey abstract form, a vague idea of a butterfly woman a haute couture of a butterfly smoke ring, dramatic contrast, cinematic film still film grain tinted tangerine with a blade runner color scheme",
+        "",
+        "Total steps: 30,\nRefiner start at step: 24 (80%)",
+        "Optimal resolution for SDXL 1024px model\nwith aspect ratio 1:1: 1024 x 1024",
+        "",
+        "Total steps: 30,\nRefiner start at step: 24 (80%)",
+        "Optimal resolution for SDXL 1024px model\nwith aspect ratio 1:1: 1024 x 1024"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -4998,10 +4998,10 @@
       4
     ],
     "ds": {
-      "scale": 0.5131581182307067,
+      "scale": 0.4665073802097333,
       "offset": [
-        -179.08338037732415,
-        -222.54822504554681
+        -181.89443813622904,
+        -157.91213808087727
       ]
     },
     "groupNodes": {}
