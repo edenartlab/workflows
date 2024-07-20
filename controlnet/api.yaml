@@ -148,25 +148,12 @@ parameters:
 - name: controlnet_strength
   label: Controlnet Strength
   description: set the guidance strength of the controlnet model in slot 1
-  tip:  a good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
+  tip: a good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
   type: float
-  default: .6
+  default: 0.6
   minimum: 0.0
   maximum: 1.5
   comfyui: 
     node_id: 100
     field: inputs
     subfield: strength
-- name: extension
-  label: file extension
-  description: choose the format you'd like your results returned in
-  tip:  .jpg is good unless otherwise required by the workflow, for instance background removal will require .png for alpha transparency
-  type: string
-  default: .jpg
-  choices: [.jpg, .png]
-  comfyui: 
-    node_id: 2
-    field: inputs
-    subfield: extension
-
-    
