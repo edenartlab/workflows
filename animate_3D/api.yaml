@@ -1,5 +1,5 @@
 name: Animate 3D
-description: Animate a single image with 3D depth motion, while staying visually close to the input image.
+description: Animate a single image with 3D depth motion, while staying visually close to the input image. This tool will apply different amounts of animated motion on the background (a lot) vs foreground (subtle) to try to stay visually close to the foreground subject in the image.
 tip: Use this tool to animate a single image when no other specific requirements are given.
 output_type: video
 handler: comfyui
@@ -14,3 +14,46 @@ parameters:
     node_id: 96
     field: inputs
     subfield: image
+- name: background_denoise
+  label: Background animation strength
+  description: How strong the motion should be in the background. Higher values cause more animation, but also stray further away from the input image.
+  type: float
+  default: 0.65
+  minimum: 0.20
+  maximum: 1.0
+  comfyui: 
+    node_id: 260
+    field: inputs
+    subfield: value
+- name: foreground_denoise
+  label: Foreground animation strength
+  description: How strong the motion should be in the foreground. Higher values cause more animation, but also stray further away from the input image. Typically, you want to keep this value in the low range (0.25 - 0.4) to avoid drifting too far away from the main subject in the image. If identity preservation to the input image is not important you can use higher values here to create more animation.
+  type: float
+  default: 0.35
+  minimum: 0.20
+  maximum: 1.0
+  comfyui: 
+    node_id: 262
+    field: inputs
+    subfield: value
+- name: n_frames
+  label: Number of frames
+  description: Number of animation frames to generate. The output video will be 1 second long for every 8 frames generated.
+  type: int
+  default: 32
+  minimum: 16
+  maximum: 64
+  comfyui: 
+    node_id: 249
+    field: inputs
+    subfield: value
+- name: loop
+  label: Loop Animation
+  description: Make the animation a seamless loop
+  tip: This will cause the last frame to be identical to the first, causing a seamlessly looping animation
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 229
+    field: inputs
+    subfield: value
