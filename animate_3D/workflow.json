@@ -3,46 +3,6 @@
   "last_link_id": 430,
   "nodes": [
     {
-      "id": 104,
-      "type": "ImageFromBatch+",
-      "pos": [
-        -1074.5909550280219,
-        -174.57868544821613
-      ],
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 27,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 425
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            174
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageFromBatch+"
-      },
-      "widgets_values": [
-        0,
-        1
-      ]
-    },
-    {
       "id": 141,
       "type": "ImageToMask",
       "pos": [
@@ -2699,39 +2659,6 @@
       ]
     },
     {
-      "id": 262,
-      "type": "Eden_Float",
-      "pos": [
-        -2469.40869140625,
-        -387
-      ],
-      "size": {
-        "0": 226.8000030517578,
-        "1": 58
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            424
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Full image 2nd pass denoise",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        0.35000000000000003
-      ]
-    },
-    {
       "id": 102,
       "type": "ImageResize+",
       "pos": [
@@ -2891,45 +2818,6 @@
       ]
     },
     {
-      "id": 96,
-      "type": "LoadImage",
-      "pos": [
-        -2549.40869140625,
-        88
-      ],
-      "size": {
-        "0": 315,
-        "1": 314
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            169
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "6092255f11078c399f9d89c2b9a79f04.jpg",
-        "image"
-      ]
-    },
-    {
       "id": 101,
       "type": "PreviewImage",
       "pos": [
@@ -3014,80 +2902,6 @@
       ]
     },
     {
-      "id": 120,
-      "type": "ParallaxZoom",
-      "pos": [
-        769.8579159780531,
-        696.372633283401
-      ],
-      "size": {
-        "0": 262.9393615722656,
-        "1": 166.58331298828125
-      },
-      "flags": {},
-      "order": 44,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "masks",
-          "type": "IMAGE",
-          "link": 428
-        },
-        {
-          "name": "image_slices",
-          "type": "IMAGE",
-          "link": 215
-        },
-        {
-          "name": "loop",
-          "type": "BOOLEAN",
-          "link": 371,
-          "widget": {
-            "name": "loop"
-          }
-        },
-        {
-          "name": "n_frames",
-          "type": "INT",
-          "link": 415,
-          "widget": {
-            "name": "n_frames"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "links": [
-            213,
-            273
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "masks",
-          "type": "IMAGE",
-          "links": [
-            274
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ParallaxZoom"
-      },
-      "widgets_values": [
-        1.1300000000000001,
-        1.04,
-        0.04,
-        24,
-        true
-      ]
-    },
-    {
       "id": 99,
       "type": "DownloadAndLoadDepthAnythingV2Model",
       "pos": [
@@ -3099,7 +2913,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 10,
+      "order": 8,
       "mode": 0,
       "outputs": [
         {
@@ -3128,7 +2942,7 @@
       ],
       "size": [
         320,
-        310
+        624
       ],
       "flags": {},
       "order": 45,
@@ -3180,7 +2994,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00001.mp4",
+            "filename": "AnimateDiff_00002.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -3188,39 +3002,6 @@
           }
         }
       }
-    },
-    {
-      "id": 260,
-      "type": "Eden_Float",
-      "pos": [
-        -2457.40869140625,
-        -639
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            423
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Background Denoise",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        0.65
-      ]
     },
     {
       "id": 125,
@@ -3356,10 +3137,10 @@
         -1626,
         -84
       ],
-      "size": [
-        219.0199301229004,
-        46
-      ],
+      "size": {
+        "0": 219.01992797851562,
+        "1": 46
+      },
       "flags": {},
       "order": 17,
       "mode": 0,
@@ -3392,76 +3173,6 @@
       }
     },
     {
-      "id": 257,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        2844,
-        544
-      ],
-      "size": [
-        499.0546875,
-        310
-      ],
-      "flags": {},
-      "order": 64,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 422
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 8,
-        "loop_count": 0,
-        "filename_prefix": "animate3D_LD",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": false,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "animate3D_LD_00001.mp4",
-            "subfolder": "",
-            "type": "temp",
-            "format": "video/h264-mp4",
-            "frame_rate": 8
-          }
-        }
-      }
-    },
-    {
       "id": 134,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -3470,7 +3181,7 @@
       ],
       "size": [
         584.306884765625,
-        644.9495407104492
+        888.306884765625
       ],
       "flags": {},
       "order": 70,
@@ -3522,7 +3233,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "animate3D_00004.mp4",
+            "filename": "animate3D_00014.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -3530,6 +3241,295 @@
           }
         }
       }
+    },
+    {
+      "id": 257,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2010,
+        1193
+      ],
+      "size": [
+        499.0546875,
+        803.0546875
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 422
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "animate3D_LD",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "animate3D_LD_00005.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 8
+          }
+        }
+      }
+    },
+    {
+      "id": 104,
+      "type": "ImageFromBatch+",
+      "pos": [
+        -1071,
+        -176
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 425
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            174
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFromBatch+"
+      },
+      "widgets_values": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 96,
+      "type": "LoadImage",
+      "pos": [
+        -2549.40869140625,
+        88
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            169
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "6092255f11078c399f9d89c2b9a79f04.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 260,
+      "type": "Eden_Float",
+      "pos": [
+        -2457.40869140625,
+        -639
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            423
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Background Denoise",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.65
+      ]
+    },
+    {
+      "id": 262,
+      "type": "Eden_Float",
+      "pos": [
+        -2469.40869140625,
+        -387
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            424
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Full image 2nd pass denoise",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.35000000000000003
+      ]
+    },
+    {
+      "id": 120,
+      "type": "ParallaxZoom",
+      "pos": [
+        769.8579159780531,
+        696.372633283401
+      ],
+      "size": {
+        "0": 262.9393615722656,
+        "1": 166.58331298828125
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "masks",
+          "type": "IMAGE",
+          "link": 428
+        },
+        {
+          "name": "image_slices",
+          "type": "IMAGE",
+          "link": 215
+        },
+        {
+          "name": "loop",
+          "type": "BOOLEAN",
+          "link": 371,
+          "widget": {
+            "name": "loop"
+          }
+        },
+        {
+          "name": "n_frames",
+          "type": "INT",
+          "link": 415,
+          "widget": {
+            "name": "n_frames"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "links": [
+            213,
+            273
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "masks",
+          "type": "IMAGE",
+          "links": [
+            274
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ParallaxZoom"
+      },
+      "widgets_values": [
+        1.22,
+        1.07,
+        0.06,
+        24,
+        true
+      ]
     }
   ],
   "links": [
@@ -4468,9 +4468,9 @@
       "title": "Intermediate Outputs",
       "bounding": [
         639,
-        1064,
-        1265,
-        799
+        1065,
+        1880,
+        743
       ],
       "color": "#3f789e",
       "font_size": 24
@@ -4534,10 +4534,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.3855432894295323,
+      "scale": 0.19487171000000078,
       "offset": [
-        -1985.3784631302797,
-        897.9095787561633
+        1875.2501099488777,
+        1559.7827190542564
       ]
     }
   },

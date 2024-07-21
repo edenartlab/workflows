@@ -340,7 +340,7 @@
   },
   "428": {
     "inputs": {
-      "video": "411cfe8ffeda929c290ce18daa4ab1e5.gif",
+      "video": "output_video.mp4",
       "force_rate": 8,
       "force_size": "Disabled",
       "custom_width": 512,
@@ -723,8 +723,14 @@
   },
   "529": {
     "inputs": {
-      "width": 896,
-      "height": 896,
+      "width": [
+        "535",
+        0
+      ],
+      "height": [
+        "535",
+        0
+      ],
       "interpolation": "lanczos",
       "method": "keep proportion",
       "condition": "always",
@@ -737,6 +743,15 @@
     "class_type": "ImageResize+",
     "_meta": {
       "title": "🔧 Image Resize"
+    }
+  },
+  "535": {
+    "inputs": {
+      "value": 896
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
     }
   }
 }
