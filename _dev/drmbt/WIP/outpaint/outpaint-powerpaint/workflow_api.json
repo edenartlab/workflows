@@ -1,0 +1,688 @@
+{
+  "45": {
+    "inputs": {
+      "brushnet": "PowerPaint-v2-1\\diffusion_pytorch_model.safetensors",
+      "dtype": "float16"
+    },
+    "class_type": "BrushNetLoader",
+    "_meta": {
+      "title": "BrushNet Loader"
+    }
+  },
+  "49": {
+    "inputs": {
+      "text": [
+        "133",
+        0
+      ],
+      "clip": [
+        "155",
+        2
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "50": {
+    "inputs": {
+      "text": [
+        "158",
+        0
+      ],
+      "clip": [
+        "155",
+        2
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "58": {
+    "inputs": {
+      "image": "eden-outpaint-powerpaint_2024-07-21_195506_0.0_0.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "65": {
+    "inputs": {
+      "fitting": 1,
+      "function": "image outpainting",
+      "scale": 1,
+      "start_at": 0,
+      "end_at": 10000,
+      "save_memory": "none",
+      "model": [
+        "119",
+        0
+      ],
+      "vae": [
+        "160",
+        3
+      ],
+      "image": [
+        "77",
+        0
+      ],
+      "mask": [
+        "77",
+        1
+      ],
+      "powerpaint": [
+        "45",
+        0
+      ],
+      "clip": [
+        "66",
+        0
+      ],
+      "positive": [
+        "49",
+        0
+      ],
+      "negative": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "PowerPaint",
+    "_meta": {
+      "title": "PowerPaint"
+    }
+  },
+  "66": {
+    "inputs": {
+      "base": "model.fp16.safetensors",
+      "powerpaint": "PowerPaint-v2-1\\pytorch_model.bin"
+    },
+    "class_type": "PowerPaintCLIPLoader",
+    "_meta": {
+      "title": "PowerPaint CLIP Loader"
+    }
+  },
+  "77": {
+    "inputs": {
+      "left": [
+        "108",
+        0
+      ],
+      "top": [
+        "109",
+        0
+      ],
+      "right": [
+        "110",
+        0
+      ],
+      "bottom": [
+        "111",
+        0
+      ],
+      "feathering": 64,
+      "image": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "ImagePadForOutpaint",
+    "_meta": {
+      "title": "Pad Image for Outpainting"
+    }
+  },
+  "79": {
+    "inputs": {
+      "images": [
+        "77",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "85": {
+    "inputs": {
+      "image": [
+        "171",
+        5
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "98": {
+    "inputs": {
+      "aspect_ratio": "SDXL - 16:9 landscape 1344x768",
+      "justification": "center",
+      "image": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "AspectPadImageForOutpainting",
+    "_meta": {
+      "title": "AspectPadImageForOutpainting"
+    }
+  },
+  "99": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "100": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "101": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "110",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "102": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "111",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "103": {
+    "inputs": {
+      "boolean": [
+        "112",
+        0
+      ],
+      "on_true": [
+        "58",
+        0
+      ],
+      "on_false": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "Switch image [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch image"
+    }
+  },
+  "104": {
+    "inputs": {
+      "int": 0
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "left"
+    }
+  },
+  "105": {
+    "inputs": {
+      "int": 0
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "top"
+    }
+  },
+  "106": {
+    "inputs": {
+      "int": 2
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "right"
+    }
+  },
+  "107": {
+    "inputs": {
+      "int": 0
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "bottom"
+    }
+  },
+  "108": {
+    "inputs": {
+      "boolean": [
+        "112",
+        0
+      ],
+      "on_true": [
+        "104",
+        0
+      ],
+      "on_false": [
+        "98",
+        1
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "109": {
+    "inputs": {
+      "boolean": [
+        "112",
+        0
+      ],
+      "on_true": [
+        "105",
+        0
+      ],
+      "on_false": [
+        "98",
+        2
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "110": {
+    "inputs": {
+      "boolean": [
+        "112",
+        0
+      ],
+      "on_true": [
+        "106",
+        0
+      ],
+      "on_false": [
+        "98",
+        3
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "111": {
+    "inputs": {
+      "boolean": [
+        "112",
+        0
+      ],
+      "on_true": [
+        "107",
+        0
+      ],
+      "on_false": [
+        "98",
+        4
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "112": {
+    "inputs": {
+      "boolean": false
+    },
+    "class_type": "Primitive boolean [Crystools]",
+    "_meta": {
+      "title": "Custom Expand"
+    }
+  },
+  "114": {
+    "inputs": {
+      "filename": "eden-outpaint-powerpaint_%date_%time",
+      "path": "%date/",
+      "width": [
+        "85",
+        0
+      ],
+      "height": [
+        "85",
+        1
+      ],
+      "positive": [
+        "159",
+        17
+      ],
+      "negative": [
+        "159",
+        19
+      ],
+      "extension": "jpg",
+      "calculate_hash": false,
+      "resource_hash": false,
+      "lossless_webp": false,
+      "jpg_webp_quality": 95,
+      "date_format": "%Y-%m-%d",
+      "time_format": "%H%M%S",
+      "save_metadata_file": true,
+      "extra_info": "SD Prompt Reader Node Example Image",
+      "images": [
+        "159",
+        7
+      ]
+    },
+    "class_type": "SDPromptSaver",
+    "_meta": {
+      "title": "SD Prompt Saver"
+    }
+  },
+  "115": {
+    "inputs": {
+      "image": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "118": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "160",
+        1
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "119": {
+    "inputs": {
+      "weight": 0.2,
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "sharpening": 0.05,
+      "embeds_scaling": "V only",
+      "model": [
+        "118",
+        0
+      ],
+      "ipadapter": [
+        "118",
+        1
+      ],
+      "image": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "IPAdapterTiled",
+    "_meta": {
+      "title": "IPAdapter Tiled"
+    }
+  },
+  "131": {
+    "inputs": {
+      "comparison": "a == b",
+      "a": [
+        "137",
+        0
+      ],
+      "b": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "easy compare",
+    "_meta": {
+      "title": "Compare"
+    }
+  },
+  "133": {
+    "inputs": {
+      "boolean": [
+        "131",
+        0
+      ],
+      "on_true": [
+        "139",
+        0
+      ],
+      "on_false": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "137": {
+    "inputs": {
+      "string": ""
+    },
+    "class_type": "Primitive string [Crystools]",
+    "_meta": {
+      "title": "🪛 Primitive string"
+    }
+  },
+  "138": {
+    "inputs": {
+      "string": ""
+    },
+    "class_type": "Primitive string multiline [Crystools]",
+    "_meta": {
+      "title": "🪛 Primitive string multiline"
+    }
+  },
+  "139": {
+    "inputs": {
+      "string": "empty scene"
+    },
+    "class_type": "Primitive string [Crystools]",
+    "_meta": {
+      "title": "🪛 Primitive string"
+    }
+  },
+  "143": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "155": {
+    "inputs": {
+      "model": [
+        "157",
+        0
+      ],
+      "clip": [
+        "157",
+        1
+      ],
+      "vae": [
+        "157",
+        2
+      ],
+      "text_pos_g": [
+        "138",
+        0
+      ],
+      "text_neg_g": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "Context Big (rgthree)",
+    "_meta": {
+      "title": "Context Big (rgthree)"
+    }
+  },
+  "157": {
+    "inputs": {
+      "ckpt_name": {
+        "content": "juggernaut_reborn.safetensors",
+        "image": null
+      },
+      "example": "[none]"
+    },
+    "class_type": "CheckpointLoader|pysssss",
+    "_meta": {
+      "title": "Checkpoint Loader 🐍"
+    }
+  },
+  "158": {
+    "inputs": {
+      "string": "  embedding:easynegative, text, watermark, caption, sentance, words, nude, naked, nsfw\n"
+    },
+    "class_type": "Primitive string multiline [Crystools]",
+    "_meta": {
+      "title": "🪛 Primitive string multiline"
+    }
+  },
+  "159": {
+    "inputs": {
+      "base_ctx": [
+        "155",
+        0
+      ],
+      "model": [
+        "65",
+        0
+      ],
+      "positive": [
+        "171",
+        1
+      ],
+      "negative": [
+        "171",
+        2
+      ],
+      "latent": [
+        "171",
+        3
+      ],
+      "images": [
+        "171",
+        5
+      ]
+    },
+    "class_type": "Context Big (rgthree)",
+    "_meta": {
+      "title": "Context Big (rgthree)"
+    }
+  },
+  "160": {
+    "inputs": {
+      "base_ctx": [
+        "155",
+        0
+      ]
+    },
+    "class_type": "Context Big (rgthree)",
+    "_meta": {
+      "title": "Context Big (rgthree)"
+    }
+  },
+  "171": {
+    "inputs": {
+      "seed": 770849440577939,
+      "steps": 20,
+      "cfg": 7.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "65",
+        0
+      ],
+      "positive": [
+        "65",
+        1
+      ],
+      "negative": [
+        "65",
+        2
+      ],
+      "latent_image": [
+        "65",
+        3
+      ],
+      "optional_vae": [
+        "155",
+        3
+      ]
+    },
+    "class_type": "KSampler (Efficient)",
+    "_meta": {
+      "title": "KSampler (Efficient)"
+    }
+  },
+  "174": {
+    "inputs": {
+      "samples": [
+        "171",
+        3
+      ],
+      "vae": [
+        "171",
+        4
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  }
+}
