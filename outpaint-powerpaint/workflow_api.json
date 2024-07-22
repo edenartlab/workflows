@@ -1,7 +1,7 @@
 {
   "45": {
     "inputs": {
-      "brushnet": "PowerPaint-v2-1\\diffusion_pytorch_model.safetensors",
+      "brushnet": "PowerPaint-v2-1/diffusion_pytorch_model.safetensors",
       "dtype": "float16"
     },
     "class_type": "BrushNetLoader",
@@ -43,7 +43,7 @@
   },
   "58": {
     "inputs": {
-      "image": "eden-outpaint-powerpaint_2024-07-21_195506_0.0_0.png",
+      "image": "e10eee7823957429d022e84374b1169c40a5d1459398a40c1d928b0057106cf6.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -100,7 +100,7 @@
   "66": {
     "inputs": {
       "base": "model.fp16.safetensors",
-      "powerpaint": "PowerPaint-v2-1\\pytorch_model.bin"
+      "powerpaint": "PowerPaint-v2-1/pytorch_model.bin"
     },
     "class_type": "PowerPaintCLIPLoader",
     "_meta": {
@@ -158,20 +158,6 @@
     "class_type": "Get resolution [Crystools]",
     "_meta": {
       "title": "🪛 Get resolution"
-    }
-  },
-  "98": {
-    "inputs": {
-      "aspect_ratio": "SDXL - 16:9 landscape 1344x768",
-      "justification": "center",
-      "image": [
-        "58",
-        0
-      ]
-    },
-    "class_type": "AspectPadImageForOutpainting",
-    "_meta": {
-      "title": "AspectPadImageForOutpainting"
     }
   },
   "99": {
@@ -237,7 +223,7 @@
         0
       ],
       "on_false": [
-        "98",
+        "177",
         0
       ]
     },
@@ -248,7 +234,7 @@
   },
   "104": {
     "inputs": {
-      "int": 0
+      "int": 128
     },
     "class_type": "Primitive integer [Crystools]",
     "_meta": {
@@ -257,7 +243,7 @@
   },
   "105": {
     "inputs": {
-      "int": 0
+      "int": 128
     },
     "class_type": "Primitive integer [Crystools]",
     "_meta": {
@@ -266,7 +252,7 @@
   },
   "106": {
     "inputs": {
-      "int": 2
+      "int": 128
     },
     "class_type": "Primitive integer [Crystools]",
     "_meta": {
@@ -275,7 +261,7 @@
   },
   "107": {
     "inputs": {
-      "int": 0
+      "int": 128
     },
     "class_type": "Primitive integer [Crystools]",
     "_meta": {
@@ -293,7 +279,7 @@
         0
       ],
       "on_false": [
-        "98",
+        "177",
         1
       ]
     },
@@ -313,7 +299,7 @@
         0
       ],
       "on_false": [
-        "98",
+        "177",
         2
       ]
     },
@@ -333,7 +319,7 @@
         0
       ],
       "on_false": [
-        "98",
+        "177",
         3
       ]
     },
@@ -353,7 +339,7 @@
         0
       ],
       "on_false": [
-        "98",
+        "177",
         4
       ]
     },
@@ -392,9 +378,9 @@
         19
       ],
       "extension": "jpg",
-      "calculate_hash": false,
-      "resource_hash": false,
-      "lossless_webp": false,
+      "calculate_hash": true,
+      "resource_hash": true,
+      "lossless_webp": true,
       "jpg_webp_quality": 95,
       "date_format": "%Y-%m-%d",
       "time_format": "%H%M%S",
@@ -514,7 +500,7 @@
     },
     "class_type": "Primitive string multiline [Crystools]",
     "_meta": {
-      "title": "🪛 Primitive string multiline"
+      "title": "Positive Prompt"
     }
   },
   "139": {
@@ -582,11 +568,11 @@
   },
   "158": {
     "inputs": {
-      "string": "  embedding:easynegative, text, watermark, caption, sentance, words, nude, naked, nsfw\n"
+      "string": "embedding:easynegative, text, watermark, caption, sentance, words, nude, naked, nsfw"
     },
     "class_type": "Primitive string multiline [Crystools]",
     "_meta": {
-      "title": "🪛 Primitive string multiline"
+      "title": "Negative Prompt"
     }
   },
   "159": {
@@ -635,7 +621,7 @@
   },
   "171": {
     "inputs": {
-      "seed": 770849440577939,
+      "seed": 755946912609480,
       "steps": 20,
       "cfg": 7.5,
       "sampler_name": "euler",
@@ -683,6 +669,20 @@
     "class_type": "VAEDecode",
     "_meta": {
       "title": "VAE Decode"
+    }
+  },
+  "177": {
+    "inputs": {
+      "aspect_ratio": "SDXL_16-9_landscape_1344x768",
+      "justification": "center",
+      "image": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "Aspect Pad Image For Outpainting",
+    "_meta": {
+      "title": "Aspect Pad Image For Outpainting"
     }
   }
 }
