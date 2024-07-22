@@ -26,8 +26,8 @@ parameters:
     subfield: video
 - name: resolution
   label: Target resolution for processing the video
-  description: Higher resolutions usually lead to better quality output videos. 896 is a good default, 640 can be used to do a quick test, 1024 is for HD video and 1280 for very high quality but super slow video style transfers!
-  tip: You can sometimes increase the resolution to achieve a higher quality style transfer effect, however this comes at a huge speed tradeoff, HD is VERY slow, so only use this when specifically requested!
+  description: Higher resolutions usually lead to better quality output videos. 896 is a good default, 640 can be used to do a quick test, 1024 is for HD video and 1280 for exceptionally high quality but super slow video style transfers!
+  tip: You can sometimes increase the resolution to achieve a higher quality style transfer effect, however this comes at a huge speed and cost tradeoff, HD is VERY slow, so only use this when specifically requested!
   type: int
   default: 896
   minimum: 640
