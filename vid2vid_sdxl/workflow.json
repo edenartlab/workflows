@@ -1,6 +1,6 @@
 {
-  "last_node_id": 539,
-  "last_link_id": 1309,
+  "last_node_id": 540,
+  "last_link_id": 1311,
   "nodes": [
     {
       "id": 396,
@@ -104,7 +104,8 @@
       "widgets_values": [
         0.25,
         0,
-        1
+        1,
+        ""
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -316,7 +317,8 @@
         "comfy",
         0,
         0,
-        false
+        false,
+        ""
       ]
     },
     {
@@ -384,7 +386,8 @@
       },
       "widgets_values": [
         0,
-        1
+        1,
+        ""
       ]
     },
     {
@@ -532,7 +535,8 @@
       },
       "widgets_values": [
         0,
-        1
+        1,
+        ""
       ]
     },
     {
@@ -1547,7 +1551,8 @@
         "comfy",
         0,
         0,
-        false
+        false,
+        ""
       ]
     },
     {
@@ -2121,7 +2126,7 @@
         "1": 102
       },
       "flags": {},
-      "order": 68,
+      "order": 67,
       "mode": 4,
       "inputs": [
         {
@@ -2512,7 +2517,8 @@
         "Node name for S&R": "ADE_MultivalDynamic"
       },
       "widgets_values": [
-        1.1
+        1.1,
+        ""
       ]
     },
     {
@@ -2765,126 +2771,6 @@
         true,
         "clip_interrogator_prompt.txt"
       ]
-    },
-    {
-      "id": 499,
-      "type": "RIFE VFI",
-      "pos": [
-        4137,
-        -361
-      ],
-      "size": {
-        "0": 319.20001220703125,
-        "1": 198
-      },
-      "flags": {},
-      "order": 66,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": 1231
-        },
-        {
-          "name": "optional_interpolation_states",
-          "type": "INTERPOLATION_STATES",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1232,
-            1250
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RIFE VFI"
-      },
-      "widgets_values": [
-        "rife47.pth",
-        10,
-        3,
-        true,
-        true,
-        1
-      ]
-    },
-    {
-      "id": 109,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        4494,
-        -362
-      ],
-      "size": [
-        661.3325805664062,
-        310
-      ],
-      "flags": {},
-      "order": 67,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 1232
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 24,
-        "loop_count": 0,
-        "filename_prefix": "Video",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "Video_00016.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 24
-          }
-        }
-      }
     },
     {
       "id": 10,
@@ -3155,7 +3041,8 @@
       "widgets_values": [
         0.6,
         0,
-        1
+        1,
+        ""
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -3334,7 +3221,8 @@
       "widgets_values": [
         0.45,
         0,
-        1
+        1,
+        ""
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -3597,91 +3485,6 @@
       ]
     },
     {
-      "id": 428,
-      "type": "VHS_LoadVideo",
-      "pos": [
-        -930,
-        -859
-      ],
-      "size": [
-        235.1999969482422,
-        658.5777723524305
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1296
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "links": [],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "video_info",
-          "type": "VHS_VIDEOINFO",
-          "links": [],
-          "shape": 3,
-          "slot_index": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_LoadVideo"
-      },
-      "widgets_values": {
-        "video": "output_video.mp4",
-        "force_rate": 8,
-        "force_size": "Disabled",
-        "custom_width": 512,
-        "custom_height": 512,
-        "frame_load_cap": 72,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "choose video to upload": "image",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "frame_load_cap": 72,
-            "skip_first_frames": 0,
-            "force_rate": 8,
-            "filename": "output_video.mp4",
-            "type": "input",
-            "format": "video/mp4",
-            "select_every_nth": 1
-          }
-        }
-      }
-    },
-    {
       "id": 515,
       "type": "PrepImageForClipVision",
       "pos": [
@@ -3761,6 +3564,207 @@
         0,
         1
       ]
+    },
+    {
+      "id": 428,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -930,
+        -859
+      ],
+      "size": [
+        235.1999969482422,
+        658.5777723524305
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1296
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            1310
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "output_video.mp4",
+        "force_rate": 8,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 72,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 72,
+            "skip_first_frames": 0,
+            "force_rate": 8,
+            "filename": "output_video.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 499,
+      "type": "RIFE VFI",
+      "pos": [
+        4137,
+        -361
+      ],
+      "size": {
+        "0": 319.20001220703125,
+        "1": 198
+      },
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 1231
+        },
+        {
+          "name": "optional_interpolation_states",
+          "type": "INTERPOLATION_STATES",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1250,
+            1311
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RIFE VFI"
+      },
+      "widgets_values": [
+        "rife47.pth",
+        10,
+        3,
+        true,
+        true,
+        1
+      ]
+    },
+    {
+      "id": 540,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        4585,
+        -363
+      ],
+      "size": [
+        315,
+        310
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1311
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 1310
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {}
+        }
+      }
     }
   ],
   "links": [
@@ -4261,14 +4265,6 @@
       "IMAGE"
     ],
     [
-      1232,
-      499,
-      0,
-      109,
-      0,
-      "IMAGE"
-    ],
-    [
       1233,
       500,
       0,
@@ -4571,6 +4567,22 @@
       529,
       2,
       "INT"
+    ],
+    [
+      1310,
+      428,
+      2,
+      540,
+      1,
+      "AUDIO"
+    ],
+    [
+      1311,
+      499,
+      0,
+      540,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -4677,10 +4689,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8954302432552637,
+      "scale": 0.7400249944258408,
       "offset": {
-        "0": 918.4671122489505,
-        "1": 1273.3543501983693
+        "0": -3776.302934513563,
+        "1": 602.4324581448891
       }
     }
   },
