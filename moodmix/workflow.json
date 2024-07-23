@@ -3,29 +3,6 @@
   "last_link_id": 311,
   "nodes": [
     {
-      "id": 111,
-      "type": "Note",
-      "pos": [
-        2864,
-        -213
-      ],
-      "size": {
-        "0": 243.74002075195312,
-        "1": 84.12347412109375
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Exploration Strength:\n\n0.55 --> local tuning\n0.65 --> default exploration\n0.75 --> wild variations"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 132,
       "type": "SavePosEmbeds",
       "pos": [
@@ -257,7 +234,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 10,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -286,7 +263,7 @@
       },
       "widgets_values": [
         "eden_images/xander_big",
-        1883,
+        1913,
         "randomize"
       ]
     },
@@ -302,7 +279,7 @@
         "1": 246
       },
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -370,7 +347,7 @@
         "1": 106
       },
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -582,7 +559,7 @@
         "1": 98
       },
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "outputs": [
         {
@@ -727,7 +704,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        703906714792190,
+        455112261666940,
         "randomize",
         4,
         2,
@@ -799,7 +776,7 @@
       },
       "widgets_values": [
         0,
-        2752,
+        44695,
         "randomize",
         true,
         false
@@ -893,7 +870,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -943,7 +920,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -975,7 +952,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -1008,7 +985,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -1086,40 +1063,6 @@
       ]
     },
     {
-      "id": 129,
-      "type": "Eden_String",
-      "pos": [
-        -354,
-        -36
-      ],
-      "size": {
-        "0": 313.4732971191406,
-        "1": 58
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            227,
-            231
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "MoodBoard Directory",
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "/home/rednax/SSD2TB/Github_repos/Eden/images/eden_logo"
-      ]
-    },
-    {
       "id": 161,
       "type": "Get_Prefixed_Imgs",
       "pos": [
@@ -1131,7 +1074,7 @@
         "1": 174
       },
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -1161,7 +1104,7 @@
         "output",
         "Prefered_Images",
         1,
-        1154,
+        1286,
         "randomize"
       ]
     },
@@ -1186,7 +1129,9 @@
           "link": 262
         }
       ],
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
       "widgets_values": [
         "MoodMix_Outputs"
       ]
@@ -1325,12 +1270,12 @@
         3343,
         -196
       ],
-      "size": [
-        214.12481973958984,
-        58
-      ],
+      "size": {
+        "0": 214.12481689453125,
+        "1": 58
+      },
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "outputs": [
         {
@@ -1352,36 +1297,75 @@
       ]
     },
     {
-      "id": 164,
-      "type": "Eden_Float",
+      "id": 7,
+      "type": "CLIPTextEncode",
       "pos": [
-        3119,
-        -192
+        -318,
+        78
       ],
       "size": {
-        "0": 210,
+        "0": 279.8935241699219,
+        "1": 86.82402801513672
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 204
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            54
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 129,
+      "type": "Eden_String",
+      "pos": [
+        -354,
+        -36
+      ],
+      "size": {
+        "0": 313.4732971191406,
         "1": 58
       },
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "outputs": [
         {
-          "name": "FLOAT",
-          "type": "FLOAT",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            289
+            227,
+            231
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
-      "title": "Exploration Strength",
+      "title": "MoodBoard Directory",
       "properties": {
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        0.65
+        "/home/rednax/SSD2TB/Github_repos/Eden/images/eden_logo"
       ]
     },
     {
@@ -1461,42 +1445,60 @@
       ]
     },
     {
-      "id": 7,
-      "type": "CLIPTextEncode",
+      "id": 164,
+      "type": "Eden_Float",
       "pos": [
-        -318,
-        78
+        3119,
+        -192
       ],
       "size": {
-        "0": 279.8935241699219,
-        "1": 86.82402801513672
+        "0": 210,
+        "1": 58
       },
       "flags": {},
-      "order": 15,
+      "order": 7,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 204
-        }
-      ],
       "outputs": [
         {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
+          "name": "FLOAT",
+          "type": "FLOAT",
           "links": [
-            54
+            289
           ],
+          "shape": 3,
           "slot_index": 0
         }
       ],
+      "title": "Exploration Strength",
       "properties": {
-        "Node name for S&R": "CLIPTextEncode"
+        "Node name for S&R": "Eden_Float"
       },
       "widgets_values": [
-        ""
+        0.5
       ]
+    },
+    {
+      "id": 111,
+      "type": "Note",
+      "pos": [
+        2864,
+        -220
+      ],
+      "size": {
+        "0": 210,
+        "1": 89.69546508789062
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Exploration Strength:\n\n0.55 --> local tuning\n0.65 --> default exploration\n0.75 --> wild variations"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1891,10 +1893,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5559917313493142,
+      "scale": 0.7400249944259404,
       "offset": {
-        "0": -2109.612899715773,
-        "1": 337.4230390707382
+        "0": -2332.539040102492,
+        "1": 354.52847471674943
       }
     },
     "groupNodes": {}
