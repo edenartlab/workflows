@@ -10,7 +10,7 @@
   },
   "6": {
     "inputs": {
-      "text": "a stunning photo, sharp details, 4k",
+      "text": "a simplistic vector logo showing a brain intertwined with a tree, circuitboard, minimal design, svg, simplistic",
       "clip": [
         "109",
         1
@@ -69,7 +69,7 @@
   },
   "40": {
     "inputs": {
-      "seed": 1066191351389490,
+      "seed": 455112261666940,
       "steps": 4,
       "cfg": 2,
       "sampler_name": "dpmpp_sde_gpu",
@@ -170,18 +170,6 @@
       "title": "Load LoRA"
     }
   },
-  "112": {
-    "inputs": {
-      "images": [
-        "119",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "MoodBoard"
-    }
-  },
   "115": {
     "inputs": {
       "weight": 1,
@@ -217,7 +205,7 @@
   "126": {
     "inputs": {
       "max_num_images": 0,
-      "seed": 99619,
+      "seed": 44695,
       "sort": true,
       "loop_sequence": false,
       "filename": [
@@ -236,7 +224,7 @@
         "129",
         0
       ],
-      "seed": 539
+      "seed": 1913
     },
     "class_type": "FolderScanner",
     "_meta": {
@@ -245,7 +233,7 @@
   },
   "129": {
     "inputs": {
-      "value": "/home/rednax/Pictures/Wallpapers"
+      "value": "/home/rednax/SSD2TB/Github_repos/Eden/images/eden_logo"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -355,7 +343,7 @@
         "151",
         1
       ],
-      "num_samples": 4,
+      "num_samples": 6,
       "num_style_components": 2,
       "min_weight": 0.2,
       "style_embeddings": [
@@ -370,10 +358,10 @@
   },
   "161": {
     "inputs": {
-      "folder": "preference_images",
-      "filename_prefix": "",
+      "folder": "output",
+      "filename_prefix": "Prefered_Images",
       "max_n_imgs": 1,
-      "seed": 86
+      "seed": 1286
     },
     "class_type": "Get_Prefixed_Imgs",
     "_meta": {
@@ -397,7 +385,7 @@
   },
   "164": {
     "inputs": {
-      "value": 0.7000000000000001
+      "value": 0.5
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -406,7 +394,7 @@
   },
   "182": {
     "inputs": {
-      "value": 0.2
+      "value": 0.25
     },
     "class_type": "Eden_Float",
     "_meta": {
