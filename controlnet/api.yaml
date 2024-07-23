@@ -26,7 +26,6 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
-  required: true
   default: 1024
   minimum: 256
   maximum: 2048
@@ -39,7 +38,6 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
-  required: true
   default: 1024
   minimum: 256
   maximum: 2048
@@ -67,15 +65,6 @@ parameters:
   required: true
   comfyui: 
     node_id: 28
-    field: inputs
-    subfield: image
-- name: dummy_image
-  label: dummy_image
-  description: dummy image for text2vid
-  type: image
-  hidden: true
-  comfyui: 
-    node_id: 29
     field: inputs
     subfield: image
 - name: denoise
@@ -137,7 +126,6 @@ parameters:
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
   tip:  depth_midas will recreate the approximate depth of your input scene, and is best for 3 dimensional compositions. canny creates strong edge adherance to the shape of your image, whereas scribble will create guidance towards a rougher shape of your input image. 
   type: string
-  required: true
   default: canny
   choices: [canny, depth_midas, scribble, dwpose]
   comfyui: 

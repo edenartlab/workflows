@@ -133,7 +133,7 @@
         "1": 90
       },
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -164,7 +164,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 4,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -519,7 +519,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -1118,7 +1118,7 @@
         26
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -1152,7 +1152,7 @@
         "1": 50
       },
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -1353,8 +1353,8 @@
       "id": 2,
       "type": "SDPromptSaver",
       "pos": [
-        3757.733898925782,
-        1830
+        3740,
+        1760
       ],
       "size": {
         "0": 388.7054443359375,
@@ -1501,7 +1501,7 @@
         "%date/",
         "CheckpointYesmix_v35.safetensors",
         "kl-f8-anime2.ckpt",
-        378775155306306,
+        176418598189348,
         "randomize",
         20,
         8,
@@ -1526,8 +1526,8 @@
       "id": 12,
       "type": "VAEDecode",
       "pos": [
-        3757.733898925782,
-        1720
+        3740,
+        1650
       ],
       "size": {
         "0": 390,
@@ -2049,168 +2049,6 @@
       "widgets_values": []
     },
     {
-      "id": 11,
-      "type": "KSampler",
-      "pos": [
-        3765.733898925782,
-        1231
-      ],
-      "size": {
-        "0": 390,
-        "1": 430
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 35,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 22,
-          "slot_index": 0
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 23
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 24
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 25
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 26,
-          "widget": {
-            "name": "seed"
-          },
-          "slot_index": 4
-        },
-        {
-          "name": "steps",
-          "type": "INT",
-          "link": 27,
-          "widget": {
-            "name": "steps"
-          },
-          "slot_index": 5
-        },
-        {
-          "name": "cfg",
-          "type": "FLOAT",
-          "link": 28,
-          "widget": {
-            "name": "cfg"
-          }
-        },
-        {
-          "name": "sampler_name",
-          "type": "COMBO",
-          "link": 138,
-          "widget": {
-            "name": "sampler_name"
-          },
-          "slot_index": 7
-        },
-        {
-          "name": "scheduler",
-          "type": "COMBO",
-          "link": 155,
-          "widget": {
-            "name": "scheduler"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            6,
-            32
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        1106393812825045,
-        "randomize",
-        20,
-        8,
-        "euler",
-        "normal",
-        1
-      ]
-    },
-    {
-      "id": 29,
-      "type": "Load image with metadata [Crystools]",
-      "pos": [
-        -531,
-        961
-      ],
-      "size": {
-        "0": 330,
-        "1": 354
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "prompt",
-          "type": "JSON",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "Metadata RAW",
-          "type": "METADATA_RAW",
-          "links": [
-            66
-          ],
-          "shape": 3,
-          "slot_index": 3
-        }
-      ],
-      "title": "Dummy Image",
-      "properties": {
-        "Node name for S&R": "Load image with metadata [Crystools]"
-      },
-      "widgets_values": [
-        "black_dummy.jpg",
-        "image"
-      ]
-    },
-    {
       "id": 28,
       "type": "Load image with metadata [Crystools]",
       "pos": [
@@ -2224,7 +2062,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "outputs": [
         {
@@ -2864,7 +2702,7 @@
         "1": 200
       },
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -2913,7 +2751,7 @@
         "1": 200
       },
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -3458,63 +3296,6 @@
       "widgets_values": []
     },
     {
-      "id": 99,
-      "type": "Apply ControlNet Stack",
-      "pos": [
-        2833,
-        1143
-      ],
-      "size": {
-        "0": 304.79998779296875,
-        "1": 66
-      },
-      "flags": {},
-      "order": 33,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 197
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 198,
-          "slot_index": 1
-        },
-        {
-          "name": "cnet_stack",
-          "type": "CONTROL_NET_STACK",
-          "link": 196
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING+",
-          "type": "CONDITIONING",
-          "links": [
-            199
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CONDITIONING-",
-          "type": "CONDITIONING",
-          "links": [
-            200
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Apply ControlNet Stack"
-      },
-      "shape": 1
-    },
-    {
       "id": 14,
       "type": "ImpactMinMax",
       "pos": [
@@ -3697,7 +3478,7 @@
         "1": 1220
       },
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -3930,10 +3711,229 @@
         "Optimal resolution for SDXL 1024px model\nwith aspect ratio 1:1: 1024 x 1024",
         "",
         "Total steps: 30,\nRefiner start at step: 24 (80%)",
-        "Optimal resolution for SDXL 1024px model\nwith aspect ratio 1:1: 1024 x 1024"
+        "Custom aspect ratio: 1024 x 1024"
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 11,
+      "type": "KSampler",
+      "pos": [
+        3750,
+        1170
+      ],
+      "size": {
+        "0": 390,
+        "1": 430
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 22,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 23
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 24
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 25
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 26,
+          "widget": {
+            "name": "seed"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 27,
+          "widget": {
+            "name": "steps"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": 28,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": 138,
+          "widget": {
+            "name": "sampler_name"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 155,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            6,
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        207328570725183,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 29,
+      "type": "Load image with metadata [Crystools]",
+      "pos": [
+        369,
+        749
+      ],
+      "size": {
+        "0": 330,
+        "1": 354
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "prompt",
+          "type": "JSON",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "Metadata RAW",
+          "type": "METADATA_RAW",
+          "links": [
+            66
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "title": "Dummy Image",
+      "properties": {
+        "Node name for S&R": "Load image with metadata [Crystools]"
+      },
+      "widgets_values": [
+        "A_black_image.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 99,
+      "type": "Apply ControlNet Stack",
+      "pos": [
+        2844,
+        1183
+      ],
+      "size": {
+        "0": 304.79998779296875,
+        "1": 66
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 197
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 198,
+          "slot_index": 1
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": 196
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            199
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            200
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Apply ControlNet Stack"
+      },
+      "shape": 1
     }
   ],
   "links": [
@@ -4998,10 +4998,10 @@
       4
     ],
     "ds": {
-      "scale": 0.4665073802097333,
+      "scale": 0.620921323059155,
       "offset": [
-        -181.89443813622904,
-        -157.91213808087727
+        1145.4102854160935,
+        -574.3102461916926
       ]
     },
     "groupNodes": {}

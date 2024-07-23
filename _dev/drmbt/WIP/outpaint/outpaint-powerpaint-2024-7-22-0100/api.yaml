@@ -1,0 +1,139 @@
+name: Outpaint 1.5
+description: Use PowerPaint to outpaint images by either a defined amount in any direction, or selected aspect ratio
+tip: This model uses SD1.5, so huge resolution changes will add potentially undesirable artifacting. Choosing an SDXL resolution will result in a larger image, but not necessarily a better one.
+output_type: image
+handler: comfyui
+comfyui_output_node_id: 114
+parameters:
+- name: init_image
+  label: Starting image
+  description: Initial image from which to start diffusion process
+  type: image
+  required: true
+  comfyui: 
+    node_id: 58
+    field: inputs
+    subfield: image
+- name: prompt
+  label: Prompt
+  description: Text prompt
+  tip: leave blank if no prompt is specified, the default empty scene is what the model wants to see for unprompted outpainting
+  type: string
+  default: empty scene
+  comfyui: 
+    node_id: 138
+    field: inputs
+    subfield: string
+- name: negative
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
+  type: string
+  default: embedding:easynegative, text, watermark, caption, sentance, words, nude, naked, nsfw
+  comfyui: 
+    node_id: 158
+    field: inputs
+    subfield: string
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 10000000000000000
+  comfyui: 
+    node_id: 171
+    field: inputs
+    subfield: seed
+- name: steps
+  label: Steps
+  description: Length of diffusion steps
+  tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image, or are using a specialized model.
+  type: int
+  default: 20
+  minimum: 1
+  maximum: 50
+  comfyui: 
+    node_id: 171
+    field: inputs
+    subfield: steps
+- name: Aspect Ratio
+  label: Aspect Ratio
+  description: This parameter selects the size of the output canvas based on legal SDXL and SD1.5 resolution
+  tip: This parameter is overriden and can be left set to default if custom_expand parameter is true
+  type: string
+  default: SDXL_16-9_landscape_1344x768
+  choices: [SDXL_1-1_square_1024x1024, SDXL_4-3_landscape_1152x896, SDXL_3-2_landscape_1216x832, SDXL_16-9_landscape_1344x768, SDXL_21-9_landscape_1536x640, SDXL_3-4_portrait_896x1152, SDXL_5-8_portrait_832x1216, SDXL_9-16_portrait_768x1344, SDXL_9-21_portrait_640x1536, SD15_1-1_square_512x512, SD15_2-3_portrait_512x768, SD15_3-4_portrait_512x682, SD15_3-2_landscape_768x512, SD15_4-3_landscape_682x512, SD15_16-9_cinema_910x512, SD15_37-20_cinema_952x512, SD15_2:1_cinema_1024x512]
+  comfyui: 
+    node_id: 177
+    field: inputs
+    subfield: aspect_ratio
+- name: justification
+  label: Justification
+  description: This parameter selects the starting justification of the input image in relation to the outpaint canvas result
+  tip: This parameter changes conditionally based on whether the input image is landscape or portait orientation, and is overriden and can be left set to default if custom_xpand parameter is true. Extreme changes in aspect can result in SD1.5 artifacting. Sticking to SD1.5 ratios is safer to avoid glitches. 
+  type: string
+  default: center
+  choices: [top-left, center, bottom-right]
+  comfyui: 
+    node_id: 177
+    field: inputs
+    subfield: justification
+- name: custom_expand
+  label: Custom Expand
+  description: Specify the pixels in each direction from the starting image, leaving its resolution unchanged.
+  tip: This should only be active if a user wants to outpaint with a specified direction and pixel count. a zoomed out image could be made by adding an even pixel could like 128 to each of args left top right and bottom, but that number should really not be any higher than 256, 128 is a good default
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 112
+    field: inputs
+    subfield: boolean
+- name: left
+  label: Left
+  description: Increase the outpaint canvas by n pixels to the left
+  tip: this should only be set if i user specifies the direction left and a pixel amount, in which case custom_expand should be set true
+  type: int
+  default: 0
+  minimum: 0
+  maximum: 1024
+  comfyui: 
+    node_id: 104
+    field: inputs
+    subfield: int
+- name: top
+  label: Top
+  description: Increase the outpaint canvas by n pixels to the top
+  tip: this should only be set if i user specifies the direction top or above, and a pixel amount, in which case custom_expand should be set true
+  type: int
+  default: 0
+  minimum: 0
+  maximum: 1024
+  comfyui: 
+    node_id: 105
+    field: inputs
+    subfield: int
+- name: right
+  label: Right
+  description: Increase the outpaint canvas by n pixels to the right
+  tip: this should only be set if i user specifies the direction right and a pixel amount, in which case custom_expand should be set true
+  type: int
+  default: 0
+  minimum: 0
+  maximum: 1024
+  comfyui: 
+    node_id: 106
+    field: inputs
+    subfield: int
+- name: bottom
+  label: Bottom
+  description: Increase the outpaint canvas by n pixels to the bottom
+  tip: this should only be set if i user specifies the direction bottom, beneath or below, and a pixel amount, in which case custom_expand should be set true
+  type: int
+  default: 0
+  minimum: 0
+  maximum: 1024
+  comfyui: 
+    node_id: 107
+    field: inputs
+    subfield: int
