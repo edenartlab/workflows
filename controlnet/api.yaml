@@ -1,6 +1,6 @@
 name: Controlnet
-description: Use controlnet guidance with an input image to direct the shape of the composition 
-tip: By using Canny to guide by Edge Detection, Midas for depth map estimation, or other controlnets such as scribble to guide by a crude line drawing, the composition of the image can be made to adhere to the shape of an input image, transferring the positioning to the output
+descriptin: Generate a new image which adheres to the shape or outline of an input image
+tip: This tool is best for text-to-image when an input image is provided and the user wants to maintain the content of the input image while generating a new style or aesthetic on top of it.
 output_type: image
 handler: comfyui
 comfyui_output_node_id: 2
