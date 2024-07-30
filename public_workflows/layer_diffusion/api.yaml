@@ -1,0 +1,84 @@
+name: Layer Diffusion
+description: Transparent Image Layer Diffusion using Latent Transparency
+tip: Background removal can do a great job of isolating a subject, but for transparent objects a fully opaque masked object may not be enough. Layer Diffusion calculates transparency, returning a .png image with alpha estimated pixel values for generating isolated transparent objects
+output_type: image
+handler: comfyui
+comfyui_output_node_id: 30
+parameters:
+- name: prompt
+  label: Prompt
+  description: Text prompt
+  type: string
+  required: true
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
+  type: string
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: height
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 10000000000000000
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: seed
+- name: steps
+  label: Steps
+  description: Length of diffusion steps
+  tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image, or are using a specialized model.
+  type: float
+  default: 20
+  minimum: 1
+  maximum: 50
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: steps
+- name: cfg
+  label: CFG
+  description: CFG is the setting that controls how closely Stable Diffusion should follow your text prompt.
+  tip: the default of 5.0 might be considered thoroughly cooked, whereas the specified maximum is well done, and the minimum is rare.
+  type: float
+  default: 8.0
+  minimum: 2.0
+  maximum: 11.0
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: cfg
