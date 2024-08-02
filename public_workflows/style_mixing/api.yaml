@@ -41,7 +41,7 @@ parameters:
     subfield: text
 - name: n_frames
   label: Frames
-  description: Number of video frames to generate (12 frames = 1 second of video, although the final video will be upsampled to 24 fps)
+  description: Number of video frames to generate (12 frames = 1 second of video, although the final video will be interpolated to always be 24 fps)
   type: int
   default: 64
   minimum: 16
@@ -50,16 +50,6 @@ parameters:
     node_id: 198
     field: inputs
     subfield: total_frames
-- name: n_style_images
-  label: Number of Style Images
-  description: Number of style images that will be used (this determines how many colors will be generated in the driving motion mask video).
-  tip: this number should usually match the number of given style images (if all of them are to be used)
-  type: int
-  default: 3
-  comfyui: 
-    node_id: 198
-    field: inputs
-    subfield: num_colors
 - name: motion_mode
   label: Motion Mode
   description: Motion mode for the driving motion mask video (controls how the style images will get mapped onto the video)
