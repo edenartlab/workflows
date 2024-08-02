@@ -20,8 +20,8 @@ parameters:
   label: Preference Anchor Image
   description: The previous image prefered by the user, serves as an anchor point for the next iteration. When no image is provided, will be ignored.
   type: image[]
-  min_length: 0
-  max_length: 1
+  minimum: 0
+  maximum: 1
   comfyui: 
     node_id: 161
     field: inputs
