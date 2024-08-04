@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "ckpt_name": "photonLCM_v10.safetensors"
+      "ckpt_name": "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -140,7 +140,7 @@
   "32": {
     "inputs": {
       "batch_offset": 0,
-      "noise_type": "FreeNoise",
+      "noise_type": "default",
       "seed_gen": "comfy",
       "seed_offset": 1,
       "adapt_denoise_steps": false
@@ -350,12 +350,9 @@
   },
   "74": {
     "inputs": {
-      "folder": "/home/rednax/SSD2TB/Github_repos/Eden/images/styles",
-      "n_images": [
-        "198",
-        1
-      ],
-      "seed": 69,
+      "folder": "/home/rednax/SSD2TB/Github_repos/Eden/images/test",
+      "n_images": -1,
+      "seed": 77,
       "sort": true,
       "loop_sequence": false
     },
@@ -449,7 +446,7 @@
         1
       ],
       "clustering_resolution": 256,
-      "feathering_fraction": 0.02,
+      "feathering_fraction": 0.05,
       "image": [
         "261",
         0
@@ -805,7 +802,10 @@
   "198": {
     "inputs": {
       "total_frames": 64,
-      "num_colors": 4,
+      "num_colors": [
+        "270",
+        0
+      ],
       "bands_visible_per_frame": 0.6,
       "angle": 0,
       "mode": "concentric_circles",
@@ -1000,6 +1000,18 @@
     "class_type": "ImageResize+",
     "_meta": {
       "title": "🔧 Image Resize"
+    }
+  },
+  "270": {
+    "inputs": {
+      "images": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "VHS_GetImageCount",
+    "_meta": {
+      "title": "Get Image Count 🎥🅥🅗🅢"
     }
   }
 }
