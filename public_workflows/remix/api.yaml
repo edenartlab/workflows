@@ -38,3 +38,15 @@ parameters:
     node_id: 17
     field: inputs
     subfield: height
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 1000000
+  comfyui: 
+    node_id: 13
+    field: inputs
+    subfield: seed
