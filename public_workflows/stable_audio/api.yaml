@@ -1,0 +1,75 @@
+name: Stable Audio
+description: Stable Audio Open is an open-source model optimized for generating short audio samples, sound effects, and production elements using text prompts. Ideal for creating drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples, the model was trained on data from Freesound and the Free Music Archive, respecting creator rights.
+tip: this open model is best suited for generating sound effects, loops and stems rather than full audio arrangements, but can be prompted to do this as well. MusicGen results may be of a higher quality for full spectrum music arrangements, while this model runs much faster.
+output_type: audio
+handler: comfyui
+comfyui_output_node_id: 13
+parameters:
+- name: prompt
+  label: Prompt
+  description: Text prompt
+  tip: specifying tempo, key and style information can help guide the generation towards a more desirable result.
+  type: string
+  required: true
+  default: 303 acid bassline loop arpeggiated 128bpm Gmin7
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
+  type: string
+  default: 
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
+- name: seconds
+  label: Length in Seconds
+  description: Number of seconds of audio to generate
+  tip: Stable Audio Open 1.0 generates variable-length (up to 47s) stereo audio at 44.1kHz from text prompts. The ComfyUI implementation can generate outputs longer than the default 47s by extending the sample and feeding it through multiple passes. 
+  type: float
+  default: 30
+  minimum: 1
+  maximum: 120
+  comfyui: 
+    node_id: 11
+    field: inputs
+    subfield: seconds
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 10000000000000000
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: seed
+- name: steps
+  label: Steps
+  description: Length of diffusion steps
+  tip: the default of 50 produces well rounded results, with a change of character that may be satisfying around 100 steps, at the cost of a slower generation time. 200 steps is the extreme end beyond which any quality improvements seem negligable.
+  type: int
+  default: 50
+  minimum: 16
+  maximum: 200
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: steps
+- name: cfg
+  label: CFG
+  description: CFG is the setting that controls how closely Stable Diffusion should follow your text prompt.
+  tip: the default of 5.0 might be considered thoroughly cooked, whereas the specified maximum is well done, and the minimum is rare.
+  type: float
+  default: 5.0
+  minimum: 3.5
+  maximum: 7.0
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: cfg

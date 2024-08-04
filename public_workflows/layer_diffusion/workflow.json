@@ -6,12 +6,12 @@
       "id": 7,
       "type": "CLIPTextEncode",
       "pos": [
-        413,
-        389
+        420,
+        410
       ],
       "size": {
-        "0": 425.27801513671875,
-        "1": 180.6060791015625
+        "0": 430,
+        "1": 180
       },
       "flags": {},
       "order": 4,
@@ -41,30 +41,93 @@
       ]
     },
     {
-      "id": 14,
-      "type": "VAEDecode",
+      "id": 29,
+      "type": "InvertMask",
       "pos": [
-        1275,
-        198
+        1930,
+        170
       ],
       "size": {
         "0": 210,
-        "1": 46
+        "1": 30
       },
       "flags": {},
-      "order": 6,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 21
+          "name": "mask",
+          "type": "MASK",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      }
+    },
+    {
+      "id": 30,
+      "type": "SaveImage",
+      "pos": [
+        2230,
+        40
+      ],
+      "size": [
+        280,
+        270
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 41
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "LayerDiffusion/LD_fg"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        1930,
+        70
+      ],
+      "size": {
+        "0": 210,
+        "1": 50
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 37
         },
         {
-          "name": "vae",
-          "type": "VAE",
-          "link": 22,
-          "slot_index": 1
+          "name": "alpha",
+          "type": "MASK",
+          "link": 39
         }
       ],
       "outputs": [
@@ -72,74 +135,51 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            24,
-            29
+            41
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "VAEDecode"
+        "Node name for S&R": "JoinImageWithAlpha"
       }
     },
     {
-      "id": 20,
-      "type": "PreviewImage",
+      "id": 24,
+      "type": "MaskToImage",
       "pos": [
-        1547,
-        472
+        1930,
+        250
       ],
       "size": {
-        "0": 289.6058349609375,
-        "1": 299.6588134765625
+        "0": 210,
+        "1": 30
       },
       "flags": {},
-      "order": 8,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 29
+          "name": "mask",
+          "type": "MASK",
+          "link": 32
         }
       ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
-    },
-    {
-      "id": 5,
-      "type": "EmptyLatentImage",
-      "pos": [
-        475,
-        707
-      ],
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
       "outputs": [
         {
-          "name": "LATENT",
-          "type": "LATENT",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            2
+            33
           ],
+          "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        1
-      ]
+        "Node name for S&R": "MaskToImage"
+      }
     },
     {
       "id": 3,
@@ -149,8 +189,8 @@
         198
       ],
       "size": [
-        315,
-        474
+        350,
+        270
       ],
       "flags": {},
       "order": 5,
@@ -192,7 +232,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        896690382257300,
+        523601272694708,
         "randomize",
         20,
         8,
@@ -202,49 +242,189 @@
       ]
     },
     {
-      "id": 25,
-      "type": "PreviewImage",
+      "id": 5,
+      "type": "EmptyLatentImage",
       "pos": [
-        2244,
-        194
+        920,
+        520
       ],
-      "size": {
-        "0": 289.6058349609375,
-        "1": 299.6588134765625
-      },
+      "size": [
+        340,
+        150
+      ],
       "flags": {},
-      "order": 12,
+      "order": 0,
       "mode": 0,
-      "inputs": [
+      "outputs": [
         {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 33
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2
+          ],
+          "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
     },
     {
-      "id": 24,
-      "type": "MaskToImage",
+      "id": 6,
+      "type": "CLIPTextEncode",
       "pos": [
-        1921,
-        192
+        420,
+        210
       ],
       "size": {
-        "0": 210,
-        "1": 26
+        "0": 420,
+        "1": 160
       },
       "flags": {},
-      "order": 10,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
-          "name": "mask",
-          "type": "MASK",
-          "link": 32
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a wine glass half full of merlot"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "LayeredDiffusionApply",
+      "pos": [
+        420,
+        40
+      ],
+      "size": [
+        410,
+        100
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayeredDiffusionApply"
+      },
+      "widgets_values": [
+        "SDXL, Conv Injection",
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        30,
+        220
+      ],
+      "size": {
+        "0": 320,
+        "1": 100
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            18
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            22
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "juggernaut_v6.safetensors"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "VAEDecode",
+      "pos": [
+        1300,
+        200
+      ],
+      "size": {
+        "0": 210,
+        "1": 50
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 21
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 22,
+          "slot_index": 1
         }
       ],
       "outputs": [
@@ -252,51 +432,27 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            33
+            24,
+            29
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "MaskToImage"
-      }
-    },
-    {
-      "id": 23,
-      "type": "PreviewImage",
-      "pos": [
-        1965,
-        479
-      ],
-      "size": {
-        "0": 289.6058349609375,
-        "1": 299.6588134765625
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 31
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
+        "Node name for S&R": "VAEDecode"
       }
     },
     {
       "id": 15,
       "type": "LayeredDiffusionDecode",
       "pos": [
-        1586,
-        195
+        1610,
+        190
       ],
       "size": {
         "0": 210,
-        "1": 102
+        "1": 100
       },
       "flags": {},
       "order": 7,
@@ -344,233 +500,85 @@
       ]
     },
     {
-      "id": 29,
-      "type": "InvertMask",
+      "id": 20,
+      "type": "PreviewImage",
       "pos": [
-        1931,
-        44
+        1600,
+        350
       ],
       "size": {
-        "0": 210,
-        "1": 26
+        "0": 290,
+        "1": 300
       },
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 38
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            39
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "InvertMask"
-      }
-    },
-    {
-      "id": 13,
-      "type": "LayeredDiffusionApply",
-      "pos": [
-        468,
-        -2
-      ],
-      "size": {
-        "0": 327.8314208984375,
-        "1": 106.42147827148438
+      "flags": {
+        "collapsed": true
       },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 18
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            19
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LayeredDiffusionApply"
-      },
-      "widgets_values": [
-        "SDXL, Conv Injection",
-        1
-      ]
-    },
-    {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        415,
-        186
-      ],
-      "size": {
-        "0": 422.84503173828125,
-        "1": 164.31304931640625
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            4
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "an office chair"
-      ]
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        5,
-        479
-      ],
-      "size": {
-        "0": 315,
-        "1": 98
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            18
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            3,
-            5
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            22
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "SDXL\\juggernautXL_v7Rundiffusion.safetensors"
-      ]
-    },
-    {
-      "id": 28,
-      "type": "JoinImageWithAlpha",
-      "pos": [
-        1928,
-        -59
-      ],
-      "size": {
-        "0": 210,
-        "1": 46
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 37
-        },
-        {
-          "name": "alpha",
-          "type": "MASK",
-          "link": 39
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            41
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "JoinImageWithAlpha"
-      }
-    },
-    {
-      "id": 30,
-      "type": "SaveImage",
-      "pos": [
-        2246,
-        -154
-      ],
-      "size": {
-        "0": 315,
-        "1": 270
-      },
-      "flags": {},
-      "order": 14,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 41
+          "link": 29
         }
       ],
-      "properties": {},
-      "widgets_values": [
-        "LayerDiffusion/LD_fg"
-      ]
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 23,
+      "type": "PreviewImage",
+      "pos": [
+        1920,
+        350
+      ],
+      "size": {
+        "0": 290,
+        "1": 300
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 31
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 25,
+      "type": "PreviewImage",
+      "pos": [
+        2230,
+        350
+      ],
+      "size": {
+        "0": 290,
+        "1": 300
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 33
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
     }
   ],
   "links": [
@@ -731,12 +739,18 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1,
+      "scale": 1,
       "offset": {
-        "0": -1279.96533203125,
-        "1": 288.7980651855469
+        "0": 162.12024596264888,
+        "1": 212.4851739658044
       }
-    }
+    },
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ],
+    "groupNodes": {}
   },
   "version": 0.4
 }

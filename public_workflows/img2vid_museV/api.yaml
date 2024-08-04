@@ -9,6 +9,7 @@ parameters:
   label: Image
   description: Input image to animate
   type: image
+  required: true
   comfyui: 
     node_id: 2
     field: inputs
@@ -29,6 +30,7 @@ parameters:
   default: 768
   minimum: 256
   maximum: 2048
+  step: 8
   comfyui: 
     node_id: 27
     field: inputs
@@ -40,6 +42,7 @@ parameters:
   default: 36
   minimum: 24
   maximum: 128
+  step: 8
   comfyui: 
     node_id: 21
     field: inputs
