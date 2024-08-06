@@ -7,7 +7,7 @@ comfyui_output_node_id: 33
 parameters:
 - name: image
   label: Image
-  description: Input image to inpaint a region of
+  description: Input image
   type: image
   required: true
   comfyui: 
@@ -16,8 +16,8 @@ parameters:
     subfield: image
 - name: masking_prompt
   label: masking prompt
-  description: Textual description of the region to inpaint. This prompt will be used to highlight the region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences.
-  tip: Some examples of good masking prompts are 'background', 'face', 'roof of building', 'hair, headwear, hat', ...
+  description: Textual description of the region to inpaint.
+  tip: This prompt will be used to highlight the region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences. Some examples of good masking prompts are 'background', 'face', 'roof of building', 'hair, headwear, hat', ...
   type: string
   required: true
   comfyui: 
@@ -26,7 +26,7 @@ parameters:
     subfield: prompt
 - name: inpainting_prompt
   label: inpainting prompt
-  description: Positive text prompt, what you want to generate. This prompt will be used to inpaint the region highlighted by the masking prompt.
+  description: Positive text prompt, what you want to generate. This prompt will be used to inpaint the region selected by the masking prompt.
   type: string
   required: true
   comfyui: 

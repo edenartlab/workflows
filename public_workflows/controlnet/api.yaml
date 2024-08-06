@@ -16,7 +16,8 @@ parameters:
     subfield: positive
 - name: negative
   label: Negative prompt
-  description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
+  description: Negative text prompt, what you do *not* want to generate.
+  tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
   type: string
   comfyui: 
     node_id: 1
@@ -49,7 +50,7 @@ parameters:
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set to a random value.
-  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank. Great for redoing an image generation you like with a slightly modified prompt, but otherwise you should usually leave this blank.
   type: int
   default: random
   minimum: 0
@@ -68,9 +69,9 @@ parameters:
     field: inputs
     subfield: image
 - name: denoise
-  label: Denoise strength
-  description: Strength of denoising
-  tip: Decreasing denoise strength increases the influence of the init image
+  label: Generation strength
+  description: Strength of the generation process on top of the starting image
+  tip: Decreasing generation strength increases the influence of the starting image.
   type: float
   default: 1.0
   minimum: 0.0
@@ -81,8 +82,8 @@ parameters:
     subfield: denoise
 - name: steps
   label: Steps
-  description: Length of diffusion steps
-  tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image, or are using a specialized model.
+  description: Number of diffusion steps
+  tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image.
   type: float
   default: 30
   minimum: 1
@@ -92,9 +93,9 @@ parameters:
     field: inputs
     subfield: steps
 - name: size_from_input
-  label: Size From Input
-  description: Override the width and height parameters with the actual resolution of your image. 
-  tip: Its best practice to use resolutions included in the models training data. upscaling later can get you to a higher resolution
+  label: Use input image size
+  description: Override the width and height parameters with the actual resolution of your starting image. 
+  tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution.
   type: bool
   default: true
   comfyui: 
@@ -102,8 +103,8 @@ parameters:
     field: inputs
     subfield: size_from_input
 - name: sdxl_aspect
-  label: Aspect
-  description: Override the width and height parameters with the best resolution closest to what the model was trained on. This will reduce artifacting and assist in a better image generation. 
+  label: Use native aspect ratio
+  description: Override the width and height parameters with the model's native training resolution. This will reduce artifacts.
   tip: SDXL was trained on images equaling about a megapixel, and generating within these preferred aspect ratios will produce better results
   type: bool
   default: true
@@ -112,9 +113,9 @@ parameters:
     field: inputs
     subfield: sdxl_aspect
 - name: input_img_is_controlnet
-  label: Use init image for contolnet
-  description: use the input image as the controlnet guidance image
-  tip: this will usually be true unless you want to mix guidance from a different image while using an init with denoise < 1.0
+  label: Use starting image for controlnet
+  description: Use the input image as the controlnet guidance image
+  tip: Leave this as true unless you want to mix guidance from a different image while using an init with denoise < 1.0
   type: bool  
   default: true
   comfyui: 
@@ -135,7 +136,7 @@ parameters:
 - name: controlnet_strength
   label: Controlnet Strength
   description: set the guidance strength of the controlnet model in slot 1
-  tip: a good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
+  tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
   type: float
   default: 0.6
   minimum: 0.0

@@ -1,6 +1,6 @@
 name: Animate 3D
 description: Animate a single image with 3D depth motion, while staying visually close to the input image. This tool will apply different amounts of animated motion on the background (a lot) vs foreground (subtle) to try to stay visually close to the foreground subject in the image.
-tip: Use this tool to animate a single image when no other specific requirements are given.
+tip: This should be the default tool to use when a user requests to make a video out of an image with no other specific requirements. If the image has a clear or obvious foreground subject, use a lower foreground_denoise strength to avoid corrupting the subject.
 output_type: video
 handler: comfyui
 comfyui_output_node_id: 134
@@ -16,7 +16,8 @@ parameters:
     subfield: image
 - name: background_denoise
   label: Background animation strength
-  description: How strong the motion should be in the background. Higher values cause more animation, but also stray further away from the input image.
+  description: Motion strength in the background
+  tip: Higher values cause more animation, but also stray further away from the background of the input image. This can usuaully be somewhat higher than the foreground motion strength unless the user requests otherwise or wants the background to remain fairly consistent.
   type: float
   default: 0.65
   minimum: 0.20
@@ -27,7 +28,8 @@ parameters:
     subfield: value
 - name: foreground_denoise
   label: Foreground animation strength
-  description: How strong the motion should be in the foreground. Higher values cause more animation, but also stray further away from the input image. Typically, you want to keep this value in the low range (0.25 - 0.4) to avoid drifting too far away from the main subject in the image. If identity preservation to the input image is not important you can use higher values here to create more animation.
+  description: Motion strength in the foreground
+  tip: Higher values cause more animation, but also stray further away from the foreground of the input image. Typically, you want to keep this value in the low range (0.25 - 0.4) to avoid drifting too far away from the main subject in the image. If identity preservation to the input image is not important you can use higher values here to create more animation. If it is, use a lower value.
   type: float
   default: 0.35
   minimum: 0.20
@@ -38,7 +40,8 @@ parameters:
     subfield: value
 - name: n_frames
   label: Number of frames
-  description: Number of animation frames to generate. The output video will be 1 second long for every 8 frames generated. (The default of 32 frames will thus generate a 4s animation)
+  description: Number of video frames to generate.
+  tip: The output video will be 1 second long for every 8 frames generated. (The default of 32 frames will thus generate a 4s animation)
   type: int
   default: 32
   minimum: 16
@@ -50,7 +53,7 @@ parameters:
 - name: loop
   label: Loop Animation
   description: Make the animation a seamless loop
-  tip: This will cause the last frame to be identical to the first, causing a seamlessly looping animation
+  tip: This will force the last frame to be identical to the first.
   type: bool
   default: false
   comfyui: 

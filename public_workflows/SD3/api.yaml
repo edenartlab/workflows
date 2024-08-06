@@ -1,13 +1,13 @@
 name: SD3 Text-to-Image
 description: Text-to-Image with Stable Diffusion 3-medium
-tip: This pipeline takes a single prompt and turns that into an amazing image using StableDiffusion3
+tip: Compared to other txt-to-image tools, SD3 has much better prompt adherence and should be preferred in situations where users have extremely detailed prompts.
 output_type: image
 handler: comfyui
 comfyui_output_node_id: 273
 parameters:
 - name: prompt
   label: prompt
-  description: A prompt describing what to draw in very rich detail. Try to be as specific as possible here!
+  description: A prompt describing what to draw in very rich detail. Try to be as specific as possible here.
   type: string
   required: true
   comfyui: 
@@ -41,7 +41,7 @@ parameters:
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set randomly.
-  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank. 
   type: int
   default: random
   minimum: 0

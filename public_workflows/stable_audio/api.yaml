@@ -1,6 +1,6 @@
 name: Stable Audio
-description: Stable Audio Open is an open-source model optimized for generating short audio samples, sound effects, and production elements using text prompts. Ideal for creating drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples, the model was trained on data from Freesound and the Free Music Archive, respecting creator rights.
-tip: this open model is best suited for generating sound effects, loops and stems rather than full audio arrangements, but can be prompted to do this as well. MusicGen results may be of a higher quality for full spectrum music arrangements, while this model runs much faster.
+description: Generate sound effects
+tip: Optimized for generating short audio samples, sound effects, and production elements. Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. The model was trained on data from Freesound and the Free Music Archive, respecting creator rights.
 output_type: audio
 handler: comfyui
 comfyui_output_node_id: 13
@@ -8,10 +8,9 @@ parameters:
 - name: prompt
   label: Prompt
   description: Text prompt
-  tip: specifying tempo, key and style information can help guide the generation towards a more desirable result.
+  tip: Specifying tempo, key and style information can help guide the generation towards a more desirable result.
   type: string
   required: true
-  default: 303 acid bassline loop arpeggiated 128bpm Gmin7
   comfyui: 
     node_id: 6
     field: inputs
@@ -28,7 +27,6 @@ parameters:
 - name: seconds
   label: Length in Seconds
   description: Number of seconds of audio to generate
-  tip: Stable Audio Open 1.0 generates variable-length (up to 47s) stereo audio at 44.1kHz from text prompts. The ComfyUI implementation can generate outputs longer than the default 47s by extending the sample and feeding it through multiple passes. 
   type: float
   default: 30
   minimum: 1
@@ -62,8 +60,8 @@ parameters:
     field: inputs
     subfield: steps
 - name: cfg
-  label: CFG
-  description: CFG is the setting that controls how closely Stable Diffusion should follow your text prompt.
+  label: Prompt strength
+  description: Prompt strength is the setting that controls how closely Stable Diffusion should follow your text prompt.
   tip: the default of 5.0 might be considered thoroughly cooked, whereas the specified maximum is well done, and the minimum is rare.
   type: float
   default: 5.0
