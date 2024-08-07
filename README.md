@@ -17,7 +17,8 @@
 | `name` | Unique identifier for the parameter |
 | `label` | Human-readable name for the parameter |
 | `description` | Detailed explanation of the parameter's purpose and usage |
-| `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio |
+| `tip` | Additional advice or context for using the parameter effectively (targetted to help AI agents use the tool well) |
+| `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio) |
 | `default` | Default value for the parameter if not specified |
 | `minimum` | Minimum allowed value for numeric types, or min length of array types |
 | `maximum` | Maximum allowed value for numeric types, or max length of array types |
