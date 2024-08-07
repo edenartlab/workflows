@@ -12,6 +12,8 @@
 | `comfyui_output_node_id` | ComfyUI output node id if applicable |
 
 # Parameter Fields
+| Field | Description |
+|-------|-------------|
 | `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio |
 | `comfyui` | Configuration for ComfyUI integration |
 | - `node_id` | Identifier for the ComfyUI node |
