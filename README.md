@@ -12,14 +12,19 @@
 | `comfyui_output_node_id` | ComfyUI output node id if applicable |
 
 # Parameter Fields
+
 | Field | Description |
 |-------|-------------|
 | `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio |
-| `comfyui` | Configuration for ComfyUI integration |
-| - `node_id` | Identifier for the ComfyUI node |
-| - `field` | Field within the node |
-| - `subfield` | Specific subfield within the node field |
-| - `preprocessing` | Any preprocessing steps required to properly parse this input (e.g., "folder" for image arrays, which saves a set of imgs to a tmp folder and passes that path in ComfyUI) |
+
+## ComfyUI Fields
+
+| Field | Description |
+|-------|-------------|
+| `node_id` | Identifier for the ComfyUI node |
+| `field` | Field within the node |
+| `subfield` | Specific subfield within the node field |
+| `preprocessing` | Any preprocessing steps required to properly parse this input (e.g., "folder" for image arrays, which saves a set of imgs to a tmp folder and passes that path in ComfyUI) |
 
 ## Value Constraints
 
