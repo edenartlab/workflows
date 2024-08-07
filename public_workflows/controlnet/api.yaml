@@ -19,6 +19,7 @@ parameters:
   description: Negative text prompt, what you do *not* want to generate.
   tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
   type: string
+  default:  
   comfyui: 
     node_id: 1
     field: inputs
@@ -112,16 +113,16 @@ parameters:
     node_id: 1
     field: inputs
     subfield: sdxl_aspect
-- name: input_img_is_controlnet
-  label: Use starting image for controlnet
-  description: Use the input image as the controlnet guidance image
-  tip: Leave this as true unless you want to mix guidance from a different image while using an init with denoise < 1.0
-  type: bool  
-  default: true
-  comfyui: 
-    node_id: 1
-    field: inputs
-    subfield: input_img_is_controlnet
+# - name: input_img_is_controlnet
+#   label: Use starting image for controlnet
+#   description: Use the input image as the controlnet guidance image
+#   tip: Leave this as true unless you want to mix guidance from a different image while using an init with denoise < 1.0
+#   type: bool  
+#   default: true
+#   comfyui: 
+#     node_id: 1
+#     field: inputs
+#     subfield: input_img_is_controlnet
 - name: preprocessor
   label: Preprocessor
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
