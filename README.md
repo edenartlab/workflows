@@ -16,6 +16,11 @@
 | Field | Description |
 |-------|-------------|
 | `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio |
+| `default` | Default value for the parameter if not specified |
+| `minimum` | Minimum allowed value for numeric types, or min length of array types |
+| `maximum` | Maximum allowed value for numeric types, or max length of array types |
+| `step` | For numeric types, specifies the increment step in the UI (e.g., 8 for width/height) |
+| `choices` | List of predefined options for the parameter |
 
 ## ComfyUI Fields
 
@@ -26,26 +31,9 @@
 | `subfield` | Specific subfield within the node field |
 | `preprocessing` | Any preprocessing steps required to properly parse this input (e.g., "folder" for image arrays, which saves a set of imgs to a tmp folder and passes that path in ComfyUI) |
 
-## Value Constraints
-
-| Field | Description |
-|-------|-------------|
-| `default` | Default value for the parameter if not specified |
-| `minimum` | Minimum allowed value for numeric types |
-| `maximum` | Maximum allowed value for numeric types |
-| `step` | For numeric types, specifies the increment step in the UI (e.g., 8 for width/height) |
-| `choices` | List of predefined options for the parameter |
-
 ## Special Fields
 
 | Field | Description |
 |-------|-------------|
 | `hide_from_agent` | Boolean indicating whether to hide the parameter from AI agents (true/false) |
 | `required` | Boolean indicating if the parameter is mandatory (true/false) |
-
-## Array-specific Fields
-
-| Field | Description |
-|-------|-------------|
-| `minimum` / `min_length` | Minimum number of items in an array |
-| `maximum` / `max_length` | Maximum number of items in an array |
