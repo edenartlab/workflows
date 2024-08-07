@@ -35,5 +35,6 @@
 
 | Field | Description |
 |-------|-------------|
-| `hide_from_agent` | Boolean indicating whether to hide the parameter from AI agents (true/false) |
-| `required` | Boolean indicating if the parameter is mandatory (true/false) |
+| `hide_from_agent` | Boolean indicating whether to hide the parameter from AI agents (true/false), defaults to false when not provided |
+| `hide_from_ui` | Boolean indicating whether to hide the parameter from the Eden webapp UI (true/false), defaults to false when not provided |
+| `required` | Boolean indicating if the parameter is mandatory (true/false), defaults to false when not provided |
