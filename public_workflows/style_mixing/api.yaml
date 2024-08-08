@@ -9,8 +9,8 @@ parameters:
   label: Style Images
   description: Style images driving the content of the generated video with IP-adapter
   type: image[]
-  minimum: 1
-  maximum: 6
+  min_length: 1
+  max_length: 6
   required: true
   comfyui: 
     node_id: 74
