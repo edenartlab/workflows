@@ -1,0 +1,267 @@
+{
+  "10": {
+    "inputs": {
+      "samples": [
+        "333",
+        0
+      ],
+      "vae": [
+        "110",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "110": {
+    "inputs": {
+      "ckpt_name": "photonLCM_v10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "251": {
+    "inputs": {
+      "model_name": "AnimateLCM_sd15_t2v.ckpt"
+    },
+    "class_type": "ADE_LoadAnimateDiffModel",
+    "_meta": {
+      "title": "Load AnimateDiff Model 🎭🅐🅓②"
+    }
+  },
+  "278": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "FreeNoise",
+      "seed_gen": "comfy",
+      "seed_offset": 1,
+      "adapt_denoise_steps": false
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "279": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "context_schedule": "uniform",
+      "closed_loop": true,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_AnimateDiffUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "280": {
+    "inputs": {
+      "beta_schedule": "lcm avg(sqrt_linear,linear)",
+      "model": [
+        "110",
+        0
+      ],
+      "m_models": [
+        "281",
+        0
+      ],
+      "context_options": [
+        "279",
+        0
+      ],
+      "sample_settings": [
+        "278",
+        0
+      ]
+    },
+    "class_type": "ADE_UseEvolvedSampling",
+    "_meta": {
+      "title": "Use Evolved Sampling 🎭🅐🅓②"
+    }
+  },
+  "281": {
+    "inputs": {
+      "start_percent": 0,
+      "end_percent": 1,
+      "motion_model": [
+        "251",
+        0
+      ],
+      "scale_multival": [
+        "330",
+        0
+      ]
+    },
+    "class_type": "ADE_ApplyAnimateDiffModel",
+    "_meta": {
+      "title": "Apply AnimateDiff Model (Adv.) 🎭🅐🅓②"
+    }
+  },
+  "290": {
+    "inputs": {
+      "text": "the garden of Eden, sunset, waterfall, lush vegetation, flowers, tree of life, stunning panorama, sharp details, masterpiece",
+      "clip": [
+        "110",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "291": {
+    "inputs": {
+      "text": "nude, naked, blurry, low quality, text, watermark, shutterstock, artefacts, ugly",
+      "clip": [
+        "110",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "321": {
+    "inputs": {
+      "width": [
+        "335",
+        0
+      ],
+      "height": [
+        "335",
+        1
+      ],
+      "batch_size": 78
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "325": {
+    "inputs": {
+      "upscale_model": [
+        "326",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "326": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "328": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 24,
+      "multiplier": 3,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "325",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "329": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDIFF-LCM",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 18,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "328",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "330": {
+    "inputs": {
+      "float_val": 1.1500000000000001
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Multival Dynamic 🎭🅐🅓"
+    }
+  },
+  "333": {
+    "inputs": {
+      "seed": 490365351196183,
+      "steps": 8,
+      "cfg": 1.6,
+      "sampler_name": "lcm",
+      "scheduler": "sgm_uniform",
+      "denoise": 1,
+      "model": [
+        "280",
+        0
+      ],
+      "positive": [
+        "290",
+        0
+      ],
+      "negative": [
+        "291",
+        0
+      ],
+      "latent_image": [
+        "321",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "335": {
+    "inputs": {
+      "width": 1280,
+      "height": 896,
+      "output_multiplier": 0.5,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  }
+}
