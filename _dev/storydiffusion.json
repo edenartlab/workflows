@@ -1,0 +1,1137 @@
+{
+  "last_node_id": 43,
+  "last_link_id": 113,
+  "nodes": [
+    {
+      "id": 18,
+      "type": "CLIPTextEncode",
+      "pos": [
+        957,
+        -50
+      ],
+      "size": {
+        "0": 389.5223388671875,
+        "1": 74.33411407470703
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 64
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 18,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            109
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 20,
+      "type": "CLIPTextEncode",
+      "pos": [
+        960,
+        589
+      ],
+      "size": {
+        "0": 389.5223388671875,
+        "1": 74.33411407470703
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 68
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 16,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            107
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncode",
+      "pos": [
+        958,
+        266
+      ],
+      "size": {
+        "0": 389.5223388671875,
+        "1": 74.33411407470703
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 67
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 17,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            108
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SeaArtAppendPrompt",
+      "pos": [
+        421,
+        -54
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "charactor_prompt",
+          "type": "STRING",
+          "link": 10,
+          "widget": {
+            "name": "charactor_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtAppendPrompt"
+      },
+      "widgets_values": [
+        "",
+        "looking to the left, face closeup photo, portrait, sharp facial details"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "SeaArtAppendPrompt",
+      "pos": [
+        427,
+        282
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "charactor_prompt",
+          "type": "STRING",
+          "link": 11,
+          "widget": {
+            "name": "charactor_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            17
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtAppendPrompt"
+      },
+      "widgets_values": [
+        "",
+        "facing to the right, full body shot, indoors, cosy lighting"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2244,
+        -13
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            97
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        4
+      ]
+    },
+    {
+      "id": 27,
+      "type": "SeaArtMergeStoryCondition",
+      "pos": [
+        1551,
+        217
+      ],
+      "size": {
+        "0": 342.5999755859375,
+        "1": 126
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 65
+        },
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 110
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 109
+        },
+        {
+          "name": "conditioning_3",
+          "type": "CONDITIONING",
+          "link": 108
+        },
+        {
+          "name": "conditioning_4",
+          "type": "CONDITIONING",
+          "link": 107
+        },
+        {
+          "name": "conditioning_5",
+          "type": "CONDITIONING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            95
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtMergeStoryCondition"
+      }
+    },
+    {
+      "id": 41,
+      "type": "CLIPTextEncode",
+      "pos": [
+        944,
+        -286
+      ],
+      "size": {
+        "0": 389.5223388671875,
+        "1": 74.33411407470703
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 105
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 106,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            110
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 30,
+      "type": "SeaArtStoryKSampler",
+      "pos": [
+        2247,
+        171
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 94
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 95
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 96
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 97
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            98
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtStoryKSampler"
+      },
+      "widgets_values": [
+        962940066800013,
+        "randomize",
+        25,
+        8,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "CLIPTextEncode",
+      "pos": [
+        912,
+        1061
+      ],
+      "size": [
+        210,
+        58.328986595148535
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 69
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            44,
+            111,
+            112,
+            113
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 28,
+      "type": "SeaArtMergeStoryCondition",
+      "pos": [
+        1196,
+        964
+      ],
+      "size": [
+        259.9150422801574,
+        126
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 66
+        },
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 44
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 111
+        },
+        {
+          "name": "conditioning_3",
+          "type": "CONDITIONING",
+          "link": 112
+        },
+        {
+          "name": "conditioning_4",
+          "type": "CONDITIONING",
+          "link": 113
+        },
+        {
+          "name": "conditioning_5",
+          "type": "CONDITIONING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            96
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtMergeStoryCondition"
+      }
+    },
+    {
+      "id": 22,
+      "type": "SeaArtAppendPrompt",
+      "pos": [
+        636,
+        1081
+      ],
+      "size": [
+        223.98574228015775,
+        126
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtAppendPrompt"
+      },
+      "widgets_values": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 40,
+      "type": "SeaArtAppendPrompt",
+      "pos": [
+        424,
+        -358
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "charactor_prompt",
+          "type": "STRING",
+          "link": 104,
+          "widget": {
+            "name": "charactor_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            106
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtAppendPrompt"
+      },
+      "widgets_values": [
+        "",
+        "posing with a thumbs up, smiling, cartoon style"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "SeaArtAppendPrompt",
+      "pos": [
+        423,
+        574
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "charactor_prompt",
+          "type": "STRING",
+          "link": 12,
+          "widget": {
+            "name": "charactor_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtAppendPrompt"
+      },
+      "widgets_values": [
+        "",
+        "chilling in the park in a patch of grass, full body, distance shot, setting sun"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "SeaArtCharactorPrompt",
+      "pos": [
+        -324,
+        -360
+      ],
+      "size": [
+        393.70543895954984,
+        78.27902963718725
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            10,
+            11,
+            12,
+            104
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtCharactorPrompt"
+      },
+      "widgets_values": [
+        "a cute fantastical creature with long blue hairs"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -480,
+        170
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            63
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            105
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            8
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "zavychromaxl_v90.safetensors"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "PreviewImage",
+      "pos": [
+        2752,
+        172
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 25
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 16,
+      "type": "SeaArtApplyStory",
+      "pos": [
+        1658,
+        9
+      ],
+      "size": {
+        "0": 210,
+        "1": 130
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            94
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeaArtApplyStory"
+      },
+      "widgets_values": [
+        3,
+        1024,
+        1024,
+        0.5
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        2591,
+        173
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 98
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            25
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    }
+  ],
+  "links": [
+    [
+      8,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      10,
+      11,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      11,
+      11,
+      0,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      12,
+      11,
+      0,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      16,
+      14,
+      0,
+      20,
+      1,
+      "STRING"
+    ],
+    [
+      17,
+      13,
+      0,
+      19,
+      1,
+      "STRING"
+    ],
+    [
+      18,
+      12,
+      0,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      25,
+      8,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      22,
+      0,
+      23,
+      1,
+      "STRING"
+    ],
+    [
+      44,
+      23,
+      0,
+      28,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      63,
+      4,
+      0,
+      16,
+      0,
+      "MODEL"
+    ],
+    [
+      64,
+      4,
+      1,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      65,
+      4,
+      1,
+      27,
+      0,
+      "CLIP"
+    ],
+    [
+      66,
+      4,
+      1,
+      28,
+      0,
+      "CLIP"
+    ],
+    [
+      67,
+      4,
+      1,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      68,
+      4,
+      1,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      69,
+      4,
+      1,
+      23,
+      0,
+      "CLIP"
+    ],
+    [
+      94,
+      16,
+      0,
+      30,
+      0,
+      "MODEL"
+    ],
+    [
+      95,
+      27,
+      0,
+      30,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      96,
+      28,
+      0,
+      30,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      97,
+      5,
+      0,
+      30,
+      3,
+      "LATENT"
+    ],
+    [
+      98,
+      30,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      104,
+      11,
+      0,
+      40,
+      0,
+      "STRING"
+    ],
+    [
+      105,
+      4,
+      1,
+      41,
+      0,
+      "CLIP"
+    ],
+    [
+      106,
+      40,
+      0,
+      41,
+      1,
+      "STRING"
+    ],
+    [
+      107,
+      20,
+      0,
+      27,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      108,
+      19,
+      0,
+      27,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      109,
+      18,
+      0,
+      27,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      110,
+      41,
+      0,
+      27,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      111,
+      23,
+      0,
+      28,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      112,
+      23,
+      0,
+      28,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      113,
+      23,
+      0,
+      28,
+      4,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5131581182307067,
+      "offset": [
+        1018.070019905516,
+        644.934459829904
+      ]
+    }
+  },
+  "version": 0.4
+}
