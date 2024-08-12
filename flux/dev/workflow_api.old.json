@@ -1,0 +1,280 @@
+{
+  "1": {
+    "inputs": {
+      "width": 1344,
+      "height": 768,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": [
+        "22",
+        0
+      ],
+      "clip": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "4": {
+    "inputs": {
+      "vae_name": "ae.sft"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp16.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "6": {
+    "inputs": {
+      "unet_name": "flux1-schnell.sft",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "7": {
+    "inputs": {
+      "noise": [
+        "11",
+        0
+      ],
+      "guider": [
+        "10",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "8": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "9": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 20,
+      "denoise": 1,
+      "model": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "10": {
+    "inputs": {
+      "model": [
+        "6",
+        0
+      ],
+      "conditioning": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "11": {
+    "inputs": {
+      "noise_seed": 457695773537082
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "12": {
+    "inputs": {
+      "filename": "flux-schnell_%time_%seed_%counter",
+      "path": "%date/",
+      "vae_name": [
+        "21",
+        0
+      ],
+      "seed": 457695773537082,
+      "steps": 20,
+      "sampler_name": [
+        "16",
+        0
+      ],
+      "scheduler": [
+        "14",
+        0
+      ],
+      "width": 1344,
+      "height": 768,
+      "positive": [
+        "22",
+        0
+      ],
+      "extension": "jpg",
+      "calculate_hash": true,
+      "resource_hash": true,
+      "lossless_webp": true,
+      "jpg_webp_quality": 80,
+      "date_format": "%Y-%m-%d",
+      "time_format": "%H%M%S",
+      "save_metadata_file": false,
+      "extra_info": "SD Prompt Reader Node Example Image",
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "SDPromptSaver",
+    "_meta": {
+      "title": "SD Prompt Saver"
+    }
+  },
+  "13": {
+    "inputs": {
+      "id": 9,
+      "widget_name": "scheduler",
+      "return_all": false,
+      "node_title": ""
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "Widget To String"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "CR String To Combo",
+    "_meta": {
+      "title": "🔧 CR String To Combo"
+    }
+  },
+  "15": {
+    "inputs": {
+      "id": 8,
+      "widget_name": "sampler_name",
+      "return_all": false,
+      "node_title": ""
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "Widget To String"
+    }
+  },
+  "16": {
+    "inputs": {
+      "text": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "CR String To Combo",
+    "_meta": {
+      "title": "🔧 CR String To Combo"
+    }
+  },
+  "20": {
+    "inputs": {
+      "id": 4,
+      "widget_name": "vae_name",
+      "return_all": false,
+      "node_title": ""
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "Widget To String"
+    }
+  },
+  "21": {
+    "inputs": {
+      "text": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "CR String To Combo",
+    "_meta": {
+      "title": "🔧 CR String To Combo"
+    }
+  },
+  "22": {
+    "inputs": {
+      "wildcard_text": "the garden of eden",
+      "populated_text": "the garden of eden",
+      "mode": true,
+      "seed": 77104649166933,
+      "Select to add Wildcard": "Select the Wildcard to add to the text"
+    },
+    "class_type": "ImpactWildcardProcessor",
+    "_meta": {
+      "title": "ImpactWildcardProcessor"
+    }
+  }
+}
