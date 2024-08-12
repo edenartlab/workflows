@@ -20,8 +20,10 @@
 | `tip` | Additional advice or context for using the parameter effectively (targetted to help AI agents use the tool well) |
 | `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio) |
 | `default` | Default value for the parameter if not specified |
-| `minimum` | Minimum allowed value for numeric types, or min length of array types |
-| `maximum` | Maximum allowed value for numeric types, or max length of array types |
+| `minimum` | Minimum allowed value for numeric types |
+| `maximum` | Maximum allowed value for numeric types |
+| `min_length` | Min length of array types |
+| `max_length` | Max length of array types |
 | `step` | For numeric types, specifies the increment step in the UI (e.g., 8 for width/height) |
 | `choices` | List of predefined options for the parameter, if applicable |
 | **Special Fields** |
