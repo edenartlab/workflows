@@ -13,7 +13,7 @@
   "2": {
     "inputs": {
       "text": [
-        "22",
+        "26",
         0
       ],
       "clip": [
@@ -149,132 +149,26 @@
       "title": "RandomNoise"
     }
   },
-  "12": {
+  "26": {
     "inputs": {
-      "filename": "flux-schnell_%time_%seed_%counter",
-      "path": "%date/",
-      "vae_name": [
-        "21",
-        0
-      ],
-      "seed": 457695773537082,
-      "steps": 4,
-      "sampler_name": [
-        "16",
-        0
-      ],
-      "scheduler": [
-        "14",
-        0
-      ],
-      "width": 1344,
-      "height": 768,
-      "positive": [
-        "22",
-        0
-      ],
-      "extension": "jpg",
-      "calculate_hash": true,
-      "resource_hash": true,
-      "lossless_webp": true,
-      "jpg_webp_quality": 95,
-      "date_format": "%Y-%m-%d",
-      "time_format": "%H%M%S",
-      "save_metadata_file": false,
-      "extra_info": "SD Prompt Reader Node Example Image",
+      "value": "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "27": {
+    "inputs": {
+      "filename_prefix": "Flux_Schnell",
       "images": [
         "3",
         0
       ]
     },
-    "class_type": "SDPromptSaver",
+    "class_type": "SaveImage",
     "_meta": {
-      "title": "SD Prompt Saver"
-    }
-  },
-  "13": {
-    "inputs": {
-      "id": 9,
-      "widget_name": "scheduler",
-      "return_all": false,
-      "node_title": ""
-    },
-    "class_type": "WidgetToString",
-    "_meta": {
-      "title": "Widget To String"
-    }
-  },
-  "14": {
-    "inputs": {
-      "text": [
-        "13",
-        0
-      ]
-    },
-    "class_type": "CR String To Combo",
-    "_meta": {
-      "title": "🔧 CR String To Combo"
-    }
-  },
-  "15": {
-    "inputs": {
-      "id": 8,
-      "widget_name": "sampler_name",
-      "return_all": false,
-      "node_title": ""
-    },
-    "class_type": "WidgetToString",
-    "_meta": {
-      "title": "Widget To String"
-    }
-  },
-  "16": {
-    "inputs": {
-      "text": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "CR String To Combo",
-    "_meta": {
-      "title": "🔧 CR String To Combo"
-    }
-  },
-  "20": {
-    "inputs": {
-      "id": 4,
-      "widget_name": "vae_name",
-      "return_all": false,
-      "node_title": ""
-    },
-    "class_type": "WidgetToString",
-    "_meta": {
-      "title": "Widget To String"
-    }
-  },
-  "21": {
-    "inputs": {
-      "text": [
-        "20",
-        0
-      ]
-    },
-    "class_type": "CR String To Combo",
-    "_meta": {
-      "title": "🔧 CR String To Combo"
-    }
-  },
-  "22": {
-    "inputs": {
-      "wildcard_text": "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph",
-      "populated_text": "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph",
-      "mode": true,
-      "seed": 950559634637766,
-      "Select to add Wildcard": "Select the Wildcard to add to the text"
-    },
-    "class_type": "ImpactWildcardProcessor",
-    "_meta": {
-      "title": "ImpactWildcardProcessor"
+      "title": "Save Image"
     }
   }
 }

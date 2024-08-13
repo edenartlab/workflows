@@ -2,7 +2,7 @@ name: Flux
 description: Generate an image from text
 tip: Flux is a text to image model that excels at prompt coherence and text generation. This should always be the default way to generate an image from text!
 handler: comfyui
-comfyui_output_node_id: 12
+comfyui_output_node_id: 27
 parameters:
 - name: prompt
   label: Prompt
@@ -12,9 +12,9 @@ parameters:
   required: true
   default:  
   comfyui: 
-    node_id: 22
+    node_id: 26
     field: inputs
-    subfield: text
+    subfield: value
 - name: width
   label: Width
   description: Width in pixels
@@ -62,6 +62,6 @@ parameters:
   minimum: 4
   maximum: 6
   comfyui: 
-    node_id: 12
+    node_id: 9
     field: inputs
     subfield: steps
