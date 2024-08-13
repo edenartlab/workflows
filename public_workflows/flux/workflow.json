@@ -81,39 +81,6 @@
       ]
     },
     {
-      "id": 11,
-      "type": "RandomNoise",
-      "pos": [
-        1740,
-        980
-      ],
-      "size": [
-        327.8391418457031,
-        82
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "NOISE",
-          "type": "NOISE",
-          "links": [
-            7
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RandomNoise"
-      },
-      "widgets_values": [
-        457695773537082,
-        "randomize"
-      ]
-    },
-    {
       "id": 7,
       "type": "SamplerCustomAdvanced",
       "pos": [
@@ -274,7 +241,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -308,7 +275,7 @@
         "1": 106
       },
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -328,38 +295,6 @@
         "t5xxl_fp8_e4m3fn.safetensors",
         "clip_l.safetensors",
         "flux"
-      ]
-    },
-    {
-      "id": 26,
-      "type": "Eden_String",
-      "pos": [
-        916,
-        690
-      ],
-      "size": {
-        "0": 311.942626953125,
-        "1": 109.75759887695312
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            30
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph"
       ]
     },
     {
@@ -403,34 +338,6 @@
       }
     },
     {
-      "id": 27,
-      "type": "SaveImage",
-      "pos": [
-        2491,
-        773
-      ],
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 33
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "Flux_Schnell"
-      ]
-    },
-    {
       "id": 8,
       "type": "KSamplerSelect",
       "pos": [
@@ -442,7 +349,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -460,40 +367,6 @@
       },
       "widgets_values": [
         "euler"
-      ]
-    },
-    {
-      "id": 1,
-      "type": "EmptyLatentImage",
-      "pos": [
-        1370,
-        1067
-      ],
-      "size": [
-        267.5863952636719,
-        106
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            11
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        1344,
-        768,
-        1
       ]
     },
     {
@@ -535,6 +408,133 @@
       "widgets_values": [
         "simple",
         4,
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "type": "RandomNoise",
+      "pos": [
+        1740,
+        980
+      ],
+      "size": [
+        327.8391418457031,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            7
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        988901281778439,
+        "randomize"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "Eden_String",
+      "pos": [
+        1040,
+        689
+      ],
+      "size": {
+        "0": 311.942626953125,
+        "1": 109.75759887695312
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "SaveImage",
+      "pos": [
+        2487,
+        774
+      ],
+      "size": [
+        315,
+        270
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 33
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Flux_Schnell"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1370,
+        1067
+      ],
+      "size": [
+        267.5863952636719,
+        106
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
         1
       ]
     }
@@ -657,10 +657,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8264462809917354,
+      "scale": 0.8264462809917358,
       "offset": [
-        -1483.5823431924741,
-        -528.8219141747148
+        -1048.173407837655,
+        -489.13728237004466
       ]
     }
   },
