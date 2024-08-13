@@ -9,10 +9,10 @@
         1370,
         1060
       ],
-      "size": [
-        267.5863952636719,
-        78
-      ],
+      "size": {
+        "0": 267.5863952636719,
+        "1": 78
+      },
       "flags": {},
       "order": 13,
       "mode": 0,
@@ -174,52 +174,18 @@
       ]
     },
     {
-      "id": 5,
-      "type": "DualCLIPLoader",
-      "pos": [
-        1370,
-        910
-      ],
-      "size": [
-        267.5863952636719,
-        106
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            3
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DualCLIPLoader"
-      },
-      "widgets_values": [
-        "t5xxl_fp16.safetensors",
-        "clip_l.safetensors",
-        "flux"
-      ]
-    },
-    {
       "id": 8,
       "type": "KSamplerSelect",
       "pos": [
         1370,
         1190
       ],
-      "size": [
-        267.5863952636719,
-        58
-      ],
+      "size": {
+        "0": 267.5863952636719,
+        "1": 58
+      },
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -378,55 +344,18 @@
       ]
     },
     {
-      "id": 17,
-      "type": "PrimitiveNode",
-      "pos": [
-        1370,
-        1420
-      ],
-      "size": [
-        267.5863952636719,
-        80
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            13,
-            20
-          ],
-          "widget": {
-            "name": "steps"
-          },
-          "slot_index": 0
-        }
-      ],
-      "title": "steps",
-      "properties": {
-        "Run widget replace on values": false
-      },
-      "widgets_values": [
-        20,
-        "fixed"
-      ]
-    },
-    {
       "id": 18,
       "type": "PrimitiveNode",
       "pos": [
         1370,
         1290
       ],
-      "size": [
-        267.5863952636719,
-        80
-      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -506,12 +435,12 @@
         1370,
         1550
       ],
-      "size": [
-        267.5863952636719,
-        80
-      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -543,12 +472,12 @@
         1370,
         1670
       ],
-      "size": [
-        267.5863952636719,
-        80
-      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -686,7 +615,7 @@
       },
       "widgets_values": [
         "simple",
-        20,
+        4,
         1
       ]
     },
@@ -702,7 +631,7 @@
         "1": 130
       },
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -744,7 +673,7 @@
         "1": 130
       },
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -869,7 +798,7 @@
         "1": 130
       },
       "flags": {},
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -900,18 +829,55 @@
       ]
     },
     {
+      "id": 17,
+      "type": "PrimitiveNode",
+      "pos": [
+        1370,
+        1420
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            13,
+            20
+          ],
+          "widget": {
+            "name": "steps"
+          },
+          "slot_index": 0
+        }
+      ],
+      "title": "steps",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        4,
+        "fixed"
+      ]
+    },
+    {
       "id": 6,
       "type": "UNETLoader",
       "pos": [
         1370,
         780
       ],
-      "size": [
-        267.5863952636719,
-        82
-      ],
+      "size": {
+        "0": 267.5863952636719,
+        "1": 82
+      },
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "outputs": [
         {
@@ -930,47 +896,42 @@
       },
       "widgets_values": [
         "flux1-schnell.sft",
-        "default"
+        "fp8_e4m3fn"
       ]
     },
     {
-      "id": 22,
-      "type": "ImpactWildcardProcessor",
+      "id": 5,
+      "type": "DualCLIPLoader",
       "pos": [
-        820,
-        686
+        1370,
+        910
       ],
       "size": {
-        "0": 490.8196716308594,
-        "1": 394.3220520019531
+        "0": 267.5863952636719,
+        "1": 106
       },
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
+          "name": "CLIP",
+          "type": "CLIP",
           "links": [
-            28
+            3
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "ImpactWildcardProcessor"
+        "Node name for S&R": "DualCLIPLoader"
       },
       "widgets_values": [
-        "the garden of eden",
-        "the garden of eden",
-        true,
-        77104649166933,
-        "randomize",
-        "Select the Wildcard to add to the text"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "clip_l.safetensors",
+        "flux"
+      ]
     },
     {
       "id": 12,
@@ -1127,26 +1088,65 @@
         "%date/",
         "CheckpointYesmix_v35.safetensors",
         "kl-f8-anime2.ckpt",
-        980759224397642,
+        457695773537082,
         "randomize",
-        20,
+        4,
         8,
         "euler",
         "normal",
-        1345,
-        769,
+        1344,
+        768,
         "",
         "",
-        "png",
+        "jpg",
         true,
         true,
         true,
-        80,
+        95,
         "%Y-%m-%d",
         "%H%M%S",
         false,
         "SD Prompt Reader Node Example Image"
       ]
+    },
+    {
+      "id": 22,
+      "type": "ImpactWildcardProcessor",
+      "pos": [
+        820,
+        686
+      ],
+      "size": {
+        "0": 490.8196716308594,
+        "1": 394.3220520019531
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactWildcardProcessor"
+      },
+      "widgets_values": [
+        "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph",
+        "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph",
+        true,
+        950559634637766,
+        "randomize",
+        "Select the Wildcard to add to the text"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -1387,10 +1387,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8264462809917354,
+      "scale": 3.138428376721004,
       "offset": [
-        -475.0160661722565,
-        -332.43095175373077
+        -2430.5878986693842,
+        -1408.4876404913691
       ]
     }
   },

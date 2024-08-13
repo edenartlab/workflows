@@ -53,7 +53,7 @@
   },
   "5": {
     "inputs": {
-      "clip_name1": "t5xxl_fp16.safetensors",
+      "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
       "clip_name2": "clip_l.safetensors",
       "type": "flux"
     },
@@ -65,7 +65,7 @@
   "6": {
     "inputs": {
       "unet_name": "flux1-schnell.sft",
-      "weight_dtype": "default"
+      "weight_dtype": "fp8_e4m3fn"
     },
     "class_type": "UNETLoader",
     "_meta": {
@@ -112,7 +112,7 @@
   "9": {
     "inputs": {
       "scheduler": "simple",
-      "steps": 20,
+      "steps": 4,
       "denoise": 1,
       "model": [
         "6",
@@ -158,7 +158,7 @@
         0
       ],
       "seed": 457695773537082,
-      "steps": 20,
+      "steps": 4,
       "sampler_name": [
         "16",
         0
@@ -177,7 +177,7 @@
       "calculate_hash": true,
       "resource_hash": true,
       "lossless_webp": true,
-      "jpg_webp_quality": 80,
+      "jpg_webp_quality": 95,
       "date_format": "%Y-%m-%d",
       "time_format": "%H%M%S",
       "save_metadata_file": false,
@@ -266,10 +266,10 @@
   },
   "22": {
     "inputs": {
-      "wildcard_text": "the garden of eden",
-      "populated_text": "the garden of eden",
+      "wildcard_text": "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph",
+      "populated_text": "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph",
       "mode": true,
-      "seed": 77104649166933,
+      "seed": 950559634637766,
       "Select to add Wildcard": "Select the Wildcard to add to the text"
     },
     "class_type": "ImpactWildcardProcessor",
