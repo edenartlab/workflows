@@ -1,5 +1,5 @@
 {
-  "1": {
+  "5": {
     "inputs": {
       "width": 1024,
       "height": 1024,
@@ -10,14 +10,11 @@
       "title": "Empty Latent Image"
     }
   },
-  "2": {
+  "6": {
     "inputs": {
-      "text": [
-        "26",
-        0
-      ],
+      "text": "a bottle with a beautiful rainbow galaxy inside it on top of a wooden table in the middle of a modern kitchen beside a plate of vegetables and mushrooms and a wine glasse that contains a planet earth with a plate with a half eaten apple pie on it",
       "clip": [
-        "5",
+        "11",
         0
       ]
     },
@@ -26,14 +23,14 @@
       "title": "CLIP Text Encode (Prompt)"
     }
   },
-  "3": {
+  "8": {
     "inputs": {
       "samples": [
-        "7",
+        "13",
         0
       ],
       "vae": [
-        "4",
+        "10",
         0
       ]
     },
@@ -42,16 +39,29 @@
       "title": "VAE Decode"
     }
   },
-  "4": {
+  "9": {
     "inputs": {
-      "vae_name": "ae.sft"
+      "filename_prefix": "Flux",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "10": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
     },
     "class_type": "VAELoader",
     "_meta": {
       "title": "Load VAE"
     }
   },
-  "5": {
+  "11": {
     "inputs": {
       "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
       "clip_name2": "clip_l.safetensors",
@@ -62,9 +72,9 @@
       "title": "DualCLIPLoader"
     }
   },
-  "6": {
+  "12": {
     "inputs": {
-      "unet_name": "flux1-schnell.sft",
+      "unet_name": "flux1-schnell.safetensors",
       "weight_dtype": "fp8_e4m3fn"
     },
     "class_type": "UNETLoader",
@@ -72,26 +82,26 @@
       "title": "Load Diffusion Model"
     }
   },
-  "7": {
+  "13": {
     "inputs": {
       "noise": [
-        "11",
+        "25",
         0
       ],
       "guider": [
-        "10",
+        "22",
         0
       ],
       "sampler": [
-        "8",
+        "16",
         0
       ],
       "sigmas": [
-        "9",
+        "17",
         0
       ],
       "latent_image": [
-        "1",
+        "5",
         0
       ]
     },
@@ -100,7 +110,7 @@
       "title": "SamplerCustomAdvanced"
     }
   },
-  "8": {
+  "16": {
     "inputs": {
       "sampler_name": "euler"
     },
@@ -109,13 +119,13 @@
       "title": "KSamplerSelect"
     }
   },
-  "9": {
+  "17": {
     "inputs": {
       "scheduler": "simple",
       "steps": 4,
       "denoise": 1,
       "model": [
-        "6",
+        "12",
         0
       ]
     },
@@ -124,14 +134,14 @@
       "title": "BasicScheduler"
     }
   },
-  "10": {
+  "22": {
     "inputs": {
       "model": [
-        "6",
+        "12",
         0
       ],
       "conditioning": [
-        "2",
+        "6",
         0
       ]
     },
@@ -140,35 +150,13 @@
       "title": "BasicGuider"
     }
   },
-  "11": {
+  "25": {
     "inputs": {
-      "noise_seed": 988901281778439
+      "noise_seed": 109793949028927
     },
     "class_type": "RandomNoise",
     "_meta": {
       "title": "RandomNoise"
-    }
-  },
-  "26": {
-    "inputs": {
-      "value": "a photo of a border collie lighting the barbeque in front of a large, green, rectangular tiny house in the grass, plants in the background, professional photograph"
-    },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Eden_String"
-    }
-  },
-  "27": {
-    "inputs": {
-      "filename_prefix": "Flux_Schnell",
-      "images": [
-        "3",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
     }
   }
 }
