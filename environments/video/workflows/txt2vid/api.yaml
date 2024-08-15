@@ -14,22 +14,13 @@ parameters:
     node_id: 290
     field: inputs
     subfield: text
-- name: negative_prompt
-  label: Negative prompt
-  description: Negative text prompt, what you do *not* want to generate
-  type: string
-  default: ugly, watermark, low-quality, signature, padding, margins, blurry, jpeg artifacts, poorly drawn, low-resolution, bad, nude, naked
-  comfyui: 
-    node_id: 291
-    field: inputs
-    subfield: text
 - name: width
   label: Width
   description: Width in pixels
   type: int
   required: true
   default: 1024
-  minimum: 256
+  minimum: 512
   maximum: 2048
   step: 64
   comfyui: 
@@ -41,8 +32,8 @@ parameters:
   description: Height in pixels
   type: int
   required: true
-  default: 576
-  minimum: 256
+  default: 1024
+  minimum: 512
   maximum: 2048
   step: 64
   comfyui: 
@@ -51,7 +42,7 @@ parameters:
     subfield: height
 - name: n_frames
   label: Number of frames
-  description: Number of video frames to generate (controls the duration of the video together with the framerate, which should usually be kept fixed at 24). So in general, the final video length will be 2 * n_frames / 24 seconds.
+  description: Number of video frames to generate. The final video length will be n_frames / 12 seconds long.
   type: int
   default: 64
   minimum: 24
@@ -61,18 +52,6 @@ parameters:
     node_id: 321
     field: inputs
     subfield: batch_size
-- name: frame_rate
-  label: Frame rate
-  description: Video frames per second (almost always 24 is the best choice, but you can change it if you want to make a slow-motion or fast-motion video)
-  type: int
-  default: 24
-  minimum: 4
-  maximum: 60
-  step: 1
-  comfyui: 
-    node_id: 329
-    field: inputs
-    subfield: frame_rate
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set randomly.

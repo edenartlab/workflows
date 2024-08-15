@@ -1,0 +1,260 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 1074583956660702,
+      "steps": 30,
+      "cfg": 7,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "76",
+        0
+      ],
+      "positive": [
+        "22",
+        0
+      ],
+      "negative": [
+        "23",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "Eden_SDXL.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "image": "05.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "FaceImage"
+    }
+  },
+  "16": {
+    "inputs": {
+      "pulid_file": "ip-adapter_pulid_sdxl_fp16.safetensors"
+    },
+    "class_type": "PulidModelLoader",
+    "_meta": {
+      "title": "Load PuLID Model"
+    }
+  },
+  "17": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "PulidInsightFaceLoader",
+    "_meta": {
+      "title": "Load InsightFace (PuLID)"
+    }
+  },
+  "19": {
+    "inputs": {},
+    "class_type": "PulidEvaClipLoader",
+    "_meta": {
+      "title": "Load Eva Clip (PuLID)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "text": "a stylized depiction of a person, highly detailed, 4k, high resolution",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "23": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image": "40.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "StyleImage"
+    }
+  },
+  "51": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "62": {
+    "inputs": {
+      "weight": 0.9,
+      "projection": "ortho_v2",
+      "fidelity": 6,
+      "noise": 0.5,
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "pulid": [
+        "16",
+        0
+      ],
+      "eva_clip": [
+        "19",
+        0
+      ],
+      "face_analysis": [
+        "17",
+        0
+      ],
+      "image": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "ApplyPulidAdvanced",
+    "_meta": {
+      "title": "Apply PuLID Advanced"
+    }
+  },
+  "64": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "74": {
+    "inputs": {
+      "filename_prefix": "face_styler",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "75": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "76": {
+    "inputs": {
+      "weight": 0.8,
+      "weight_type": "strong style transfer",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "enhance_tiles": 2,
+      "enhance_ratio": 1,
+      "model": [
+        "51",
+        0
+      ],
+      "ipadapter": [
+        "51",
+        1
+      ],
+      "image": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "IPAdapterClipVisionEnhancer",
+    "_meta": {
+      "title": "IPAdapter ClipVision Enhancer"
+    }
+  }
+}

@@ -17,7 +17,7 @@
   },
   "110": {
     "inputs": {
-      "ckpt_name": "photonLCM_v10.safetensors"
+      "ckpt_name": "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -108,7 +108,7 @@
   },
   "290": {
     "inputs": {
-      "text": "the garden of Eden, sunset, waterfall, lush vegetation, flowers, tree of life, stunning panorama, sharp details, masterpiece",
+      "text": "the garden of Eden, sunset, waterfall, lush vegetation, flowers, tree of life, stunning panorama, sharp details, masterpiece, bright sunlight",
       "clip": [
         "110",
         1
@@ -121,7 +121,7 @@
   },
   "291": {
     "inputs": {
-      "text": "nude, naked, blurry, low quality, text, watermark, shutterstock, artefacts, ugly",
+      "text": "nude, naked, blurry, low quality, text, watermark, shutterstock, artefacts, ugly, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3",
       "clip": [
         "110",
         1
@@ -178,7 +178,7 @@
     "inputs": {
       "ckpt_name": "rife47.pth",
       "clear_cache_after_n_frames": 24,
-      "multiplier": 3,
+      "multiplier": 2,
       "fast_mode": true,
       "ensemble": true,
       "scale_factor": 1,
@@ -219,12 +219,12 @@
     },
     "class_type": "ADE_MultivalDynamic",
     "_meta": {
-      "title": "Multival Dynamic 🎭🅐🅓"
+      "title": "Multival 🎭🅐🅓"
     }
   },
   "333": {
     "inputs": {
-      "seed": 490365351196183,
+      "seed": 785520035013310,
       "steps": 8,
       "cfg": 1.6,
       "sampler_name": "lcm",

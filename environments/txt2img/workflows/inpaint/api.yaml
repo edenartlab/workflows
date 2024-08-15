@@ -1,0 +1,47 @@
+name: Inpaint
+description: Inpaint (and replace) a region or object in an image using a masking prompt (to target a segment of the image) and normal inpainting prompt (to re-draw that area).
+tip: This workflow edits a specific region in the given image by first applying the masking prompt to highlight a specific region of the image, and then applying the inpainting prompt to fill (re-draw) in the highlighted region.
+output_type: image
+handler: comfyui
+comfyui_output_node_id: 33
+parameters:
+- name: image
+  label: Image
+  description: Input image
+  type: image
+  required: true
+  comfyui: 
+    node_id: 11
+    field: inputs
+    subfield: image
+- name: masking_prompt
+  label: masking prompt
+  description: Textual description of the region to inpaint.
+  tip: This prompt will be used to highlight the region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences. Some examples of good masking prompts are 'background', 'face', 'roof of building', 'hair, headwear, hat', ...
+  type: string
+  required: true
+  comfyui: 
+    node_id: 82
+    field: inputs
+    subfield: prompt
+- name: inpainting_prompt
+  label: inpainting prompt
+  description: Positive text prompt, what you want to generate. This prompt will be used to inpaint the region selected by the masking prompt.
+  type: string
+  required: true
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 1000000
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: seed

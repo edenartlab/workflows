@@ -3,54 +3,6 @@
   "last_link_id": 25,
   "nodes": [
     {
-      "id": 110,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        100,
-        130
-      ],
-      "size": {
-        "0": 315,
-        "1": 98
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            7
-          ],
-          "shape": 3
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            12,
-            13
-          ],
-          "shape": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            2
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "photonLCM_v10.safetensors"
-      ]
-    },
-    {
       "id": 281,
       "type": "ADE_ApplyAnimateDiffModel",
       "pos": [
@@ -62,7 +14,7 @@
         "1": 182
       },
       "flags": {},
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -111,7 +63,8 @@
       },
       "widgets_values": [
         0,
-        1
+        1,
+        ""
       ]
     },
     {
@@ -179,7 +132,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [
         {
@@ -203,123 +156,6 @@
       },
       "widgets_values": [
         "AnimateLCM_sd15_t2v.ckpt"
-      ]
-    },
-    {
-      "id": 278,
-      "type": "ADE_AnimateDiffSamplingSettings",
-      "pos": [
-        655,
-        -215
-      ],
-      "size": {
-        "0": 315,
-        "1": 238
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "noise_layers",
-          "type": "NOISE_LAYERS",
-          "link": null
-        },
-        {
-          "name": "iteration_opts",
-          "type": "ITERATION_OPTS",
-          "link": null
-        },
-        {
-          "name": "custom_cfg",
-          "type": "CUSTOM_CFG",
-          "link": null
-        },
-        {
-          "name": "sigma_schedule",
-          "type": "SIGMA_SCHEDULE",
-          "link": null
-        },
-        {
-          "name": "seed_override",
-          "type": "INT",
-          "link": null,
-          "widget": {
-            "name": "seed_override"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "settings",
-          "type": "SAMPLE_SETTINGS",
-          "links": [
-            10
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ADE_AnimateDiffSamplingSettings"
-      },
-      "widgets_values": [
-        0,
-        "FreeNoise",
-        "comfy",
-        1,
-        0,
-        false
-      ]
-    },
-    {
-      "id": 321,
-      "type": "EmptyLatentImage",
-      "pos": [
-        1429,
-        -52
-      ],
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 24,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 25,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            22
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        640,
-        384,
-        78
       ]
     },
     {
@@ -414,7 +250,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -442,7 +278,7 @@
       ],
       "size": [
         315,
-        510.5
+        530.5
       ],
       "flags": {},
       "order": 16,
@@ -461,6 +297,11 @@
         {
           "name": "meta_batch",
           "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
           "link": null
         }
       ],
@@ -489,61 +330,14 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDIFF-LCM_00010.mp4",
+            "filename": "AnimateDIFF-LCM_00004.mp4",
             "subfolder": "",
             "type": "output",
-            "format": "video/h264-mp4"
+            "format": "video/h264-mp4",
+            "frame_rate": 24
           }
         }
       }
-    },
-    {
-      "id": 328,
-      "type": "RIFE VFI",
-      "pos": [
-        2274,
-        109
-      ],
-      "size": {
-        "0": 319.20001220703125,
-        "1": 198
-      },
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": 16
-        },
-        {
-          "name": "optional_interpolation_states",
-          "type": "INTERPOLATION_STATES",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            17
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RIFE VFI"
-      },
-      "widgets_values": [
-        "rife47.pth",
-        24,
-        3,
-        true,
-        true,
-        1
-      ]
     },
     {
       "id": 279,
@@ -557,7 +351,7 @@
         "1": 270
       },
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [
         {
@@ -593,84 +387,8 @@
         "flat",
         false,
         0,
-        1
-      ]
-    },
-    {
-      "id": 330,
-      "type": "ADE_MultivalDynamic",
-      "pos": [
-        1005,
-        -353
-      ],
-      "size": {
-        "0": 309.96392822265625,
-        "1": 58
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask_optional",
-          "type": "MASK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MULTIVAL",
-          "type": "MULTIVAL",
-          "links": [
-            18
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ADE_MultivalDynamic"
-      },
-      "widgets_values": [
-        1.1500000000000001
-      ]
-    },
-    {
-      "id": 291,
-      "type": "CLIPTextEncode",
-      "pos": [
-        517,
-        394
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 13
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            21
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "nude, naked, blurry, low quality, text, watermark, shutterstock, artefacts, ugly"
+        1,
+        ""
       ]
     },
     {
@@ -724,7 +442,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        490365351196183,
+        785520035013310,
         "randomize",
         8,
         1.6,
@@ -734,18 +452,96 @@
       ]
     },
     {
+      "id": 330,
+      "type": "ADE_MultivalDynamic",
+      "pos": [
+        1012,
+        -353
+      ],
+      "size": {
+        "0": 309.96392822265625,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask_optional",
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MULTIVAL",
+          "type": "MULTIVAL",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_MultivalDynamic"
+      },
+      "widgets_values": [
+        1.1500000000000001,
+        ""
+      ]
+    },
+    {
+      "id": 291,
+      "type": "CLIPTextEncode",
+      "pos": [
+        517,
+        394
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            21
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "nude, naked, blurry, low quality, text, watermark, shutterstock, artefacts, ugly, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3"
+      ]
+    },
+    {
       "id": 335,
       "type": "WidthHeightPicker",
       "pos": [
-        1425,
-        -262
+        1426,
+        -263
       ],
       "size": {
         "0": 315,
         "1": 150
       },
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -778,6 +574,57 @@
       ]
     },
     {
+      "id": 321,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1426,
+        -50
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 24,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 25,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            22
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        640,
+        384,
+        78
+      ]
+    },
+    {
       "id": 290,
       "type": "CLIPTextEncode",
       "pos": [
@@ -789,7 +636,7 @@
         "1": 200
       },
       "flags": {},
-      "order": 7,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -812,7 +659,170 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "the garden of Eden, sunset, waterfall, lush vegetation, flowers, tree of life, stunning panorama, sharp details, masterpiece"
+        "the garden of Eden, sunset, waterfall, lush vegetation, flowers, tree of life, stunning panorama, sharp details, masterpiece, bright sunlight"
+      ]
+    },
+    {
+      "id": 278,
+      "type": "ADE_AnimateDiffSamplingSettings",
+      "pos": [
+        1011,
+        -648
+      ],
+      "size": {
+        "0": 315,
+        "1": 238
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_layers",
+          "type": "NOISE_LAYERS",
+          "link": null
+        },
+        {
+          "name": "iteration_opts",
+          "type": "ITERATION_OPTS",
+          "link": null
+        },
+        {
+          "name": "custom_cfg",
+          "type": "CUSTOM_CFG",
+          "link": null
+        },
+        {
+          "name": "sigma_schedule",
+          "type": "SIGMA_SCHEDULE",
+          "link": null
+        },
+        {
+          "name": "seed_override",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed_override"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "settings",
+          "type": "SAMPLE_SETTINGS",
+          "links": [
+            10
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffSamplingSettings"
+      },
+      "widgets_values": [
+        0,
+        "FreeNoise",
+        "comfy",
+        1,
+        0,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 328,
+      "type": "RIFE VFI",
+      "pos": [
+        2274,
+        109
+      ],
+      "size": {
+        "0": 319.20001220703125,
+        "1": 198
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 16
+        },
+        {
+          "name": "optional_interpolation_states",
+          "type": "INTERPOLATION_STATES",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            17
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RIFE VFI"
+      },
+      "widgets_values": [
+        "rife47.pth",
+        24,
+        2,
+        true,
+        true,
+        1
+      ]
+    },
+    {
+      "id": 110,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        100,
+        130
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            7
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            12,
+            13
+          ],
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            2
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
       ]
     }
   ],
@@ -982,10 +992,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8140274938684261,
+      "scale": 3.0912680532872074,
       "offset": {
-        "0": -1013.9556362760687,
-        "1": 421.96649723701694
+        "0": -2528.9937417107894,
+        "1": -351.2852951194207
       }
     }
   },

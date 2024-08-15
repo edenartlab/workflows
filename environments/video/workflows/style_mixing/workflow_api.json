@@ -1,0 +1,1017 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "13": {
+    "inputs": {
+      "width": [
+        "261",
+        1
+      ],
+      "height": [
+        "261",
+        2
+      ],
+      "batch_size": [
+        "91",
+        0
+      ]
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "seed": 183,
+      "steps": 10,
+      "cfg": 2,
+      "sampler_name": "lcm",
+      "scheduler": "sgm_uniform",
+      "denoise": 1,
+      "model": [
+        "30",
+        0
+      ],
+      "positive": [
+        "28",
+        0
+      ],
+      "negative": [
+        "27",
+        0
+      ],
+      "latent_image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "27": {
+    "inputs": {
+      "text": "nsfw, nude, naked, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "28": {
+    "inputs": {
+      "text": "4k, sharp details, uhd, sharp focus, high quality, masterpiece",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "30": {
+    "inputs": {
+      "model_name": "AnimateLCM_sd15_t2v.ckpt",
+      "beta_schedule": "lcm avg(sqrt_linear,linear)",
+      "motion_scale": 1.1,
+      "apply_v2_models_properly": true,
+      "model": [
+        "171",
+        0
+      ],
+      "context_options": [
+        "31",
+        0
+      ],
+      "sample_settings": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderWithContext",
+    "_meta": {
+      "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+    }
+  },
+  "31": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "closed_loop": true,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_LoopedUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "32": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "default",
+      "seed_gen": "comfy",
+      "seed_offset": 1,
+      "adapt_denoise_steps": false
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "44": {
+    "inputs": {
+      "mask": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "45": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "46": {
+    "inputs": {
+      "mask": [
+        "136",
+        4
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "47": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "48": {
+    "inputs": {
+      "mask": [
+        "136",
+        2
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "49": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "50": {
+    "inputs": {
+      "mask": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "51": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "52": {
+    "inputs": {
+      "mask": [
+        "136",
+        3
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "53": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "54": {
+    "inputs": {
+      "mask": [
+        "136",
+        5
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "55": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "74": {
+    "inputs": {
+      "folder": "/home/rednax/SSD2TB/Github_repos/Eden/images/test",
+      "n_images": -1,
+      "seed": 78,
+      "sort": true,
+      "loop_sequence": false
+    },
+    "class_type": "LoadRandomImage",
+    "_meta": {
+      "title": "LoadRandomImage"
+    }
+  },
+  "76": {
+    "inputs": {
+      "images": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "79": {
+    "inputs": {
+      "images": [
+        "244",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "82": {
+    "inputs": {
+      "images": [
+        "245",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "83": {
+    "inputs": {
+      "value": 1.2
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "IP Adapter weight"
+    }
+  },
+  "91": {
+    "inputs": {
+      "batch": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "BatchCount+",
+    "_meta": {
+      "title": "🔧 Batch Count"
+    }
+  },
+  "106": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "Xsmash_HD",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "225",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "136": {
+    "inputs": {
+      "n_color_clusters": [
+        "198",
+        1
+      ],
+      "clustering_resolution": 256,
+      "feathering_fraction": 0.03,
+      "image": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "MaskFromRGB_KMeans",
+    "_meta": {
+      "title": "MaskFromRGB_KMeans"
+    }
+  },
+  "157": {
+    "inputs": {
+      "images": [
+        "246",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "159": {
+    "inputs": {
+      "images": [
+        "247",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "161": {
+    "inputs": {
+      "images": [
+        "249",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "162": {
+    "inputs": {
+      "weight": [
+        "83",
+        0
+      ],
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "3",
+        0
+      ],
+      "ipadapter": [
+        "3",
+        1
+      ],
+      "image": [
+        "166",
+        0
+      ],
+      "attn_mask": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "166": {
+    "inputs": {
+      "interpolation": "BICUBIC",
+      "crop_position": "center",
+      "sharpening": [
+        "215",
+        0
+      ],
+      "image": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "167": {
+    "inputs": {
+      "weight": [
+        "83",
+        0
+      ],
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "162",
+        0
+      ],
+      "ipadapter": [
+        "3",
+        1
+      ],
+      "image": [
+        "172",
+        0
+      ],
+      "attn_mask": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "168": {
+    "inputs": {
+      "weight": [
+        "83",
+        0
+      ],
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "167",
+        0
+      ],
+      "ipadapter": [
+        "3",
+        1
+      ],
+      "image": [
+        "173",
+        0
+      ],
+      "attn_mask": [
+        "136",
+        2
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "169": {
+    "inputs": {
+      "weight": [
+        "83",
+        0
+      ],
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "168",
+        0
+      ],
+      "ipadapter": [
+        "3",
+        1
+      ],
+      "image": [
+        "174",
+        0
+      ],
+      "attn_mask": [
+        "136",
+        3
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "170": {
+    "inputs": {
+      "weight": [
+        "83",
+        0
+      ],
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "169",
+        0
+      ],
+      "ipadapter": [
+        "3",
+        1
+      ],
+      "image": [
+        "175",
+        0
+      ],
+      "attn_mask": [
+        "136",
+        4
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "171": {
+    "inputs": {
+      "weight": [
+        "83",
+        0
+      ],
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "170",
+        0
+      ],
+      "ipadapter": [
+        "3",
+        1
+      ],
+      "image": [
+        "176",
+        0
+      ],
+      "attn_mask": [
+        "136",
+        5
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "172": {
+    "inputs": {
+      "interpolation": "BICUBIC",
+      "crop_position": "center",
+      "sharpening": [
+        "215",
+        0
+      ],
+      "image": [
+        "244",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "173": {
+    "inputs": {
+      "interpolation": "BICUBIC",
+      "crop_position": "center",
+      "sharpening": [
+        "215",
+        0
+      ],
+      "image": [
+        "245",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "174": {
+    "inputs": {
+      "interpolation": "BICUBIC",
+      "crop_position": "center",
+      "sharpening": [
+        "215",
+        0
+      ],
+      "image": [
+        "246",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "175": {
+    "inputs": {
+      "interpolation": "BICUBIC",
+      "crop_position": "center",
+      "sharpening": [
+        "215",
+        0
+      ],
+      "image": [
+        "247",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "176": {
+    "inputs": {
+      "interpolation": "BICUBIC",
+      "crop_position": "center",
+      "sharpening": [
+        "215",
+        0
+      ],
+      "image": [
+        "249",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "198": {
+    "inputs": {
+      "total_frames": 64,
+      "num_colors": [
+        "270",
+        0
+      ],
+      "bands_visible_per_frame": 0.6,
+      "angle": 0,
+      "mode": "concentric_circles",
+      "width": 512,
+      "height": 512,
+      "invert_motion": true
+    },
+    "class_type": "Animation_RGB_Mask",
+    "_meta": {
+      "title": "Animation_RGB_Mask"
+    }
+  },
+  "199": {
+    "inputs": {
+      "frame_rate": 12,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "214": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "IP adapter end_at"
+    }
+  },
+  "215": {
+    "inputs": {
+      "value": 0.05
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Sharpening"
+    }
+  },
+  "223": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "225": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 24,
+      "multiplier": 2,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "236",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "236": {
+    "inputs": {
+      "samples": [
+        "26",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "243": {
+    "inputs": {
+      "batch_index": 0,
+      "length": 1,
+      "image": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "244": {
+    "inputs": {
+      "batch_index": 1,
+      "length": 1,
+      "image": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "245": {
+    "inputs": {
+      "batch_index": 2,
+      "length": 1,
+      "image": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "246": {
+    "inputs": {
+      "batch_index": 3,
+      "length": 1,
+      "image": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "247": {
+    "inputs": {
+      "batch_index": 4,
+      "length": 1,
+      "image": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "249": {
+    "inputs": {
+      "batch_index": 5,
+      "length": 1,
+      "image": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "261": {
+    "inputs": {
+      "width": 640,
+      "height": 640,
+      "interpolation": "lanczos",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "270": {
+    "inputs": {
+      "images": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "VHS_GetImageCount",
+    "_meta": {
+      "title": "Get Image Count 🎥🅥🅗🅢"
+    }
+  }
+}
