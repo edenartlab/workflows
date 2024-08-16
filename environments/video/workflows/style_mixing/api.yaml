@@ -28,6 +28,17 @@ parameters:
     node_id: 28
     field: inputs
     subfield: text
+- name: negative_prompt
+  label: negative prompt
+  description: Negative text prompt, what you do *not* want to generate. Recommended to leave this at default.
+  tip: if the user specifically asks to not have certain things in the video you can add them here.
+  hide_from_agent: true
+  type: string
+  default: nsfw, nude, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality
+  comfyui: 
+    node_id: 27
+    field: inputs
+    subfield: text
 - name: n_frames
   label: Frames
   description: Number of video frames to generate (12 frames = 1 second of video, although the final video will be interpolated to always be 24 fps)

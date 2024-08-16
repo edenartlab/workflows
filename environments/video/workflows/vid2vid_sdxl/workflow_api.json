@@ -31,9 +31,30 @@
       "title": "VAE Encode"
     }
   },
+  "109": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "Video",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 20,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "499",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
   "110": {
     "inputs": {
-      "ckpt_name": "Eden_SDXL.safetensors"
+      "ckpt_name": "zavychromaxl_v80.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -319,12 +340,12 @@
   },
   "428": {
     "inputs": {
-      "video": "waking_life_short.mp4",
-      "force_rate": 12,
+      "video": "output_video.mp4",
+      "force_rate": 8,
       "force_size": "Disabled",
       "custom_width": 512,
       "custom_height": 512,
-      "frame_load_cap": 0,
+      "frame_load_cap": 72,
       "skip_first_frames": 0,
       "select_every_nth": 1
     },
@@ -517,7 +538,7 @@
   },
   "490": {
     "inputs": {
-      "image": "eb6919c59da4585203045e19db66504b.jpg",
+      "image": "04163580db5b770c7cc54fcf99ee3633.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -585,37 +606,11 @@
       "title": "🔧 Image From Batch"
     }
   },
-  "497": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "491",
-        0
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
-  "498": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "528",
-        0
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
   "499": {
     "inputs": {
       "ckpt_name": "rife47.pth",
       "clear_cache_after_n_frames": 10,
-      "multiplier": 2,
+      "multiplier": 3,
       "fast_mode": true,
       "ensemble": true,
       "scale_factor": 1,
@@ -757,31 +752,6 @@
     "class_type": "Eden_Int",
     "_meta": {
       "title": "Eden_Int"
-    }
-  },
-  "540": {
-    "inputs": {
-      "frame_rate": 24,
-      "loop_count": 0,
-      "filename_prefix": "AnimateDiff",
-      "format": "video/h264-mp4",
-      "pix_fmt": "yuv420p",
-      "crf": 19,
-      "save_metadata": true,
-      "pingpong": false,
-      "save_output": true,
-      "images": [
-        "499",
-        0
-      ],
-      "audio": [
-        "428",
-        2
-      ]
-    },
-    "class_type": "VHS_VideoCombine",
-    "_meta": {
-      "title": "Video Combine 🎥🅥🅗🅢"
     }
   }
 }

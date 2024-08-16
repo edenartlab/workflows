@@ -1,0 +1,130 @@
+name: Generate Video (LoRA)
+description: Generate a video from a prompt, while also loading a custom LoRa model (aka a Concept).
+tip: Use this to generate videos whenever the user requests a LoRA / model / concept.
+output_type: video
+handler: comfyui
+comfyui_output_node_id: 32
+parameters:
+- name: prompt
+  label: Prompt
+  description: Text prompt which also triggers the style model (LoRa) token
+  tip: The LoRa should be triggered by constructing a prompt like this, 'in the style of (embedding:lora_embedding_name:0.5), rest of the prompt'. The number here is the lora_strength of the LoRa model, usually values between 0.3 and 0.7 are ideal.
+  type: string
+  required: true
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate (you can usually leave this at default)
+  type: string
+  default: ugly, watermark, low-quality, signature, padding, margins, blurry, jpeg artifacts, poorly drawn, low-resolution, bad  
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  required: true
+  default: 512
+  minimum: 256
+  maximum: 1024
+  step: 16
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  required: true
+  default: 512
+  minimum: 256
+  maximum: 1024
+  step: 8
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: height
+- name: n_frames
+  label: Number of frames
+  description: The total number of frames to generate (controls the duration of the video together with the framerate, which should usually be kept fixed at 24)
+  type: int
+  default: 32
+  minimum: 16
+  maximum: 128
+  step: 8
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: batch_size
+- name: frame_rate
+  label: Frame rate
+  description: Video frames per second
+  type: int
+  default: 24
+  minimum: 8
+  maximum: 48
+  step: 1
+  comfyui: 
+    node_id: 32
+    field: inputs
+    subfield: frame_rate
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  type: int
+  default: random
+  minimum: 0
+  maximum: 1000000
+  comfyui: 
+    node_id: 3
+    field: inputs
+    subfield: seed
+- name: lora
+  label: LoRA
+  description: Use a LoRA finetune on top of the base model. Important, this must be a SD15 LoRa model (SDXL and SD3 LoRa's will not work since this uses AnimateDiff)
+  type: lora
+  required: true
+  comfyui: 
+    node_id: 10
+    field: inputs
+    subfield: lora_name
+- name: lora_strength
+  label: LoRA strength
+  description: Strength of the LoRA
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
+  type: float
+  required: true
+  default: 0.5
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 10
+    field: inputs
+    subfield: strength_model, strength_clip
+- name: motion_strength
+  label: Motion Strength
+  description: How strong the motion should be in the video (1.0 is very subtle motion, 1.1 is default, 1.2 is a lot of motion)
+  type: float
+  default: 1.1
+  minimum: 0.7
+  maximum: 1.3
+  comfyui: 
+    node_id: 13
+    field: inputs
+    subfield: motion_scale
+- name: closed_loop
+  label: Closed Loop Animation
+  description: Whether or not to create a seamlessly looping animation where end frame is identical to starting frame. 
+  tip: For normal video input this should usually be false, for inputs that are looping gifs or animations, set this to true. Ask the user to specify this if unsure.
+  type: bool
+  default: true
+  comfyui: 
+    node_id: 29
+    field: inputs
+    subfield: closed_loop

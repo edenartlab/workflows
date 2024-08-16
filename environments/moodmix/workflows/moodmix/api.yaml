@@ -1,0 +1,137 @@
+name: MoodMix
+description: Create an image from a set of style images and a prompt. Supports iterative improvement by starting from a preferred anchor image
+tip: This workflow creates images by combining an input prompt (subtle influence) and random combinations of content-style images, referenced here as 'the moodboard'. The "Exploration Strength" controls how much variety the generated images will have; small values around 0.5 stay close to the anchor image, higher values like 0.7 yield more variety. "Prompt Strength" controls how much visual influence the prompt has vs the combined style images. It is usually around 0.2 but can be set to 0 to test the influence of the prompt in isolation.
+output_type: image[]
+handler: comfyui
+comfyui_output_node_id: 149
+parameters:
+- name: images
+  label: Style Images
+  description: MoodBoard Style images driving the stylistic content of the image
+  type: image[]
+  minimum: 1
+  maximum: 6
+  comfyui: 
+    node_id: 129
+    field: inputs
+    subfield: value
+    preprocessing: folder
+- name: preference_anchor
+  label: Preference Anchor Image
+  description: The previous image prefered by the user, serves as an anchor point for the next iteration. When no image is provided, will be ignored.
+  type: image[]
+  minimum: 0
+  maximum: 1
+  comfyui: 
+    node_id: 161
+    field: inputs
+    subfield: folder
+    preprocessing: folder
+- name: lora
+  label: LoRA
+  description: Use a LoRA finetune on top of the base model. Important, this must be a SDXL LoRa model.
+  tip: Unless explicitly specified, no LoRa will be used (lora_strength = 0.0), in which case this argument is ignored.
+  type: lora
+  comfyui: 
+    node_id: 109
+    field: inputs
+    subfield: lora_name
+- name: lora_strength
+  label: LoRA strength
+  description: Strength of the LoRA. The default strength of 0.0 will completely disable the LoRa. 0.5 is a good starting point to enable a LoRa.
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
+  type: float
+  default: 0.0
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 109
+    field: inputs
+    subfield: strength_model, strength_clip
+- name: prompt
+  label: prompt
+  description: Positive text prompt, what you want to generate. If a LoRa needs to be activated, the prompt must also trigger the corresponding LoRa token embedding.
+  type: string
+  required: true
+  default: 4k, sharp details, uhd, sharp focus, high quality, masterpiece
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: negative prompt
+  description: Negative text prompt, what you do *not* want to see in the image. Only add keywords here if you really want to make sure they do not show up in the generation.
+  type: string
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
+- name: num_samples
+  label: Number of Images
+  description: Number of images to generate (each one will use a random combination of the style images from the moodboard) (almost always, num_samples is 4 or 6)
+  type: int
+  required: true
+  default: 4
+  comfyui: 
+    node_id: 160
+    field: inputs
+    subfield: num_samples
+- name: n_style_images
+  label: Number of Style Images
+  description: Number of style images that will be used per generation (this determines how many different visual elements are injected into each output img), (typical values are 1,2,3) (higher values tend to make outputs more homogeneous due to averaging all the style components)
+  type: int
+  default: 2
+  comfyui: 
+    node_id: 160
+    field: inputs
+    subfield: num_style_components
+- name: width
+  label: Width
+  description: Width of the generated images in n_pixels (always a multiple of 64)
+  type: int
+  required: true
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 89
+    field: inputs
+    subfield: value
+- name: height
+  label: Height
+  required: true
+  description: Height of the  generated images in n_pixels (always a multiple of 64)
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 90
+    field: inputs
+    subfield: value
+- name: exploration_strength
+  label: Exploration Strength
+  description: How strongly to apply the style vectors on top of the anchor image. Higher values will result in more diverse outputs, while lower values will result in outputs more similar to the anchor image. Good values are 0.7 (high exploration) down to 0.5 (subtle, local exploration)
+  tip: Typically, this value starts off at 0.7 in the beginning of a creative session, and is gradually decreased to eg 0.5 while the user zooms in on a particular part of the latent space.
+  type: float
+  default: 0.7
+  minimum: 0.4
+  maximum: 1.0
+  comfyui: 
+    node_id: 164
+    field: inputs
+    subfield: value
+- name: prompt_strength
+  label: Prompt Strength
+  description: How strong the influence of the prompt is versus the style images. A value of 0.2 is a good default. Can be set to 1.0 to test the influence of the prompt in isolation of any style images.
+  tip: Often times, the user will start with a prompt, but then explore the latent space more freely by iterating through images visually, in that case, make sure the prompt strength is not too high (<0.25) to avoid the prompt dominating the output.
+  type: float
+  default: 0.2
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 182
+    field: inputs
+    subfield: value

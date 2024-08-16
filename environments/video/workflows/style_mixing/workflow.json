@@ -560,7 +560,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00005.mp4",
+            "filename": "AnimateDiff_00017.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -632,7 +632,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00006.mp4",
+            "filename": "AnimateDiff_00018.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -704,7 +704,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00003.mp4",
+            "filename": "AnimateDiff_00015.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -776,7 +776,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00007.mp4",
+            "filename": "AnimateDiff_00019.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -2201,6 +2201,47 @@
       ]
     },
     {
+      "id": 27,
+      "type": "CLIPTextEncode",
+      "pos": [
+        290,
+        -640
+      ],
+      "size": {
+        "0": 360.0411682128906,
+        "1": 136.96206665039062
+      },
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 382
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            414
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "nsfw, nude, naked, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
       "id": 243,
       "type": "ImageFromBatch",
       "pos": [
@@ -2562,7 +2603,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00004.mp4",
+            "filename": "AnimateDiff_00016.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -2728,8 +2769,7 @@
       },
       "widgets_values": [
         "v2_lora_ZoomIn.ckpt",
-        0.9,
-        ""
+        0.9
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -2795,7 +2835,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00001.mp4",
+            "filename": "AnimateDiff_00013.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -2974,7 +3014,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        58919495243848,
+        27274848421355,
         "randomize",
         10,
         1.4000000000000001,
@@ -3228,8 +3268,7 @@
       "widgets_values": [
         0.5,
         0,
-        1,
-        ""
+        1
       ]
     },
     {
@@ -3683,7 +3722,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00002.mp4",
+            "filename": "AnimateDiff_00014.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -4646,10 +4685,10 @@
         -1028,
         -121
       ],
-      "size": {
-        "0": 315,
-        "1": 178
-      },
+      "size": [
+        315,
+        178
+      ],
       "flags": {},
       "order": 11,
       "mode": 0,
@@ -4677,7 +4716,7 @@
       "widgets_values": [
         "/home/rednax/SSD2TB/Github_repos/Eden/images/test",
         -1,
-        78,
+        77,
         "increment",
         true,
         false
@@ -4755,278 +4794,6 @@
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 270,
-      "type": "VHS_GetImageCount",
-      "pos": [
-        -646,
-        -418
-      ],
-      "size": {
-        "0": 201.60000610351562,
-        "1": 26
-      },
-      "flags": {},
-      "order": 23,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 605
-        }
-      ],
-      "outputs": [
-        {
-          "name": "count",
-          "type": "INT",
-          "links": [
-            606
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_GetImageCount"
-      },
-      "widgets_values": {}
-    },
-    {
-      "id": 32,
-      "type": "ADE_AnimateDiffSamplingSettings",
-      "pos": [
-        3751.50212835495,
-        717.1810399455429
-      ],
-      "size": {
-        "0": 315,
-        "1": 238
-      },
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "noise_layers",
-          "type": "NOISE_LAYERS",
-          "link": null
-        },
-        {
-          "name": "iteration_opts",
-          "type": "ITERATION_OPTS",
-          "link": null
-        },
-        {
-          "name": "custom_cfg",
-          "type": "CUSTOM_CFG",
-          "link": null
-        },
-        {
-          "name": "sigma_schedule",
-          "type": "SIGMA_SCHEDULE",
-          "link": null
-        },
-        {
-          "name": "seed_override",
-          "type": "INT",
-          "link": null,
-          "widget": {
-            "name": "seed_override"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "settings",
-          "type": "SAMPLE_SETTINGS",
-          "links": [
-            46
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ADE_AnimateDiffSamplingSettings"
-      },
-      "widgets_values": [
-        0,
-        "default",
-        "comfy",
-        1,
-        0,
-        false,
-        ""
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 106,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        5795,
-        906
-      ],
-      "size": [
-        1016.0646362304688,
-        1320.0646362304688
-      ],
-      "flags": {},
-      "order": 93,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 511
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 24,
-        "loop_count": 0,
-        "filename_prefix": "Xsmash_HD",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "Xsmash_HD_00001.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 24
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 1,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -1049,
-        -925
-      ],
-      "size": {
-        "0": 320.0232849121094,
-        "1": 98
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            525
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            527
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            185,
-            535
-          ],
-          "shape": 3,
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 27,
-      "type": "CLIPTextEncode",
-      "pos": [
-        290,
-        -640
-      ],
-      "size": {
-        "0": 360.0411682128906,
-        "1": 136.96206665039062
-      },
-      "flags": {},
-      "order": 49,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 382
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            414
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "nsfw, nude, naked, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 136,
@@ -5143,8 +4910,238 @@
       "widgets_values": [
         3,
         256,
-        0.03
+        0.05
       ]
+    },
+    {
+      "id": 270,
+      "type": "VHS_GetImageCount",
+      "pos": [
+        -646,
+        -418
+      ],
+      "size": {
+        "0": 201.60000610351562,
+        "1": 26
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 605
+        }
+      ],
+      "outputs": [
+        {
+          "name": "count",
+          "type": "INT",
+          "links": [
+            606
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_GetImageCount"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -1049,
+        -925
+      ],
+      "size": {
+        "0": 320.0232849121094,
+        "1": 98
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            525
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            527
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            185,
+            535
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 32,
+      "type": "ADE_AnimateDiffSamplingSettings",
+      "pos": [
+        3751.50212835495,
+        717.1810399455429
+      ],
+      "size": {
+        "0": 315,
+        "1": 238
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_layers",
+          "type": "NOISE_LAYERS",
+          "link": null
+        },
+        {
+          "name": "iteration_opts",
+          "type": "ITERATION_OPTS",
+          "link": null
+        },
+        {
+          "name": "custom_cfg",
+          "type": "CUSTOM_CFG",
+          "link": null
+        },
+        {
+          "name": "sigma_schedule",
+          "type": "SIGMA_SCHEDULE",
+          "link": null
+        },
+        {
+          "name": "seed_override",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed_override"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "settings",
+          "type": "SAMPLE_SETTINGS",
+          "links": [
+            46
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffSamplingSettings"
+      },
+      "widgets_values": [
+        0,
+        "default",
+        "comfy",
+        1,
+        0,
+        false
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 106,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        5795,
+        906
+      ],
+      "size": [
+        1016.0646362304688,
+        1320.0646362304688
+      ],
+      "flags": {},
+      "order": 93,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 511
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "Xsmash_HD",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "Xsmash_HD_00002.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -6578,10 +6575,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.1978446689001351,
+      "scale": 0.23939204936916364,
       "offset": {
-        "0": 1004.7626963299746,
-        "1": 1585.1855950219701
+        "0": -2687.32021367977,
+        "1": -176.5322628588866
       }
     }
   },

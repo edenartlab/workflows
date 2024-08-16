@@ -326,7 +326,7 @@
   },
   "125": {
     "inputs": {
-      "ckpt_name": "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors",
+      "ckpt_name": "photonLCM_v10.safetensors",
       "vae_name": "Baked VAE",
       "clip_skip": -1,
       "lora_name": "None",
@@ -470,7 +470,6 @@
       "num_beams": 3,
       "do_sample": true,
       "output_mask_select": "",
-      "seed": 904684463332400,
       "image": [
         "102",
         0
@@ -737,7 +736,7 @@
       "condition": "always",
       "multiple_of": 8,
       "image": [
-        "269",
+        "201",
         0
       ]
     },
@@ -786,8 +785,8 @@
       "crop_h": 0,
       "target_width": 1024,
       "target_height": 1024,
-      "text_g": "nude, naked, blurry, low quality, text, watermark, character, person, object, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3",
-      "text_l": "nude, naked, blurry, low quality, text, watermark, character, person, object, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3",
+      "text_g": "nude, naked, blurry, low quality, text, watermark, character, person, object",
+      "text_l": "nude, naked, blurry, low quality, text, watermark, character, person, object",
       "clip": [
         "4",
         1
@@ -805,6 +804,25 @@
     "class_type": "UpscaleModelLoader",
     "_meta": {
       "title": "Load Upscale Model"
+    }
+  },
+  "201": {
+    "inputs": {
+      "method": "mvgd",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "image_ref": [
+        "102",
+        0
+      ],
+      "image_target": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "easy imageColorMatch",
+    "_meta": {
+      "title": "Image Color Match"
     }
   },
   "227": {
@@ -924,7 +942,7 @@
   },
   "249": {
     "inputs": {
-      "value": 24
+      "value": 32
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -975,26 +993,6 @@
     "class_type": "DepthSlicer",
     "_meta": {
       "title": "DepthSlicer"
-    }
-  },
-  "269": {
-    "inputs": {
-      "color_space": "LAB",
-      "factor": 1,
-      "device": "auto",
-      "batch_size": 16,
-      "image": [
-        "243",
-        0
-      ],
-      "reference": [
-        "102",
-        0
-      ]
-    },
-    "class_type": "ImageColorMatch+",
-    "_meta": {
-      "title": "🔧 Image Color Match"
     }
   }
 }

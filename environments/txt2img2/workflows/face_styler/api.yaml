@@ -1,0 +1,69 @@
+name: Stylize Face
+description: Create a stylized picture of a person 
+tip: This pipeline takes an input picture of a person to extract their identity and a style image to extract stylistic elements / textures. It then generates an image of the same person in the referenced style. This workflow also takes an optional input prompt. By setting the style strength to zero and writing a good prompt, this pipeline can also be used to place the person in a specific situation without applying the style from the image, just using a prompt!
+handler: comfyui
+output_type: image
+comfyui_output_node_id: 74
+parameters:
+- name: person_image
+  label: image of person
+  description: Make sure the face is not too small in the picture
+  type: image
+  required: true
+  comfyui: 
+    node_id: 12
+    field: inputs
+    subfield: image
+- name: style_image
+  label: style image
+  description: Stylistic image of an aesthetic style, texture or visual content you want to apply to the person
+  type: image
+  required: true
+  comfyui: 
+    node_id: 48
+    field: inputs
+    subfield: image
+- name: prompt
+  label: Prompt
+  description: An optional prompt that can be used to put the person in a specific situation.
+  tip: When changing this away from the default, you usually want to lower the style_strength since the style image may "fight" this prompt.
+  default: a stylized depiction of a person, highly detailed, 4k, high resolution
+  type: string
+  comfyui: 
+    node_id: 22
+    field: inputs
+    subfield: text
+- name: style_strength
+  label: Strength of the style image (through IP_Adapter)
+  description: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
+  type: float
+  required: true
+  default: 0.8
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 63
+    field: inputs
+    subfield: weight
+- name: width
+  label: Width
+  description: Width of the generated image in n_pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height of the generated image in n_pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: height

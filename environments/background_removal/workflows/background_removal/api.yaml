@@ -1,0 +1,35 @@
+name: Background Removal
+description: Remove the background from an image.
+tip: This workflow automatically removes the background from an image and returns a transparent RGBA PNG file containing just the foreground.
+output_type: image
+handler: comfyui
+comfyui_output_node_id: 97
+parameters:
+- name: image
+  label: Image
+  description: Input image
+  type: image
+  required: true
+  comfyui: 
+    node_id: 11
+    field: inputs
+    subfield: image
+- name: inpainting_prompt
+  label: inpainting prompt
+  description: Positive text prompt
+  hide_from_agent: true
+  type: string
+  default: High quality, sharp details, stunning, masterpiece
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: text
+- name: negative_prompt
+  label: negative prompt
+  description: Negative text prompt, what you do *not* want to generate.
+  tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
+  type: string
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: text
