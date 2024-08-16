@@ -141,7 +141,7 @@
       "width": 1536,
       "height": 1536,
       "interpolation": "lanczos",
-      "keep_proportion": true,
+      "method": "stretch",
       "condition": "always",
       "multiple_of": 32,
       "image": [
@@ -222,18 +222,6 @@
     "class_type": "InvertMask",
     "_meta": {
       "title": "InvertMask"
-    }
-  },
-  "53": {
-    "inputs": {
-      "mask": [
-        "46",
-        0
-      ]
-    },
-    "class_type": "MaskPreview+",
-    "_meta": {
-      "title": "🔧 Mask Preview"
     }
   },
   "92": {
