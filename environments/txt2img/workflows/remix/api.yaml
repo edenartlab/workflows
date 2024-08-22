@@ -41,7 +41,7 @@ parameters:
 - name: ip_adapter_strength
   label: image strength
   description: The strength of the input image in the generation
-  tip: Lowering this value will use less visual guidance to create the remix, resulting in wilder variations that may deviate in style.
+  tip: Lowering this value (0.0-0.5) will use less visual guidance to create the remix, resulting in wilder variations that may deviate in style. High values (0.8-1.2) will have strong content and style adherence to the input image.
   type: float
   default: 0.7
   minimum: 0.0
