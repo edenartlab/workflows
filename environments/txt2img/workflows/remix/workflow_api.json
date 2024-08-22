@@ -9,7 +9,7 @@
       "num_beams": 3,
       "do_sample": true,
       "output_mask_select": "",
-      "seed": 907089039040485,
+      "seed": 812070981416565,
       "image": [
         "4",
         0
@@ -37,7 +37,7 @@
   },
   "3": {
     "inputs": {
-      "image": "PfJW7liGcQI1M7j8uwtEFlqfcuILxOyCPCbVaP15rqE.jpg",
+      "image": "img_00260.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -90,12 +90,12 @@
   },
   "13": {
     "inputs": {
-      "seed": 961472477094545,
+      "seed": 503777975768041,
       "steps": 30,
-      "cfg": 8,
+      "cfg": 7,
       "sampler_name": "euler_ancestral",
       "scheduler": "normal",
-      "denoise": 1,
+      "denoise": 0.9500000000000001,
       "model": [
         "18",
         0
@@ -109,7 +109,7 @@
         0
       ],
       "latent_image": [
-        "17",
+        "23",
         0
       ]
     },
@@ -151,7 +151,7 @@
     "inputs": {
       "filename_prefix": "ComfyUI",
       "images": [
-        "15",
+        "33",
         0
       ]
     },
@@ -162,8 +162,14 @@
   },
   "17": {
     "inputs": {
-      "width": 1024,
-      "height": 1024,
+      "width": [
+        "32",
+        1
+      ],
+      "height": [
+        "32",
+        2
+      ],
       "batch_size": 1
     },
     "class_type": "EmptyLatentImage",
@@ -173,11 +179,11 @@
   },
   "18": {
     "inputs": {
-      "weight": 0.5,
+      "weight": 0.7000000000000001,
       "weight_type": "ease in-out",
       "combine_embeds": "concat",
       "start_at": 0,
-      "end_at": 1,
+      "end_at": 0.7000000000000001,
       "embeds_scaling": "V only",
       "model": [
         "19",
@@ -223,6 +229,97 @@
     "class_type": "PrepImageForClipVision",
     "_meta": {
       "title": "Prep Image For ClipVision"
+    }
+  },
+  "23": {
+    "inputs": {
+      "pixels": [
+        "32",
+        0
+      ],
+      "vae": [
+        "12",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "30": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "31": {
+    "inputs": {
+      "value": 1280
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Render Resolution"
+    }
+  },
+  "32": {
+    "inputs": {
+      "width": [
+        "31",
+        0
+      ],
+      "height": [
+        "31",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "33": {
+    "inputs": {
+      "width": [
+        "30",
+        1
+      ],
+      "height": [
+        "30",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
     }
   }
 }

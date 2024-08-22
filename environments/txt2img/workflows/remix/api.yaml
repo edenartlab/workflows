@@ -7,7 +7,7 @@ comfyui_output_node_id: 16
 parameters:
 - name: image
   label: Image
-  description: Input image to caption
+  description: Input image to remix
   type: image
   required: true
   comfyui: 
@@ -23,7 +23,7 @@ parameters:
   maximum: 2048
   step: 8
   comfyui: 
-    node_id: 17
+    node_id: 30
     field: inputs
     subfield: width
 - name: height
@@ -35,9 +35,21 @@ parameters:
   maximum: 2048
   step: 8
   comfyui: 
-    node_id: 17
+    node_id: 30
     field: inputs
     subfield: height
+- name: ip_adapter_strength
+  label: image strength
+  description: The strength of the input image in the generation
+  tip: Lowering this value will use less visual guidance to create the remix, resulting in wilder variations that may deviate in style.
+  type: float
+  default: 0.7
+  minimum: 0.0
+  maximum: 1.2
+  comfyui: 
+    node_id: 18
+    field: inputs
+    subfield: weight
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set randomly.
