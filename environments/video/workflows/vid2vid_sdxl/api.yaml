@@ -4,7 +4,7 @@ tip: This will create a new video with similar shapes / motions as the input vid
 output_type: video
 handler: comfyui
 private: false
-comfyui_output_node_id: 109
+comfyui_output_node_id: 540
 parameters:
 - name: image
   label: Style Image
@@ -50,9 +50,10 @@ parameters:
     subfield: frame_load_cap
 - name: control_strength
   label: Shape guidance strength
-  description: Strength of the input videos shape guidance (recommended between 0.5-0.9)
+  description: Strength of the input videos shape guidance (recommended between 0.4-0.6)
+  tip: Setting low values (0.3-0.45) will result in more creative freedom by the model and better adherence to the style image. High values (0.45-0.65) will increase adherence to the source video at the cost of output aesthetics.
   type: float
-  default: 0.6
+  default: 0.4
   minimum: 0.0
   maximum: 1.2
   comfyui:
