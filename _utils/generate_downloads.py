@@ -38,6 +38,11 @@ def process_workflow(subfolder, download_library_path):
     print(f"auto_downloads.json has been saved to {output_path}")
 
 if __name__ == '__main__':
+
+    """
+    Tries to automatically create downloads.json from workflow.json and download_library.json
+    """
+
     if len(sys.argv) != 2:
         print("Usage: python generate_downloads.py <workflow_foldername>")
         sys.exit(1)
