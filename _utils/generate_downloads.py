@@ -3,9 +3,9 @@ import os
 import re
 import sys
 
-def process_workflow(subfolder, download_library_path):
+def process_workflow(workflow_dir, download_library_path):
     # Construct the workflow path
-    workflow_path = os.path.join('..', 'public_workflows', subfolder, 'workflow_api.json')
+    workflow_path = os.path.join(workflow_dir, 'workflow_api.json')
 
     # Check if the workflow file exists
     if not os.path.exists(workflow_path):
@@ -41,13 +41,19 @@ if __name__ == '__main__':
 
     """
     Tries to automatically create downloads.json from workflow.json and download_library.json
+
+    example usage:
+
+    cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
+    python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/remix
+    
     """
 
     if len(sys.argv) != 2:
         print("Usage: python generate_downloads.py <workflow_foldername>")
         sys.exit(1)
 
-    subfolder = sys.argv[1]
+    workflow_dir = sys.argv[1]
     download_library_path = 'download_library.json'
 
-    process_workflow(subfolder, download_library_path)
+    process_workflow(workflow_dir, download_library_path)

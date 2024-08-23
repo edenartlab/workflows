@@ -237,9 +237,10 @@ def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None
         print(f"Error: Provided workflow path '{workflow_dir_path}' is invalid.")
         sys.exit(1)
 
-    print(f"\n\n--- WARNING, custom nodes missing from snapshot url list:")
-    for el in custom_nodes_no_url:
-        print(f"--- {el}")
+    if len(custom_nodes_no_url) > 0:
+        print(f"\n\n--- WARNING, custom nodes missing from snapshot url list:")
+        for el in custom_nodes_no_url:
+            print(f"--- {el}")
 
     # Now we get the hashes for each github url from the master_snapshot file:
     with open(master_snapshot_path, 'r') as f:
@@ -269,16 +270,17 @@ if __name__ == '__main__':
      - Make sure your wf is called "workflow.json" inside of the workflow_directory
 
     Example:
-    python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/remix /home/rednax/SSD2TB/Github_repos/ComfyUI/custom_nodes/ComfyUI-Manager/snapshots/2024-08-20_22-17-10_snapshot.json
+    cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
+    python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/remix
     
     """
 
-    if len(sys.argv) != 4:
-        print("Usage: python generate_snapshot.py <comfyui_root_dir> <workflow_directory> <master_snapshot_path>")
+    if len(sys.argv) != 3:
+        print("Usage: python generate_snapshot.py <comfyui_root_dir> <workflow_directory>")
         sys.exit(1)
  
     comfyui_root_dir = sys.argv[1]
     workflow_directory = sys.argv[2]
-    master_snapshot_path = sys.argv[3]
+    master_snapshot_path = "master_snapshot.json"
  
     main(comfyui_root_dir, workflow_directory, master_snapshot_path)
