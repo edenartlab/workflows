@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "ckpt_name": "juggernaut_v6.safetensors",
+      "ckpt_name": "Eden_SDXL.safetensors",
       "vae_name": "baked VAE",
       "model_version": "SDXL 1024px",
       "config_name": "none",
@@ -9,22 +9,16 @@
       "steps": 30,
       "refiner_start": 0.8,
       "cfg": 7.5,
-      "denoise": 1,
-      "sampler_name": "euler",
-      "scheduler": "karras",
-      "positive_ascore": 6,
+      "sampler_name": 1,
+      "scheduler": "euler",
+      "positive_ascore": "karras",
       "negative_ascore": 6,
-      "aspect_ratio": "custom",
-      "width": 1024,
+      "aspect_ratio": 6,
+      "width": "custom",
       "height": 1024,
-      "batch_size": 1,
-      "size_from_input": true,
-      "sdxl_aspect": true,
-      "input_img_is_controlnet": true,
-      "positive": "bioluminescant glass subterranean smokey abstract form, a vague idea of a butterfly woman a haute couture of a butterfly smoke ring, dramatic contrast, cinematic film still film grain tinted tangerine with a blade runner color scheme",
-      "negative": "",
-      "steps_display": "Total steps: 30,\nRefiner start at step: 24 (80%)",
-      "aspect_ratio_display": "Custom aspect ratio: 1024 x 1024"
+      "batch_size": 1024,
+      "steps_display": "true",
+      "aspect_ratio_display": "bioluminescant glass subterranean smokey abstract form, a vague idea of a butterfly woman a haute couture of a butterfly smoke ring, dramatic contrast, cinematic film still film grain tinted tangerine with a blade runner color scheme"
     },
     "class_type": "SDParameterGenerator",
     "_meta": {
@@ -719,7 +713,9 @@
       "height": [
         "42",
         2
-      ]
+      ],
+      "invert": false,
+      "mask_opacity": 1
     },
     "class_type": "Colored Image (mtb)",
     "_meta": {
@@ -748,7 +744,7 @@
   },
   "100": {
     "inputs": {
-      "control_net_name": "controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors",
+      "control_net_name": "controlnet-union-sdxl-promax-1.0\\diffusion_pytorch_model_promax.safetensors",
       "strength": 0.6,
       "preprocessor": "canny",
       "control_net_override": "None",

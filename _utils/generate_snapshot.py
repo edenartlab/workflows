@@ -163,40 +163,44 @@ def process_workflow_dir(
                 entry_path, built_in_nodes, extension_node_map, current_level + 1
             )
  
- 
-def print_help():
- 
-    help_message = """
-    [ComfyUI Workflow Custom Nodes Checker]
- 
-    This script reads ComfyUI workflows (either a single workflow or workflows in a
-    directory) and displays the custom nodes the workflows require.
- 
-    Usage:
-    python custom_nodes_checker.py [<comfyui_path>] [<workflow_path>]
- 
-    Arguments:
-    <comfyui_path>   - Optional. Path to ComfyUI root directory or directly to `nodes.py` file.
-                       If not provided, assumes `nodes.py` is in the same directory 
-                       as the script.
-    <workflow_path>  - Optional. Path to a JSON workflow file or workflows directory. 
-                       If not provided, assumes a `workflows` directory in the same 
-                       directory as the script.
- 
-    Options:
-    -h, --help       - Display this help message.
- 
-    Example:
-    python custom_nodes_checker.py /path/to/comfyui /path/to/workflow.json
-    python custom_nodes_checker.py /path/to/comfyui /path/to/directory/
-    python custom_nodes_checker.py
-    """
-    print(help_message)
+import re
+def strip_git_recursive(data):
+    if isinstance(data, dict):
+        new_data = {}
+        for key, value in data.items():
+            # Strip ".git" from keys
+            new_key = re.sub(r'\.git$', '', key)
+            
+            # Recursively process the value
+            new_value = strip_git_recursive(value)
+            
+            new_data[new_key] = new_value
+        return new_data
+    elif isinstance(data, list):
+        # If it's a list, process each element recursively
+        return [strip_git_recursive(item) for item in data]
+    elif isinstance(data, str):
+        # If it's a string, remove the ".git" suffix
+        return re.sub(r'\.git$', '', data)
+    else:
+        # If it's neither a dict, list, or string, return the data as is
+        return data
+    
 
 
 additional_node_url_mappings = {
-    "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git"
+    "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
+    "Get resolution [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Switch image [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Load image with metadata [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Context Big (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
+    "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
+    "Switch any [Crystools]": "https://github.com/crystian/ComfyUI-Crystools"
     }
+
+
+
+
  
 def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None):
     """
@@ -237,6 +241,18 @@ def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None
         print(f"Error: Provided workflow path '{workflow_dir_path}' is invalid.")
         sys.exit(1)
 
+    # Use additional_node_url_mappings to inject any final missing github_urls
+    for node_name, url in additional_node_url_mappings.items():
+        if node_name in custom_nodes_no_url:
+            print(f"Also injecting {url} because of {node_name}")
+            github_urls.add(url)
+            custom_nodes_no_url.remove(node_name)
+
+    github_urls = list(set(github_urls)) 
+    github_urls = strip_git_recursive(github_urls)
+
+
+
     if len(custom_nodes_no_url) > 0:
         print(f"\n\n--- WARNING, custom nodes missing from snapshot url list:")
         for el in custom_nodes_no_url:
@@ -246,8 +262,10 @@ def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None
     with open(master_snapshot_path, 'r') as f:
         master_snapshot = json.load(f)
 
+    master_snapshot['git_custom_nodes'] = strip_git_recursive(master_snapshot['git_custom_nodes'])
+
     # Filter the git_custom_nodes based on the provided GitHub URLs
-    filtered_nodes = {url: data for url, data in master_snapshot['git_custom_nodes'].items() if url.strip(".git") in github_urls}
+    filtered_nodes = {url: data for url, data in master_snapshot['git_custom_nodes'].items() if url in github_urls}
     
     # Create a new dictionary with the filtered data
     filtered_snapshot = {
@@ -270,9 +288,9 @@ if __name__ == '__main__':
      - Make sure your wf is called "workflow.json" inside of the workflow_directory
 
     Example:
-    cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
-    python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/remix
-    
+cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
+python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/controlnet
+
     """
 
     if len(sys.argv) != 3:

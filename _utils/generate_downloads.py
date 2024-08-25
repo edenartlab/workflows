@@ -18,7 +18,10 @@ def process_workflow(workflow_dir, download_library_path):
 
     # Read the downloads file
     with open(download_library_path, 'r') as f:
-        download_library = json.load(f)
+        download_lib = json.load(f)
+
+    download_library = download_lib['files']
+    node_library = download_lib['nodes']
 
     # Initialize the do_downloads dictionary
     do_downloads = {}
@@ -29,6 +32,15 @@ def process_workflow(workflow_dir, download_library_path):
             source = value['source']
             target = value['target']
             do_downloads[target] = source
+
+    # Scan the workflow content for each target in the nodes
+    for key, item_list in node_library.items():
+        if re.search(re.escape(key.lower()), workflow_content):
+            # loop through all the downloads for this node:
+            for dict_entry in item_list:
+                source = dict_entry['source']
+                target = dict_entry['target']
+                do_downloads[target] = source
 
     # Save do_downloads.json alongside workflow.json
     output_path = os.path.join(os.path.dirname(workflow_path), 'auto_downloads.json')
@@ -44,9 +56,9 @@ if __name__ == '__main__':
 
     example usage:
 
-    cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
-    python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/remix
-    
+cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
+python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/txt2img
+
     """
 
     if len(sys.argv) != 2:
@@ -57,3 +69,5 @@ if __name__ == '__main__':
     download_library_path = 'download_library.json'
 
     process_workflow(workflow_dir, download_library_path)
+
+
