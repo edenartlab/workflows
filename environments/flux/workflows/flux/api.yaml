@@ -53,15 +53,3 @@ parameters:
     node_id: 25
     field: inputs
     subfield: noise_seed
-- name: steps
-  label: Steps
-  description: Number of denoising steps used to generate the image.
-  tip: Increasing the steps sometimes increases the quality of the image with diminishing returns beyond 6, as well as the run time.
-  type: float
-  default: 4
-  minimum: 4
-  maximum: 6
-  comfyui: 
-    node_id: 17
-    field: inputs
-    subfield: steps
