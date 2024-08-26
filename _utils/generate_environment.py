@@ -91,7 +91,7 @@ if __name__ == '__main__':
     example usage:
 
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
-python generate_environment.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test
+python generate_environment.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/txt2img_new
 
     """
 

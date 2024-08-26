@@ -43,7 +43,7 @@
   },
   "58": {
     "inputs": {
-      "image": "e10eee7823957429d022e84374b1169c40a5d1459398a40c1d928b0057106cf6.webp",
+      "image": "hyperrealistic mixed media image of unim_1684162291_000_dreamlike-photoreal-2.0_1684162311.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -223,7 +223,7 @@
         0
       ],
       "on_false": [
-        "177",
+        "179",
         0
       ]
     },
@@ -279,7 +279,7 @@
         0
       ],
       "on_false": [
-        "177",
+        "179",
         1
       ]
     },
@@ -299,7 +299,7 @@
         0
       ],
       "on_false": [
-        "177",
+        "179",
         2
       ]
     },
@@ -319,7 +319,7 @@
         0
       ],
       "on_false": [
-        "177",
+        "179",
         3
       ]
     },
@@ -339,7 +339,7 @@
         0
       ],
       "on_false": [
-        "177",
+        "179",
         4
       ]
     },
@@ -377,7 +377,7 @@
         "159",
         19
       ],
-      "extension": "jpg",
+      "extension": "png",
       "calculate_hash": true,
       "resource_hash": true,
       "lossless_webp": true,
@@ -448,27 +448,10 @@
       "title": "IPAdapter Tiled"
     }
   },
-  "131": {
-    "inputs": {
-      "comparison": "a == b",
-      "a": [
-        "137",
-        0
-      ],
-      "b": [
-        "138",
-        0
-      ]
-    },
-    "class_type": "easy compare",
-    "_meta": {
-      "title": "Compare"
-    }
-  },
   "133": {
     "inputs": {
       "boolean": [
-        "131",
+        "178",
         0
       ],
       "on_true": [
@@ -622,7 +605,7 @@
   "171": {
     "inputs": {
       "seed": 755946912609480,
-      "steps": 20,
+      "steps": 25,
       "cfg": 7.5,
       "sampler_name": "euler",
       "scheduler": "normal",
@@ -671,18 +654,35 @@
       "title": "VAE Decode"
     }
   },
-  "177": {
+  "178": {
     "inputs": {
-      "aspect_ratio": "SDXL_16-9_landscape_1344x768",
+      "comparison": "a == b",
+      "a": [
+        "137",
+        0
+      ],
+      "b": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "179": {
+    "inputs": {
+      "aspect_ratio": "16-9_landscape_1344x768",
       "justification": "center",
       "image": [
         "58",
         0
       ]
     },
-    "class_type": "Aspect Pad Image For Outpainting",
+    "class_type": "AspectPadImageForOutpainting",
     "_meta": {
-      "title": "Aspect Pad Image For Outpainting"
+      "title": "AspectPadImageForOutpainting"
     }
   }
 }

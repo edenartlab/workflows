@@ -1,46 +1,7 @@
 {
-  "last_node_id": 177,
-  "last_link_id": 389,
+  "last_node_id": 179,
+  "last_link_id": 398,
   "nodes": [
-    {
-      "id": 115,
-      "type": "Get resolution [Crystools]",
-      "pos": [
-        -650,
-        470
-      ],
-      "size": {
-        "0": 213.23033142089844,
-        "1": 96
-      },
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 221
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Get resolution [Crystools]"
-      }
-    },
     {
       "id": 103,
       "type": "Switch image [Crystools]",
@@ -64,7 +25,7 @@
         {
           "name": "on_false",
           "type": "IMAGE",
-          "link": 384
+          "link": 394
         },
         {
           "name": "boolean",
@@ -145,39 +106,6 @@
       },
       "widgets_values": [
         "PLUS (high strength)"
-      ]
-    },
-    {
-      "id": 45,
-      "type": "BrushNetLoader",
-      "pos": [
-        -650,
-        340
-      ],
-      "size": {
-        "0": 213.23033142089844,
-        "1": 82
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "brushnet",
-          "type": "BRMODEL",
-          "links": [
-            148
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BrushNetLoader"
-      },
-      "widgets_values": [
-        "PowerPaint-v2-1\\diffusion_pytorch_model.safetensors",
-        "float16"
       ]
     },
     {
@@ -291,7 +219,7 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 387
+          "link": 396
         },
         {
           "name": "boolean",
@@ -344,7 +272,7 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 388
+          "link": 397
         },
         {
           "name": "boolean",
@@ -397,7 +325,7 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 389
+          "link": 398
         },
         {
           "name": "boolean",
@@ -570,132 +498,6 @@
       "color": "#1f2f51"
     },
     {
-      "id": 131,
-      "type": "easy compare",
-      "pos": [
-        -31.727272380482066,
-        252.63637048547906
-      ],
-      "size": {
-        "0": 329.7135925292969,
-        "1": 78
-      },
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "link": 260
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "link": 263
-        }
-      ],
-      "outputs": [
-        {
-          "name": "boolean",
-          "type": "BOOLEAN",
-          "links": [
-            253
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "easy compare"
-      },
-      "widgets_values": [
-        "a == b"
-      ]
-    },
-    {
-      "id": 133,
-      "type": "Switch any [Crystools]",
-      "pos": [
-        -31.727272380482066,
-        372.63637048547906
-      ],
-      "size": {
-        "0": 329.7135925292969,
-        "1": 78
-      },
-      "flags": {},
-      "order": 19,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "on_true",
-          "type": "*",
-          "link": 261
-        },
-        {
-          "name": "on_false",
-          "type": "*",
-          "link": 262
-        },
-        {
-          "name": "boolean",
-          "type": "BOOLEAN",
-          "link": 253,
-          "widget": {
-            "name": "boolean"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            265,
-            270
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Switch any [Crystools]"
-      },
-      "widgets_values": [
-        true
-      ]
-    },
-    {
-      "id": 143,
-      "type": "Display Any (rgthree)",
-      "pos": [
-        -27.727272380482066,
-        460.63637048547906
-      ],
-      "size": {
-        "0": 325.8214111328125,
-        "1": 76.00001525878906
-      },
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 270,
-          "dir": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Display Any (rgthree)"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
       "id": 119,
       "type": "IPAdapterTiled",
       "pos": [
@@ -778,39 +580,6 @@
       ]
     },
     {
-      "id": 66,
-      "type": "PowerPaintCLIPLoader",
-      "pos": [
-        780,
-        1020
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "links": [
-            147
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PowerPaintCLIPLoader"
-      },
-      "widgets_values": [
-        "model.fp16.safetensors",
-        "PowerPaint-v2-1\\pytorch_model.bin"
-      ]
-    },
-    {
       "id": 137,
       "type": "Primitive string [Crystools]",
       "pos": [
@@ -824,14 +593,14 @@
       "flags": {
         "collapsed": true
       },
-      "order": 2,
+      "order": 0,
       "mode": 0,
       "outputs": [
         {
           "name": "string",
           "type": "STRING",
           "links": [
-            260
+            390
           ],
           "shape": 3,
           "slot_index": 0
@@ -843,58 +612,6 @@
       "widgets_values": [
         ""
       ]
-    },
-    {
-      "id": 50,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -32,
-        135
-      ],
-      "size": {
-        "0": 329.7135925292969,
-        "1": 96
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 21,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 334
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 287,
-          "widget": {
-            "name": "text"
-          },
-          "slot_index": 1
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            146
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 49,
@@ -1514,7 +1231,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "properties": {
         "text": ""
@@ -1976,67 +1693,6 @@
       ],
       "properties": {},
       "widgets_values": []
-    },
-    {
-      "id": 157,
-      "type": "CheckpointLoader|pysssss",
-      "pos": [
-        -1025,
-        360
-      ],
-      "size": {
-        "0": 324.6619873046875,
-        "1": 199.15756225585938
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            336
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            337
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            338
-          ],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 3,
-          "slot_index": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoader|pysssss"
-      },
-      "widgets_values": [
-        {
-          "content": "juggernaut_reborn.safetensors",
-          "image": null
-        },
-        "[none]"
-      ]
     },
     {
       "id": 160,
@@ -2571,126 +2227,6 @@
       }
     },
     {
-      "id": 171,
-      "type": "KSampler (Efficient)",
-      "pos": [
-        760,
-        -130
-      ],
-      "size": {
-        "0": 325,
-        "1": 350
-      },
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 358
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 359
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 360
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 361
-        },
-        {
-          "name": "optional_vae",
-          "type": "VAE",
-          "link": 381,
-          "slot_index": 4
-        },
-        {
-          "name": "script",
-          "type": "SCRIPT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CONDITIONING+",
-          "type": "CONDITIONING",
-          "links": [
-            372
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "CONDITIONING-",
-          "type": "CONDITIONING",
-          "links": [
-            373
-          ],
-          "shape": 3
-        },
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            374,
-            380
-          ],
-          "shape": 3,
-          "slot_index": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            378
-          ],
-          "shape": 3,
-          "slot_index": 4
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            362,
-            364
-          ],
-          "shape": 3,
-          "slot_index": 5
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler (Efficient)"
-      },
-      "widgets_values": [
-        755946912609480,
-        null,
-        20,
-        7.5,
-        "euler",
-        "normal",
-        1,
-        "none",
-        "true"
-      ],
-      "color": "#443322",
-      "bgcolor": "#665533",
-      "shape": 1
-    },
-    {
       "id": 144,
       "type": "Note",
       "pos": [
@@ -2702,7 +2238,7 @@
         "1": 114.54545593261719
       },
       "flags": {},
-      "order": 5,
+      "order": 2,
       "mode": 0,
       "properties": {
         "text": ""
@@ -2712,40 +2248,6 @@
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 139,
-      "type": "Primitive string [Crystools]",
-      "pos": [
-        -382,
-        405
-      ],
-      "size": {
-        "0": 320.6398620605469,
-        "1": 100.53372192382812
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 6,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "string",
-          "type": "STRING",
-          "links": [
-            261
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Primitive string [Crystools]"
-      },
-      "widgets_values": [
-        "empty scene"
-      ]
     },
     {
       "id": 138,
@@ -2759,7 +2261,7 @@
         "1": 129.44482421875
       },
       "flags": {},
-      "order": 7,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -2767,8 +2269,8 @@
           "type": "STRING",
           "links": [
             262,
-            263,
-            286
+            286,
+            391
           ],
           "shape": 3,
           "slot_index": 0
@@ -2796,7 +2298,7 @@
         "1": 129.44482421875
       },
       "flags": {},
-      "order": 8,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -2972,7 +2474,7 @@
         "%date/",
         "CheckpointYesmix_v35.safetensors",
         "kl-f8-anime2.ckpt",
-        735467210290119,
+        695243023110384,
         "randomize",
         20,
         8,
@@ -3005,7 +2507,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 9,
+      "order": 5,
       "mode": 0,
       "outputs": [
         {
@@ -3038,7 +2540,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 10,
+      "order": 6,
       "mode": 0,
       "outputs": [
         {
@@ -3071,7 +2573,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 11,
+      "order": 7,
       "mode": 0,
       "outputs": [
         {
@@ -3104,7 +2606,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 12,
+      "order": 8,
       "mode": 0,
       "outputs": [
         {
@@ -3123,48 +2625,6 @@
       },
       "widgets_values": [
         128
-      ]
-    },
-    {
-      "id": 58,
-      "type": "LoadImage",
-      "pos": [
-        -1024,
-        665
-      ],
-      "size": {
-        "0": 542.1735229492188,
-        "1": 630.646484375
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            213,
-            221,
-            385
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "e10eee7823957429d022e84374b1169c40a5d1459398a40c1d928b0057106cf6.webp",
-        "image"
       ]
     },
     {
@@ -3190,7 +2650,7 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 386
+          "link": 395
         },
         {
           "name": "boolean",
@@ -3227,12 +2687,12 @@
         -362,
         882
       ],
-      "size": [
-        218.7422419353536,
-        58
-      ],
+      "size": {
+        "0": 218.74224853515625,
+        "1": 58
+      },
       "flags": {},
-      "order": 14,
+      "order": 9,
       "mode": 0,
       "outputs": [
         {
@@ -3260,16 +2720,165 @@
       "bgcolor": "#355"
     },
     {
-      "id": 177,
-      "type": "Aspect Pad Image For Outpainting",
+      "id": 133,
+      "type": "Switch any [Crystools]",
       "pos": [
-        -349,
-        664
+        -32,
+        386
       ],
-      "size": [
-        268.79998779296875,
-        162
+      "size": {
+        "0": 329.7135925292969,
+        "1": 78
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 261
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 262
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "link": 392,
+          "widget": {
+            "name": "boolean"
+          }
+        }
       ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            265,
+            270
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 50,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -32,
+        126
+      ],
+      "size": {
+        "0": 329.7135925292969,
+        "1": 96
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 334
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 287,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            146
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 178,
+      "type": "Eden_Compare",
+      "pos": [
+        -23,
+        264
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 390
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 391
+        }
+      ],
+      "outputs": [
+        {
+          "name": "B",
+          "type": "BOOLEAN",
+          "links": [
+            392
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Compare"
+      },
+      "widgets_values": [
+        "a == b"
+      ]
+    },
+    {
+      "id": 179,
+      "type": "AspectPadImageForOutpainting",
+      "pos": [
+        -354,
+        659
+      ],
+      "size": {
+        "0": 315,
+        "1": 162
+      },
       "flags": {},
       "order": 18,
       "mode": 0,
@@ -3277,7 +2886,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 385
+          "link": 393
         }
       ],
       "outputs": [
@@ -3285,7 +2894,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            384
+            394
           ],
           "shape": 3,
           "slot_index": 0
@@ -3294,7 +2903,7 @@
           "name": "LEFT",
           "type": "INT",
           "links": [
-            386
+            395
           ],
           "shape": 3,
           "slot_index": 1
@@ -3303,7 +2912,7 @@
           "name": "TOP",
           "type": "INT",
           "links": [
-            387
+            396
           ],
           "shape": 3,
           "slot_index": 2
@@ -3312,7 +2921,7 @@
           "name": "RIGHT",
           "type": "INT",
           "links": [
-            388
+            397
           ],
           "shape": 3,
           "slot_index": 3
@@ -3321,21 +2930,410 @@
           "name": "BOTTOM",
           "type": "INT",
           "links": [
-            389
+            398
           ],
           "shape": 3,
           "slot_index": 4
         }
       ],
       "properties": {
-        "Node name for S&R": "Aspect Pad Image For Outpainting"
+        "Node name for S&R": "AspectPadImageForOutpainting"
       },
       "widgets_values": [
-        "SDXL_16-9_landscape_1344x768",
+        "16-9_landscape_1344x768",
         "center"
+      ]
+    },
+    {
+      "id": 157,
+      "type": "CheckpointLoader|pysssss",
+      "pos": [
+        -1025,
+        360
       ],
-      "color": "#233",
-      "bgcolor": "#355"
+      "size": {
+        "0": 324.6619873046875,
+        "1": 199.15756225585938
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            336
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            337
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            338
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoader|pysssss"
+      },
+      "widgets_values": [
+        {
+          "content": "juggernaut_reborn.safetensors",
+          "image": null
+        },
+        "[none]"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "PowerPaintCLIPLoader",
+      "pos": [
+        780,
+        1020
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            147
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowerPaintCLIPLoader"
+      },
+      "widgets_values": [
+        "model.fp16.safetensors",
+        "PowerPaint-v2-1/pytorch_model.bin"
+      ]
+    },
+    {
+      "id": 45,
+      "type": "BrushNetLoader",
+      "pos": [
+        -651,
+        333
+      ],
+      "size": [
+        216.7273855713297,
+        82
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "brushnet",
+          "type": "BRMODEL",
+          "links": [
+            148
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BrushNetLoader"
+      },
+      "widgets_values": [
+        "PowerPaint-v2-1/diffusion_pytorch_model.safetensors",
+        "float16"
+      ]
+    },
+    {
+      "id": 143,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        -27,
+        475
+      ],
+      "size": {
+        "0": 325.8214111328125,
+        "1": 76.00001525878906
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 270,
+          "dir": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 139,
+      "type": "Primitive string [Crystools]",
+      "pos": [
+        -382,
+        405
+      ],
+      "size": {
+        "0": 320.6398620605469,
+        "1": 100.53372192382812
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            261
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Primitive string [Crystools]"
+      },
+      "widgets_values": [
+        "empty scene"
+      ]
+    },
+    {
+      "id": 171,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        760,
+        -130
+      ],
+      "size": {
+        "0": 325,
+        "1": 350
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 358
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 359
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 360
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 361
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 381,
+          "slot_index": 4
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            372
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            373
+          ],
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            374,
+            380
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            378
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            362,
+            364
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        755946912609480,
+        null,
+        25,
+        7.5,
+        "euler",
+        "normal",
+        1,
+        "none",
+        "true"
+      ],
+      "color": "#443322",
+      "bgcolor": "#665533",
+      "shape": 1
+    },
+    {
+      "id": 115,
+      "type": "Get resolution [Crystools]",
+      "pos": [
+        -650,
+        478
+      ],
+      "size": {
+        "0": 213.23033142089844,
+        "1": 96
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 221
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 58,
+      "type": "LoadImage",
+      "pos": [
+        -1024,
+        665
+      ],
+      "size": {
+        "0": 542.1735229492188,
+        "1": 630.646484375
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            213,
+            221,
+            393
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "hyperrealistic mixed media image of unim_1684162291_000_dreamlike-photoreal-2.0_1684162311.jpg",
+        "image"
+      ]
     }
   ],
   "links": [
@@ -3556,22 +3554,6 @@
       "MODEL"
     ],
     [
-      253,
-      131,
-      0,
-      133,
-      2,
-      "BOOLEAN"
-    ],
-    [
-      260,
-      137,
-      0,
-      131,
-      0,
-      "*"
-    ],
-    [
       261,
       139,
       0,
@@ -3584,14 +3566,6 @@
       138,
       0,
       133,
-      1,
-      "*"
-    ],
-    [
-      263,
-      138,
-      0,
-      131,
       1,
       "*"
     ],
@@ -3884,48 +3858,72 @@
       "VAE"
     ],
     [
-      384,
-      177,
+      390,
+      137,
+      0,
+      178,
+      0,
+      "*"
+    ],
+    [
+      391,
+      138,
+      0,
+      178,
+      1,
+      "*"
+    ],
+    [
+      392,
+      178,
+      0,
+      133,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      393,
+      58,
+      0,
+      179,
+      0,
+      "IMAGE"
+    ],
+    [
+      394,
+      179,
       0,
       103,
       1,
       "IMAGE"
     ],
     [
-      385,
-      58,
-      0,
-      177,
-      0,
-      "IMAGE"
-    ],
-    [
-      386,
-      177,
+      395,
+      179,
       1,
       108,
       1,
       "*"
     ],
     [
-      387,
-      177,
+      396,
+      179,
       2,
       109,
       1,
       "*"
     ],
     [
-      388,
-      177,
+      397,
+      179,
       3,
       110,
       1,
       "*"
     ],
     [
-      389,
-      177,
+      398,
+      179,
       4,
       111,
       1,
@@ -3985,10 +3983,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6830134553650705,
+      "scale": 0.620921323059155,
       "offset": {
-        "0": 2002.3558489737386,
-        "1": 154.03620050032612
+        "0": 1069.0384193157997,
+        "1": 35.93175093532511
       }
     }
   },

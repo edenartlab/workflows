@@ -157,6 +157,12 @@
         },
 
 
+        "PowerPaint-v2-1/diffusion_pytorch_model.safetensors": {
+            "source": "https://huggingface.co/JunhaoZhuang/PowerPaint-v2-1/resolve/main/PowerPaint_Brushnet/diffusion_pytorch_model.safetensors",
+            "target": "inpaint/PowerPaint-v2-1/diffusion_pytorch_model.safetensors"
+        },
+
+
         "RealESRGAN_x2plus": {
             "source": "https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth",
             "target": "models/upscale_models/RealESRGAN_x2plus.pth"
@@ -199,10 +205,9 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/insightface/inswapper_128.onnx",
             "target": "models/insightface/inswapper_128.onnx"
         },
-        "pytorch_model": {
-            "source": "https://huggingface.co/JunhaoZhuang/PowerPaint-v2-1/resolve/main/PowerPaint_Brushnet/pytorch_model.bin",
-            "target": "inpaint/PowerPaint-v2-1/pytorch_model.bin"
-        },
+
+
+
         "realesrgan_x2plus": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/upscale_models/RealESRGAN_x2plus.pth",
             "target": "models/upscale_models/RealESRGAN_x2plus.pth"
@@ -230,7 +235,16 @@
     },
 
     "nodes": {
-
+        "PowerPaintCLIPLoader": [
+            {
+            "source": "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/text_encoder/model.fp16.safetensors",
+            "target": "models/clip/model.fp16.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/JunhaoZhuang/PowerPaint-v2-1/resolve/main/PowerPaint_Brushnet/pytorch_model.bin",
+            "target": "inpaint/PowerPaint-v2-1/pytorch_model.bin"
+            }
+        ],
         "PrepImageForClipVision": [
             {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",

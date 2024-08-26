@@ -57,7 +57,7 @@ if __name__ == '__main__':
     example usage:
 
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
-python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/test/workflows/txt2img
+python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/txt2img_new/workflows/storydiffusion
 
     """
 

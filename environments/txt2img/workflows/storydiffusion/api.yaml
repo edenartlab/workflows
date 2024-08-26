@@ -1,0 +1,61 @@
+name: Storydiffusion
+description: A multi-prompt to multi-image workflow that uses storydiffusion to generate consistent characters across images without LoRa.
+tip: This is an advanced tool and should only be used when specifically requested.
+output_type: image
+handler: comfyui
+comfyui_output_node_id: 4
+parameters:
+- name: character_prompts
+  label: Character Descriptions
+  description: format is like so --> [name] visual description \ [name2] visual description2 ...
+  type: string
+  required: true
+  comfyui: 
+    node_id: 2
+    field: inputs
+    subfield: character_prompt
+- name: scene_prompts
+  label: Scene Descriptions
+  description: format is like so --> [name] is hiking up a mountain;\n[name] standing on top of a snowy mountain peak;\n[name2] driving his car on the road, medium shot
+  type: string
+  required: true
+  comfyui: 
+    node_id: 2
+    field: inputs
+    subfield: scene_prompts
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 1
+    field: inputs
+    subfield: img_width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  step: 8
+  comfyui: 
+    node_id: 1
+    field: inputs
+    subfield: img_height
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 10000000000000000
+  comfyui: 
+    node_id: 2
+    field: inputs
+    subfield: seed
