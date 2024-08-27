@@ -1,0 +1,433 @@
+{
+  "1": {
+    "inputs": {
+      "image": "halewnbxv00sy87f1skhswov2wap.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "ckpt_name": "juggernaut_reborn.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "lora_name": "more_details.safetensors",
+      "strength_model": 0.25,
+      "strength_clip": 0.25,
+      "model": [
+        "2",
+        0
+      ],
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "4": {
+    "inputs": {
+      "lora_name": "SDXLrender_v2.0.safetensors",
+      "strength_model": 0.1,
+      "strength_clip": 0.1,
+      "model": [
+        "3",
+        0
+      ],
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "masterpiece, best quality, highres",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "(worst quality, low quality, normal quality:1.5)",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "model_name": "4xNomosUniDAT_otf.safetensors"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "8": {
+    "inputs": {
+      "upscale_model": [
+        "7",
+        0
+      ],
+      "image": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": [
+        "62",
+        1
+      ],
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Upscale Image By"
+    }
+  },
+  "12": {
+    "inputs": {
+      "tile_size": 1024,
+      "pixels": [
+        "9",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEEncodeTiled",
+    "_meta": {
+      "title": "VAE Encode (Tiled)"
+    }
+  },
+  "13": {
+    "inputs": {
+      "b1": 1.05,
+      "b2": 1.08,
+      "s1": 0.9500000000000001,
+      "s2": 0.8,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "FreeU_V2",
+    "_meta": {
+      "title": "FreeU_V2"
+    }
+  },
+  "14": {
+    "inputs": {
+      "scale": 1,
+      "model": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "PerturbedAttentionGuidance",
+    "_meta": {
+      "title": "PerturbedAttentionGuidance"
+    }
+  },
+  "15": {
+    "inputs": {
+      "hard_mode": true,
+      "boost": true,
+      "model": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "Automatic CFG",
+    "_meta": {
+      "title": "Automatic CFG"
+    }
+  },
+  "16": {
+    "inputs": {
+      "method": "MultiDiffusion",
+      "tile_width": 1024,
+      "tile_height": 1024,
+      "tile_overlap": 128,
+      "tile_batch_size": 4,
+      "model": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "TiledDiffusion",
+    "_meta": {
+      "title": "Tiled Diffusion"
+    }
+  },
+  "17": {
+    "inputs": {
+      "control_net_name": "control_v11f1e_sd15_tile_fp16.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "18": {
+    "inputs": {
+      "strength": 0.5,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "control_net": [
+        "17",
+        0
+      ],
+      "image": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "20": {
+    "inputs": {
+      "sampler_name": "dpmpp_3m_sde_gpu"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "21": {
+    "inputs": {
+      "model_type": "SD1",
+      "steps": 18,
+      "denoise": 0.25
+    },
+    "class_type": "AlignYourStepsScheduler",
+    "_meta": {
+      "title": "AlignYourStepsScheduler"
+    }
+  },
+  "25": {
+    "inputs": {
+      "add_noise": true,
+      "noise_seed": 5398475983,
+      "cfg": 8,
+      "model": [
+        "16",
+        0
+      ],
+      "positive": [
+        "18",
+        0
+      ],
+      "negative": [
+        "18",
+        1
+      ],
+      "sampler": [
+        "20",
+        0
+      ],
+      "sigmas": [
+        "21",
+        0
+      ],
+      "latent_image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "SamplerCustom"
+    }
+  },
+  "26": {
+    "inputs": {
+      "tile_size": 1024,
+      "samples": [
+        "25",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE Decode (Tiled)"
+    }
+  },
+  "27": {
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "ORIGINAL IMAGE"
+    }
+  },
+  "36": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_sjerd_00021_.png&type=temp&subfolder=&rand=0.13633202458774796"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_sjerd_00022_.png&type=temp&subfolder=&rand=0.8351523033346673"
+          }
+        ]
+      },
+      "image_a": [
+        "26",
+        0
+      ],
+      "image_b": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "46": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "interpolation": "nearest",
+      "method": "keep proportion",
+      "condition": "downscale if bigger",
+      "multiple_of": 0,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "47": {
+    "inputs": {
+      "image": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "61": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "UPSCALE FACTOR"
+    }
+  },
+  "62": {
+    "inputs": {
+      "value": "a/4",
+      "a": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "🔧 Simple Math"
+    }
+  },
+  "63": {
+    "inputs": {
+      "filename_prefix": "upscaled",
+      "add_timestamp": true,
+      "save_metadata_json": true,
+      "images": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "SaveImageAdvanced",
+    "_meta": {
+      "title": "SaveImageAdvanced"
+    }
+  }
+}

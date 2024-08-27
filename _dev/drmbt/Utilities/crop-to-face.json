@@ -1,0 +1,1146 @@
+{
+  "last_node_id": 18,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        2542.8437618313073,
+        3339.8726148823594
+      ],
+      "size": [
+        320,
+        310
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "00017_T2I_01132_.png.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "BboxDetectorSEGS",
+      "pos": [
+        2882.8437618313073,
+        3099.8726148823594
+      ],
+      "size": {
+        "0": 250,
+        "1": 212
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 1
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS",
+          "type": "SEGS",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BboxDetectorSEGS"
+      },
+      "widgets_values": [
+        0.5,
+        10,
+        5,
+        10,
+        "face"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        2552.8437618313073,
+        3109.8726148823594
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "bbox/face_yolov8m.pt"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ImpactDecomposeSEGS",
+      "pos": [
+        3152.8437618313073,
+        3099.8726148823594
+      ],
+      "size": {
+        "0": 180,
+        "1": 50
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS_HEADER",
+          "type": "SEGS_HEADER",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "SEG_ELT",
+          "type": "SEG_ELT",
+          "links": [
+            4
+          ],
+          "shape": 6,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactDecomposeSEGS"
+      }
+    },
+    {
+      "id": 5,
+      "type": "ImpactFrom_SEG_ELT",
+      "pos": [
+        3152.8437618313073,
+        3199.8726148823594
+      ],
+      "size": {
+        "0": 230,
+        "1": 170
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "seg_elt",
+          "type": "SEG_ELT",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "seg_elt",
+          "type": "SEG_ELT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cropped_image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "cropped_mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "crop_region",
+          "type": "SEG_ELT_crop_region",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "bbox",
+          "type": "SEG_ELT_bbox",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "control_net_wrapper",
+          "type": "SEG_ELT_control_net_wrapper",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "confidence",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "label",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactFrom_SEG_ELT"
+      }
+    },
+    {
+      "id": 6,
+      "type": "ImpactFrom_SEG_ELT_bbox",
+      "pos": [
+        3402.8437618313073,
+        3079.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 90
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bbox",
+          "type": "SEG_ELT_bbox",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "left",
+          "type": "INT",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "top",
+          "type": "INT",
+          "links": [
+            13
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "right",
+          "type": "INT",
+          "links": [
+            14
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "bottom",
+          "type": "INT",
+          "links": [
+            15
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactFrom_SEG_ELT_bbox"
+      }
+    },
+    {
+      "id": 7,
+      "type": "ImageCrop",
+      "pos": [
+        3622.8437618313073,
+        3089.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "name": "x",
+          "type": "INT",
+          "link": 7,
+          "widget": {
+            "name": "x"
+          }
+        },
+        {
+          "name": "y",
+          "type": "INT",
+          "link": 8,
+          "widget": {
+            "name": "y"
+          }
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 9,
+          "widget": {
+            "name": "width"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 10,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11,
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        1280,
+        1280,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 8,
+      "type": "PreviewImage",
+      "pos": [
+        3742.8437618313073,
+        3389.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 250
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 9,
+      "type": "BBoxCrop",
+      "pos": [
+        3402.8437618313073,
+        3219.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 150
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "left",
+          "type": 0,
+          "link": 12,
+          "widget": {
+            "name": "left"
+          }
+        },
+        {
+          "name": "top",
+          "type": 0,
+          "link": 13,
+          "widget": {
+            "name": "top"
+          }
+        },
+        {
+          "name": "right",
+          "type": 0,
+          "link": 14,
+          "widget": {
+            "name": "right"
+          }
+        },
+        {
+          "name": "bottom",
+          "type": 0,
+          "link": 15,
+          "widget": {
+            "name": "bottom"
+          }
+        },
+        {
+          "name": "crop_width",
+          "type": "INT",
+          "link": 16,
+          "widget": {
+            "name": "crop_width"
+          }
+        },
+        {
+          "name": "crop_height",
+          "type": "INT",
+          "link": 17,
+          "widget": {
+            "name": "crop_height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            7
+          ],
+          "shape": 3
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BBoxCrop"
+      },
+      "widgets_values": [
+        0,
+        0,
+        100,
+        100,
+        1280,
+        1280
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Primitive integer [Crystools]",
+      "pos": [
+        2882.8437618313073,
+        3409.8726148823594
+      ],
+      "size": {
+        "0": 250,
+        "1": 70
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            9,
+            10,
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Primitive integer [Crystools]"
+      },
+      "widgets_values": [
+        768
+      ]
+    },
+    {
+      "id": 11,
+      "type": "Get resolution [Crystools]",
+      "pos": [
+        3622.8437618313073,
+        3249.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 100
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 12,
+      "type": "Get resolution [Crystools]",
+      "pos": [
+        2882.8437618313073,
+        3529.8726148823594
+      ],
+      "size": {
+        "0": 240,
+        "1": 100
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 13,
+      "type": "ImpactMinMax",
+      "pos": [
+        3162.8437618313073,
+        3559.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 20
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            23,
+            25,
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactMinMax"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ImpactMinMax",
+      "pos": [
+        3162.8437618313073,
+        3419.8726148823594
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 22
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            24,
+            27
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactMinMax"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Switch any [Crystools]",
+      "pos": [
+        3402.8437618313073,
+        3419.8726148823594
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 24
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 25
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "link": 26,
+          "widget": {
+            "name": "boolean"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            16,
+            17,
+            29
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 16,
+      "type": "easy compare",
+      "pos": [
+        3402.8437618313073,
+        3549.8726148823594
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 27
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy compare"
+      },
+      "widgets_values": [
+        "a <= b"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        2552.8437618313073,
+        3199.8726148823594
+      ],
+      "size": {
+        "0": 310,
+        "1": 90
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 29,
+          "dir": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Reroute",
+      "pos": [
+        2882.8437618313073,
+        3339.8726148823594
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            2,
+            6,
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      3,
+      0,
+      2,
+      0,
+      "BBOX_DETECTOR"
+    ],
+    [
+      2,
+      18,
+      0,
+      2,
+      1,
+      "IMAGE"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "SEGS"
+    ],
+    [
+      4,
+      4,
+      1,
+      5,
+      0,
+      "SEG_ELT"
+    ],
+    [
+      5,
+      5,
+      4,
+      6,
+      0,
+      "SEG_ELT_bbox"
+    ],
+    [
+      6,
+      18,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      9,
+      0,
+      7,
+      1,
+      "INT"
+    ],
+    [
+      8,
+      9,
+      1,
+      7,
+      2,
+      "INT"
+    ],
+    [
+      9,
+      10,
+      0,
+      7,
+      3,
+      "INT"
+    ],
+    [
+      10,
+      10,
+      0,
+      7,
+      4,
+      "INT"
+    ],
+    [
+      11,
+      7,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      6,
+      0,
+      9,
+      0,
+      "INT"
+    ],
+    [
+      13,
+      6,
+      1,
+      9,
+      1,
+      "INT"
+    ],
+    [
+      14,
+      6,
+      2,
+      9,
+      2,
+      "INT"
+    ],
+    [
+      15,
+      6,
+      3,
+      9,
+      3,
+      "INT"
+    ],
+    [
+      16,
+      15,
+      0,
+      9,
+      4,
+      "INT"
+    ],
+    [
+      17,
+      15,
+      0,
+      9,
+      5,
+      "INT"
+    ],
+    [
+      18,
+      7,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      18,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      12,
+      0,
+      13,
+      0,
+      "*"
+    ],
+    [
+      21,
+      12,
+      1,
+      13,
+      1,
+      "*"
+    ],
+    [
+      22,
+      10,
+      0,
+      14,
+      0,
+      "*"
+    ],
+    [
+      23,
+      13,
+      0,
+      14,
+      1,
+      "*"
+    ],
+    [
+      24,
+      14,
+      0,
+      15,
+      0,
+      "*"
+    ],
+    [
+      25,
+      13,
+      0,
+      15,
+      1,
+      "*"
+    ],
+    [
+      26,
+      16,
+      0,
+      15,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      27,
+      14,
+      0,
+      16,
+      0,
+      "*"
+    ],
+    [
+      28,
+      13,
+      0,
+      16,
+      1,
+      "*"
+    ],
+    [
+      29,
+      15,
+      0,
+      17,
+      0,
+      "*"
+    ],
+    [
+      30,
+      1,
+      0,
+      18,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1,
+      "offset": [
+        -1665.2679672645468,
+        -2616.2361957594903
+      ]
+    }
+  },
+  "version": 0.4
+}
