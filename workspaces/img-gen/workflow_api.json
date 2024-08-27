@@ -1,0 +1,969 @@
+{
+  "2": {
+    "inputs": {
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "7": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "output_multiplier": 1,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  },
+  "8": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use input image size"
+    }
+  },
+  "10": {
+    "inputs": {
+      "boolean": [
+        "17",
+        0
+      ],
+      "on_true": [
+        "2",
+        0
+      ],
+      "on_false": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch width"
+    }
+  },
+  "11": {
+    "inputs": {
+      "boolean": [
+        "17",
+        0
+      ],
+      "on_true": [
+        "2",
+        1
+      ],
+      "on_false": [
+        "7",
+        1
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch height"
+    }
+  },
+  "13": {
+    "inputs": {
+      "comparison": "a != b",
+      "a": [
+        "16",
+        3
+      ],
+      "b": [
+        "15",
+        3
+      ]
+    },
+    "class_type": "easy compare",
+    "_meta": {
+      "title": "init_image_supplied"
+    }
+  },
+  "14": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "A_black_image.jpg",
+      "upload": "image"
+    },
+    "class_type": "Load image with metadata [Crystools]",
+    "_meta": {
+      "title": "dummy_image"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "2-donald-trump-caricature-drawing-maeve-bokser.preview.jpg",
+      "upload": "image"
+    },
+    "class_type": "Load image with metadata [Crystools]",
+    "_meta": {
+      "title": "init_image"
+    }
+  },
+  "17": {
+    "inputs": {
+      "comparison": "a == b",
+      "a": [
+        "8",
+        0
+      ],
+      "b": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "easy compare",
+    "_meta": {
+      "title": "override if no init image"
+    }
+  },
+  "20": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "27": {
+    "inputs": {
+      "seed": 836404696062857
+    },
+    "class_type": "Seed",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "28": {
+    "inputs": {
+      "text": [
+        "31",
+        0
+      ],
+      "clip": [
+        "168",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "31": {
+    "inputs": {
+      "value": "stunning cubist artwork of embedding:SDXL_embeddings_xander, 4k, sharp details"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt (Positive)"
+    }
+  },
+  "32": {
+    "inputs": {
+      "text": [
+        "33",
+        0
+      ],
+      "clip": [
+        "92",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "value": "embedding:negativeXL_D, (worst quality, low quality, normal quality:1.5)"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt (Negative)"
+    }
+  },
+  "34": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_controlnet"
+    }
+  },
+  "35": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_ipAdapter"
+    }
+  },
+  "36": {
+    "inputs": {
+      "value": 0.6
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "38": {
+    "inputs": {
+      "seed": [
+        "27",
+        3
+      ],
+      "steps": [
+        "171",
+        0
+      ],
+      "cfg": [
+        "171",
+        2
+      ],
+      "sampler_name": [
+        "171",
+        3
+      ],
+      "scheduler": [
+        "171",
+        4
+      ],
+      "denoise": 1,
+      "model": [
+        "64",
+        0
+      ],
+      "positive": [
+        "51",
+        0
+      ],
+      "negative": [
+        "74",
+        0
+      ],
+      "latent_image": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "49": {
+    "inputs": {
+      "positive": [
+        "28",
+        0
+      ],
+      "negative": [
+        "32",
+        0
+      ],
+      "cnet_stack": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "Apply ControlNet Stack",
+    "_meta": {
+      "title": "Apply ControlNet Stack"
+    }
+  },
+  "50": {
+    "inputs": {
+      "control_net_name": "controlnet-union-sdxl-promax-1.0\\diffusion_pytorch_model_promax.safetensors",
+      "strength": [
+        "36",
+        0
+      ],
+      "preprocessor": [
+        "121",
+        0
+      ],
+      "control_net_override": "None",
+      "enabled": [
+        "34",
+        0
+      ],
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "AV_ControlNetEfficientStackerSimple",
+    "_meta": {
+      "title": "ControlNet Stacker"
+    }
+  },
+  "51": {
+    "inputs": {
+      "switch": [
+        "34",
+        0
+      ],
+      "on_false": [
+        "28",
+        0
+      ],
+      "on_true": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_conditioning_controlnet_w"
+    }
+  },
+  "59": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "ipadapter_strength"
+    }
+  },
+  "60": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "output_multiplier": 1,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "clamp_max_resolution"
+    }
+  },
+  "61": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "10",
+        0
+      ],
+      "b": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "ImpactMinMax",
+    "_meta": {
+      "title": "clamp_width"
+    }
+  },
+  "62": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "11",
+        0
+      ],
+      "b": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "ImpactMinMax",
+    "_meta": {
+      "title": "clamp_height"
+    }
+  },
+  "64": {
+    "inputs": {
+      "switch": [
+        "35",
+        0
+      ],
+      "on_false": [
+        "92",
+        0
+      ],
+      "on_true": [
+        "141",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_use_ipAdapter"
+    }
+  },
+  "74": {
+    "inputs": {
+      "switch": [
+        "34",
+        0
+      ],
+      "on_false": [
+        "32",
+        0
+      ],
+      "on_true": [
+        "49",
+        1
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_conditioning_controlnet_w"
+    }
+  },
+  "80": {
+    "inputs": {
+      "batch_index": 0,
+      "length": 1,
+      "image": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "90": {
+    "inputs": {
+      "pixels": [
+        "16",
+        0
+      ],
+      "vae": [
+        "168",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "91": {
+    "inputs": {
+      "samples": [
+        "38",
+        0
+      ],
+      "vae": [
+        "168",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "92": {
+    "inputs": {
+      "lora_name": [
+        "111",
+        0
+      ],
+      "strength_model": [
+        "118",
+        0
+      ],
+      "strength_clip": [
+        "118",
+        0
+      ],
+      "model": [
+        "168",
+        0
+      ],
+      "clip": [
+        "168",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "93": {
+    "inputs": {
+      "boolean": [
+        "13",
+        0
+      ],
+      "on_true": [
+        "90",
+        0
+      ],
+      "on_false": [
+        "94",
+        0
+      ]
+    },
+    "class_type": "Switch latent [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch latent"
+    }
+  },
+  "94": {
+    "inputs": {
+      "width": [
+        "61",
+        0
+      ],
+      "height": [
+        "62",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "96": {
+    "inputs": {
+      "value": 0.6
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength"
+    }
+  },
+  "111": {
+    "inputs": {
+      "string": [
+        "112",
+        0
+      ],
+      "separator": "$",
+      "index": 0
+    },
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
+  },
+  "112": {
+    "inputs": {
+      "value": "SDXL_lora_xander.safetensors"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "lora_name"
+    }
+  },
+  "114": {
+    "inputs": {
+      "comparison": "a != b",
+      "a": [
+        "112",
+        0
+      ],
+      "b": [
+        "115",
+        0
+      ]
+    },
+    "class_type": "easy compare",
+    "_meta": {
+      "title": "use_lora"
+    }
+  },
+  "115": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "empty_str"
+    }
+  },
+  "116": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "114",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "117": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "float_0.0"
+    }
+  },
+  "118": {
+    "inputs": {
+      "boolean": [
+        "114",
+        0
+      ],
+      "on_true": [
+        "96",
+        0
+      ],
+      "on_false": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch_lora_strength"
+    }
+  },
+  "120": {
+    "inputs": {
+      "value": "canny"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "controlnet_preprocessor"
+    }
+  },
+  "121": {
+    "inputs": {
+      "string": [
+        "120",
+        0
+      ],
+      "separator": "$",
+      "index": 0
+    },
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
+  },
+  "122": {
+    "inputs": {
+      "float_": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "CR Float To String",
+    "_meta": {
+      "title": "🔧 CR Float To String"
+    }
+  },
+  "123": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "denoise"
+    }
+  },
+  "124": {
+    "inputs": {
+      "string": [
+        "122",
+        0
+      ],
+      "separator": "$",
+      "index": 0
+    },
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
+  },
+  "125": {
+    "inputs": {
+      "images": [
+        "91",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "129": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "133": {
+    "inputs": {
+      "images": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "140": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "92",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "141": {
+    "inputs": {
+      "weight": 0.6,
+      "weight_type": "strong style transfer",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "enhance_tiles": 2,
+      "enhance_ratio": 1,
+      "model": [
+        "140",
+        0
+      ],
+      "ipadapter": [
+        "140",
+        1
+      ],
+      "image": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "IPAdapterClipVisionEnhancer",
+    "_meta": {
+      "title": "IPAdapter ClipVision Enhancer"
+    }
+  },
+  "145": {
+    "inputs": {
+      "image": "2-donald-trump-caricature-drawing-maeve-bokser.preview.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Style Image"
+    }
+  },
+  "146": {
+    "inputs": {
+      "filename": "eden_img-gen_%time_%seed_%counter",
+      "path": "%date/",
+      "model_name": [
+        "165",
+        0
+      ],
+      "seed": [
+        "27",
+        3
+      ],
+      "steps": [
+        "171",
+        0
+      ],
+      "cfg": [
+        "171",
+        2
+      ],
+      "sampler_name": [
+        "171",
+        3
+      ],
+      "scheduler": [
+        "171",
+        4
+      ],
+      "width": [
+        "61",
+        0
+      ],
+      "height": [
+        "62",
+        0
+      ],
+      "positive": [
+        "31",
+        0
+      ],
+      "negative": [
+        "33",
+        0
+      ],
+      "extension": "png",
+      "calculate_hash": true,
+      "resource_hash": true,
+      "lossless_webp": true,
+      "jpg_webp_quality": 95,
+      "date_format": "%Y-%m-%d",
+      "time_format": "%H%M%S",
+      "save_metadata_file": false,
+      "extra_info": "SD Prompt Reader Node Example Image",
+      "images": [
+        "91",
+        0
+      ],
+      "lora_name": [
+        "162",
+        2
+      ]
+    },
+    "class_type": "SDPromptSaver",
+    "_meta": {
+      "title": "SD Prompt Saver"
+    }
+  },
+  "151": {
+    "inputs": {
+      "text": [
+        "168",
+        3
+      ]
+    },
+    "class_type": "CR String To Combo",
+    "_meta": {
+      "title": "🔧 CR String To Combo"
+    }
+  },
+  "162": {
+    "inputs": {
+      "lora_name": "SDXL_lora_xander.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "168",
+        0
+      ],
+      "clip": [
+        "168",
+        1
+      ]
+    },
+    "class_type": "SDLoraLoader",
+    "_meta": {
+      "title": "SD Lora Loader"
+    }
+  },
+  "163": {
+    "inputs": {
+      "string": [
+        "168",
+        3
+      ],
+      "separator": "$",
+      "index": 0
+    },
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
+  },
+  "165": {
+    "inputs": {
+      "any_type_input": [
+        "168",
+        3
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "168": {
+    "inputs": {
+      "ckpt_name": {
+        "content": "zavychromaxl_v90.safetensors",
+        "image": null
+      },
+      "example": "[none]"
+    },
+    "class_type": "CheckpointLoader|pysssss",
+    "_meta": {
+      "title": "Checkpoint Loader 🐍"
+    }
+  },
+  "171": {
+    "inputs": {
+      "steps_total": 30,
+      "refiner_step": 999,
+      "cfg": 7.5,
+      "sampler_name": "euler",
+      "scheduler": "normal"
+    },
+    "class_type": "KSampler Config (rgthree)",
+    "_meta": {
+      "title": "KSampler Config (rgthree)"
+    }
+  }
+}

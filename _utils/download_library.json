@@ -37,7 +37,7 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/zavychromaxl_v80.safetensors",
             "target": "models/checkpoints/zavychromaxl_v80.safetensors"
         },
-
+        
 
         "AnimateLCM_sd15": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/animatediff_models/AnimateLCM_sd15_t2v.ckpt",
@@ -99,7 +99,10 @@
         },
 
 
-
+        "negativeXL_D.safetensors": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/embeddings/negativeXL_D.safetensors",
+            "target": "models/embeddings/negativeXL_D.safetensors"
+        },
         "ng_deepnegative_v1_75t": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/embeddings/ng_deepnegative_v1_75t.pt",
             "target": "models/embeddings/ng_deepnegative_v1_75t.pt"
@@ -112,8 +115,6 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/embeddings/SDXL_embeddings_xander.safetensors",
             "target": "models/embeddings/SDXL_embeddings_xander.safetensors"
         },
-
-
 
         "body_pose_model": {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
@@ -161,15 +162,29 @@
             "source": "https://huggingface.co/JunhaoZhuang/PowerPaint-v2-1/resolve/main/PowerPaint_Brushnet/diffusion_pytorch_model.safetensors",
             "target": "inpaint/PowerPaint-v2-1/diffusion_pytorch_model.safetensors"
         },
-
-
+        "control_v11f1e_sd15_tile_fp16.safetensors": {
+            "source": "https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile_fp16.safetensors",
+            "target": "models/controlnet/control_v11f1e_sd15_tile_fp16.safetensors"
+        },
         "RealESRGAN_x2plus": {
             "source": "https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth",
             "target": "models/upscale_models/RealESRGAN_x2plus.pth"
         },
+        "4xNomosUniDAT_otf.safetensors": {
+            "source": "https://github.com/Phhofm/models/releases/download/4xNomosUniDAT_otf/4xNomosUniDAT_otf.safetensors",
+            "target": "models/upscale_models/4xNomosUniDAT_otf.safetensors"
+        },
         "sdxl_lora_xander": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/loras/SDXL_lora_xander.safetensors",
             "target": "models/loras/SDXL_lora_xander.safetensors"
+        },
+        "more_details.safetensors": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/loras/SDXLrender_v2.0.safetensors",
+            "target": "models/loras/more_details.safetensors"
+        },
+        "SDXLrender_v2.0.safetensors": {
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/loras/SDXLrender_v2.0.safetensors",
+            "target": "models/loras/SDXLrender_v2.0.safetensors"
         },
         "t5xxl_fp8_e4m3fn": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/clip/t5xxl_fp8_e4m3fn.safetensors",

@@ -1,0 +1,63 @@
+{
+  "1": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Eden_Bool"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "2-donald-trump-caricature-drawing-maeve-bokser.preview.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "image": "70302936357__D5147A18-EC80-463F-9D59-0788B44D97A4.JPG",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "switch": [
+        "1",
+        0
+      ],
+      "on_false": [
+        "2",
+        0
+      ],
+      "on_true": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "Lazy Switch"
+    }
+  },
+  "5": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

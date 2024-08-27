@@ -42,7 +42,7 @@ def process_workflow(workflow_dir, download_library_path):
                 target = dict_entry['target']
                 do_downloads[target] = source
 
-    # Save do_downloads.json alongside workflow.json
+    # Save do_downloads.json alongside workflow_api.json
     output_path = os.path.join(os.path.dirname(workflow_path), 'auto_downloads.json')
     with open(output_path, 'w') as f:
         json.dump(do_downloads, f, indent=4)
@@ -52,7 +52,7 @@ def process_workflow(workflow_dir, download_library_path):
 if __name__ == '__main__':
 
     """
-    Tries to automatically create downloads.json from workflow.json and download_library.json
+    Tries to automatically create downloads.json from workflow_api.json and download_library.json
 
     example usage:
 

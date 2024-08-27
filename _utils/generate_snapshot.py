@@ -190,12 +190,16 @@ def strip_git_recursive(data):
 
 additional_node_url_mappings = {
     "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
+    "Image Comparer (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
     "Get resolution [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "Switch image [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Get resolution [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "Load image with metadata [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "Context Big (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
     "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
-    "Switch any [Crystools]": "https://github.com/crystian/ComfyUI-Crystools"
+    "Switch any [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "InversionDemoLazySwitch": "https://github.com/BadCafeCode/execution-inversion-demo-comfyui",
+
     }
 
 
@@ -211,7 +215,7 @@ def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None
     - workflow_path (str or None): The path to the workflow JSON file or directory.
     """
 
-    workflow_path = os.path.join(workflow_directory, "workflow.json")
+    workflow_path = os.path.join(workflow_directory, "workflow_api.json")
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     comfyui_path = comfyui_path if comfyui_path else script_dir
