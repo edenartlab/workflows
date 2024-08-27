@@ -289,7 +289,7 @@ if __name__ == '__main__':
 
     Example:
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
-python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/environments/txt2img_new/workflows/storydiffusion
+python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/workspaces/txt2img_new/workflows/storydiffusion
 
     """
 

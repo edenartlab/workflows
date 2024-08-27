@@ -59,24 +59,24 @@ parameters:
     subfield: steps
 - name: aspect_ratio
   label: Aspect Ratio
-  description: This parameter selects the size of the output canvas based on legal SDXL and SD1.5 resolution
+  description: This parameter selects the size of the output canvas
   tip: This parameter is overriden and can be left set to default if custom_expand parameter is true
   type: string
   default: 16-9_landscape_1344x768
   choices: [1-1_square_1024x1024, 4-3_landscape_1152x896, 3-2_landscape_1216x832, 16-9_landscape_1344x768, 21-9_landscape_1536x640, 3-4_portrait_896x1152, 5-8_portrait_832x1216, 9-16_portrait_768x1344, 9-21_portrait_640x1536]
   comfyui: 
-    node_id: 177
+    node_id: 179
     field: inputs
     subfield: aspect_ratio
 - name: justification
   label: Justification
   description: This parameter selects the starting justification of the input image in relation to the outpaint canvas result
-  tip: This parameter changes conditionally based on whether the input image is landscape or portait orientation, and is overriden and can be left set to default if custom_xpand parameter is true. Extreme changes in aspect can result in SD1.5 artifacting. Sticking to SD1.5 ratios is safer to avoid glitches. 
+  tip: This parameter changes conditionally based on whether the input image is landscape or portait orientation, and is overriden and can be left set to default if custom_expand parameter is true. 
   type: string
   default: center
   choices: [top-left, center, bottom-right]
   comfyui: 
-    node_id: 177
+    node_id: 179
     field: inputs
     subfield: justification
 - name: custom_expand
