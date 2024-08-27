@@ -62,8 +62,8 @@ parameters:
   description: This parameter selects the size of the output canvas based on legal SDXL and SD1.5 resolution
   tip: This parameter is overriden and can be left set to default if custom_expand parameter is true
   type: string
-  default: SDXL_16-9_landscape_1344x768
-  choices: [SDXL_1-1_square_1024x1024, SDXL_4-3_landscape_1152x896, SDXL_3-2_landscape_1216x832, SDXL_16-9_landscape_1344x768, SDXL_21-9_landscape_1536x640, SDXL_3-4_portrait_896x1152, SDXL_5-8_portrait_832x1216, SDXL_9-16_portrait_768x1344, SDXL_9-21_portrait_640x1536, SD15_1-1_square_512x512, SD15_2-3_portrait_512x768, SD15_3-4_portrait_512x682, SD15_3-2_landscape_768x512, SD15_4-3_landscape_682x512, SD15_16-9_cinema_910x512, SD15_37-20_cinema_952x512, SD15_2:1_cinema_1024x512]
+  default: 16-9_landscape_1344x768
+  choices: [1-1_square_1024x1024, 4-3_landscape_1152x896, 3-2_landscape_1216x832, 16-9_landscape_1344x768, 21-9_landscape_1536x640, 3-4_portrait_896x1152, 5-8_portrait_832x1216, 9-16_portrait_768x1344, 9-21_portrait_640x1536]
   comfyui: 
     node_id: 177
     field: inputs
