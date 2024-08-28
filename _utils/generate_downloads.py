@@ -13,7 +13,7 @@ def process_workflow(workflow_dir, download_library_path):
         return
 
     # Read the workflow file
-    with open(workflow_path, 'r') as f:
+    with open(workflow_path, 'r', encoding='utf-8') as f:
         workflow_content = f.read().lower()  # Convert to lowercase for case-insensitive search
 
     # Read the downloads file

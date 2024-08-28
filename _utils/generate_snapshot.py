@@ -199,7 +199,7 @@ additional_node_url_mappings = {
     "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
     "Switch any [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "InversionDemoLazySwitch": "https://github.com/BadCafeCode/execution-inversion-demo-comfyui",
-
+    "StringListToCombo": "https://github.com/aria1th/ComfyUI-LogicUtils"
     }
 
 
@@ -215,7 +215,7 @@ def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None
     - workflow_path (str or None): The path to the workflow JSON file or directory.
     """
 
-    workflow_path = os.path.join(workflow_directory, "workflow_api.json")
+    workflow_path = os.path.join(workflow_directory, "workflow.json")
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     comfyui_path = comfyui_path if comfyui_path else script_dir

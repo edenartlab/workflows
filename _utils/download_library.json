@@ -136,6 +136,10 @@
             "source": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors",
             "target": "models/controlnet/controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors"
         },
+        "controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors": {
+            "source": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors",
+            "target": "models/controlnet/controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors"
+        },
         "controlnet-canny-sdxl-1.0": {
             "source": "https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors",
             "target": "models/controlnet/SDXL/controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors"
@@ -156,8 +160,6 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/controlnet/v3_sd15_sparsectrl_scribble.ckpt",
             "target": "models/controlnet/v3_sd15_sparsectrl_scribble.ckpt"
         },
-
-
         "PowerPaint-v2-1/diffusion_pytorch_model.safetensors": {
             "source": "https://huggingface.co/JunhaoZhuang/PowerPaint-v2-1/resolve/main/PowerPaint_Brushnet/diffusion_pytorch_model.safetensors",
             "target": "inpaint/PowerPaint-v2-1/diffusion_pytorch_model.safetensors"
@@ -305,7 +307,120 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/insightface/models/antelopev2/scrfd_10g_bnkps.onnx",
             "target": "models/insightface/models/antelopev2/scrfd_10g_bnkps.onnx"
             }
+        ],
+        "ControlNet Stacker": [
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/dw-ll_ucoco_384.onnx"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/yolox_l.onnx"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/facenet.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/facenet.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/hand_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/hand_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetHED.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/ControlNetHED.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model2.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth"
+            }
+        ],
+        "AIO Aux Preprocessor": [
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/dw-ll_ucoco_384.onnx"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/yolox_l.onnx"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/facenet.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/facenet.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/hand_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/hand_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetHED.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/ControlNetHED.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model2.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth"
+            }
+        ],
+        "Preprocessor Selector": [
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/dw-ll_ucoco_384.onnx"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/yolox_l.onnx"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/facenet.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/facenet.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/hand_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/hand_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetHED.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/ControlNetHED.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model2.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth"
+            }
         ]
     }
-
 }
