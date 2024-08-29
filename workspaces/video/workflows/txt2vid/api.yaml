@@ -3,6 +3,7 @@ description: Generate a video from text
 tip: Use this to make videos from text prompts. It's better to use this instead of lerp because it doesn't use AnimateDiff.
 output_type: video
 handler: comfyui
+resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9x16_1152x2048]
 comfyui_output_node_id: 329
 parameters:
 - name: prompt

@@ -3,6 +3,7 @@ description: Generate a new image which adheres to the shape or outline of an in
 tip: This tool is best for text-to-image when an input image is provided and the user wants to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it. A great example is re-texturizing a logo image or turning a photo of a face into a marble statue.
 output_type: image
 handler: comfyui
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
 comfyui_output_node_id: 2
 parameters:
 - name: prompt

@@ -3,6 +3,7 @@ description: Create a video from a set of style images. This is a very good tool
 tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially).
 output_type: video
 handler: comfyui
+resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9x16_1152x2048]
 comfyui_output_node_id: 106
 parameters:
 - name: images

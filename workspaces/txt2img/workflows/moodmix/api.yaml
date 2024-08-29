@@ -3,6 +3,7 @@ description: Create an image from a set of style images and a prompt. Supports i
 tip: This workflow creates images by combining an input prompt (subtle influence) and random combinations of content-style images, referenced here as 'the moodboard'. The "Exploration Strength" controls how much variety the generated images will have; small values around 0.5 stay close to the anchor image, higher values like 0.7 yield more variety. "Prompt Strength" controls how much visual influence the prompt has vs the combined style images. It is usually around 0.2 but can be set to 0 to test the influence of the prompt in isolation.
 output_type: image[]
 handler: comfyui
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
 comfyui_output_node_id: 149
 parameters:
 - name: images

@@ -3,6 +3,7 @@ description: Animate a single image with 3D depth motion, while staying visually
 tip: This should be the default tool to use when a user requests to make a video out of an image with no other specific requirements. If the image has a clear or obvious foreground subject, use a lower foreground_denoise strength to avoid corrupting the subject.
 output_type: video
 handler: comfyui
+resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9x16_1152x2048]
 comfyui_output_node_id: 134
 parameters:
 - name: image
