@@ -37,10 +37,6 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/zavychromaxl_v80.safetensors",
             "target": "models/checkpoints/zavychromaxl_v80.safetensors"
         },
-        "layer_xl_transparent_conv.safetensors": {
-            "source": "https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_transparent_conv.safetensors",
-            "target": "models/layer_model/layer_xl_transparent_conv.safetensors"
-        },
         
 
         "AnimateLCM_sd15": {
@@ -424,6 +420,12 @@
             {
             "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model2.pth",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth"
+            }
+        ],
+        "Layer Diffuse Apply": [
+            {
+            "source": "https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_transparent_conv.safetensors",
+            "target": "models/layer_model/layer_xl_transparent_conv.safetensors"
             }
         ]
     }
