@@ -1,6 +1,6 @@
 name: Story Diffusion
 description: A multi-prompt to multi-image workflow that uses storydiffusion to generate consistent characters across images without LoRa.
-tip: This is an advanced tool and should only be used when specifically requested.
+tip: This is an advanced tool and should only be used when specifically requested. If the user underspecifies how the characters should look, fill in some details for them, but stay true to their vision of the character.
 output_type: image
 handler: comfyui
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
@@ -9,6 +9,7 @@ parameters:
 - name: character_prompts
   label: Character Descriptions
   description: Format is [name] visual description
+  tip: Use a concise and purely visual description of the character.For example, "[Alice] a woman wearing a green jacket, short black hair, thick-rimmed glasses, and a red backpack."
   type: string[]
   required: true
   comfyui: 
@@ -19,6 +20,7 @@ parameters:
 - name: scene_prompts
   label: Scene Descriptions
   description: Format is [name] scene description
+  tip: For example, "[Alice] is riding a bike down a hill with the city in the background."
   type: string[]
   required: true
   comfyui: 
