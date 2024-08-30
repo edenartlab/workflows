@@ -10,8 +10,8 @@ parameters:
   label: Style Images
   description: MoodBoard Style images driving the stylistic content of the image
   type: image[]
-  minimum: 1
-  maximum: 6
+  min_length: 1
+  max_length: 6
   comfyui: 
     node_id: 129
     field: inputs
@@ -21,8 +21,8 @@ parameters:
   label: Preference Anchor Image
   description: The previous image prefered by the user, serves as an anchor point for the next iteration. When no image is provided, will be ignored.
   type: image[]
-  minimum: 0
-  maximum: 1
+  min_length: 0
+  max_length: 1
   comfyui: 
     node_id: 161
     field: inputs

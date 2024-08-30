@@ -14,7 +14,7 @@ parameters:
     node_id: 31
     field: inputs
     subfield: value
-- name: negative
+- name: negative_prompt
   label: Negative prompt
   description: Negative text prompt, what you do *not* want to generate.
   tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
@@ -31,7 +31,7 @@ parameters:
   default: 1024
   minimum: 256
   maximum: 2048
-  visible_if: use_input_image=false
+  visible_if: use_init_image=false
   step: 8
   comfyui: 
     node_id: 7
@@ -44,13 +44,13 @@ parameters:
   default: 1024
   minimum: 256
   maximum: 2048
-  visible_if: use_input_image=false
+  visible_if: use_init_image=false
   step: 8
   comfyui: 
     node_id: 7
     field: inputs
     subfield: height
-- name: use_input_image
+- name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
   tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input.
@@ -64,7 +64,7 @@ parameters:
   label: Starting image
   description: Initial image from which to start diffusion process
   type: image
-  visible_if: use_input_image=true
+  visible_if: use_init_image=true
   comfyui: 
     node_id: 16
     field: inputs
@@ -75,7 +75,7 @@ parameters:
   tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution.
   type: bool
   default: true
-  visible_if: use_input_image=true
+  visible_if: use_init_image=true
   comfyui: 
     node_id: 8
     field: inputs
@@ -88,7 +88,7 @@ parameters:
   default: 1.0
   minimum: 0.0
   maximum: 1.0
-  visible_if: use_input_image=true
+  visible_if: use_init_image=true
   comfyui: 
     node_id: 38
     field: inputs
@@ -100,7 +100,7 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 10000000000000000
+  maximum: 2147483647
   comfyui: 
     node_id: 27
     field: inputs
@@ -159,7 +159,7 @@ parameters:
   comfyui: 
     node_id: 50
     field: inputs
-    subfield: value
+    subfield: preprocessor
 - name: controlnet_strength
   label: Controlnet strength
   description: set the guidance strength of the controlnet model in slot 1

@@ -8,22 +8,24 @@ comfyui_output_node_id: 4
 parameters:
 - name: character_prompts
   label: Character Descriptions
-  description: format is like so --> [name] visual description \ [name2] visual description2 ...
-  type: string
+  description: Format is [name] visual description
+  type: string[]
   required: true
   comfyui: 
     node_id: 2
     field: inputs
     subfield: character_prompt
+    preprocessing: concat
 - name: scene_prompts
   label: Scene Descriptions
-  description: format is like so --> [name] is hiking up a mountain;\n[name] standing on top of a snowy mountain peak;\n[name2] driving his car on the road, medium shot
-  type: string
+  description: Format is [name] scene description
+  type: string[]
   required: true
   comfyui: 
     node_id: 2
     field: inputs
     subfield: scene_prompts
+    preprocessing: concat
 - name: width
   label: Width
   description: Width in pixels
@@ -55,7 +57,7 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 10000000000000000
+  maximum: 2147483647
   comfyui: 
     node_id: 2
     field: inputs
