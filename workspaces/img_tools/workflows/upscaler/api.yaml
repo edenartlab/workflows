@@ -67,7 +67,7 @@ parameters:
   label: Prompt
   description: Text prompt
   type: string
-  default: masterpiece, best quality, highres
+  default: masterpiece, best quality, highres, 4k, sharp details
   comfyui: 
     node_id: 5
     field: inputs
@@ -76,7 +76,7 @@ parameters:
   label: Negative prompt
   description: Negative text prompt, what you do *not* want to generate
   type: string
-  default: (worst quality, low quality, normal quality:1.5)
+  default: (worst quality, low quality, blurry, normal quality:1.25)
   comfyui: 
     node_id: 6
     field: inputs
