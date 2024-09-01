@@ -8,10 +8,11 @@ comfyui_output_node_id: 4
 parameters:
 - name: character_prompts
   label: Character Descriptions
-  description: Format is [name] visual description
-  tip: Use a concise and purely visual description of the character.For example, "[Alice] a woman wearing a green jacket, short black hair, thick-rimmed glasses, and a red backpack."
+  description: Format is an array of strings, each of which is formatted like "[Name] visual description", with name always in the beginning and in brackets.
+  tip: Use a concise and purely visual description of the character. For example, ["[Alice] a woman wearing a green jacket, short black hair, thick-rimmed glasses, and a red backpack.", "[Bob] a man with a beard with a gray stripe, a monocle, and a bionic arm."]
   type: string[]
   required: true
+  min_length: 1
   comfyui: 
     node_id: 2
     field: inputs
@@ -19,10 +20,11 @@ parameters:
     preprocessing: concat
 - name: scene_prompts
   label: Scene Descriptions
-  description: Format is [name] scene description
-  tip: For example, "[Alice] is riding a bike down a hill with the city in the background."
+  description: Format is an array of strings, each of which is formatted as "[Name] scene description", where [Name] is one of the charactgers defined in the character_prompts.
+  tip: Each scene can have just one character. Put into brackets *only the reference to the chosen character by name, e.g. "[Bob] is sitting on a bench eating a sandwich." Do not bracket any other characters or words. Just one bracketed name from the character_prompts, in the beginning and nothing else. A good example is, ["[Alice] is riding a bike down a hill with the city in the background.", "[Bob] is sitting on a bench eating a sandwich."]. DO NOT put brackets around anything that isn't a character name defined in character_prompts! Do not use brackets like [Time Travel] or [Meeting]. You would just use brackets around one of [Alice] or [Bob] in the beginning of the example.
   type: string[]
   required: true
+  min_length: 1
   comfyui: 
     node_id: 2
     field: inputs
