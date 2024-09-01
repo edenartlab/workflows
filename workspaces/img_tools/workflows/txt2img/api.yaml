@@ -57,7 +57,7 @@ parameters:
   type: bool
   default: false
   comfyui: 
-    node_id: 193
+    node_id: 198
     field: inputs
     subfield: value
 - name: init_image
@@ -90,7 +90,7 @@ parameters:
   maximum: 1.0
   visible_if: use_init_image=true
   comfyui: 
-    node_id: 38
+    node_id: 48
     field: inputs
     subfield: denoise
 - name: seed
@@ -157,7 +157,7 @@ parameters:
   visible_if: use_controlnet=true
   # choices_label: [edge, depth, scribble, pose, lineart, HED]
   comfyui: 
-    node_id: 50
+    node_id: 209
     field: inputs
     subfield: preprocessor
 - name: controlnet_strength
@@ -178,7 +178,7 @@ parameters:
   description: Transfer style from image
   tip: Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image.
   type: bool
-  default: true
+  default: false
   comfyui: 
     node_id: 35
     field: inputs
@@ -202,6 +202,6 @@ parameters:
   maximum: 1.5
   visible_if: use_ipadapter=true
   comfyui: 
-    node_id: 36
+    node_id: 59
     field: inputs
     subfield: value
