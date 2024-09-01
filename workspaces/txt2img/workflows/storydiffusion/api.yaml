@@ -54,6 +54,17 @@ parameters:
     node_id: 1
     field: inputs
     subfield: img_height
+- name: style
+  label: style modifier
+  description: Adds a strong style modifier to each prompt
+  tip: For different style modifiers not included here, just injecting them into the prompt directly should also work!
+  type: string
+  default: No-style
+  choices: [No-style, Realistic, Japanese_Anime, Digital_Oil_Painting, Pixar_Disney_Character, Photographic, Comic_book, Line_art, Black_and_White_Film_Noir, Isometric_Rooms]
+  comfyui: 
+    node_id: 2
+    field: inputs
+    subfield: img_style
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set randomly.
