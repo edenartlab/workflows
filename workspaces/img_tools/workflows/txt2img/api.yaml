@@ -54,7 +54,7 @@ parameters:
   maximum: 1.0
   visible_if: use_init_image=true
   comfyui: 
-    node_id: 48
+    node_id: 38
     field: inputs
     subfield: denoise
 - name: use_lora
@@ -109,7 +109,7 @@ parameters:
   visible_if: use_controlnet=true
   # choices_label: [edge, depth, scribble, pose, lineart, HED]
   comfyui: 
-    node_id: 209
+    node_id: 50
     field: inputs
     subfield: preprocessor
 - name: controlnet_strength
@@ -168,7 +168,7 @@ parameters:
     node_id: 141
     field: inputs
     subfield: weight_type
-  - name: width
+- name: width
   label: Width
   description: Width in pixels
   type: int
