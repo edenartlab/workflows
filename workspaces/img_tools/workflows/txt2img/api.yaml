@@ -14,42 +14,6 @@ parameters:
     node_id: 31
     field: inputs
     subfield: value
-- name: negative_prompt
-  label: Negative prompt
-  description: Negative text prompt, what you do *not* want to generate.
-  tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
-  type: string
-  default:  
-  comfyui: 
-    node_id: 33
-    field: inputs
-    subfield: value
-- name: width
-  label: Width
-  description: Width in pixels
-  type: int
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  visible_if: use_init_image=false
-  step: 8
-  comfyui: 
-    node_id: 7
-    field: inputs
-    subfield: width
-- name: height
-  label: Height
-  description: Height in pixels
-  type: int
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  visible_if: use_init_image=false
-  step: 8
-  comfyui: 
-    node_id: 7
-    field: inputs
-    subfield: height
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
@@ -93,18 +57,6 @@ parameters:
     node_id: 48
     field: inputs
     subfield: denoise
-- name: seed
-  label: Seed
-  description: Set random seed for reproducibility. If blank, will be set to a random value.
-  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank. Great for redoing an image generation you like with a slightly modified prompt, but otherwise you should usually leave this blank.
-  type: int
-  default: random
-  minimum: 0
-  maximum: 2147483647
-  comfyui: 
-    node_id: 27
-    field: inputs
-    subfield: seed
 - name: use_lora
   label: Use LoRA
   description: Apply LoRA finetune model style to image generation
@@ -216,6 +168,51 @@ parameters:
     node_id: 141
     field: inputs
     subfield: weight_type
-
-
-
+  - name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  visible_if: use_init_image=false
+  step: 8
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  visible_if: use_init_image=false
+  step: 8
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: height
+- name: negative_prompt
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate.
+  tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
+  type: string
+  default: embedding:negativeXL_D, (worst quality, low quality, normal quality:1.5)
+  comfyui: 
+    node_id: 33
+    field: inputs
+    subfield: value
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set to a random value.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank. Great for redoing an image generation you like with a slightly modified prompt, but otherwise you should usually leave this blank.
+  type: int
+  default: random
+  minimum: 0
+  maximum: 2147483647
+  comfyui: 
+    node_id: 27
+    field: inputs
+    subfield: seed
