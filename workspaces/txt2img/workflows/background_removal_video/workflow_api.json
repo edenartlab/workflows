@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "video": "waking_life_short.mp4",
+      "video": "t2vid-lora.mp4",
       "force_rate": 0,
       "force_size": "Disabled",
       "custom_width": 512,
@@ -21,14 +21,14 @@
         "5",
         0
       ],
-      "loop_count": 0,
+      "loop_count": 100,
       "filename_prefix": "background_removed",
       "format": "video/ProRes",
       "profile": "4",
       "pingpong": false,
       "save_output": true,
       "images": [
-        "9",
+        "15",
         0
       ],
       "audio": [
@@ -71,17 +71,148 @@
       "title": "🔧 Image Resize"
     }
   },
-  "9": {
+  "10": {
     "inputs": {
+      "mask": [
+        "18",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "mask": [
+        "18",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "12": {
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "alpha": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "13": {
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "Images to RGB",
+    "_meta": {
+      "title": "Images to RGB"
+    }
+  },
+  "14": {
+    "inputs": {
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "18",
+        0
+      ],
+      "image2": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ImageBlend",
+    "_meta": {
+      "title": "ImageBlend"
+    }
+  },
+  "16": {
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "Images to RGB",
+    "_meta": {
+      "title": "Images to RGB"
+    }
+  },
+  "17": {
+    "inputs": {
+      "images": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "18": {
+    "inputs": {
+      "threshold": 0.5,
       "torchscript_jit": "on",
       "image": [
         "8",
         0
       ]
     },
-    "class_type": "InspyrenetRembg",
+    "class_type": "InspyrenetRembgAdvanced",
     "_meta": {
-      "title": "Inspyrenet Rembg"
+      "title": "Inspyrenet Rembg Advanced"
+    }
+  },
+  "19": {
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "20": {
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
     }
   }
 }

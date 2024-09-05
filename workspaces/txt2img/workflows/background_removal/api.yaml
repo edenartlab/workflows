@@ -14,3 +14,15 @@ parameters:
     node_id: 3
     field: inputs
     subfield: image
+- name: threshold
+  label: Threshold
+  description: Set the threshold for splitting the foreground and background
+  tip: This should usually stay at the default of .5; lower values are more permissive, and higher values tighter to the subject
+  type: float
+  default: 0.5
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 59
+    field: inputs
+    subfield: threshold
