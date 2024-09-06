@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "image": "20230224_160021 (1) (another copy).jpg",
+      "image": "T2I_SD3_remix-florence_00261_.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -31,7 +31,7 @@
     "inputs": {
       "filename_prefix": "transparent_foreground",
       "images": [
-        "39",
+        "53",
         0
       ]
     },
@@ -40,23 +40,10 @@
       "title": "Save Image"
     }
   },
-  "39": {
-    "inputs": {
-      "torchscript_jit": "default",
-      "image": [
-        "33",
-        0
-      ]
-    },
-    "class_type": "InspyrenetRembg",
-    "_meta": {
-      "title": "Inspyrenet Rembg"
-    }
-  },
   "41": {
     "inputs": {
       "mask": [
-        "39",
+        "60",
         1
       ]
     },
@@ -76,6 +63,89 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Image"
+    }
+  },
+  "52": {
+    "inputs": {
+      "mask": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "53": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "60",
+        0
+      ],
+      "image2": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "ImageBlend",
+    "_meta": {
+      "title": "ImageBlend"
+    }
+  },
+  "54": {
+    "inputs": {
+      "image": [
+        "41",
+        0
+      ],
+      "alpha": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "57": {
+    "inputs": {
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "Images to RGB",
+    "_meta": {
+      "title": "Images to RGB"
+    }
+  },
+  "58": {
+    "inputs": {
+      "images": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "60": {
+    "inputs": {
+      "torchscript_jit": "default",
+      "image": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembg",
+    "_meta": {
+      "title": "Inspyrenet Rembg"
     }
   }
 }

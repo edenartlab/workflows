@@ -1,26 +1,322 @@
 {
-  "last_node_id": 9,
-  "last_link_id": 14,
+  "last_node_id": 21,
+  "last_link_id": 36,
   "nodes": [
     {
-      "id": 3,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        1825,
-        978
-      ],
-      "size": [
-        315,
-        258
-      ],
+      "id": 16,
+      "type": "Images to RGB",
+      "pos": {
+        "0": 2657,
+        "1": 1194,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 26
+      },
       "flags": {},
-      "order": 4,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 14
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            25
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Images to RGB"
+      }
+    },
+    {
+      "id": 19,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2262,
+        "1": 1299,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 31
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 1,
+      "type": "VHS_LoadVideo",
+      "pos": {
+        "0": 504,
+        "1": 893,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        306.6362609863281,
+        562.6362609863281
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            6
+          ],
+          "slot_index": 2,
+          "shape": 3
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": [
+            4
+          ],
+          "slot_index": 3,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "t2vid-lora.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "select_every_nth": 1,
+            "filename": "t2vid-lora.mp4",
+            "type": "input",
+            "format": "video/mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "MaskToImage",
+      "pos": {
+        "0": 1918,
+        "1": 1113,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 176.39999389648438,
+        "1": 26
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      }
+    },
+    {
+      "id": 14,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1921,
+        "1": 1318,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 20,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2659,
+        "1": 1300,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VHS_VideoCombine",
+      "pos": {
+        "0": 2181,
+        "1": 803,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        307.333984375,
+        258
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 24
         },
         {
           "name": "audio",
@@ -59,7 +355,7 @@
       },
       "widgets_values": {
         "frame_rate": 8,
-        "loop_count": 0,
+        "loop_count": 100,
         "filename_prefix": "background_removed",
         "format": "video/ProRes",
         "profile": "4",
@@ -69,25 +365,67 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "background_removed_00001-audio.mov",
+            "filename": "background_removed_00029.mov",
             "subfolder": "",
             "type": "output",
             "format": "video/ProRes",
-            "frame_rate": 25
+            "frame_rate": 24
           },
           "muted": false
         }
       }
     },
     {
+      "id": 17,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2926,
+        "1": 1300,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 25
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
       "id": 5,
       "type": "VHS_VideoInfo",
-      "pos": [
-        1376,
-        1080
-      ],
+      "pos": {
+        "0": 1233,
+        "1": 1039,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
       "size": {
-        "0": 391.9954833984375,
+        "0": 392.336181640625,
         "1": 206
       },
       "flags": {},
@@ -107,8 +445,8 @@
           "links": [
             5
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "source_frame_count🟨",
@@ -171,12 +509,214 @@
       "widgets_values": {}
     },
     {
+      "id": 11,
+      "type": "InvertMask",
+      "pos": {
+        "0": 1688,
+        "1": 1113,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            16
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      }
+    },
+    {
+      "id": 13,
+      "type": "Images to RGB",
+      "pos": {
+        "0": 1664,
+        "1": 1318,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            17
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Images to RGB"
+      }
+    },
+    {
+      "id": 12,
+      "type": "JoinImageWithAlpha",
+      "pos": {
+        "0": 1913,
+        "1": 1202,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 214.8665008544922,
+        "1": 46
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 15
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22,
+            31
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      }
+    },
+    {
+      "id": 15,
+      "type": "ImageBlend",
+      "pos": {
+        "0": 2178,
+        "1": 1116,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            23,
+            24,
+            26,
+            32
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBlend"
+      },
+      "widgets_values": [
+        1,
+        "multiply"
+      ]
+    },
+    {
       "id": 8,
       "type": "ImageResize+",
-      "pos": [
-        972,
-        961
-      ],
+      "pos": {
+        "0": 851,
+        "1": 874,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
       "size": {
         "0": 286.8852233886719,
         "1": 218
@@ -196,10 +736,10 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            13
+            33
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "width",
@@ -227,106 +767,24 @@
       ]
     },
     {
-      "id": 1,
-      "type": "VHS_LoadVideo",
-      "pos": [
-        608,
-        962
-      ],
-      "size": [
-        306.6362609863281,
-        431.26130803426105
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            11
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "links": [
-            6
-          ],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "video_info",
-          "type": "VHS_VIDEOINFO",
-          "links": [
-            4
-          ],
-          "shape": 3,
-          "slot_index": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_LoadVideo"
-      },
-      "widgets_values": {
-        "video": "waking_life_short.mp4",
-        "force_rate": 0,
-        "force_size": "Disabled",
-        "custom_width": 512,
-        "custom_height": 512,
-        "frame_load_cap": 0,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "choose video to upload": "image",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "frame_load_cap": 0,
-            "skip_first_frames": 0,
-            "force_rate": 0,
-            "select_every_nth": 1,
-            "filename": "waking_life_short.mp4",
-            "type": "input",
-            "format": "video/mp4"
-          },
-          "muted": false
-        }
-      }
-    },
-    {
-      "id": 9,
+      "id": 21,
       "type": "InspyrenetRembg",
-      "pos": [
-        1444,
-        873
-      ],
-      "size": [
-        225.2425673806697,
-        78
-      ],
+      "pos": {
+        "0": 1307,
+        "1": 872,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 78
+      },
       "flags": {},
       "order": 3,
       "mode": 0,
@@ -334,7 +792,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 13
+          "link": 33
         }
       ],
       "outputs": [
@@ -342,7 +800,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            14
+            34
           ],
           "shape": 3,
           "slot_index": 0
@@ -350,8 +808,12 @@
         {
           "name": "MASK",
           "type": "MASK",
-          "links": null,
-          "shape": 3
+          "links": [
+            35,
+            36
+          ],
+          "shape": 3,
+          "slot_index": 1
         }
       ],
       "properties": {
@@ -396,30 +858,126 @@
       "IMAGE"
     ],
     [
-      13,
-      8,
+      15,
+      10,
       0,
-      9,
+      12,
       0,
       "IMAGE"
     ],
     [
+      16,
+      11,
+      0,
+      12,
+      1,
+      "MASK"
+    ],
+    [
+      17,
+      13,
+      0,
       14,
-      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      12,
+      0,
+      15,
+      1,
+      "IMAGE"
+    ],
+    [
+      23,
+      15,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      15,
       0,
       3,
       0,
       "IMAGE"
+    ],
+    [
+      25,
+      16,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      26,
+      15,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      12,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      15,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      8,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      21,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      21,
+      1,
+      11,
+      0,
+      "MASK"
+    ],
+    [
+      36,
+      21,
+      1,
+      10,
+      0,
+      "MASK"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9090909090909091,
+      "scale": 1.2961196510623527,
       "offset": [
-        -513.3830840705732,
-        -641.6556086495898
+        -427.42014910221013,
+        -457.6736414135971
       ]
     }
   },

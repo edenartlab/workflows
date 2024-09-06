@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 719963008185412,
+      "seed": 208397602917938,
       "steps": 20,
       "cfg": 8,
       "sampler_name": "euler",
@@ -51,7 +51,7 @@
   },
   "6": {
     "inputs": {
-      "text": "a glass of chanpagne\n",
+      "text": "a bonsai tree inside of a snowglobe crystal orb",
       "clip": [
         "4",
         1
@@ -123,30 +123,6 @@
       "title": "Layer Diffuse Decode"
     }
   },
-  "20": {
-    "inputs": {
-      "images": [
-        "14",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "23": {
-    "inputs": {
-      "images": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "24": {
     "inputs": {
       "mask": [
@@ -157,18 +133,6 @@
     "class_type": "MaskToImage",
     "_meta": {
       "title": "Convert Mask to Image"
-    }
-  },
-  "25": {
-    "inputs": {
-      "images": [
-        "24",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
     }
   },
   "28": {
@@ -203,13 +167,71 @@
     "inputs": {
       "filename_prefix": "layer-diffusion",
       "images": [
-        "28",
+        "34",
         0
       ]
     },
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Image"
+    }
+  },
+  "31": {
+    "inputs": {
+      "mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "32": {
+    "inputs": {
+      "mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "33": {
+    "inputs": {
+      "image": [
+        "31",
+        0
+      ],
+      "alpha": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "34": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "28",
+        0
+      ],
+      "image2": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "ImageBlend",
+    "_meta": {
+      "title": "ImageBlend"
     }
   }
 }
