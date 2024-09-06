@@ -2,6 +2,7 @@ name: Stable Audio
 description: Generate sound effects
 tip: Optimized for generating short audio samples, sound effects, and production elements. Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. The model was trained on data from Freesound and the Free Music Archive, respecting creator rights.
 output_type: audio
+cost_estimate: 1 + 0.1 * seconds
 handler: comfyui
 comfyui_output_node_id: 13
 parameters:
