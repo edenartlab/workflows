@@ -3,6 +3,7 @@ description: Create a stylized picture of a person
 tip: This pipeline takes an input picture of a person to extract their identity and a style image to extract stylistic elements / textures. It then generates an image of the same person in the referenced style. This workflow also takes an optional input prompt. By setting the style strength to zero and writing a good prompt, this pipeline can also be used to place the person in a specific situation without applying the style from the image, just using a prompt!
 handler: comfyui
 output_type: image
+cost_estimate: 1
 comfyui_output_node_id: 74
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
 parameters:
