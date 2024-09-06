@@ -43,7 +43,7 @@
   "41": {
     "inputs": {
       "mask": [
-        "59",
+        "60",
         1
       ]
     },
@@ -68,7 +68,7 @@
   "52": {
     "inputs": {
       "mask": [
-        "59",
+        "60",
         1
       ]
     },
@@ -82,7 +82,7 @@
       "blend_factor": 1,
       "blend_mode": "multiply",
       "image1": [
-        "59",
+        "60",
         0
       ],
       "image2": [
@@ -135,18 +135,17 @@
       "title": "Preview Image"
     }
   },
-  "59": {
+  "60": {
     "inputs": {
-      "threshold": 0.5,
-      "torchscript_jit": "on",
+      "torchscript_jit": "default",
       "image": [
         "33",
         0
       ]
     },
-    "class_type": "InspyrenetRembgAdvanced",
+    "class_type": "InspyrenetRembg",
     "_meta": {
-      "title": "Inspyrenet Rembg Advanced"
+      "title": "Inspyrenet Rembg"
     }
   }
 }

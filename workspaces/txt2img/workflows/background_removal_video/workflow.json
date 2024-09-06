@@ -1,71 +1,7 @@
 {
-  "last_node_id": 20,
-  "last_link_id": 32,
+  "last_node_id": 21,
+  "last_link_id": 36,
   "nodes": [
-    {
-      "id": 8,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 851,
-        "1": 874,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "7": 0,
-        "8": 0,
-        "9": 0
-      },
-      "size": {
-        "0": 286.8852233886719,
-        "1": 218
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 11
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            27
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        2048,
-        2048,
-        "lanczos",
-        "keep proportion",
-        "downscale if bigger",
-        8
-      ]
-    },
     {
       "id": 16,
       "type": "Images to RGB",
@@ -268,7 +204,7 @@
         {
           "name": "mask",
           "type": "MASK",
-          "link": 29
+          "link": 36
         }
       ],
       "outputs": [
@@ -598,7 +534,7 @@
         {
           "name": "mask",
           "type": "MASK",
-          "link": 28
+          "link": 35
         }
       ],
       "outputs": [
@@ -736,7 +672,7 @@
         {
           "name": "image1",
           "type": "IMAGE",
-          "link": 30
+          "link": 34
         },
         {
           "name": "image2",
@@ -767,11 +703,75 @@
       ]
     },
     {
-      "id": 18,
-      "type": "InspyrenetRembgAdvanced",
+      "id": 8,
+      "type": "ImageResize+",
       "pos": {
-        "0": 1309,
-        "1": 871,
+        "0": 851,
+        "1": 874,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 286.8852233886719,
+        "1": 218
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            33
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        2048,
+        2048,
+        "lanczos",
+        "keep proportion",
+        "downscale if bigger",
+        8
+      ]
+    },
+    {
+      "id": 21,
+      "type": "InspyrenetRembg",
+      "pos": {
+        "0": 1307,
+        "1": 872,
         "2": 0,
         "3": 0,
         "4": 0,
@@ -783,7 +783,7 @@
       },
       "size": {
         "0": 315,
-        "1": 102
+        "1": 78
       },
       "flags": {},
       "order": 3,
@@ -792,7 +792,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 27
+          "link": 33
         }
       ],
       "outputs": [
@@ -800,27 +800,26 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            30
+            34
           ],
-          "slot_index": 0,
-          "shape": 3
+          "shape": 3,
+          "slot_index": 0
         },
         {
           "name": "MASK",
           "type": "MASK",
           "links": [
-            28,
-            29
+            35,
+            36
           ],
-          "slot_index": 1,
-          "shape": 3
+          "shape": 3,
+          "slot_index": 1
         }
       ],
       "properties": {
-        "Node name for S&R": "InspyrenetRembgAdvanced"
+        "Node name for S&R": "InspyrenetRembg"
       },
       "widgets_values": [
-        0.5,
         "on"
       ]
     }
@@ -923,38 +922,6 @@
       "IMAGE"
     ],
     [
-      27,
-      8,
-      0,
-      18,
-      0,
-      "IMAGE"
-    ],
-    [
-      28,
-      18,
-      1,
-      11,
-      0,
-      "MASK"
-    ],
-    [
-      29,
-      18,
-      1,
-      10,
-      0,
-      "MASK"
-    ],
-    [
-      30,
-      18,
-      0,
-      15,
-      0,
-      "IMAGE"
-    ],
-    [
       31,
       12,
       0,
@@ -969,16 +936,48 @@
       20,
       0,
       "IMAGE"
+    ],
+    [
+      33,
+      8,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      21,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      21,
+      1,
+      11,
+      0,
+      "MASK"
+    ],
+    [
+      36,
+      21,
+      1,
+      10,
+      0,
+      "MASK"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.2284597357367262,
+      "scale": 1.2961196510623527,
       "offset": [
-        -334.8920621264931,
-        -533.6785895503791
+        -427.42014910221013,
+        -457.6736414135971
       ]
     }
   },

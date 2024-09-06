@@ -74,7 +74,7 @@
   "10": {
     "inputs": {
       "mask": [
-        "18",
+        "21",
         1
       ]
     },
@@ -86,7 +86,7 @@
   "11": {
     "inputs": {
       "mask": [
-        "18",
+        "21",
         1
       ]
     },
@@ -140,7 +140,7 @@
       "blend_factor": 1,
       "blend_mode": "multiply",
       "image1": [
-        "18",
+        "21",
         0
       ],
       "image2": [
@@ -177,20 +177,6 @@
       "title": "Preview Image"
     }
   },
-  "18": {
-    "inputs": {
-      "threshold": 0.5,
-      "torchscript_jit": "on",
-      "image": [
-        "8",
-        0
-      ]
-    },
-    "class_type": "InspyrenetRembgAdvanced",
-    "_meta": {
-      "title": "Inspyrenet Rembg Advanced"
-    }
-  },
   "19": {
     "inputs": {
       "images": [
@@ -213,6 +199,19 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "Preview Image"
+    }
+  },
+  "21": {
+    "inputs": {
+      "torchscript_jit": "on",
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembg",
+    "_meta": {
+      "title": "Inspyrenet Rembg"
     }
   }
 }
