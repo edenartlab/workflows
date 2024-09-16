@@ -2,7 +2,7 @@
   "2": {
     "inputs": {
       "image": [
-        "16",
+        "214",
         0
       ]
     },
@@ -35,7 +35,7 @@
   "10": {
     "inputs": {
       "boolean": [
-        "17",
+        "217",
         0
       ],
       "on_true": [
@@ -55,7 +55,7 @@
   "11": {
     "inputs": {
       "boolean": [
-        "17",
+        "217",
         0
       ],
       "on_true": [
@@ -89,6 +89,19 @@
       "title": "init_image_supplied"
     }
   },
+  "14": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
   "15": {
     "inputs": {
       "image": "A_black_image.jpg",
@@ -101,7 +114,7 @@
   },
   "16": {
     "inputs": {
-      "image": "A_black_image.jpg",
+      "image": "sun-shape.png",
       "upload": "image"
     },
     "class_type": "Load image with metadata [Crystools]",
@@ -109,26 +122,35 @@
       "title": "init_image"
     }
   },
-  "17": {
+  "20": {
     "inputs": {
-      "comparison": "a == b",
-      "a": [
-        "8",
-        0
-      ],
-      "b": [
-        "13",
+      "output": "",
+      "source": [
+        "10",
         0
       ]
     },
-    "class_type": "easy compare",
+    "class_type": "Display Any (rgthree)",
     "_meta": {
-      "title": "override if no init image"
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
     }
   },
   "27": {
     "inputs": {
-      "seed": 936963539119306
+      "seed": 680843476185506
     },
     "class_type": "Seed",
     "_meta": {
@@ -142,7 +164,7 @@
         0
       ],
       "clip": [
-        "168",
+        "162",
         1
       ]
     },
@@ -153,7 +175,7 @@
   },
   "31": {
     "inputs": {
-      "value": "stunning rendering of embedding:marzipan_embeddings, as a plant, 4k, sharp details"
+      "value": "embedding:SDXL_embeddings_xander, as a plant"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -167,7 +189,7 @@
         0
       ],
       "clip": [
-        "168",
+        "162",
         1
       ]
     },
@@ -187,7 +209,7 @@
   },
   "34": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -196,7 +218,7 @@
   },
   "35": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -291,7 +313,7 @@
         0
       ],
       "image": [
-        "215",
+        "214",
         0
       ]
     },
@@ -322,7 +344,7 @@
   },
   "59": {
     "inputs": {
-      "value": 0.6
+      "value": 0.52
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -432,7 +454,7 @@
   "90": {
     "inputs": {
       "pixels": [
-        "215",
+        "214",
         0
       ],
       "vae": [
@@ -464,7 +486,7 @@
   "93": {
     "inputs": {
       "boolean": [
-        "13",
+        "198",
         0
       ],
       "on_true": [
@@ -592,7 +614,7 @@
   },
   "145": {
     "inputs": {
-      "image": "A_black_image.jpg",
+      "image": "style-purple-fuzz.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -669,7 +691,7 @@
   },
   "162": {
     "inputs": {
-      "lora_name": "marzipan_lora.safetensors",
+      "lora_name": "SDXL_lora_xander.safetensors",
       "strength_model": [
         "205",
         0
@@ -732,7 +754,7 @@
   },
   "193": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -741,7 +763,7 @@
   },
   "198": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -790,32 +812,46 @@
       "title": "ControlNetAuxSimpleAddText"
     }
   },
-  "213": {
+  "212": {
     "inputs": {
-      "image": [
-        "210",
+      "output": "",
+      "source": [
+        "61",
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]",
+    "class_type": "Display Any (rgthree)",
     "_meta": {
-      "title": "🪛 Get resolution"
+      "title": "Display Any (rgthree)"
     }
   },
-  "215": {
+  "213": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "214": {
     "inputs": {
       "width": [
-        "61",
+        "60",
         0
       ],
       "height": [
-        "62",
-        0
+        "60",
+        1
       ],
       "interpolation": "nearest",
-      "method": "stretch",
-      "condition": "always",
-      "multiple_of": 0,
+      "method": "keep proportion",
+      "condition": "downscale if bigger",
+      "multiple_of": 16,
       "image": [
         "16",
         0
@@ -826,16 +862,51 @@
       "title": "🔧 Image Resize"
     }
   },
-  "216": {
+  "215": {
     "inputs": {
-      "image": [
-        "215",
+      "output": "",
+      "source": [
+        "205",
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]",
+    "class_type": "Display Any (rgthree)",
     "_meta": {
-      "title": "🪛 Get resolution"
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "217": {
+    "inputs": {
+      "a": [
+        "198",
+        0
+      ],
+      "b": [
+        "218",
+        0
+      ],
+      "op": "a AND b"
+    },
+    "class_type": "BoolOperationNode",
+    "_meta": {
+      "title": "Bool Operation"
+    }
+  },
+  "218": {
+    "inputs": {
+      "a": [
+        "198",
+        0
+      ],
+      "b": [
+        "8",
+        0
+      ],
+      "op": "a AND b"
+    },
+    "class_type": "BoolOperationNode",
+    "_meta": {
+      "title": "Bool Operation"
     }
   }
 }

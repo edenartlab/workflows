@@ -18,7 +18,7 @@ parameters:
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
-  tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input.
+  tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be true.
   type: bool
   default: false
   comfyui: 
