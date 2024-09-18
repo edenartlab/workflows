@@ -25,7 +25,7 @@
   },
   "8": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -114,7 +114,7 @@
   },
   "16": {
     "inputs": {
-      "image": "sun-shape.png",
+      "image": "A_black_image.jpg",
       "upload": "image"
     },
     "class_type": "Load image with metadata [Crystools]",
@@ -218,7 +218,7 @@
   },
   "35": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -256,7 +256,10 @@
         "171",
         4
       ],
-      "denoise": 1,
+      "denoise": [
+        "227",
+        0
+      ],
       "model": [
         "64",
         0
@@ -763,7 +766,7 @@
   },
   "198": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -882,7 +885,7 @@
         0
       ],
       "b": [
-        "218",
+        "13",
         0
       ],
       "op": "a AND b"
@@ -907,6 +910,73 @@
     "class_type": "BoolOperationNode",
     "_meta": {
       "title": "Bool Operation"
+    }
+  },
+  "219": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "220": {
+    "inputs": {
+      "value": 0.85
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "denoise"
+    }
+  },
+  "221": {
+    "inputs": {
+      "boolean": [
+        "222",
+        0
+      ],
+      "on_true": [
+        "220",
+        0
+      ],
+      "on_false": [
+        "219",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "222": {
+    "inputs": {
+      "a": [
+        "198",
+        0
+      ],
+      "b": [
+        "13",
+        0
+      ],
+      "op": "a AND b"
+    },
+    "class_type": "BoolOperationNode",
+    "_meta": {
+      "title": "Bool Operation"
+    }
+  },
+  "227": {
+    "inputs": {
+      "any_type_input": [
+        "221",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
     }
   }
 }

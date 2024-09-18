@@ -37,7 +37,10 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/zavychromaxl_v80.safetensors",
             "target": "models/checkpoints/zavychromaxl_v80.safetensors"
         },
-        
+        "flux1-dev-fp8.safetensors": {
+            "source": "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors",
+            "target": "models/checkpoints/flux1-dev-fp8.safetensors"
+        },
 
         "AnimateLCM_sd15": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/animatediff_models/AnimateLCM_sd15_t2v.ckpt",
@@ -115,7 +118,10 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/embeddings/SDXL_embeddings_xander.safetensors",
             "target": "models/embeddings/SDXL_embeddings_xander.safetensors"
         },
-
+        "FLUX.1-dev-ControlNet-Union-Pro.safetensors": {
+            "source": "https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union/resolve/main/diffusion_pytorch_model.safetensors",
+            "target": "models/controlnet/FLUX.1-dev-ControlNet-Union-Pro.safetensors"
+        },
         "body_pose_model": {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"
@@ -192,8 +198,10 @@
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/clip/t5xxl_fp8_e4m3fn.safetensors",
             "target": "models/clip/t5xxl_fp8_e4m3fn.safetensors"
         },
-
-
+        "Hyper-FLUX.1-dev-16steps-lora.safetensors": {
+            "source": "https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-FLUX.1-dev-16steps-lora.safetensors",
+            "target": "models/loras/Hyper-FLUX.1-dev-16steps-lora.safetensors"
+        },
         "1k3d68.onnx": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/insightface/models/antelopev2/1k3d68.onnx",
             "target": "models/insightface/models/antelopev2/1k3d68.onnx"
@@ -244,6 +252,10 @@
         "yolox_l": {
             "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/yolox_l.onnx"
+        },
+        "flux-ip-adapter.safetensors": {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx",
+            "target": "models/xlabs/ipadapters/flux-ip-adapter.safetensors"
         },
         "a_black_image": {
             "source": "https://upload.wikimedia.org/wikipedia/commons/4/49/A_black_image.jpg",
@@ -390,6 +402,52 @@
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
             },
             {
+            "source": "https://huggingface.co/TheMistoAI/MistoLine/resolve/main/Anyline/MTEED.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/TheMistoAI/MistoLine/Anyline/MTEED.pth"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/dw-ll_ucoco_384.onnx"
+            },
+            {
+            "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/yolox_l.onnx"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/facenet.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/facenet.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/hand_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/hand_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetHED.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/ControlNetHED.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth"
+            },
+            {
+            "source": "https://huggingface.co/lllyasviel/Annotators/resolve/main/sk_model2.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth"
+            }
+        ],
+        "AIO Aux Preprocessor": [
+            {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
+            },
+            {
+            "source": "https://huggingface.co/TheMistoAI/MistoLine/resolve/main/Anyline/MTEED.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/TheMistoAI/MistoLine/Anyline/MTEED.pth"
+            },
+            {
             "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/ckpts/yzd-v/DWPose/dw-ll_ucoco_384.onnx"
             },
@@ -427,6 +485,47 @@
             "source": "https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_transparent_conv.safetensors",
             "target": "models/layer_model/layer_xl_transparent_conv.safetensors"
             }
-        ]
+        ],
+        "Load Flux IPAdatpter": [
+            {
+            "source": "https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetensors",
+            "target": "models/clip_vision/clip-vit-large-patch14/model.safetensors"  
+            }
+        ],
+        "LoraLoaderModelOnly": [
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora_comfy_converted.safetensors",
+            "target": "models/loras/anime_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora_comfy_converted.safetensors",
+            "target": "models/loras/art_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora_comfy_converted.safetensors",
+            "target": "models/loras/mjv6_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora_comfy_converted.safetensors",
+            "target": "models/loras/realism_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora_comfy_converted.safetensors",
+            "target": "models/loras/scenery_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora_comfy_converted.safetensors",
+            "target": "models/loras/realism_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora_comfy_converted.safetensors",
+            "target": "models/loras/realism_lora_comfy_converted.safetensors"
+            },
+            {
+            "source": "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors",
+            "target": "models/checkpoints/flux1-dev-fp8.safetensors"
+            }
+        ]        
+
     }
 }
