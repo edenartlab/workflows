@@ -89,7 +89,7 @@
   "25": {
     "inputs": {
       "noise_seed": [
-        "248",
+        "330",
         0
       ]
     },
@@ -140,7 +140,7 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_hmgui_00006_.png&type=temp&subfolder=&rand=0.9812304124796085"
+            "url": "/api/view?filename=rgthree.compare._temp_guusy_00014_.png&type=temp&subfolder=&rand=0.4917269888773046"
           }
         ]
       },
@@ -227,7 +227,7 @@
         0
       ],
       "start_percent": 0,
-      "end_percent": 1,
+      "end_percent": 0.8,
       "positive": [
         "101",
         0
@@ -258,22 +258,13 @@
     "inputs": {
       "type": "auto",
       "control_net": [
-        "99",
+        "332",
         0
       ]
     },
     "class_type": "SetUnionControlNetType",
     "_meta": {
       "title": "SetUnionControlNetType"
-    }
-  },
-  "99": {
-    "inputs": {
-      "control_net_name": "FLUX.1-dev-ControlNet-Union-Pro.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "Load ControlNet Model"
     }
   },
   "101": {
@@ -286,7 +277,7 @@
         "131",
         0
       ],
-      "guidance": 2,
+      "guidance": 3.5,
       "clip": [
         "257",
         1
@@ -315,7 +306,7 @@
   },
   "104": {
     "inputs": {
-      "preprocessor": "MiDaS-DepthMapPreprocessor",
+      "preprocessor": "DepthAnythingV2Preprocessor",
       "resolution": [
         "312",
         0
@@ -353,7 +344,7 @@
   },
   "131": {
     "inputs": {
-      "value": "fantastic flora in the garden of eden, mystical magical plants and a gorgeous picturesque backgroungd"
+      "value": "a candid photo of a deer sitting in the garden of eden, surrounded by mystical magical plants and a gorgeous picturesque backgroungd"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -389,7 +380,7 @@
   },
   "135": {
     "inputs": {
-      "value": 0.6
+      "value": 0.5
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -419,7 +410,7 @@
   },
   "141": {
     "inputs": {
-      "value": 0.6
+      "value": 0.7000000000000001
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -428,7 +419,7 @@
   },
   "142": {
     "inputs": {
-      "image": "A_black_image.jpg",
+      "image": "hat.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -608,15 +599,6 @@
       "title": "Lazy Switch_CN-"
     }
   },
-  "248": {
-    "inputs": {
-      "seed": 25681638515009
-    },
-    "class_type": "Seed String",
-    "_meta": {
-      "title": "Seed String (Mikey)"
-    }
-  },
   "257": {
     "inputs": {
       "ckpt_name": "flux1-dev-fp8.safetensors"
@@ -720,7 +702,7 @@
   },
   "302": {
     "inputs": {
-      "image": "T2I_SD3_00090_.png",
+      "image": "ComfyUI_00019_.png",
       "upload": "image"
     },
     "class_type": "Load image with metadata [Crystools]",
@@ -989,7 +971,7 @@
   },
   "323": {
     "inputs": {
-      "value": 0.9500000000000001
+      "value": 0.8
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -1043,6 +1025,24 @@
     "class_type": "SDAnyConverter",
     "_meta": {
       "title": "SD Any Converter"
+    }
+  },
+  "330": {
+    "inputs": {
+      "seed": 0
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "332": {
+    "inputs": {
+      "control_net_name": "FLUX.1-dev-ControlNet-Union-Pro.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
     }
   }
 }
