@@ -2,7 +2,7 @@ name: Text to Image (SDXL)
 description: Generate an image from text and various other inputs.
 tip: This is the most basic and common function which generates an image from text a prompt, with ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result.
 output_type: image
-cost_estimate: 1
+cost_estimate: 1 * n_samples
 handler: comfyui
 comfyui_output_node_id: 146
 parameters:
@@ -217,3 +217,10 @@ parameters:
     node_id: 27
     field: inputs
     subfield: seed
+- name: n_samples
+  label: Number of samples
+  description: Number of generated images
+  type: int
+  default: 1
+  minimum: 1
+  maximum: 4

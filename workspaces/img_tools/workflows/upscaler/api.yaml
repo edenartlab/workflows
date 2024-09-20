@@ -2,7 +2,7 @@ name: Upscaler
 description: Upscale an image
 tip: Upscale and add new detail to an initial image
 output_type: image
-cost_estimate: 2
+cost_estimate: 2 * n_samples
 handler: comfyui
 comfyui_output_node_id: 63
 parameters:
@@ -82,3 +82,10 @@ parameters:
     node_id: 6
     field: inputs
     subfield: text
+- name: n_samples
+  label: Number of samples
+  description: Number of generated images
+  type: int
+  default: 1
+  minimum: 1
+  maximum: 4

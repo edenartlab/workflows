@@ -2,7 +2,7 @@ name: Transparent Image Generation
 description: Transparent Image Layer Diffusion using Latent Transparency
 tip: Background removal can do a great job of isolating a subject, but for transparent objects a fully opaque masked object may not be enough. Layer Diffusion calculates transparency, returning a .png image with alpha estimated pixel values for generating isolated transparent objects
 output_type: image
-cost_estimate: 1
+cost_estimate: 1 * n_samples
 handler: comfyui
 comfyui_output_node_id: 30
 parameters:
@@ -54,7 +54,7 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 1000000
+  maximum: 2147483647
   comfyui: 
     node_id: 3
     field: inputs
@@ -83,3 +83,11 @@ parameters:
     node_id: 3
     field: inputs
     subfield: cfg
+- name: n_samples
+  label: Number of samples
+  description: Number of generated images
+  type: int
+  default: 1
+  minimum: 1
+  maximum: 4
+    

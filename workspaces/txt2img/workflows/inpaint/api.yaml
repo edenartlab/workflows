@@ -2,7 +2,7 @@ name: Inpaint
 description: Inpaint (and replace) a region or object in an image using a masking prompt (to target a segment of the image) and normal inpainting prompt (to re-draw that area).
 tip: This workflow edits a specific region in the given image by first applying the masking prompt to highlight a specific region of the image, and then applying the inpainting prompt to fill (re-draw) in the highlighted region.
 output_type: image
-cost_estimate: 2
+cost_estimate: 2 * n_samples
 handler: comfyui
 comfyui_output_node_id: 33
 parameters:
@@ -41,8 +41,15 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 1000000
+  maximum: 2147483647
   comfyui: 
     node_id: 3
     field: inputs
     subfield: seed
+- name: n_samples
+  label: Number of samples
+  description: Number of generated images
+  type: int
+  default: 1
+  minimum: 1
+  maximum: 4
