@@ -43,11 +43,8 @@
   },
   "26": {
     "inputs": {
-      "seed": [
-        "282",
-        0
-      ],
-      "steps": 16,
+      "seed": 183,
+      "steps": 10,
       "cfg": 2,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
@@ -57,11 +54,11 @@
         0
       ],
       "positive": [
-        "272",
+        "28",
         0
       ],
       "negative": [
-        "274",
+        "27",
         0
       ],
       "latent_image": [
@@ -353,13 +350,10 @@
   },
   "74": {
     "inputs": {
-      "folder": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_IMAGES/golden_tree_lights_small",
-      "n_images": 4,
-      "seed": [
-        "282",
-        0
-      ],
-      "sort": false,
+      "folder": "/home/rednax/SSD2TB/Github_repos/Eden/images/test",
+      "n_images": -1,
+      "seed": 78,
+      "sort": true,
       "loop_sequence": false
     },
     "class_type": "LoadRandomImage",
@@ -445,52 +439,6 @@
       "title": "Video Combine 🎥🅥🅗🅢"
     }
   },
-  "107": {
-    "inputs": {
-      "control_net_name": "control_v11p_sd15_canny_fp16.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "Load ControlNet Model"
-    }
-  },
-  "116": {
-    "inputs": {
-      "strength": 0.5,
-      "start_percent": 0,
-      "end_percent": 1,
-      "positive": [
-        "28",
-        0
-      ],
-      "negative": [
-        "27",
-        0
-      ],
-      "control_net": [
-        "107",
-        0
-      ],
-      "image": [
-        "148",
-        0
-      ]
-    },
-    "class_type": "ACN_AdvancedControlNetApply",
-    "_meta": {
-      "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
-    }
-  },
-  "117": {
-    "inputs": {
-      "image": "A_black_image.jpg",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
-  },
   "136": {
     "inputs": {
       "n_color_clusters": [
@@ -507,20 +455,6 @@
     "class_type": "MaskFromRGB_KMeans",
     "_meta": {
       "title": "MaskFromRGB_KMeans"
-    }
-  },
-  "148": {
-    "inputs": {
-      "preprocessor": "CannyEdgePreprocessor",
-      "resolution": 640,
-      "image": [
-        "262",
-        0
-      ]
-    },
-    "class_type": "AIO_Preprocessor",
-    "_meta": {
-      "title": "AIO Aux Preprocessor"
     }
   },
   "157": {
@@ -865,37 +799,16 @@
       "title": "Prep Image For ClipVision"
     }
   },
-  "196": {
-    "inputs": {
-      "frame_rate": 12,
-      "loop_count": 0,
-      "filename_prefix": "control_signal",
-      "format": "video/h264-mp4",
-      "pix_fmt": "yuv420p",
-      "crf": 19,
-      "save_metadata": false,
-      "pingpong": false,
-      "save_output": false,
-      "images": [
-        "148",
-        0
-      ]
-    },
-    "class_type": "VHS_VideoCombine",
-    "_meta": {
-      "title": "Video Combine 🎥🅥🅗🅢"
-    }
-  },
   "198": {
     "inputs": {
-      "total_frames": 36,
+      "total_frames": 64,
       "num_colors": [
         "270",
         0
       ],
       "bands_visible_per_frame": 0.6,
       "angle": 0,
-      "mode": "vertical_stripes",
+      "mode": "concentric_circles",
       "width": 512,
       "height": 512,
       "invert_motion": true
@@ -1073,38 +986,14 @@
   },
   "261": {
     "inputs": {
-      "width": 768,
-      "height": 768,
+      "width": 640,
+      "height": 640,
       "interpolation": "lanczos",
       "method": "stretch",
       "condition": "always",
       "multiple_of": 32,
       "image": [
         "198",
-        0
-      ]
-    },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
-    }
-  },
-  "262": {
-    "inputs": {
-      "width": [
-        "261",
-        1
-      ],
-      "height": [
-        "261",
-        2
-      ],
-      "interpolation": "lanczos",
-      "method": "fill / crop",
-      "condition": "always",
-      "multiple_of": 0,
-      "image": [
-        "117",
         0
       ]
     },
@@ -1123,76 +1012,6 @@
     "class_type": "VHS_GetImageCount",
     "_meta": {
       "title": "Get Image Count 🎥🅥🅗🅢"
-    }
-  },
-  "272": {
-    "inputs": {
-      "switch": [
-        "273",
-        0
-      ],
-      "on_false": [
-        "28",
-        0
-      ],
-      "on_true": [
-        "116",
-        0
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch_CN+"
-    }
-  },
-  "273": {
-    "inputs": {
-      "value": false
-    },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_controlnet"
-    }
-  },
-  "274": {
-    "inputs": {
-      "switch": [
-        "273",
-        0
-      ],
-      "on_false": [
-        "27",
-        0
-      ],
-      "on_true": [
-        "116",
-        1
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch_CN+"
-    }
-  },
-  "282": {
-    "inputs": {
-      "seed": 174524251310066
-    },
-    "class_type": "Eden_Seed",
-    "_meta": {
-      "title": "Eden_Seed"
-    }
-  },
-  "295": {
-    "inputs": {
-      "image": [
-        "74",
-        0
-      ]
-    },
-    "class_type": "GetImageSize+",
-    "_meta": {
-      "title": "🔧 Get Image Size"
     }
   }
 }
