@@ -121,15 +121,29 @@ parameters:
   description: Type of controlnet preprocessor. Make sure to match controlnet model! Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
   tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
   type: string
-  default: CannyEdgePreprocessor
-  # choices: [CannyEdgePreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, MiDaS-DepthMapPreprocessor, ScribblePreprocessor]
-  choices: [CannyEdgePreprocessor]
   visible_if: use_controlnet=true
-  # choices_label: [edge, lineart, HEDsoft_lines, pose, depth, scribble]
+  default: CannyEdgePreprocessor
+  choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, ScribblePreprocessor]
+  choices_label: [edges (canny), depth, lines (lineart), human pose, scribble lines]
   comfyui: 
     node_id: 148
     field: inputs
-    subfield: preprocessor
+    subfield: preprocessor    
+    remap:
+      - node_id: 107
+        field: inputs
+        subfield: control_net_name
+        value:
+          - input: CannyEdgePreprocessor
+            output: control_v11p_sd15_canny.pth
+          - input: DepthAnythingV2Preprocessor
+            output: control_v11f1p_sd15_depth.pth
+          - input: AnyLineArtPreprocessor_aux
+            output: control_v11p_sd15_lineart.pth
+          - input: DensePosePreprocessor
+            output: control_v11p_sd15_openpose.pth
+          - input: ScribblePreprocessor
+            output: control_v11p_sd15_scribble.pth
 - name: controlnet_strength
   label: Controlnet strength
   description: set the guidance strength of the controlnet model in slot 1
