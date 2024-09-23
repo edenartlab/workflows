@@ -111,23 +111,14 @@ parameters:
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
   tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
   type: string
-  default: CannyEdgePreprocessor
-  choices: [CannyEdgePreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, MiDaS-DepthMapPreprocessor, ScribblePreprocessor]
   visible_if: use_controlnet=true
-  # choices_label: [edge, lineart, HEDsoft_lines, pose, depth, scribble]
+  default: CannyEdgePreprocessor
+  choices: [CannyEdgePreprocessor, MiDaS-DepthMapPreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, ScribblePreprocessor]
+  choices_label: [edges (canny), depth, lines (lineart), soft lines (HED), human pose, scribble]
   comfyui: 
     node_id: 104
     field: inputs
     subfield: preprocessor
-    remap:
-      - node_id: 105
-        field: inputs
-        subfield: model
-        value:
-          - input: CannyEdgePreprocessor
-            output: controlnet-canny.safetensors
-          - input: AnyLineArtPreprocessor_aux
-            output: controlnet-lineart.safetensors
 - name: controlnet_strength
   label: Controlnet strength
   description: set the guidance strength of the controlnet model in slot 1
