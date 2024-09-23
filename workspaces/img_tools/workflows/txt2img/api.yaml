@@ -9,6 +9,7 @@ parameters:
 - name: prompt
   label: Prompt
   description: Text prompt
+  tip: Prompts are specific, detailed, concise, and visually descriptive, avoiding unnecessary verbosity and abstract, generic terms. They usually have: ● Primary subject (i.e., person, character, animal, object, ...), e.g "Renaissance noblewoman", "alien starship". Should appear early in prompt. ● Action of the subject, e.g. "holding an ancient book", "orbiting a distant planet", if there is no main subject, a good context description will do here (what is going on in the scene?). They sometimes have several stylistic modifiers near the end of the prompt, such as: ● Background, environment or context surrounding the subject, e.g. "in a dimly lit Gothic castle", "in a futuristic 22nd century space station". ● Secondary items that enhance the subject or story. e.g. "wearing an intricate lace collar", "standing next to a large, ancient tree". ● Color schemes, e.g. "shades of deep red and gold", "monochrome palette with stark contrasts", "monochrome", ... ● Style or method of rendering, e.g. "reminiscent of Vermeer's lighting techniques", "film noir", "cubism", ... ● Mood or atmospheric quality e.g. "atmosphere of mystery", "serene mood". ● Lighting conditions e.g. "bathed in soft, natural window light", "dramatic shadows under a spotlight". ● Perspective or or viewpoint, e.g. "bird's eye view", "from a low angle", "fisheye", .. ● Textures or materials, e.g. "textures of rich velvet and rough stone". ● Time Period, e.g. "Victorian Era", "futuristic 22nd century". ● Cultural elements, e.g. "inspired by Norse mythology", "traditional Japanese setting". ● Artistic medium, e.g. "watercolor painting", "crisp digital Unreal Engine rendering", "8K UHD professional photo", "cartoon drawing", ... They often end with trigger words that improve images in a general way, e.g. "High Resolution", "HD", "sharp details", "masterpiece", "stunning composition", ... If the prompt contains a request to render text, enclose the text in quotes, e.g. A Sign with the text “Peace”. IMPORTANT: If the user gives you a short, general, or visually vague prompt, you should augment their prompt by imagining richer details, following the tips above. If a user gives a long, detailed, or well-thought out composition, or requests to have their prompt strictly adhered to without revisions or embellishment, you should adhere to or repeat their exact prompt. The goal is to be authentic to the user's request, but to help them get better results when they are new, unsure, or lazy.
   type: string
   required: true
   comfyui: 
@@ -172,6 +173,7 @@ parameters:
 - name: width
   label: Width
   description: Width in pixels
+  tip: Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
   type: int
   default: 1024
   minimum: 256
@@ -185,6 +187,7 @@ parameters:
 - name: height
   label: Height
   description: Height in pixels
+  tip: Use the description for width to understand how to use height well.
   type: int
   default: 1024
   minimum: 256
