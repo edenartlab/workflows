@@ -119,6 +119,15 @@ parameters:
     node_id: 104
     field: inputs
     subfield: preprocessor
+    remap:
+      - node_id: 105
+        field: inputs
+        subfield: model
+        value:
+          - input: CannyEdgePreprocessor
+            output: controlnet-canny.safetensors
+          - input: AnyLineArtPreprocessor_aux
+            output: controlnet-lineart.safetensors
 - name: controlnet_strength
   label: Controlnet strength
   description: set the guidance strength of the controlnet model in slot 1
