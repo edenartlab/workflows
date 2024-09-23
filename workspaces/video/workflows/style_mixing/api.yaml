@@ -116,7 +116,7 @@ parameters:
     subfield: strength
 - name: motion_mode
   label: Motion Mode
-  description: Motion mode for the driving motion mask video (controls how the style images will get mapped onto the video)
+  description: Motion mode that controls how the style images will get mapped into the video
   type: string
   choices: [horizontal_stripes, vertical_stripes, progressive_rotating_segment, rotating_segments, concentric_circles, concentric_rectangles]
   default: concentric_circles
