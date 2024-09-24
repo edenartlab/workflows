@@ -58,7 +58,8 @@ parameters:
     subfield: noise_seed
 - name: n_samples
   label: Number of samples
-  description: Number of generated images
+  description: Number of samples to generate
+  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
   type: int
   default: 1
   minimum: 1
