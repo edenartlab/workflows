@@ -47,7 +47,7 @@
         "282",
         0
       ],
-      "steps": 16,
+      "steps": 12,
       "cfg": 2,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
@@ -353,8 +353,8 @@
   },
   "74": {
     "inputs": {
-      "folder": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_IMAGES/golden_tree_lights_small",
-      "n_images": 4,
+      "folder": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_IMAGES/symbols_and_patterns",
+      "n_images": 5,
       "seed": [
         "282",
         0
@@ -447,7 +447,7 @@
   },
   "107": {
     "inputs": {
-      "control_net_name": "control_v11p_sd15_canny_fp16.safetensors"
+      "control_net_name": "control_v11p_sd15_scribble.pth"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -456,7 +456,7 @@
   },
   "116": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.65,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -511,7 +511,7 @@
   },
   "148": {
     "inputs": {
-      "preprocessor": "CannyEdgePreprocessor",
+      "preprocessor": "ScribblePreprocessor",
       "resolution": 640,
       "image": [
         "262",
@@ -888,14 +888,14 @@
   },
   "198": {
     "inputs": {
-      "total_frames": 36,
+      "total_frames": 72,
       "num_colors": [
         "270",
         0
       ],
       "bands_visible_per_frame": 0.6,
       "angle": 0,
-      "mode": "vertical_stripes",
+      "mode": "concentric_circles",
       "width": 512,
       "height": 512,
       "invert_motion": true
@@ -1147,7 +1147,7 @@
   },
   "273": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -1176,7 +1176,7 @@
   },
   "282": {
     "inputs": {
-      "seed": 174524251310066
+      "seed": 270660432875203
     },
     "class_type": "Eden_Seed",
     "_meta": {

@@ -1,7 +1,11 @@
 {
     "images": [
-        "https://edenartlab-stage-data.s3.us-east-1.amazonaws.com/62946527441201f82e0e3d667fda480e176e9940a2e04f4e54c5230665dfc6f6.jpg",
-        "https://edenartlab-prod-data.s3.us-east-1.amazonaws.com/bb88e857586a358ce3f02f92911588207fbddeabff62a3d6a479517a646f053c.jpg"
+        "https://storage.googleapis.com/public-assets-xander/A_workbox/init_imgs/img_00019.jpg",
+        "https://storage.googleapis.com/public-assets-xander/A_workbox/init_imgs/img_00021.jpg"
     ],
-    "use_controlnet": false
+    "n_frames": 48,
+    "use_controlnet": true,
+    "control_image": "https://storage.googleapis.com/public-assets-xander/Trees-Seen-Through-Ski-Tunnel-header.webp",
+    "preprocessor": "DepthAnythingV2Preprocessor",
+    "controlnet_strength": 0.9
 }
