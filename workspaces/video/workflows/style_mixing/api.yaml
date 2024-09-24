@@ -103,10 +103,10 @@ parameters:
             output: control_v11p_sd15_scribble.pth
 - name: controlnet_strength
   label: Controlnet strength
-  description: set the guidance strength of the controlnet model in slot 1
-  tip: A good default is around 0.6, with ranges between 0.3-0.5 for subtle guidance, and 07-1.0 for something more heavy handed
+  description: set the guidance strength of the controlnet model, recommended values are 0.4-0.6
+  tip: A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
   type: float
-  default: 0.6
+  default: 0.5
   minimum: 0.0
   maximum: 1.5
   visible_if: use_controlnet=true
