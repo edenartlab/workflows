@@ -151,6 +151,7 @@ parameters:
   description: set the strength of the image style transfer
   tip: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
   type: float
+  visible_if: use_ipadapter=true
   default: 0.6
   minimum: 0.0
   maximum: 1.5
