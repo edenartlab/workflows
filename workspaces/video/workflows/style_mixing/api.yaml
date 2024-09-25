@@ -1,6 +1,6 @@
 name: Style Mixing
 description: Create a video from a set of style images. This is a very good tool for creating videos from multiple images.
-tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially).
+tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
 output_type: video
 cost_estimate: 0.5 * n_frames
 handler: comfyui
@@ -77,7 +77,7 @@ parameters:
 - name: preprocessor
   label: Controlnet preprocessor
   description: Type of controlnet preprocessor. Make sure to match controlnet model! Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
-  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
+  tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
   type: string
   visible_if: use_controlnet=true
   default: CannyEdgePreprocessor
@@ -147,7 +147,6 @@ parameters:
     node_id: 30
     field: inputs
     subfield: motion_scale
-
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set to a random value.
