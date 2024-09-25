@@ -37,9 +37,9 @@ parameters:
   maximum: 192
   step: 8
   comfyui: 
-    node_id: 512
+    node_id: 559
     field: inputs
-    subfield: amount
+    subfield: value
 - name: motion_strength
   label: Motion Strength
   description: How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion)
@@ -62,3 +62,24 @@ parameters:
     node_id: 10
     field: inputs
     subfield: denoise
+- name: use_motion_brush
+  label: Use motion brush
+  description: Enable motion brush
+  tip: This is a great way to maintain certain parts of the image (eg main character, face, ...), while animating others (eg background, leaves, water, ...)
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 556
+    field: inputs
+    subfield: value
+- name: motion_mask
+  label: Motion brush image
+  description: Use a motion brush mask image to only create motion in certain areas (white = motion, black = no motion)
+  tip: The motion_mask must be generated with another tool first. Create a mask where the to-be-animated regions are white and the rest is black.
+  type: image
+  default: A_white_image.jpg
+  visible_if: use_motion_brush=true
+  comfyui: 
+    node_id: 557
+    field: inputs
+    subfield: image

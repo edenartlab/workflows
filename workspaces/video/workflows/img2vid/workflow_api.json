@@ -221,19 +221,6 @@
       "title": "VAE Encode"
     }
   },
-  "512": {
-    "inputs": {
-      "amount": 24,
-      "samples": [
-        "509",
-        0
-      ]
-    },
-    "class_type": "RepeatLatentBatch",
-    "_meta": {
-      "title": "Repeat Latent Batch"
-    }
-  },
   "513": {
     "inputs": {
       "text_input": "",
@@ -244,7 +231,7 @@
       "num_beams": 3,
       "do_sample": true,
       "output_mask_select": "",
-      "seed": 896864837989413,
+      "seed": 723390257617820,
       "image": [
         "533",
         0
@@ -283,18 +270,6 @@
       "title": "Display Any (rgthree)"
     }
   },
-  "527": {
-    "inputs": {
-      "mask": [
-        "546",
-        0
-      ]
-    },
-    "class_type": "MaskToImage",
-    "_meta": {
-      "title": "Convert Mask to Image"
-    }
-  },
   "530": {
     "inputs": {
       "channel": "red",
@@ -311,19 +286,19 @@
   "532": {
     "inputs": {
       "width": [
-        "535",
-        0
+        "533",
+        1
       ],
       "height": [
-        "535",
-        0
+        "533",
+        2
       ],
       "interpolation": "lanczos",
-      "method": "keep proportion",
+      "method": "stretch",
       "condition": "always",
-      "multiple_of": 64,
+      "multiple_of": 0,
       "image": [
-        "527",
+        "555",
         0
       ]
     },
@@ -368,11 +343,11 @@
   "538": {
     "inputs": {
       "samples": [
-        "512",
+        "554",
         0
       ],
       "mask": [
-        "539",
+        "530",
         0
       ]
     },
@@ -381,42 +356,16 @@
       "title": "Set Latent Noise Mask"
     }
   },
-  "539": {
-    "inputs": {
-      "min": 0,
-      "max": 1,
-      "mask": [
-        "530",
-        0
-      ]
-    },
-    "class_type": "RemapMaskRange",
-    "_meta": {
-      "title": "Remap Mask Range"
-    }
-  },
   "540": {
     "inputs": {
       "mask": [
-        "539",
+        "530",
         0
       ]
     },
     "class_type": "MaskPreview+",
     "_meta": {
       "title": "🔧 Mask Preview"
-    }
-  },
-  "546": {
-    "inputs": {
-      "mask": [
-        "440",
-        1
-      ]
-    },
-    "class_type": "InvertMask",
-    "_meta": {
-      "title": "InvertMask"
     }
   },
   "548": {
@@ -445,6 +394,89 @@
     "class_type": "IPAdapterClipVisionEnhancer",
     "_meta": {
       "title": "IPAdapter ClipVision Enhancer"
+    }
+  },
+  "554": {
+    "inputs": {
+      "amount": [
+        "559",
+        0
+      ],
+      "samples": [
+        "509",
+        0
+      ]
+    },
+    "class_type": "Eden_RepeatLatentBatch",
+    "_meta": {
+      "title": "Eden_RepeatLatentBatch"
+    }
+  },
+  "555": {
+    "inputs": {
+      "boolean": [
+        "556",
+        0
+      ],
+      "on_true": [
+        "557",
+        0
+      ],
+      "on_false": [
+        "558",
+        0
+      ]
+    },
+    "class_type": "Switch image [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch image"
+    }
+  },
+  "556": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use Motion Brush"
+    }
+  },
+  "557": {
+    "inputs": {
+      "image": "A_white_image.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Motion Mask Image"
+    }
+  },
+  "558": {
+    "inputs": {
+      "width": [
+        "533",
+        1
+      ],
+      "height": [
+        "533",
+        2
+      ],
+      "red": 255,
+      "green": 255,
+      "blue": 255
+    },
+    "class_type": "Image Blank",
+    "_meta": {
+      "title": "Image Blank"
+    }
+  },
+  "559": {
+    "inputs": {
+      "value": 32
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Num frames"
     }
   }
 }

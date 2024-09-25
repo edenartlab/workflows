@@ -4,7 +4,7 @@ tip: This workflow creates animations from a set of images and several other inp
 output_type: video
 cost_estimate: 0.5 * n_frames
 handler: comfyui
-resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9x16_1152x2048]
+resolutions: [16-9_1152x640, 3-2_1024x672, 1-1_832x832, 2-3_672x1024, 9-16_640x1152]
 comfyui_output_node_id: 106
 parameters:
 - name: images
@@ -26,6 +26,7 @@ parameters:
   default: 64
   minimum: 16
   maximum: 192
+  step: 1
   comfyui: 
     node_id: 198
     field: inputs
@@ -34,9 +35,9 @@ parameters:
   label: Width
   description: Width of the video in number of pixels
   type: int
-  default: 640
+  default: 768
   minimum: 512
-  maximum: 1024
+  maximum: 1280
   step: 32
   comfyui: 
     node_id: 261
@@ -46,9 +47,9 @@ parameters:
   label: Height
   description: Height of the video in number of pixels
   type: int
-  default: 640
+  default: 768
   minimum: 512
-  maximum: 1024
+  maximum: 1280
   step: 32
   comfyui: 
     node_id: 261
@@ -126,10 +127,10 @@ parameters:
     subfield: mode
 - name: invert_motion
   label: Invert Motion Mask
-  description: Inverts the motion mask (moving inwards instead of outwards, up instead of down etc)
+  description: Inverts the motion_mode (moving inwards instead of outwards, up instead of down etc)
   type: bool
   hide_from_agent: true
-  default: false
+  default: true
   comfyui: 
     node_id: 198
     field: inputs
