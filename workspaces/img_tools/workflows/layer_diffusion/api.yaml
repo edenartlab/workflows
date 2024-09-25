@@ -64,9 +64,10 @@ parameters:
   description: Length of diffusion steps
   tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image, or are using a specialized model.
   type: float
-  default: 20
-  minimum: 1
+  default: 25
+  minimum: 4
   maximum: 50
+  step: 1
   comfyui: 
     node_id: 3
     field: inputs
@@ -79,6 +80,7 @@ parameters:
   default: 8.0
   minimum: 2.0
   maximum: 11.0
+  step: 0.1
   comfyui: 
     node_id: 3
     field: inputs
