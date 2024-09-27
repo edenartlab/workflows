@@ -167,6 +167,7 @@ parameters:
   type: string
   default: strong style transfer
   choices: [ease in-out, style transfer, strong style transfer, style transfer precise, composition precise]
+  visible_if: use_ipadapter=true
   comfyui: 
     node_id: 141
     field: inputs
