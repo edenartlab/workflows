@@ -1,5 +1,5 @@
-name: Style Mixing
-description: Create a video from a set of style images. This is a very good tool for creating videos from multiple images.
+name: Mix images into a video
+description: Mix multiple images into a video, optionally add controlnet for shape guidance.
 tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
 output_type: video
 cost_estimate: 0.5 * n_frames
