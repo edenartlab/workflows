@@ -6,6 +6,9 @@ cost_estimate: 0.5 * n_frames
 handler: comfyui
 resolutions: [16-9_1152x640, 3-2_1024x672, 1-1_832x832, 2-3_672x1024, 9-16_640x1152]
 comfyui_output_node_id: 106
+comfyui_intermediate_outputs:
+  - name: controlnet_signal
+    node_id: 196
 parameters:
 - name: images
   label: Style Images
