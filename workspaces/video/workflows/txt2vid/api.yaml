@@ -1,5 +1,5 @@
-name: Text to Video
-description: Generate a video from text
+name: Create a video from text
+description: Generate a video from a text description.
 tip: Use this to make videos from text prompts. It's better to use this instead of lerp because it doesn't use AnimateDiff.
 output_type: video
 cost_estimate: 0.5 * n_frames
@@ -61,7 +61,7 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 1000000
+  maximum: 2147483647
   comfyui: 
     node_id: 333
     field: inputs
