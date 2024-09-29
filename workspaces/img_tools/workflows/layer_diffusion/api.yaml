@@ -1,5 +1,5 @@
-name: Transparent Image Generation
-description: Transparent Image Layer Diffusion using Latent Transparency
+name: Create an image with transparency
+description: Generate an image with transparency in the alpha channel.
 tip: Background removal can do a great job of isolating a subject, but for transparent objects a fully opaque masked object may not be enough. Layer Diffusion calculates transparency, returning a .png image with alpha estimated pixel values for generating isolated transparent objects
 output_type: image
 cost_estimate: 1 * n_samples

@@ -1,5 +1,5 @@
-name: Remix
-description: Generate a remix of a given input image.
+name: Remix an image
+description: Generate variations of a given input image.
 tip: Use this tool to create a variation of a given image.
 output_type: image
 cost_estimate: 1 * n_samples
@@ -59,7 +59,7 @@ parameters:
   type: int
   default: random
   minimum: 0
-  maximum: 1000000
+  maximum: 2147483647
   comfyui: 
     node_id: 13
     field: inputs
