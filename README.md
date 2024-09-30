@@ -9,6 +9,7 @@
 | `output_type` | Output type of the tool (image, video, audio) |
 | `handler` | What backend the tool is running on |
 | `comfyui_output_node_id` | ComfyUI output node id if applicable |
+| `private` | Optional boolean indicating whether to hide the tool from the Eden app UI |
 
 # Parameter Fields
 
