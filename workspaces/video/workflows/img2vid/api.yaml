@@ -77,7 +77,6 @@ parameters:
   description: Use a motion brush mask image to only create motion in certain areas (white = motion, black = no motion)
   tip: The motion_mask must be generated with another tool first. Create a mask where the to-be-animated regions are white and the rest is black.
   type: image
-  default: A_white_image.jpg
   visible_if: use_motion_brush=true
   comfyui: 
     node_id: 557

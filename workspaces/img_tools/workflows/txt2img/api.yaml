@@ -165,6 +165,7 @@ parameters:
   description: Allows for different types of style transfer using ipadapter, each with different characteristics and more or less content blending.
   tip: All of these are variations of the same idea, but use different weighting schemas for injecting the style embedding into the unet. Each has different tradeoffs for style transfer versus content blending. Ease in-out is a great default, strong style transfer has less content bleeding.
   type: string
+  visible_if: use_ipadapter=true
   default: strong style transfer
   choices: [ease in-out, style transfer, strong style transfer, style transfer precise, composition precise]
   comfyui: 
