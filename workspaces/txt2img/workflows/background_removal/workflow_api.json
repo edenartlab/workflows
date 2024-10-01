@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "image": "T2I_SD3_remix-florence_00261_.png",
+      "image": "stitchly_00040.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -74,7 +74,7 @@
     },
     "class_type": "InvertMask",
     "_meta": {
-      "title": "InvertMask"
+      "title": "Invert Mask"
     }
   },
   "53": {
@@ -123,18 +123,6 @@
       "title": "Images to RGB"
     }
   },
-  "58": {
-    "inputs": {
-      "images": [
-        "57",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "60": {
     "inputs": {
       "torchscript_jit": "default",
@@ -146,6 +134,19 @@
     "class_type": "InspyrenetRembg",
     "_meta": {
       "title": "Inspyrenet Rembg"
+    }
+  },
+  "61": {
+    "inputs": {
+      "filename_prefix": "rgb_black_background",
+      "images": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
     }
   }
 }
