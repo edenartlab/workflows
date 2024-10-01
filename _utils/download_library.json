@@ -135,7 +135,27 @@
         },
         "controlnet-depth-sdxl-1.0": {
             "source": "https://huggingface.co/xinsir/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors",
+            "target": "models/controlnet/controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors"
+        },
+        "controlnet-depth-sdxl-1.0": {
+            "source": "https://huggingface.co/xinsir/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors",
             "target": "models/controlnet/SDXL/controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors"
+        },
+        "controlnet-scribble-sdxl-1.0": {
+            "source": "https://huggingface.co/xinsir/controlnet-scribble-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors",
+            "target": "models/controlnet/controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors"
+        },
+        "controlnet-openpose-sdxl-1.0": {
+            "source": "https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors",
+            "target": "models/controlnet/controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors"
+        },
+        "t2i-adapter-lineart-sdxl-1.0": {
+            "source": "https://huggingface.co/TencentARC/t2i-adapter-lineart-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors",
+            "target": "models/controlnet/t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors"
+        },
+        "diffusers_xl_canny_full.safetensors": {
+            "source": "https://huggingface.co/lllyasviel/sd_control_collection/resolve/d1b278d0d1103a3a7c4f7c2c327d236b082a75b1/diffusers_xl_canny_full.safetensors",
+            "target": "models/controlnet/diffusers_xl_canny_full.safetensors"
         },
         "controlnet-union-sdxl-1.0": {
             "source": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors",
@@ -152,6 +172,10 @@
         "dpt_hybrid-midas-501f0c75.pt": {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
+        },
+        "hand_pose_model.pth": {
+            "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/hand_pose_model.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/hand_pose_model.pth"
         },
         "hand_pose_model.pth": {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/hand_pose_model.pth",
@@ -323,6 +347,14 @@
             {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt"
+            },
+            {
+            "source": "https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/third-party-models/table5_pidinet.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/table5_pidinet.pth"
+            },
+            {
+            "source": "https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth",
+            "target": "custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large/depth_anything_v2_vitl.pth"
             },
             {
             "source": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
