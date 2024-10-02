@@ -117,12 +117,12 @@ parameters:
     subfield: value
 - name: token_scale
   label: embedding strength
-  description: Strength of the LoRA embedding token
-  tip: This parameter controls the influence of the textual inversion embedding on the prompt conditioning.
+  description: Strength of the learned LoRA token that represents your concept
+  tip: This parameter controls the influence of the learned textual inversion embedding on the prompt conditioning. This should typically be around 0.7-1.0
   type: float
   default: 1.0
   minimum: 0.0
-  maximum: 1.5
+  maximum: 1.25
   visible_if: use_lora=true
   comfyui: 
     node_id: 312
@@ -164,7 +164,7 @@ parameters:
   description: set the guidance strength of the controlnet model in slot 1
   tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
   type: float
-  default: 0.8
+  default: 0.7
   minimum: 0.0
   maximum: 1.5
   visible_if: use_controlnet=true
