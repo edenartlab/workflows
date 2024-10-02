@@ -3,7 +3,7 @@
     "inputs": {
       "seed": 785773861328337,
       "steps": 10,
-      "cfg": 1.5,
+      "cfg": 2,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
       "denoise": 0.65,
@@ -58,7 +58,7 @@
         "533",
         2
       ],
-      "batch_size": 32
+      "batch_size": 1
     },
     "class_type": "Efficient Loader",
     "_meta": {
@@ -68,7 +68,7 @@
   "16": {
     "inputs": {
       "model_name": "AnimateLCM_sd15_t2v.ckpt",
-      "beta_schedule": "lcm avg(sqrt_linear,linear)",
+      "beta_schedule": "lcm",
       "motion_scale": 1.2,
       "apply_v2_models_properly": true,
       "model": [
@@ -231,7 +231,7 @@
       "num_beams": 3,
       "do_sample": true,
       "output_mask_select": "",
-      "seed": 723390257617820,
+      "seed": 387442411481509,
       "image": [
         "533",
         0
@@ -310,12 +310,12 @@
   "533": {
     "inputs": {
       "width": [
-        "535",
+        "563",
         0
       ],
       "height": [
-        "535",
-        0
+        "563",
+        1
       ],
       "interpolation": "lanczos",
       "method": "keep proportion",
@@ -333,7 +333,7 @@
   },
   "535": {
     "inputs": {
-      "value": 1024
+      "value": 1536
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -477,6 +477,24 @@
     "class_type": "Eden_Int",
     "_meta": {
       "title": "Num frames"
+    }
+  },
+  "563": {
+    "inputs": {
+      "width": [
+        "535",
+        0
+      ],
+      "height": [
+        "535",
+        0
+      ],
+      "output_multiplier": 0.5,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
     }
   }
 }
