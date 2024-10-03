@@ -1,6 +1,6 @@
 {
   "last_node_id": 524,
-  "last_link_id": 1087,
+  "last_link_id": 1088,
   "nodes": [
     {
       "id": 159,
@@ -293,7 +293,7 @@
         "1": 126
       },
       "flags": {},
-      "order": 34,
+      "order": 35,
       "mode": 4,
       "inputs": [
         {
@@ -1657,7 +1657,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00049.mp4",
+            "filename": "AnimateDiff_00053.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -3754,76 +3754,6 @@
       ]
     },
     {
-      "id": 199,
-      "type": "VHS_VideoCombine",
-      "pos": {
-        "0": 776,
-        "1": -998
-      },
-      "size": [
-        315,
-        619
-      ],
-      "flags": {},
-      "order": 69,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 591
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 12,
-        "loop_count": 0,
-        "filename_prefix": "AnimateDiff",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": false,
-        "pingpong": false,
-        "save_output": false,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "AnimateDiff_00048.mp4",
-            "subfolder": "",
-            "type": "temp",
-            "format": "video/h264-mp4",
-            "frame_rate": 12
-          }
-        }
-      }
-    },
-    {
       "id": 388,
       "type": "Reroute",
       "pos": {
@@ -4664,7 +4594,7 @@
         26
       ],
       "flags": {},
-      "order": 35,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -4801,13 +4731,13 @@
         26
       ],
       "flags": {},
-      "order": 37,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
           "name": "",
           "type": "*",
-          "link": 1087
+          "link": 1088
         }
       ],
       "outputs": [
@@ -5085,7 +5015,7 @@
         "1": 218
       },
       "flags": {},
-      "order": 36,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -6376,44 +6306,6 @@
       ]
     },
     {
-      "id": 117,
-      "type": "LoadImage",
-      "pos": {
-        "0": -1006.1825561523438,
-        "1": 875.8045043945312
-      },
-      "size": [
-        237.0612947656491,
-        327.5790977804604
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "qr_code (1).png",
-        "image"
-      ]
-    },
-    {
       "id": 198,
       "type": "Animation_RGB_Mask",
       "pos": {
@@ -6506,7 +6398,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 22,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -6594,7 +6486,7 @@
         58
       ],
       "flags": {},
-      "order": 23,
+      "order": 22,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -6628,7 +6520,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 24,
+      "order": 23,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -6789,7 +6681,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "control_signal_1_00023.mp4",
+            "filename": "control_signal_1_00025.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -6868,7 +6760,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "control_signal_2_00024.mp4",
+            "filename": "control_signal_2_00026.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -6887,7 +6779,7 @@
       },
       "size": [
         1280.2132568359375,
-        306
+        1580.2132568359375
       ],
       "flags": {},
       "order": 133,
@@ -6947,7 +6839,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "Xsmash_HD_00025.mp4",
+            "filename": "Xsmash_HD_00001.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -7078,9 +6970,7 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [
-            1087
-          ],
+          "links": [],
           "slot_index": 0,
           "shape": 3
         },
@@ -7134,6 +7024,116 @@
             "format": "image/gif",
             "select_every_nth": 1,
             "force_size": "640x?"
+          }
+        }
+      }
+    },
+    {
+      "id": 117,
+      "type": "LoadImage",
+      "pos": {
+        "0": -1006.1825561523438,
+        "1": 875.8045043945312
+      },
+      "size": [
+        237.0612947656491,
+        327.5790977804604
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1088
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "qr_code (1).png",
+        "image"
+      ]
+    },
+    {
+      "id": 199,
+      "type": "VHS_VideoCombine",
+      "pos": {
+        "0": 776,
+        "1": -998
+      },
+      "size": [
+        315,
+        619
+      ],
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 591
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 12,
+        "loop_count": 0,
+        "filename_prefix": "mapping_motion",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00052.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 12
           }
         }
       }
@@ -9037,8 +9037,8 @@
       "LATENT"
     ],
     [
-      1087,
-      113,
+      1088,
+      117,
       0,
       479,
       0,
@@ -9047,86 +9047,14 @@
   ],
   "groups": [
     {
-      "title": "ControlNet2",
+      "title": "Sampling",
       "bounding": [
-        3015,
-        411,
-        1279,
-        1175
-      ],
-      "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Audio",
-      "bounding": [
-        -49,
-        575,
-        1541,
-        1038
-      ],
-      "color": "#a1309b",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "SecondPass",
-      "bounding": [
-        5446,
-        158,
-        1174,
-        808
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Post-Process",
-      "bounding": [
-        6670,
-        -417,
-        750,
-        391
-      ],
-      "color": "#A88",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Controlnet",
-      "bounding": [
-        -1027,
-        247,
-        720,
-        970
-      ],
-      "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Settings / Checkpoint",
-      "bounding": [
-        -1025,
-        -902,
-        1702,
-        1087
+        4135,
+        -947,
+        1210,
+        1121
       ],
       "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "IPAdapters",
-      "bounding": [
-        1354,
-        -2364,
-        2665,
-        2411
-      ],
-      "color": "#b06634",
       "font_size": 24,
       "flags": {}
     },
@@ -9143,14 +9071,86 @@
       "flags": {}
     },
     {
-      "title": "Sampling",
+      "title": "IPAdapters",
       "bounding": [
-        4135,
-        -947,
-        1210,
-        1121
+        1354,
+        -2364,
+        2665,
+        2411
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Settings / Checkpoint",
+      "bounding": [
+        -1025,
+        -902,
+        1702,
+        1087
       ],
       "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Controlnet",
+      "bounding": [
+        -1027,
+        247,
+        720,
+        970
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Post-Process",
+      "bounding": [
+        6670,
+        -417,
+        750,
+        391
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "SecondPass",
+      "bounding": [
+        5446,
+        158,
+        1174,
+        808
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Audio",
+      "bounding": [
+        -49,
+        575,
+        1541,
+        1038
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "ControlNet2",
+      "bounding": [
+        3015,
+        411,
+        1279,
+        1175
+      ],
+      "color": "#b58b2a",
       "font_size": 24,
       "flags": {}
     }
@@ -9158,10 +9158,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6727499949325639,
+      "scale": 0.45949729863572625,
       "offset": [
-        1727.682782465276,
-        -51.33813626144456
+        228.69058492028398,
+        1828.570482112377
       ]
     }
   },
