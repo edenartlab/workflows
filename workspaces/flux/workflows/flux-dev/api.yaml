@@ -74,10 +74,10 @@ parameters:
 - name: style_lora
   label: Style LoRA
   description: Use a LoRA finetune on top of the base model.
-  type: lora
+  type: string
   visible_if: use_style_lora=true
-  #default: realism_lora_comfy_converted.safetensors
-  #choices: [realism_lora_comfy_converted.safetensors, mjv6_lora_comfy_converted.safetensors, art_lora_comfy_converted.safetensors]
+  default: realism_lora_comfy_converted.safetensors
+  choices: [realism_lora_comfy_converted.safetensors, mjv6_lora_comfy_converted.safetensors, art_lora_comfy_converted.safetensors]
   # choices_label: [Realism, Midjourney, Art]
   comfyui: 
     node_id: 80
