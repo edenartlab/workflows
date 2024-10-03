@@ -4,6 +4,7 @@ tip: Background removal can do a great job of isolating a subject, but for trans
 output_type: image
 cost_estimate: 1 * n_samples
 handler: comfyui
+resolutions: [16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344]
 comfyui_output_node_id: 30
 parameters:
 - name: prompt

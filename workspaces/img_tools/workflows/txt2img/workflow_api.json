@@ -2,7 +2,7 @@
   "2": {
     "inputs": {
       "image": [
-        "214",
+        "16",
         0
       ]
     },
@@ -25,7 +25,7 @@
   },
   "8": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -150,36 +150,11 @@
   },
   "27": {
     "inputs": {
-      "seed": 680843476185506
+      "seed": 626904323287341
     },
     "class_type": "Seed",
     "_meta": {
       "title": "Seed"
-    }
-  },
-  "28": {
-    "inputs": {
-      "text": [
-        "31",
-        0
-      ],
-      "clip": [
-        "162",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "31": {
-    "inputs": {
-      "value": "embedding:SDXL_embeddings_xander, as a plant"
-    },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Prompt (Positive)"
     }
   },
   "32": {
@@ -207,15 +182,6 @@
       "title": "Prompt (Negative)"
     }
   },
-  "34": {
-    "inputs": {
-      "value": true
-    },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_controlnet"
-    }
-  },
   "35": {
     "inputs": {
       "value": false
@@ -227,7 +193,7 @@
   },
   "36": {
     "inputs": {
-      "value": 0.6
+      "value": 0.8
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -265,15 +231,15 @@
         0
       ],
       "positive": [
-        "51",
+        "288",
         0
       ],
       "negative": [
-        "74",
+        "345",
         0
       ],
       "latent_image": [
-        "93",
+        "363",
         0
       ]
     },
@@ -282,72 +248,9 @@
       "title": "KSampler"
     }
   },
-  "49": {
-    "inputs": {
-      "positive": [
-        "28",
-        0
-      ],
-      "negative": [
-        "32",
-        0
-      ],
-      "cnet_stack": [
-        "50",
-        0
-      ]
-    },
-    "class_type": "Apply ControlNet Stack",
-    "_meta": {
-      "title": "Apply ControlNet Stack"
-    }
-  },
-  "50": {
-    "inputs": {
-      "control_net_name": "controlnet-union-sdxl-promax-1.0/diffusion_pytorch_model_promax.safetensors",
-      "strength": [
-        "36",
-        0
-      ],
-      "preprocessor": "canny",
-      "control_net_override": "None",
-      "enabled": [
-        "34",
-        0
-      ],
-      "image": [
-        "214",
-        0
-      ]
-    },
-    "class_type": "AV_ControlNetEfficientStackerSimple",
-    "_meta": {
-      "title": "ControlNet Stacker"
-    }
-  },
-  "51": {
-    "inputs": {
-      "switch": [
-        "34",
-        0
-      ],
-      "on_false": [
-        "28",
-        0
-      ],
-      "on_true": [
-        "49",
-        0
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "switch_conditioning_controlnet_w"
-    }
-  },
   "59": {
     "inputs": {
-      "value": 0.52
+      "value": 0.8
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -359,7 +262,7 @@
       "width": 2048,
       "height": 2048,
       "output_multiplier": 1,
-      "multiple_off": 64
+      "multiple_off": 1
     },
     "class_type": "WidthHeightPicker",
     "_meta": {
@@ -420,26 +323,6 @@
       "title": "switch_use_ipAdapter"
     }
   },
-  "74": {
-    "inputs": {
-      "switch": [
-        "34",
-        0
-      ],
-      "on_false": [
-        "32",
-        0
-      ],
-      "on_true": [
-        "49",
-        1
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "switch_conditioning_controlnet_w"
-    }
-  },
   "80": {
     "inputs": {
       "batch_index": 0,
@@ -457,7 +340,7 @@
   "90": {
     "inputs": {
       "pixels": [
-        "214",
+        "328",
         0
       ],
       "vae": [
@@ -486,35 +369,15 @@
       "title": "VAE Decode"
     }
   },
-  "93": {
-    "inputs": {
-      "boolean": [
-        "198",
-        0
-      ],
-      "on_true": [
-        "90",
-        0
-      ],
-      "on_false": [
-        "94",
-        0
-      ]
-    },
-    "class_type": "Switch latent [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch latent"
-    }
-  },
   "94": {
     "inputs": {
       "width": [
-        "61",
-        0
+        "328",
+        1
       ],
       "height": [
-        "62",
-        0
+        "328",
+        2
       ],
       "batch_size": 1
     },
@@ -606,7 +469,7 @@
         1
       ],
       "image": [
-        "145",
+        "129",
         0
       ]
     },
@@ -654,15 +517,15 @@
         4
       ],
       "width": [
-        "61",
-        0
+        "328",
+        1
       ],
       "height": [
-        "62",
-        0
+        "328",
+        2
       ],
       "positive": [
-        "31",
+        "309",
         0
       ],
       "negative": [
@@ -746,7 +609,7 @@
     "inputs": {
       "steps_total": 30,
       "refiner_step": 999,
-      "cfg": 7.5,
+      "cfg": 8,
       "sampler_name": "euler",
       "scheduler": "normal"
     },
@@ -757,7 +620,7 @@
   },
   "193": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -766,11 +629,11 @@
   },
   "198": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
-      "title": "use_input_image"
+      "title": "use_init_image"
     }
   },
   "204": {
@@ -851,10 +714,10 @@
         "60",
         1
       ],
-      "interpolation": "nearest",
+      "interpolation": "lanczos",
       "method": "keep proportion",
       "condition": "downscale if bigger",
-      "multiple_of": 16,
+      "multiple_of": 1,
       "image": [
         "16",
         0
@@ -862,7 +725,7 @@
     },
     "class_type": "ImageResize+",
     "_meta": {
-      "title": "🔧 Image Resize"
+      "title": "🔧 Clamp Size"
     }
   },
   "215": {
@@ -881,7 +744,7 @@
   "217": {
     "inputs": {
       "a": [
-        "198",
+        "218",
         0
       ],
       "b": [
@@ -923,7 +786,7 @@
   },
   "220": {
     "inputs": {
-      "value": 0.85
+      "value": 1
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -977,6 +840,795 @@
     "class_type": "SDAnyConverter",
     "_meta": {
       "title": "SD Any Converter"
+    }
+  },
+  "233": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "328",
+        1
+      ],
+      "b": [
+        "328",
+        2
+      ]
+    },
+    "class_type": "ImpactMinMax",
+    "_meta": {
+      "title": "ImpactMinMax"
+    }
+  },
+  "238": {
+    "inputs": {
+      "text": [
+        "242",
+        0
+      ],
+      "clip": [
+        "162",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "239": {
+    "inputs": {
+      "text": [
+        "241",
+        0
+      ],
+      "clip": [
+        "162",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "240": {
+    "inputs": {
+      "conditioning_to_strength": [
+        "327",
+        0
+      ],
+      "conditioning_to": [
+        "238",
+        0
+      ],
+      "conditioning_from": [
+        "239",
+        0
+      ]
+    },
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "Token Strength"
+    }
+  },
+  "241": {
+    "inputs": {
+      "value": [
+        "370",
+        0
+      ]
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt"
+    }
+  },
+  "242": {
+    "inputs": {
+      "delimiter": ", ",
+      "clean_whitespace": "false",
+      "text_a": [
+        "243",
+        0
+      ],
+      "text_b": [
+        "241",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "243": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "lora_prompt"
+    }
+  },
+  "281": {
+    "inputs": {
+      "text": [
+        "311",
+        0
+      ],
+      "text2": "preprocessor_canny"
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "282": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "283",
+        1
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "283": {
+    "inputs": {
+      "menu": "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
+      "delimiter": ",",
+      "select_item": "canny"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "preprocessor"
+    }
+  },
+  "284": {
+    "inputs": {
+      "preprocessor": [
+        "286",
+        0
+      ],
+      "resolution": [
+        "233",
+        0
+      ],
+      "image": [
+        "328",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "285": {
+    "inputs": {
+      "menu": "none,CannyEdgePreprocessor,CannyEdgePreprocessor,DepthAnythingV2Preprocessor,Scribble_PiDiNet_Preprocessor,OpenposePreprocessor,ScribblePreprocessor,LineartStandardPreprocessor",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "283",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "286": {
+    "inputs": {
+      "string": [
+        "285",
+        0
+      ],
+      "separator": "$",
+      "index": 0
+    },
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
+  },
+  "287": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "286",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "288": {
+    "inputs": {
+      "switch": [
+        "388",
+        0
+      ],
+      "on_false": [
+        "240",
+        0
+      ],
+      "on_true": [
+        "351",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_conditioning_controlnet_w"
+    }
+  },
+  "289": {
+    "inputs": {
+      "control_net_name": [
+        "293",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "290": {
+    "inputs": {
+      "menu": "controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,diffusers_xl_canny_full.safetensors,controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "285",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "292": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "293": {
+    "inputs": {
+      "string": [
+        "290",
+        0
+      ],
+      "separator": "$",
+      "index": 0
+    },
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
+  },
+  "294": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "293",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "297": {
+    "inputs": {
+      "image": [
+        "299",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "299": {
+    "inputs": {
+      "switch": [
+        "388",
+        0
+      ],
+      "on_false": [
+        "328",
+        0
+      ],
+      "on_true": [
+        "284",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "preprocessor_image"
+    }
+  },
+  "307": {
+    "inputs": {
+      "a": true
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "use_controlnet"
+    }
+  },
+  "309": {
+    "inputs": {
+      "text": [
+        "242",
+        0
+      ],
+      "text2": "colorful chinese painting, black background, visionary painting embedding:marzipan_embeddings, "
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "311": {
+    "inputs": {
+      "body": "preprocessor_",
+      "delimiter": "",
+      "append": [
+        "283",
+        0
+      ]
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
+  },
+  "312": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "token_scale"
+    }
+  },
+  "317": {
+    "inputs": {
+      "images": [
+        "284",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "318": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "388",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "323": {
+    "inputs": {
+      "filename_prefix": [
+        "281",
+        0
+      ],
+      "only_preview": false,
+      "images": [
+        "299",
+        0
+      ]
+    },
+    "class_type": "easy imageSave",
+    "_meta": {
+      "title": "Save Image (Simple)"
+    }
+  },
+  "324": {
+    "inputs": {
+      "input1": [
+        "388",
+        0
+      ]
+    },
+    "class_type": "LogicGateInvertBasic",
+    "_meta": {
+      "title": "Invert Basic"
+    }
+  },
+  "327": {
+    "inputs": {
+      "boolean": [
+        "193",
+        0
+      ],
+      "on_true": [
+        "312",
+        0
+      ],
+      "on_false": [
+        "204",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch token-scale"
+    }
+  },
+  "328": {
+    "inputs": {
+      "width": [
+        "335",
+        0
+      ],
+      "height": [
+        "336",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 1,
+      "image": [
+        "214",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "333": {
+    "inputs": {
+      "image": [
+        "214",
+        0
+      ]
+    },
+    "class_type": "CM_NearestSDXLResolution",
+    "_meta": {
+      "title": "NearestSDXLResolution"
+    }
+  },
+  "335": {
+    "inputs": {
+      "boolean": [
+        "337",
+        0
+      ],
+      "on_true": [
+        "333",
+        0
+      ],
+      "on_false": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "SDXL_width"
+    }
+  },
+  "336": {
+    "inputs": {
+      "boolean": [
+        "337",
+        0
+      ],
+      "on_true": [
+        "333",
+        1
+      ],
+      "on_false": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "SDXL_height"
+    }
+  },
+  "337": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Enforce_SDXL_resolution"
+    }
+  },
+  "345": {
+    "inputs": {
+      "switch": [
+        "388",
+        0
+      ],
+      "on_false": [
+        "32",
+        0
+      ],
+      "on_true": [
+        "351",
+        1
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_conditioning_controlnet_w"
+    }
+  },
+  "351": {
+    "inputs": {
+      "strength": [
+        "36",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "240",
+        0
+      ],
+      "negative": [
+        "32",
+        0
+      ],
+      "control_net": [
+        "289",
+        0
+      ],
+      "image": [
+        "284",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "358": {
+    "inputs": {
+      "input1": [
+        "220",
+        0
+      ]
+    },
+    "class_type": "FloorNode",
+    "_meta": {
+      "title": "Floor"
+    }
+  },
+  "361": {
+    "inputs": {
+      "image": [
+        "91",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "362": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "327",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "363": {
+    "inputs": {
+      "switch": [
+        "405",
+        2
+      ],
+      "on_false": [
+        "94",
+        0
+      ],
+      "on_true": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch latent"
+    }
+  },
+  "364": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "333",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "365": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "333",
+        1
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "366": {
+    "inputs": {
+      "image": [
+        "284",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "370": {
+    "inputs": {
+      "body": "colorful chinese painting, black background, visionary painting embedding:marzipan_embeddings, ",
+      "delimiter": " "
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Prompt (Positive)"
+    }
+  },
+  "382": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "396",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "388": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "396",
+        0
+      ],
+      "b": [
+        "292",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "391": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "283",
+        1
+      ],
+      "b": [
+        "292",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "396": {
+    "inputs": {
+      "input1": [
+        "400",
+        0
+      ],
+      "input2": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "MultiplyNode",
+    "_meta": {
+      "title": "Multiply"
+    }
+  },
+  "399": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use input image size"
+    }
+  },
+  "400": {
+    "inputs": {
+      "number": 0,
+      "integer": "round",
+      "override_number": [
+        "391",
+        0
+      ],
+      "multiplier": [
+        "307",
+        0
+      ]
+    },
+    "class_type": "NumberPlusPlus",
+    "_meta": {
+      "title": "Number ++"
+    }
+  },
+  "405": {
+    "inputs": {
+      "number": 0,
+      "integer": "round",
+      "override_number": [
+        "358",
+        0
+      ],
+      "multiplier": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "NumberPlusPlus",
+    "_meta": {
+      "title": "Number ++"
     }
   }
 }

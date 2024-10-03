@@ -4,7 +4,11 @@ tip: This is the most basic and common function which generates an image from te
 output_type: image
 cost_estimate: 1 * n_samples
 handler: comfyui
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 comfyui_output_node_id: 146
+comfyui_intermediate_outputs:
+  - name: controlnet_signal
+    node_id: 323
 parameters:
 - name: prompt
   label: Prompt
@@ -13,9 +17,18 @@ parameters:
   type: string
   required: true
   comfyui: 
-    node_id: 31
+    node_id: 370
     field: inputs
-    subfield: value
+    subfield: body
+- name: n_samples
+  label: Number of samples
+  description: Number of samples to generate
+  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+  type: int
+  required: true
+  default: 1
+  minimum: 1
+  maximum: 4
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
@@ -44,6 +57,17 @@ parameters:
   visible_if: use_init_image=true
   comfyui: 
     node_id: 8
+    field: inputs
+    subfield: value
+- name: enforce_SDXL_resolution
+  label: Use optimized resolution
+  description: Round to the nearest optimized SDXL resolution. 
+  tip: It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution.
+  type: bool
+  default: false
+  visible_if: use_init_image=true
+  comfyui: 
+    node_id: 337
     field: inputs
     subfield: value
 - name: denoise
@@ -91,6 +115,28 @@ parameters:
     node_id: 96
     field: inputs
     subfield: value
+- name: token_scale
+  label: embedding strength
+  description: Strength of the learned LoRA token that represents your concept
+  tip: This parameter controls the influence of the learned textual inversion embedding on the prompt conditioning. This should typically be around 0.7-1.0
+  type: float
+  default: 1.0
+  minimum: 0.0
+  maximum: 1.25
+  visible_if: use_lora=true
+  comfyui: 
+    node_id: 312
+    field: inputs
+    subfield: value
+- name: lora_prompt
+  label: LoRA prompt
+  description: textual embedding token, invoked to trigger the LoRA
+  type: string
+  visible_if: use_lora=true
+  comfyui: 
+    node_id: 243
+    field: inputs
+    subfield: value
 - name: use_controlnet
   label: Use controlnet
   description: Apply Controlnet guidance to the image generation.
@@ -98,28 +144,27 @@ parameters:
   type: bool
   default: false
   comfyui: 
-    node_id: 34
+    node_id: 307
     field: inputs
-    subfield: value
+    subfield: a
 - name: preprocessor
   label: Controlnet preprocessor
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
-  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
+  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, with cannyv2 as an updated model that's sharper but with less detail. The scribble model will create guidance towards a rougher sketched shape of your starting image. pose follows an open pose skeleton of a character's body position. threshold creates a hard black and white matte from the input image, and lineart provides a crisp hard edge guidance from the input. 
   type: string
   default: canny
-  choices: [canny, depth_midas, scribble, dwpose, lineart, HED]
+  choices: [none, cannyv2, canny, depth, scribble, pose, threshold, lineart]
   visible_if: use_controlnet=true
-  # choices_label: [edge, depth, scribble, pose, lineart, HED]
   comfyui: 
-    node_id: 50
+    node_id: 283
     field: inputs
-    subfield: preprocessor
+    subfield: select_item
 - name: controlnet_strength
   label: Controlnet strength
   description: set the guidance strength of the controlnet model in slot 1
   tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
   type: float
-  default: 0.6
+  default: 0.7
   minimum: 0.0
   maximum: 1.5
   visible_if: use_controlnet=true
@@ -165,8 +210,10 @@ parameters:
   description: Allows for different types of style transfer using ipadapter, each with different characteristics and more or less content blending.
   tip: All of these are variations of the same idea, but use different weighting schemas for injecting the style embedding into the unet. Each has different tradeoffs for style transfer versus content blending. Ease in-out is a great default, strong style transfer has less content bleeding.
   type: string
+  visible_if: use_ipadapter=true
   default: strong style transfer
   choices: [ease in-out, style transfer, strong style transfer, style transfer precise, composition precise]
+  visible_if: use_ipadapter=true
   comfyui: 
     node_id: 141
     field: inputs
@@ -221,11 +268,31 @@ parameters:
     node_id: 27
     field: inputs
     subfield: seed
-- name: n_samples
-  label: Number of samples
-  description: Number of samples to generate
-  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+- name: steps
+  label: Steps
+  description: Set the number of diffusion steps
+  tip: The default value is sufficient for most jobs, but at a speed cost can be increased, or decreased to undercook the image generation. 
   type: int
-  default: 1
-  minimum: 1
-  maximum: 4
+  default: 30
+  step: 1
+  minimum: 10
+  maximum: 50
+#  advanced: true
+  comfyui: 
+    node_id: 171
+    field: inputs
+    subfield: steps_total
+- name: cfg
+  label: Guidance
+  description: CFG strength affects the influence of the prompt on the image generation.
+  tip: Classifier Free Guidance strength should usually be set to the default, but can be increased or decreased within the range presented to increase or decrease the affect of the prompt on the creation.
+  type: float
+  default: 8.0
+  step: 0.1
+  minimum: 1.0
+  maximum: 12.0
+#  advanced: true
+  comfyui: 
+    node_id: 171
+    field: inputs
+    subfield: cfg

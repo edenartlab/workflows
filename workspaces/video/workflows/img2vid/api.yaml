@@ -5,7 +5,7 @@ output_type: video
 cost_estimate: 0.5 * num_frames
 handler: comfyui
 comfyui_output_node_id: 466
-resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9x16_1152x2048]
+resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1536x1536, 2-3_1024x1782, 9-16_1152x2048]
 parameters:
 - name: image
   label: Image
@@ -20,8 +20,8 @@ parameters:
   label: Resolution
   description: Resolution of the generated animation in n_pixels (always a multiple of 64), img2vid will always adopt the aspect ratio of the provided image.
   type: int
-  default: 1024
-  minimum: 256
+  default: 1536
+  minimum: 1024
   maximum: 2048
   step: 64
   comfyui: 
@@ -42,9 +42,9 @@ parameters:
     subfield: value
 - name: motion_strength
   label: Motion Strength
-  description: How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion)
+  description: How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion). This is also affected by AI creativity.
   type: float
-  default: 1.2
+  default: 1.15
   minimum: 0.75
   maximum: 1.5
   comfyui: 
@@ -65,7 +65,7 @@ parameters:
 - name: use_motion_brush
   label: Use motion brush
   description: Enable motion brush
-  tip: This is a great way to maintain certain parts of the image (eg main character, face, ...), while animating others (eg background, leaves, water, ...)
+  tip: This is a great way to maintain certain parts of the image (eg main character, face, ...), while animating others (eg background, fire, trees, ...)
   type: bool
   default: false
   comfyui: 
@@ -77,7 +77,6 @@ parameters:
   description: Use a motion brush mask image to only create motion in certain areas (white = motion, black = no motion)
   tip: The motion_mask must be generated with another tool first. Create a mask where the to-be-animated regions are white and the rest is black.
   type: image
-  default: A_white_image.jpg
   visible_if: use_motion_brush=true
   comfyui: 
     node_id: 557
