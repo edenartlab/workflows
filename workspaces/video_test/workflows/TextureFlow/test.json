@@ -3,9 +3,15 @@
         "https://storage.googleapis.com/public-assets-xander/A_workbox/init_imgs/img_00019.jpg",
         "https://storage.googleapis.com/public-assets-xander/A_workbox/init_imgs/img_00021.jpg"
     ],
-    "n_frames": 24,
-    "use_controlnet": true,
-    "control_image": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/assets/style-purple-fuzz.png",
-    "preprocessor": "DepthAnythingV2Preprocessor",
-    "controlnet_strength": 0.9
+    "n_frames": 36,
+    "n_steps": 12,
+    "width": 640,
+    "height": 960,
+    "use_controlnet1": true,
+    "control_input": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/assets/fingers_animation.gif",
+    "preprocessor1": "DepthAnythingV2Preprocessor",
+    "controlnet_strength1": 0.35,
+    "use_controlnet2": true,
+    "preprocessor2": "Scribble_XDoG_Preprocessor",
+    "controlnet_strength1": 0.4
 }
