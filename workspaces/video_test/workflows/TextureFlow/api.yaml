@@ -1,0 +1,268 @@
+name: TextureFlow
+description: Mix multiple images into a video, optionally add controlnet for shape guidance.
+tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
+output_type: video
+private: true
+cost_estimate: 0.5 * n_frames * (width + height)/(2*768) * n_steps/10
+handler: comfyui
+resolutions: [16-9_1152x640, 3-2_1024x672, 1-1_832x832, 2-3_672x1024, 9-16_640x1152]
+comfyui_output_node_id: 446
+comfyui_intermediate_outputs:
+  - name: controlnet_signal_1
+    node_id: 501
+  - name: controlnet_signal_2
+    node_id: 503
+parameters:
+- name: images
+  label: Style Images
+  description: Style images driving the content of the generated video (through IP-adapter)
+  type: image[]
+  min_length: 1
+  max_length: 6
+  required: true
+  comfyui: 
+    node_id: 74
+    field: inputs
+    subfield: folder
+    preprocessing: folder
+- name: n_frames
+  label: Frames
+  description: Number of video frames to generate (12 frames = 1 second of video, although the final video will be interpolated to always be 24 fps)
+  type: int
+  default: 64
+  minimum: 16
+  maximum: 192
+  step: 1
+  comfyui: 
+    node_id: 510
+    field: inputs
+    subfield: value
+- name: prompt
+  label: prompt
+  description: An optional prompt that describes your animation (leaving this blank is usually fine)
+  type: string
+  comfyui: 
+    node_id: 28
+    field: inputs
+    subfield: text
+- name: n_steps
+  label: Sampling steps
+  description: Number of diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
+  type: int
+  default: 10
+  minimum: 6
+  maximum: 14
+  step: 1
+  comfyui: 
+    node_id: 524
+    field: inputs
+    subfield: value
+- name: diffusion_framerate
+  label: Diffusion framerate
+  description: The generated video will always be interpolated to 24 fps, but this number determines how many frames per second of video are actually diffused. Lower values are faster & cheaper for the same video output length but can result in motion artefacts. This does not affect output length! 
+  tip: The default value of 8 is good for most cases. You can increase this to 12 for slightly better video smoothness, this will increase render time.
+  type: float
+  default: 8
+  maximum: 12
+  step: 4
+  comfyui: 
+    node_id: 487
+    field: inputs
+    subfield: value
+- name: width
+  label: Width
+  description: Width of the video in number of pixels
+  type: int
+  default: 768
+  minimum: 512
+  maximum: 1280
+  step: 32
+  comfyui: 
+    node_id: 261
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height of the video in number of pixels
+  type: int
+  default: 768
+  minimum: 512
+  maximum: 1280
+  step: 32
+  comfyui: 
+    node_id: 261
+    field: inputs
+    subfield: height
+- name: use_controlnet1
+  label: Use controlnet1
+  description: Apply Controlnet shape guidance.
+  tip: Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 273
+    field: inputs
+    subfield: value
+- name: control_image
+  label: Guidance image
+  description: A guidance video/GIF used as input to the controlnet(s). Will guide the shape of the output video. 
+  type: video
+  visible_if: use_controlnet1=true
+  comfyui: 
+    node_id: 113
+    field: inputs
+    subfield: video
+- name: preprocessor1
+  label: Controlnet1 preprocessor
+  description: Type of controlnet preprocessor. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
+  tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
+  type: string
+  visible_if: use_controlnet1=true
+  default: CannyEdgePreprocessor
+  choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
+  choices_label: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
+  comfyui: 
+    node_id: 406
+    field: inputs
+    subfield: preprocessor    
+    remap:
+      - node_id: 107
+        field: inputs
+        subfield: control_net_name
+        value:
+          - input: CannyEdgePreprocessor
+            output: control_v11p_sd15_canny.pth
+          - input: DepthAnythingV2Preprocessor
+            output: control_v11f1p_sd15_depth.pth
+          - input: AnyLineArtPreprocessor_aux
+            output: control_v11p_sd15_lineart.pth
+          - input: DensePosePreprocessor
+            output: control_v11p_sd15_openpose.pth
+          - input: Scribble_XDoG_Preprocessor
+            output: control_v11p_sd15_scribble.pth
+          - input: Scribble_XDoG_Preprocessor
+            output: controlnetQRPatternQR_v2Sd15.safetensors
+- name: controlnet_strength1
+  label: Controlnet1 strength
+  description: set the guidance strength of the first controlnet model, recommended values are 0.4-0.6
+  tip: A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
+  type: float
+  default: 0.5
+  minimum: 0.0
+  maximum: 1.5
+  visible_if: use_controlnet1=true
+  comfyui: 
+    node_id: 116
+    field: inputs
+    subfield: strength
+- name: use_controlnet2
+  label: Use controlnet2
+  description: Apply an optional, second controlnet for shape guidance (makes things slower and not always better, use only if you really know what you're doing!).
+  tip: Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
+  type: bool
+  default: false
+  visible_if: use_controlnet1=true
+  comfyui: 
+    node_id: 412
+    field: inputs
+    subfield: value
+- name: preprocessor2
+  label: Controlnet2 preprocessor
+  description: Type of controlnet preprocessor (use a different one from controlnet1). Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
+  tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
+  type: string
+  visible_if: use_controlnet2=true
+  default: CannyEdgePreprocessor
+  choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
+  choices_label: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
+  comfyui: 
+    node_id: 148
+    field: inputs
+    subfield: preprocessor    
+    remap:
+      - node_id: 404
+        field: inputs
+        subfield: control_net_name
+        value:
+          - input: CannyEdgePreprocessor
+            output: control_v11p_sd15_canny.pth
+          - input: DepthAnythingV2Preprocessor
+            output: control_v11f1p_sd15_depth.pth
+          - input: AnyLineArtPreprocessor_aux
+            output: control_v11p_sd15_lineart.pth
+          - input: DensePosePreprocessor
+            output: control_v11p_sd15_openpose.pth
+          - input: Scribble_XDoG_Preprocessor
+            output: control_v11p_sd15_scribble.pth
+          - input: Scribble_XDoG_Preprocessor
+            output: controlnetQRPatternQR_v2Sd15.safetensors
+- name: controlnet_strength2
+  label: Controlnet2 strength
+  description: set the guidance strength of the second controlnet model, recommended values are 0.4-0.6
+  tip: A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
+  type: float
+  default: 0.5
+  minimum: 0.0
+  maximum: 1.5
+  visible_if: use_controlnet2=true
+  comfyui: 
+    node_id: 405
+    field: inputs
+    subfield: strength
+- name: feathering_fraction
+  label: Transition Smoothness
+  description: Adds blurriness to the transition boundary between two style images. Low values will create stark texture separation and motion, higher values will produce smoother texture blending. 
+  tip: Values <0.05 will produce noticeable boundaries between style textures which has a particularly nice aesthetic. Higher values >0.2 result in smoother style masks, causing more blending of the textures.
+  type: float
+  default: 0.03
+  minimum: 0.0
+  maximum: 0.25
+  step: 0.01
+  comfyui: 
+    node_id: 136
+    field: inputs
+    subfield: feathering_fraction
+- name: motion_mode
+  label: Motion Mode
+  description: Motion mode that controls how the style images will get mapped into the video
+  type: string
+  choices: [horizontal_stripes, vertical_stripes, progressive_rotating_segment, rotating_segments, concentric_circles, concentric_rectangles]
+  default: concentric_circles
+  comfyui: 
+    node_id: 198
+    field: inputs
+    subfield: mode
+- name: invert_motion
+  label: Invert Motion Mask
+  description: Inverts the motion_mode (moving inwards instead of outwards, up instead of down etc)
+  type: bool
+  hide_from_agent: true
+  default: true
+  comfyui: 
+    node_id: 198
+    field: inputs
+    subfield: invert_motion
+- name: motion_scale
+  label: Motion Scale
+  description: Motion scale for the animation, determines how much motion will be in the final video. Highly recommended to leave this at default.
+  tip: The default value of 1.15 is good for most cases. Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. Going above 1.3 is almost never desirable.
+  type: float
+  default: 1.15
+  minimum: 0.9
+  maximum: 1.35
+  comfyui: 
+    node_id: 30
+    field: inputs
+    subfield: motion_scale
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set to a random value.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this at default! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 2147483647
+  comfyui: 
+    node_id: 282
+    field: inputs
+    subfield: seed

@@ -2,7 +2,7 @@ name: Create an image (Advanced)
 description: Generate an image from text with Flux Dev including starting image, controlnet and ip-adapter.
 tip: Flux is a text to image model that excels at prompt coherence and text generation. This should always be the default way to generate an image from text! Flux-dev can use ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, and LoRA models to apply a pretrained fine tuned concept.
 output_type: image
-cost_estimate: 1 * n_samples
+cost_estimate: 2 * n_samples
 handler: comfyui
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 comfyui_output_node_id: 206 
