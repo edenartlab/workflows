@@ -37,3 +37,36 @@
 | `subfield` | Specific subfield within the node field |
 | `preprocessing` | Any preprocessing steps required to properly parse this input (e.g., "folder" for image arrays, which saves a set of imgs to a tmp folder and passes that path in ComfyUI) |
 
+Remapping labels to multiple nodes example:
+```
+- name: preprocessor1
+  label: Controlnet1 preprocessor
+  description: Type of controlnet preprocessor. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
+  tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
+  type: string
+  visible_if: use_controlnet1=true
+  default: CannyEdgePreprocessor
+  choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
+  choices_label: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
+  comfyui: 
+    node_id: 406
+    field: inputs
+    subfield: preprocessor    
+    remap:
+      - node_id: 107
+        field: inputs
+        subfield: control_net_name
+        value:
+          - input: CannyEdgePreprocessor
+            output: control_v11p_sd15_canny.pth
+          - input: DepthAnythingV2Preprocessor
+            output: control_v11f1p_sd15_depth.pth
+          - input: AnyLineArtPreprocessor_aux
+            output: control_v11p_sd15_lineart.pth
+          - input: DensePosePreprocessor
+            output: control_v11p_sd15_openpose.pth
+          - input: Scribble_XDoG_Preprocessor
+            output: control_v11p_sd15_scribble.pth
+          - input: none
+            output: controlnetQRPatternQR_v2Sd15.safetensors
+```

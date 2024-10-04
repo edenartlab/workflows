@@ -1,11 +1,9 @@
 {
-  "init_image": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/assets/sun-shape.png",
-  "prompt": "stunning rendering of a baby face at the center of a flower",
-  "denoise": 0.95,
-  "use_init_image": true,
+  "prompt": "TOK as a floating porcelain head on Mars, floating, mountains in the distance. The sky has several moons and a ringed planet in the distance.",
   "use_style_lora": true,
   "style_lora": "realism_lora_comfy_converted.safetensors",
-  "use_controlnet": true,
-  "preprocessor": "MiDaS-DepthMapPreprocessor",
-  "n_samples": 3
+  "style_lora_strength": 0.9,
+  "n_samples": 1,
+  "lora_rank": 12,
+  "seed": 111
 }
