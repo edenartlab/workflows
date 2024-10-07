@@ -93,6 +93,11 @@ if __name__ == '__main__':
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
 python generate_environment.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/workspaces/txt2img_new
 
+DRMBT
+
+cd C:\github\workflows\workspaces\flux\workflows\_utils
+python generate_environment.py C:\github\workflows\workspaces\flux 
+
     """
 
     if len(sys.argv) != 2:

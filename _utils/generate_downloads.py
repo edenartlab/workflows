@@ -59,6 +59,12 @@ if __name__ == '__main__':
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
 python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/workspaces/txt2img_new/workflows/storydiffusion
 
+
+DRMBT
+
+cd C:\github\workflows\workspaces\flux\workflows\_utils
+python generate_downloads.py C:\github\workflows\workspaces\flux\workflows\remix-flux-schnell  
+
     """
 
     if len(sys.argv) != 2:

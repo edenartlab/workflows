@@ -41,7 +41,10 @@
             "source": "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors",
             "target": "models/checkpoints/flux1-dev-fp8.safetensors"
         },
-
+        "ae.safetensors": {
+            "source": "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors",
+            "target": "models/vae/ae.safetensors"
+        },
         "AnimateLCM_sd15": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/animatediff_models/AnimateLCM_sd15_t2v.ckpt",
             "target": "models/animatediff_models/AnimateLCM_sd15_t2v.ckpt"
@@ -121,6 +124,12 @@
             "source": "https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union/resolve/main/diffusion_pytorch_model.safetensors",
             "target": "models/controlnet/FLUX.1-dev-ControlNet-Union-Pro.safetensors"
         },
+        "flux1-schnell-fp8.safetensors": {
+            "source": "https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors",
+            "target": "models/checkpoints/flux1-schnell-fp8.safetensors"
+        },
+
+        
         "body_pose_model": {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"
