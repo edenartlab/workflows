@@ -53,7 +53,8 @@ parameters:
     subfield: strength_model, strength_clip
 - name: prompt
   label: prompt
-  description: Positive text prompt, what you want to generate. If a LoRa needs to be activated, the prompt must also trigger the corresponding LoRa token embedding.
+  description: Describe the image you want to generate.
+  tip: Positive text prompt, what you want to generate. If a LoRa needs to be activated, the prompt must also trigger the corresponding LoRa token embedding.
   type: string
   required: true
   default: 4k, sharp details, uhd, sharp focus, high quality, masterpiece
