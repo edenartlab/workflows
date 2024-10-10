@@ -216,7 +216,7 @@
         4,
         false,
         "",
-        391540402013071,
+        741901997312725,
         "randomize"
       ]
     },
@@ -657,33 +657,6 @@
         "always",
         64
       ]
-    },
-    {
-      "id": 122,
-      "type": "MaskPreview+",
-      "pos": {
-        "0": 4975.13134765625,
-        "1": 492.5863037109375
-      },
-      "size": {
-        "0": 210,
-        "1": 246
-      },
-      "flags": {},
-      "order": 44,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 184
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "MaskPreview+"
-      },
-      "widgets_values": []
     },
     {
       "id": 194,
@@ -1192,7 +1165,7 @@
         26
       ],
       "flags": {},
-      "order": 21,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -1229,7 +1202,7 @@
         126.24715008467336
       ],
       "flags": {},
-      "order": 25,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -1547,7 +1520,7 @@
         "1": 218
       },
       "flags": {},
-      "order": 26,
+      "order": 25,
       "mode": 0,
       "inputs": [
         {
@@ -1747,7 +1720,7 @@
         26
       ],
       "flags": {},
-      "order": 24,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -1787,7 +1760,7 @@
         "1": 218
       },
       "flags": {},
-      "order": 20,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -2511,12 +2484,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_opaax_00003_.png&type=temp&subfolder=&rand=0.8693496508345608"
+            "url": "/api/view?filename=rgthree.compare._temp_dfjod_00017_.png&type=temp&subfolder=&rand=0.6715540969807452"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_opaax_00004_.png&type=temp&subfolder=&rand=0.8901762108599016"
+            "url": "/api/view?filename=rgthree.compare._temp_dfjod_00018_.png&type=temp&subfolder=&rand=0.01314660624220032"
           }
         ]
       ]
@@ -2729,46 +2702,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 190,
-      "type": "GrowMask",
-      "pos": {
-        "0": 5440.13330078125,
-        "1": 456.5863037109375
-      },
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 52,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 328
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            310
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GrowMask"
-      },
-      "widgets_values": [
-        24,
-        true
-      ]
-    },
-    {
       "id": 181,
       "type": "SaveImage",
       "pos": {
@@ -2841,7 +2774,7 @@
         148.22951155334886
       ],
       "flags": {},
-      "order": 19,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -2913,7 +2846,7 @@
         207.9859183922713
       ],
       "flags": {},
-      "order": 23,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -3065,7 +2998,7 @@
         512,
         true,
         1024,
-        1099585846756550,
+        76308542749185,
         "randomize",
         35,
         1,
@@ -3113,47 +3046,6 @@
       },
       "widgets_values": [
         ""
-      ]
-    },
-    {
-      "id": 191,
-      "type": "MaskBlur+",
-      "pos": {
-        "0": 5439.13330078125,
-        "1": 591.5862426757812
-      },
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 53,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 310
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            311,
-            313
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MaskBlur+"
-      },
-      "widgets_values": [
-        48,
-        "auto"
       ]
     },
     {
@@ -3301,40 +3193,76 @@
       "bgcolor": "#653"
     },
     {
-      "id": 67,
-      "type": "Eden_String",
+      "id": 53,
+      "type": "LoadImage",
       "pos": {
-        "0": 2075.445068359375,
-        "1": -617.9999389648438
+        "0": 1734.0091552734375,
+        "1": -655.609130859375
       },
-      "size": [
-        379.2530034708552,
-        129.94917638062697
-      ],
+      "size": {
+        "0": 320,
+        "1": 314
+      },
       "flags": {},
       "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            379
+            107
           ],
           "slot_index": 0,
           "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            243
+          ],
+          "slot_index": 1,
+          "shape": 3
         }
       ],
-      "title": "Inpainting Prompt",
       "properties": {
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "mohawk"
+        "01.jpg",
+        "image"
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 122,
+      "type": "MaskPreview+",
+      "pos": {
+        "0": 4975,
+        "1": 493
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 184
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MaskPreview+"
+      },
+      "widgets_values": []
     },
     {
       "id": 65,
@@ -3373,56 +3301,128 @@
         "Node name for S&R": "Eden_Seed"
       },
       "widgets_values": [
-        86,
-        "fixed"
+        92,
+        "increment"
       ],
       "color": "#223",
       "bgcolor": "#335"
     },
     {
-      "id": 53,
-      "type": "LoadImage",
+      "id": 67,
+      "type": "Eden_String",
       "pos": {
-        "0": 1734.0091552734375,
-        "1": -655.609130859375
+        "0": 2075.445068359375,
+        "1": -617.9999389648438
       },
-      "size": {
-        "0": 320,
-        "1": 314
-      },
+      "size": [
+        379.2530034708552,
+        129.94917638062697
+      ],
       "flags": {},
       "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            107
+            379
           ],
           "slot_index": 0,
           "shape": 3
-        },
+        }
+      ],
+      "title": "Inpainting Prompt",
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "funky hair, flashy colors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 191,
+      "type": "MaskBlur+",
+      "pos": {
+        "0": 5439.13330078125,
+        "1": 591.5862426757812
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 310
+        }
+      ],
+      "outputs": [
         {
           "name": "MASK",
           "type": "MASK",
           "links": [
-            243
+            311,
+            313
           ],
-          "slot_index": 1,
+          "slot_index": 0,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadImage"
+        "Node name for S&R": "MaskBlur+"
       },
       "widgets_values": [
-        "01.jpg",
-        "image"
+        120,
+        "auto"
+      ]
+    },
+    {
+      "id": 190,
+      "type": "GrowMask",
+      "pos": {
+        "0": 5440.13330078125,
+        "1": 456.5863037109375
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 328
+        }
       ],
-      "color": "#232",
-      "bgcolor": "#353"
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            310
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMask"
+      },
+      "widgets_values": [
+        36,
+        true
+      ]
     }
   ],
   "links": [
@@ -4221,62 +4221,14 @@
   ],
   "groups": [
     {
-      "title": "Generate auto-caption",
+      "title": "Subcrop",
       "bounding": [
-        4402,
-        -1036,
-        1085,
-        790
-      ],
-      "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Recomposite",
-      "bounding": [
-        6924,
-        433,
-        1310,
-        717
+        4709,
+        245,
+        1194,
+        786
       ],
       "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Inputs",
-      "bounding": [
-        1723,
-        -899,
-        748,
-        939
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Auto-Mask generation",
-      "bounding": [
-        2887,
-        -1201,
-        985,
-        850
-      ],
-      "color": "#444",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Model Loader and Prompt",
-      "bounding": [
-        5615,
-        -663,
-        1058,
-        445
-      ],
-      "color": "#3de600",
       "font_size": 24,
       "flags": {}
     },
@@ -4293,14 +4245,62 @@
       "flags": {}
     },
     {
-      "title": "Subcrop",
+      "title": "Model Loader and Prompt",
       "bounding": [
-        4709,
-        245,
-        1194,
-        786
+        5615,
+        -663,
+        1058,
+        445
+      ],
+      "color": "#3de600",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Auto-Mask generation",
+      "bounding": [
+        2887,
+        -1201,
+        985,
+        850
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Inputs",
+      "bounding": [
+        1723,
+        -899,
+        748,
+        939
       ],
       "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Recomposite",
+      "bounding": [
+        6924,
+        433,
+        1310,
+        717
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Generate auto-caption",
+      "bounding": [
+        4402,
+        -1036,
+        1085,
+        790
+      ],
+      "color": "#b58b2a",
       "font_size": 24,
       "flags": {}
     }
@@ -4308,10 +4308,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.3719008264463363,
+      "scale": 0.25401326852424705,
       "offset": [
-        -1950.8073165860687,
-        1311.6968484329711
+        -3880.4088793913816,
+        1065.696547920159
       ]
     }
   },
