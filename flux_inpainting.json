@@ -216,7 +216,7 @@
         4,
         false,
         "",
-        1013245819012135,
+        649477825471313,
         "randomize"
       ]
     },
@@ -944,49 +944,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 65,
-      "type": "Eden_Seed",
-      "pos": {
-        "0": 1747.00927734375,
-        "1": -826.609375
-      },
-      "size": {
-        "0": 315,
-        "1": 102
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "seed",
-          "type": "INT",
-          "links": [
-            92,
-            122
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "seed_string",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Seed"
-      },
-      "widgets_values": [
-        85,
-        "increment"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 119,
       "type": "Mask Crop Region",
       "pos": {
@@ -1272,7 +1229,7 @@
         76
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1507,7 +1464,7 @@
         "1": 76
       },
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1779,7 +1736,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 23,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -1811,29 +1768,6 @@
       "widgets_values": [
         "a != b"
       ]
-    },
-    {
-      "id": 218,
-      "type": "Note",
-      "pos": {
-        "0": 2076.445068359375,
-        "1": -439.9999694824219
-      },
-      "size": [
-        380.5951786540045,
-        188.97163577021087
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "For Inpainting Prompt:\n- If the string is non-empty: this prompt will be used for the final generation\n- If the string is empty, GPT4-v will be used to generate a prompt (ignoring the masked region)\n\n\n\nFor Masking Prompt:\n- If the string is non-empty: the string will be used to auto-generate a mask using Florence2 + SAM\n- If the string is empty, the provided mask image will be used"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 209,
@@ -1909,7 +1843,7 @@
         78
       ],
       "flags": {},
-      "order": 21,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -2718,12 +2652,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_toflp_00035_.png&type=temp&subfolder=&rand=0.012687997587828015"
+            "url": "/api/view?filename=rgthree.compare._temp_toflp_00041_.png&type=temp&subfolder=&rand=0.28386832159147835"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_toflp_00036_.png&type=temp&subfolder=&rand=0.5871723043291521"
+            "url": "/api/view?filename=rgthree.compare._temp_toflp_00042_.png&type=temp&subfolder=&rand=0.7281342031967879"
           }
         ]
       ]
@@ -2816,7 +2750,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2851,7 +2785,7 @@
         "1": 110
       },
       "flags": {},
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2888,7 +2822,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 10,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2924,7 +2858,7 @@
         160.9912939885869
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3003,47 +2937,6 @@
       "widgets_values": [
         24,
         true
-      ]
-    },
-    {
-      "id": 191,
-      "type": "MaskBlur+",
-      "pos": {
-        "0": 5439.13330078125,
-        "1": 591.5862426757812
-      },
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 57,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 310
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            311,
-            313
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MaskBlur+"
-      },
-      "widgets_values": [
-        16,
-        "auto"
       ]
     },
     {
@@ -3170,7 +3063,7 @@
         148.22951155334886
       ],
       "flags": {},
-      "order": 22,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -3272,7 +3165,7 @@
         162.24288123317774
       ],
       "flags": {},
-      "order": 12,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3305,7 +3198,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 13,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3427,7 +3320,7 @@
         512,
         true,
         1024,
-        162809452920437,
+        356615139486620,
         "randomize",
         35,
         1,
@@ -3457,7 +3350,7 @@
         "1": 314
       },
       "flags": {},
-      "order": 14,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3491,81 +3384,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 67,
-      "type": "Eden_String",
-      "pos": {
-        "0": 2075.445068359375,
-        "1": -617.9999389648438
-      },
-      "size": [
-        379.2530034708552,
-        129.94917638062697
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            360,
-            364,
-            379
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Inpainting Prompt",
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "statue"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 66,
-      "type": "Eden_String",
-      "pos": {
-        "0": 2082.445068359375,
-        "1": -185.9998779296875
-      },
-      "size": [
-        363.76260912610724,
-        120.81829672339302
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            93,
-            369
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Masking Prompt",
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "tree"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 198,
       "type": "Display Any (rgthree)",
       "pos": {
@@ -3596,6 +3414,188 @@
       "widgets_values": [
         ""
       ]
+    },
+    {
+      "id": 66,
+      "type": "Eden_String",
+      "pos": {
+        "0": 2082.445068359375,
+        "1": -185.9998779296875
+      },
+      "size": [
+        363.76260912610724,
+        120.81829672339302
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            93,
+            369
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Masking Prompt",
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "tree"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 67,
+      "type": "Eden_String",
+      "pos": {
+        "0": 2075.445068359375,
+        "1": -617.9999389648438
+      },
+      "size": [
+        379.2530034708552,
+        129.94917638062697
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            360,
+            364,
+            379
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Inpainting Prompt",
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "brutalist statue of liberty"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 191,
+      "type": "MaskBlur+",
+      "pos": {
+        "0": 5439.13330078125,
+        "1": 591.5862426757812
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 310
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            311,
+            313
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskBlur+"
+      },
+      "widgets_values": [
+        48,
+        "auto"
+      ]
+    },
+    {
+      "id": 65,
+      "type": "Eden_Seed",
+      "pos": {
+        "0": 1747.00927734375,
+        "1": -826.609375
+      },
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            92,
+            122
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "seed_string",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Seed"
+      },
+      "widgets_values": [
+        85,
+        "fixed"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 218,
+      "type": "Note",
+      "pos": {
+        "0": 2076.445068359375,
+        "1": -439.9999694824219
+      },
+      "size": [
+        380.5951786540045,
+        188.97163577021087
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "For Inpainting Prompt:\nGPT4-vision will be used to inject this content into the image (in place of the masked regions). If this prompt is empty, GPT will imagine what's there (guess mode).\n\n\n\nFor Masking Prompt:\n- If the string is non-empty: the string will be used to auto-generate a mask using Florence2 + SAM\n- If the string is empty, the provided mask image will be used instead. This means that EITHER a mask image OR a masking prompt must be provided!"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -4529,10 +4529,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.2794145953766552,
+      "scale": 0.49500000000006616,
       "offset": [
-        -1546.1264442543707,
-        1758.5404355724304
+        -1114.3413019678612,
+        1225.5148774124705
       ]
     }
   },
