@@ -139,6 +139,7 @@ parameters:
     subfield: value
 - name: use_controlnet
   label: Use controlnet
+  visible_if: use_init_image=true
   description: Apply Controlnet guidance to the image generation.
   tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
   type: bool
