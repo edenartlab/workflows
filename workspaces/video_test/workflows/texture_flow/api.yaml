@@ -3,7 +3,7 @@ description: Mix multiple images into a video, optionally add controlnet for sha
 tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
 output_type: video
 private: true
-cost_estimate: 0.5 * n_frames * (width + height)/(2*768) * n_steps/10
+cost_estimate: 0.5 * n_frames * (width + height)/(2*640) * n_steps/8 * (use_controlnet1 ? 1.2 : 1.0) * (use_controlnet2 ? 1.2 : 1.0)
 handler: comfyui
 resolutions: [16-9_1152x640, 3-2_1024x672, 1-1_832x832, 2-3_672x1024, 9-16_640x1152]
 comfyui_output_node_id: 446
@@ -41,7 +41,7 @@ parameters:
     subfield: value
 - name: prompt
   label: prompt
-  description: An optional prompt that describes your animation (leaving this blank is usually fine)
+  description: An optional prompt that describes your animation (leaving this blank is almost always the best option!)
   type: string
   comfyui: 
     node_id: 28
@@ -49,10 +49,10 @@ parameters:
     subfield: text
 - name: n_steps
   label: Sampling steps
-  description: Number of diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
+  description: Number of LCM diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
   type: int
-  default: 10
-  minimum: 6
+  default: 8
+  minimum: 4
   maximum: 14
   step: 1
   comfyui: 
@@ -73,9 +73,9 @@ parameters:
     subfield: value
 - name: width
   label: Width
-  description: Width of the video in number of pixels
+  description: Width of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
   type: int
-  default: 768
+  default: 640
   minimum: 512
   maximum: 1280
   step: 32
@@ -85,9 +85,9 @@ parameters:
     subfield: width
 - name: height
   label: Height
-  description: Height of the video in number of pixels
+  description: Height of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
   type: int
-  default: 768
+  default: 640
   minimum: 512
   maximum: 1280
   step: 32
@@ -227,12 +227,12 @@ parameters:
     subfield: strength
 - name: feathering_fraction
   label: Transition Smoothness
-  description: Adds blurriness to the transition boundary between two style images. Low values will create stark texture separation and motion, higher values will produce smoother texture blending. 
+  description: Adds blurriness to the transition boundary between two style images. Low values will create stark texture separation and motion lines, higher values will produce smoother texture blending. 
   tip: Values <0.05 will produce noticeable boundaries between style textures which has a particularly nice aesthetic. Higher values >0.2 result in smoother style masks, causing more blending of the textures.
   type: float
   default: 0.03
   minimum: 0.0
-  maximum: 0.25
+  maximum: 0.3
   step: 0.01
   comfyui: 
     node_id: 136
@@ -263,9 +263,9 @@ parameters:
   description: Motion scale for the animation, determines how much motion will be in the final video. Highly recommended to leave this at default.
   tip: The default value of 1.15 is good for most cases. Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. Going above 1.3 is almost never desirable.
   type: float
-  default: 1.12
-  minimum: 0.9
-  maximum: 1.35
+  default: 1.15
+  minimum: 0.7
+  maximum: 1.4
   step: 0.01
   comfyui: 
     node_id: 450

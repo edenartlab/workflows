@@ -162,7 +162,7 @@
   },
   "74": {
     "inputs": {
-      "folder": "/home/rednax/Pictures/style_imgs",
+      "folder": "/home/rednax/SSD2TB/stored_CLIP_results/AAA_init_imgs/qr/try",
       "n_images": 3,
       "seed": [
         "282",
@@ -179,7 +179,7 @@
   "76": {
     "inputs": {
       "images": [
-        "166",
+        "243",
         0
       ]
     },
@@ -191,7 +191,7 @@
   "79": {
     "inputs": {
       "images": [
-        "172",
+        "244",
         0
       ]
     },
@@ -203,7 +203,7 @@
   "82": {
     "inputs": {
       "images": [
-        "173",
+        "245",
         0
       ]
     },
@@ -214,7 +214,7 @@
   },
   "83": {
     "inputs": {
-      "value": 1.3
+      "value": 1.25
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -235,7 +235,7 @@
   },
   "107": {
     "inputs": {
-      "control_net_name": "control_v11f1p_sd15_depth.pth"
+      "control_net_name": "controlnetQRPatternQR_v2Sd15.safetensors"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -244,7 +244,7 @@
   },
   "113": {
     "inputs": {
-      "video": "94_frames_10_fps_0005.gif",
+      "video": "30_frames_20_fps_0006.gif",
       "force_rate": 0,
       "force_size": "Custom Width",
       "custom_width": 768,
@@ -263,7 +263,7 @@
   },
   "116": {
     "inputs": {
-      "strength": 0.3,
+      "strength": 0.45,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -290,7 +290,7 @@
   },
   "117": {
     "inputs": {
-      "image": "A_black_image.jpg",
+      "image": "qr_code (1).png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -305,7 +305,7 @@
         1
       ],
       "clustering_resolution": 256,
-      "feathering_fraction": 0.03,
+      "feathering_fraction": 0.02,
       "image": [
         "261",
         0
@@ -318,7 +318,7 @@
   },
   "148": {
     "inputs": {
-      "preprocessor": "Scribble_XDoG_Preprocessor",
+      "preprocessor": "LineArtPreprocessor",
       "resolution": [
         "517",
         1
@@ -336,7 +336,7 @@
   "157": {
     "inputs": {
       "images": [
-        "174",
+        "246",
         0
       ]
     },
@@ -348,7 +348,7 @@
   "159": {
     "inputs": {
       "images": [
-        "175",
+        "247",
         0
       ]
     },
@@ -360,7 +360,7 @@
   "161": {
     "inputs": {
       "images": [
-        "176",
+        "249",
         0
       ]
     },
@@ -685,9 +685,9 @@
         "270",
         0
       ],
-      "bands_visible_per_frame": 0.9,
+      "bands_visible_per_frame": 0.7000000000000001,
       "angle": 0,
-      "mode": "concentric_circles",
+      "mode": "horizontal_stripes",
       "width": 512,
       "height": 512,
       "invert_motion": true
@@ -734,39 +734,6 @@
     "class_type": "Eden_Float",
     "_meta": {
       "title": "Sharpening"
-    }
-  },
-  "235": {
-    "inputs": {
-      "seed": [
-        "282",
-        0
-      ],
-      "steps": 12,
-      "cfg": 2,
-      "sampler_name": "lcm",
-      "scheduler": "sgm_uniform",
-      "denoise": 0.27,
-      "model": [
-        "426",
-        0
-      ],
-      "positive": [
-        "28",
-        0
-      ],
-      "negative": [
-        "27",
-        0
-      ],
-      "latent_image": [
-        "290",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
     }
   },
   "243": {
@@ -868,10 +835,10 @@
   },
   "261": {
     "inputs": {
-      "width": 640,
-      "height": 640,
+      "width": 832,
+      "height": 832,
       "interpolation": "lanczos",
-      "method": "keep proportion",
+      "method": "stretch",
       "condition": "always",
       "multiple_of": 32,
       "image": [
@@ -895,7 +862,7 @@
         2
       ],
       "interpolation": "lanczos",
-      "method": "keep proportion",
+      "method": "fill / crop",
       "condition": "always",
       "multiple_of": 0,
       "image": [
@@ -971,61 +938,11 @@
   },
   "282": {
     "inputs": {
-      "seed": 72
+      "seed": 211
     },
     "class_type": "Eden_Seed",
     "_meta": {
       "title": "Eden_Seed"
-    }
-  },
-  "290": {
-    "inputs": {
-      "pixels": [
-        "293",
-        0
-      ],
-      "vae": [
-        "1",
-        2
-      ]
-    },
-    "class_type": "VAEEncode",
-    "_meta": {
-      "title": "VAE Encode"
-    }
-  },
-  "291": {
-    "inputs": {
-      "samples": [
-        "507",
-        0
-      ],
-      "vae": [
-        "1",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "293": {
-    "inputs": {
-      "width": 1024,
-      "height": 1024,
-      "interpolation": "lanczos",
-      "method": "keep proportion",
-      "condition": "always",
-      "multiple_of": 64,
-      "image": [
-        "291",
-        0
-      ]
-    },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
     }
   },
   "341": {
@@ -1048,7 +965,7 @@
   },
   "404": {
     "inputs": {
-      "control_net_name": "control_v11p_sd15_scribble.pth"
+      "control_net_name": "control_v11p_sd15_lineart.pth"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -1057,7 +974,7 @@
   },
   "405": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.4,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -1084,7 +1001,7 @@
   },
   "406": {
     "inputs": {
-      "preprocessor": "DepthAnythingV2Preprocessor",
+      "preprocessor": "none",
       "resolution": [
         "517",
         1
@@ -1121,7 +1038,7 @@
   },
   "412": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -1148,38 +1065,9 @@
       "title": "Lazy Switch_CN+"
     }
   },
-  "415": {
-    "inputs": {
-      "value": true
-    },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "Upscale"
-    }
-  },
-  "417": {
-    "inputs": {
-      "switch": [
-        "415",
-        0
-      ],
-      "on_false": [
-        "291",
-        0
-      ],
-      "on_true": [
-        "445",
-        0
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch"
-    }
-  },
   "426": {
     "inputs": {
-      "beta_schedule": "lcm >> sqrt_linear",
+      "beta_schedule": "lcm avg(sqrt_linear,linear)",
       "model": [
         "171",
         0
@@ -1246,7 +1134,7 @@
     "inputs": {
       "context_length": 16,
       "context_stride": 1,
-      "context_overlap": 5,
+      "context_overlap": 6,
       "closed_loop": true,
       "fuse_method": "flat",
       "use_on_equal_length": false,
@@ -1270,7 +1158,7 @@
       "ensemble": true,
       "scale_factor": 1,
       "frames": [
-        "417",
+        "445",
         0
       ]
     },
@@ -1282,7 +1170,7 @@
   "445": {
     "inputs": {
       "samples": [
-        "235",
+        "507",
         0
       ],
       "vae": [
@@ -1321,7 +1209,7 @@
   },
   "450": {
     "inputs": {
-      "float_val": 1.1500000000000001
+      "float_val": 1.125
     },
     "class_type": "ADE_MultivalDynamic",
     "_meta": {
@@ -1483,7 +1371,7 @@
   },
   "510": {
     "inputs": {
-      "value": 48
+      "value": 64
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -1548,37 +1436,11 @@
   },
   "524": {
     "inputs": {
-      "value": 8
+      "value": 12
     },
     "class_type": "Eden_Int",
     "_meta": {
       "title": "n_steps"
-    }
-  },
-  "527": {
-    "inputs": {
-      "input": [
-        "261",
-        1
-      ],
-      "output": ""
-    },
-    "class_type": "Display Int (rgthree)",
-    "_meta": {
-      "title": "Display Int (rgthree)"
-    }
-  },
-  "528": {
-    "inputs": {
-      "input": [
-        "261",
-        2
-      ],
-      "output": ""
-    },
-    "class_type": "Display Int (rgthree)",
-    "_meta": {
-      "title": "Display Int (rgthree)"
     }
   }
 }
