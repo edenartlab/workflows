@@ -95,6 +95,16 @@ parameters:
     node_id: 261
     field: inputs
     subfield: height
+- name: upscale
+  label: Activate upscale
+  description: Do an upscale pass at the end, increasing the output resolution of the animation. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
+  tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 415
+    field: inputs
+    subfield: value  
 - name: use_controlnet1
   label: Use controlnet1
   description: Apply Controlnet shape guidance.
