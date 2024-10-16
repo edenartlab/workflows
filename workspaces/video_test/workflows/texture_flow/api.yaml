@@ -39,14 +39,6 @@ parameters:
     node_id: 510
     field: inputs
     subfield: value
-- name: prompt
-  label: prompt
-  description: An optional prompt that describes your animation (leaving this blank is almost always the best option!)
-  type: string
-  comfyui: 
-    node_id: 28
-    field: inputs
-    subfield: text
 - name: n_steps
   label: Sampling steps
   description: Number of LCM diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
