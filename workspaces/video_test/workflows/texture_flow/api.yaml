@@ -59,18 +59,6 @@ parameters:
     node_id: 524
     field: inputs
     subfield: value
-- name: diffusion_framerate
-  label: Diffusion framerate
-  description: The generated video will always be interpolated to 24 fps, but this number determines how many frames per second of video are actually diffused. Lower values are faster & cheaper for the same video output length but can result in motion artefacts. This does not affect output length! 
-  tip: The default value of 8 is good for most cases. You can increase this to 12 for slightly better video smoothness, this will increase render time.
-  type: float
-  default: 8
-  maximum: 12
-  step: 4
-  comfyui: 
-    node_id: 487
-    field: inputs
-    subfield: value
 - name: width
   label: Width
   description: Width of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
@@ -180,74 +168,6 @@ parameters:
     node_id: 116
     field: inputs
     subfield: strength
-- name: use_controlnet2
-  label: Use controlnet2
-  description: Apply an optional, second controlnet for shape guidance (makes things slower and not always better, use only if you really know what you're doing!).
-  tip: Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
-  type: bool
-  default: false
-  visible_if: use_controlnet1=true
-  comfyui: 
-    node_id: 412
-    field: inputs
-    subfield: value
-- name: preprocessor2
-  label: Controlnet2 preprocessor
-  description: Type of controlnet preprocessor (use a different one from controlnet1). Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
-  tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
-  type: string
-  visible_if: use_controlnet2=true
-  default: CannyEdgePreprocessor
-  choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
-  choices_label: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR-code, dark/bright patterns)]
-  comfyui: 
-    node_id: 148
-    field: inputs
-    subfield: preprocessor    
-    remap:
-      - node_id: 404
-        field: inputs
-        subfield: control_net_name
-        value:
-          - input: CannyEdgePreprocessor
-            output: control_v11p_sd15_canny.pth
-          - input: DepthAnythingV2Preprocessor
-            output: control_v11f1p_sd15_depth.pth
-          - input: AnyLineArtPreprocessor_aux
-            output: control_v11p_sd15_lineart.pth
-          - input: DensePosePreprocessor
-            output: control_v11p_sd15_openpose.pth
-          - input: Scribble_XDoG_Preprocessor
-            output: control_v11p_sd15_scribble.pth
-          - input: none
-            output: controlnetQRPatternQR_v2Sd15.safetensors
-- name: controlnet_strength2
-  label: Controlnet2 strength
-  description: set the guidance strength of the second controlnet model, recommended values are 0.4-0.6
-  tip: A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
-  type: float
-  default: 0.5
-  minimum: 0.0
-  maximum: 1.5
-  step: 0.01
-  visible_if: use_controlnet2=true
-  comfyui: 
-    node_id: 405
-    field: inputs
-    subfield: strength
-- name: feathering_fraction
-  label: Transition Smoothness
-  description: Adds blurriness to the transition boundary between two style images. Low values will create stark texture separation and motion lines, higher values will produce smoother texture blending. 
-  tip: Values <0.05 will produce noticeable boundaries between style textures which has a particularly nice aesthetic. Higher values >0.2 result in smoother style masks, causing more blending of the textures.
-  type: float
-  default: 0.03
-  minimum: 0.0
-  maximum: 0.3
-  step: 0.01
-  comfyui: 
-    node_id: 136
-    field: inputs
-    subfield: feathering_fraction
 - name: motion_mode
   label: Motion Mode
   description: Motion mode that controls how the style images will get mapped into the video
