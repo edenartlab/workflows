@@ -3,9 +3,9 @@ description: Mix multiple images into a video, optionally add controlnet for sha
 tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
 output_type: video
 private: true
-cost_estimate: 0.5 * n_frames * (width + height)/(2*640) * n_steps/8 * (use_controlnet1 ? 1.2 : 1.0) * (use_controlnet2 ? 1.2 : 1.0)
+cost_estimate: 0.5 * n_frames * (width + height)/(2*640) * n_steps/8 * (use_controlnet1 ? 1.125 : 1.0) * (use_controlnet2 ? 1.125 : 1.0)
 handler: comfyui
-resolutions: [16-9_1152x640, 3-2_1024x672, 1-1_832x832, 2-3_672x1024, 9-16_640x1152]
+resolutions: [16-9_928x512, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_512x928]
 comfyui_output_node_id: 446
 comfyui_intermediate_outputs:
   - name: mapping_motion
@@ -97,7 +97,7 @@ parameters:
     subfield: height
 - name: upscale
   label: Activate upscale
-  description: Do an upscale pass at the end, increasing the output resolution of the animation. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
+  description: Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
   tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
   type: bool
   default: false
