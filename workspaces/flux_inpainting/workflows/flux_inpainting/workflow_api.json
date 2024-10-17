@@ -325,7 +325,7 @@
   },
   "66": {
     "inputs": {
-      "value": "background"
+      "value": "hair"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -334,7 +334,7 @@
   },
   "67": {
     "inputs": {
-      "value": "beach"
+      "value": "mohawk"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -550,8 +550,8 @@
         0
       ],
       "mask": [
-        "171",
-        1
+        "191",
+        0
       ]
     },
     "class_type": "ImageCompositeMasked",
@@ -574,108 +574,13 @@
       "divisible_by": 2,
       "crop": "disabled",
       "image": [
-        "171",
+        "20",
         0
       ]
     },
     "class_type": "ImageResizeKJ",
     "_meta": {
       "title": "Resize Image"
-    }
-  },
-  "171": {
-    "inputs": {
-      "select": 1,
-      "images1": [
-        "20",
-        0
-      ],
-      "mask1_opt": [
-        "191",
-        0
-      ],
-      "images2_opt": [
-        "20",
-        0
-      ],
-      "mask2_opt": [
-        "176",
-        0
-      ]
-    },
-    "class_type": "ImageMaskSwitch",
-    "_meta": {
-      "title": "Switch (images, mask)"
-    }
-  },
-  "172": {
-    "inputs": {
-      "image": "$172-0",
-      "images": [
-        "20",
-        0
-      ]
-    },
-    "class_type": "PreviewBridge",
-    "_meta": {
-      "title": "Preview Bridge (Image)"
-    }
-  },
-  "174": {
-    "inputs": {
-      "amount": 48,
-      "device": "auto",
-      "mask": [
-        "172",
-        1
-      ]
-    },
-    "class_type": "MaskBlur+",
-    "_meta": {
-      "title": "🔧 Mask Blur"
-    }
-  },
-  "175": {
-    "inputs": {
-      "image": "$175-0",
-      "images": [
-        "20",
-        0
-      ]
-    },
-    "class_type": "PreviewBridge",
-    "_meta": {
-      "title": "Preview Bridge (Image)"
-    }
-  },
-  "176": {
-    "inputs": {
-      "mask1": [
-        "174",
-        0
-      ],
-      "mask2": [
-        "177",
-        0
-      ]
-    },
-    "class_type": "SubtractMask",
-    "_meta": {
-      "title": "Pixelwise(MASK - MASK)"
-    }
-  },
-  "177": {
-    "inputs": {
-      "amount": 0,
-      "device": "auto",
-      "mask": [
-        "175",
-        1
-      ]
-    },
-    "class_type": "MaskBlur+",
-    "_meta": {
-      "title": "🔧 Mask Blur"
     }
   },
   "181": {

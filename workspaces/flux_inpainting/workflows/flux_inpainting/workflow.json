@@ -1,6 +1,6 @@
 {
-  "last_node_id": 223,
-  "last_link_id": 380,
+  "last_node_id": 224,
+  "last_link_id": 382,
   "nodes": [
     {
       "id": 24,
@@ -216,7 +216,7 @@
         4,
         false,
         "",
-        381880158127150,
+        129165058835744,
         "randomize"
       ]
     },
@@ -300,90 +300,6 @@
         "Node name for S&R": "DifferentialDiffusion"
       },
       "widgets_values": []
-    },
-    {
-      "id": 177,
-      "type": "MaskBlur+",
-      "pos": {
-        "0": 7298.8212890625,
-        "1": 689.4774169921875
-      },
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 64,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 268
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            267
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MaskBlur+"
-      },
-      "widgets_values": [
-        0,
-        "auto"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 174,
-      "type": "MaskBlur+",
-      "pos": {
-        "0": 7294.8447265625,
-        "1": 549.4949951171875
-      },
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 63,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 264
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            266
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MaskBlur+"
-      },
-      "widgets_values": [
-        48,
-        "auto"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 114,
@@ -849,102 +765,6 @@
       ],
       "color": "#222",
       "bgcolor": "#000"
-    },
-    {
-      "id": 175,
-      "type": "PreviewBridge",
-      "pos": {
-        "0": 6935.8447265625,
-        "1": 849.4949951171875
-      },
-      "size": {
-        "0": 315,
-        "1": 290.0000305175781
-      },
-      "flags": {},
-      "order": 61,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 270
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            268
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewBridge"
-      },
-      "widgets_values": [
-        "$175-0"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 172,
-      "type": "PreviewBridge",
-      "pos": {
-        "0": 6934.8447265625,
-        "1": 506.49505615234375
-      },
-      "size": {
-        "0": 315,
-        "1": 290
-      },
-      "flags": {},
-      "order": 60,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 269
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            264
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewBridge"
-      },
-      "widgets_values": [
-        "$172-0"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 200,
@@ -1822,303 +1642,6 @@
       "bgcolor": "#0b2900"
     },
     {
-      "id": 176,
-      "type": "SubtractMask",
-      "pos": {
-        "0": 7533.8447265625,
-        "1": 617.4949951171875
-      },
-      "size": {
-        "0": 184.8000030517578,
-        "1": 46
-      },
-      "flags": {},
-      "order": 65,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask1",
-          "type": "MASK",
-          "link": 266
-        },
-        {
-          "name": "mask2",
-          "type": "MASK",
-          "link": 267
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            261
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SubtractMask"
-      },
-      "widgets_values": [],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 171,
-      "type": "ImageMaskSwitch",
-      "pos": {
-        "0": 7539.8447265625,
-        "1": 714.4949951171875
-      },
-      "size": {
-        "0": 210,
-        "1": 198
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 66,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images1",
-          "type": "IMAGE",
-          "link": 294
-        },
-        {
-          "name": "mask1_opt",
-          "type": "MASK",
-          "link": 281
-        },
-        {
-          "name": "images2_opt",
-          "type": "IMAGE",
-          "link": 295
-        },
-        {
-          "name": "mask2_opt",
-          "type": "MASK",
-          "link": 261
-        },
-        {
-          "name": "images3_opt",
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "mask3_opt",
-          "type": "MASK",
-          "link": null
-        },
-        {
-          "name": "images4_opt",
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "mask4_opt",
-          "type": "MASK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            258
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            257
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageMaskSwitch"
-      },
-      "widgets_values": [
-        1
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 170,
-      "type": "ImageResizeKJ",
-      "pos": {
-        "0": 7767.8447265625,
-        "1": 712.4949951171875
-      },
-      "size": {
-        "0": 230.5214385986328,
-        "1": 239.37628173828125
-      },
-      "flags": {},
-      "order": 67,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 258
-        },
-        {
-          "name": "get_image_size",
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "width_input",
-          "type": "INT",
-          "link": null,
-          "widget": {
-            "name": "width_input"
-          }
-        },
-        {
-          "name": "height_input",
-          "type": "INT",
-          "link": null,
-          "widget": {
-            "name": "height_input"
-          }
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 276,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 277,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            256
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResizeKJ"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        false,
-        2,
-        0,
-        0,
-        "disabled"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 169,
-      "type": "ImageCompositeMasked",
-      "pos": {
-        "0": 8014.84326171875,
-        "1": 518.4949951171875
-      },
-      "size": {
-        "0": 210,
-        "1": 141.70948791503906
-      },
-      "flags": {},
-      "order": 68,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "destination",
-          "type": "IMAGE",
-          "link": 273
-        },
-        {
-          "name": "source",
-          "type": "IMAGE",
-          "link": 256
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 257
-        },
-        {
-          "name": "x",
-          "type": "INT",
-          "link": 298,
-          "widget": {
-            "name": "x"
-          }
-        },
-        {
-          "name": "y",
-          "type": "INT",
-          "link": 297,
-          "widget": {
-            "name": "y"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            299
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageCompositeMasked"
-      },
-      "widgets_values": [
-        0,
-        0,
-        false
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 31,
       "type": "ImageAndMaskPreview",
       "pos": {
@@ -2209,7 +1732,7 @@
         "1": 823.7862548828125
       },
       "flags": {},
-      "order": 62,
+      "order": 60,
       "mode": 4,
       "inputs": [
         {
@@ -2243,44 +1766,6 @@
           }
         ]
       ]
-    },
-    {
-      "id": 179,
-      "type": "Reroute",
-      "pos": {
-        "0": 5811,
-        "1": 245
-      },
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 54,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 311
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "MASK",
-          "links": [
-            279,
-            280,
-            281
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      }
     },
     {
       "id": 37,
@@ -2412,40 +1897,6 @@
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 181,
-      "type": "SaveImage",
-      "pos": {
-        "0": 8265,
-        "1": 518
-      },
-      "size": {
-        "0": 1190.979736328125,
-        "1": 721.3195190429688
-      },
-      "flags": {
-        "collapsed": false,
-        "pinned": false
-      },
-      "order": 69,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 299
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "Flux\\Inpaint\\%date:yyyy-MM-dd%\\segs1_"
-      ],
-      "color": "#3d1466",
-      "bgcolor": "#290052"
     },
     {
       "id": 202,
@@ -2825,49 +2276,6 @@
       "widgets_values": []
     },
     {
-      "id": 65,
-      "type": "Eden_Seed",
-      "pos": {
-        "0": 1747.00927734375,
-        "1": -826.609375
-      },
-      "size": {
-        "0": 315,
-        "1": 102
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "seed",
-          "type": "INT",
-          "links": [
-            92,
-            122
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "seed_string",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Seed"
-      },
-      "widgets_values": [
-        95,
-        "increment"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 191,
       "type": "MaskBlur+",
       "pos": {
@@ -3011,121 +2419,6 @@
       ]
     },
     {
-      "id": 20,
-      "type": "DetailerForEach",
-      "pos": {
-        "0": 6485,
-        "1": -105
-      },
-      "size": {
-        "0": 399.1683654785156,
-        "1": 592
-      },
-      "flags": {},
-      "order": 59,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 317,
-          "slot_index": 0
-        },
-        {
-          "name": "segs",
-          "type": "SEGS",
-          "link": 28
-        },
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 167,
-          "slot_index": 2
-        },
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 334,
-          "slot_index": 3
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 47,
-          "slot_index": 4
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 60,
-          "slot_index": 5
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 29,
-          "slot_index": 6
-        },
-        {
-          "name": "detailer_hook",
-          "type": "DETAILER_HOOK",
-          "link": null
-        },
-        {
-          "name": "scheduler_func_opt",
-          "type": "SCHEDULER_FUNC",
-          "link": null
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 122,
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            269,
-            270,
-            294,
-            295,
-            319
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DetailerForEach"
-      },
-      "widgets_values": [
-        512,
-        true,
-        1024,
-        1120847916813589,
-        "randomize",
-        35,
-        1,
-        "euler",
-        "normal",
-        1,
-        5,
-        true,
-        true,
-        "",
-        1,
-        false,
-        20
-      ],
-      "color": "#3d1466",
-      "bgcolor": "#290052"
-    },
-    {
       "id": 193,
       "type": "Reroute",
       "pos": {
@@ -3247,7 +2540,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3288,7 +2581,7 @@
       "flags": {
         "pinned": false
       },
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3319,18 +2612,18 @@
       "bgcolor": "#653"
     },
     {
-      "id": 66,
+      "id": 217,
       "type": "Eden_String",
       "pos": {
-        "0": 2082.445068359375,
-        "1": -185.9998779296875
+        "0": 3601,
+        "1": -67
       },
       "size": {
-        "0": 363.7626037597656,
-        "1": 120.81829833984375
+        "0": 212.84921264648438,
+        "1": 76
       },
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3338,29 +2631,419 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            93,
-            369
+            368
           ],
           "slot_index": 0,
           "shape": 3
         }
       ],
-      "title": "Masking Prompt",
+      "title": "Empty_String",
       "properties": {
         "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        "background"
+        ""
+      ]
+    },
+    {
+      "id": 20,
+      "type": "DetailerForEach",
+      "pos": {
+        "0": 6485,
+        "1": -105
+      },
+      "size": {
+        "0": 399.1683654785156,
+        "1": 592
+      },
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 317,
+          "slot_index": 0
+        },
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 28
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 167,
+          "slot_index": 2
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 334,
+          "slot_index": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 47,
+          "slot_index": 4
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 60,
+          "slot_index": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 29,
+          "slot_index": 6
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        },
+        {
+          "name": "scheduler_func_opt",
+          "type": "SCHEDULER_FUNC",
+          "link": null
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 122,
+          "widget": {
+            "name": "seed"
+          }
+        }
       ],
-      "color": "#432",
-      "bgcolor": "#653"
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            319,
+            381
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DetailerForEach"
+      },
+      "widgets_values": [
+        512,
+        true,
+        1024,
+        71603309684246,
+        "randomize",
+        35,
+        1,
+        "euler",
+        "normal",
+        1,
+        5,
+        true,
+        true,
+        "",
+        1,
+        false,
+        20
+      ],
+      "color": "#3d1466",
+      "bgcolor": "#290052"
+    },
+    {
+      "id": 65,
+      "type": "Eden_Seed",
+      "pos": {
+        "0": 1747,
+        "1": -827
+      },
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            92,
+            122
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "seed_string",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Seed"
+      },
+      "widgets_values": [
+        95,
+        "fixed"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 179,
+      "type": "Reroute",
+      "pos": {
+        "0": 5811,
+        "1": 245
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 311
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MASK",
+          "links": [
+            279,
+            280,
+            382
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 169,
+      "type": "ImageCompositeMasked",
+      "pos": {
+        "0": 7243,
+        "1": 484
+      },
+      "size": {
+        "0": 210,
+        "1": 141.70948791503906
+      },
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 273
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 256
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 382
+        },
+        {
+          "name": "x",
+          "type": "INT",
+          "link": 298,
+          "widget": {
+            "name": "x"
+          }
+        },
+        {
+          "name": "y",
+          "type": "INT",
+          "link": 297,
+          "widget": {
+            "name": "y"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            299
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 181,
+      "type": "SaveImage",
+      "pos": {
+        "0": 7493,
+        "1": 486
+      },
+      "size": [
+        724.8724869636644,
+        642.1882741003346
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false
+      },
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 299
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Flux\\Inpaint\\%date:yyyy-MM-dd%\\segs1_"
+      ],
+      "color": "#3d1466",
+      "bgcolor": "#290052"
+    },
+    {
+      "id": 170,
+      "type": "ImageResizeKJ",
+      "pos": {
+        "0": 6986,
+        "1": 503
+      },
+      "size": {
+        "0": 230.5214385986328,
+        "1": 239.37628173828125
+      },
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 381
+        },
+        {
+          "name": "get_image_size",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "width_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width_input"
+          }
+        },
+        {
+          "name": "height_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height_input"
+          }
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 276,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 277,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            256
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJ"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "lanczos",
+        false,
+        2,
+        0,
+        0,
+        "disabled"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
       "id": 67,
       "type": "Eden_String",
       "pos": {
-        "0": 2075.445068359375,
-        "1": -617.9999389648438
+        "0": 2075,
+        "1": -618
       },
       "size": {
         "0": 379.25299072265625,
@@ -3386,21 +3069,21 @@
         "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        "beach"
+        "mohawk"
       ],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
-      "id": 217,
+      "id": 66,
       "type": "Eden_String",
       "pos": {
-        "0": 3601,
-        "1": -67
+        "0": 2082.445068359375,
+        "1": -185.9998779296875
       },
       "size": {
-        "0": 212.84921264648438,
-        "1": 76
+        "0": 363.7626037597656,
+        "1": 120.81829833984375
       },
       "flags": {},
       "order": 15,
@@ -3411,19 +3094,22 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            368
+            93,
+            369
           ],
           "slot_index": 0,
           "shape": 3
         }
       ],
-      "title": "Empty_String",
+      "title": "Masking Prompt",
       "properties": {
         "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        ""
-      ]
+        "hair"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -3684,78 +3370,6 @@
       "IMAGE"
     ],
     [
-      257,
-      171,
-      1,
-      169,
-      2,
-      "MASK"
-    ],
-    [
-      258,
-      171,
-      0,
-      170,
-      0,
-      "IMAGE"
-    ],
-    [
-      261,
-      176,
-      0,
-      171,
-      3,
-      "MASK"
-    ],
-    [
-      264,
-      172,
-      1,
-      174,
-      0,
-      "MASK"
-    ],
-    [
-      266,
-      174,
-      0,
-      176,
-      0,
-      "MASK"
-    ],
-    [
-      267,
-      177,
-      0,
-      176,
-      1,
-      "MASK"
-    ],
-    [
-      268,
-      175,
-      1,
-      177,
-      0,
-      "MASK"
-    ],
-    [
-      269,
-      20,
-      0,
-      172,
-      0,
-      "IMAGE"
-    ],
-    [
-      270,
-      20,
-      0,
-      175,
-      0,
-      "IMAGE"
-    ],
-    [
       273,
       76,
       0,
@@ -3796,35 +3410,11 @@
       "MASK"
     ],
     [
-      281,
-      179,
-      0,
-      171,
-      1,
-      "MASK"
-    ],
-    [
       283,
       76,
       0,
       115,
       0,
-      "IMAGE"
-    ],
-    [
-      294,
-      20,
-      0,
-      171,
-      0,
-      "IMAGE"
-    ],
-    [
-      295,
-      20,
-      0,
-      171,
-      2,
       "IMAGE"
     ],
     [
@@ -4218,6 +3808,22 @@
       38,
       1,
       "STRING"
+    ],
+    [
+      381,
+      20,
+      0,
+      170,
+      0,
+      "IMAGE"
+    ],
+    [
+      382,
+      179,
+      0,
+      169,
+      2,
+      "MASK"
     ]
   ],
   "groups": [
@@ -4309,10 +3915,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.19487171000002285,
+      "scale": 0.37974983358328895,
       "offset": [
-        -1443.5886227458964,
-        2145.24916392255
+        -4822.0721997593155,
+        574.8571559682756
       ]
     }
   },
