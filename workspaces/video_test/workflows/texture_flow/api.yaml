@@ -20,7 +20,7 @@ parameters:
   description: Style images driving the content of the generated video (through IP-adapter)
   type: image[]
   min_length: 1
-  max_length: 6
+  max_length: 4
   required: true
   comfyui: 
     node_id: 74
@@ -101,7 +101,7 @@ parameters:
   type: video
   visible_if: use_controlnet1=true
   comfyui: 
-    node_id: 113
+    node_id: 532
     field: inputs
     subfield: video
 - name: control_input_fit_strategy
@@ -164,22 +164,17 @@ parameters:
   label: Motion Mode
   description: Motion mode that controls how the style images will get mapped into the video
   type: string
-  choices: [horizontal_stripes, vertical_stripes, progressive_rotating_segment, rotating_segments, concentric_circles, concentric_rectangles]
-  default: concentric_circles
+  choices: [concentric_circles_inwards, concentric_circles_outwards, 
+                          concentric_rectangles_inwards, concentric_rectangles_outwards, 
+                          rotating_segments_clockwise, rotating_segments_counter_clockwise, 
+                          pushing_segments_clockwise, pushing_segments_counter_clockwise, 
+                          vertical_stripes_left, vertical_stripes_right, 
+                          horizontal_stripes_up, horizontal_stripes_down]
+  default: concentric_circles_outwards
   comfyui: 
     node_id: 198
     field: inputs
     subfield: mode
-- name: invert_motion
-  label: Invert Motion Mask
-  description: Inverts the motion_mode (moving inwards instead of outwards, up instead of down etc)
-  type: bool
-  hide_from_agent: true
-  default: true
-  comfyui: 
-    node_id: 198
-    field: inputs
-    subfield: invert_motion
 - name: motion_scale
   label: Motion Scale
   description: Motion scale for the animation, determines how much motion will be in the final video. Highly recommended to leave this at default.

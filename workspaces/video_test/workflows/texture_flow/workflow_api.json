@@ -242,25 +242,6 @@
       "title": "Load ControlNet Model"
     }
   },
-  "113": {
-    "inputs": {
-      "video": "a_black_video.mp4",
-      "force_rate": 0,
-      "force_size": "Custom Width",
-      "custom_width": 768,
-      "custom_height": 512,
-      "frame_load_cap": [
-        "510",
-        0
-      ],
-      "skip_first_frames": 0,
-      "select_every_nth": 1
-    },
-    "class_type": "VHS_LoadVideo",
-    "_meta": {
-      "title": "Load Video (Upload) 🎥🅥🅗🅢"
-    }
-  },
   "116": {
     "inputs": {
       "strength": 0.3,
@@ -301,7 +282,7 @@
   "136": {
     "inputs": {
       "n_color_clusters": [
-        "198",
+        "536",
         1
       ],
       "clustering_resolution": 256,
@@ -675,28 +656,6 @@
       "title": "Prep Image For ClipVision"
     }
   },
-  "198": {
-    "inputs": {
-      "total_frames": [
-        "509",
-        0
-      ],
-      "num_colors": [
-        "270",
-        0
-      ],
-      "bands_visible_per_frame": 0.9,
-      "angle": 0,
-      "mode": "concentric_circles",
-      "width": 512,
-      "height": 512,
-      "invert_motion": true
-    },
-    "class_type": "Animation_RGB_Mask",
-    "_meta": {
-      "title": "Animation_RGB_Mask"
-    }
-  },
   "199": {
     "inputs": {
       "frame_rate": 12,
@@ -857,7 +816,7 @@
     "inputs": {
       "output": "",
       "source": [
-        "113",
+        "532",
         3
       ]
     },
@@ -875,7 +834,7 @@
       "condition": "always",
       "multiple_of": 32,
       "image": [
-        "198",
+        "536",
         0
       ]
     },
@@ -899,7 +858,7 @@
       "condition": "always",
       "multiple_of": 0,
       "image": [
-        "113",
+        "532",
         0
       ]
     },
@@ -942,7 +901,7 @@
   },
   "273": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -1121,7 +1080,7 @@
   },
   "412": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -1150,7 +1109,7 @@
   },
   "415": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -1471,7 +1430,7 @@
         0
       ],
       "n_source_frames": [
-        "113",
+        "532",
         1
       ],
       "policy": "closest"
@@ -1579,6 +1538,46 @@
     "class_type": "Display Int (rgthree)",
     "_meta": {
       "title": "Display Int (rgthree)"
+    }
+  },
+  "532": {
+    "inputs": {
+      "video": "a_black_video.mp4",
+      "force_rate": 0,
+      "force_size": "Custom Width",
+      "custom_width": 768,
+      "custom_height": 512,
+      "frame_load_cap": [
+        "510",
+        0
+      ],
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "536": {
+    "inputs": {
+      "total_frames": [
+        "509",
+        0
+      ],
+      "num_colors": [
+        "270",
+        0
+      ],
+      "bands_visible_per_frame": 0.9,
+      "angle": 0,
+      "mode": "concentric_rectangles_outwards",
+      "width": 512,
+      "height": 512
+    },
+    "class_type": "Animation_RGB_Mask",
+    "_meta": {
+      "title": "Animation_RGB_Mask"
     }
   }
 }
