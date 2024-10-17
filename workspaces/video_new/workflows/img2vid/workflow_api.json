@@ -1,0 +1,500 @@
+{
+  "10": {
+    "inputs": {
+      "seed": 785773861328337,
+      "steps": 10,
+      "cfg": 2,
+      "sampler_name": "lcm",
+      "scheduler": "sgm_uniform",
+      "denoise": 0.65,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "548",
+        0
+      ],
+      "positive": [
+        "13",
+        1
+      ],
+      "negative": [
+        "13",
+        2
+      ],
+      "latent_image": [
+        "538",
+        0
+      ],
+      "optional_vae": [
+        "13",
+        4
+      ]
+    },
+    "class_type": "KSampler (Efficient)",
+    "_meta": {
+      "title": "KSampler (Efficient)"
+    }
+  },
+  "13": {
+    "inputs": {
+      "ckpt_name": "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors",
+      "vae_name": "Baked VAE",
+      "clip_skip": -1,
+      "lora_name": "None",
+      "lora_model_strength": 1,
+      "lora_clip_strength": 1,
+      "positive": [
+        "513",
+        2
+      ],
+      "negative": "nsfw, shutterstock, watermark, text, blurry, low-resolution, bad quality, ugly, cropped, nude, naked, NSFW, embedding:NEG_EMBED_STABLE_YOGI_V3",
+      "token_normalization": "none",
+      "weight_interpretation": "comfy",
+      "empty_latent_width": [
+        "533",
+        1
+      ],
+      "empty_latent_height": [
+        "533",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "Efficient Loader",
+    "_meta": {
+      "title": "Efficient Loader"
+    }
+  },
+  "16": {
+    "inputs": {
+      "model_name": "AnimateLCM_sd15_t2v.ckpt",
+      "beta_schedule": "lcm",
+      "motion_scale": 1.2,
+      "apply_v2_models_properly": true,
+      "model": [
+        "13",
+        0
+      ],
+      "context_options": [
+        "17",
+        0
+      ],
+      "sample_settings": [
+        "213",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderWithContext",
+    "_meta": {
+      "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+    }
+  },
+  "17": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "closed_loop": true,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_LoopedUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "213": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "default",
+      "seed_gen": "comfy",
+      "seed_offset": 0,
+      "adapt_denoise_steps": true
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "353": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "354": {
+    "inputs": {
+      "upscale_model": [
+        "353",
+        0
+      ],
+      "image": [
+        "10",
+        5
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "355": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 10,
+      "multiplier": 2,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "354",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "440": {
+    "inputs": {
+      "image": "6092255f11078c399f9d89c2b9a79f04.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "466": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "img2vid",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 16,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "355",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "471": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "509": {
+    "inputs": {
+      "pixels": [
+        "533",
+        0
+      ],
+      "vae": [
+        "13",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "513": {
+    "inputs": {
+      "text_input": "",
+      "task": "detailed_caption",
+      "fill_mask": true,
+      "keep_model_loaded": false,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": 387442411481509,
+      "image": [
+        "533",
+        0
+      ],
+      "florence2_model": [
+        "514",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "514": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "515": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "513",
+        2
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "530": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "532",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "532": {
+    "inputs": {
+      "width": [
+        "533",
+        1
+      ],
+      "height": [
+        "533",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "555",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "533": {
+    "inputs": {
+      "width": [
+        "563",
+        0
+      ],
+      "height": [
+        "563",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 64,
+      "image": [
+        "440",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "535": {
+    "inputs": {
+      "value": 1536
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Resolution"
+    }
+  },
+  "538": {
+    "inputs": {
+      "samples": [
+        "554",
+        0
+      ],
+      "mask": [
+        "530",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask",
+    "_meta": {
+      "title": "Set Latent Noise Mask"
+    }
+  },
+  "540": {
+    "inputs": {
+      "mask": [
+        "530",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "548": {
+    "inputs": {
+      "weight": 1.1,
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "enhance_tiles": 2,
+      "enhance_ratio": 1,
+      "model": [
+        "471",
+        0
+      ],
+      "ipadapter": [
+        "471",
+        1
+      ],
+      "image": [
+        "533",
+        0
+      ]
+    },
+    "class_type": "IPAdapterClipVisionEnhancer",
+    "_meta": {
+      "title": "IPAdapter ClipVision Enhancer"
+    }
+  },
+  "554": {
+    "inputs": {
+      "amount": [
+        "559",
+        0
+      ],
+      "samples": [
+        "509",
+        0
+      ]
+    },
+    "class_type": "Eden_RepeatLatentBatch",
+    "_meta": {
+      "title": "Eden_RepeatLatentBatch"
+    }
+  },
+  "555": {
+    "inputs": {
+      "boolean": [
+        "556",
+        0
+      ],
+      "on_true": [
+        "557",
+        0
+      ],
+      "on_false": [
+        "558",
+        0
+      ]
+    },
+    "class_type": "Switch image [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch image"
+    }
+  },
+  "556": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use Motion Brush"
+    }
+  },
+  "557": {
+    "inputs": {
+      "image": "A_white_image.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Motion Mask Image"
+    }
+  },
+  "558": {
+    "inputs": {
+      "width": [
+        "533",
+        1
+      ],
+      "height": [
+        "533",
+        2
+      ],
+      "red": 255,
+      "green": 255,
+      "blue": 255
+    },
+    "class_type": "Image Blank",
+    "_meta": {
+      "title": "Image Blank"
+    }
+  },
+  "559": {
+    "inputs": {
+      "value": 32
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Num frames"
+    }
+  },
+  "563": {
+    "inputs": {
+      "width": [
+        "535",
+        0
+      ],
+      "height": [
+        "535",
+        0
+      ],
+      "output_multiplier": 0.5,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  }
+}
