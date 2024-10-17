@@ -1,6 +1,6 @@
 {
   "last_node_id": 548,
-  "last_link_id": 1135,
+  "last_link_id": 1136,
   "nodes": [
     {
       "id": 159,
@@ -4147,7 +4147,7 @@
         26
       ],
       "flags": {},
-      "order": 31,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -4190,7 +4190,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 32,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -4513,6 +4513,14 @@
           "name": "vae",
           "type": "VAE",
           "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "link": 1136,
+          "widget": {
+            "name": "frame_rate"
+          }
         }
       ],
       "outputs": [
@@ -5636,62 +5644,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 293,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 5665.0341796875,
-        "1": 276.7275390625
-      },
-      "size": {
-        "0": 210,
-        "1": 218
-      },
-      "flags": {},
-      "order": 130,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 663
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            662
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        "keep proportion",
-        "always",
-        64
-      ]
-    },
-    {
       "id": 74,
       "type": "LoadRandomImage",
       "pos": {
@@ -5817,76 +5769,6 @@
         72,
         "fixed"
       ]
-    },
-    {
-      "id": 235,
-      "type": "KSampler",
-      "pos": {
-        "0": 6071.8857421875,
-        "1": 289.6480712890625
-      },
-      "size": {
-        "0": 254.91952514648438,
-        "1": 262
-      },
-      "flags": {},
-      "order": 133,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 969
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 610
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 611
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 811
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 1037,
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            1100
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        224674450220138,
-        "randomize",
-        12,
-        2,
-        "lcm",
-        "sgm_uniform",
-        0.27
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
     },
     {
       "id": 426,
@@ -6972,42 +6854,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 487,
-      "type": "Eden_Float",
-      "pos": {
-        "0": -910,
-        "1": -290
-      },
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 23,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            1022,
-            1023,
-            1074
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Render_FPS",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        8
-      ]
-    },
-    {
       "id": 510,
       "type": "Eden_Int",
       "pos": {
@@ -7019,7 +6865,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 24,
+      "order": 23,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -7206,7 +7052,7 @@
         437.3212275805271
       ],
       "flags": {},
-      "order": 33,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -7292,6 +7138,169 @@
           "muted": false
         }
       }
+    },
+    {
+      "id": 487,
+      "type": "Eden_Float",
+      "pos": {
+        "0": -910,
+        "1": -290
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            1022,
+            1023,
+            1074,
+            1136
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Render_FPS",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        8
+      ]
+    },
+    {
+      "id": 293,
+      "type": "ImageResize+",
+      "pos": {
+        "0": 5665.0341796875,
+        "1": 276.7275390625
+      },
+      "size": {
+        "0": 210,
+        "1": 218
+      },
+      "flags": {},
+      "order": 130,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 663
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            662
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1152,
+        1152,
+        "lanczos",
+        "keep proportion",
+        "always",
+        64
+      ]
+    },
+    {
+      "id": 235,
+      "type": "KSampler",
+      "pos": {
+        "0": 6071.8857421875,
+        "1": 289.6480712890625
+      },
+      "size": {
+        "0": 254.91952514648438,
+        "1": 262
+      },
+      "flags": {},
+      "order": 133,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 969
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 610
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 611
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 811
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 1037,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            1100
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        224674450220138,
+        "randomize",
+        12,
+        2,
+        "lcm",
+        "sgm_uniform",
+        0.3
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -9230,90 +9239,26 @@
       545,
       0,
       "*"
+    ],
+    [
+      1136,
+      487,
+      0,
+      199,
+      4,
+      "FLOAT"
     ]
   ],
   "groups": [
     {
-      "title": "Sampling",
+      "title": "ControlNet2",
       "bounding": [
-        4135,
-        -947,
-        1210,
-        1121
-      ],
-      "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "ControlNet1",
-      "bounding": [
-        1676,
-        410,
-        1253,
-        1188
+        3015,
+        411,
+        1279,
+        1175
       ],
       "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "IPAdapters",
-      "bounding": [
-        1354,
-        -2364,
-        2665,
-        2411
-      ],
-      "color": "#b06634",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Settings / Checkpoint",
-      "bounding": [
-        -1025,
-        -902,
-        1702,
-        1087
-      ],
-      "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Controlnet",
-      "bounding": [
-        -1027,
-        247,
-        720,
-        970
-      ],
-      "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Post-Process",
-      "bounding": [
-        6670,
-        -417,
-        750,
-        391
-      ],
-      "color": "#A88",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "SecondPass",
-      "bounding": [
-        5446,
-        158,
-        1174,
-        808
-      ],
-      "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     },
@@ -9330,14 +9275,86 @@
       "flags": {}
     },
     {
-      "title": "ControlNet2",
+      "title": "SecondPass",
       "bounding": [
-        3015,
-        411,
-        1279,
-        1175
+        5446,
+        158,
+        1174,
+        808
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Post-Process",
+      "bounding": [
+        6670,
+        -417,
+        750,
+        391
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Controlnet",
+      "bounding": [
+        -1027,
+        247,
+        720,
+        970
       ],
       "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Settings / Checkpoint",
+      "bounding": [
+        -1025,
+        -902,
+        1702,
+        1087
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "IPAdapters",
+      "bounding": [
+        1354,
+        -2364,
+        2665,
+        2411
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "ControlNet1",
+      "bounding": [
+        1676,
+        410,
+        1253,
+        1188
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Sampling",
+      "bounding": [
+        4135,
+        -947,
+        1210,
+        1121
+      ],
+      "color": "#8A8",
       "font_size": 24,
       "flags": {}
     }
@@ -9345,10 +9362,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.14641000000001372,
+      "scale": 0.21435888100002137,
       "offset": [
-        2266.294965237659,
-        2341.2023972843554
+        2058.287543623573,
+        1466.0379552507952
       ]
     }
   },

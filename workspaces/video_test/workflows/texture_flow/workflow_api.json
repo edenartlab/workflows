@@ -658,7 +658,10 @@
   },
   "199": {
     "inputs": {
-      "frame_rate": 12,
+      "frame_rate": [
+        "487",
+        0
+      ],
       "loop_count": 0,
       "filename_prefix": "mapping_motion",
       "format": "video/h264-mp4",
@@ -705,7 +708,7 @@
       "cfg": 2,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
-      "denoise": 0.27,
+      "denoise": 0.3,
       "model": [
         "426",
         0
@@ -971,8 +974,8 @@
   },
   "293": {
     "inputs": {
-      "width": 1024,
-      "height": 1024,
+      "width": 1152,
+      "height": 1152,
       "interpolation": "lanczos",
       "method": "keep proportion",
       "condition": "always",

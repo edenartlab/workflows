@@ -86,7 +86,7 @@ parameters:
     field: inputs
     subfield: value  
 - name: use_controlnet1
-  label: Use controlnet1
+  label: Use controlnet
   description: Apply Controlnet shape guidance.
   tip: Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
   type: bool
@@ -172,7 +172,7 @@ parameters:
                           horizontal_stripes_up, horizontal_stripes_down]
   default: concentric_circles_outwards
   comfyui: 
-    node_id: 198
+    node_id: 536
     field: inputs
     subfield: mode
 - name: motion_scale
