@@ -216,7 +216,7 @@
         4,
         false,
         "",
-        741901997312725,
+        381880158127150,
         "randomize"
       ]
     },
@@ -587,78 +587,6 @@
       "bgcolor": "#000"
     },
     {
-      "id": 189,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 5211.13330078125,
-        "1": 802.586181640625
-      },
-      "size": {
-        "0": 210,
-        "1": 218
-      },
-      "flags": {},
-      "order": 49,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 316
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 314,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 315,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            321
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        2048,
-        2048,
-        "lanczos",
-        "keep proportion",
-        "always",
-        64
-      ]
-    },
-    {
       "id": 194,
       "type": "MaskToImage",
       "pos": {
@@ -832,89 +760,6 @@
         "Node name for S&R": "MaskPreview+"
       },
       "widgets_values": []
-    },
-    {
-      "id": 74,
-      "type": "Eden_Int",
-      "pos": {
-        "0": 2097.010498046875,
-        "1": -836.609375
-      },
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            314,
-            315,
-            323,
-            324
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Resolution",
-      "properties": {
-        "Node name for S&R": "Eden_Int"
-      },
-      "widgets_values": [
-        1280
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 48,
-      "type": "LoadImage",
-      "pos": {
-        "0": 1732.0091552734375,
-        "1": -283.60919189453125
-      },
-      "size": {
-        "0": 320,
-        "1": 314
-      },
-      "flags": {
-        "pinned": false
-      },
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "title": "Load Mask Image",
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "WhatsApp Image 2024-09-05 at 06.23.16.jpeg",
-        "image"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 119,
@@ -1108,10 +953,10 @@
         "0": 4632.75048828125,
         "1": -690.8770141601562
       },
-      "size": [
-        210,
-        146
-      ],
+      "size": {
+        "0": 210,
+        "1": 146
+      },
       "flags": {},
       "order": 36,
       "mode": 0,
@@ -1160,12 +1005,12 @@
         "0": 3185,
         "1": -188
       },
-      "size": [
-        176.39999389648438,
-        26
-      ],
+      "size": {
+        "0": 176.39999389648438,
+        "1": 26
+      },
       "flags": {},
-      "order": 20,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -1197,10 +1042,10 @@
         "0": 4411.63671875,
         "1": -679.8973388671875
       },
-      "size": [
-        210,
-        126.24715008467336
-      ],
+      "size": {
+        "0": 210,
+        "1": 126.24714660644531
+      },
       "flags": {},
       "order": 24,
       "mode": 0,
@@ -1308,10 +1153,10 @@
         "0": 4718.5244140625,
         "1": 594.0482177734375
       },
-      "size": [
-        217.4650217383778,
-        98
-      ],
+      "size": {
+        "0": 217.46502685546875,
+        "1": 98
+      },
       "flags": {},
       "order": 38,
       "mode": 0,
@@ -1345,8 +1190,8 @@
           "links": [
             348
           ],
-          "shape": 3,
-          "slot_index": 1
+          "slot_index": 1,
+          "shape": 3
         },
         {
           "name": "result (float_str)",
@@ -1390,40 +1235,6 @@
         "Node name for S&R": "PreviewImage"
       },
       "widgets_values": []
-    },
-    {
-      "id": 217,
-      "type": "Eden_String",
-      "pos": {
-        "0": 3608,
-        "1": 191
-      },
-      "size": {
-        "0": 212.84921264648438,
-        "1": 76
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            368
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Empty_String",
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        ""
-      ]
     },
     {
       "id": 29,
@@ -1675,7 +1486,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 18,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -1696,8 +1507,8 @@
           "links": [
             370
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "title": "Masking Prompt is Empty",
@@ -1749,78 +1560,16 @@
       }
     },
     {
-      "id": 75,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 2514,
-        "1": -509
-      },
-      "size": {
-        "0": 243.29336547851562,
-        "1": 218
-      },
-      "flags": {},
-      "order": 19,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 107
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            374
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            343
-          ],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            344
-          ],
-          "slot_index": 2,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        2048,
-        2048,
-        "lanczos",
-        "keep proportion",
-        "always",
-        32
-      ]
-    },
-    {
       "id": 219,
       "type": "MaskPreview+",
       "pos": {
         "0": 4194,
         "1": -138
       },
-      "size": [
-        210,
-        246
-      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
       "flags": {},
       "order": 37,
       "mode": 0,
@@ -1834,7 +1583,8 @@
       "outputs": [],
       "properties": {
         "Node name for S&R": "MaskPreview+"
-      }
+      },
+      "widgets_values": []
     },
     {
       "id": 55,
@@ -2078,10 +1828,10 @@
         "0": 7533.8447265625,
         "1": 617.4949951171875
       },
-      "size": [
-        184.8000030517578,
-        46
-      ],
+      "size": {
+        "0": 184.8000030517578,
+        "1": 46
+      },
       "flags": {},
       "order": 65,
       "mode": 0,
@@ -2425,10 +2175,10 @@
         "0": 7134,
         "1": -211
       },
-      "size": [
-        525.8233561976258,
-        460.29272788060155
-      ],
+      "size": {
+        "0": 525.8233642578125,
+        "1": 460.292724609375
+      },
       "flags": {},
       "order": 58,
       "mode": 0,
@@ -2460,7 +2210,7 @@
       },
       "flags": {},
       "order": 62,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "image_a",
@@ -2484,53 +2234,15 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_dfjod_00017_.png&type=temp&subfolder=&rand=0.6715540969807452"
+            "url": "/api/view?filename=rgthree.compare._temp_nrjou_00001_.png&type=temp&subfolder=&rand=0.46700030916273017"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_dfjod_00018_.png&type=temp&subfolder=&rand=0.01314660624220032"
+            "url": "/api/view?filename=rgthree.compare._temp_nrjou_00002_.png&type=temp&subfolder=&rand=0.9884032486603471"
           }
         ]
       ]
-    },
-    {
-      "id": 193,
-      "type": "Reroute",
-      "pos": {
-        "0": 5816,
-        "1": 276
-      },
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 51,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 321
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "IMAGE",
-          "links": [
-            317,
-            318,
-            320
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      }
     },
     {
       "id": 179,
@@ -2582,7 +2294,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 5,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2617,7 +2329,7 @@
         "1": 110
       },
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2654,7 +2366,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 7,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2685,12 +2397,12 @@
         "0": 1388,
         "1": -388
       },
-      "size": [
-        311.78514277128306,
-        160.9912939885869
-      ],
+      "size": {
+        "0": 311.78515625,
+        "1": 160.9912872314453
+      },
       "flags": {},
-      "order": 8,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2742,10 +2454,10 @@
         "0": 4416.20556640625,
         "1": -502.4443359375
       },
-      "size": [
-        422.68251504071395,
-        246
-      ],
+      "size": {
+        "0": 422.6825256347656,
+        "1": 246
+      },
       "flags": {},
       "order": 40,
       "mode": 0,
@@ -2769,12 +2481,12 @@
         "0": 4845.20556640625,
         "1": -909.4444580078125
       },
-      "size": [
-        252.4335415470032,
-        148.22951155334886
-      ],
+      "size": {
+        "0": 252.4335479736328,
+        "1": 148.22950744628906
+      },
       "flags": {},
-      "order": 21,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -2818,8 +2530,8 @@
             377,
             378
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -2841,10 +2553,10 @@
         "0": 5125.20556640625,
         "1": -962.4445190429688
       },
-      "size": [
-        351.6281006989966,
-        207.9859183922713
-      ],
+      "size": {
+        "0": 351.62811279296875,
+        "1": 207.9859161376953
+      },
       "flags": {},
       "order": 26,
       "mode": 0,
@@ -2876,7 +2588,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 9,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2902,11 +2614,408 @@
       "bgcolor": "#335"
     },
     {
+      "id": 198,
+      "type": "Display Any (rgthree)",
+      "pos": {
+        "0": 4865.20556640625,
+        "1": -501.4443359375
+      },
+      "size": {
+        "0": 392.7173767089844,
+        "1": 214.17822265625
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 338,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 218,
+      "type": "Note",
+      "pos": {
+        "0": 2076.445068359375,
+        "1": -439.9999694824219
+      },
+      "size": {
+        "0": 380.5951843261719,
+        "1": 188.9716339111328
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "For Inpainting Prompt:\nGPT4-vision will be used to inject this content into the image (in place of the masked regions). If this prompt is empty, GPT will imagine what's there (guess mode).\n\n\n\nFor Masking Prompt:\n- If the string is non-empty: the string will be used to auto-generate a mask using Florence2 + SAM\n- If the string is empty, the provided mask image will be used instead. This means that EITHER a mask image OR a masking prompt must be provided!"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 197,
+      "type": "ImageDescriptionNode",
+      "pos": {
+        "0": 4860.74951171875,
+        "1": -689.8770141601562
+      },
+      "size": {
+        "0": 400.0904235839844,
+        "1": 172.59954833984375
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 339
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 378,
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            338,
+            380
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageDescriptionNode"
+      },
+      "widgets_values": [
+        250,
+        "https://api.openai.com/v1",
+        "gpt-4-vision Low",
+        "Give me a visual description of this image (IMPORTANT: ignore the black, missing regions completely in your description!!). Limit the description to max 50 words. Reply with just the description, nothing else."
+      ]
+    },
+    {
+      "id": 222,
+      "type": "Eden_String",
+      "pos": {
+        "0": 4413.20556640625,
+        "1": -913.4444580078125
+      },
+      "size": {
+        "0": 392.1147766113281,
+        "1": 162.2428741455078
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            376
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "Provide a visual description \"prompt\" of this image. IMPORTANT: re-imagine the black (masked) regions in the image based on the provided inpainting prompt. If no inpainting prompt is given, just imagine what might naturally fit in those spaces. Limit the final imagined image description to 50 words. Dont mention the black regions, just reply with the full description of that new imagined image, nothing else. Inpainting prompt:"
+      ]
+    },
+    {
+      "id": 53,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1734.0091552734375,
+        "1": -655.609130859375
+      },
+      "size": {
+        "0": 320,
+        "1": 314
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            107
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            243
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "01.jpg",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 122,
+      "type": "MaskPreview+",
+      "pos": {
+        "0": 4975,
+        "1": 493
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 184
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MaskPreview+"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 65,
+      "type": "Eden_Seed",
+      "pos": {
+        "0": 1747.00927734375,
+        "1": -826.609375
+      },
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            92,
+            122
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "seed_string",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Seed"
+      },
+      "widgets_values": [
+        95,
+        "increment"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 191,
+      "type": "MaskBlur+",
+      "pos": {
+        "0": 5439.13330078125,
+        "1": 591.5862426757812
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 310
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            311,
+            313
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskBlur+"
+      },
+      "widgets_values": [
+        120,
+        "auto"
+      ]
+    },
+    {
+      "id": 190,
+      "type": "GrowMask",
+      "pos": {
+        "0": 5440.13330078125,
+        "1": 456.5863037109375
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 328
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            310
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMask"
+      },
+      "widgets_values": [
+        36,
+        true
+      ]
+    },
+    {
+      "id": 75,
+      "type": "ImageResize+",
+      "pos": {
+        "0": 2514,
+        "1": -509
+      },
+      "size": {
+        "0": 243.29336547851562,
+        "1": 218
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 107
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            374
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            343
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            344
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        2048,
+        2048,
+        "lanczos",
+        "keep proportion",
+        "always",
+        32
+      ]
+    },
+    {
       "id": 20,
       "type": "DetailerForEach",
       "pos": {
-        "0": 6484.7265625,
-        "1": -104.91455078125
+        "0": 6485,
+        "1": -105
       },
       "size": {
         "0": 399.1683654785156,
@@ -2998,7 +3107,7 @@
         512,
         true,
         1024,
-        76308542749185,
+        1120847916813589,
         "randomize",
         35,
         1,
@@ -3017,143 +3126,197 @@
       "bgcolor": "#290052"
     },
     {
-      "id": 198,
-      "type": "Display Any (rgthree)",
+      "id": 193,
+      "type": "Reroute",
       "pos": {
-        "0": 4865.20556640625,
-        "1": -501.4443359375
+        "0": 5816,
+        "1": 276
       },
       "size": [
-        392.7173676919656,
-        214.17821724585508
+        75,
+        26
       ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 42,
+      "flags": {},
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
-          "name": "source",
+          "name": "",
           "type": "*",
-          "link": 338,
-          "dir": 3
+          "link": 321
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            317,
+            318,
+            320
+          ],
+          "slot_index": 0
+        }
+      ],
       "properties": {
-        "Node name for S&R": "Display Any (rgthree)"
-      },
-      "widgets_values": [
-        ""
-      ]
+        "showOutputText": false,
+        "horizontal": false
+      }
     },
     {
-      "id": 218,
-      "type": "Note",
+      "id": 189,
+      "type": "ImageResize+",
       "pos": {
-        "0": 2076.445068359375,
-        "1": -439.9999694824219
+        "0": 5211,
+        "1": 803
       },
-      "size": [
-        380.5951786540045,
-        188.97163577021087
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "For Inpainting Prompt:\nGPT4-vision will be used to inject this content into the image (in place of the masked regions). If this prompt is empty, GPT will imagine what's there (guess mode).\n\n\n\nFor Masking Prompt:\n- If the string is non-empty: the string will be used to auto-generate a mask using Florence2 + SAM\n- If the string is empty, the provided mask image will be used instead. This means that EITHER a mask image OR a masking prompt must be provided!"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 197,
-      "type": "ImageDescriptionNode",
-      "pos": {
-        "0": 4860.74951171875,
-        "1": -689.8770141601562
+      "size": {
+        "0": 210,
+        "1": 218
       },
-      "size": [
-        400.09043548747013,
-        172.59954848766017
-      ],
       "flags": {},
-      "order": 39,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 339
+          "link": 316
         },
         {
-          "name": "prompt",
-          "type": "STRING",
-          "link": 378,
+          "name": "width",
+          "type": "INT",
+          "link": 314,
           "widget": {
-            "name": "prompt"
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 315,
+          "widget": {
+            "name": "height"
           }
         }
       ],
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            338,
-            380
+            321
           ],
           "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "ImageDescriptionNode"
+        "Node name for S&R": "ImageResize+"
       },
       "widgets_values": [
-        250,
-        "https://api.openai.com/v1",
-        "gpt-4-vision Low",
-        "Give me a visual description of this image (IMPORTANT: ignore the black, missing regions completely in your description!!). Limit the description to max 50 words. Reply with just the description, nothing else."
+        2048,
+        2048,
+        "lanczos",
+        "keep proportion",
+        "always",
+        64
       ]
     },
     {
-      "id": 222,
-      "type": "Eden_String",
+      "id": 74,
+      "type": "Eden_Int",
       "pos": {
-        "0": 4413.20556640625,
-        "1": -913.4444580078125
+        "0": 2097.010498046875,
+        "1": -836.609375
       },
-      "size": [
-        392.11478138774146,
-        162.24288123317774
-      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
       "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
+          "name": "INT",
+          "type": "INT",
           "links": [
-            376
+            314,
+            315,
+            323,
+            324
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
+      "title": "Resolution",
       "properties": {
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_Int"
       },
       "widgets_values": [
-        "Provide a visual description \"prompt\" of this image. IMPORTANT: re-imagine the black (masked) regions in the image based on the provided inpainting prompt. If no inpainting prompt is given, just imagine what might naturally fit in those spaces. Limit the final imagined image description to 50 words. Dont mention the black regions, just reply with the full description of that new imagined image, nothing else. Inpainting prompt:"
-      ]
+        1152
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 48,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1732.0091552734375,
+        "1": -283.60919189453125
+      },
+      "size": {
+        "0": 320,
+        "1": 314
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "title": "Load Mask Image",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "A_black_image.jpg",
+        "image"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 66,
@@ -3162,12 +3325,12 @@
         "0": 2082.445068359375,
         "1": -185.9998779296875
       },
-      "size": [
-        363.76260912610724,
-        120.81829672339302
-      ],
+      "size": {
+        "0": 363.7626037597656,
+        "1": 120.81829833984375
+      },
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3187,125 +3350,10 @@
         "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        "hair"
+        "background"
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 53,
-      "type": "LoadImage",
-      "pos": {
-        "0": 1734.0091552734375,
-        "1": -655.609130859375
-      },
-      "size": {
-        "0": 320,
-        "1": 314
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            107
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            243
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "01.jpg",
-        "image"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 122,
-      "type": "MaskPreview+",
-      "pos": {
-        "0": 4975,
-        "1": 493
-      },
-      "size": {
-        "0": 210,
-        "1": 246
-      },
-      "flags": {},
-      "order": 44,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 184
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "MaskPreview+"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 65,
-      "type": "Eden_Seed",
-      "pos": {
-        "0": 1747.00927734375,
-        "1": -826.609375
-      },
-      "size": {
-        "0": 315,
-        "1": 102
-      },
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "seed",
-          "type": "INT",
-          "links": [
-            92,
-            122
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "seed_string",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Seed"
-      },
-      "widgets_values": [
-        92,
-        "increment"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
     },
     {
       "id": 67,
@@ -3314,12 +3362,12 @@
         "0": 2075.445068359375,
         "1": -617.9999389648438
       },
-      "size": [
-        379.2530034708552,
-        129.94917638062697
-      ],
+      "size": {
+        "0": 379.25299072265625,
+        "1": 129.9491729736328
+      },
       "flags": {},
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3338,90 +3386,43 @@
         "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        "funky hair, flashy colors"
+        "beach"
       ],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
-      "id": 191,
-      "type": "MaskBlur+",
+      "id": 217,
+      "type": "Eden_String",
       "pos": {
-        "0": 5439.13330078125,
-        "1": 591.5862426757812
+        "0": 3601,
+        "1": -67
       },
       "size": {
-        "0": 210,
-        "1": 82
+        "0": 212.84921264648438,
+        "1": 76
       },
       "flags": {},
-      "order": 53,
+      "order": 15,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 310
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "name": "MASK",
-          "type": "MASK",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            311,
-            313
+            368
           ],
           "slot_index": 0,
           "shape": 3
         }
       ],
+      "title": "Empty_String",
       "properties": {
-        "Node name for S&R": "MaskBlur+"
+        "Node name for S&R": "Eden_String"
       },
       "widgets_values": [
-        120,
-        "auto"
-      ]
-    },
-    {
-      "id": 190,
-      "type": "GrowMask",
-      "pos": {
-        "0": 5440.13330078125,
-        "1": 456.5863037109375
-      },
-      "size": {
-        "0": 210,
-        "1": 82
-      },
-      "flags": {},
-      "order": 52,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask",
-          "type": "MASK",
-          "link": 328
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            310
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GrowMask"
-      },
-      "widgets_values": [
-        36,
-        true
+        ""
       ]
     }
   ],
@@ -4221,62 +4222,14 @@
   ],
   "groups": [
     {
-      "title": "Subcrop",
+      "title": "Generate auto-caption",
       "bounding": [
-        4709,
-        245,
-        1194,
-        786
+        4402,
+        -1036,
+        1085,
+        790
       ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "SEGS Detailer",
-      "bounding": [
-        6163,
-        -180,
-        730,
-        676
-      ],
-      "color": "#6900d1",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Model Loader and Prompt",
-      "bounding": [
-        5615,
-        -663,
-        1058,
-        445
-      ],
-      "color": "#3de600",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Auto-Mask generation",
-      "bounding": [
-        2887,
-        -1201,
-        985,
-        850
-      ],
-      "color": "#444",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Inputs",
-      "bounding": [
-        1723,
-        -899,
-        748,
-        939
-      ],
-      "color": "#3f789e",
+      "color": "#b58b2a",
       "font_size": 24,
       "flags": {}
     },
@@ -4293,14 +4246,62 @@
       "flags": {}
     },
     {
-      "title": "Generate auto-caption",
+      "title": "Inputs",
       "bounding": [
-        4402,
-        -1036,
-        1085,
-        790
+        1723,
+        -899,
+        748,
+        939
       ],
-      "color": "#b58b2a",
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Auto-Mask generation",
+      "bounding": [
+        2887,
+        -1201,
+        985,
+        850
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Model Loader and Prompt",
+      "bounding": [
+        5615,
+        -663,
+        1058,
+        445
+      ],
+      "color": "#3de600",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "SEGS Detailer",
+      "bounding": [
+        6163,
+        -180,
+        730,
+        676
+      ],
+      "color": "#6900d1",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Subcrop",
+      "bounding": [
+        4709,
+        245,
+        1194,
+        786
+      ],
+      "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     }
@@ -4308,10 +4309,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.25401326852424705,
+      "scale": 0.19487171000002285,
       "offset": [
-        -3880.4088793913816,
-        1065.696547920159
+        -1443.5886227458964,
+        2145.24916392255
       ]
     }
   },
