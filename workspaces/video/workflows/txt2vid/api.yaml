@@ -1,5 +1,6 @@
 name: Create a video from text
 description: Generate a video from a text description.
+thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/txt2vid_lora_opt.mp4
 tip: Use this to make videos from text prompts. It's better to use this instead of lerp because it doesn't use AnimateDiff.
 output_type: video
 cost_estimate: 0.5 * n_frames
@@ -21,7 +22,6 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
-  required: true
   default: 1024
   minimum: 512
   maximum: 2048
@@ -34,7 +34,6 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
-  required: true
   default: 1024
   minimum: 512
   maximum: 2048
