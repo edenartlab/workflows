@@ -296,6 +296,8 @@ if __name__ == '__main__':
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
 python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/workspaces/flux_inpainting/workflows/flux_inpainting
 
+drmbt:
+python generate_snapshot.py B:\AI\StabilityMatrix-win-x64\Data\Packages\ComfyUI-Flux C:\github\workflows\workspaces\batch_tools\workflows\background_removal
     """
 
     if len(sys.argv) != 3:

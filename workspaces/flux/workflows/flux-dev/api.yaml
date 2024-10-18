@@ -1,5 +1,6 @@
 name: Create an image (Advanced)
 description: Generate an image from text with Flux Dev including starting image, controlnet and ip-adapter.
+thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/flux.png
 tip: Flux is a text to image model that excels at prompt coherence and text generation. This should always be the default way to generate an image from text! Flux-dev can use ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, and LoRA models to apply a pretrained fine tuned concept.
 output_type: image
 base_model: flux-dev
@@ -10,7 +11,7 @@ comfyui_output_node_id: 206
 parameters:
 - name: prompt
   label: Prompt
-  description: Text prompt
+  description: Describe an image
   tip: Flux loves very detailed and descriptive prompts so try to be elaborate. Flux is also great at drawing text in images so feel free to add something if it makes sense.
   type: string
   required: true
@@ -166,7 +167,6 @@ parameters:
   label: Width
   description: Width in pixels
   type: int
-  required: true
   default: 1024
   minimum: 256
   maximum: 2048
@@ -180,7 +180,6 @@ parameters:
   label: Height
   description: Height in pixels
   type: int
-  required: true
   default: 1024
   minimum: 256
   maximum: 2048

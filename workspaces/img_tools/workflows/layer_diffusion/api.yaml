@@ -1,5 +1,6 @@
 name: Create an image with transparency
 description: Generate an image with transparency in the alpha channel.
+thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/layer_diffusion.png
 tip: Background removal can do a great job of isolating a subject, but for transparent objects a fully opaque masked object may not be enough. Layer Diffusion calculates transparency, returning a .png image with alpha estimated pixel values for generating isolated transparent objects
 output_type: image
 cost_estimate: 1 * n_samples
@@ -9,7 +10,7 @@ comfyui_output_node_id: 30
 parameters:
 - name: prompt
   label: Prompt
-  description: Text prompt
+  description: Describe an image with transparency
   type: string
   required: true
   comfyui: 
