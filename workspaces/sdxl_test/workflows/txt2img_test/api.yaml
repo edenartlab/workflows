@@ -120,6 +120,8 @@ parameters:
   label: LoRA prompt
   description: textual embedding token, invoked to trigger the LoRA
   type: string
+  hide_from_agent: true
+  hide_from_ui: true
   visible_if: use_lora=true
   comfyui: 
     node_id: 243
