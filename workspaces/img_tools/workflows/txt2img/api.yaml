@@ -124,17 +124,9 @@ parameters:
   minimum: 0.0
   maximum: 1.25
   visible_if: use_lora=true
+  hide_from_ui: true
   comfyui: 
     node_id: 312
-    field: inputs
-    subfield: value
-- name: lora_prompt
-  label: LoRA prompt
-  description: textual embedding token, invoked to trigger the LoRA
-  type: string
-  visible_if: use_lora=true
-  comfyui: 
-    node_id: 243
     field: inputs
     subfield: value
 - name: use_controlnet
