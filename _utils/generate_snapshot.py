@@ -204,6 +204,10 @@ additional_node_url_mappings = {
     "Switch string [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "Eden_Math": "https://github.com/edenartlab/eden_comfy_pipelines",
     "Eden_Seed": "https://github.com/edenartlab/eden_comfy_pipelines",
+    "StringListToCombo": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "LogicGateInvertBasic": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "FloorNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "MultiplyNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git"
     }
 
 

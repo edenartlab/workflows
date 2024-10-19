@@ -1,0 +1,329 @@
+{
+  "last_node_id": 38,
+  "last_link_id": 70,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "SDPromptSaver",
+      "pos": {
+        "0": -1873,
+        "1": -1018
+      },
+      "size": {
+        "0": 340.6305847167969,
+        "1": 776
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 69
+        },
+        {
+          "name": "lora_name",
+          "type": "*",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "model_name",
+          "type": "COMBO",
+          "link": null,
+          "slot_index": 2,
+          "widget": {
+            "name": "model_name"
+          }
+        },
+        {
+          "name": "vae_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "vae_name"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null,
+          "slot_index": 4,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null,
+          "slot_index": 5,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null,
+          "slot_index": 7,
+          "widget": {
+            "name": "sampler_name"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "slot_index": 9,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "slot_index": 10,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "positive"
+          }
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": null,
+          "slot_index": 12,
+          "widget": {
+            "name": "negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FILENAME",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "FILE_PATH",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDPromptSaver"
+      },
+      "widgets_values": [
+        "%counter_reordered",
+        "%date/%time/",
+        "CheckpointYesmix_v35.safetensors",
+        "kl-f8-anime2.ckpt",
+        979270701061527,
+        "randomize",
+        30,
+        8,
+        "euler",
+        "normal",
+        1,
+        1,
+        "",
+        "",
+        "png",
+        true,
+        true,
+        true,
+        95,
+        "%Y-%m-%d",
+        "%H-%M",
+        false,
+        "SD Prompt Reader Node Example Image"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "DRMBT_LoadMedia",
+      "pos": {
+        "0": -2754,
+        "1": -998
+      },
+      "size": {
+        "0": 352.79998779296875,
+        "1": 542
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            69
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "WIDTH",
+          "type": "INT",
+          "links": [],
+          "shape": 3
+        },
+        {
+          "name": "HEIGHT",
+          "type": "INT",
+          "links": [],
+          "shape": 3
+        },
+        {
+          "name": "COUNT",
+          "type": "INT",
+          "links": [],
+          "slot_index": 4,
+          "shape": 3
+        },
+        {
+          "name": "FILE_NAME",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 5,
+          "shape": 3
+        },
+        {
+          "name": "FILE_PATH",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 6,
+          "shape": 3
+        },
+        {
+          "name": "PARENT_DIRECTORY",
+          "type": "STRING",
+          "links": [],
+          "shape": 3
+        },
+        {
+          "name": "FPS",
+          "type": "FLOAT",
+          "links": [],
+          "shape": 3
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "PROMPT",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA_RAW",
+          "type": "METADATA_RAW",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DRMBT_LoadMedia"
+      },
+      "widgets_values": [
+        "B:\\AI\\StabilityMatrix-win-x64\\Data\\Images\\input\\foliage",
+        true,
+        0,
+        0,
+        false,
+        675,
+        "fixed",
+        false,
+        0,
+        "visual_path",
+        true,
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      69,
+      4,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        -2293,
+        -1092,
+        794,
+        860
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8954302432552447,
+      "offset": [
+        3129.346341790787,
+        1125.2917197604093
+      ]
+    }
+  },
+  "version": 0.4
+}

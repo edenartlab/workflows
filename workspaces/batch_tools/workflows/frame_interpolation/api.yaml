@@ -1,0 +1,22 @@
+name: FrameInterpolation
+description: Mix multiple images into a video by interpolating between frames. Works with images, archives or video files, and can be used to slow down or speed up a movie.
+thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/style_mixing_opt.mp4
+tip: This workflow creates animations from a set of images or movie. First the input type is determined; whether images, archive, movie or url, the input is parsed and treated as an image batch that can be sorted by metadata or by visual similarity, and then n number of interpolation frames are added in between each provided frame.
+output_type: video
+private: true
+cost_estimate: 10
+handler: comfyui
+comfyui_output_node_id: 15
+parameters:
+- name: images
+  label: Interpolation Images
+  description: Interpolation images are keyframes between which new interpolation frames will be created. folders archives and video are all treated as a batch of frames.
+  type: image[]
+  min_length: 1
+  max_length: 192
+  required: true
+  comfyui: 
+    node_id: 74
+    field: inputs
+    subfield: path
+    preprocessing: folder

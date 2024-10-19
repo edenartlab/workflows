@@ -1,0 +1,173 @@
+{
+  "33": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "downscale if bigger",
+      "multiple_of": 8,
+      "image": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "38": {
+    "inputs": {
+      "filename_prefix": "transparent_foreground",
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "41": {
+    "inputs": {
+      "mask": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "filename_prefix": "mask",
+      "images": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "52": {
+    "inputs": {
+      "mask": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "Invert Mask"
+    }
+  },
+  "53": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "60",
+        0
+      ],
+      "image2": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "ImageBlend",
+    "_meta": {
+      "title": "ImageBlend"
+    }
+  },
+  "54": {
+    "inputs": {
+      "image": [
+        "41",
+        0
+      ],
+      "alpha": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "57": {
+    "inputs": {
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "Images to RGB",
+    "_meta": {
+      "title": "Images to RGB"
+    }
+  },
+  "60": {
+    "inputs": {
+      "torchscript_jit": "default",
+      "image": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembg",
+    "_meta": {
+      "title": "Inspyrenet Rembg"
+    }
+  },
+  "61": {
+    "inputs": {
+      "filename_prefix": "rgb_black_background",
+      "images": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "62": {
+    "inputs": {
+      "path": "B:\\AI\\StabilityMatrix-win-x64\\Data\\Images\\input\\wrecking-ball.gif",
+      "resize_images_to_first": true,
+      "image_load_cap": 0,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 1402,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "Load Media (img, vid or dir)"
+    }
+  },
+  "63": {
+    "inputs": {
+      "images": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "Images to RGB",
+    "_meta": {
+      "title": "Images to RGB"
+    }
+  }
+}
