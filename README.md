@@ -18,6 +18,7 @@
 | `name` | Unique identifier for the parameter |
 | `label` | Human-readable name for the parameter |
 | `description` | Detailed explanation of the parameter's purpose and usage |
+| `thumbnail` | url to optimized thumbnail image or vid less than 500kb. square aspect, 480 or 640, upload [here](https://us-east-1.console.aws.amazon.com/s3/buckets/edenartlab-prod-data?region=us-east-1&bucketType=general&prefix=app/&showversions=false) |
 | `tip` | Additional advice or context for using the parameter effectively (targetted to help AI agents use the tool well) |
 | `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio) |
 | `default` | Default value for the parameter if not specified |

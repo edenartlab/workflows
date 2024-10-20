@@ -1,24 +1,32 @@
-name: Create an image (Fast)
-description: Generate an image from text quickly with Flux Schnell.
-tip: Flux is a text to image model that excels at prompt coherence and text generation. This should always be the default way to generate an image from text!
+name: Remix and Image (flux-schnell)
+description: Remix an image  quickly with Flux Schnell.
+thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/remix-flux-dev_opt.png
+tip: Flux is a text to image model that excels at prompt coherence and text generation. The remix endpoint creates a variation on a starting image using Flux Schnell.
 output_type: image
 cost_estimate: 1 * n_samples
 handler: comfyui
 base_model: flux-schnell
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
-comfyui_output_node_id: 9
+comfyui_output_node_id: 149
 parameters:
-- name: prompt
-  label: Prompt
-  description: Text prompt
-  tip: Flux loves very detailed and descriptive prompts so try to be elaborate. Flux is also great at drawing text in images so feel free to add something if it makes sense.
-  type: string
+- name: n_samples
+  label: Number of samples
+  description: Number of samples to generate
+  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+  type: int
   required: true
-  default:  
+  default: 1
+  minimum: 1
+  maximum: 4
+- name: image
+  label: Image
+  description: Input image to remix
+  type: image
+  required: true
   comfyui: 
-    node_id: 6
+    node_id: 117
     field: inputs
-    subfield: text
+    subfield: image
 - name: width
   label: Width
   description: Width in pixels
@@ -29,7 +37,7 @@ parameters:
   maximum: 2048
   step: 8
   comfyui: 
-    node_id: 5
+    node_id: 145
     field: inputs
     subfield: width
 - name: height
@@ -42,7 +50,7 @@ parameters:
   maximum: 2048
   step: 8
   comfyui: 
-    node_id: 5
+    node_id: 145
     field: inputs
     subfield: height
 - name: seed
@@ -54,14 +62,72 @@ parameters:
   minimum: 0
   maximum: 2147483647
   comfyui: 
-    node_id: 25
+    node_id: 135
     field: inputs
-    subfield: noise_seed
-- name: n_samples
-  label: Number of samples
-  description: Number of samples to generate
-  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
-  type: int
-  default: 1
-  minimum: 1
-  maximum: 4
+    subfield: seed
+- name: prompt
+  label: Prompt (optional)
+  description: Describe details you'd like to see in the image
+  tip: Flux loves very detailed and descriptive prompts so try to be elaborate. The default behavior is to use Florence2 captioning to create a prompt from the starting image. This optional prompt parameter prepends your information to the Florence prompt, and can be used to add specific details to the remix. Keep in mind that the initial image provides most of the guidance, so this parameter will only have a subtle effect; it can add specific details, but likely won't have a strong stylistic influence on the result.
+  type: string
+  default:  
+  comfyui: 
+    node_id: 155
+    field: inputs
+    subfield: body
+- name: advanced
+  label: Show Advanced Parameteres
+  description: Display advaned parameters for web users
+  tip: This parameter is front-end only, and allows web users to see parameters that most users won't require most of the time.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 160
+    field: inputs
+    subfield: value
+- name: denoise
+  label: Generation strength
+  description: Strength of the generation process on top of the starting image
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. A value of 1 is 100% AI creativity, ignoring all influence of the starting image composition, whereas a medium blend of about 50% will maintain very close adherance to the original input. With flux-schnell, we're only using 5 steps; the sweet spot is between 0.6 and 0.83.
+  type: float
+  default: 0.83
+  minimum: 0.0
+  maximum: 1.0
+  visible_if: advanced=true
+  comfyui: 
+    node_id: 89
+    field: inputs
+    subfield: number
+- name: size_from_input
+  label: Use starting image size
+  description: Override the width and height parameters with the actual resolution of your starting image. 
+  tip: It's best practice to use resolutions included in the models training data. Our aspect picker can help find optimized resolutions for width and height, but if you need pixel perfect size from your original image, enable this parameter.
+  type: bool
+  default: true
+  visible_if: advanced=true
+  comfyui: 
+    node_id: 121
+    field: inputs
+    subfield: value
+- name: force_optimized_resolution
+  label: Force Optimized Resolution
+  description: Round your width and height to the nearest resolution optimized for the training data of this model
+  tip: It's best practice to use resolutions included in the models training data. This parameter only has an effect if you are already enabling size_from_input.
+  type: bool
+  default: true
+  visible_if: size_from_input=true
+  comfyui: 
+    node_id: 143
+    field: inputs
+    subfield: value
+- name: print_caption
+  label: Print Caption
+  description: Enabling this parameter prints the config into the bottom of the image. Useful for seeing how the image was interpreted by AI captioning.
+  tip: This should be false by default, but is a nice debugging feature for users to see how their initial image is being interpretted into a prompt.
+  type: bool
+  default: false
+  visible_if: advanced=true
+  comfyui: 
+    node_id: 162
+    field: inputs
+    subfield: value
