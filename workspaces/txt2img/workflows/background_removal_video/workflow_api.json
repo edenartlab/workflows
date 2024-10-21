@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "video": "t2vid-lora.mp4",
+      "video": "61_frames_30_fps_0002.gif",
       "force_rate": 0,
       "force_size": "Disabled",
       "custom_width": 512,
@@ -28,7 +28,7 @@
       "pingpong": false,
       "save_output": true,
       "images": [
-        "15",
+        "21",
         0
       ],
       "audio": [
@@ -69,136 +69,6 @@
     "class_type": "ImageResize+",
     "_meta": {
       "title": "🔧 Image Resize"
-    }
-  },
-  "10": {
-    "inputs": {
-      "mask": [
-        "21",
-        1
-      ]
-    },
-    "class_type": "MaskToImage",
-    "_meta": {
-      "title": "Convert Mask to Image"
-    }
-  },
-  "11": {
-    "inputs": {
-      "mask": [
-        "21",
-        1
-      ]
-    },
-    "class_type": "InvertMask",
-    "_meta": {
-      "title": "InvertMask"
-    }
-  },
-  "12": {
-    "inputs": {
-      "image": [
-        "10",
-        0
-      ],
-      "alpha": [
-        "11",
-        0
-      ]
-    },
-    "class_type": "JoinImageWithAlpha",
-    "_meta": {
-      "title": "Join Image with Alpha"
-    }
-  },
-  "13": {
-    "inputs": {
-      "images": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "Images to RGB",
-    "_meta": {
-      "title": "Images to RGB"
-    }
-  },
-  "14": {
-    "inputs": {
-      "images": [
-        "13",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "15": {
-    "inputs": {
-      "blend_factor": 1,
-      "blend_mode": "multiply",
-      "image1": [
-        "21",
-        0
-      ],
-      "image2": [
-        "12",
-        0
-      ]
-    },
-    "class_type": "ImageBlend",
-    "_meta": {
-      "title": "ImageBlend"
-    }
-  },
-  "16": {
-    "inputs": {
-      "images": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "Images to RGB",
-    "_meta": {
-      "title": "Images to RGB"
-    }
-  },
-  "17": {
-    "inputs": {
-      "images": [
-        "16",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "19": {
-    "inputs": {
-      "images": [
-        "12",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "20": {
-    "inputs": {
-      "images": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
     }
   },
   "21": {

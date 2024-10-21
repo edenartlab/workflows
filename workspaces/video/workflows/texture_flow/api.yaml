@@ -104,18 +104,6 @@ parameters:
     node_id: 532
     field: inputs
     subfield: video
-- name: control_input_fit_strategy
-  label: Fit strategy
-  description: Determines how your guidance input is resized to the target width/height of the generation
-  tip: fill / crop will cut off edges, stretch will distort the control_input and pad can cause strong visual artefacts (not recommended).
-  visible_if: use_controlnet1=true
-  type: string
-  default: fill / crop
-  choices: [stretch, fill / crop, pad]
-  comfyui: 
-    node_id: 262
-    field: inputs
-    subfield: method
 - name: preprocessor1
   label: Controlnet1 preprocessor
   description: Type of controlnet preprocessor. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
@@ -160,9 +148,21 @@ parameters:
     node_id: 116
     field: inputs
     subfield: strength
-- name: motion_mode
-  label: Motion Mode
-  description: Motion mode that controls how the style images will get mapped into the video
+- name: control_input_fit_strategy
+  label: Fit strategy
+  description: Determines how your guidance input is resized to the target width/height of the generation
+  tip: fill / crop will cut off edges, stretch will distort the control_input and pad can cause strong visual artefacts (not recommended).
+  visible_if: use_controlnet1=true
+  type: string
+  default: fill / crop
+  choices: [stretch, fill / crop, pad]
+  comfyui: 
+    node_id: 262
+    field: inputs
+    subfield: method
+- name: mapping_mode
+  label: Content Mapping Mode
+  description: Mapping mode that controls how the style images will get mapped into the video
   type: string
   choices: [concentric_circles_inwards, concentric_circles_outwards, 
                           concentric_rectangles_inwards, concentric_rectangles_outwards, 
@@ -177,7 +177,7 @@ parameters:
     subfield: mode
 - name: motion_scale
   label: Motion Scale
-  description: Motion scale for the animation, determines how much motion will be in the final video. Highly recommended to leave this at default.
+  description: Motion scale for the animation, determines how much animated motion will be in the final video. Recommended to leave this at default.
   tip: The default value of 1.15 is good for most cases. Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. Going above 1.3 is almost never desirable.
   type: float
   default: 1.15
