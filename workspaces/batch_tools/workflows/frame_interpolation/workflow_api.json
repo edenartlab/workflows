@@ -15,7 +15,10 @@
       "bitrate": 10,
       "megabit": true,
       "save_metadata": true,
-      "pingpong": false,
+      "pingpong": [
+        "190",
+        0
+      ],
       "save_output": true,
       "images": [
         "101",
@@ -87,7 +90,10 @@
   },
   "80": {
     "inputs": {
-      "ckpt_name": "rife49.pth",
+      "ckpt_name": [
+        "195",
+        0
+      ],
       "clear_cache_after_n_frames": [
         "68",
         0
@@ -136,24 +142,11 @@
       "title": "String"
     }
   },
-  "90": {
-    "inputs": {
-      "value": "RIFE"
-    },
-    "class_type": "String-🔬",
-    "_meta": {
-      "title": "FILM // RIFE"
-    }
-  },
   "91": {
     "inputs": {
       "comparison": "a == b",
       "a": [
         "89",
-        0
-      ],
-      "b": [
-        "90",
         0
       ]
     },
@@ -272,7 +265,7 @@
         "138",
         0
       ],
-      "text2": "00008_reordered"
+      "text2": "00000_img2vid_T2I_00134_"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -285,7 +278,7 @@
         "81",
         0
       ],
-      "text2": "RIFE-interpolation_00008_reordered-intFrms14"
+      "text2": "RIFE-interpolation_00000_img2vid_T2I_00134_-intFrms14"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -500,15 +493,15 @@
   },
   "174": {
     "inputs": {
-      "path": "B:\\AI\\StabilityMatrix-win-x64\\Data\\Images\\Text2Img\\2024-10-19\\17-18\\New folder",
+      "path": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/assets/flora2.zip",
       "resize_images_to_first": true,
       "image_load_cap": 0,
-      "start_index": 1,
+      "start_index": 0,
       "start_index_use_seed": false,
-      "seed": 700,
+      "seed": 704,
       "error_after_last_frame": false,
       "skip_n": 0,
-      "sort": "alphabetical",
+      "sort": "visual_path",
       "reverse_order": false,
       "loop_first_frame": true
     },
@@ -529,6 +522,47 @@
     "class_type": "ListItemSelector",
     "_meta": {
       "title": "List Item Selector"
+    }
+  },
+  "190": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "pingpong"
+    }
+  },
+  "192": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "show_advanced"
+    }
+  },
+  "193": {
+    "inputs": {
+      "menu": "rife49.pth, rife49.pth, FILM",
+      "delimiter": ", ",
+      "select_item": ""
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "MODEL SELECTOR"
+    }
+  },
+  "195": {
+    "inputs": {
+      "any_type_input": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
     }
   }
 }

@@ -10,13 +10,117 @@ comfyui_output_node_id: 15
 parameters:
 - name: images
   label: Interpolation Images
-  description: Interpolation images are keyframes between which new interpolation frames will be created. folders archives and video are all treated as a batch of frames.
+  description: Interpolation images are keyframes between which new interpolation frames will be created. Image sequence folders, archives and video are all treated as a batch of frames.
+  tip: If multiple resolutions are present in an image batch, the width and height of the output will be set by the dimensions of the first image in the batch after sorting. 
   type: image[]
   min_length: 1
   max_length: 192
   required: true
   comfyui: 
-    node_id: 74
+    node_id: 174
     field: inputs
     subfield: path
     preprocessing: folder
+- name: interpolation_frames
+  label: Interpolation Frames
+  description: interpolation frames is a multiplier of the original frame counter created between every provided frame of an image sequence or movie. A value of 2 will double the frames, effectively creating a half speed version. A value of 29 will stretch each frame to a full second per provided frame if the Framerate parameter is set to 30 FPS. A value of 1 will not create any interpolation frames; If Skip Frame Interval is set 1, this would effectively create a double speed video from a movie input.
+  tip: The output video will be confromed to this framerate. This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps(broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video conforms the total n_frames.
+  type: int
+  default: 2
+  minimum: 1
+  maximum: 144
+  required: true
+  comfyui: 
+    node_id: 129
+    field: inputs
+    subfield: number
+- name: FPS
+  label: Output Video Framerate
+  description: target output video framerate
+  tip: The output video will be confromed to this framerate. This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps(broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video conforms the total n_frames.
+  type: int
+  default: 30
+  minimum: 1
+  maximum: 144
+  comfyui: 
+    node_id: 249
+    field: inputs
+    subfield: value
+- name: loop
+  label: Loop First Frame
+  description: Make the animation a seamless loop by interpolating back to the first frame
+  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 174
+    field: inputs
+    subfield: loop_first_frame
+- name: pingpong
+  label: Forward-Reverse Loop
+  description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
+  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 190
+    field: inputs
+    subfield: value
+- name: show_advanced
+  label: Show Advanced Parameters
+  description: This toggle reveals advanced parameters to web front end users, and has no effect on the output.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 192
+    field: inputs
+    subfield: value
+- name: model
+  label: Interpolation Method
+  description: Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
+  type: string
+  default: rife49.pth
+  choices: [rife49.pth, rife49.pth, FILM]
+  required: true
+  visible_if: show_advanced=true
+  comfyui: 
+    node_id: 193
+    field: inputs
+    subfield: select_item
+- name: use_input_video_fps
+  label: Retain Video FPS
+  description: This toggle preserves the original FPS of an input video. 
+  tip: This is useful for creating slow motion videos that play back at the original framerate, if that framerate is not the default of 30fps. For instance, European cinematic standards are 25fps, and if you'd like to keep your output video conformed to this framerate, this value could be true. This is an advanced parameter that should always be falsue unless otherwise specified.
+  type: bool
+  default: false
+  visible_if: show_advanced=true
+  comfyui: 
+    node_id: 160
+    field: inputs
+    subfield: value
+- name: image_load_cap
+  label: Image Count Cap
+  description: Limit the maximum number of images processed from a video or image sequence. A 0 value has no limit
+  tip: This parameter can be used to only grab n number of images from a sequence or video clip. If a user asks to only use the first 10 seconds of a video clip, this calculation could be done by assuming a frame rate of 30FPS and limiting the Image Count Cap to 300 frames. This is also useful when sorting, for example a batch of provided images capped to three and sorted by random will always pick 3 random images from a list.
+  type: int
+  default: 0
+  minimum: 0
+  maximum: 1800
+  visible_if: show_advanced=true
+  comfyui: 
+    node_id: 174
+    field: inputs
+    subfield: image_load_cap
+- name: skip_n
+  label: Image Skip Interval
+  description: This parameter determines the number of images to skip from a sequence or video; setting the value to 1 would ignore every other frame.
+  tip: This parameter is most useful for reducing the number of frames processed from a video or image batch. Setting this value to 1 and keeping interpolation_frames at 1 would produce a double speed video with no interpolation.
+  type: int
+  default: 0
+  minimum: 0
+  maximum: 60
+  visible_if: show_advanced=true
+  comfyui: 
+    node_id: 174
+    field: inputs
+    subfield: skip_n
