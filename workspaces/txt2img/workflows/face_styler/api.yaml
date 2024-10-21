@@ -1,6 +1,6 @@
 name: Create a stylized selfie
 description: Generate a stylized image featuring a specific person.
-thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/face_styler.png
+thumbnail: app/face_styler.png
 tip: This pipeline takes an input picture of a person to extract their identity and a style image to extract stylistic elements / textures. It then generates an image of the same person in the referenced style. This workflow also takes an optional input prompt. By setting the style strength to zero and writing a good prompt, this pipeline can also be used to place the person in a specific situation without applying the style from the image, just using a prompt!
 handler: comfyui
 output_type: image
