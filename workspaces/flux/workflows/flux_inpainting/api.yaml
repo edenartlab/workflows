@@ -5,6 +5,7 @@ tip: This workflow edits a specific region in the given image by first applying 
 output_type: image
 cost_estimate: 3 * n_samples
 handler: comfyui
+base_model: flux-dev
 comfyui_output_node_id: 181
 comfyui_intermediate_outputs:
   - name: inpaint_preview
