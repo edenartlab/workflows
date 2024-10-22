@@ -1290,7 +1290,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00002.mp4",
+            "filename": "AnimateDiff_00001.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
@@ -4309,7 +4309,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "control_signal_1_00003.mp4",
+            "filename": "control_signal_1_00001.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -4328,7 +4328,7 @@
       },
       "size": [
         360,
-        660
+        574.2056074766356
       ],
       "flags": {},
       "order": 119,
@@ -4388,7 +4388,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "control_signal_2_00004.mp4",
+            "filename": "control_signal_2_00001.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -4407,7 +4407,7 @@
       },
       "size": [
         630,
-        310
+        306
       ],
       "flags": {},
       "order": 132,
@@ -4548,7 +4548,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "mapping_motion_00002.mp4",
+            "filename": "mapping_motion_00001.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -4952,7 +4952,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        909048932696526,
+        1056126332000410,
         "randomize",
         10,
         2,
@@ -6743,7 +6743,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1018324196936241,
+        791447625512175,
         "randomize",
         12,
         2,
@@ -6753,58 +6753,6 @@
       ],
       "color": "#323",
       "bgcolor": "#535"
-    },
-    {
-      "id": 509,
-      "type": "Eden_DetermineFrameCount",
-      "pos": {
-        "0": -630,
-        "1": -630
-      },
-      "size": {
-        "0": 221.75343322753906,
-        "1": 82
-      },
-      "flags": {},
-      "order": 36,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "n_source_frames",
-          "type": "INT",
-          "link": 1146,
-          "widget": {
-            "name": "n_source_frames"
-          }
-        },
-        {
-          "name": "n_target_frames",
-          "type": "INT",
-          "link": 1061,
-          "widget": {
-            "name": "n_target_frames"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            1117
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_DetermineFrameCount"
-      },
-      "widgets_values": [
-        24,
-        1,
-        "closest"
-      ]
     },
     {
       "id": 260,
@@ -6984,7 +6932,7 @@
       },
       "size": [
         240,
-        440
+        440.9194729136164
       ],
       "flags": {},
       "order": 31,
@@ -7258,6 +7206,92 @@
       ]
     },
     {
+      "id": 553,
+      "type": "Display Int (rgthree)",
+      "pos": {
+        "0": -997,
+        "1": 796
+      },
+      "size": {
+        "0": 229.5192108154297,
+        "1": 89.93490600585938
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "INT",
+          "link": 1145,
+          "widget": {
+            "name": "input"
+          },
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Int (rgthree)"
+      },
+      "widgets_values": [
+        0,
+        ""
+      ]
+    },
+    {
+      "id": 509,
+      "type": "Eden_DetermineFrameCount",
+      "pos": {
+        "0": -630,
+        "1": -630
+      },
+      "size": {
+        "0": 221.75343322753906,
+        "1": 82
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "n_source_frames",
+          "type": "INT",
+          "link": 1146,
+          "widget": {
+            "name": "n_source_frames"
+          }
+        },
+        {
+          "name": "n_target_frames",
+          "type": "INT",
+          "link": 1061,
+          "widget": {
+            "name": "n_target_frames"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1117
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_DetermineFrameCount"
+      },
+      "widgets_values": [
+        24,
+        1,
+        "closest"
+      ]
+    },
+    {
       "id": 552,
       "type": "DRMBT_LoadMedia",
       "pos": {
@@ -7279,8 +7313,8 @@
           "links": [
             1144
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "mask",
@@ -7307,8 +7341,8 @@
             1145,
             1146
           ],
-          "shape": 3,
-          "slot_index": 4
+          "slot_index": 4,
+          "shape": 3
         },
         {
           "name": "FILE_NAME",
@@ -7357,7 +7391,7 @@
         "Node name for S&R": "DRMBT_LoadMedia"
       },
       "widgets_values": [
-        "input/a_black_video.mp4",
+        "input/A_black_image.jpg",
         true,
         0,
         0,
@@ -7369,40 +7403,6 @@
         "None",
         false,
         false
-      ]
-    },
-    {
-      "id": 553,
-      "type": "Display Int (rgthree)",
-      "pos": {
-        "0": -997,
-        "1": 796
-      },
-      "size": [
-        229.5192177234594,
-        89.93490526501864
-      ],
-      "flags": {},
-      "order": 35,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input",
-          "type": "INT",
-          "link": 1145,
-          "widget": {
-            "name": "input"
-          },
-          "dir": 3
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "Display Int (rgthree)"
-      },
-      "widgets_values": [
-        0,
-        ""
       ]
     }
   ],
@@ -9362,86 +9362,14 @@
   ],
   "groups": [
     {
-      "title": "Sampling",
+      "title": "ControlNet2",
       "bounding": [
-        4135,
-        -947,
-        1210,
-        1121
-      ],
-      "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "ControlNet1",
-      "bounding": [
-        1676,
-        410,
-        1253,
-        1188
+        3015,
+        411,
+        1279,
+        1175
       ],
       "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "IPAdapters",
-      "bounding": [
-        1354,
-        -2364,
-        2665,
-        2411
-      ],
-      "color": "#b06634",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Settings / Checkpoint",
-      "bounding": [
-        -1020,
-        -900,
-        1702,
-        1087
-      ],
-      "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Controlnet",
-      "bounding": [
-        -1030,
-        250,
-        720,
-        970
-      ],
-      "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Post-Process",
-      "bounding": [
-        6670,
-        -417,
-        750,
-        391
-      ],
-      "color": "#A88",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "SecondPass",
-      "bounding": [
-        5446,
-        158,
-        1174,
-        808
-      ],
-      "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     },
@@ -9458,14 +9386,86 @@
       "flags": {}
     },
     {
-      "title": "ControlNet2",
+      "title": "SecondPass",
       "bounding": [
-        3015,
-        411,
-        1279,
-        1175
+        5446,
+        158,
+        1174,
+        808
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Post-Process",
+      "bounding": [
+        6670,
+        -417,
+        750,
+        391
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Controlnet",
+      "bounding": [
+        -1030,
+        250,
+        720,
+        970
       ],
       "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Settings / Checkpoint",
+      "bounding": [
+        -1020,
+        -900,
+        1702,
+        1087
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "IPAdapters",
+      "bounding": [
+        1354,
+        -2364,
+        2665,
+        2411
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "ControlNet1",
+      "bounding": [
+        1676,
+        410,
+        1253,
+        1188
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Sampling",
+      "bounding": [
+        4135,
+        -947,
+        1210,
+        1121
+      ],
+      "color": "#8A8",
       "font_size": 24,
       "flags": {}
     }
@@ -9473,10 +9473,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.620921323059155,
+      "scale": 1,
       "offset": [
-        2026.6952481282865,
-        13.983276517055515
+        1262.8854408180166,
+        798.7972168604745
       ]
     }
   },
