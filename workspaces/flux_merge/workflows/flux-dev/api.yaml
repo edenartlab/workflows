@@ -95,6 +95,40 @@ parameters:
     node_id: 141
     field: inputs
     subfield: value
+- name: use_style_lora
+  label: Use Style LoRA
+  description: Style LoRAs are handpicked third party flux loras trained by the opensource AI community
+  tip: These optional LoRAs are hardcoded third party loras with specific functions, unlike the user trained loras from Eden. 
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 339
+    field: inputs
+    subfield: value
+- name: style_lora
+  label: Style LoRA
+  description: Use a LoRA finetune on top of the base model.
+  type: string
+  visible_if: use_style_lora=true
+  default: realism_lora_comfy_converted.safetensors
+  choices: [realism_lora_comfy_converted.safetensors, mjv6_lora_comfy_converted.safetensors, art_lora_comfy_converted.safetensors]
+  comfyui: 
+    node_id: 337
+    field: inputs
+    subfield: lora_name
+- name: style_lora_strength
+  label: LoRA Strength
+  description: Strength of the LoRA
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
+  type: float
+  default: 0.6
+  minimum: 0.0
+  maximum: 1.5
+  visible_if: use_style_lora=true
+  comfyui: 
+    node_id: 338
+    field: inputs
+    subfield: value
 - name: use_controlnet
   label: Use controlnet
   description: Apply Controlnet guidance to the image generation.
