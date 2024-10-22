@@ -111,7 +111,7 @@
         0
       ],
       "model": [
-        "80",
+        "337",
         0
       ]
     },
@@ -140,7 +140,7 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_guusy_00014_.png&type=temp&subfolder=&rand=0.4917269888773046"
+            "url": "/api/view?filename=rgthree.compare._temp_cpxjr_00005_.png&type=temp&subfolder=&rand=0.9858379659696421"
           }
         ]
       },
@@ -168,7 +168,7 @@
     },
     "class_type": "LoraLoaderModelOnly",
     "_meta": {
-      "title": "LoraLoaderModelOnly"
+      "title": "lora"
     }
   },
   "93": {
@@ -251,7 +251,7 @@
     },
     "class_type": "ControlNetApplySD3",
     "_meta": {
-      "title": "ControlNetApply SD3 and HunyuanDiT"
+      "title": "Apply Controlnet with VAE"
     }
   },
   "98": {
@@ -1029,7 +1029,7 @@
   },
   "330": {
     "inputs": {
-      "seed": 0
+      "seed": 694193977076198
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -1043,6 +1043,61 @@
     "class_type": "ControlNetLoader",
     "_meta": {
       "title": "Load ControlNet Model"
+    }
+  },
+  "337": {
+    "inputs": {
+      "lora_name": "realism_lora_comfy_converted.safetensors",
+      "strength_model": [
+        "341",
+        0
+      ],
+      "model": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "style_lora"
+    }
+  },
+  "338": {
+    "inputs": {
+      "value": 0.7000000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "style_lora_strength"
+    }
+  },
+  "339": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_style_lora"
+    }
+  },
+  "341": {
+    "inputs": {
+      "boolean": [
+        "339",
+        0
+      ],
+      "on_true": [
+        "338",
+        0
+      ],
+      "on_false": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
     }
   }
 }

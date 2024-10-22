@@ -75,7 +75,7 @@ parameters:
     node_id: 155
     field: inputs
     subfield: body
-- name: advanced
+- name: use_advanced
   label: Show Advanced Parameteres
   description: Display advaned parameters for web users
   tip: This parameter is front-end only, and allows web users to see parameters that most users won't require most of the time.
@@ -93,7 +93,7 @@ parameters:
   default: 0.83
   minimum: 0.0
   maximum: 1.0
-  visible_if: advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 89
     field: inputs
@@ -104,7 +104,7 @@ parameters:
   tip: It's best practice to use resolutions included in the models training data. Our aspect picker can help find optimized resolutions for width and height, but if you need pixel perfect size from your original image, enable this parameter.
   type: bool
   default: true
-  visible_if: advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 121
     field: inputs
@@ -114,19 +114,31 @@ parameters:
   description: Round your width and height to the nearest resolution optimized for the training data of this model
   tip: It's best practice to use resolutions included in the models training data. This parameter only has an effect if you are already enabling size_from_input.
   type: bool
-  default: true
-  visible_if: size_from_input=true
+  default: false
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 143
     field: inputs
     subfield: value
+- name: caption_settings
+  label: Caption Settings
+  description: Choose a method for sorting a sequence of input images. The visual_path method applies a traveling salesman solver to sort the images by their nearest visual proximity to each other
+  tip: This parameter should usually stay at the default of detailed_caption to preserve the input order, but occasionally an alphabetical or random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
+  type: string
+  default: detailed_caption
+  choices: [none, caption, detailed_caption, more_detailed_caption]
+  visible_if: use_advanced=true
+  comfyui: 
+    node_id: 163
+    field: inputs
+    subfield: select_item
 - name: print_caption
   label: Print Caption
   description: Enabling this parameter prints the config into the bottom of the image. Useful for seeing how the image was interpreted by AI captioning.
   tip: This should be false by default, but is a nice debugging feature for users to see how their initial image is being interpretted into a prompt.
   type: bool
   default: false
-  visible_if: advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 162
     field: inputs

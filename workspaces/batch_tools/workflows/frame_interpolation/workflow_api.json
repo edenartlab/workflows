@@ -10,10 +10,9 @@
         "121",
         0
       ],
-      "format": "video/nvenc_h264-mp4",
+      "format": "video/h264-mp4",
       "pix_fmt": "yuv420p",
-      "bitrate": 10,
-      "megabit": true,
+      "crf": 19,
       "save_metadata": true,
       "pingpong": [
         "190",
@@ -133,28 +132,6 @@
       "title": "Text ++"
     }
   },
-  "89": {
-    "inputs": {
-      "value": "FILM\n"
-    },
-    "class_type": "String-🔬",
-    "_meta": {
-      "title": "String"
-    }
-  },
-  "91": {
-    "inputs": {
-      "comparison": "a == b",
-      "a": [
-        "89",
-        0
-      ]
-    },
-    "class_type": "Compare-🔬",
-    "_meta": {
-      "title": "Compare"
-    }
-  },
   "92": {
     "inputs": {
       "body": "-interpolation_",
@@ -178,7 +155,7 @@
       "on_true": "FILM",
       "on_false": "RIFE",
       "boolean": [
-        "91",
+        "197",
         0
       ]
     },
@@ -190,7 +167,7 @@
   "101": {
     "inputs": {
       "switch": [
-        "91",
+        "197",
         0
       ],
       "on_false": [
@@ -265,7 +242,7 @@
         "138",
         0
       ],
-      "text2": "00000_img2vid_T2I_00134_"
+      "text2": "xander"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -278,7 +255,7 @@
         "81",
         0
       ],
-      "text2": "RIFE-interpolation_00000_img2vid_T2I_00134_-intFrms14"
+      "text2": "RIFE-interpolation_xander-intFrms14"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -313,6 +290,71 @@
       "title": "Interpolation Frames"
     }
   },
+  "132": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        2
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "133": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        3
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "134": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        4
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "135": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        6
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "136": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        7
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
   "138": {
     "inputs": {
       "text": [
@@ -326,6 +368,19 @@
     "class_type": "TextSplit",
     "_meta": {
       "title": "TextSplit"
+    }
+  },
+  "141": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        8
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
     }
   },
   "149": {
@@ -356,22 +411,13 @@
         0
       ],
       "b": [
-        "155",
+        "202",
         0
       ]
     },
     "class_type": "Eden_Compare",
     "_meta": {
       "title": "Eden_Compare"
-    }
-  },
-  "155": {
-    "inputs": {
-      "value": 1
-    },
-    "class_type": "Int-🔬",
-    "_meta": {
-      "title": "Int"
     }
   },
   "156": {
@@ -392,6 +438,31 @@
     "class_type": "InversionDemoLazySwitch",
     "_meta": {
       "title": "Lazy Switch"
+    }
+  },
+  "157": {
+    "inputs": {
+      "images": [
+        "101",
+        0
+      ]
+    },
+    "class_type": "easy imageCount",
+    "_meta": {
+      "title": "ImageCount"
+    }
+  },
+  "158": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "157",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
     }
   },
   "160": {
@@ -440,22 +511,13 @@
         0
       ],
       "b": [
-        "164",
+        "204",
         0
       ]
     },
     "class_type": "Eden_Compare",
     "_meta": {
       "title": "Eden_Compare"
-    }
-  },
-  "164": {
-    "inputs": {
-      "value": 1
-    },
-    "class_type": "Int-🔬",
-    "_meta": {
-      "title": "Int"
     }
   },
   "165": {
@@ -493,15 +555,15 @@
   },
   "174": {
     "inputs": {
-      "path": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/assets/flora2.zip",
+      "path": "B:\\AI\\StabilityMatrix-win-x64\\Data\\Images\\input\\xander",
       "resize_images_to_first": true,
       "image_load_cap": 0,
       "start_index": 0,
       "start_index_use_seed": false,
-      "seed": 704,
+      "seed": 713,
       "error_after_last_frame": false,
       "skip_n": 0,
-      "sort": "visual_path",
+      "sort": "None",
       "reverse_order": false,
       "loop_first_frame": true
     },
@@ -522,6 +584,18 @@
     "class_type": "ListItemSelector",
     "_meta": {
       "title": "List Item Selector"
+    }
+  },
+  "189": {
+    "inputs": {
+      "images": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
     }
   },
   "190": {
@@ -563,6 +637,50 @@
     "class_type": "SDAnyConverter",
     "_meta": {
       "title": "SD Any Converter"
+    }
+  },
+  "196": {
+    "inputs": {
+      "value": "FILM"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "197": {
+    "inputs": {
+      "comparison": "a == b",
+      "a": [
+        "196",
+        0
+      ],
+      "b": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "202": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "204": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
     }
   }
 }
