@@ -1,0 +1,843 @@
+{
+  "10": {
+    "inputs": {
+      "samples": [
+        "289",
+        0
+      ],
+      "vae": [
+        "110",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "56": {
+    "inputs": {
+      "pixels": [
+        "529",
+        0
+      ],
+      "vae": [
+        "110",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "110": {
+    "inputs": {
+      "ckpt_name": "Eden_SDXL.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "127": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": [
+        "529",
+        1
+      ],
+      "target_height": [
+        "529",
+        2
+      ],
+      "text_g": [
+        "556",
+        0
+      ],
+      "text_l": [
+        "556",
+        0
+      ],
+      "clip": [
+        "110",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "128": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": [
+        "529",
+        1
+      ],
+      "target_height": [
+        "529",
+        2
+      ],
+      "text_g": "",
+      "text_l": "",
+      "clip": [
+        "110",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "249": {
+    "inputs": {
+      "beta_schedule": "linear (HotshotXL/default)",
+      "model": [
+        "110",
+        0
+      ],
+      "m_models": [
+        "250",
+        0
+      ],
+      "context_options": [
+        "502",
+        0
+      ],
+      "sample_settings": [
+        "422",
+        0
+      ]
+    },
+    "class_type": "ADE_UseEvolvedSampling",
+    "_meta": {
+      "title": "Use Evolved Sampling 🎭🅐🅓②"
+    }
+  },
+  "250": {
+    "inputs": {
+      "start_percent": 0,
+      "end_percent": 1,
+      "motion_model": [
+        "304",
+        0
+      ],
+      "scale_multival": [
+        "501",
+        0
+      ]
+    },
+    "class_type": "ADE_ApplyAnimateDiffModel",
+    "_meta": {
+      "title": "Apply AnimateDiff Model (Adv.) 🎭🅐🅓②"
+    }
+  },
+  "252": {
+    "inputs": {
+      "add_noise": true,
+      "noise_seed": [
+        "567",
+        0
+      ],
+      "cfg": 1,
+      "model": [
+        "249",
+        0
+      ],
+      "positive": [
+        "127",
+        0
+      ],
+      "negative": [
+        "128",
+        0
+      ],
+      "sampler": [
+        "255",
+        0
+      ],
+      "sigmas": [
+        "258",
+        0
+      ],
+      "latent_image": [
+        "56",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "SamplerCustom"
+    }
+  },
+  "255": {
+    "inputs": {
+      "sampler_name": "dpmpp_2m"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "258": {
+    "inputs": {
+      "sigmas": [
+        "504",
+        0
+      ]
+    },
+    "class_type": "FlipSigmas",
+    "_meta": {
+      "title": "FlipSigmas"
+    }
+  },
+  "280": {
+    "inputs": {
+      "beta_schedule": "linear (HotshotXL/default)",
+      "model": [
+        "431",
+        0
+      ],
+      "m_models": [
+        "371",
+        0
+      ],
+      "context_options": [
+        "502",
+        0
+      ],
+      "sample_settings": [
+        "414",
+        0
+      ]
+    },
+    "class_type": "ADE_UseEvolvedSampling",
+    "_meta": {
+      "title": "Use Evolved Sampling 🎭🅐🅓②"
+    }
+  },
+  "289": {
+    "inputs": {
+      "add_noise": false,
+      "noise_seed": [
+        "567",
+        0
+      ],
+      "cfg": 8,
+      "model": [
+        "280",
+        0
+      ],
+      "positive": [
+        "440",
+        0
+      ],
+      "negative": [
+        "440",
+        1
+      ],
+      "sampler": [
+        "255",
+        0
+      ],
+      "sigmas": [
+        "375",
+        0
+      ],
+      "latent_image": [
+        "252",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "SamplerCustom"
+    }
+  },
+  "304": {
+    "inputs": {
+      "model_name": "hsxl_temporal_layers.f16.safetensors"
+    },
+    "class_type": "ADE_LoadAnimateDiffModel",
+    "_meta": {
+      "title": "Load AnimateDiff Model 🎭🅐🅓②"
+    }
+  },
+  "371": {
+    "inputs": {
+      "start_percent": 0,
+      "end_percent": 1,
+      "motion_model": [
+        "304",
+        0
+      ]
+    },
+    "class_type": "ADE_ApplyAnimateDiffModel",
+    "_meta": {
+      "title": "Apply AnimateDiff Model (Adv.) 🎭🅐🅓②"
+    }
+  },
+  "375": {
+    "inputs": {
+      "model_type": "SDXL",
+      "steps": 20,
+      "denoise": 1
+    },
+    "class_type": "AlignYourStepsScheduler",
+    "_meta": {
+      "title": "Sampling Steps"
+    }
+  },
+  "414": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "empty",
+      "seed_gen": "comfy",
+      "seed_offset": 0,
+      "adapt_denoise_steps": false
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "422": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "empty",
+      "seed_gen": "comfy",
+      "seed_offset": 0,
+      "adapt_denoise_steps": false
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "428": {
+    "inputs": {
+      "video": "30_frames_20_fps_0006.gif",
+      "force_rate": [
+        "581",
+        0
+      ],
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 16,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "431": {
+    "inputs": {
+      "weight": 1.3,
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "432",
+        0
+      ],
+      "ipadapter": [
+        "432",
+        1
+      ],
+      "image": [
+        "569",
+        0
+      ],
+      "clip_vision": [
+        "434",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "432": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "110",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "434": {
+    "inputs": {
+      "clip_name": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "439": {
+    "inputs": {
+      "strength": [
+        "566",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "488",
+        0
+      ],
+      "negative": [
+        "128",
+        0
+      ],
+      "control_net": [
+        "442",
+        0
+      ],
+      "image": [
+        "565",
+        0
+      ]
+    },
+    "class_type": "ACN_AdvancedControlNetApply",
+    "_meta": {
+      "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
+    }
+  },
+  "440": {
+    "inputs": {
+      "strength": [
+        "566",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "439",
+        0
+      ],
+      "negative": [
+        "439",
+        1
+      ],
+      "control_net": [
+        "441",
+        0
+      ],
+      "image": [
+        "500",
+        0
+      ]
+    },
+    "class_type": "ACN_AdvancedControlNetApply",
+    "_meta": {
+      "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
+    }
+  },
+  "441": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "442": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "461": {
+    "inputs": {
+      "images": [
+        "569",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "488": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": [
+        "529",
+        1
+      ],
+      "target_height": [
+        "529",
+        2
+      ],
+      "text_g": [
+        "558",
+        0
+      ],
+      "text_l": [
+        "558",
+        0
+      ],
+      "clip": [
+        "110",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "490": {
+    "inputs": {
+      "image": "b58eaab89f2513da72b506a849427f68.jpeg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "497": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "556",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "498": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "558",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "499": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 10,
+      "multiplier": [
+        "578",
+        1
+      ],
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "500": {
+    "inputs": {
+      "preprocessor": "CannyEdgePreprocessor",
+      "resolution": [
+        "535",
+        0
+      ],
+      "image": [
+        "529",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "501": {
+    "inputs": {
+      "float_val": 1.2
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Multival 🎭🅐🅓"
+    }
+  },
+  "502": {
+    "inputs": {
+      "context_length": 8,
+      "context_stride": 1,
+      "context_overlap": 2,
+      "closed_loop": false,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_LoopedUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "504": {
+    "inputs": {
+      "model_type": "SDXL",
+      "steps": 14,
+      "denoise": 1
+    },
+    "class_type": "AlignYourStepsScheduler",
+    "_meta": {
+      "title": "Unsampling Steps"
+    }
+  },
+  "529": {
+    "inputs": {
+      "width": [
+        "535",
+        0
+      ],
+      "height": [
+        "535",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 64,
+      "image": [
+        "428",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "535": {
+    "inputs": {
+      "value": 896
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Resolution"
+    }
+  },
+  "540": {
+    "inputs": {
+      "frame_rate": [
+        "579",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "499",
+        0
+      ],
+      "audio": [
+        "428",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "556": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "558": {
+    "inputs": {
+      "max_token": 100,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4-vision Low",
+      "prompt": "Consicely describe the aesthetic style of this image. Dont focus too much on the specific contents of the scene, just describe the aesthetic, the colors, the look and feel. Respond with a comma delimited list of at most 20 stylistic descriptors.",
+      "image": [
+        "571",
+        0
+      ]
+    },
+    "class_type": "ImageDescriptionNode",
+    "_meta": {
+      "title": "ImageDescriptionNode"
+    }
+  },
+  "565": {
+    "inputs": {
+      "preprocessor": "DepthAnythingV2Preprocessor",
+      "resolution": [
+        "535",
+        0
+      ],
+      "image": [
+        "529",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "566": {
+    "inputs": {
+      "value": 0.5
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "ControlNet Strength"
+    }
+  },
+  "567": {
+    "inputs": {
+      "seed": 0
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "569": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "571",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "571": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "490",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "578": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "579",
+        0
+      ],
+      "b": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "579": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Output_FPS"
+    }
+  },
+  "581": {
+    "inputs": {
+      "value": 8
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Diffusion Framerate"
+    }
+  },
+  "582": {
+    "inputs": {
+      "Value": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DF_Int_to_Float",
+    "_meta": {
+      "title": "Int to Float"
+    }
+  },
+  "583": {
+    "inputs": {
+      "input": [
+        "428",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  }
+}
