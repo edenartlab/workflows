@@ -1,100 +1,4 @@
 {
-  "20": {
-    "inputs": {
-      "guide_size": 512,
-      "guide_size_for": true,
-      "max_size": 1024,
-      "seed": [
-        "65",
-        0
-      ],
-      "steps": 35,
-      "cfg": 1,
-      "sampler_name": "euler",
-      "scheduler": "normal",
-      "denoise": 1,
-      "feather": 5,
-      "noise_mask": true,
-      "force_inpaint": true,
-      "wildcard": "",
-      "cycle": 1,
-      "inpaint_model": false,
-      "noise_mask_feather": 20,
-      "image": [
-        "189",
-        0
-      ],
-      "segs": [
-        "21",
-        0
-      ],
-      "model": [
-        "55",
-        0
-      ],
-      "clip": [
-        "36",
-        0
-      ],
-      "vae": [
-        "37",
-        0
-      ],
-      "positive": [
-        "51",
-        0
-      ],
-      "negative": [
-        "23",
-        0
-      ]
-    },
-    "class_type": "DetailerForEach",
-    "_meta": {
-      "title": "Detailer (SEGS)"
-    }
-  },
-  "21": {
-    "inputs": {
-      "combined": false,
-      "crop_factor": 3,
-      "bbox_fill": false,
-      "drop_size": 10,
-      "contour_fill": false,
-      "mask": [
-        "191",
-        0
-      ]
-    },
-    "class_type": "MaskToSEGS",
-    "_meta": {
-      "title": "MASK to SEGS"
-    }
-  },
-  "23": {
-    "inputs": {
-      "text": "",
-      "clip": [
-        "36",
-        0
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "Negative - Leave Empty"
-    }
-  },
-  "24": {
-    "inputs": {
-      "model": "Florence-2-large",
-      "precision": "bf16",
-      "attention": "sdpa"
-    },
-    "class_type": "Florence2ModelLoader",
-    "_meta": {
-      "title": "Florence2ModelLoader"
-    }
-  },
   "28": {
     "inputs": {
       "model": "sam2_hiera_base_plus.safetensors",
@@ -168,52 +72,6 @@
       "title": "ImageAndMaskPreview"
     }
   },
-  "35": {
-    "inputs": {
-      "unet_name": "flux1-dev-fp8.safetensors",
-      "weight_dtype": "fp8_e4m3fn"
-    },
-    "class_type": "UNETLoader",
-    "_meta": {
-      "title": "Load Diffusion Model"
-    }
-  },
-  "36": {
-    "inputs": {
-      "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
-      "clip_name2": "clip_l.safetensors",
-      "type": "flux"
-    },
-    "class_type": "DualCLIPLoader",
-    "_meta": {
-      "title": "DualCLIPLoader"
-    }
-  },
-  "37": {
-    "inputs": {
-      "vae_name": "ae.safetensors"
-    },
-    "class_type": "VAELoader",
-    "_meta": {
-      "title": "Load VAE"
-    }
-  },
-  "38": {
-    "inputs": {
-      "text": [
-        "197",
-        0
-      ],
-      "clip": [
-        "36",
-        0
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
   "47": {
     "inputs": {
       "boolean": [
@@ -244,43 +102,14 @@
       "title": "Load Mask Image"
     }
   },
-  "51": {
-    "inputs": {
-      "guidance": 4,
-      "conditioning": [
-        "38",
-        0
-      ]
-    },
-    "class_type": "FluxGuidance",
-    "_meta": {
-      "title": "FluxGuidance"
-    }
-  },
   "53": {
     "inputs": {
-      "image": "01.jpg",
+      "image": "GeneKogan.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "55": {
-    "inputs": {
-      "max_shift": 1,
-      "base_shift": 0.5,
-      "width": 1024,
-      "height": 1024,
-      "model": [
-        "78",
-        0
-      ]
-    },
-    "class_type": "ModelSamplingFlux",
-    "_meta": {
-      "title": "ModelSamplingFlux"
     }
   },
   "62": {
@@ -305,7 +134,7 @@
         0
       ],
       "florence2_model": [
-        "24",
+        "245",
         0
       ]
     },
@@ -316,7 +145,7 @@
   },
   "65": {
     "inputs": {
-      "seed": 95
+      "seed": 99
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -334,7 +163,7 @@
   },
   "67": {
     "inputs": {
-      "value": "mohawk"
+      "value": "bald russian"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -343,7 +172,7 @@
   },
   "72": {
     "inputs": {
-      "channel": "red",
+      "channel": "blue",
       "image": [
         "73",
         0
@@ -356,14 +185,20 @@
   },
   "73": {
     "inputs": {
-      "width": 2048,
-      "height": 2048,
+      "width": [
+        "75",
+        1
+      ],
+      "height": [
+        "75",
+        2
+      ],
       "interpolation": "lanczos",
-      "method": "keep proportion",
+      "method": "stretch",
       "condition": "always",
-      "multiple_of": 32,
+      "multiple_of": 0,
       "image": [
-        "166",
+        "48",
         0
       ]
     },
@@ -397,18 +232,6 @@
     "class_type": "ImageResize+",
     "_meta": {
       "title": "🔧 Image Resize"
-    }
-  },
-  "78": {
-    "inputs": {
-      "model": [
-        "35",
-        0
-      ]
-    },
-    "class_type": "DifferentialDiffusion",
-    "_meta": {
-      "title": "Differential Diffusion"
     }
   },
   "114": {
@@ -550,7 +373,7 @@
         0
       ],
       "mask": [
-        "191",
+        "250",
         0
       ]
     },
@@ -571,10 +394,10 @@
       ],
       "upscale_method": "lanczos",
       "keep_proportion": false,
-      "divisible_by": 2,
+      "divisible_by": 0,
       "crop": "disabled",
       "image": [
-        "20",
+        "238",
         0
       ]
     },
@@ -585,7 +408,7 @@
   },
   "181": {
     "inputs": {
-      "filename_prefix": "Flux\\Inpaint\\2024-10-17\\segs1_",
+      "filename_prefix": "Flux\\Inpaint\\2024-10-22\\segs1_",
       "images": [
         "169",
         0
@@ -636,7 +459,7 @@
   },
   "191": {
     "inputs": {
-      "amount": 120,
+      "amount": 140,
       "device": "auto",
       "mask": [
         "190",
@@ -747,7 +570,7 @@
       "y": 0,
       "resize_source": true,
       "destination": [
-        "75",
+        "189",
         0
       ],
       "source": [
@@ -755,7 +578,7 @@
         0
       ],
       "mask": [
-        "47",
+        "191",
         0
       ]
     },
@@ -767,11 +590,11 @@
   "201": {
     "inputs": {
       "width": [
-        "75",
+        "189",
         1
       ],
       "height": [
-        "75",
+        "189",
         2
       ],
       "red": 0,
@@ -879,7 +702,7 @@
   },
   "222": {
     "inputs": {
-      "value": "Provide a visual description \"prompt\" of this image. IMPORTANT: re-imagine the black (masked) regions in the image based on the provided inpainting prompt. If no inpainting prompt is given, just imagine what might naturally fit in those spaces. Limit the final imagined image description to 50 words. Dont mention the black regions, just reply with the full description of that new imagined image, nothing else. Inpainting prompt:"
+      "value": "Propose a visual description for this image. IMPORTANT: re-imagine the black (masked) regions in the image based on the provided inpainting prompt. If no inpainting prompt is given, just imagine what might naturally fit in those spaces. Limit the final imagined image description to 50 words. Dont mention the black regions, just reply with the full description of that new imagined image, nothing else. Inpainting prompt:"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -897,6 +720,288 @@
     "class_type": "Display Any (rgthree)",
     "_meta": {
       "title": "Display Any (rgthree)"
+    }
+  },
+  "225": {
+    "inputs": {
+      "ckpt_name": "flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "226": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "228",
+        0
+      ],
+      "negative": [
+        "229",
+        0
+      ],
+      "control_net": [
+        "227",
+        0
+      ],
+      "vae": [
+        "225",
+        2
+      ],
+      "image": [
+        "189",
+        0
+      ],
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ControlNetInpaintingAliMamaApply",
+    "_meta": {
+      "title": "ControlNetInpaintingAliMamaApply"
+    }
+  },
+  "227": {
+    "inputs": {
+      "control_net_name": "FLUX.1-dev-Controlnet-Inpainting-Alpha.safetensors.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "228": {
+    "inputs": {
+      "clip_l": [
+        "197",
+        0
+      ],
+      "t5xxl": [
+        "197",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "225",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "229": {
+    "inputs": {
+      "clip_l": "",
+      "t5xxl": "",
+      "guidance": 3.5,
+      "clip": [
+        "225",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "232": {
+    "inputs": {
+      "noise": [
+        "235",
+        0
+      ],
+      "guider": [
+        "237",
+        0
+      ],
+      "sampler": [
+        "233",
+        0
+      ],
+      "sigmas": [
+        "234",
+        0
+      ],
+      "latent_image": [
+        "236",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "233": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "234": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 30,
+      "denoise": 1,
+      "model": [
+        "225",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "235": {
+    "inputs": {
+      "noise_seed": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "236": {
+    "inputs": {
+      "width": [
+        "189",
+        1
+      ],
+      "height": [
+        "189",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "237": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "225",
+        0
+      ],
+      "positive": [
+        "226",
+        0
+      ],
+      "negative": [
+        "226",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFGGuider"
+    }
+  },
+  "238": {
+    "inputs": {
+      "samples": [
+        "232",
+        0
+      ],
+      "vae": [
+        "225",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "241": {
+    "inputs": {
+      "images": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "245": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "bf16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "246": {
+    "inputs": {
+      "image": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "247": {
+    "inputs": {
+      "input": [
+        "246",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "248": {
+    "inputs": {
+      "input": [
+        "246",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "250": {
+    "inputs": {
+      "expand": 12,
+      "tapered_corners": true,
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
     }
   }
 }

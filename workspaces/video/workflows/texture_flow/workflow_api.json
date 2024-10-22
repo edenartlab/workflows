@@ -269,16 +269,6 @@
       "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
     }
   },
-  "117": {
-    "inputs": {
-      "image": "A_black_image.jpg",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
-  },
   "136": {
     "inputs": {
       "n_color_clusters": [
@@ -815,19 +805,6 @@
       "title": "ImageFromBatch"
     }
   },
-  "260": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "532",
-        3
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
   "261": {
     "inputs": {
       "width": 640,
@@ -861,7 +838,7 @@
       "condition": "always",
       "multiple_of": 0,
       "image": [
-        "532",
+        "552",
         0
       ]
     },
@@ -1433,8 +1410,8 @@
         0
       ],
       "n_source_frames": [
-        "532",
-        1
+        "552",
+        4
       ],
       "policy": "closest"
     },
@@ -1543,25 +1520,6 @@
       "title": "Display Int (rgthree)"
     }
   },
-  "532": {
-    "inputs": {
-      "video": "a_black_video.mp4",
-      "force_rate": 0,
-      "force_size": "Custom Width",
-      "custom_width": 768,
-      "custom_height": 512,
-      "frame_load_cap": [
-        "510",
-        0
-      ],
-      "skip_first_frames": 0,
-      "select_every_nth": 1
-    },
-    "class_type": "VHS_LoadVideo",
-    "_meta": {
-      "title": "Load Video (Upload) 🎥🅥🅗🅢"
-    }
-  },
   "536": {
     "inputs": {
       "total_frames": [
@@ -1574,13 +1532,57 @@
       ],
       "bands_visible_per_frame": 0.9,
       "angle": 0,
-      "mode": "concentric_rectangles_outwards",
+      "mode": "concentric_circles_outwards",
       "width": 512,
       "height": 512
     },
     "class_type": "Animation_RGB_Mask",
     "_meta": {
       "title": "Animation_RGB_Mask"
+    }
+  },
+  "549": {
+    "inputs": {
+      "batch": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "BatchCount+",
+    "_meta": {
+      "title": "🔧 Batch Count"
+    }
+  },
+  "552": {
+    "inputs": {
+      "path": "input/a_black_video.mp4",
+      "resize_images_to_first": true,
+      "image_load_cap": 0,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 0,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "Load Media (img, vid or dir)"
+    }
+  },
+  "553": {
+    "inputs": {
+      "input": [
+        "552",
+        4
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
     }
   }
 }
