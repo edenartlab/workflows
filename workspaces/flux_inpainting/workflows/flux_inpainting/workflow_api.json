@@ -1,15 +1,4 @@
 {
-  "24": {
-    "inputs": {
-      "model": "Florence-2-large",
-      "precision": "bf16",
-      "attention": "sdpa"
-    },
-    "class_type": "Florence2ModelLoader",
-    "_meta": {
-      "title": "Florence2ModelLoader"
-    }
-  },
   "28": {
     "inputs": {
       "model": "sam2_hiera_base_plus.safetensors",
@@ -115,7 +104,7 @@
   },
   "53": {
     "inputs": {
-      "image": "bca4a6b7490545d18e5afebdfb29bea8.jpg",
+      "image": "GeneKogan.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -145,7 +134,7 @@
         0
       ],
       "florence2_model": [
-        "24",
+        "245",
         0
       ]
     },
@@ -156,7 +145,7 @@
   },
   "65": {
     "inputs": {
-      "seed": 97
+      "seed": 99
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -165,7 +154,7 @@
   },
   "66": {
     "inputs": {
-      "value": "heart"
+      "value": "hair"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -174,7 +163,7 @@
   },
   "67": {
     "inputs": {
-      "value": "exploding clock"
+      "value": "bald russian"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -183,7 +172,7 @@
   },
   "72": {
     "inputs": {
-      "channel": "red",
+      "channel": "blue",
       "image": [
         "73",
         0
@@ -196,12 +185,18 @@
   },
   "73": {
     "inputs": {
-      "width": 2048,
-      "height": 2048,
+      "width": [
+        "75",
+        1
+      ],
+      "height": [
+        "75",
+        2
+      ],
       "interpolation": "lanczos",
-      "method": "keep proportion",
+      "method": "stretch",
       "condition": "always",
-      "multiple_of": 32,
+      "multiple_of": 0,
       "image": [
         "48",
         0
@@ -378,7 +373,7 @@
         0
       ],
       "mask": [
-        "191",
+        "250",
         0
       ]
     },
@@ -399,7 +394,7 @@
       ],
       "upscale_method": "lanczos",
       "keep_proportion": false,
-      "divisible_by": 2,
+      "divisible_by": 0,
       "crop": "disabled",
       "image": [
         "238",
@@ -464,7 +459,7 @@
   },
   "191": {
     "inputs": {
-      "amount": 128,
+      "amount": 140,
       "device": "auto",
       "mask": [
         "190",
@@ -944,6 +939,69 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "Preview Image"
+    }
+  },
+  "245": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "bf16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "246": {
+    "inputs": {
+      "image": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "247": {
+    "inputs": {
+      "input": [
+        "246",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "248": {
+    "inputs": {
+      "input": [
+        "246",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "250": {
+    "inputs": {
+      "expand": 12,
+      "tapered_corners": true,
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
     }
   }
 }
