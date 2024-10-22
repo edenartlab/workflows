@@ -1,0 +1,211 @@
+name: Create an image (Advanced)
+description: Generate an image from text with Flux Dev including starting image, controlnet and ip-adapter.
+thumbnail: app/flux.png
+tip: Flux is a text to image model that excels at prompt coherence and text generation. This should always be the default way to generate an image from text! Flux-dev can use ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, and LoRA models to apply a pretrained fine tuned concept.
+output_type: image
+base_model: flux-dev
+cost_estimate: 2 * n_samples
+handler: comfyui
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
+comfyui_output_node_id: 206 
+parameters:
+- name: prompt
+  label: Prompt
+  description: Describe an image
+  tip: Flux loves very detailed and descriptive prompts so try to be elaborate. Flux is also great at drawing text in images so feel free to add something if it makes sense.
+  type: string
+  required: true
+  default: 
+  comfyui: 
+    node_id: 131
+    field: inputs
+    subfield: value
+- name: use_init_image
+  label: Use starting image
+  description: Enable image-to-image, and controlnet guidance features
+  tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be true.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 145
+    field: inputs
+    subfield: value
+- name: init_image
+  label: Starting image
+  description: Initial image from which to start diffusion process
+  type: image
+  visible_if: use_init_image=true
+  comfyui: 
+    node_id: 302
+    field: inputs
+    subfield: image
+- name: size_from_input
+  label: Use starting image size
+  description: Override the width and height parameters with the actual resolution of your starting image. 
+  tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution.
+  type: bool
+  default: true
+  visible_if: use_init_image=true
+  comfyui: 
+    node_id: 120
+    field: inputs
+    subfield: value
+- name: denoise
+  label: Generation strength
+  description: Strength of the generation process on top of the starting image
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input.
+  type: float
+  default: 1.0
+  minimum: 0.0
+  maximum: 1.0
+  visible_if: use_init_image=true
+  comfyui: 
+    node_id: 323
+    field: inputs
+    subfield: value
+- name: use_lora
+  label: Use LoRA
+  description: Apply LoRA finetune model style to image generation
+  tip: Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 144
+    field: inputs
+    subfield: value
+- name: lora
+  label: LoRA
+  description: Use a LoRA finetune on top of the base model.
+  type: lora
+  visible_if: use_lora=true
+  comfyui: 
+    node_id: 80
+    field: inputs
+    subfield: lora_name
+- name: lora_strength
+  label: LoRA Strength
+  description: Strength of the LoRA
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
+  type: float
+  default: 0.6
+  minimum: 0.0
+  maximum: 1.5
+  visible_if: use_lora=true
+  comfyui: 
+    node_id: 141
+    field: inputs
+    subfield: value
+- name: use_controlnet
+  label: Use controlnet
+  description: Apply Controlnet guidance to the image generation.
+  tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 133
+    field: inputs
+    subfield: value
+- name: preprocessor
+  label: Controlnet preprocessor
+  description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
+  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
+  type: string
+  visible_if: use_controlnet=true
+  default: CannyEdgePreprocessor
+  choices: [CannyEdgePreprocessor, MiDaS-DepthMapPreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, ScribblePreprocessor]
+  choices_label: [edges (canny), depth, lines (lineart), soft lines (HED), human pose, scribble]
+  comfyui: 
+    node_id: 104
+    field: inputs
+    subfield: preprocessor
+- name: controlnet_strength
+  label: Controlnet strength
+  description: set the guidance strength of the controlnet model in slot 1
+  tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
+  type: float
+  default: 0.6
+  minimum: 0.0
+  maximum: 1.5
+  visible_if: use_controlnet=true
+  comfyui: 
+    node_id: 135
+    field: inputs
+    subfield: value
+# - name: use_ipadapter
+#   label: Use style image
+#   description: Transfer style from image
+#   tip: Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image.
+#   type: bool
+#   default: false
+#   comfyui: 
+#     node_id: 134
+#     field: inputs
+#     subfield: value
+# - name: style_image
+#   label: Style image
+#   description: Image of an aesthetic style, texture or visual content transferred to the generated image creation
+#   type: image
+#   visible_if: use_ipadapter=true
+#   comfyui: 
+#     node_id: 142
+#     field: inputs
+#     subfield: image
+# - name: ipadapter_strength
+#   label: Style strength
+#   description: set the strength of the image style transfer
+#   tip: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
+#   type: float
+#   default: 0.6
+#   minimum: 0.0
+#   maximum: 1.5
+#   visible_if: use_ipadapter=true
+#   comfyui: 
+#     node_id: 137
+#     field: inputs
+#     subfield: strength_model
+- name: width
+  label: Width
+  description: Width in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  visible_if: use_init_image=false
+  step: 8
+  comfyui: 
+    node_id: 119
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  visible_if: use_init_image=false
+  step: 8
+  comfyui: 
+    node_id: 119
+    field: inputs
+    subfield: height
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set to a random value.
+  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
+  type: int
+  default: random
+  minimum: 0
+  maximum: 2147483647
+  comfyui: 
+    node_id: 330
+    field: inputs
+    subfield: seed
+- name: n_samples
+  label: Number of samples
+  description: Number of samples to generate
+  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+  type: int
+  default: 1
+  minimum: 1
+  maximum: 4
