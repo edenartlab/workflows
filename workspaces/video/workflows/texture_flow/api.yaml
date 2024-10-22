@@ -97,13 +97,13 @@ parameters:
     subfield: value
 - name: control_input
   label: Guidance input
-  description: A guidance video/GIF used as input to the controlnet(s). Will guide the shape of the output video. 
-  type: video
+  description: A guidance image/GIF/video used as input to the controlnet. Will guide the shape of the output video. 
+  type: image
   visible_if: use_controlnet1=true
   comfyui: 
-    node_id: 532
+    node_id: 552
     field: inputs
-    subfield: video
+    subfield: path
 - name: preprocessor1
   label: Controlnet1 preprocessor
   description: Type of controlnet preprocessor. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
