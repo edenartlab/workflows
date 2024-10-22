@@ -16,7 +16,7 @@
         0
       ],
       "model": [
-        "63",
+        "169",
         0
       ],
       "conditioning": [
@@ -40,8 +40,8 @@
         0
       ],
       "vae": [
-        "64",
-        0
+        "169",
+        2
       ]
     },
     "class_type": "VAEDecode",
@@ -73,7 +73,10 @@
       "num_beams": 3,
       "do_sample": true,
       "output_mask_select": "",
-      "seed": 671139471096403,
+      "seed": [
+        "135",
+        0
+      ],
       "image": [
         "122",
         0
@@ -88,33 +91,6 @@
       "title": "Florence2Run"
     }
   },
-  "40": {
-    "inputs": {
-      "text": [
-        "164",
-        0
-      ],
-      "find": "The image is ",
-      "replace": ""
-    },
-    "class_type": "Text Find and Replace",
-    "_meta": {
-      "title": "Text Find and Replace"
-    }
-  },
-  "41": {
-    "inputs": {
-      "text": [
-        "164",
-        0
-      ],
-      "text2": "The image shows a painting of a man in a suit and tie with his mouth open, set against a red background."
-    },
-    "class_type": "ShowText|pysssss",
-    "_meta": {
-      "title": "✴️ U-NAI Get Text"
-    }
-  },
   "43": {
     "inputs": {
       "width": [
@@ -126,9 +102,9 @@
         1
       ],
       "interpolation": "lanczos",
-      "method": "fill / crop",
+      "method": "keep proportion",
       "condition": "always",
-      "multiple_of": 0,
+      "multiple_of": 8,
       "image": [
         "117",
         0
@@ -146,67 +122,13 @@
         0
       ],
       "vae": [
-        "64",
-        0
+        "169",
+        2
       ]
     },
     "class_type": "VAEEncode",
     "_meta": {
       "title": "VAE Encode"
-    }
-  },
-  "45": {
-    "inputs": {
-      "text": [
-        "40",
-        0
-      ],
-      "find": "The image shows ",
-      "replace": ""
-    },
-    "class_type": "Text Find and Replace",
-    "_meta": {
-      "title": "Text Find and Replace"
-    }
-  },
-  "63": {
-    "inputs": {
-      "unet_name": "flux1-schnell-fp8.safetensors",
-      "weight_dtype": "fp8_e4m3fn"
-    },
-    "class_type": "UNETLoader",
-    "_meta": {
-      "title": "Load Diffusion Model"
-    }
-  },
-  "64": {
-    "inputs": {
-      "vae_name": "ae.safetensors",
-      "vae_override": "None"
-    },
-    "class_type": "AV_VAELoader",
-    "_meta": {
-      "title": "VAE Loader"
-    }
-  },
-  "68": {
-    "inputs": {
-      "value": false
-    },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "prompt only"
-    }
-  },
-  "70": {
-    "inputs": {
-      "clip_name1": "clip_l.safetensors",
-      "clip_name2": "t5xxl_fp8_e4m3fn.safetensors",
-      "type": "flux"
-    },
-    "class_type": "DualCLIPLoader",
-    "_meta": {
-      "title": "DualCLIPLoader"
     }
   },
   "73": {
@@ -216,8 +138,8 @@
         0
       ],
       "clip": [
-        "70",
-        0
+        "169",
+        1
       ]
     },
     "class_type": "TextEncodeForSamplerParams+",
@@ -228,14 +150,14 @@
   "75": {
     "inputs": {
       "text": [
-        "127",
-        0
+        "89",
+        1
       ],
-      "text2": "0.8300"
+      "text2": "0.7600"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
-      "title": "✴️ U-NAI Get Text"
+      "title": "Show Text 🐍"
     }
   },
   "76": {
@@ -252,7 +174,7 @@
   },
   "89": {
     "inputs": {
-      "number": 1,
+      "number": 0.6,
       "from_range_min": 0,
       "from_range_max": 1,
       "to_range_min": [
@@ -292,21 +214,12 @@
   },
   "117": {
     "inputs": {
-      "image": "2-donald-trump-caricature-drawing-maeve-bokser.preview.jpg",
+      "image": "dreamscapes.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "121": {
-    "inputs": {
-      "value": false
-    },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use init image size"
     }
   },
   "122": {
@@ -332,17 +245,17 @@
   "123": {
     "inputs": {
       "width": [
-        "144",
+        "124",
         0
       ],
       "height": [
-        "144",
+        "124",
         1
       ],
       "interpolation": "lanczos",
-      "method": "fill / crop",
+      "method": "keep proportion",
       "condition": "always",
-      "multiple_of": 0,
+      "multiple_of": 8,
       "image": [
         "117",
         0
@@ -365,38 +278,9 @@
       "title": "NearestSDXLResolution"
     }
   },
-  "127": {
-    "inputs": {
-      "switch": [
-        "68",
-        0
-      ],
-      "on_false": [
-        "89",
-        1
-      ],
-      "on_true": [
-        "128",
-        0
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch"
-    }
-  },
-  "128": {
-    "inputs": {
-      "value": "1.0"
-    },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Eden_String"
-    }
-  },
   "130": {
     "inputs": {
-      "value": 0.5
+      "value": 0.4
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -405,7 +289,7 @@
   },
   "131": {
     "inputs": {
-      "value": 0.8300000000000001
+      "value": 1
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -414,7 +298,7 @@
   },
   "135": {
     "inputs": {
-      "seed": 952425699399881
+      "seed": 750760058165172
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -435,39 +319,11 @@
   },
   "143": {
     "inputs": {
-      "value": false
+      "value": true
     },
     "class_type": "Eden_Bool",
     "_meta": {
       "title": "force SDXL resolution"
-    }
-  },
-  "144": {
-    "inputs": {
-      "value": [
-        "121",
-        0
-      ],
-      "on_false1": [
-        "139",
-        0
-      ],
-      "on_true1": [
-        "124",
-        0
-      ],
-      "on_false2": [
-        "139",
-        1
-      ],
-      "on_true2": [
-        "124",
-        1
-      ]
-    },
-    "class_type": "SwitchDuo",
-    "_meta": {
-      "title": "Switch Duo"
     }
   },
   "145": {
@@ -500,7 +356,7 @@
         1
       ],
       "positive": [
-        "41",
+        "155",
         0
       ],
       "extension": "png",
@@ -539,16 +395,16 @@
   },
   "155": {
     "inputs": {
-      "body": "the woman is wearing bright red lipstick",
+      "body": "",
       "delimiter": " ",
       "append": [
-        "45",
+        "164",
         0
       ]
     },
     "class_type": "TextPlusPlus",
     "_meta": {
-      "title": "Text ++"
+      "title": "Detail injection"
     }
   },
   "160": {
@@ -637,7 +493,7 @@
   },
   "166": {
     "inputs": {
-      "value": "_ "
+      "value": ""
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -654,6 +510,28 @@
     "class_type": "SDAnyConverter",
     "_meta": {
       "title": "SD Any Converter"
+    }
+  },
+  "169": {
+    "inputs": {
+      "ckpt_name": "flux1-schnell-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "174": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "155",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
     }
   }
 }

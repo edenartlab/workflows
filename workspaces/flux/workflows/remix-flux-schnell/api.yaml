@@ -9,15 +9,6 @@ base_model: flux-schnell
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
 comfyui_output_node_id: 149
 parameters:
-- name: n_samples
-  label: Number of samples
-  description: Number of samples to generate
-  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
-  type: int
-  required: true
-  default: 1
-  minimum: 1
-  maximum: 4
 - name: image
   label: Image
   description: Input image to remix
@@ -27,6 +18,28 @@ parameters:
     node_id: 117
     field: inputs
     subfield: image
+- name: n_samples
+  label: Number of samples
+  description: Number of samples to generate
+  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+  type: int
+  required: true
+  default: 1
+  minimum: 1
+  maximum: 4
+- name: denoise
+  label: AI creativity strength
+  description: Strength of the AI generation process on top of the starting image
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. A value of 1 is 100% AI creativity, ignoring all influence of the starting image composition, whereas a medium blend of about 50% will maintain pretty close adherance to the original input.
+  type: float
+  required: true
+  default: 0.5
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 89
+    field: inputs
+    subfield: number
 - name: width
   label: Width
   description: Width in pixels
@@ -65,19 +78,9 @@ parameters:
     node_id: 135
     field: inputs
     subfield: seed
-- name: prompt
-  label: Prompt (optional)
-  description: Describe details you'd like to see in the image
-  tip: Flux loves very detailed and descriptive prompts so try to be elaborate. The default behavior is to use Florence2 captioning to create a prompt from the starting image. This optional prompt parameter prepends your information to the Florence prompt, and can be used to add specific details to the remix. Keep in mind that the initial image provides most of the guidance, so this parameter will only have a subtle effect; it can add specific details, but likely won't have a strong stylistic influence on the result.
-  type: string
-  default:  
-  comfyui: 
-    node_id: 155
-    field: inputs
-    subfield: body
 - name: use_advanced
   label: Show Advanced Parameteres
-  description: Display advaned parameters for web users
+  description: Display advanced parameters for web users
   tip: This parameter is front-end only, and allows web users to see parameters that most users won't require most of the time.
   type: bool
   default: false
@@ -85,30 +88,17 @@ parameters:
     node_id: 160
     field: inputs
     subfield: value
-- name: denoise
-  label: Generation strength
-  description: Strength of the generation process on top of the starting image
-  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. A value of 1 is 100% AI creativity, ignoring all influence of the starting image composition, whereas a medium blend of about 50% will maintain very close adherance to the original input. With flux-schnell, we're only using 5 steps; the sweet spot is between 0.6 and 0.83.
-  type: float
-  default: 0.83
-  minimum: 0.0
-  maximum: 1.0
+- name: prompt
+  label: Inject details (optional)
+  description: Describe additional details you'd like to see in the image
+  tip: Flux loves very detailed and descriptive prompts so try to be elaborate. The default behavior is to use Florence2 captioning to create a prompt from the starting image. This optional prompt parameter prepends your information to the Florence prompt, and can be used to add specific details to the remix. Keep in mind that the initial image provides most of the guidance, so this parameter will only have a subtle effect; it can add specific details, but likely won't have a strong stylistic influence on the result.
+  type: string
   visible_if: use_advanced=true
+  default:  
   comfyui: 
-    node_id: 89
+    node_id: 155
     field: inputs
-    subfield: number
-- name: size_from_input
-  label: Use starting image size
-  description: Override the width and height parameters with the actual resolution of your starting image. 
-  tip: It's best practice to use resolutions included in the models training data. Our aspect picker can help find optimized resolutions for width and height, but if you need pixel perfect size from your original image, enable this parameter.
-  type: bool
-  default: true
-  visible_if: use_advanced=true
-  comfyui: 
-    node_id: 121
-    field: inputs
-    subfield: value
+    subfield: body
 - name: force_optimized_resolution
   label: Force Optimized Resolution
   description: Round your width and height to the nearest resolution optimized for the training data of this model
@@ -121,9 +111,9 @@ parameters:
     field: inputs
     subfield: value
 - name: caption_settings
-  label: Caption Settings
-  description: Choose a method for sorting a sequence of input images. The visual_path method applies a traveling salesman solver to sort the images by their nearest visual proximity to each other
-  tip: This parameter should usually stay at the default of detailed_caption to preserve the input order, but occasionally an alphabetical or random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
+  label: Caption Setting
+  description: Choose a method for captioning the input image. More detailed prompts will lead to remixes that maintain more details of the input image. Setting to none will not caption the input image at all.
+  tip: This parameter should usually stay at the default of detailed_caption unless you want to keep more or less details from the input image.
   type: string
   default: detailed_caption
   choices: [none, caption, detailed_caption, more_detailed_caption]
@@ -135,7 +125,7 @@ parameters:
 - name: print_caption
   label: Print Caption
   description: Enabling this parameter prints the config into the bottom of the image. Useful for seeing how the image was interpreted by AI captioning.
-  tip: This should be false by default, but is a nice debugging feature for users to see how their initial image is being interpretted into a prompt.
+  tip: This should almost always be false, but is a nice debugging feature for users to see how their initial image is being interpretted into a prompt.
   type: bool
   default: false
   visible_if: use_advanced=true
