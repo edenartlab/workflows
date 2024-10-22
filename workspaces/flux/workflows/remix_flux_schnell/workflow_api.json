@@ -7,7 +7,7 @@
       ],
       "sampler": "euler",
       "scheduler": "simple",
-      "steps": "5",
+      "steps": "6",
       "guidance": "3.5",
       "max_shift": "0.50",
       "base_shift": "1.15",
@@ -153,7 +153,7 @@
         "89",
         1
       ],
-      "text2": "0.7600"
+      "text2": "0.8800"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -174,7 +174,7 @@
   },
   "89": {
     "inputs": {
-      "number": 0.6,
+      "number": 0.5,
       "from_range_min": 0,
       "from_range_max": 1,
       "to_range_min": [
@@ -214,7 +214,7 @@
   },
   "117": {
     "inputs": {
-      "image": "dreamscapes.png",
+      "image": "eden_logo.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -298,7 +298,7 @@
   },
   "135": {
     "inputs": {
-      "seed": 750760058165172
+      "seed": 0
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -532,6 +532,49 @@
     "class_type": "Display Any (rgthree)",
     "_meta": {
       "title": "Display Any (rgthree)"
+    }
+  },
+  "175": {
+    "inputs": {
+      "filename_prefix": "flux_remix",
+      "images": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "179": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_bpixp_00055_.png&type=temp&subfolder=&rand=0.47713749562472696"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_bpixp_00056_.png&type=temp&subfolder=&rand=0.41322470086773366"
+          }
+        ]
+      },
+      "image_a": [
+        "117",
+        0
+      ],
+      "image_b": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
     }
   }
 }

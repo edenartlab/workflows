@@ -1,6 +1,6 @@
 {
-  "last_node_id": 174,
-  "last_link_id": 324,
+  "last_node_id": 179,
+  "last_link_id": 329,
   "nodes": [
     {
       "id": 44,
@@ -205,93 +205,6 @@
       ]
     },
     {
-      "id": 12,
-      "type": "FluxSamplerParams+",
-      "pos": {
-        "0": 1119,
-        "1": -816
-      },
-      "size": {
-        "0": 306.9862365722656,
-        "1": 490
-      },
-      "flags": {},
-      "order": 31,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 308
-        },
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 96
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 245
-        },
-        {
-          "name": "loras",
-          "type": "LORA_PARAMS",
-          "link": null
-        },
-        {
-          "name": "seed",
-          "type": "STRING",
-          "link": 233,
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "name": "denoise",
-          "type": "STRING",
-          "link": 292,
-          "widget": {
-            "name": "denoise"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            20
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "params",
-          "type": "SAMPLER_PARAMS",
-          "links": [
-            100,
-            204
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "FluxSamplerParams+"
-      },
-      "widgets_values": [
-        "1",
-        "euler",
-        "simple",
-        "5",
-        "3.5",
-        "0.50",
-        "1.15",
-        "1"
-      ]
-    },
-    {
       "id": 97,
       "type": "Reroute",
       "pos": {
@@ -303,7 +216,7 @@
         26
       ],
       "flags": {},
-      "order": 14,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -407,6 +320,1270 @@
       ]
     },
     {
+      "id": 75,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 879,
+        "1": -763
+      },
+      "size": {
+        "0": 210,
+        "1": 76
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 312,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            292
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        [
+          "0.7909"
+        ],
+        "0.8800"
+      ]
+    },
+    {
+      "id": 131,
+      "type": "Eden_Float",
+      "pos": {
+        "0": 150,
+        "1": -480
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            214
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 139,
+      "type": "Get resolution [Crystools]",
+      "pos": {
+        "0": -534.7946166992188,
+        "1": -568.51708984375
+      },
+      "size": {
+        "0": 142.8000030517578,
+        "1": 96
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 250
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 169,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 141,
+        "1": -312
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            308
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            311
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            309,
+            310
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "flux1-schnell-fp8.safetensors"
+      ]
+    },
+    {
+      "id": 120,
+      "type": "Reroute",
+      "pos": {
+        "0": 168.41847229003906,
+        "1": 139.5027618408203
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 195
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            184,
+            185,
+            314
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 152,
+      "type": "Get resolution [Crystools]",
+      "pos": {
+        "0": 271,
+        "1": -30
+      },
+      "size": {
+        "0": 142.8000030517578,
+        "1": 96
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 314
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            273
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            274
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 124,
+      "type": "CM_NearestSDXLResolution",
+      "pos": {
+        "0": -541.7946166992188,
+        "1": -430.5173034667969
+      },
+      "size": {
+        "0": 176.39999389648438,
+        "1": 46
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 189
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            317
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            318
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CM_NearestSDXLResolution"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 122,
+      "type": "InversionDemoLazySwitch",
+      "pos": {
+        "0": -258.79473876953125,
+        "1": -84.51727294921875
+      },
+      "size": {
+        "0": 210,
+        "1": 74
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 193
+        },
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 194
+        },
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "link": 289,
+          "widget": {
+            "name": "switch"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            195
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InversionDemoLazySwitch"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 123,
+      "type": "ImageResize+",
+      "pos": {
+        "0": -535.7946166992188,
+        "1": -193.51731872558594
+      },
+      "size": {
+        "0": 243.0513458251953,
+        "1": 170
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 205
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 317,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 318,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            194
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
+      ]
+    },
+    {
+      "id": 43,
+      "type": "ImageResize+",
+      "pos": {
+        "0": -522.7946166992188,
+        "1": 33.482704162597656
+      },
+      "size": {
+        "0": 231.6647186279297,
+        "1": 179.9678192138672
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 196
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 258,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 259,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            193
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
+      ]
+    },
+    {
+      "id": 143,
+      "type": "Eden_Bool",
+      "pos": {
+        "0": -1160,
+        "1": -180
+      },
+      "size": {
+        "0": 316.41961669921875,
+        "1": 58
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            289
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "force SDXL resolution",
+      "properties": {
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 73,
+      "type": "TextEncodeForSamplerParams+",
+      "pos": {
+        "0": 842,
+        "1": -634
+      },
+      "size": {
+        "0": 268.79998779296875,
+        "1": 59.22367477416992
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 311
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 278,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            96
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeForSamplerParams+"
+      },
+      "widgets_values": [
+        "Separate prompts with at least three dashes\n---\nLike so"
+      ]
+    },
+    {
+      "id": 164,
+      "type": "InversionDemoLazySwitch",
+      "pos": {
+        "0": 470,
+        "1": 202
+      },
+      "size": {
+        "0": 210,
+        "1": 74
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 299
+        },
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 296
+        },
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "link": 298,
+          "widget": {
+            "name": "switch"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            323
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InversionDemoLazySwitch"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 165,
+      "type": "BoolPlusPlus",
+      "pos": {
+        "0": 197,
+        "1": 363
+      },
+      "size": {
+        "0": 245.1999969482422,
+        "1": 206
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "override_bool",
+          "type": "*",
+          "link": 297
+        },
+        {
+          "name": "override_on_false",
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "override_on_true",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "BOOL",
+          "type": "BOOLEAN",
+          "links": [
+            298
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "BOOL_STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "ANY",
+          "type": "*",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BoolPlusPlus"
+      },
+      "widgets_values": [
+        false,
+        "0.0",
+        "1.0"
+      ]
+    },
+    {
+      "id": 174,
+      "type": "Display Any (rgthree)",
+      "pos": {
+        "0": 712,
+        "1": 347
+      },
+      "size": {
+        "0": 288.5291748046875,
+        "1": 122.15091705322266
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 324,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 166,
+      "type": "Eden_String",
+      "pos": {
+        "0": 229,
+        "1": 204
+      },
+      "size": {
+        "0": 210,
+        "1": 76
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            299
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 38,
+      "type": "Florence2Run",
+      "pos": {
+        "0": -299,
+        "1": 553
+      },
+      "size": {
+        "0": 229.02537536621094,
+        "1": 300
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 184
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 38
+        },
+        {
+          "name": "task",
+          "type": "COMBO",
+          "link": 305,
+          "widget": {
+            "name": "task"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 319,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            296
+          ],
+          "slot_index": 2,
+          "shape": 3
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Florence2Run"
+      },
+      "widgets_values": [
+        "",
+        "detailed_caption",
+        true,
+        true,
+        1024,
+        3,
+        true,
+        "",
+        170521271897544,
+        "randomize"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": {
+        "0": -303,
+        "1": 487
+      },
+      "size": {
+        "0": 415.96832275390625,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora",
+          "type": "PEFTLORA",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            38
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadFlorence2Model"
+      },
+      "widgets_values": [
+        "microsoft/Florence-2-large",
+        "fp16",
+        "sdpa"
+      ]
+    },
+    {
+      "id": 167,
+      "type": "SDAnyConverter",
+      "pos": {
+        "0": -577,
+        "1": 592
+      },
+      "size": {
+        "0": 253.60000610351562,
+        "1": 26
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_type_input",
+          "type": "*",
+          "link": 301
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ANY_TYPE_OUTPUT",
+          "type": "*",
+          "links": [
+            305
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDAnyConverter"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 93,
+      "type": "PlotParameters+",
+      "pos": {
+        "0": 523,
+        "1": -260
+      },
+      "size": {
+        "0": 276.25482177734375,
+        "1": 174
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 209
+        },
+        {
+          "name": "params",
+          "type": "SAMPLER_PARAMS",
+          "link": 204
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            294
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlotParameters+"
+      },
+      "widgets_values": [
+        "none",
+        "none",
+        2,
+        "true",
+        "true"
+      ]
+    },
+    {
+      "id": 161,
+      "type": "InversionDemoLazySwitch",
+      "pos": {
+        "0": 826,
+        "1": -178
+      },
+      "size": {
+        "0": 210,
+        "1": 74
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 293
+        },
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 294
+        },
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "link": 291,
+          "widget": {
+            "name": "switch"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            325
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InversionDemoLazySwitch"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 162,
+      "type": "Eden_Bool",
+      "pos": {
+        "0": -1159,
+        "1": 48
+      },
+      "size": {
+        "0": 316.41961669921875,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            291
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "print caption",
+      "properties": {
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 145,
+      "type": "WidthHeightPicker",
+      "pos": {
+        "0": -1162,
+        "1": 165
+      },
+      "size": {
+        "0": 315,
+        "1": 150
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            258
+          ],
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            259
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WidthHeightPicker"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1,
+        8
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 163,
+      "type": "DRMBT_String_Item_Menu",
+      "pos": {
+        "0": -993,
+        "1": 591
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_select",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "int_select"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "type": "STRING",
+          "links": [
+            301
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": [
+            297
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DRMBT_String_Item_Menu"
+      },
+      "widgets_values": [
+        "none,caption,detailed_caption,more_detailed_caption",
+        ",",
+        "detailed_caption",
+        -1
+      ]
+    },
+    {
+      "id": 155,
+      "type": "TextPlusPlus",
+      "pos": {
+        "0": 708,
+        "1": 163
+      },
+      "size": {
+        "0": 291.7156677246094,
+        "1": 160
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prepend",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "prepend"
+          }
+        },
+        {
+          "name": "override_body",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "override_body"
+          }
+        },
+        {
+          "name": "append",
+          "type": "STRING",
+          "link": 323,
+          "widget": {
+            "name": "append"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            278,
+            321,
+            324
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "prepend",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "body",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "append",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Detail injection",
+      "properties": {
+        "Node name for S&R": "TextPlusPlus"
+      },
+      "widgets_values": [
+        "",
+        " ",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
       "id": 149,
       "type": "SDPromptSaver",
       "pos": {
@@ -418,13 +1595,13 @@
         "1": 750
       },
       "flags": {},
-      "order": 38,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 295
+          "link": 326
         },
         {
           "name": "lora_name",
@@ -557,7 +1734,7 @@
         "%date/",
         "flux1-schnell-fp8.safetensors",
         "kl-f8-anime2.ckpt",
-        683182170529777,
+        293320359801047,
         "randomize",
         30,
         8,
@@ -579,228 +1756,24 @@
       ]
     },
     {
-      "id": 75,
-      "type": "ShowText|pysssss",
-      "pos": {
-        "0": 879,
-        "1": -763
-      },
-      "size": [
-        210,
-        76
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 312,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            292
-          ],
-          "slot_index": 0,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        [
-          "0.7909"
-        ],
-        "0.7600"
-      ]
-    },
-    {
-      "id": 130,
-      "type": "Eden_Float",
-      "pos": {
-        "0": 150,
-        "1": -600
-      },
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            213
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        0.4
-      ]
-    },
-    {
-      "id": 131,
-      "type": "Eden_Float",
-      "pos": {
-        "0": 150,
-        "1": -480
-      },
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            214
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        1
-      ]
-    },
-    {
-      "id": 139,
-      "type": "Get resolution [Crystools]",
-      "pos": {
-        "0": -534.7946166992188,
-        "1": -568.51708984375
-      },
-      "size": {
-        "0": 142.8000030517578,
-        "1": 96
-      },
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 250
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Get resolution [Crystools]"
-      }
-    },
-    {
-      "id": 169,
-      "type": "CheckpointLoaderSimple",
-      "pos": {
-        "0": 141,
-        "1": -312
-      },
-      "size": {
-        "0": 315,
-        "1": 98
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            308
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            311
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            309,
-            310
-          ],
-          "shape": 3,
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "flux1-schnell-fp8.safetensors"
-      ]
-    },
-    {
-      "id": 120,
+      "id": 176,
       "type": "Reroute",
       "pos": {
-        "0": 168.41847229003906,
-        "1": 139.5027618408203
+        "0": 1483,
+        "1": -714
       },
       "size": [
         75,
         26
       ],
       "flags": {},
-      "order": 23,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
           "name": "",
           "type": "*",
-          "link": 195
+          "link": 325
         }
       ],
       "outputs": [
@@ -808,9 +1781,9 @@
           "name": "",
           "type": "*",
           "links": [
-            184,
-            185,
-            314
+            326,
+            327,
+            329
           ],
           "slot_index": 0
         }
@@ -821,368 +1794,50 @@
       }
     },
     {
-      "id": 152,
-      "type": "Get resolution [Crystools]",
+      "id": 179,
+      "type": "Image Comparer (rgthree)",
       "pos": {
-        "0": 271,
-        "1": -30
-      },
-      "size": {
-        "0": 142.8000030517578,
-        "1": 96
-      },
-      "flags": {},
-      "order": 26,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 314
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            273
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            274
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Get resolution [Crystools]"
-      }
-    },
-    {
-      "id": 124,
-      "type": "CM_NearestSDXLResolution",
-      "pos": {
-        "0": -541.7946166992188,
-        "1": -430.5173034667969
+        "0": 2236,
+        "1": -1101
       },
       "size": [
-        176.39999389648438,
-        46
+        1469.5866964645493,
+        1276.5798141248579
       ],
       "flags": {},
-      "order": 18,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
-          "name": "image",
+          "name": "image_a",
           "type": "IMAGE",
-          "link": 189
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            317
-          ],
-          "slot_index": 0,
-          "shape": 3
+          "link": 328,
+          "dir": 3
         },
         {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            318
-          ],
-          "slot_index": 1,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CM_NearestSDXLResolution"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 117,
-      "type": "LoadImage",
-      "pos": {
-        "0": -1150,
-        "1": -922
-      },
-      "size": {
-        "0": 315,
-        "1": 314
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
+          "name": "image_b",
           "type": "IMAGE",
-          "links": [
-            262
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
+          "link": 329,
+          "dir": 3
         }
       ],
+      "outputs": [],
       "properties": {
-        "Node name for S&R": "LoadImage"
+        "comparer_mode": "Slide"
       },
       "widgets_values": [
-        "dreamscapes.png",
-        "image"
-      ]
-    },
-    {
-      "id": 122,
-      "type": "InversionDemoLazySwitch",
-      "pos": {
-        "0": -258.79473876953125,
-        "1": -84.51727294921875
-      },
-      "size": [
-        210,
-        74
-      ],
-      "flags": {},
-      "order": 22,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "on_false",
-          "type": "*",
-          "link": 193
-        },
-        {
-          "name": "on_true",
-          "type": "*",
-          "link": 194
-        },
-        {
-          "name": "switch",
-          "type": "BOOLEAN",
-          "link": 289,
-          "widget": {
-            "name": "switch"
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_bpixp_00055_.png&type=temp&subfolder=&rand=0.47713749562472696"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_bpixp_00056_.png&type=temp&subfolder=&rand=0.41322470086773366"
           }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            195
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "InversionDemoLazySwitch"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 123,
-      "type": "ImageResize+",
-      "pos": {
-        "0": -535.7946166992188,
-        "1": -193.51731872558594
-      },
-      "size": [
-        243.05134872364488,
-        170
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 205
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 317,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 318,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            194
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [],
-          "slot_index": 2,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        "keep proportion",
-        "always",
-        8
-      ]
-    },
-    {
-      "id": 43,
-      "type": "ImageResize+",
-      "pos": {
-        "0": -522.7946166992188,
-        "1": 33.482704162597656
-      },
-      "size": [
-        231.66471187710272,
-        179.96782026871813
-      ],
-      "flags": {},
-      "order": 19,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 196
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 258,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 259,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            193
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [],
-          "slot_index": 2,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        "keep proportion",
-        "always",
-        8
-      ]
-    },
-    {
-      "id": 143,
-      "type": "Eden_Bool",
-      "pos": {
-        "0": -1160,
-        "1": -180
-      },
-      "size": {
-        "0": 316.41961669921875,
-        "1": 58
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "links": [
-            289
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "force SDXL resolution",
-      "properties": {
-        "Node name for S&R": "Eden_Bool"
-      },
-      "widgets_values": [
-        true
+        ]
       ]
     },
     {
@@ -1197,7 +1852,7 @@
         "1": 102
       },
       "flags": {},
-      "order": 7,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1225,567 +1880,49 @@
         "Node name for S&R": "Eden_Seed"
       },
       "widgets_values": [
-        750760058165172,
-        "randomize"
+        0,
+        "fixed"
       ]
     },
     {
-      "id": 73,
-      "type": "TextEncodeForSamplerParams+",
+      "id": 175,
+      "type": "SaveImage",
       "pos": {
-        "0": 842,
-        "1": -634
+        "0": 1954,
+        "1": -619
       },
       "size": [
-        268.79998779296875,
-        59.223673572790574
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 29,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 311
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 278,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            96
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "TextEncodeForSamplerParams+"
-      },
-      "widgets_values": [
-        "Separate prompts with at least three dashes\n---\nLike so"
-      ]
-    },
-    {
-      "id": 164,
-      "type": "InversionDemoLazySwitch",
-      "pos": {
-        "0": 470,
-        "1": 202
-      },
-      "size": [
-        210,
-        74
+        262.7155109003984,
+        270
       ],
       "flags": {},
-      "order": 27,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "on_false",
-          "type": "*",
-          "link": 299
-        },
-        {
-          "name": "on_true",
-          "type": "*",
-          "link": 296
-        },
-        {
-          "name": "switch",
-          "type": "BOOLEAN",
-          "link": 298,
-          "widget": {
-            "name": "switch"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            323
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "InversionDemoLazySwitch"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 165,
-      "type": "BoolPlusPlus",
-      "pos": {
-        "0": 197,
-        "1": 363
-      },
-      "size": [
-        245.1999969482422,
-        206
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "override_bool",
-          "type": "*",
-          "link": 297
-        },
-        {
-          "name": "override_on_false",
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "override_on_true",
-          "type": "*",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "BOOL",
-          "type": "BOOLEAN",
-          "links": [
-            298
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "BOOL_STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "ANY",
-          "type": "*",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BoolPlusPlus"
-      },
-      "widgets_values": [
-        false,
-        "0.0",
-        "1.0"
-      ]
-    },
-    {
-      "id": 174,
-      "type": "Display Any (rgthree)",
-      "pos": {
-        "0": 712,
-        "1": 347
-      },
-      "size": [
-        288.52917499795353,
-        122.15091886363274
-      ],
-      "flags": {},
-      "order": 30,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 324,
-          "dir": 3
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "Display Any (rgthree)"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
-      "id": 166,
-      "type": "Eden_String",
-      "pos": {
-        "0": 229,
-        "1": 204
-      },
-      "size": [
-        210,
-        76
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            299
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
-      "id": 38,
-      "type": "Florence2Run",
-      "pos": {
-        "0": -299,
-        "1": 553
-      },
-      "size": [
-        229.02537985546553,
-        300
-      ],
-      "flags": {},
-      "order": 24,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 184
-        },
-        {
-          "name": "florence2_model",
-          "type": "FL2MODEL",
-          "link": 38
-        },
-        {
-          "name": "task",
-          "type": "COMBO",
-          "link": 305,
-          "widget": {
-            "name": "task"
-          }
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 319,
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "caption",
-          "type": "STRING",
-          "links": [
-            296
-          ],
-          "slot_index": 2,
-          "shape": 3
-        },
-        {
-          "name": "data",
-          "type": "JSON",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Florence2Run"
-      },
-      "widgets_values": [
-        "",
-        "detailed_caption",
-        true,
-        true,
-        1024,
-        3,
-        true,
-        "",
-        408589557044232,
-        "randomize"
-      ]
-    },
-    {
-      "id": 37,
-      "type": "DownloadAndLoadFlorence2Model",
-      "pos": {
-        "0": -303,
-        "1": 487
-      },
-      "size": {
-        "0": 415.96832275390625,
-        "1": 106
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "lora",
-          "type": "PEFTLORA",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "florence2_model",
-          "type": "FL2MODEL",
-          "links": [
-            38
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DownloadAndLoadFlorence2Model"
-      },
-      "widgets_values": [
-        "microsoft/Florence-2-large",
-        "fp16",
-        "sdpa"
-      ]
-    },
-    {
-      "id": 167,
-      "type": "SDAnyConverter",
-      "pos": {
-        "0": -577,
-        "1": 592
-      },
-      "size": [
-        253.60000610351562,
-        26
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_type_input",
-          "type": "*",
-          "link": 301
-        }
-      ],
-      "outputs": [
-        {
-          "name": "ANY_TYPE_OUTPUT",
-          "type": "*",
-          "links": [
-            305
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SDAnyConverter"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 93,
-      "type": "PlotParameters+",
-      "pos": {
-        "0": 523,
-        "1": -260
-      },
-      "size": {
-        "0": 276.25482177734375,
-        "1": 174
-      },
-      "flags": {},
-      "order": 34,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 209
-        },
-        {
-          "name": "params",
-          "type": "SAMPLER_PARAMS",
-          "link": 204
+          "link": 327
         }
       ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            294
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
+      "outputs": [],
       "properties": {
-        "Node name for S&R": "PlotParameters+"
+        "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "none",
-        "none",
-        2,
-        "true",
-        "true"
+        "flux_remix"
       ]
     },
     {
-      "id": 161,
-      "type": "InversionDemoLazySwitch",
+      "id": 130,
+      "type": "Eden_Float",
       "pos": {
-        "0": 826,
-        "1": -178
-      },
-      "size": {
-        "0": 210,
-        "1": 74
-      },
-      "flags": {},
-      "order": 37,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "on_false",
-          "type": "*",
-          "link": 293
-        },
-        {
-          "name": "on_true",
-          "type": "*",
-          "link": 294
-        },
-        {
-          "name": "switch",
-          "type": "BOOLEAN",
-          "link": 291,
-          "widget": {
-            "name": "switch"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            295
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "InversionDemoLazySwitch"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 162,
-      "type": "Eden_Bool",
-      "pos": {
-        "0": -1159,
-        "1": 48
-      },
-      "size": {
-        "0": 316.41961669921875,
-        "1": 58
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "links": [
-            291
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "print caption",
-      "properties": {
-        "Node name for S&R": "Eden_Bool"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 145,
-      "type": "WidthHeightPicker",
-      "pos": {
-        "0": -1162,
-        "1": 165
+        "0": 150,
+        "1": -600
       },
       "size": {
         "0": 315,
-        "1": 150
+        "1": 58
       },
       "flags": {},
       "order": 11,
@@ -1793,170 +1930,148 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "width",
-          "type": "INT",
+          "name": "FLOAT",
+          "type": "FLOAT",
           "links": [
-            258
+            213
           ],
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            259
-          ],
-          "slot_index": 1,
+          "slot_index": 0,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "WidthHeightPicker"
+        "Node name for S&R": "Eden_Float"
       },
       "widgets_values": [
-        1024,
-        1024,
-        1,
-        8
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
+        0.4
+      ]
     },
     {
-      "id": 163,
-      "type": "DRMBT_String_Item_Menu",
+      "id": 117,
+      "type": "LoadImage",
       "pos": {
-        "0": -993,
-        "1": 591
+        "0": -1150,
+        "1": -922
       },
       "size": {
-        "0": 400,
-        "1": 200
+        "0": 315,
+        "1": 314
       },
       "flags": {},
       "order": 12,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "int_select",
-          "type": "INT",
-          "link": null,
-          "widget": {
-            "name": "int_select"
-          }
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "name": "output_string",
-          "type": "STRING",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            301
+            262,
+            328
           ],
           "slot_index": 0,
           "shape": 3
         },
         {
-          "name": "index",
-          "type": "INT",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "eden_logo.png",
+        "image"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "FluxSamplerParams+",
+      "pos": {
+        "0": 1119,
+        "1": -816
+      },
+      "size": {
+        "0": 306.9862365722656,
+        "1": 490
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 308
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 96
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 245
+        },
+        {
+          "name": "loras",
+          "type": "LORA_PARAMS",
+          "link": null
+        },
+        {
+          "name": "seed",
+          "type": "STRING",
+          "link": 233,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "denoise",
+          "type": "STRING",
+          "link": 292,
+          "widget": {
+            "name": "denoise"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
           "links": [
-            297
+            20
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "params",
+          "type": "SAMPLER_PARAMS",
+          "links": [
+            100,
+            204
           ],
           "slot_index": 1,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "DRMBT_String_Item_Menu"
+        "Node name for S&R": "FluxSamplerParams+"
       },
       "widgets_values": [
-        "none,caption,detailed_caption,more_detailed_caption",
-        ",",
-        "detailed_caption",
-        -1
-      ]
-    },
-    {
-      "id": 155,
-      "type": "TextPlusPlus",
-      "pos": {
-        "0": 708,
-        "1": 163
-      },
-      "size": [
-        291.71567944351466,
-        160
-      ],
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prepend",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "prepend"
-          }
-        },
-        {
-          "name": "override_body",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "override_body"
-          }
-        },
-        {
-          "name": "append",
-          "type": "STRING",
-          "link": 323,
-          "widget": {
-            "name": "append"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            278,
-            321,
-            324
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "prepend",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "body",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "append",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "title": "Detail injection",
-      "properties": {
-        "Node name for S&R": "TextPlusPlus"
-      },
-      "widgets_values": [
-        "",
-        " ",
-        "",
-        "",
-        ""
+        "1",
+        "euler",
+        "simple",
+        "6",
+        "3.5",
+        "0.50",
+        "1.15",
+        "1"
       ]
     },
     {
@@ -1971,7 +2086,7 @@
         "1": 214
       },
       "flags": {},
-      "order": 13,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -2040,7 +2155,7 @@
         "Node name for S&R": "NumberRemap"
       },
       "widgets_values": [
-        0.6,
+        0.5,
         0,
         1,
         0,
@@ -2330,14 +2445,6 @@
       "*"
     ],
     [
-      295,
-      161,
-      0,
-      149,
-      0,
-      "IMAGE"
-    ],
-    [
       296,
       38,
       2,
@@ -2480,6 +2587,46 @@
       174,
       0,
       "*"
+    ],
+    [
+      325,
+      161,
+      0,
+      176,
+      0,
+      "*"
+    ],
+    [
+      326,
+      176,
+      0,
+      149,
+      0,
+      "IMAGE"
+    ],
+    [
+      327,
+      176,
+      0,
+      175,
+      0,
+      "IMAGE"
+    ],
+    [
+      328,
+      117,
+      0,
+      179,
+      0,
+      "IMAGE"
+    ],
+    [
+      329,
+      176,
+      0,
+      179,
+      1,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -2525,10 +2672,10 @@
   },
   "extra": {
     "ds": {
-      "scale": 0.3186308177103567,
+      "scale": 0.5131581182307074,
       "offset": [
-        1958.1578620798048,
-        1257.529907205945
+        1566.1665169226496,
+        791.0950386295759
       ]
     },
     "workspace_info": {

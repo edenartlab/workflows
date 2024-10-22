@@ -3,7 +3,7 @@ description: Remix an image  quickly with Flux Schnell.
 thumbnail: app/remix-flux-schnell_opt.png
 tip: Flux is a text to image model that excels at prompt coherence and text generation. The remix endpoint creates a variation on a starting image using Flux Schnell.
 output_type: image
-cost_estimate: 1 * n_samples
+cost_estimate: 1.0 * n_samples
 handler: comfyui
 base_model: flux-schnell
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
@@ -33,9 +33,10 @@ parameters:
   tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. A value of 1 is 100% AI creativity, ignoring all influence of the starting image composition, whereas a medium blend of about 50% will maintain pretty close adherance to the original input.
   type: float
   required: true
-  default: 0.5
+  default: 0.6
   minimum: 0.0
   maximum: 1.0
+  step: 0.01
   comfyui: 
     node_id: 89
     field: inputs
@@ -99,17 +100,6 @@ parameters:
     node_id: 155
     field: inputs
     subfield: body
-- name: force_optimized_resolution
-  label: Force Optimized Resolution
-  description: Round your width and height to the nearest resolution optimized for the training data of this model
-  tip: It's best practice to use resolutions included in the models training data. This parameter only has an effect if you are already enabling size_from_input.
-  type: bool
-  default: false
-  visible_if: use_advanced=true
-  comfyui: 
-    node_id: 143
-    field: inputs
-    subfield: value
 - name: caption_settings
   label: Caption Setting
   description: Choose a method for captioning the input image. More detailed prompts will lead to remixes that maintain more details of the input image. Setting to none will not caption the input image at all.
@@ -122,14 +112,3 @@ parameters:
     node_id: 163
     field: inputs
     subfield: select_item
-- name: print_caption
-  label: Print Caption
-  description: Enabling this parameter prints the config into the bottom of the image. Useful for seeing how the image was interpreted by AI captioning.
-  tip: This should almost always be false, but is a nice debugging feature for users to see how their initial image is being interpretted into a prompt.
-  type: bool
-  default: false
-  visible_if: use_advanced=true
-  comfyui: 
-    node_id: 162
-    field: inputs
-    subfield: value

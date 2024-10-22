@@ -39,16 +39,49 @@ parameters:
     node_id: 67
     field: inputs
     subfield: value
+- name: resolution
+  label: Resolution
+  description: The resolution at which the inpainted region is generated.
+  tip: Can be adjusted to somewhat match the input resolution of the given image.
+  type: int
+  default: 1024
+  minimum: 512
+  maximum: 1536
+  step: 64
+  comfyui: 
+    node_id: 74
+    field: inputs
+    subfield: value
+- name: mask_image
+  label: Mask Image
+  description: Optionally provide a mask image yourself (white regions will get inpainted). To activate the mask image, make sure your masking prompt is empty!!
+  type: image
+  comfyui: 
+    node_id: 48
+    field: inputs
+    subfield: image
 - name: mask_expand
   label: Expand the inpainting mask slightly
   description: Make the inpainting region slightly larger to make the results more realistic
   tip: The default is typically fine. If the masking prompt is targetting a small object, but the inpainting object is something larger, you may want to increase this value to give the inpainting model enough space to draw the new thing. If the inpainting region needs to be very precise you can very rarely decrease this value to eg 24.
   type: int
-  default: 36
+  default: 24
   minimum: 0
   maximum: 72
   comfyui: 
     node_id: 190
+    field: inputs
+    subfield: expand
+- name: mask_blur
+  label: Blur the inpainting mask at the edges
+  description: Make the inpainting region blurry at the edges to make the results more realistic
+  tip: The default is typically fine. If the mask has lots of fine edges, you can consider tuning this down to avoid erasing the details in the mask.
+  type: int
+  default: 96
+  minimum: 0
+  maximum: 160
+  comfyui: 
+    node_id: 191
     field: inputs
     subfield: expand
 - name: seed
