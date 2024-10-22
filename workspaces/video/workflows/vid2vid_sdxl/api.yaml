@@ -27,15 +27,15 @@ parameters:
     field: inputs
     subfield: image   
 - name: resolution
-  label: Target resolution for processing the video
-  description: Higher resolutions usually lead to better quality output videos. 896 is a good default, 640 can be used to do a quick test, 1024 is for HD video and 1280 for exceptionally high quality but super slow video style transfers!
+  label: Processing resolution
+  description: Higher resolutions usually leads to better quality output videos. 896 is a good default, 640 can be used to do a quick test, >1024 is for best quality but very slow
   tip: You can sometimes increase the resolution to achieve a higher quality style transfer effect, however this comes at a big speed and cost tradeoff, HD is VERY slow, so only use this when specifically requested!
   type: int
   default: 896
   minimum: 640
   maximum: 1280
   required: true
-  step: 16
+  step: 32
   comfyui: 
     node_id: 535
     field: inputs
