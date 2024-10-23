@@ -350,7 +350,8 @@
         {
           "name": "mask",
           "type": "MASK",
-          "link": 420
+          "link": 420,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -459,12 +460,14 @@
         {
           "name": "bboxes",
           "type": "BBOX",
-          "link": 86
+          "link": 86,
+          "shape": 7
         },
         {
           "name": "mask",
           "type": "MASK",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "coordinates_positive",
@@ -1847,17 +1850,20 @@
         {
           "name": "a",
           "type": "*",
-          "link": 347
+          "link": 347,
+          "shape": 7
         },
         {
           "name": "b",
           "type": "*",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "c",
           "type": "*",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -2282,7 +2288,8 @@
         {
           "name": "lora",
           "type": "PEFTLORA",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -2325,12 +2332,14 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 318
+          "link": 318,
+          "shape": 7
         },
         {
           "name": "mask",
           "type": "MASK",
-          "link": 279
+          "link": 279,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -3029,7 +3038,8 @@
         {
           "name": "get_image_size",
           "type": "IMAGE",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "width_input",
@@ -3244,7 +3254,8 @@
         {
           "name": "mask",
           "type": "MASK",
-          "link": 437
+          "link": 437,
+          "shape": 7
         },
         {
           "name": "x",
@@ -3583,7 +3594,7 @@
         "lanczos",
         "keep proportion",
         "always",
-        32
+        8
       ]
     }
   ],
@@ -4463,72 +4474,12 @@
   ],
   "groups": [
     {
-      "title": "Subcrop",
+      "title": "Switch mask image",
       "bounding": [
-        4230,
-        -137,
-        1194,
-        786
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "SEGS Detailer",
-      "bounding": [
-        6257,
-        -206,
-        878,
-        676
-      ],
-      "color": "#6900d1",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Model Loader and Prompt",
-      "bounding": [
-        6067,
-        -747,
-        904,
-        462
-      ],
-      "color": "#3de600",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Auto-Mask generation",
-      "bounding": [
-        2887,
-        -1201,
-        985,
-        850
-      ],
-      "color": "#444",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Inputs",
-      "bounding": [
-        1714,
-        -911,
-        753,
-        951
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Recomposite",
-      "bounding": [
-        7320,
-        449,
-        1310,
-        717
+        3014,
+        -269,
+        359,
+        153
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -4547,12 +4498,72 @@
       "flags": {}
     },
     {
-      "title": "Switch mask image",
+      "title": "Recomposite",
       "bounding": [
-        3014,
-        -269,
-        359,
-        153
+        7320,
+        449,
+        1310,
+        717
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Inputs",
+      "bounding": [
+        1714,
+        -911,
+        753,
+        951
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Auto-Mask generation",
+      "bounding": [
+        2887,
+        -1201,
+        985,
+        850
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Model Loader and Prompt",
+      "bounding": [
+        6067,
+        -747,
+        904,
+        462
+      ],
+      "color": "#3de600",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "SEGS Detailer",
+      "bounding": [
+        6257,
+        -206,
+        878,
+        676
+      ],
+      "color": "#6900d1",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Subcrop",
+      "bounding": [
+        4230,
+        -137,
+        1194,
+        786
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -4562,10 +4573,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5131581182307069,
+      "scale": 0.22094928152180263,
       "offset": [
-        -1152.6045589372861,
-        1108.3843418605602
+        -443.4379751338481,
+        2239.2629050315427
       ]
     }
   },
