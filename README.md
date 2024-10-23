@@ -10,6 +10,7 @@
 | `handler` | What backend the tool is running on |
 | `comfyui_output_node_id` | ComfyUI output node id if applicable |
 | `private` | Optional boolean indicating whether to hide the tool from the Eden app UI |
+| `base_model` | Display the base model in the UI (flux-dev, flux-schnell, sdxl, sd15, sd3) |
 
 # Parameter Fields
 
