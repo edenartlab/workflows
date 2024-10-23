@@ -84,6 +84,19 @@ parameters:
     node_id: 191
     field: inputs
     subfield: amount
+- name: creativity
+  label: AI creativity
+  description: How much the surrounding scene influences the inpainting. Recommended values 0.7-0.9
+  tip: This controls how much the inpainting looks at the surrounding (fixed) content in the image. Lower values can produce more creative outputs that have better prompt adherence but they often tend to look misplaced and out of context with the rest of the scene.
+  type: float
+  default: 0.85
+  minimum: 0.0
+  maximum: 1.1
+  step: 0.01
+  comfyui: 
+    node_id: 226
+    field: inputs
+    subfield: strength
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set randomly.
