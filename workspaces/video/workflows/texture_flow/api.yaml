@@ -3,7 +3,7 @@ description: Mix multiple images into a video, optionally add controlnet for sha
 thumbnail: app/style_mixing_opt.mp4
 tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
 output_type: video
-cost_estimate: 0.5 * n_frames * (width + height)/(2*640) * n_steps/8
+cost_estimate: 0.4 * n_frames * (width + height)/(2*640) * n_steps/8
 base_model: sd15
 handler: comfyui
 resolutions: [16-9_928x512, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_512x928]
