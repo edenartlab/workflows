@@ -4,6 +4,7 @@ tip: This model uses SD3.5
 output_type: image
 cost_estimate: 2 * n_samples
 handler: comfyui
+private: true
 comfyui_output_node_id: 9
 parameters:
 - name: n_samples
@@ -19,6 +20,7 @@ parameters:
   label: Prompt
   description: Prompt to describe what you want to generate.
   type: string
+  required: true
   comfyui: 
     node_id: 16
     field: inputs
@@ -28,10 +30,11 @@ parameters:
   description: Width in pixels
   tip: Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
-  step: 8
+  step: 32
   comfyui: 
     node_id: 53
     field: inputs
@@ -41,10 +44,11 @@ parameters:
   description: Height in pixels
   tip: Use the description for width to understand how to use height well.
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
-  step: 8
+  step: 32
   comfyui: 
     node_id: 53
     field: inputs
