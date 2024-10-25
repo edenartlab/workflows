@@ -1,4 +1,4 @@
-name: FrameInterpolation
+name: Frame Interpolation
 description: Mix multiple images into a video by interpolating between frames. Works with images, archives or video files, and can be used to slow down or speed up a movie.
 thumbnail: https://edenartlab-prod-data.s3.amazonaws.com/app/style_mixing_opt.mp4
 tip: This workflow creates animations from a set of images or movie. First the input type is determined; whether images, archive, movie or url, the input is parsed and treated as an image batch that can be sorted by metadata or by visual similarity, and then n number of interpolation frames are added in between each provided frame.
@@ -28,7 +28,7 @@ parameters:
   type: int
   default: 2
   minimum: 1
-  maximum: 144
+  maximum: 60
   required: true
   comfyui: 
     node_id: 129
@@ -39,9 +39,9 @@ parameters:
   description: target output video framerate
   tip: The output video will be confromed to this framerate. This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps(broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video conforms the total n_frames.
   type: int
-  default: 30
+  default: 24
   minimum: 1
-  maximum: 144
+  maximum: 60
   comfyui: 
     node_id: 161
     field: inputs
@@ -66,7 +66,7 @@ parameters:
     node_id: 190
     field: inputs
     subfield: value
-- name: show_advanced
+- name: use_advanced
   label: Show Advanced Parameters
   description: This toggle reveals advanced parameters to web front end users, and has no effect on the output.
   type: bool
@@ -82,7 +82,7 @@ parameters:
   type: string
   default: None
   choices: [None, alphabetical, visual_path, random]
-  visible_if: show_advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
@@ -93,6 +93,7 @@ parameters:
   tip: This should usually stay false, but if a user asks to flip it, its nice to sort backwards alphabetically, or when sort by visual_path is enabled and the user wants the video to flow in the opposite direction.
   type: bool
   default: false
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
@@ -103,7 +104,7 @@ parameters:
   tip: This is useful for creating slow motion videos that play back at the original framerate, if that framerate is not the default of 30fps. For instance, European cinematic standards are 25fps, and if you'd like to keep your output video conformed to this framerate, this value could be true. This is an advanced parameter that should always be falsue unless otherwise specified.
   type: bool
   default: false
-  visible_if: show_advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 160
     field: inputs
@@ -116,7 +117,7 @@ parameters:
   default: 0
   minimum: 0
   maximum: 1800
-  visible_if: show_advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
@@ -129,7 +130,7 @@ parameters:
   default: 0
   minimum: 0
   maximum: 600
-  visible_if: show_advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
@@ -142,7 +143,7 @@ parameters:
   default: 0
   minimum: 0
   maximum: 60
-  visible_if: show_advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
@@ -153,7 +154,7 @@ parameters:
   type: string
   default: rife49.pth
   choices: [rife49.pth, rife49.pth, FILM]
-  visible_if: show_advanced=true
+  visible_if: use_advanced=true
   comfyui: 
     node_id: 193
     field: inputs
