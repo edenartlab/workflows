@@ -5,6 +5,7 @@ tip: This workflow edits a specific region in the given image by first applying 
 output_type: image
 cost_estimate: 2 * n_samples
 handler: comfyui
+private: true
 comfyui_output_node_id: 33
 parameters:
 - name: image
