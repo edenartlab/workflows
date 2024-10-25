@@ -3,6 +3,7 @@ description: Generate an image from text with Flux Dev including starting image,
 thumbnail: app/flux.png
 tip: Flux is a text to image model that excels at prompt coherence and text generation. This should always be the default way to generate an image from text! Flux-dev can use ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, and LoRA models to apply a pretrained fine tuned concept.
 output_type: image
+status: prod
 base_model: flux-dev
 cost_estimate: 2 * n_samples
 handler: comfyui

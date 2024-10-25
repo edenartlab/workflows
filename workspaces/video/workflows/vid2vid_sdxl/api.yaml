@@ -5,7 +5,8 @@ tip: This will create a new video with similar shapes / motions as the input vid
 output_type: video
 cost_estimate: 1.5 * frame_cap * resolution/896
 handler: comfyui
-private: false
+status: prod
+visible: false
 comfyui_output_node_id: 540
 parameters:
 - name: video

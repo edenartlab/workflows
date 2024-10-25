@@ -3,6 +3,7 @@ description: Select and replace anything in an image (FLUX)
 thumbnail: app/flux-inpaint-opt.mp4
 tip: This workflow edits a specific region in the given image by first applying the masking prompt to highlight a specific region of the image, and then applying the inpainting prompt to fill (re-draw) in the highlighted region.
 output_type: image
+status: prod
 cost_estimate: 3 * n_samples
 handler: comfyui
 base_model: flux-dev

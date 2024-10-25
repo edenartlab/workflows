@@ -3,9 +3,10 @@ description: Select and replace anything in an image.
 thumbnail: app/inpaint_opt.mp4
 tip: This workflow edits a specific region in the given image by first applying the masking prompt to highlight a specific region of the image, and then applying the inpainting prompt to fill (re-draw) in the highlighted region.
 output_type: image
+status: prod
+visible: false
 cost_estimate: 2 * n_samples
 handler: comfyui
-private: true
 comfyui_output_node_id: 33
 parameters:
 - name: image

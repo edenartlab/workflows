@@ -5,7 +5,8 @@ output_type: image
 base_model: sd3
 cost_estimate: 2 * n_samples
 handler: comfyui
-private: true
+status: prod
+visible: false
 comfyui_output_node_id: 9
 parameters:
 - name: n_samples

@@ -3,6 +3,7 @@ description: Generate an image with transparency in the alpha channel.
 thumbnail: app/layer_diffusion.png
 tip: Background removal can do a great job of isolating a subject, but for transparent objects a fully opaque masked object may not be enough. Layer Diffusion calculates transparency, returning a .png image with alpha estimated pixel values for generating isolated transparent objects
 output_type: image
+status: prod
 cost_estimate: 1 * n_samples
 handler: comfyui
 resolutions: [16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344]
