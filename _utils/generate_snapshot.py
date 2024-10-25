@@ -208,7 +208,8 @@ additional_node_url_mappings = {
     "LogicGateInvertBasic": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
     "FloorNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
     "MultiplyNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
-    "ShowText|pysssss": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git"
+    "ShowText|pysssss": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git",
+    "VHS_VideoCombine": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
     }
 
 
