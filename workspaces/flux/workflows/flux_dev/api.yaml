@@ -142,7 +142,7 @@ parameters:
 - name: preprocessor
   label: Controlnet preprocessor
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
-  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
+  tip: depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
   type: string
   visible_if: use_controlnet=true
   default: CannyEdgePreprocessor

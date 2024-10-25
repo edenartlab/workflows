@@ -49,7 +49,7 @@ Remapping labels to multiple nodes example:
   visible_if: use_controlnet1=true
   default: CannyEdgePreprocessor
   choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
-  choices_label: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
+  choices_labels: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
   comfyui: 
     node_id: 406
     field: inputs
