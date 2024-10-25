@@ -99,7 +99,7 @@ parameters:
 - name: control_input
   label: Guidance input
   description: A guidance image/GIF/video used as input to the controlnet. Will guide the shape of the output video. 
-  type: image
+  type: image|video
   visible_if: use_controlnet1=true
   comfyui: 
     node_id: 552
