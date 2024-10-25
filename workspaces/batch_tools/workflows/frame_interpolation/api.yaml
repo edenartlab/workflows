@@ -114,6 +114,8 @@ parameters:
   description: Limit the maximum number of images processed from a video or image sequence. A 0 value has no limit
   tip: This parameter can be used to only grab n number of images from a sequence or video clip. If a user asks to only use the first 10 seconds of a video clip, this calculation could be done by assuming a frame rate of 30FPS and limiting the Image Count Cap to 300 frames. This is also useful when sorting, for example a batch of provided images capped to three and sorted by random will always pick 3 random images from a list.
   type: int
+  hide_from_ui: true
+  hide_from_agent: true
   default: 0
   minimum: 0
   maximum: 1800
@@ -127,6 +129,8 @@ parameters:
   description: This parameter determines the first frame from a batch, skipping all of the frames that came before it.
   tip: This parameter might be set to a non 0 value if a user wanted to skip the beginning of a video clip before processing. If the desired outcome is a video process that doesn't begin until two seconds into the clip, assuming 30fps one might set this value to 60.
   type: int
+  hide_from_ui: true
+  hide_from_agent: true
   default: 0
   minimum: 0
   maximum: 600
@@ -140,6 +144,8 @@ parameters:
   description: This parameter determines the number of images to skip from a sequence or video; setting the value to 1 would ignore every other frame.
   tip: This parameter is most useful for reducing the number of frames processed from a video or image batch. Setting this value to 1 and keeping interpolation_frames at 1 would produce a double speed video with no interpolation.
   type: int
+  hide_from_ui: true
+  hide_from_agent: true
   default: 0
   minimum: 0
   maximum: 60
@@ -153,7 +159,7 @@ parameters:
   description: Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
   type: string
   default: rife49.pth
-  choices: [rife49.pth, rife49.pth, FILM]
+  choices: [rife49.pth, FILM]
   visible_if: use_advanced=true
   comfyui: 
     node_id: 193
