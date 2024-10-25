@@ -147,7 +147,7 @@ parameters:
   visible_if: use_controlnet=true
   default: CannyEdgePreprocessor
   choices: [CannyEdgePreprocessor, MiDaS-DepthMapPreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, ScribblePreprocessor]
-  choices_label: [edges (canny), depth, lines (lineart), soft lines (HED), human pose, scribble]
+  choices_labels: [edges (canny), depth, lines (lineart), soft lines (HED), human pose, scribble]
   comfyui: 
     node_id: 104
     field: inputs
