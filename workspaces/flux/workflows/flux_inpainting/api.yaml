@@ -22,7 +22,7 @@ parameters:
     subfield: image
 - name: masking_prompt
   label: masking prompt
-  description: Textual description of the region to inpaint.
+  description: Description (just one or a few words) of what object / region you want to replace / inpaint.
   tip: This prompt will be used to highlight the object/region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences. Some examples of good masking prompts are 'face', 'building', 'hair, headwear, hat', ...
   type: string
   required: true
@@ -31,7 +31,7 @@ parameters:
     field: inputs
     subfield: value
 - name: inpainting_prompt
-  label: inpainting prompt
+  label: A prompt describing what you want to replace the masked region with. No need to describe the entire scene, just the object or region you want to generate.
   description: Positive text prompt, what you want to generate instead. This prompt will be used to inpaint the region selected by the masking prompt.
   type: string
   required: true
@@ -60,30 +60,6 @@ parameters:
     node_id: 48
     field: inputs
     subfield: image
-- name: mask_expand
-  label: Expand the inpainting mask slightly
-  description: Make the inpainting region slightly larger to make the results more realistic
-  tip: The default is typically fine. If the masking prompt is targetting a small object, but the inpainting object is something larger, you may want to increase this value to give the inpainting model enough space to draw the new thing. If the inpainting region needs to be very precise you can very rarely decrease this value to eg 24.
-  type: int
-  default: 24
-  minimum: 0
-  maximum: 72
-  comfyui: 
-    node_id: 190
-    field: inputs
-    subfield: expand
-- name: mask_blur
-  label: Blur the inpainting mask at the edges
-  description: Make the inpainting region blurry at the edges to make the results more realistic
-  tip: The default is typically fine. If the mask has lots of fine edges, you can consider tuning this down to avoid erasing the details in the mask.
-  type: int
-  default: 96
-  minimum: 0
-  maximum: 160
-  comfyui: 
-    node_id: 191
-    field: inputs
-    subfield: amount
 - name: creativity
   label: AI creativity
   description: How much the surrounding scene influences the inpainting. Recommended values 0.7-0.9
@@ -97,6 +73,30 @@ parameters:
     node_id: 226
     field: inputs
     subfield: strength
+- name: mask_expand
+  label: Expand the inpainting mask slightly
+  description: Make the inpainting region slightly larger to make the results more realistic
+  tip: The default is typically fine. If the masking prompt is targetting a small object, but the inpainting object is something larger, you may want to increase this value to give the inpainting model enough space to draw the new thing. If the inpainting region needs to be very precise you can very rarely decrease this value to eg 24.
+  type: int
+  default: 16
+  minimum: 0
+  maximum: 64
+  comfyui: 
+    node_id: 190
+    field: inputs
+    subfield: expand
+- name: mask_blur
+  label: Blur the inpainting mask at the edges
+  description: Making the inpainting region blurry at the edges can make the results slightly better
+  tip: The default is typically fine. If the mask has lots of fine edges, you can consider tuning this down to avoid erasing the details in the mask.
+  type: int
+  default: 24
+  minimum: 0
+  maximum: 160
+  comfyui: 
+    node_id: 191
+    field: inputs
+    subfield: amount
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set randomly.
