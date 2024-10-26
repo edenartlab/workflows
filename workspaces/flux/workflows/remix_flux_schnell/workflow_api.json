@@ -153,7 +153,7 @@
         "89",
         1
       ],
-      "text2": "0.8800"
+      "text2": "0.8560"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -174,7 +174,7 @@
   },
   "89": {
     "inputs": {
-      "number": 0.5,
+      "number": 0.76,
       "from_range_min": 0,
       "from_range_max": 1,
       "to_range_min": [
@@ -214,7 +214,7 @@
   },
   "117": {
     "inputs": {
-      "image": "eden_logo.png",
+      "image": "eden-logo_50gray.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -342,7 +342,6 @@
     "inputs": {
       "filename": "flux-remix_%seed_%counter",
       "path": "%date/",
-      "model_name": "flux1-schnell-fp8.safetensors",
       "seed": [
         "135",
         0
@@ -367,10 +366,6 @@
       "date_format": "%Y-%m-%d",
       "time_format": "%H%M%S",
       "save_metadata_file": false,
-      "extra_info": [
-        "76",
-        0
-      ],
       "images": [
         "161",
         0
@@ -532,49 +527,6 @@
     "class_type": "Display Any (rgthree)",
     "_meta": {
       "title": "Display Any (rgthree)"
-    }
-  },
-  "175": {
-    "inputs": {
-      "filename_prefix": "flux_remix",
-      "images": [
-        "161",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
-  "179": {
-    "inputs": {
-      "rgthree_comparer": {
-        "images": [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_bpixp_00055_.png&type=temp&subfolder=&rand=0.47713749562472696"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_bpixp_00056_.png&type=temp&subfolder=&rand=0.41322470086773366"
-          }
-        ]
-      },
-      "image_a": [
-        "117",
-        0
-      ],
-      "image_b": [
-        "161",
-        0
-      ]
-    },
-    "class_type": "Image Comparer (rgthree)",
-    "_meta": {
-      "title": "Image Comparer (rgthree)"
     }
   }
 }
