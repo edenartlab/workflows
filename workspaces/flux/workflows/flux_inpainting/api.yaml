@@ -22,7 +22,7 @@ parameters:
     field: inputs
     subfield: image
 - name: masking_prompt
-  label: masking prompt
+  label: Region prompt
   description: Description (just one or a few words) of what object / region you want to replace / inpaint.
   tip: This prompt will be used to highlight the object/region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences. Some examples of good masking prompts are 'face', 'building', 'hair, headwear, hat', ...
   type: string
@@ -32,8 +32,8 @@ parameters:
     field: inputs
     subfield: value
 - name: inpainting_prompt
-  label: A prompt describing what you want to replace the masked region with. No need to describe the entire scene, just the object or region you want to generate.
-  description: Positive text prompt, what you want to generate instead. This prompt will be used to inpaint the region selected by the masking prompt.
+  label: Inpainting prompt
+  description: A prompt describing what you want to replace the masked region with. No need to describe the entire scene, just the object or region you want to generate.
   type: string
   required: true
   comfyui: 
