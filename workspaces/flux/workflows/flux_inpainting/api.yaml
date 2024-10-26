@@ -79,7 +79,7 @@ parameters:
   description: Make the inpainting region slightly larger to make the results more realistic
   tip: The default is typically fine. If the masking prompt is targetting a small object, but the inpainting object is something larger, you may want to increase this value to give the inpainting model enough space to draw the new thing. If the inpainting region needs to be very precise you can very rarely decrease this value to eg 24.
   type: int
-  default: 16
+  default: 12
   minimum: 0
   maximum: 64
   comfyui: 
