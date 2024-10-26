@@ -1259,7 +1259,7 @@
       },
       "size": [
         320,
-        310
+        624
       ],
       "flags": {},
       "order": 92,
@@ -3917,72 +3917,6 @@
       ]
     },
     {
-      "id": 517,
-      "type": "Eden_Math",
-      "pos": {
-        "0": 1530,
-        "1": 473
-      },
-      "size": {
-        "0": 210,
-        "1": 98
-      },
-      "flags": {},
-      "order": 69,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "link": 1069,
-          "shape": 7
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "link": 1070,
-          "shape": 7
-        },
-        {
-          "name": "c",
-          "type": "*",
-          "link": null,
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "result (float)",
-          "type": "FLOAT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "result (int)",
-          "type": "INT",
-          "links": [
-            1068,
-            1071,
-            1072
-          ],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "result (float_str)",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Math"
-      },
-      "widgets_values": [
-        "min(a,b)"
-      ]
-    },
-    {
       "id": 341,
       "type": "ImageResize+",
       "pos": {
@@ -4332,7 +4266,7 @@
       },
       "size": [
         370,
-        306
+        670
       ],
       "flags": {},
       "order": 122,
@@ -4415,11 +4349,11 @@
       },
       "size": [
         360,
-        306
+        660
       ],
       "flags": {},
       "order": 119,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "images",
@@ -4583,7 +4517,7 @@
       },
       "size": [
         320,
-        306
+        620
       ],
       "flags": {},
       "order": 65,
@@ -4690,54 +4624,6 @@
       ]
     },
     {
-      "id": 406,
-      "type": "AIO_Preprocessor",
-      "pos": {
-        "0": 1708,
-        "1": 659
-      },
-      "size": {
-        "0": 329.47674560546875,
-        "1": 82
-      },
-      "flags": {},
-      "order": 90,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 896
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "link": 1071,
-          "widget": {
-            "name": "resolution"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1012
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "DepthAnythingV2Preprocessor",
-        512
-      ]
-    },
-    {
       "id": 404,
       "type": "ControlNetLoader",
       "pos": {
@@ -4768,54 +4654,6 @@
       },
       "widgets_values": [
         "control_v11p_sd15_scribble.pth"
-      ]
-    },
-    {
-      "id": 148,
-      "type": "AIO_Preprocessor",
-      "pos": {
-        "0": 3340,
-        "1": 611
-      },
-      "size": {
-        "0": 325.3860168457031,
-        "1": 83.30482482910156
-      },
-      "flags": {},
-      "order": 91,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 597
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "link": 1072,
-          "widget": {
-            "name": "resolution"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1017
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "Scribble_XDoG_Preprocessor",
-        512
       ]
     },
     {
@@ -5051,7 +4889,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1056126332000410,
+        530801352901524,
         "randomize",
         10,
         2,
@@ -5687,54 +5525,6 @@
       "widgets_values": [],
       "color": "#322",
       "bgcolor": "#533"
-    },
-    {
-      "id": 74,
-      "type": "LoadRandomImage",
-      "pos": {
-        "0": -900,
-        "1": -150
-      },
-      "size": {
-        "0": 317.4837951660156,
-        "1": 165.1422882080078
-      },
-      "flags": {},
-      "order": 27,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 631,
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            605,
-            728
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadRandomImage"
-      },
-      "widgets_values": [
-        "/home/rednax/Pictures/style_imgs",
-        3,
-        81,
-        "fixed",
-        false,
-        false
-      ]
     },
     {
       "id": 282,
@@ -6630,7 +6420,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "TextureFlow_00079.mp4",
+            "filename": "TextureFlow_00111.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -6865,7 +6655,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        791447625512175,
+        715442423454519,
         "randomize",
         12,
         2,
@@ -7527,6 +7317,216 @@
         "stretch",
         "always",
         32
+      ]
+    },
+    {
+      "id": 74,
+      "type": "LoadRandomImage",
+      "pos": {
+        "0": -898,
+        "1": -159
+      },
+      "size": {
+        "0": 317.4837951660156,
+        "1": 165.1422882080078
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 631,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            605,
+            728
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadRandomImage"
+      },
+      "widgets_values": [
+        "/home/rednax/Pictures/style_imgs",
+        -1,
+        81,
+        "fixed",
+        true,
+        false
+      ]
+    },
+    {
+      "id": 406,
+      "type": "AIO_Preprocessor",
+      "pos": {
+        "0": 1708,
+        "1": 659
+      },
+      "size": {
+        "0": 329.47674560546875,
+        "1": 82
+      },
+      "flags": {},
+      "order": 90,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 896
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "link": 1071,
+          "widget": {
+            "name": "resolution"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1012
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "DepthAnythingV2Preprocessor",
+        512
+      ]
+    },
+    {
+      "id": 148,
+      "type": "AIO_Preprocessor",
+      "pos": {
+        "0": 3340,
+        "1": 611
+      },
+      "size": {
+        "0": 325.3860168457031,
+        "1": 83.30482482910156
+      },
+      "flags": {},
+      "order": 91,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 597
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "link": 1072,
+          "widget": {
+            "name": "resolution"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1017
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "Scribble_XDoG_Preprocessor",
+        512
+      ]
+    },
+    {
+      "id": 517,
+      "type": "Eden_Math",
+      "pos": {
+        "0": 1530,
+        "1": 473
+      },
+      "size": {
+        "0": 210,
+        "1": 98
+      },
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 1069,
+          "shape": 7
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 1070,
+          "shape": 7
+        },
+        {
+          "name": "c",
+          "type": "*",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result (float)",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "result (int)",
+          "type": "INT",
+          "links": [
+            1068,
+            1071,
+            1072
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "result (float_str)",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Math"
+      },
+      "widgets_values": [
+        "min(a,b)"
       ]
     }
   ],
@@ -9597,10 +9597,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5209868481924433,
+      "scale": 0.693433494944153,
       "offset": [
-        1317.3135902912743,
-        752.9705869805077
+        -2776.3937014015096,
+        -217.06477777975817
       ]
     }
   },
