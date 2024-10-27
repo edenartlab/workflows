@@ -24,7 +24,7 @@ parameters:
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
-  tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be true.
+  tip: Using a starting image helps guide your prompted creation towards the colors present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be true.
   type: bool
   default: false
   comfyui: 
@@ -34,6 +34,7 @@ parameters:
 - name: init_image
   label: Starting image
   description: Initial image from which to start diffusion process
+  tip: This can be used to guide the image generation with colors and shapes of an input image. You typically want to use this with high denoise values >0.8 unless you only want very subtle variations of the starting image.
   type: image
   visible_if: use_init_image=true
   comfyui: 
@@ -132,8 +133,8 @@ parameters:
     subfield: value
 - name: use_controlnet
   label: Use controlnet
-  description: Apply Controlnet guidance to the image generation.
-  tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
+  description: Apply Controlnet guidance to the image generation (using the starting image as shape guidance).
+  tip: Controlnet guides the generated output towards the shape of the Starting Image.
   type: bool
   default: false
   comfyui: 
@@ -143,7 +144,7 @@ parameters:
 - name: preprocessor
   label: Controlnet preprocessor
   description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
-  tip: depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image. 
+  tip: depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create subtle guidance towards a rougher sketched shape of your starting image. 
   type: string
   visible_if: use_controlnet=true
   default: CannyEdgePreprocessor

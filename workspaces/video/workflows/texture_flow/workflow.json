@@ -1259,7 +1259,7 @@
       },
       "size": [
         320,
-        624
+        310
       ],
       "flags": {},
       "order": 93,
@@ -4266,7 +4266,7 @@
       },
       "size": [
         370,
-        670
+        306
       ],
       "flags": {},
       "order": 124,
@@ -4807,7 +4807,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        934499382240603,
+        700701568234049,
         "randomize",
         10,
         2,
@@ -6573,7 +6573,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        969926457937387,
+        48843612385882,
         "randomize",
         12,
         2,
@@ -7250,119 +7250,6 @@
       ]
     },
     {
-      "id": 552,
-      "type": "DRMBT_LoadMedia",
-      "pos": {
-        "0": -1472,
-        "1": 662
-      },
-      "size": {
-        "0": 352.79998779296875,
-        "1": 542
-      },
-      "flags": {},
-      "order": 25,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            1151
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "WIDTH",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "HEIGHT",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "COUNT",
-          "type": "INT",
-          "links": [
-            1152
-          ],
-          "slot_index": 4,
-          "shape": 3
-        },
-        {
-          "name": "FILE_NAME",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "FILE_PATH",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "PARENT_DIRECTORY",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "FPS",
-          "type": "FLOAT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "PROMPT",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "METADATA_RAW",
-          "type": "METADATA_RAW",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DRMBT_LoadMedia"
-      },
-      "widgets_values": [
-        "/home/rednax/SSD2TB/stored_CLIP_results/AAA_init_imgs/00_video_seed_loops/great.mp4",
-        true,
-        0,
-        0,
-        false,
-        0,
-        "fixed",
-        false,
-        0,
-        "None",
-        false,
-        false
-      ]
-    },
-    {
       "id": 199,
       "type": "VHS_VideoCombine",
       "pos": {
@@ -7371,7 +7258,7 @@
       },
       "size": [
         320,
-        620
+        306
       ],
       "flags": {},
       "order": 72,
@@ -7576,10 +7463,10 @@
         "0": 28,
         "1": 425
       },
-      "size": [
-        315,
-        76
-      ],
+      "size": {
+        "0": 315,
+        "1": 76
+      },
       "flags": {},
       "order": 104,
       "mode": 0,
@@ -7601,6 +7488,119 @@
       "widgets_values": [
         0,
         ""
+      ]
+    },
+    {
+      "id": 552,
+      "type": "DRMBT_LoadMedia",
+      "pos": {
+        "0": -1472,
+        "1": 662
+      },
+      "size": {
+        "0": 352.79998779296875,
+        "1": 542
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            1151
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "WIDTH",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "HEIGHT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "COUNT",
+          "type": "INT",
+          "links": [
+            1152
+          ],
+          "slot_index": 4,
+          "shape": 3
+        },
+        {
+          "name": "FILE_NAME",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "FILE_PATH",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "PARENT_DIRECTORY",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "FPS",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "PROMPT",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA_RAW",
+          "type": "METADATA_RAW",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DRMBT_LoadMedia"
+      },
+      "widgets_values": [
+        "input/a_black_video.mp4",
+        true,
+        0,
+        0,
+        false,
+        0,
+        "fixed",
+        false,
+        0,
+        "None",
+        false,
+        false
       ]
     }
   ],
@@ -9679,10 +9679,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.22094928152180926,
+      "scale": 0.42409761837248483,
       "offset": [
-        2821.809578862318,
-        1501.7179076621828
+        2394.702657011305,
+        309.8819385977528
       ]
     }
   },
