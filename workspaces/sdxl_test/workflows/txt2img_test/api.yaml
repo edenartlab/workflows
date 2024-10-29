@@ -22,6 +22,16 @@ parameters:
     node_id: 370
     field: inputs
     subfield: body
+- name: lora_prompt
+  label: Prompt with added embedding trigger
+  description: User prompt with the trigger word swapped out with the embedding token path
+  type: string
+  hide_from_agent: true
+  hide_from_ui: true
+  comfyui: 
+    node_id: 243
+    field: inputs
+    subfield: value
 - name: n_samples
   label: Number of samples
   description: Number of samples to generate
