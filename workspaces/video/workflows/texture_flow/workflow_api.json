@@ -1389,7 +1389,12 @@
         "552",
         4
       ],
-      "policy": "round up"
+      "policy": "round up",
+      "min_frames": 16,
+      "max_frames": [
+        "562",
+        1
+      ]
     },
     "class_type": "Eden_DetermineFrameCount",
     "_meta": {
@@ -1559,6 +1564,19 @@
     "class_type": "Display Int (rgthree)",
     "_meta": {
       "title": "Display Int (rgthree)"
+    }
+  },
+  "562": {
+    "inputs": {
+      "expression": "a*1.5",
+      "a": [
+        "510",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
     }
   }
 }
