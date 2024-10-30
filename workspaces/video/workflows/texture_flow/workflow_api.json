@@ -276,7 +276,7 @@
         1
       ],
       "clustering_resolution": 256,
-      "feathering_fraction": 0.03,
+      "feathering_fraction": 0.05,
       "image": [
         "261",
         0
@@ -698,7 +698,7 @@
       "cfg": 2,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
-      "denoise": 0.3,
+      "denoise": 0.33,
       "model": [
         "426",
         0
@@ -910,7 +910,7 @@
   },
   "282": {
     "inputs": {
-      "seed": 72
+      "seed": 0
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -951,8 +951,14 @@
   },
   "293": {
     "inputs": {
-      "width": 1152,
-      "height": 1152,
+      "width": [
+        "568",
+        0
+      ],
+      "height": [
+        "568",
+        0
+      ],
       "interpolation": "lanczos",
       "method": "keep proportion",
       "condition": "always",
@@ -1382,15 +1388,15 @@
   "509": {
     "inputs": {
       "n_target_frames": [
-        "510",
-        0
+        "569",
+        1
       ],
       "n_source_frames": [
         "552",
         4
       ],
       "policy": "round up",
-      "min_frames": 16,
+      "min_frames": 1,
       "max_frames": [
         "562",
         1
@@ -1399,15 +1405,6 @@
     "class_type": "Eden_DetermineFrameCount",
     "_meta": {
       "title": "Eden_DetermineFrameCount"
-    }
-  },
-  "510": {
-    "inputs": {
-      "value": 48
-    },
-    "class_type": "Eden_Int",
-    "_meta": {
-      "title": "target_n_frames"
     }
   },
   "517": {
@@ -1468,7 +1465,7 @@
   },
   "524": {
     "inputs": {
-      "value": 8
+      "value": 10
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -1568,15 +1565,63 @@
   },
   "562": {
     "inputs": {
-      "expression": "a*1.5",
+      "expression": "a*1.25",
       "a": [
-        "510",
-        0
+        "569",
+        1
       ]
     },
     "class_type": "Eden_Math",
     "_meta": {
       "title": "Eden_Math"
+    }
+  },
+  "568": {
+    "inputs": {
+      "value": 1152
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Target Resolution"
+    }
+  },
+  "569": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "570",
+        0
+      ],
+      "b": [
+        "487",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "n_frames calc"
+    }
+  },
+  "570": {
+    "inputs": {
+      "value": 6
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Animation_n_seconds"
+    }
+  },
+  "572": {
+    "inputs": {
+      "input": [
+        "569",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
     }
   }
 }

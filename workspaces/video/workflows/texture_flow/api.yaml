@@ -27,17 +27,17 @@ parameters:
     field: inputs
     subfield: folder
     preprocessing: folder
-- name: n_frames
-  label: Frames
-  description: Number of video frames to generate (8 frames = 1 second of video, but the final video will be smoothed to 24 fps)
-  type: int
-  default: 64
-  minimum: 16
-  maximum: 192
+- name: n_seconds
+  label: Video length (seconds)
+  description: Number of seconds of video to generate.
+  type: float
+  default: 6.0
+  minimum: 2.0
+  maximum: 24.0
   required: true
-  step: 1
+  step: 0.5
   comfyui: 
-    node_id: 510
+    node_id: 570
     field: inputs
     subfield: value
 - name: width
@@ -46,7 +46,7 @@ parameters:
   type: int
   default: 640
   minimum: 512
-  maximum: 1280
+  maximum: 1024
   required: true
   step: 32
   comfyui: 
@@ -59,7 +59,7 @@ parameters:
   type: int
   default: 640
   minimum: 512
-  maximum: 1280
+  maximum: 1024
   required: true
   step: 32
   comfyui: 
@@ -183,7 +183,7 @@ parameters:
     subfield: mode
 - name: upscale
   label: Activate upscale
-  description: Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
+  description: Do an upscale pass at the end, making the animation full HD. (leave this off for cheaper and faster testing until you hit a sweet spot!)
   tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
   type: bool
   default: false
