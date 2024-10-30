@@ -1099,150 +1099,6 @@
       "widgets_values": []
     },
     {
-      "id": 533,
-      "type": "ImageResize+",
-      "pos": {
-        "0": -338,
-        "1": 629
-      },
-      "size": {
-        "0": 232.24090576171875,
-        "1": 218
-      },
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 96
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 153,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 155,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            101
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            102,
-            144,
-            146
-          ],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            103,
-            145,
-            147
-          ],
-          "slot_index": 2,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        512,
-        512,
-        "lanczos",
-        "keep proportion",
-        "always",
-        64
-      ]
-    },
-    {
-      "id": 563,
-      "type": "WidthHeightPicker",
-      "pos": {
-        "0": -654,
-        "1": 649
-      },
-      "size": [
-        210,
-        102
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 152,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 154,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            153
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            155
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "WidthHeightPicker"
-      },
-      "widgets_values": [
-        512,
-        512,
-        0.5,
-        64
-      ]
-    },
-    {
       "id": 535,
       "type": "Eden_Int",
       "pos": {
@@ -1598,7 +1454,7 @@
       },
       "size": [
         315,
-        619
+        310
       ],
       "flags": {},
       "order": 32,
@@ -1766,6 +1622,150 @@
       "color": "#443322",
       "bgcolor": "#665533",
       "shape": 1
+    },
+    {
+      "id": 563,
+      "type": "WidthHeightPicker",
+      "pos": {
+        "0": -654,
+        "1": 649
+      },
+      "size": {
+        "0": 210,
+        "1": 102
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 152,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 154,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            153
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            155
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WidthHeightPicker"
+      },
+      "widgets_values": [
+        512,
+        512,
+        0.5,
+        64
+      ]
+    },
+    {
+      "id": 533,
+      "type": "ImageResize+",
+      "pos": {
+        "0": -338,
+        "1": 629
+      },
+      "size": {
+        "0": 232.24090576171875,
+        "1": 218
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 96
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 153,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 155,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            101
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            102,
+            144,
+            146
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            103,
+            145,
+            147
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
+      ]
     }
   ],
   "links": [
@@ -2164,18 +2164,6 @@
   ],
   "groups": [
     {
-      "title": "Motion MAsk",
-      "bounding": [
-        563,
-        1303,
-        1458,
-        496
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
       "title": "Inputs",
       "bounding": [
         -1035,
@@ -2186,15 +2174,27 @@
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
+    },
+    {
+      "title": "Motion MAsk",
+      "bounding": [
+        563,
+        1303,
+        1458,
+        496
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
     }
   ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.25401326852422973,
+      "scale": 0.620921323059155,
       "offset": [
-        1216.6079578036542,
-        515.5652902461928
+        1417.6863025365078,
+        -340.0115199527527
       ]
     }
   },

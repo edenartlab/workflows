@@ -10,6 +10,7 @@
 | `handler` | What backend the tool is running on |
 | `comfyui_output_node_id` | ComfyUI output node id if applicable |
 | `private` | Optional boolean indicating whether to hide the tool from the Eden app UI |
+| `base_model` | Display the base model in the UI (flux-dev, flux-schnell, sdxl, sd15, sd3) |
 
 # Parameter Fields
 
@@ -18,6 +19,7 @@
 | `name` | Unique identifier for the parameter |
 | `label` | Human-readable name for the parameter |
 | `description` | Detailed explanation of the parameter's purpose and usage |
+| `thumbnail` | url to optimized thumbnail image or vid less than 500kb. square aspect, 480 or 640, upload [here](https://us-east-1.console.aws.amazon.com/s3/buckets/edenartlab-prod-data?region=us-east-1&bucketType=general&prefix=app/&showversions=false) |
 | `tip` | Additional advice or context for using the parameter effectively (targetted to help AI agents use the tool well) |
 | `type` | Data type of the parameter (e.g., string, int, float, bool, image, video, image[], lora, audio) |
 | `default` | Default value for the parameter if not specified |
@@ -47,7 +49,7 @@ Remapping labels to multiple nodes example:
   visible_if: use_controlnet1=true
   default: CannyEdgePreprocessor
   choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
-  choices_label: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
+  choices_labels: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR dark/bright patterns)]
   comfyui: 
     node_id: 406
     field: inputs

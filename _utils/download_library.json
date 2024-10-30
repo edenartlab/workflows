@@ -18,12 +18,16 @@
             "target": "models/checkpoints/juggernaut_reborn-inpainting.safetensors"
         },
         "juggernautxl_version6rundiffusion": {
-            "source": "https://huggingface.co/RunDiffusion/Juggernaut-XL-v6/resolve/main/juggernautXL_version6Rundiffusion.safetensors",
+            "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/juggernautXL_version6Rundiffusion.safetensors",
             "target": "models/checkpoints/juggernautXL_version6Rundiffusion.safetensors"
         },
         "juggerxlinpaint_juggerinpaintv8": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/juggerxlInpaint_juggerInpaintV8.safetensors",
             "target": "models/checkpoints/juggerxlInpaint_juggerInpaintV8.safetensors"
+        },
+        "nullModel.ckpt": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/nullModel.ckpt",
+            "target": "models/checkpoints/nullModel.ckpt"
         },
         "photonLCM_v10": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/checkpoints/photonLCM_v10.safetensors",
@@ -276,6 +280,10 @@
         "rife49": {
             "source": "https://github.com/styler00dollar/VSGAN-tensorrt-docker/releases/download/models/rife49.pth",
             "target": "custom_nodes/ComfyUI-Frame-Interpolation/ckpts/rife/rife49.pth"
+        },
+        "film_net_fp32.pt": {
+            "source" : "https://github.com/dajes/frame-interpolation-pytorch/releases/download/v1.0.0/film_net_fp32.pt",
+            "target" : "custom_nodes/ComfyUI-Frame-Interpolation/ckpts/film/film_net_fp32.pt"
         },
         "scrfd_10g_bnkps": {
             "source": "https://edenartlab-lfs.s3.amazonaws.com/comfyui/models2/insightface/models/antelopev2/scrfd_10g_bnkps.onnx",

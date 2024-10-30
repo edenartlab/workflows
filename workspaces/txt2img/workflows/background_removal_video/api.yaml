@@ -1,10 +1,12 @@
 name: Remove background (Video)
 description: Remove the background from a video.
+thumbnail: app/video-rem-bg-opt.mp4
 tip: Background removal can do a great job of isolating a foreground subject, returns a .png image with an alpha channel where the background is removed.
 output_type: video
+status: prod
+visible: false
 cost_estimate: 5
 handler: comfyui
-private: true
 comfyui_output_node_id: 3
 parameters:
 - name: video

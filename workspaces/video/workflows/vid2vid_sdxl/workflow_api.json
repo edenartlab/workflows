@@ -55,11 +55,11 @@
         2
       ],
       "text_g": [
-        "491",
+        "556",
         0
       ],
       "text_l": [
-        "491",
+        "556",
         0
       ],
       "clip": [
@@ -144,8 +144,11 @@
   "252": {
     "inputs": {
       "add_noise": true,
-      "noise_seed": 0,
-      "cfg": 2,
+      "noise_seed": [
+        "567",
+        0
+      ],
+      "cfg": 1,
       "model": [
         "249",
         0
@@ -225,8 +228,11 @@
   "289": {
     "inputs": {
       "add_noise": false,
-      "noise_seed": 0,
-      "cfg": 5.5,
+      "noise_seed": [
+        "567",
+        0
+      ],
+      "cfg": 8,
       "model": [
         "280",
         0
@@ -288,7 +294,7 @@
     },
     "class_type": "AlignYourStepsScheduler",
     "_meta": {
-      "title": "AlignYourStepsScheduler"
+      "title": "Sampling Steps"
     }
   },
   "414": {
@@ -319,8 +325,11 @@
   },
   "428": {
     "inputs": {
-      "video": "waking_life_short.mp4",
-      "force_rate": 12,
+      "video": "30_frames_20_fps_0006.gif",
+      "force_rate": [
+        "581",
+        0
+      ],
       "force_size": "Disabled",
       "custom_width": 512,
       "custom_height": 512,
@@ -335,12 +344,12 @@
   },
   "431": {
     "inputs": {
-      "weight": 1.1,
+      "weight": 1.3,
       "weight_type": "ease in-out",
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
-      "embeds_scaling": "K+V",
+      "embeds_scaling": "V only",
       "model": [
         "432",
         0
@@ -350,7 +359,7 @@
         1
       ],
       "image": [
-        "490",
+        "569",
         0
       ],
       "clip_vision": [
@@ -387,7 +396,10 @@
   },
   "439": {
     "inputs": {
-      "strength": 0.35000000000000003,
+      "strength": [
+        "566",
+        0
+      ],
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -403,7 +415,7 @@
         0
       ],
       "image": [
-        "443",
+        "565",
         0
       ]
     },
@@ -414,7 +426,10 @@
   },
   "440": {
     "inputs": {
-      "strength": 0.5,
+      "strength": [
+        "566",
+        0
+      ],
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -457,24 +472,10 @@
       "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
     }
   },
-  "443": {
-    "inputs": {
-      "ckpt_name": "depth_anything_vitl14.pth",
-      "resolution": 768,
-      "image": [
-        "529",
-        0
-      ]
-    },
-    "class_type": "DepthAnythingPreprocessor",
-    "_meta": {
-      "title": "Depth Anything"
-    }
-  },
   "461": {
     "inputs": {
       "images": [
-        "490",
+        "569",
         0
       ]
     },
@@ -498,11 +499,11 @@
         2
       ],
       "text_g": [
-        "528",
+        "558",
         0
       ],
       "text_l": [
-        "528",
+        "558",
         0
       ],
       "clip": [
@@ -517,7 +518,7 @@
   },
   "490": {
     "inputs": {
-      "image": "633f1093fd97154ef032a2c79ea41813.jpg",
+      "image": "b58eaab89f2513da72b506a849427f68.jpeg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -525,71 +526,40 @@
       "title": "Load Image"
     }
   },
-  "491": {
+  "497": {
     "inputs": {
-      "mode": "fast",
-      "keep_model_alive": true,
-      "prepend_blip_caption": true,
-      "save_prompt_to_txt_file": "clip_interrogator_prompt.txt",
-      "image": [
-        "515",
+      "output": "",
+      "source": [
+        "556",
         0
       ]
     },
-    "class_type": "CLIP_Interrogator",
+    "class_type": "Display Any (rgthree)",
     "_meta": {
-      "title": "CLIP_Interrogator"
+      "title": "Display Any (rgthree)"
     }
   },
-  "492": {
+  "498": {
     "inputs": {
-      "start": 0,
-      "length": 1,
-      "image": [
-        "529",
+      "output": "",
+      "source": [
+        "558",
         0
       ]
     },
-    "class_type": "ImageFromBatch+",
+    "class_type": "Display Any (rgthree)",
     "_meta": {
-      "title": "🔧 Image From Batch"
-    }
-  },
-  "493": {
-    "inputs": {
-      "mode": "fast",
-      "keep_model_alive": true,
-      "prepend_blip_caption": false,
-      "save_prompt_to_txt_file": "clip_interrogator_prompt.txt",
-      "image": [
-        "514",
-        0
-      ]
-    },
-    "class_type": "CLIP_Interrogator",
-    "_meta": {
-      "title": "CLIP_Interrogator"
-    }
-  },
-  "495": {
-    "inputs": {
-      "start": 0,
-      "length": 1,
-      "image": [
-        "490",
-        0
-      ]
-    },
-    "class_type": "ImageFromBatch+",
-    "_meta": {
-      "title": "🔧 Image From Batch"
+      "title": "Display Any (rgthree)"
     }
   },
   "499": {
     "inputs": {
       "ckpt_name": "rife47.pth",
       "clear_cache_after_n_frames": 10,
-      "multiplier": 2,
+      "multiplier": [
+        "578",
+        1
+      ],
       "fast_mode": true,
       "ensemble": true,
       "scale_factor": 1,
@@ -606,7 +576,10 @@
   "500": {
     "inputs": {
       "preprocessor": "CannyEdgePreprocessor",
-      "resolution": 768,
+      "resolution": [
+        "535",
+        0
+      ],
       "image": [
         "529",
         0
@@ -619,7 +592,7 @@
   },
   "501": {
     "inputs": {
-      "float_val": 1.1
+      "float_val": 1.2
     },
     "class_type": "ADE_MultivalDynamic",
     "_meta": {
@@ -645,59 +618,12 @@
   "504": {
     "inputs": {
       "model_type": "SDXL",
-      "steps": 10,
+      "steps": 14,
       "denoise": 1
     },
     "class_type": "AlignYourStepsScheduler",
     "_meta": {
-      "title": "AlignYourStepsScheduler"
-    }
-  },
-  "514": {
-    "inputs": {
-      "interpolation": "LANCZOS",
-      "crop_position": "pad",
-      "sharpening": 0,
-      "image": [
-        "495",
-        0
-      ]
-    },
-    "class_type": "PrepImageForClipVision",
-    "_meta": {
-      "title": "Prep Image For ClipVision"
-    }
-  },
-  "515": {
-    "inputs": {
-      "interpolation": "LANCZOS",
-      "crop_position": "pad",
-      "sharpening": 0,
-      "image": [
-        "492",
-        0
-      ]
-    },
-    "class_type": "PrepImageForClipVision",
-    "_meta": {
-      "title": "Prep Image For ClipVision"
-    }
-  },
-  "528": {
-    "inputs": {
-      "prompt1": [
-        "491",
-        1
-      ],
-      "separator": " ",
-      "prompt2": [
-        "493",
-        0
-      ]
-    },
-    "class_type": "SeargePromptCombiner",
-    "_meta": {
-      "title": "Prompt combiner"
+      "title": "Unsampling Steps"
     }
   },
   "529": {
@@ -730,12 +656,15 @@
     },
     "class_type": "Eden_Int",
     "_meta": {
-      "title": "Eden_Int"
+      "title": "Resolution"
     }
   },
   "540": {
     "inputs": {
-      "frame_rate": 24,
+      "frame_rate": [
+        "579",
+        0
+      ],
       "loop_count": 0,
       "filename_prefix": "AnimateDiff",
       "format": "video/h264-mp4",
@@ -756,6 +685,159 @@
     "class_type": "VHS_VideoCombine",
     "_meta": {
       "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "556": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "558": {
+    "inputs": {
+      "max_token": 100,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4-vision Low",
+      "prompt": "Consicely describe the aesthetic style of this image. Dont focus too much on the specific contents of the scene, just describe the aesthetic, the colors, the look and feel. Respond with a comma delimited list of at most 20 stylistic descriptors.",
+      "image": [
+        "571",
+        0
+      ]
+    },
+    "class_type": "ImageDescriptionNode",
+    "_meta": {
+      "title": "ImageDescriptionNode"
+    }
+  },
+  "565": {
+    "inputs": {
+      "preprocessor": "DepthAnythingV2Preprocessor",
+      "resolution": [
+        "535",
+        0
+      ],
+      "image": [
+        "529",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "566": {
+    "inputs": {
+      "value": 0.5
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "ControlNet Strength"
+    }
+  },
+  "567": {
+    "inputs": {
+      "seed": 0
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "569": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "571",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "571": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "490",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "578": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "579",
+        0
+      ],
+      "b": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "579": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Output_FPS"
+    }
+  },
+  "581": {
+    "inputs": {
+      "value": 8
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Diffusion Framerate"
+    }
+  },
+  "582": {
+    "inputs": {
+      "Value": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DF_Int_to_Float",
+    "_meta": {
+      "title": "Int to Float"
+    }
+  },
+  "583": {
+    "inputs": {
+      "input": [
+        "428",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
     }
   }
 }

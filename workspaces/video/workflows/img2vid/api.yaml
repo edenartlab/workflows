@@ -1,11 +1,13 @@
 name: Animate an image
-description: Creative image animation using animatediff, 
+description: Creative image animation (using AnimateDiff)
+thumbnail: app/img2vid_opt.mp4
 tip: This will animate a single image and produce an animated video version that can drift away a bit from the source image but produces creative outputs, ideal for abstract visuals, not ideal for realistic scenes. Dont use this tool whenever you need to use multiple images to create a video.
 output_type: video
+status: prod
 cost_estimate: 0.5 * num_frames
 handler: comfyui
 comfyui_output_node_id: 466
-resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1536x1536, 2-3_1024x1782, 9-16_1152x2048]
+resolutions: []
 parameters:
 - name: image
   label: Image
@@ -16,18 +18,17 @@ parameters:
     node_id: 440
     field: inputs
     subfield: image
-- name: resolution
-  label: Resolution
-  description: Resolution of the generated animation in n_pixels (always a multiple of 64), img2vid will always adopt the aspect ratio of the provided image.
-  type: int
-  default: 1536
-  minimum: 1024
-  maximum: 2048
-  step: 64
+- name: denoise
+  label: AI creativity
+  description: How much room to give the AI model to invent new details and create motion. 0.65 = default, increasing this value (to eg 0.8) also increases video motion. Lowering to eg 0.4 will only create very subtle animation but stay very close to the source image.
+  type: float
+  default: 0.65
+  minimum: 0.4
+  maximum: 0.8
   comfyui: 
-    node_id: 535
+    node_id: 10
     field: inputs
-    subfield: value
+    subfield: denoise
 - name: num_frames
   label: Number of frames
   description: Number of frames to generate (num_frames/12 = length of the output video in seconds), should usually be around 24-64 frames. (More wont really create that much extra interesting motion...)
@@ -38,6 +39,18 @@ parameters:
   step: 8
   comfyui: 
     node_id: 559
+    field: inputs
+    subfield: value
+- name: resolution
+  label: Resolution
+  description: Resolution of the generated animation (always a multiple of 64), img2vid will always adopt the aspect ratio of the provided image.
+  type: int
+  default: 1536
+  minimum: 1024
+  maximum: 2048
+  step: 64
+  comfyui: 
+    node_id: 535
     field: inputs
     subfield: value
 - name: motion_strength
@@ -51,17 +64,6 @@ parameters:
     node_id: 16
     field: inputs
     subfield: motion_scale
-- name: denoise
-  label: AI creativity
-  description: How much room to give the AI model to invent new details and create motion. 0.65 = default, increasing this value (to eg 0.8) also increases video motion. Lowering to eg 0.4 will only create very subtle animation but stay very close to the source image.
-  type: float
-  default: 0.65
-  minimum: 0.4
-  maximum: 0.8
-  comfyui: 
-    node_id: 10
-    field: inputs
-    subfield: denoise
 - name: use_motion_brush
   label: Use motion brush
   description: Enable motion brush

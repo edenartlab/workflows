@@ -1,14 +1,16 @@
 name: Create sound effects
 description: Generate sound effects with Stable Audio.
+thumbnail: app/audio_craft_opt.mp4
 tip: Optimized for generating short audio samples, sound effects, and production elements. Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. The model was trained on data from Freesound and the Free Music Archive, respecting creator rights.
 output_type: audio
+status: prod
 cost_estimate: (1 + 0.1 * seconds) * n_samples
 handler: comfyui
 comfyui_output_node_id: 13
 parameters:
 - name: prompt
   label: Prompt
-  description: Text prompt
+  description: Describe the music or sound effect to make
   tip: Specifying tempo, key and style information can help guide the generation towards a more desirable result.
   type: string
   required: true

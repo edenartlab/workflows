@@ -1,7 +1,9 @@
 name: Create an image (SDXL)
 description: Generate an image from text using our classic SDXL model and trained concepts.
+thumbnail: app/txt2img.png
 tip: This is the most basic and common function which generates an image from text a prompt, with ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result.
 output_type: image
+status: prod
 cost_estimate: 1 * n_samples
 handler: comfyui
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
@@ -12,7 +14,7 @@ comfyui_intermediate_outputs:
 parameters:
 - name: prompt
   label: Prompt
-  description: Text prompt
+  description: Describe an image
   tip: Prompts are specific, detailed, concise, and visually descriptive, avoiding unnecessary verbosity and abstract, generic terms. They usually have ● Primary subject (i.e., person, character, animal, object, ...), e.g "Renaissance noblewoman", "alien starship". Should appear early in prompt. ● Action of the subject, e.g. "holding an ancient book", "orbiting a distant planet", if there is no main subject, a good context description will do here (what is going on in the scene?). They sometimes have several stylistic modifiers near the end of the prompt, such as ● Background, environment or context surrounding the subject, e.g. "in a dimly lit Gothic castle", "in a futuristic 22nd century space station". ● Secondary items that enhance the subject or story. e.g. "wearing an intricate lace collar", "standing next to a large, ancient tree". ● Color schemes, e.g. "shades of deep red and gold", "monochrome palette with stark contrasts", "monochrome", ... ● Style or method of rendering, e.g. "reminiscent of Vermeer's lighting techniques", "film noir", "cubism", ... ● Mood or atmospheric quality e.g. "atmosphere of mystery", "serene mood". ● Lighting conditions e.g. "bathed in soft, natural window light", "dramatic shadows under a spotlight". ● Perspective or or viewpoint, e.g. "bird's eye view", "from a low angle", "fisheye", .. ● Textures or materials, e.g. "textures of rich velvet and rough stone". ● Time Period, e.g. "Victorian Era", "futuristic 22nd century". ● Cultural elements, e.g. "inspired by Norse mythology", "traditional Japanese setting". ● Artistic medium, e.g. "watercolor painting", "crisp digital Unreal Engine rendering", "8K UHD professional photo", "cartoon drawing", ... They often end with trigger words that improve images in a general way, e.g. "High Resolution", "HD", "sharp details", "masterpiece", "stunning composition", ... If the prompt contains a request to render text, enclose the text in quotes, e.g. A Sign with the text “Peace”. IMPORTANT, If the user gives you a short, general, or visually vague prompt, you should augment their prompt by imagining richer details, following the tips above. If a user gives a long, detailed, or well-thought out composition, or requests to have their prompt strictly adhered to without revisions or embellishment, you should adhere to or repeat their exact prompt. The goal is to be authentic to the user's request, but to help them get better results when they are new, unsure, or lazy.
   type: string
   required: true
@@ -73,7 +75,7 @@ parameters:
 - name: denoise
   label: Generation strength
   description: Strength of the generation process on top of the starting image
-  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input.
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. Denoise should always stay at 1 unless an init image is employed; never use less than 1 unless you're specifically trying to do an img2img task.
   type: float
   default: 1.0
   minimum: 0.0
@@ -124,21 +126,14 @@ parameters:
   minimum: 0.0
   maximum: 1.25
   visible_if: use_lora=true
+  hide_from_ui: true
   comfyui: 
     node_id: 312
     field: inputs
     subfield: value
-- name: lora_prompt
-  label: LoRA prompt
-  description: textual embedding token, invoked to trigger the LoRA
-  type: string
-  visible_if: use_lora=true
-  comfyui: 
-    node_id: 243
-    field: inputs
-    subfield: value
 - name: use_controlnet
   label: Use controlnet
+  visible_if: use_init_image=true
   description: Apply Controlnet guidance to the image generation.
   tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
   type: bool
@@ -196,7 +191,6 @@ parameters:
   description: set the strength of the image style transfer
   tip: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
   type: float
-  visible_if: use_ipadapter=true
   default: 0.6
   minimum: 0.0
   maximum: 1.5

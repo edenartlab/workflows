@@ -199,13 +199,20 @@ additional_node_url_mappings = {
     "Display Any (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
     "Switch any [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "InversionDemoLazySwitch": "https://github.com/BadCafeCode/execution-inversion-demo-comfyui",
-    "StringListToCombo": "https://github.com/aria1th/ComfyUI-LogicUtils"
+    "StringListToCombo": "https://github.com/aria1th/ComfyUI-LogicUtils",
+    "Switch mask [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Switch string [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Eden_Math": "https://github.com/edenartlab/eden_comfy_pipelines",
+    "Eden_Seed": "https://github.com/edenartlab/eden_comfy_pipelines",
+    "StringListToCombo": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "LogicGateInvertBasic": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "FloorNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "MultiplyNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
+    "ShowText|pysssss": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git",
+    "VHS_VideoCombine": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
     }
 
 
-
-
- 
 def main(comfyui_path=None, workflow_directory=None, master_snapshot_path = None):
     """
     Main function to orchestrate the processing of workflows and comparison of nodes.
@@ -293,8 +300,10 @@ if __name__ == '__main__':
 
     Example:
 cd /home/rednax/SSD2TB/Github_repos/Eden/workflows/_utils
-python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/workspaces/txt2img_new/workflows/storydiffusion
+python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/rednax/SSD2TB/Github_repos/Eden/workflows/workspaces/flux_inpainting/workflows/flux_inpainting
 
+drmbt:
+python generate_snapshot.py B:\AI\StabilityMatrix-win-x64\Data\Packages\ComfyUI-Flux C:\github\workflows\workspaces\batch_tools\workflows\background_removal
     """
 
     if len(sys.argv) != 3:

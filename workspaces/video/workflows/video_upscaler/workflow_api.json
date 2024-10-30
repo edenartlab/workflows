@@ -74,12 +74,12 @@
   },
   "302": {
     "inputs": {
-      "video": "great.mp4",
+      "video": "040ab646db2003a98f54d1f4db05719f.gif",
       "force_rate": 0,
       "force_size": "Custom Height",
       "custom_width": 512,
       "custom_height": 1536,
-      "frame_load_cap": 0,
+      "frame_load_cap": 64,
       "skip_first_frames": 0,
       "select_every_nth": 1
     },
@@ -152,8 +152,8 @@
   },
   "334": {
     "inputs": {
-      "seed": 708267002254823,
-      "steps": 10,
+      "seed": 248988033022936,
+      "steps": 8,
       "cfg": 1,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
@@ -191,10 +191,7 @@
   },
   "363": {
     "inputs": {
-      "text": [
-        "401",
-        0
-      ],
+      "text": "",
       "clip": [
         "362",
         1
@@ -267,7 +264,7 @@
   },
   "390": {
     "inputs": {
-      "weight": 1.1,
+      "weight": 1.3,
       "weight_type": "ease in-out",
       "start_at": 0,
       "end_at": 1,
@@ -293,95 +290,6 @@
     "class_type": "IPAdapterBatch",
     "_meta": {
       "title": "IPAdapter Batch (Adv.)"
-    }
-  },
-  "391": {
-    "inputs": {
-      "text_input": "",
-      "task": "caption",
-      "fill_mask": true,
-      "keep_model_loaded": false,
-      "max_new_tokens": 1024,
-      "num_beams": 3,
-      "do_sample": true,
-      "output_mask_select": "",
-      "seed": 1051151191548473,
-      "image": [
-        "393",
-        0
-      ],
-      "florence2_model": [
-        "392",
-        0
-      ]
-    },
-    "class_type": "Florence2Run",
-    "_meta": {
-      "title": "Florence2Run"
-    }
-  },
-  "392": {
-    "inputs": {
-      "model": "microsoft/Florence-2-large",
-      "precision": "fp16",
-      "attention": "sdpa"
-    },
-    "class_type": "DownloadAndLoadFlorence2Model",
-    "_meta": {
-      "title": "DownloadAndLoadFlorence2Model"
-    }
-  },
-  "393": {
-    "inputs": {
-      "start": 0,
-      "length": 1,
-      "image": [
-        "402",
-        0
-      ]
-    },
-    "class_type": "ImageFromBatch+",
-    "_meta": {
-      "title": "🔧 Image From Batch"
-    }
-  },
-  "398": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "401",
-        0
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
-  "399": {
-    "inputs": {
-      "value": "sharp details, 4k, stunning, masterpiece"
-    },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Eden_String"
-    }
-  },
-  "401": {
-    "inputs": {
-      "prompt1": [
-        "391",
-        2
-      ],
-      "separator": " ",
-      "prompt2": [
-        "399",
-        0
-      ]
-    },
-    "class_type": "SeargePromptCombiner",
-    "_meta": {
-      "title": "Prompt combiner"
     }
   },
   "402": {

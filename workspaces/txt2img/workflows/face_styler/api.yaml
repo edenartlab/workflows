@@ -1,8 +1,10 @@
 name: Create a stylized selfie
 description: Generate a stylized image featuring a specific person.
+thumbnail: app/face_styler.png
 tip: This pipeline takes an input picture of a person to extract their identity and a style image to extract stylistic elements / textures. It then generates an image of the same person in the referenced style. This workflow also takes an optional input prompt. By setting the style strength to zero and writing a good prompt, this pipeline can also be used to place the person in a specific situation without applying the style from the image, just using a prompt!
 handler: comfyui
 output_type: image
+status: prod
 cost_estimate: 1 * n_samples
 comfyui_output_node_id: 74
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
@@ -27,7 +29,7 @@ parameters:
     subfield: image
 - name: prompt
   label: Prompt
-  description: An optional prompt that can be used to put the person in a specific situation or help the style guidance.
+  description: An optional prompt to put the person in a specific situation or help the style guidance.
   tip: When changing this away from the default, you usually want to lower the style_strength since the style image may "fight" this prompt.
   default: a stylized depiction of a person, highly detailed, 4k, high resolution
   type: string

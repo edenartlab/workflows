@@ -1,0 +1,532 @@
+{
+  "12": {
+    "inputs": {
+      "seed": [
+        "135",
+        1
+      ],
+      "sampler": "euler",
+      "scheduler": "simple",
+      "steps": "6",
+      "guidance": "3.5",
+      "max_shift": "0.50",
+      "base_shift": "1.15",
+      "denoise": [
+        "75",
+        0
+      ],
+      "model": [
+        "169",
+        0
+      ],
+      "conditioning": [
+        "73",
+        0
+      ],
+      "latent_image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "FluxSamplerParams+",
+    "_meta": {
+      "title": "🔧 Flux Sampler Parameters"
+    }
+  },
+  "16": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "169",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "37": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "38": {
+    "inputs": {
+      "text_input": "",
+      "task": [
+        "167",
+        0
+      ],
+      "fill_mask": true,
+      "keep_model_loaded": true,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": [
+        "135",
+        0
+      ],
+      "image": [
+        "122",
+        0
+      ],
+      "florence2_model": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "43": {
+    "inputs": {
+      "width": [
+        "145",
+        0
+      ],
+      "height": [
+        "145",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "44": {
+    "inputs": {
+      "pixels": [
+        "122",
+        0
+      ],
+      "vae": [
+        "169",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "73": {
+    "inputs": {
+      "text": [
+        "155",
+        0
+      ],
+      "clip": [
+        "169",
+        1
+      ]
+    },
+    "class_type": "TextEncodeForSamplerParams+",
+    "_meta": {
+      "title": "🔧Text Encode for Sampler Params"
+    }
+  },
+  "75": {
+    "inputs": {
+      "text": [
+        "89",
+        1
+      ],
+      "text2": "0.8560"
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "76": {
+    "inputs": {
+      "any_type_input": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "89": {
+    "inputs": {
+      "number": 0.76,
+      "from_range_min": 0,
+      "from_range_max": 1,
+      "to_range_min": [
+        "130",
+        0
+      ],
+      "to_range_max": [
+        "131",
+        0
+      ]
+    },
+    "class_type": "NumberRemap",
+    "_meta": {
+      "title": "Creativity Strength"
+    }
+  },
+  "93": {
+    "inputs": {
+      "order_by": "none",
+      "cols_value": "none",
+      "cols_num": 2,
+      "add_prompt": "true",
+      "add_params": "true",
+      "images": [
+        "16",
+        0
+      ],
+      "params": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "PlotParameters+",
+    "_meta": {
+      "title": "🔧 Plot Sampler Parameters"
+    }
+  },
+  "117": {
+    "inputs": {
+      "image": "eden-logo_50gray.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "122": {
+    "inputs": {
+      "switch": [
+        "143",
+        0
+      ],
+      "on_false": [
+        "43",
+        0
+      ],
+      "on_true": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "Lazy Switch"
+    }
+  },
+  "123": {
+    "inputs": {
+      "width": [
+        "124",
+        0
+      ],
+      "height": [
+        "124",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "124": {
+    "inputs": {
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "CM_NearestSDXLResolution",
+    "_meta": {
+      "title": "NearestSDXLResolution"
+    }
+  },
+  "130": {
+    "inputs": {
+      "value": 0.4
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "131": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "135": {
+    "inputs": {
+      "seed": 0
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "139": {
+    "inputs": {
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "force SDXL resolution"
+    }
+  },
+  "145": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "output_multiplier": 1,
+      "multiple_off": 8
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  },
+  "149": {
+    "inputs": {
+      "filename": "flux-remix_%seed_%counter",
+      "path": "%date/",
+      "seed": [
+        "135",
+        0
+      ],
+      "width": [
+        "152",
+        0
+      ],
+      "height": [
+        "152",
+        1
+      ],
+      "positive": [
+        "155",
+        0
+      ],
+      "extension": "png",
+      "calculate_hash": true,
+      "resource_hash": true,
+      "lossless_webp": true,
+      "jpg_webp_quality": 95,
+      "date_format": "%Y-%m-%d",
+      "time_format": "%H%M%S",
+      "save_metadata_file": false,
+      "images": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "SDPromptSaver",
+    "_meta": {
+      "title": "SD Prompt Saver"
+    }
+  },
+  "152": {
+    "inputs": {
+      "image": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "155": {
+    "inputs": {
+      "body": "",
+      "delimiter": " ",
+      "append": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Detail injection"
+    }
+  },
+  "160": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Show Advanced Parameters"
+    }
+  },
+  "161": {
+    "inputs": {
+      "switch": [
+        "162",
+        0
+      ],
+      "on_false": [
+        "16",
+        0
+      ],
+      "on_true": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "Lazy Switch"
+    }
+  },
+  "162": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "print caption"
+    }
+  },
+  "163": {
+    "inputs": {
+      "menu": "none,caption,detailed_caption,more_detailed_caption",
+      "delimiter": ",",
+      "select_item": "detailed_caption"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "164": {
+    "inputs": {
+      "switch": [
+        "165",
+        0
+      ],
+      "on_false": [
+        "166",
+        0
+      ],
+      "on_true": [
+        "38",
+        2
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "Lazy Switch"
+    }
+  },
+  "165": {
+    "inputs": {
+      "value": false,
+      "on_false": "0.0",
+      "on_true": "1.0",
+      "override_bool": [
+        "163",
+        1
+      ]
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "BOOL ++"
+    }
+  },
+  "166": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "167": {
+    "inputs": {
+      "any_type_input": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "169": {
+    "inputs": {
+      "ckpt_name": "flux1-schnell-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "174": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "155",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  }
+}
