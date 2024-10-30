@@ -33,6 +33,18 @@ parameters:
     node_id: 129
     field: inputs
     subfield: number
+- name: sort
+  label: Sort Method
+  description: Method for sorting the keyframes. The visual_path method automatically puts visually similar images next to each other.
+  tip: This parameter should usually stay at the default of None to preserve the input order, but occasionally a random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
+  type: string
+  required: true
+  default: None
+  choices: [None, visual_path, random]
+  comfyui: 
+    node_id: 174
+    field: inputs
+    subfield: sort
 - name: loop
   label: Loop
   description: Make the animation a seamless loop by interpolating back to the first image
@@ -56,17 +68,6 @@ parameters:
     node_id: 161
     field: inputs
     subfield: value
-- name: sort
-  label: Sort Method
-  description: Method for sorting the keyframes. The visual_path method automatically puts visually similar images next to each other.
-  tip: This parameter should usually stay at the default of None to preserve the input order, but occasionally a random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
-  type: string
-  default: None
-  choices: [None, visual_path, random]
-  comfyui: 
-    node_id: 174
-    field: inputs
-    subfield: sort
 - name: pingpong
   label: Forward-Reverse Loop (pingpong)
   description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
