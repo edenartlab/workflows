@@ -94,7 +94,7 @@ parameters:
     field: inputs
     subfield: value
 - name: use_controlnet
-  label: Use starting image as shape guidance (controlnet)
+  label: Use starting image as shape guide
   description: Activate Controlnet to use the starting image shape in the generation.
   tip: Controlnet guides the generated output towards the shape of the Starting Image.
   type: bool
@@ -130,7 +130,7 @@ parameters:
     field: inputs
     subfield: value
 - name: use_lora
-  label: Use trained model
+  label: Use a trained model
   description: Apply LoRA finetune model style to image generation
   tip: Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
   type: bool
@@ -140,7 +140,7 @@ parameters:
     field: inputs
     subfield: value
 - name: lora
-  label: LoRA
+  label: Trained model (LoRA)
   description: Use a LoRA finetune on top of the base model.
   type: lora
   visible_if: use_lora=true
@@ -149,13 +149,13 @@ parameters:
     field: inputs
     subfield: lora_name
 - name: lora_strength
-  label: LoRA Strength
-  description: Strength of the LoRA
+  label: Model Strength
+  description: Strength of the custom model (LoRA)
   tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
   type: float
-  default: 0.6
+  default: 0.7
   minimum: 0.0
-  maximum: 1.5
+  maximum: 1.25
   visible_if: use_lora=true
   comfyui: 
     node_id: 141
