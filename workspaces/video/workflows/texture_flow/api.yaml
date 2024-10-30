@@ -71,7 +71,6 @@ parameters:
   description: Apply Controlnet shape guidance.
   tip: Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
   type: bool
-  required: true
   default: false
   comfyui: 
     node_id: 273
@@ -143,8 +142,8 @@ parameters:
     field: inputs
     subfield: method
 - name: n_steps
-  label: Sampling steps
-  description: Number of LCM diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
+  label: Generation steps
+  description: Number of LCM steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
   type: int
   default: 8
   minimum: 4
@@ -154,16 +153,19 @@ parameters:
     node_id: 524
     field: inputs
     subfield: value
-- name: upscale
-  label: Activate upscale
-  description: Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
-  tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
-  type: bool
-  default: false
+- name: motion_scale
+  label: Chaos Strength
+  description: Motion scale for the animation, determines how much animated motion will be in the final video. Recommended to leave this at default.
+  tip: The default value of 1.15 is good for most cases. Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. Going above 1.3 is almost never desirable.
+  type: float
+  default: 1.15
+  minimum: 0.7
+  maximum: 1.4
+  step: 0.01
   comfyui: 
-    node_id: 415
+    node_id: 450
     field: inputs
-    subfield: value  
+    subfield: float_val
 - name: mapping_mode
   label: Style Mapping Mode
   description: Controls the motion by which the style images will get mapped into the video
@@ -179,19 +181,16 @@ parameters:
     node_id: 536
     field: inputs
     subfield: mode
-- name: motion_scale
-  label: Chaos Strength
-  description: Motion scale for the animation, determines how much animated motion will be in the final video. Recommended to leave this at default.
-  tip: The default value of 1.15 is good for most cases. Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. Going above 1.3 is almost never desirable.
-  type: float
-  default: 1.15
-  minimum: 0.7
-  maximum: 1.4
-  step: 0.01
+- name: upscale
+  label: Activate upscale
+  description: Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
+  tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
+  type: bool
+  default: false
   comfyui: 
-    node_id: 450
+    node_id: 415
     field: inputs
-    subfield: float_val
+    subfield: value  
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set to a random value.
