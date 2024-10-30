@@ -5,7 +5,7 @@ tip: This workflow creates animations from a set of images or movie. First the i
 output_type: video
 status: prod
 visible: false
-cost_estimate: images * interpolation_frames / 24
+cost_estimate: interpolation_frames / 12.0
 handler: comfyui
 comfyui_output_node_id: 15
 parameters:
@@ -66,11 +66,11 @@ parameters:
     subfield: value
 - name: sort
   label: Sort Method
-  description: Choose a method for sorting a sequence of input images. The visual_path method applies a traveling salesman solver to sort the images by their nearest visual proximity to each other
-  tip: This parameter should usually stay at the default of None to preserve the input order, but occasionally an alphabetical or random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
+  description: Method for sorting the keyframes. The visual_path method automatically puts visually similar images next to each other.
+  tip: This parameter should usually stay at the default of None to preserve the input order, but occasionally a random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
   type: string
   default: None
-  choices: [None, alphabetical, visual_path, random]
+  choices: [None, visual_path, random]
   visible_if: use_advanced=true
   comfyui: 
     node_id: 174
