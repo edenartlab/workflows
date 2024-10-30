@@ -1,11 +1,11 @@
 name: Keyframe Interpolation
 description: Create a video from keyframe images through visual interpolation.
 thumbnail: app/frame_interpolation_opt.mp4
-tip: This workflow creates animations from a set of images or movie. First the input type is determined; whether images, archive, movie or url, the input is parsed and treated as an image batch that can be sorted by metadata or by visual similarity, and then n number of interpolation frames are added in between each provided frame.
+tip: This workflow creates animations from a set of images that linearly connect those images into a visual, morphing video. The number of frames between each keyframe can be adjusted to create a smooth transition. The video can be looped back to the first frame to create a seamless loop.
 output_type: video
 status: prod
 visible: false
-cost_estimate: interpolation_frames / 12.0
+cost_estimate: interpolation_frames
 handler: comfyui
 comfyui_output_node_id: 15
 parameters:
@@ -22,7 +22,7 @@ parameters:
     subfield: path
     preprocessing: folder
 - name: interpolation_frames
-  label: Interpolation Frames
+  label: Transition Frames
   description: How many frames to create for each keyframe transition
   type: int
   default: 24
