@@ -4,7 +4,7 @@ thumbnail: app/style_mixing_opt.mp4
 tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
 output_type: video
 status: prod
-cost_estimate: 0.4 * n_frames * (width + height)/(2*640) * n_steps/8
+cost_estimate: "0.4 * n_frames * (width + height)/(2*640) * n_steps/8 * (upscale ? 1.2 : 1)"
 base_model: sd15
 handler: comfyui
 resolutions: [16-9_928x512, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_512x928]
@@ -29,35 +29,25 @@ parameters:
     preprocessing: folder
 - name: n_frames
   label: Frames
-  description: Number of video frames to generate (8 frames = 1 second of video, although the final video will be interpolated to always be 24 fps)
+  description: Number of video frames to generate (8 frames = 1 second of video, but the final video will be smoothed to 24 fps)
   type: int
   default: 64
   minimum: 16
   maximum: 192
+  required: true
   step: 1
   comfyui: 
     node_id: 510
     field: inputs
     subfield: value
-- name: n_steps
-  label: Sampling steps
-  description: Number of LCM diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
-  type: int
-  default: 8
-  minimum: 4
-  maximum: 14
-  step: 1
-  comfyui: 
-    node_id: 524
-    field: inputs
-    subfield: value
 - name: width
   label: Width
-  description: Width of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
+  description: Width of the video generation in pixels. High values often cause artefacts like multiple faces etc.
   type: int
   default: 640
   minimum: 512
   maximum: 1280
+  required: true
   step: 32
   comfyui: 
     node_id: 261
@@ -65,39 +55,31 @@ parameters:
     subfield: width
 - name: height
   label: Height
-  description: Height of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
+  description: Height of the video generation in pixels. High values often cause artefacts like multiple faces etc.
   type: int
   default: 640
   minimum: 512
   maximum: 1280
+  required: true
   step: 32
   comfyui: 
     node_id: 261
     field: inputs
     subfield: height
-- name: upscale
-  label: Activate upscale
-  description: Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
-  tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 415
-    field: inputs
-    subfield: value  
 - name: use_controlnet1
-  label: Use controlnet
+  label: Add shape input
   description: Apply Controlnet shape guidance.
   tip: Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
   type: bool
+  required: true
   default: false
   comfyui: 
     node_id: 273
     field: inputs
     subfield: value
 - name: control_input
-  label: Guidance input
-  description: A guidance image/GIF/video used as input to the controlnet. Will guide the shape of the output video. 
+  label: Shape input
+  description: A shape image/GIF/video used as input to the controlnet. Will guide the shape of the output video. 
   type: image|video
   visible_if: use_controlnet1=true
   comfyui: 
@@ -105,8 +87,8 @@ parameters:
     field: inputs
     subfield: path
 - name: preprocessor1
-  label: Controlnet1 preprocessor
-  description: Type of controlnet preprocessor. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
+  label: Shape guidance type
+  description: Type of shape guidance for controlnet. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
   tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
   type: string
   visible_if: use_controlnet1=true
@@ -135,8 +117,8 @@ parameters:
           - input: none
             output: controlnetQRPatternQR_v2Sd15.safetensors
 - name: controlnet_strength1
-  label: Controlnet1 strength
-  description: set the guidance strength of the first controlnet model, recommended values are 0.4-0.6
+  label: Shape strength
+  description: set the guidance strength of the controlnet model, recommended values are 0.4-0.6
   tip: A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
   type: float
   default: 0.5
@@ -150,7 +132,7 @@ parameters:
     subfield: strength
 - name: control_input_fit_strategy
   label: Fit strategy
-  description: Determines how your guidance input is resized to the target width/height of the generation
+  description: How should your shape input get resized to the target width/height of the generation?
   tip: fill / crop will cut off edges, stretch will distort the control_input and pad can cause strong visual artefacts (not recommended).
   visible_if: use_controlnet1=true
   type: string
@@ -160,9 +142,31 @@ parameters:
     node_id: 262
     field: inputs
     subfield: method
+- name: n_steps
+  label: Sampling steps
+  description: Number of LCM diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
+  type: int
+  default: 8
+  minimum: 4
+  maximum: 14
+  step: 1
+  comfyui: 
+    node_id: 524
+    field: inputs
+    subfield: value
+- name: upscale
+  label: Activate upscale
+  description: Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
+  tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 415
+    field: inputs
+    subfield: value  
 - name: mapping_mode
-  label: Content Mapping Mode
-  description: Mapping mode that controls how the style images will get mapped into the video
+  label: Style Mapping Mode
+  description: Controls the motion by which the style images will get mapped into the video
   type: string
   choices: [concentric_circles_inwards, concentric_circles_outwards, 
                           concentric_rectangles_inwards, concentric_rectangles_outwards, 
@@ -176,7 +180,7 @@ parameters:
     field: inputs
     subfield: mode
 - name: motion_scale
-  label: Motion Scale
+  label: Chaos Strength
   description: Motion scale for the animation, determines how much animated motion will be in the final video. Recommended to leave this at default.
   tip: The default value of 1.15 is good for most cases. Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. Going above 1.3 is almost never desirable.
   type: float
