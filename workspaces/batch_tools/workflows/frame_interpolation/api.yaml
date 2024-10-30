@@ -33,6 +33,17 @@ parameters:
     node_id: 129
     field: inputs
     subfield: number
+- name: loop
+  label: Loop
+  description: Make the animation a seamless loop by interpolating back to the first image
+  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+  type: bool
+  default: false
+  required: true
+  comfyui: 
+    node_id: 174
+    field: inputs
+    subfield: loop_first_frame
 - name: FPS
   label: Output Video Framerate
   description: target output video framerate
@@ -45,25 +56,6 @@ parameters:
     node_id: 161
     field: inputs
     subfield: value
-- name: loop
-  label: Loop
-  description: Make the animation a seamless loop by interpolating back to the first image
-  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 174
-    field: inputs
-    subfield: loop_first_frame
-- name: use_advanced
-  label: Show Advanced Parameters
-  description: This toggle reveals advanced parameters to web front end users, and has no effect on the output.
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 192
-    field: inputs
-    subfield: value
 - name: sort
   label: Sort Method
   description: Method for sorting the keyframes. The visual_path method automatically puts visually similar images next to each other.
@@ -71,7 +63,6 @@ parameters:
   type: string
   default: None
   choices: [None, visual_path, random]
-  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
@@ -81,7 +72,6 @@ parameters:
   description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
   tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
   type: bool
-  visible_if: use_advanced=true
   default: false
   comfyui: 
     node_id: 190
@@ -93,7 +83,6 @@ parameters:
   tip: This should usually stay false, but if a user asks to flip it, its nice to sort backwards alphabetically, or when sort by visual_path is enabled and the user wants the video to flow in the opposite direction.
   type: bool
   default: false
-  visible_if: use_advanced=true
   comfyui: 
     node_id: 174
     field: inputs
