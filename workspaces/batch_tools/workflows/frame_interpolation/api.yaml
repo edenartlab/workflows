@@ -88,3 +88,14 @@ parameters:
     node_id: 174
     field: inputs
     subfield: reverse_order
+- name: model
+  label: Interpolation Method
+  description: Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
+  type: string
+  default: rife49.pth
+  choices: [rife47.pth, rife49.pth, FILM]
+  visible_if: use_advanced=true
+  comfyui: 
+    node_id: 193
+    field: inputs
+    subfield: select_item
