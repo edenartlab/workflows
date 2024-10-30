@@ -1,6 +1,6 @@
 {
   "last_node_id": 408,
-  "last_link_id": 653,
+  "last_link_id": 655,
   "nodes": [
     {
       "id": 140,
@@ -251,55 +251,6 @@
       ]
     },
     {
-      "id": 238,
-      "type": "CLIPTextEncode",
-      "pos": {
-        "0": 73.24849700927734,
-        "1": -157.57594299316406
-      },
-      "size": {
-        "0": 210,
-        "1": 54
-      },
-      "flags": {},
-      "order": 65,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 376
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 650,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            370
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "in the style of embedding:early-sd-eden2-v1_sdxl_lora, colorful chinese painting, black background, visionary painting"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 191,
       "type": "Reroute",
       "pos": {
@@ -401,55 +352,6 @@
       "widgets_values": [
         ""
       ]
-    },
-    {
-      "id": 239,
-      "type": "CLIPTextEncode",
-      "pos": {
-        "0": 73.24849700927734,
-        "1": -77.57596588134766
-      },
-      "size": {
-        "0": 210,
-        "1": 54
-      },
-      "flags": {},
-      "order": 66,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 377
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 369,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            371
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "colorful chinese painting, black background, visionary painting"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 80,
@@ -651,7 +553,7 @@
         "1": 76
       },
       "flags": {},
-      "order": 43,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -2313,7 +2215,7 @@
         "1": 144
       },
       "flags": {},
-      "order": 44,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -2541,7 +2443,7 @@
         "1": 160
       },
       "flags": {},
-      "order": 42,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -2770,51 +2672,6 @@
       "widgets_values": [
         "preprocessor",
         false
-      ]
-    },
-    {
-      "id": 241,
-      "type": "Eden_String",
-      "pos": {
-        "0": -399,
-        "1": -205
-      },
-      "size": {
-        "0": 315.2989807128906,
-        "1": 116.03885650634766
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 40,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "STRING",
-          "link": 579,
-          "widget": {
-            "name": "value"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            369
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Prompt",
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "colorful chinese painting, black background, visionary painting"
       ]
     },
     {
@@ -3094,7 +2951,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 48,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -3141,7 +2998,7 @@
         "1": 186.85743713378906
       },
       "flags": {},
-      "order": 46,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -3708,7 +3565,7 @@
         "1": 96
       },
       "flags": {},
-      "order": 47,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -4323,7 +4180,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 45,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -4949,42 +4806,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 243,
-      "type": "Eden_String",
-      "pos": {
-        "0": -157,
-        "1": 27
-      },
-      "size": {
-        "0": 435.2897033691406,
-        "1": 76
-      },
-      "flags": {},
-      "order": 23,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            650
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "lora_prompt",
-      "properties": {
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 309,
       "type": "ShowText|pysssss",
       "pos": {
@@ -4996,7 +4817,7 @@
         "1": 135.65028381347656
       },
       "flags": {},
-      "order": 41,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -5025,90 +4846,6 @@
       "widgets_values": [
         "",
         "colorful chinese painting, black background, visionary painting embedding:marzipan_embeddings, "
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 370,
-      "type": "TextPlusPlus",
-      "pos": {
-        "0": -706,
-        "1": -184
-      },
-      "size": {
-        "0": 454.4706115722656,
-        "1": 160
-      },
-      "flags": {},
-      "order": 24,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prepend",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "prepend"
-          }
-        },
-        {
-          "name": "override_body",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "override_body"
-          }
-        },
-        {
-          "name": "append",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "append"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            579,
-            651
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "prepend",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "body",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "append",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "title": "Prompt (Positive)",
-      "properties": {
-        "Node name for S&R": "TextPlusPlus"
-      },
-      "widgets_values": [
-        "colorful chinese painting, black background, visionary painting embedding:marzipan_embeddings, ",
-        " ",
-        "",
-        "",
-        ""
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -5352,7 +5089,7 @@
         "1": 144
       },
       "flags": {},
-      "order": 25,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -5413,7 +5150,7 @@
         "1": 206
       },
       "flags": {},
-      "order": 26,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -5494,7 +5231,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 27,
+      "order": 25,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5533,7 +5270,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 28,
+      "order": 26,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5579,6 +5316,269 @@
       ],
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 370,
+      "type": "TextPlusPlus",
+      "pos": {
+        "0": -701,
+        "1": -179
+      },
+      "size": {
+        "0": 454.4706115722656,
+        "1": 160
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prepend",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "prepend"
+          }
+        },
+        {
+          "name": "override_body",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "override_body"
+          }
+        },
+        {
+          "name": "append",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "append"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            579,
+            651
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "prepend",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "body",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "append",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Prompt (Positive)",
+      "properties": {
+        "Node name for S&R": "TextPlusPlus"
+      },
+      "widgets_values": [
+        "colorful chinese painting, black background, visionary painting embedding:marzipan_embeddings, ",
+        " ",
+        "",
+        "",
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 241,
+      "type": "Eden_String",
+      "pos": {
+        "0": -79,
+        "1": -41
+      },
+      "size": {
+        "0": 315.2989807128906,
+        "1": 116.03885650634766
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": 579,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            654
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Prompt",
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "colorful chinese painting, black background, visionary painting"
+      ]
+    },
+    {
+      "id": 239,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 70,
+        "1": 56
+      },
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 377
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 655,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            371
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "colorful chinese painting, black background, visionary painting"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 238,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 65,
+        "1": -67
+      },
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 376
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 654,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            370
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "in the style of embedding:early-sd-eden2-v1_sdxl_lora, colorful chinese painting, black background, visionary painting"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 243,
+      "type": "Eden_String",
+      "pos": {
+        "0": -162,
+        "1": 19
+      },
+      "size": [
+        210,
+        76
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            655
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "no_token_prompt",
+      "properties": {
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -6157,14 +6157,6 @@
       38,
       4,
       "FLOAT"
-    ],
-    [
-      369,
-      241,
-      0,
-      239,
-      1,
-      "STRING"
     ],
     [
       370,
@@ -6879,14 +6871,6 @@
       "FLOAT"
     ],
     [
-      650,
-      243,
-      0,
-      238,
-      1,
-      "STRING"
-    ],
-    [
       651,
       370,
       0,
@@ -6909,76 +6893,44 @@
       400,
       2,
       "*"
+    ],
+    [
+      654,
+      241,
+      0,
+      238,
+      1,
+      "STRING"
+    ],
+    [
+      655,
+      243,
+      0,
+      239,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
     {
-      "title": "Group",
+      "title": "init image and resolution",
       "bounding": [
-        266,
-        1639,
-        668,
-        438
+        -47,
+        165,
+        579,
+        1411
       ],
-      "color": "#3f789e",
+      "color": "#444",
       "font_size": 24,
       "flags": {}
     },
     {
-      "title": "send_receive_previous_compare",
+      "title": "controlnet_apply",
       "bounding": [
-        2754,
-        559,
-        636,
-        628
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "lora_prompt_logic",
-      "bounding": [
-        -178,
-        -242,
-        826,
-        361
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "outputs",
-      "bounding": [
-        2079,
-        -242,
-        646,
-        1427
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Model",
-      "bounding": [
-        1336,
-        -240,
         700,
-        757
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "CONTROLS",
-      "bounding": [
-        -726,
-        -243,
-        512,
-        2011
+        609,
+        1349,
+        900
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -6997,26 +6949,74 @@
       "flags": {}
     },
     {
-      "title": "controlnet_apply",
+      "title": "CONTROLS",
       "bounding": [
-        700,
-        609,
-        1349,
-        900
+        -726,
+        -243,
+        512,
+        2011
       ],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     },
     {
-      "title": "init image and resolution",
+      "title": "Model",
       "bounding": [
-        -47,
-        165,
-        579,
-        1411
+        1336,
+        -240,
+        700,
+        757
       ],
-      "color": "#444",
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "outputs",
+      "bounding": [
+        2079,
+        -242,
+        646,
+        1427
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "lora_prompt_logic",
+      "bounding": [
+        -178,
+        -242,
+        826,
+        361
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "send_receive_previous_compare",
+      "bounding": [
+        2754,
+        559,
+        636,
+        628
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        266,
+        1639,
+        668,
+        438
+      ],
+      "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     }
@@ -7026,10 +7026,10 @@
   },
   "extra": {
     "ds": {
-      "scale": 0.5559917313492246,
+      "scale": 0.6727499949325613,
       "offset": [
-        1293.8605119291399,
-        -576.9952199359433
+        844.3909604231882,
+        451.76402139385254
       ]
     }
   },
