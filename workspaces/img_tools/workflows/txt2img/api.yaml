@@ -31,6 +31,36 @@ parameters:
   default: 1
   minimum: 1
   maximum: 4
+- name: width
+  label: Width
+  description: Width in pixels
+  tip: Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  required: true
+  visible_if: use_init_image=false
+  step: 8
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: width
+- name: height
+  label: Height
+  description: Height in pixels
+  tip: Use the description for width to understand how to use height well.
+  type: int
+  default: 1024
+  minimum: 256
+  maximum: 2048
+  required: true
+  visible_if: use_init_image=false
+  step: 8
+  comfyui: 
+    node_id: 7
+    field: inputs
+    subfield: height
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
@@ -85,10 +115,46 @@ parameters:
     node_id: 220
     field: inputs
     subfield: value
+- name: use_controlnet
+  label: Use controlnet
+  visible_if: use_init_image=true
+  description: Apply Controlnet guidance to the image generation.
+  tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 307
+    field: inputs
+    subfield: a
+- name: preprocessor
+  label: Controlnet preprocessor
+  description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
+  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, with cannyv2 as an updated model that's sharper but with less detail. The scribble model will create guidance towards a rougher sketched shape of your starting image. pose follows an open pose skeleton of a character's body position. threshold creates a hard black and white matte from the input image, and lineart provides a crisp hard edge guidance from the input. 
+  type: string
+  default: canny
+  choices: [none, cannyv2, canny, depth, scribble, pose, threshold, lineart]
+  visible_if: use_controlnet=true
+  comfyui: 
+    node_id: 283
+    field: inputs
+    subfield: select_item
+- name: controlnet_strength
+  label: Controlnet strength
+  description: set the guidance strength of the controlnet model in slot 1
+  tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
+  type: float
+  default: 0.7
+  minimum: 0.0
+  maximum: 1.5
+  visible_if: use_controlnet=true
+  comfyui: 
+    node_id: 36
+    field: inputs
+    subfield: value
 - name: use_lora
-  label: Use LoRA
-  description: Apply LoRA finetune model style to image generation
-  tip: Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+  label: Use trained model
+  description: Activate a custom, trained model
+  tip: Models created with Eden's LoRA trainer can add people, styles and conceptual embeddings into the model. This endpoint only accepts SDXL models.
   type: bool
   default: false
   comfyui: 
@@ -129,42 +195,6 @@ parameters:
   hide_from_ui: true
   comfyui: 
     node_id: 312
-    field: inputs
-    subfield: value
-- name: use_controlnet
-  label: Use controlnet
-  visible_if: use_init_image=true
-  description: Apply Controlnet guidance to the image generation.
-  tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 307
-    field: inputs
-    subfield: a
-- name: preprocessor
-  label: Controlnet preprocessor
-  description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
-  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, with cannyv2 as an updated model that's sharper but with less detail. The scribble model will create guidance towards a rougher sketched shape of your starting image. pose follows an open pose skeleton of a character's body position. threshold creates a hard black and white matte from the input image, and lineart provides a crisp hard edge guidance from the input. 
-  type: string
-  default: canny
-  choices: [none, cannyv2, canny, depth, scribble, pose, threshold, lineart]
-  visible_if: use_controlnet=true
-  comfyui: 
-    node_id: 283
-    field: inputs
-    subfield: select_item
-- name: controlnet_strength
-  label: Controlnet strength
-  description: set the guidance strength of the controlnet model in slot 1
-  tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
-  type: float
-  default: 0.7
-  minimum: 0.0
-  maximum: 1.5
-  visible_if: use_controlnet=true
-  comfyui: 
-    node_id: 36
     field: inputs
     subfield: value
 - name: use_ipadapter
@@ -212,34 +242,6 @@ parameters:
     node_id: 141
     field: inputs
     subfield: weight_type
-- name: width
-  label: Width
-  description: Width in pixels
-  tip: Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
-  type: int
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  visible_if: use_init_image=false
-  step: 8
-  comfyui: 
-    node_id: 7
-    field: inputs
-    subfield: width
-- name: height
-  label: Height
-  description: Height in pixels
-  tip: Use the description for width to understand how to use height well.
-  type: int
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  visible_if: use_init_image=false
-  step: 8
-  comfyui: 
-    node_id: 7
-    field: inputs
-    subfield: height
 - name: negative_prompt
   label: Negative prompt
   description: Negative text prompt, what you do *not* want to generate.
