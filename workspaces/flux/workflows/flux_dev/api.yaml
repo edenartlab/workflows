@@ -50,7 +50,7 @@ parameters:
     field: inputs
     subfield: height
 - name: use_init_image
-  label: Use starting / guidance image
+  label: Add a starting image
   description: Enable image-to-image, and controlnet guidance features
   tip: Using a starting image helps guide your prompted creation towards the colors present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be true.
   type: bool
@@ -69,6 +69,19 @@ parameters:
     node_id: 302
     field: inputs
     subfield: image
+- name: denoise
+  label: AI strength
+  description: Strength of the AI generation process on top of the starting image
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input.
+  type: float
+  default: 1.0
+  minimum: 0.0
+  maximum: 1.0
+  visible_if: use_init_image=true
+  comfyui: 
+    node_id: 323
+    field: inputs
+    subfield: value
 - name: size_from_input
   label: Use starting image size
   description: Override the width and height parameters with the resolution of your starting image. 
@@ -80,22 +93,9 @@ parameters:
     node_id: 120
     field: inputs
     subfield: value
-- name: denoise
-  label: Generation strength
-  description: Strength of the generation process on top of the starting image
-  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input.
-  type: float
-  default: 1.0
-  minimum: 0.0
-  maximum: 1.0
-  visible_if: use_init_image=true
-  comfyui: 
-    node_id: 323
-    field: inputs
-    subfield: value
 - name: use_controlnet
-  label: Use shape image (controlnet)
-  description: Apply Controlnet guidance to the image generation (using the starting image as shape guidance).
+  label: Use starting image as shape guidance (controlnet)
+  description: Activate Controlnet to use the starting image shape in the generation.
   tip: Controlnet guides the generated output towards the shape of the Starting Image.
   type: bool
   default: false
@@ -105,7 +105,7 @@ parameters:
     subfield: value
 - name: preprocessor
   label: Controlnet preprocessor
-  description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
+  description: Determines the type of shape guidance
   tip: depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, whereas scribble will create subtle guidance towards a rougher sketched shape of your starting image. 
   type: string
   visible_if: use_controlnet=true
