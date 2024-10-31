@@ -1203,7 +1203,7 @@
       },
       "size": [
         320,
-        624
+        310
       ],
       "flags": {},
       "order": 97,
@@ -3729,7 +3729,7 @@
         },
         {
           "name": "frame_rate",
-          "type": "FLOAT",
+          "type": "*",
           "link": 1042,
           "widget": {
             "name": "frame_rate"
@@ -3812,7 +3812,7 @@
         },
         {
           "name": "frame_rate",
-          "type": "FLOAT",
+          "type": "*",
           "link": 1045,
           "widget": {
             "name": "frame_rate"
@@ -3895,7 +3895,7 @@
         },
         {
           "name": "frame_rate",
-          "type": "FLOAT",
+          "type": "*",
           "link": 1030,
           "widget": {
             "name": "frame_rate"
@@ -5604,78 +5604,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 293,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 5892,
-        "1": 270
-      },
-      "size": {
-        "0": 233.210693359375,
-        "1": 184.49440002441406
-      },
-      "flags": {},
-      "order": 137,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 663
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 1170,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 1171,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            662
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        "keep proportion",
-        "always",
-        64
-      ]
-    },
-    {
       "id": 568,
       "type": "Eden_Int",
       "pos": {
@@ -5789,10 +5717,10 @@
         "0": -791.5029907226562,
         "1": -529.9451904296875
       },
-      "size": [
-        210,
-        126
-      ],
+      "size": {
+        "0": 210,
+        "1": 126
+      },
       "flags": {},
       "order": 52,
       "mode": 0,
@@ -6012,64 +5940,6 @@
       }
     },
     {
-      "id": 341,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 1229,
-        "1": -1148
-      },
-      "size": [
-        219.46248306961616,
-        218
-      ],
-      "flags": {},
-      "order": 42,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 728
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            729
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [],
-          "slot_index": 2,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        "keep proportion",
-        "always",
-        32
-      ]
-    },
-    {
       "id": 199,
       "type": "VHS_VideoCombine",
       "pos": {
@@ -6077,8 +5947,8 @@
         "1": -1061
       },
       "size": [
-        400.2175079068659,
-        700.2175079068659
+        400.2174987792969,
+        700.2174987792969
       ],
       "flags": {},
       "order": 76,
@@ -6331,10 +6201,10 @@
         "0": -176.2860107421875,
         "1": 579.345947265625
       },
-      "size": [
-        210,
-        76
-      ],
+      "size": {
+        "0": 210,
+        "1": 76
+      },
       "flags": {},
       "order": 108,
       "mode": 0,
@@ -6706,10 +6576,10 @@
         "0": -1309,
         "1": -185
       },
-      "size": [
-        298.23949728522837,
-        130
-      ],
+      "size": {
+        "0": 298.239501953125,
+        "1": 130
+      },
       "flags": {},
       "order": 37,
       "mode": 0,
@@ -6954,77 +6824,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 261,
-      "type": "ImageResize+",
-      "pos": {
-        "0": -170,
-        "1": -390
-      },
-      "size": {
-        "0": 210,
-        "1": 218
-      },
-      "flags": {},
-      "order": 73,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 1091
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            589,
-            590,
-            591,
-            839
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            592,
-            626,
-            1069,
-            1095
-          ],
-          "slot_index": 1,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            593,
-            627,
-            1070,
-            1096
-          ],
-          "slot_index": 2,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        640,
-        640,
-        "lanczos",
-        "stretch",
-        "always",
-        32
-      ]
-    },
-    {
       "id": 488,
       "type": "Reroute",
       "pos": {
@@ -7179,10 +6978,10 @@
         "0": -1530,
         "1": -670
       },
-      "size": [
-        210,
-        58
-      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
       "flags": {},
       "order": 21,
       "mode": 0,
@@ -7283,10 +7082,10 @@
         "0": -564,
         "1": -549
       },
-      "size": [
-        267.1006400030619,
-        214
-      ],
+      "size": {
+        "0": 267.10064697265625,
+        "1": 214
+      },
       "flags": {},
       "order": 59,
       "mode": 0,
@@ -7360,10 +7159,10 @@
         "0": -928,
         "1": -720
       },
-      "size": [
-        210,
-        76
-      ],
+      "size": {
+        "0": 210,
+        "1": 76
+      },
       "flags": {},
       "order": 48,
       "mode": 0,
@@ -7497,10 +7296,10 @@
         "0": 6317,
         "1": 283
       },
-      "size": [
-        262.4446292589937,
-        234
-      ],
+      "size": {
+        "0": 262.44464111328125,
+        "1": 234
+      },
       "flags": {},
       "order": 140,
       "mode": 0,
@@ -7693,10 +7492,10 @@
         "0": -1599,
         "1": 16
       },
-      "size": [
-        249.42279879281432,
-        102
-      ],
+      "size": {
+        "0": 249.4228057861328,
+        "1": 102
+      },
       "flags": {},
       "order": 25,
       "mode": 0,
@@ -7810,6 +7609,207 @@
       },
       "widgets_values": [
         "lcm >> sqrt_linear"
+      ]
+    },
+    {
+      "id": 293,
+      "type": "ImageResize+",
+      "pos": {
+        "0": 5892,
+        "1": 270
+      },
+      "size": {
+        "0": 233.210693359375,
+        "1": 184.49440002441406
+      },
+      "flags": {},
+      "order": 137,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 663
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 1170,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 1171,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            662
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
+      ]
+    },
+    {
+      "id": 261,
+      "type": "ImageResize+",
+      "pos": {
+        "0": -170,
+        "1": -390
+      },
+      "size": {
+        "0": 210,
+        "1": 218
+      },
+      "flags": {},
+      "order": 73,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1091
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            589,
+            590,
+            591,
+            839
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            592,
+            626,
+            1069,
+            1095
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            593,
+            627,
+            1070,
+            1096
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        640,
+        640,
+        "lanczos",
+        "stretch",
+        "always",
+        8
+      ]
+    },
+    {
+      "id": 341,
+      "type": "ImageResize+",
+      "pos": {
+        "0": 1229,
+        "1": -1148
+      },
+      "size": {
+        "0": 219.4624786376953,
+        "1": 218
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 728
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            729
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
       ]
     }
   ],
@@ -9936,10 +9936,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.13310000000000063,
+      "scale": 0.505447028499297,
       "offset": [
-        3196.6718335895403,
-        3388.7248242717983
+        -5887.929516995869,
+        512.5199569236753
       ]
     }
   },
