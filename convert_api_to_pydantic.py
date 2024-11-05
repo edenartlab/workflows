@@ -19,8 +19,11 @@ class PreserveLongStringDumper(yaml.SafeDumper):
 def convert_parameter_to_property(param):
     property_dict = OrderedDict()
     
-    # Ensure 'type' is the first field
+    # Handle array types
     if 'type' in param:
+        base_type = param['type'].replace('[]', '')
+        is_array = param['type'].endswith('[]')
+        
         type_mapping = {
             'string': 'str',
             'str': 'str',
@@ -29,13 +32,20 @@ def convert_parameter_to_property(param):
             'float': 'float',
             'bool': 'bool',
             'boolean': 'bool',
-            'image': 'str',  # Assuming image is represented as a string (path or URL)
-            'video': 'str',  # Assuming video is represented as a string (path or URL)
-            'audio': 'str',  # Assuming audio is represented as a string (path or URL)
-            'zip': 'str',  # Assuming zip is represented as a string (path or URL)
-            'lora': 'str'    # Assuming lora is represented as a string
+            'image': 'image',  
+            'video': 'video', 
+            'audio': 'audio', 
+            'zip': 'zip', 
+            'lora': 'lora'
         }
-        property_dict['type'] = type_mapping.get(param['type'], param['type'])
+        
+        mapped_type = type_mapping.get(base_type, base_type)
+        
+        if is_array:
+            property_dict['type'] = 'array'
+            property_dict['items'] = {'type': mapped_type} if mapped_type in ['str', 'int', 'float', 'bool'] else {"type": mapped_type}
+        else:
+            property_dict['type'] = mapped_type
     
     # Add all other fields
     for k, v in param.items():
@@ -48,8 +58,23 @@ def convert_parameter_to_property(param):
         property_dict['comfyui'] = OrderedDict([
             ('node_id', comfyui.get('node_id')),
             ('field', comfyui.get('field')),
-            ('subfield', comfyui.get('subfield'))
+            ('subfield', comfyui.get('subfield')),
         ])
+        if 'preprocessing' in comfyui:
+            property_dict['comfyui']['preprocessing'] = comfyui.get('preprocessing')
+        if 'remap' in comfyui:
+            remaps = []
+            for remap in comfyui.get('remap'):
+                remap2 = OrderedDict([
+                    ("node_id", remap["node_id"]),
+                    ("field", remap["field"]),
+                    ("subfield", remap["subfield"]),
+                    ("map", {})
+                ])
+                for r in remap["value"]:
+                    remap2['map'][r["input"]] = r["output"]
+                remaps.append(remap2)
+            property_dict['comfyui']['remap'] = remaps
     
     return property_dict
 
@@ -63,6 +88,7 @@ def convert_yaml(input_file, output_file):
         ('name', data['name']),
         ('description', data['description']),
         ('tip', data.get('tip')),
+        ('thumbnail', data.get('thumbnail')),
         ('cost_estimate', data.get('cost_estimate')),
         ('output_type', data['output_type']),
         ('resolutions', data.get('resolutions')),
@@ -90,6 +116,13 @@ def convert_yaml(input_file, output_file):
         name = param.pop('name')
         new_data['parameters'][name] = convert_parameter_to_property(param)
     
+    # Convert comfyui_intermediate_outputs from list to dict if present
+    if 'comfyui_intermediate_outputs' in data:
+        intermediate_outputs = {}
+        for output in data['comfyui_intermediate_outputs']:
+            intermediate_outputs[output['name']] = output['node_id']
+        new_data['comfyui_intermediate_outputs'] = intermediate_outputs
+    
     PreserveLongStringDumper.add_representer(
         OrderedDict,
         lambda dumper, data: dumper.represent_mapping('tag:yaml.org,2002:map', data.items())
@@ -112,4 +145,19 @@ input_file = "workspaces/video/workflows/animate_3D/api.yaml"
 output_file = "workspaces/video/workflows/animate_3D/api2.yaml"
 
 
-convert_yaml(input_file, output_file)
+# convert_yaml(input_file, output_file)
+
+import os
+
+def find_api_yaml_files(start_path="../private_workflows0"):
+    for root, dirs, files in os.walk(start_path):
+        if "api.yaml" in files:
+            # print(root)
+            root2 = root.replace("../private_workflows0", "../private_workflows0")
+            input_file = root + "/api.yaml"
+            output_file = root2 + "/api.yaml"
+            print(input_file, output_file)
+            # check if both files exist
+            convert_yaml(input_file, output_file)
+            
+find_api_yaml_files()

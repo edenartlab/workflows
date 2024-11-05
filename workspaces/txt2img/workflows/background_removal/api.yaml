@@ -1,24 +1,23 @@
 name: Remove background
 description: Remove the background from an image, returning a png with transparency.
+tip: |-
+  Background removal can do a great job of isolating a foreground subject, returns a .png image with an alpha channel where the background is removed.
 thumbnail: app/background_removal_opt.mp4
-tip: Background removal can do a great job of isolating a foreground subject, returns a .png image with an alpha channel where the background is removed.
-output_type: image
-status: prod
 cost_estimate: 1
+output_type: image
 handler: comfyui
-comfyui_output_node_id: 38
+status: prod
+comfyui_output_node: 38
 comfyui_intermediate_outputs:
-  - name: rgb_black_background
-    node_id: 61  
-  - name: mask
-    node_id: 42
+  mask: 42
+  rgb_black_background: 61
 parameters:
-- name: image
-  label: Image
-  description: Input image to remove the background from
-  type: image
-  required: true
-  comfyui: 
-    node_id: 3
-    field: inputs
-    subfield: image
+  image:
+    type: image
+    label: Image
+    description: Input image to remove the background from
+    required: true
+    comfyui:
+      node_id: 3
+      field: inputs
+      subfield: image

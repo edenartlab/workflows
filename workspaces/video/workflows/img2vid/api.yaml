@@ -1,107 +1,116 @@
 name: Animate an image
 description: Creative image animation (using AnimateDiff)
+tip: |-
+  This will animate a single image and produce an animated video version that can drift away a bit from the source image but produces creative outputs, ideal for abstract visuals, not ideal for realistic scenes. Dont use this tool whenever you need to use multiple images to create a video.
 thumbnail: app/img2vid_opt.mp4
-tip: This will animate a single image and produce an animated video version that can drift away a bit from the source image but produces creative outputs, ideal for abstract visuals, not ideal for realistic scenes. Dont use this tool whenever you need to use multiple images to create a video.
-output_type: video
-status: prod
 cost_estimate: 0.5 * num_frames
-handler: comfyui
-comfyui_output_node_id: 466
+output_type: video
 resolutions: []
+handler: comfyui
+status: prod
+comfyui_output_node: 466
 parameters:
-- name: image
-  label: Image
-  description: Input image to animate
-  type: image
-  required: true
-  comfyui: 
-    node_id: 440
-    field: inputs
-    subfield: image
-- name: denoise
-  label: AI creativity
-  description: How much room to give the AI model to invent new details and create motion. 0.65 = default, increasing this value (to eg 0.8) also increases video motion. Lowering to eg 0.4 will only create very subtle animation but stay very close to the source image.
-  type: float
-  default: 0.65
-  minimum: 0.4
-  maximum: 0.8
-  comfyui: 
-    node_id: 10
-    field: inputs
-    subfield: denoise
-- name: num_frames
-  label: Number of frames
-  description: Number of frames to generate (num_frames/12 = length of the output video in seconds), should usually be around 24-64 frames. (More wont really create that much extra interesting motion...)
-  type: int
-  default: 24
-  minimum: 16
-  maximum: 192
-  step: 8
-  comfyui: 
-    node_id: 559
-    field: inputs
-    subfield: value
-- name: resolution
-  label: Resolution
-  description: Resolution of the generated animation (always a multiple of 64), img2vid will always adopt the aspect ratio of the provided image.
-  type: int
-  default: 1536
-  minimum: 1024
-  maximum: 2048
-  step: 64
-  comfyui: 
-    node_id: 535
-    field: inputs
-    subfield: value
-- name: motion_strength
-  label: Motion Strength
-  description: How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion). This is also affected by AI creativity.
-  type: float
-  default: 1.15
-  minimum: 0.75
-  maximum: 1.5
-  comfyui: 
-    node_id: 16
-    field: inputs
-    subfield: motion_scale
-- name: use_motion_brush
-  label: Use motion brush
-  description: Enable motion brush
-  tip: This is a great way to maintain certain parts of the image (eg main character, face, ...), while animating others (eg background, fire, trees, ...)
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 556
-    field: inputs
-    subfield: value
-- name: motion_mask
-  label: Motion brush image
-  description: Use a motion brush mask image to only create motion in certain areas (white = motion, black = no motion)
-  tip: The motion_mask must be generated with another tool first. Create a mask where the to-be-animated regions are white and the rest is black.
-  type: image
-  visible_if: use_motion_brush=true
-  comfyui: 
-    node_id: 557
-    field: inputs
-    subfield: image
-- name: loop
-  label: loop
-  description: Makes the output animation looping (end=start)
-  type: bool
-  default: true
-  comfyui: 
-    node_id: 17
-    field: inputs
-    subfield: closed_loop
-- name: seed
-  label: Seed
-  description: Set random seed for reproducibility. If blank, will be set to a random value.
-  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this at default! 
-  type: int
-  default: random
-  minimum: 0
-  maximum: 2147483647
-  comfyui: 
-    node_id: 10
-    field: inputs
-    subfield: seed
+  image:
+    type: image
+    label: Image
+    description: Input image to animate
+    required: true
+    comfyui:
+      node_id: 440
+      field: inputs
+      subfield: image
+  denoise:
+    type: float
+    label: AI creativity
+    description: |-
+      How much room to give the AI model to invent new details and create motion. 0.65 = default, increasing this value (to eg 0.8) also increases video motion. Lowering to eg 0.4 will only create very subtle animation but stay very close to the source image.
+    default: 0.65
+    minimum: 0.4
+    maximum: 0.8
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: denoise
+  num_frames:
+    type: int
+    label: Number of frames
+    description: |-
+      Number of frames to generate (num_frames/12 = length of the output video in seconds), should usually be around 24-64 frames. (More wont really create that much extra interesting motion...)
+    default: 24
+    minimum: 16
+    maximum: 192
+    step: 8
+    comfyui:
+      node_id: 559
+      field: inputs
+      subfield: value
+  resolution:
+    type: int
+    label: Resolution
+    description: |-
+      Resolution of the generated animation (always a multiple of 64), img2vid will always adopt the aspect ratio of the provided image.
+    default: 1536
+    minimum: 1024
+    maximum: 2048
+    step: 64
+    comfyui:
+      node_id: 535
+      field: inputs
+      subfield: value
+  motion_strength:
+    type: float
+    label: Motion Strength
+    description: |-
+      How strong the motion should be in the video (1.0 is very small motion, 1.15 is default, 1.25 is a lot of motion). This is also affected by AI creativity.
+    default: 1.15
+    minimum: 0.75
+    maximum: 1.5
+    comfyui:
+      node_id: 16
+      field: inputs
+      subfield: motion_scale
+  use_motion_brush:
+    type: bool
+    label: Use motion brush
+    description: Enable motion brush
+    tip: |-
+      This is a great way to maintain certain parts of the image (eg main character, face, ...), while animating others (eg background, fire, trees, ...)
+    default: false
+    comfyui:
+      node_id: 556
+      field: inputs
+      subfield: value
+  motion_mask:
+    type: image
+    label: Motion brush image
+    description: |-
+      Use a motion brush mask image to only create motion in certain areas (white = motion, black = no motion)
+    tip: |-
+      The motion_mask must be generated with another tool first. Create a mask where the to-be-animated regions are white and the rest is black.
+    visible_if: use_motion_brush=true
+    comfyui:
+      node_id: 557
+      field: inputs
+      subfield: image
+  loop:
+    type: bool
+    label: loop
+    description: Makes the output animation looping (end=start)
+    default: true
+    comfyui:
+      node_id: 17
+      field: inputs
+      subfield: closed_loop
+  seed:
+    type: int
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set to a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this at default!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: seed
