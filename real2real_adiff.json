@@ -1052,53 +1052,6 @@
       ]
     },
     {
-      "id": 22,
-      "type": "ADE_MultivalDynamic",
-      "pos": {
-        "0": 2293.36669921875,
-        "1": 2449.19921875
-      },
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask_optional",
-          "type": "MASK",
-          "link": null,
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MULTIVAL",
-          "type": "MULTIVAL",
-          "links": [
-            33
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Scale 🎭🅐🅓",
-      "properties": {
-        "Node name for S&R": "ADE_MultivalDynamic",
-        "ttNbgOverride": {
-          "color": "#2a363b",
-          "bgcolor": "#3f5159",
-          "groupcolor": "#3f789e"
-        }
-      },
-      "widgets_values": [
-        1.2,
-        ""
-      ]
-    },
-    {
       "id": 12,
       "type": "KSampler",
       "pos": {
@@ -1164,7 +1117,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        83446908809708,
+        982684747246055,
         "randomize",
         12,
         2,
@@ -1185,7 +1138,7 @@
         "1": 102
       },
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1312,7 +1265,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1348,7 +1301,7 @@
         "1": 178
       },
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1367,7 +1320,7 @@
       "widgets_values": [
         "/home/rednax/SSD2TB/stored_CLIP_results/AAA_init_imgs/00_quick_test/interp",
         2,
-        17233,
+        58909,
         "randomize",
         false,
         false
@@ -1526,7 +1479,7 @@
         "1": 98
       },
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1891,7 +1844,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00057.mp4",
+            "filename": "AnimateDiff_00061.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -2009,7 +1962,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00056.mp4",
+            "filename": "AnimateDiff_00060.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -2104,7 +2057,7 @@
         26
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -2124,33 +2077,6 @@
         "showOutputText": false,
         "horizontal": false
       }
-    },
-    {
-      "id": 121,
-      "type": "PreviewImage",
-      "pos": {
-        "0": 861,
-        "1": 910
-      },
-      "size": {
-        "0": 408.2695617675781,
-        "1": 265.3064270019531
-      },
-      "flags": {},
-      "order": 39,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 247
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
     },
     {
       "id": 134,
@@ -2272,63 +2198,6 @@
       }
     },
     {
-      "id": 138,
-      "type": "Eden_Image_Math",
-      "pos": {
-        "0": 1188,
-        "1": 1407
-      },
-      "size": {
-        "0": 315,
-        "1": 122
-      },
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "link": 251,
-          "shape": 7
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "link": null,
-          "shape": 7
-        },
-        {
-          "name": "c",
-          "type": "*",
-          "link": null,
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": null
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            252
-          ],
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Image_Math"
-      },
-      "widgets_values": [
-        "0.5*a+0.5",
-        "mean"
-      ]
-    },
-    {
       "id": 92,
       "type": "VHS_VideoCombine",
       "pos": {
@@ -2401,7 +2270,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "Result_00065.mp4",
+            "filename": "Result_00067.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
@@ -2422,7 +2291,7 @@
         773.0155334472656
       ],
       "flags": {},
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -2504,7 +2373,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 16,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2523,73 +2392,6 @@
       },
       "widgets_values": [
         4
-      ]
-    },
-    {
-      "id": 105,
-      "type": "Eden_Int",
-      "pos": {
-        "0": -665,
-        "1": 2407
-      },
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            173
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Denoise steps",
-      "properties": {
-        "Node name for S&R": "Eden_Int"
-      },
-      "widgets_values": [
-        14
-      ]
-    },
-    {
-      "id": 59,
-      "type": "Eden_Int",
-      "pos": {
-        "0": -707.9755859375,
-        "1": 1913.19970703125
-      },
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            189,
-            190
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Resolution",
-      "properties": {
-        "Node name for S&R": "Eden_Int"
-      },
-      "widgets_values": [
-        1024
       ]
     },
     {
@@ -2662,6 +2464,204 @@
         0.7000000000000001,
         "V only"
       ]
+    },
+    {
+      "id": 138,
+      "type": "Eden_Image_Math",
+      "pos": {
+        "0": 1188,
+        "1": 1407
+      },
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 251,
+          "shape": 7
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "c",
+          "type": "*",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            252
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Image_Math"
+      },
+      "widgets_values": [
+        "0.0*a+1",
+        "mean"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "Eden_Int",
+      "pos": {
+        "0": -707.9755859375,
+        "1": 1913.19970703125
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            189,
+            190
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Resolution",
+      "properties": {
+        "Node name for S&R": "Eden_Int"
+      },
+      "widgets_values": [
+        768
+      ]
+    },
+    {
+      "id": 105,
+      "type": "Eden_Int",
+      "pos": {
+        "0": -665,
+        "1": 2407
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            173
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Denoise steps",
+      "properties": {
+        "Node name for S&R": "Eden_Int"
+      },
+      "widgets_values": [
+        8
+      ]
+    },
+    {
+      "id": 22,
+      "type": "ADE_MultivalDynamic",
+      "pos": {
+        "0": 2293.36669921875,
+        "1": 2449.19921875
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask_optional",
+          "type": "MASK",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MULTIVAL",
+          "type": "MULTIVAL",
+          "links": [
+            33
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Scale 🎭🅐🅓",
+      "properties": {
+        "Node name for S&R": "ADE_MultivalDynamic",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        1.1500000000000001,
+        ""
+      ]
+    },
+    {
+      "id": 121,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 837,
+        "1": 946
+      },
+      "size": {
+        "0": 408.2695617675781,
+        "1": 265.3064270019531
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 247
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
     }
   ],
   "links": [
@@ -3239,10 +3239,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.26734863064144426,
+      "scale": 0.6934334949443103,
       "offset": [
-        175.7275917993227,
-        -486.75829979678963
+        -3707.4420356053215,
+        -1638.9886571425263
       ]
     }
   },
