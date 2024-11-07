@@ -150,7 +150,7 @@
   },
   "27": {
     "inputs": {
-      "seed": 626904323287341
+      "seed": 811488668081869
     },
     "class_type": "Seed",
     "_meta": {
@@ -344,7 +344,7 @@
         0
       ],
       "vae": [
-        "168",
+        "410",
         2
       ]
     },
@@ -360,7 +360,7 @@
         0
       ],
       "vae": [
-        "168",
+        "410",
         2
       ]
     },
@@ -453,7 +453,7 @@
         "59",
         0
       ],
-      "weight_type": "strong style transfer",
+      "weight_type": "ease in-out",
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
@@ -488,73 +488,6 @@
       "title": "Style Image"
     }
   },
-  "146": {
-    "inputs": {
-      "filename": "eden_img-gen_%time_%seed_%counter",
-      "path": "%date/",
-      "model_name": [
-        "165",
-        0
-      ],
-      "seed": [
-        "27",
-        3
-      ],
-      "steps": [
-        "171",
-        0
-      ],
-      "cfg": [
-        "171",
-        2
-      ],
-      "sampler_name": [
-        "171",
-        3
-      ],
-      "scheduler": [
-        "171",
-        4
-      ],
-      "width": [
-        "328",
-        1
-      ],
-      "height": [
-        "328",
-        2
-      ],
-      "positive": [
-        "309",
-        0
-      ],
-      "negative": [
-        "33",
-        0
-      ],
-      "extension": "png",
-      "calculate_hash": true,
-      "resource_hash": true,
-      "lossless_webp": true,
-      "jpg_webp_quality": 95,
-      "date_format": "%Y-%m-%d",
-      "time_format": "%H%M%S",
-      "save_metadata_file": false,
-      "extra_info": "SD Prompt Reader Node Example Image",
-      "images": [
-        "210",
-        0
-      ],
-      "lora_name": [
-        "162",
-        2
-      ]
-    },
-    "class_type": "SDPromptSaver",
-    "_meta": {
-      "title": "SD Prompt Saver"
-    }
-  },
   "162": {
     "inputs": {
       "lora_name": "SDXL_lora_xander.safetensors",
@@ -567,42 +500,17 @@
         0
       ],
       "model": [
-        "168",
+        "410",
         0
       ],
       "clip": [
-        "168",
+        "410",
         1
       ]
     },
     "class_type": "SDLoraLoader",
     "_meta": {
       "title": "SD Lora Loader"
-    }
-  },
-  "165": {
-    "inputs": {
-      "any_type_input": [
-        "168",
-        3
-      ]
-    },
-    "class_type": "SDAnyConverter",
-    "_meta": {
-      "title": "SD Any Converter"
-    }
-  },
-  "168": {
-    "inputs": {
-      "ckpt_name": {
-        "content": "Eden_SDXL.safetensors",
-        "image": null
-      },
-      "example": "[none]"
-    },
-    "class_type": "CheckpointLoader|pysssss",
-    "_meta": {
-      "title": "Checkpoint Loader 🐍"
     }
   },
   "171": {
@@ -862,7 +770,7 @@
   "238": {
     "inputs": {
       "text": [
-        "242",
+        "241",
         0
       ],
       "clip": [
@@ -878,7 +786,7 @@
   "239": {
     "inputs": {
       "text": [
-        "241",
+        "243",
         0
       ],
       "clip": [
@@ -894,7 +802,7 @@
   "240": {
     "inputs": {
       "conditioning_to_strength": [
-        "327",
+        "407",
         0
       ],
       "conditioning_to": [
@@ -923,31 +831,13 @@
       "title": "Prompt"
     }
   },
-  "242": {
-    "inputs": {
-      "delimiter": ", ",
-      "clean_whitespace": "false",
-      "text_a": [
-        "243",
-        0
-      ],
-      "text_b": [
-        "241",
-        0
-      ]
-    },
-    "class_type": "Text Concatenate",
-    "_meta": {
-      "title": "Text Concatenate"
-    }
-  },
   "243": {
     "inputs": {
       "value": ""
     },
     "class_type": "Eden_String",
     "_meta": {
-      "title": "lora_prompt"
+      "title": "no_token_prompt"
     }
   },
   "281": {
@@ -1164,19 +1054,10 @@
       "title": "preprocessor_image"
     }
   },
-  "307": {
-    "inputs": {
-      "a": true
-    },
-    "class_type": "CM_BoolToInt",
-    "_meta": {
-      "title": "use_controlnet"
-    }
-  },
   "309": {
     "inputs": {
       "text": [
-        "242",
+        "370",
         0
       ],
       "text2": "colorful chinese painting, black background, visionary painting embedding:marzipan_embeddings, "
@@ -1198,15 +1079,6 @@
     "class_type": "TextPlusPlus",
     "_meta": {
       "title": "Text ++"
-    }
-  },
-  "312": {
-    "inputs": {
-      "value": 1
-    },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "token_scale"
     }
   },
   "317": {
@@ -1248,7 +1120,7 @@
     },
     "class_type": "easy imageSave",
     "_meta": {
-      "title": "Save Image (Simple)"
+      "title": "SaveImage (Simple)"
     }
   },
   "324": {
@@ -1261,26 +1133,6 @@
     "class_type": "LogicGateInvertBasic",
     "_meta": {
       "title": "Invert Basic"
-    }
-  },
-  "327": {
-    "inputs": {
-      "boolean": [
-        "193",
-        0
-      ],
-      "on_true": [
-        "312",
-        0
-      ],
-      "on_false": [
-        "204",
-        0
-      ]
-    },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch token-scale"
     }
   },
   "328": {
@@ -1415,7 +1267,7 @@
     },
     "class_type": "ControlNetApplyAdvanced",
     "_meta": {
-      "title": "Apply ControlNet (Advanced)"
+      "title": "Apply ControlNet"
     }
   },
   "358": {
@@ -1446,7 +1298,7 @@
     "inputs": {
       "output": "",
       "source": [
-        "327",
+        "205",
         0
       ]
     },
@@ -1604,8 +1456,8 @@
         0
       ],
       "multiplier": [
-        "307",
-        0
+        "408",
+        2
       ]
     },
     "class_type": "NumberPlusPlus",
@@ -1629,6 +1481,56 @@
     "class_type": "NumberPlusPlus",
     "_meta": {
       "title": "Number ++"
+    }
+  },
+  "407": {
+    "inputs": {
+      "number": 0,
+      "from_range_min": 0,
+      "from_range_max": 1,
+      "to_range_min": 0.5,
+      "to_range_max": 1,
+      "override_number": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "NumberRemap",
+    "_meta": {
+      "title": "Number Remap Range"
+    }
+  },
+  "408": {
+    "inputs": {
+      "value": false,
+      "on_false": "0.0",
+      "on_true": "1.0"
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_controlnet"
+    }
+  },
+  "410": {
+    "inputs": {
+      "ckpt_name": "Eden_SDXL.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "412": {
+    "inputs": {
+      "filename_prefix": "sdxl_eden_img",
+      "images": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
     }
   }
 }

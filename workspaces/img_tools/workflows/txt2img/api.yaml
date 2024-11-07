@@ -1,13 +1,15 @@
-name: Create an image (SDXL)
-description: Generate an image from text using our classic SDXL model and trained concepts.
+name: Create an image from text (legacy SDXL model)
+description: Generate an image from text using the classic SDXL model and trained concepts.
 thumbnail: app/txt2img.png
-tip: This is the most basic and common function which generates an image from text a prompt, with ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result.
+tip: This is the legacy (battlehardened) function to generate an image from text a prompt. The outputs are not as detailed as FLUX, but often more creative and weird. With ControlNet guidance one can maintain the contours or shape outlines of an input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result.
 output_type: image
-status: prod
+status: staging
+private: true
+visible: false
 cost_estimate: 1 * n_samples
 handler: comfyui
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
-comfyui_output_node_id: 146
+comfyui_output_node_id: 412
 comfyui_intermediate_outputs:
   - name: controlnet_signal
     node_id: 323
@@ -22,24 +24,15 @@ parameters:
     node_id: 370
     field: inputs
     subfield: body
-- name: n_samples
-  label: Number of samples
-  description: Number of samples to generate
-  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
-  type: int
-  required: true
-  default: 1
-  minimum: 1
-  maximum: 4
 - name: width
   label: Width
   description: Width in pixels
   tip: Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
-  required: true
   visible_if: use_init_image=false
   step: 8
   comfyui: 
@@ -51,16 +44,59 @@ parameters:
   description: Height in pixels
   tip: Use the description for width to understand how to use height well.
   type: int
+  required: true
   default: 1024
   minimum: 256
   maximum: 2048
-  required: true
   visible_if: use_init_image=false
   step: 8
   comfyui: 
     node_id: 7
     field: inputs
     subfield: height
+- name: n_samples
+  label: Number of samples
+  description: Number of samples to generate
+  tip: This is the number of variations to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+  type: int
+  required: true
+  default: 1
+  minimum: 1
+  maximum: 4
+- name: use_lora
+  label: Use custom model
+  description: Activate a LoRA finetuned model
+  tip: Activate this to generate using a custom, trained LoRA (SDXL) model.
+  type: bool
+  default: false
+  comfyui: 
+    node_id: 193
+    field: inputs
+    subfield: value
+- name: lora
+  label: LoRA
+  description: Use a custom model (LoRA)
+  tip: name of the custom (SDXL) LoRA model.
+  type: lora
+  visible_if: use_lora=true
+  comfyui: 
+    node_id: 162
+    field: inputs
+    subfield: lora_name
+- name: lora_strength
+  label: Custom model strength
+  description: Strength of the custom model (LoRA)
+  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. If outputs dont look enough like the training images, increase the LoRA strength..
+  type: float
+  default: 0.7
+  minimum: 0.0
+  maximum: 1.0
+  visible_if: use_lora=true
+  comfyui: 
+    node_id: 96
+    field: inputs
+    subfield: value
+
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
@@ -74,16 +110,30 @@ parameters:
 - name: init_image
   label: Starting image
   description: Initial image from which to start diffusion process
+  tip: a starting image will set the base for the diffusion process to generate from, and will guide the output towards the colors and general composition of the starting image. This is useful for image-to-image tasks.
   type: image
   visible_if: use_init_image=true
   comfyui: 
     node_id: 16
     field: inputs
     subfield: image
+- name: denoise
+  label: Generation strength
+  description: Strength of the generation process on top of the starting image
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. Denoise should always stay at 1 unless an init image is employed; never use less than 1 unless you're specifically trying to do an img2img task. In this scenario, init_image should be true, and a non-default image should be supplied
+  type: float
+  default: 1.0
+  minimum: 0.0
+  maximum: 1.0
+  visible_if: use_init_image=true
+  comfyui: 
+    node_id: 220
+    field: inputs
+    subfield: value
 - name: size_from_input
   label: Use starting image size
-  description: Override the width and height parameters with the actual resolution of your starting image. 
-  tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution.
+  description: Override the provided width and height parameters with the actual resolution of your starting image. 
+  tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution and is almost always better than generating directly at a high resolution.
   type: bool
   default: true
   visible_if: use_init_image=true
@@ -93,26 +143,13 @@ parameters:
     subfield: value
 - name: enforce_SDXL_resolution
   label: Use optimized resolution
-  description: Round to the nearest optimized SDXL resolution. 
-  tip: It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution.
+  description: Round to the nearest optimized SDXL resolution, recommended.
+  tip: It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution so might introduce a tiny bit distortion, which is typically not noticeable.
   type: bool
-  default: false
+  default: true
   visible_if: use_init_image=true
   comfyui: 
     node_id: 337
-    field: inputs
-    subfield: value
-- name: denoise
-  label: Generation strength
-  description: Strength of the generation process on top of the starting image
-  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. Denoise should always stay at 1 unless an init image is employed; never use less than 1 unless you're specifically trying to do an img2img task.
-  type: float
-  default: 1.0
-  minimum: 0.0
-  maximum: 1.0
-  visible_if: use_init_image=true
-  comfyui: 
-    node_id: 220
     field: inputs
     subfield: value
 - name: use_controlnet
@@ -123,16 +160,16 @@ parameters:
   type: bool
   default: false
   comfyui: 
-    node_id: 307
+    node_id: 408
     field: inputs
-    subfield: a
+    subfield: value
 - name: preprocessor
   label: Controlnet preprocessor
-  description: the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
-  tip:  depth will recreate an approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image, with cannyv2 as an updated model that's sharper but with less detail. The scribble model will create guidance towards a rougher sketched shape of your starting image. pose follows an open pose skeleton of a character's body position. threshold creates a hard black and white matte from the input image, and lineart provides a crisp hard edge guidance from the input. 
+  description: What type of shape guidance to apply. Different types have subtly different effects on the output.
+  tip:  depth will try to maintain the approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image. The scribble model will create guidance towards a rougher sketched shape of your starting image. pose follows an open pose skeleton of a character's body position. threshold creates a hard black and white matte from the input image, and lineart provides a crisp hard edge guidance from the input. 
   type: string
   default: canny
-  choices: [none, cannyv2, canny, depth, scribble, pose, threshold, lineart]
+  choices: [none, canny, depth, scribble, pose, threshold, lineart]
   visible_if: use_controlnet=true
   comfyui: 
     node_id: 283
@@ -140,66 +177,20 @@ parameters:
     subfield: select_item
 - name: controlnet_strength
   label: Controlnet strength
-  description: set the guidance strength of the controlnet model in slot 1
-  tip: A good default is around 0.6, with ranges between 0.2 for subtle guidance, and 1.0 for something more heavy handed
+  description: Strength of the shape guidance (controlnet)
+  tip: A good default is around 0.6, with ranges around 0.4 for more subtle guidance (more freedom for the AI model), and 0.8 for something more heavy handed
   type: float
-  default: 0.7
+  default: 0.6
   minimum: 0.0
-  maximum: 1.5
+  maximum: 1.2
   visible_if: use_controlnet=true
   comfyui: 
     node_id: 36
     field: inputs
     subfield: value
-- name: use_lora
-  label: Use trained model
-  description: Activate a custom, trained model
-  tip: Models created with Eden's LoRA trainer can add people, styles and conceptual embeddings into the model. This endpoint only accepts SDXL models.
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 193
-    field: inputs
-    subfield: value
-- name: lora
-  label: LoRA
-  description: Use a LoRA finetune on top of the base model.
-  type: lora
-  visible_if: use_lora=true
-  comfyui: 
-    node_id: 162
-    field: inputs
-    subfield: lora_name
-- name: lora_strength
-  label: LoRA strength
-  description: Strength of the LoRA
-  tip: If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength.
-  type: float
-  default: 0.5
-  minimum: 0.0
-  maximum: 1.5
-  visible_if: use_lora=true
-  comfyui: 
-    node_id: 96
-    field: inputs
-    subfield: value
-- name: token_scale
-  label: embedding strength
-  description: Strength of the learned LoRA token that represents your concept
-  tip: This parameter controls the influence of the learned textual inversion embedding on the prompt conditioning. This should typically be around 0.7-1.0
-  type: float
-  default: 1.0
-  minimum: 0.0
-  maximum: 1.25
-  visible_if: use_lora=true
-  hide_from_ui: true
-  comfyui: 
-    node_id: 312
-    field: inputs
-    subfield: value
 - name: use_ipadapter
   label: Use style image
-  description: Transfer style from image
+  description: Apply style elements from a given image
   tip: Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image.
   type: bool
   default: false
@@ -209,7 +200,7 @@ parameters:
     subfield: value
 - name: style_image
   label: Style image
-  description: Image of an aesthetic style, texture or visual content transferred to the generated image creation
+  description: Image of an aesthetic style, texture or visual content to be transferred to the generated image
   type: image
   visible_if: use_ipadapter=true
   comfyui: 
@@ -219,9 +210,9 @@ parameters:
 - name: ipadapter_strength
   label: Style strength
   description: set the strength of the image style transfer
-  tip: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
+  tip: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.4) will give more freedom to interpret the prompt.
   type: float
-  default: 0.6
+  default: 0.8
   minimum: 0.0
   maximum: 1.5
   visible_if: use_ipadapter=true
@@ -229,23 +220,32 @@ parameters:
     node_id: 59
     field: inputs
     subfield: value
-- name: ipadapter_mode
-  label: Ipadapter style transfer mode
-  description: Allows for different types of style transfer using ipadapter, each with different characteristics and more or less content blending.
-  tip: All of these are variations of the same idea, but use different weighting schemas for injecting the style embedding into the unet. Each has different tradeoffs for style transfer versus content blending. Ease in-out is a great default, strong style transfer has less content bleeding.
+- name: SDXL_model
+  label: SDXL Model
+  description: Pick which SDXL model to use
+  hide_from_agent: true
   type: string
-  visible_if: use_ipadapter=true
-  default: strong style transfer
-  choices: [ease in-out, style transfer, strong style transfer, style transfer precise, composition precise]
-  visible_if: use_ipadapter=true
+  default: Eden_SDXL.safetensors
+  choices: [Eden_SDXL.safetensors, juggernautXL_version6Rundiffusion.safetensors]
   comfyui: 
-    node_id: 141
+    node_id: 410
     field: inputs
-    subfield: weight_type
+    subfield: ckpt_name
+- name: no_token_prompt
+  label: Prompt without the added embedding trigger.
+  description: Base user prompt without the embedding token
+  type: string
+  hide_from_agent: true
+  hide_from_ui: true
+  comfyui: 
+    node_id: 243
+    field: inputs
+    subfield: value
 - name: negative_prompt
   label: Negative prompt
   description: Negative text prompt, what you do *not* want to generate.
   tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
+  hide_from_agent: true
   type: string
   default: embedding:negativeXL_D, (worst quality, low quality, normal quality:1.5)
   comfyui: 
@@ -269,26 +269,11 @@ parameters:
   description: Set the number of diffusion steps
   tip: The default value is sufficient for most jobs, but at a speed cost can be increased, or decreased to undercook the image generation. 
   type: int
-  default: 30
+  default: 35
   step: 1
   minimum: 10
   maximum: 50
-#  advanced: true
   comfyui: 
     node_id: 171
     field: inputs
     subfield: steps_total
-- name: cfg
-  label: Guidance
-  description: CFG strength affects the influence of the prompt on the image generation.
-  tip: Classifier Free Guidance strength should usually be set to the default, but can be increased or decreased within the range presented to increase or decrease the affect of the prompt on the creation.
-  type: float
-  default: 8.0
-  step: 0.1
-  minimum: 1.0
-  maximum: 12.0
-#  advanced: true
-  comfyui: 
-    node_id: 171
-    field: inputs
-    subfield: cfg
