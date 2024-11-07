@@ -75,8 +75,9 @@ parameters:
     subfield: value
 - name: lora
   label: LoRA
-  description: Use a LoRA finetune on top of the base model.
-  type: name of the custom (SDXL) LoRA model.
+  description: Use a custom model (LoRA)
+  tip: name of the custom (SDXL) LoRA model.
+  type: lora
   visible_if: use_lora=true
   comfyui: 
     node_id: 162
