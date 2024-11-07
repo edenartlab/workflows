@@ -47,8 +47,8 @@ parameters:
     subfield: image
 
 - name: close_strength
-  label: AI strength on objects close to the camera
-  description: Strength of the AI effect on regions in the video that are close to the camera (depth). (Negative values will instead cause far away objects to be stylized)
+  label: Region strength on objects close to the camera
+  description: Strength of the AI effect on regions in the video that are close to the camera (depth). (Negative values will instead cause far away stuff to be stylized)
   tip: 
   type: float
   default: -0.1
@@ -61,7 +61,7 @@ parameters:
     field: inputs
     subfield: rel_strength_a
 - name: edge_strength
-  label: AI strength on edges and textures
+  label: Region strength on edges and textures
   description: Strength of the AI effect on regions in the video that have lots of edges and texture. Setting this to a negative value is typically nice since regions with less texture (eg flat colors) are good targets for effects.
   tip: 
   type: float
@@ -75,11 +75,11 @@ parameters:
     field: inputs
     subfield: rel_strength_b
 - name: luminance_strength
-  label: AI strength in bright regions
-  description: Strength of the AI effect on regions in the video that are bright. Setting this to a negative value will cause dark regions to be stylized.
+  label: Region strength in bright regions
+  description: Strength of the AI effect on regions in the video that are bright. Setting this to a negative value will cause dark regions to be stylized. (zero means brightness is not considered)
   tip: 
   type: float
-  default: 0.1
+  default: 0.0
   minimum: -1.0
   maximum: 1.0
   step: 0.01
