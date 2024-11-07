@@ -319,7 +319,7 @@
   },
   "41": {
     "inputs": {
-      "image": "magicswirl.jpg",
+      "image": "mars_college.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -425,9 +425,9 @@
   },
   "179": {
     "inputs": {
-      "video": "F84164DFD4768F8911623A956C523F9C_video_dashinit.mp4",
+      "video": "output_video.mp4",
       "force_rate": [
-        "184",
+        "377",
         0
       ],
       "force_size": "Disabled",
@@ -460,31 +460,10 @@
       "title": "Prep Image For ClipVision"
     }
   },
-  "183": {
-    "inputs": {
-      "value": 8
-    },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "Diffusion_FPS"
-    }
-  },
-  "184": {
-    "inputs": {
-      "_float": [
-        "183",
-        0
-      ]
-    },
-    "class_type": "CR Float To Integer",
-    "_meta": {
-      "title": "🔧 CR Float To Integer"
-    }
-  },
   "187": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -508,7 +487,7 @@
   "188": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -548,7 +527,7 @@
   },
   "193": {
     "inputs": {
-      "value": 1280
+      "value": 1024
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -620,7 +599,7 @@
   "210": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -736,7 +715,7 @@
   "291": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -845,7 +824,7 @@
         0
       ],
       "b": [
-        "183",
+        "376",
         0
       ]
     },
@@ -874,7 +853,7 @@
   "326": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -898,7 +877,7 @@
   "328": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -1019,7 +998,7 @@
   "344": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -1043,7 +1022,7 @@
   "345": {
     "inputs": {
       "frame_rate": [
-        "183",
+        "376",
         0
       ],
       "loop_count": 0,
@@ -1066,9 +1045,9 @@
   },
   "347": {
     "inputs": {
-      "rel_strength_a": -0.01,
-      "rel_strength_b": -0.02,
-      "rel_strength_c": -0.05,
+      "rel_strength_a": 0.02,
+      "rel_strength_b": 0.02,
+      "rel_strength_c": 0.03,
       "lower_clamp": 6,
       "upper_clamp": 94,
       "gamma": 0.75,
@@ -1267,6 +1246,27 @@
     "class_type": "Eden_Int",
     "_meta": {
       "title": "n_steps"
+    }
+  },
+  "376": {
+    "inputs": {
+      "value": 8
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Diffusion_FPS"
+    }
+  },
+  "377": {
+    "inputs": {
+      "a": [
+        "376",
+        0
+      ]
+    },
+    "class_type": "Eden_FloatToInt",
+    "_meta": {
+      "title": "Eden_FloatToInt"
     }
   }
 }

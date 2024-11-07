@@ -1,6 +1,5 @@
 name: AI video effects
-description: Apply AI effects to parts of a video
-thumbnail: app/vid2vid_sdxl_opt.mp4
+description: Apply AI effects to regions of a video
 tip: This tool allows you to add creative AI effects to regions of a video. You can use this to apply cool post-effects on parts of existing videos, eg adding animated textures to a flat background, replacing bright objects (the sun, lights, etc) with motion graphics, but cannot be used to replace objects in a video. It can be tricky to achieve good results in the first go, tweaking of the settings is often required!
 output_type: video
 cost_estimate: 1.5 * n_frames * resolution/1024
@@ -36,7 +35,7 @@ parameters:
   comfyui: 
     node_id: 194
     field: inputs
-    subfield: frame_load_cap
+    subfield: value
 - name: style_image
   label: Style Image
   description: Style Image that will drive the inpainting effect.
