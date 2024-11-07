@@ -13,6 +13,8 @@ comfyui_intermediate_outputs:
     node_id: 328
   - name: brightness_strength_luminance_video
     node_id: 291
+  - name: final_region_mask
+    node_id: 345
 parameters:
 - name: video
   label: Input video
@@ -45,7 +47,6 @@ parameters:
     node_id: 41
     field: inputs
     subfield: image
-
 - name: close_strength
   label: Region strength on objects close to the camera
   description: Strength of the AI effect on regions in the video that are close to the camera (depth). (Negative values will instead cause far away stuff to be stylized)
