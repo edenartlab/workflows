@@ -1,3 +1,4 @@
+import os
 import yaml
 from collections import OrderedDict
 
@@ -78,7 +79,7 @@ def convert_parameter_to_property(param):
     
     return property_dict
 
-def convert_yaml(input_file, output_file):
+def convert_yaml(input_file, output_file, copy_tests=False):
     with open(input_file, 'r') as f:
         data = yaml.safe_load(f)
     
@@ -101,7 +102,7 @@ def convert_yaml(input_file, output_file):
         ('version', data.get('version')),
         ('output_handler', data.get('output_handler')),
         ('base_model', data.get('base_model')),
-        ('comfyui_output_node', data.get('comfyui_output_node_id')),
+        ('comfyui_output_node_id', data.get('comfyui_output_node_id')),
         ('comfyui_intermediate_outputs', data.get('comfyui_intermediate_outputs')),
         ('gcr_image_uri', data.get('gcr_image_uri')),
         ('machine_type', data.get('machine_type')), 
@@ -128,8 +129,12 @@ def convert_yaml(input_file, output_file):
         lambda dumper, data: dumper.represent_mapping('tag:yaml.org,2002:map', data.items())
     )
     
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, 'w') as f:
         yaml.dump(new_data, f, Dumper=PreserveLongStringDumper, width=float("inf"))
+
+    if copy_tests:
+        os.system(f'cp {input_file.replace("api.yaml", "test.json")} {output_file.replace("api.yaml", "test.json")}')
 
 # Usage
 
@@ -145,19 +150,38 @@ input_file = "workspaces/video/workflows/animate_3D/api.yaml"
 output_file = "workspaces/video/workflows/animate_3D/api2.yaml"
 
 
-# convert_yaml(input_file, output_file)
 
-import os
 
-def find_api_yaml_files(start_path="../private_workflows0"):
-    for root, dirs, files in os.walk(start_path):
-        if "api.yaml" in files:
-            # print(root)
-            root2 = root.replace("../private_workflows0", "../private_workflows0")
-            input_file = root + "/api.yaml"
-            output_file = root2 + "/api.yaml"
-            print(input_file, output_file)
-            # check if both files exist
-            convert_yaml(input_file, output_file)
+# for tool in [
+#     "lora_trainer", "flux_trainer", "news", "runway", "reel", "story"
+# ]:
+#     input_file = f"/Users/gene/eden/dev/eden2/tools/{tool}/api.yaml"
+#     output_file = input_file.replace("eden2", "eden2/tool3")
+#     convert_yaml(input_file, output_file, copy_tests=True)
+
+
+
+convert_yaml("/Users/gene/eden/dev/eden2/tools/runway/api.yaml", "/Users/gene/eden/dev/eden2/tool3/tools/runway/api.yaml", copy_tests=True)
+convert_yaml("/Users/gene/eden/dev/eden2/tools/reel/api.yaml", "/Users/gene/eden/dev/eden2/tool3/tools/reel/api.yaml", copy_tests=True)
+
+convert_yaml("/Users/gene/eden/dev/eden2/tool3/tools/media_utils/audio_video_combine/api.yaml", "/Users/gene/eden/dev/eden2/tool3/tools/media_utils/audio_video_combine/api.yaml", copy_tests=True)
+convert_yaml("/Users/gene/eden/dev/eden2/tool3/tools/media_utils/image_concat/api.yaml", "/Users/gene/eden/dev/eden2/tool3/tools/media_utils/image_concat/api.yaml", copy_tests=True)
+convert_yaml("/Users/gene/eden/dev/eden2/tool3/tools/media_utils/image_crop/api.yaml", "/Users/gene/eden/dev/eden2/tool3/tools/media_utils/image_crop/api.yaml", copy_tests=True)
+convert_yaml("/Users/gene/eden/dev/eden2/tool3/tools/media_utils/video_concat/api.yaml", "/Users/gene/eden/dev/eden2/tool3/tools/media_utils/video_concat/api.yaml", copy_tests=True)
+
+
+
+# import os
+
+# def find_api_yaml_files(start_path="../private_workflows0"):
+#     for root, dirs, files in os.walk(start_path):
+#         if "api.yaml" in files:
+#             # print(root)
+#             root2 = root.replace("../private_workflows0", "../private_workflows0")
+#             input_file = root + "/api.yaml"
+#             output_file = root2 + "/api.yaml"
+#             print(input_file, output_file)
+#             # check if both files exist
+#             convert_yaml(input_file, output_file)
             
-find_api_yaml_files()
+# find_api_yaml_files()

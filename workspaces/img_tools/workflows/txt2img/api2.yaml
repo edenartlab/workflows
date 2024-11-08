@@ -3,7 +3,7 @@ description: Generate an image from text using our classic SDXL model and traine
 tip: |-
   This is the most basic and common function which generates an image from text a prompt, with ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result.
 cost_estimate: 1 * n_samples
-comfyui_output_node: 146
+comfyui_output_node_id: 146
 comfyui_intermediate_outputs:
 - name: controlnet_signal
   node_id: 323
