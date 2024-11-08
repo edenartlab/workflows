@@ -85,6 +85,10 @@ def convert_yaml(input_file, output_file, copy_tests=False):
     
     # Create initial OrderedDict with non-None values only
     new_data = OrderedDict()
+    base_model = data.get('base_model')
+    if base_model:
+        base_model = base_model.replace("-", "_")
+        
     for key, value in [
         ('name', data['name']),
         ('description', data['description']),
@@ -101,7 +105,7 @@ def convert_yaml(input_file, output_file, copy_tests=False):
         ('model', data.get('model')),
         ('version', data.get('version')),
         ('output_handler', data.get('output_handler')),
-        ('base_model', data.get('base_model')),
+        ('base_model', base_model),
         ('comfyui_output_node_id', data.get('comfyui_output_node_id')),
         ('comfyui_intermediate_outputs', data.get('comfyui_intermediate_outputs')),
         ('gcr_image_uri', data.get('gcr_image_uri')),
