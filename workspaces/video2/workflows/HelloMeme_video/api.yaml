@@ -1,0 +1,50 @@
+name: Face Expression Video Transfer
+description: Apply the expression from one face to another
+thumbnail: app/HelloMeme.mp4
+tip: Use this endpoint to transfer the facial expression and emotion from an input image to a target image. The model used is HelloMeme, which will limit all outputs to 512x512 square results. The task will fail if a valid face isn't recognized in both inputs.
+output_type: image
+status: staging
+private: true
+visible: false
+cost_estimate: 100
+handler: comfyui
+comfyui_output_node_id: 21
+parameters:
+- name: init_image
+  label: Input Image
+  description: Input image to transfer the expression to.
+  type: image
+  required: true
+  comfyui: 
+    node_id: 8
+    field: inputs
+    subfield: image
+- name: video
+  label: Motion Video
+  description: Input video that is used as source of shape/motion
+  type: video
+  required: true
+  comfyui: 
+    node_id: 20
+    field: inputs
+    subfield: video
+- name: prompt
+  label: Prompt
+  description: Add a text description to the output image
+  tip: The default quality modifiers are usually all that is necessary, but further prompting can have a nominal effect on the output
+  type: string
+  comfyui: 
+    node_id: 15
+    field: inputs
+    subfield: prompt
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  type: int
+  default: random
+  minimum: 0
+  maximum: 100000
+  comfyui: 
+    node_id: 15
+    field: inputs
+    subfield: seed

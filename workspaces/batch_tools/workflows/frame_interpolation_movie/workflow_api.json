@@ -1,0 +1,404 @@
+{
+  "15": {
+    "inputs": {
+      "frame_rate": [
+        "165",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": [
+        "121",
+        0
+      ],
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": [
+        "190",
+        0
+      ],
+      "save_output": true,
+      "images": [
+        "101",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine"
+  },
+  "35": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "129",
+        1
+      ],
+      "b": [
+        "207",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "39": {
+    "inputs": {
+      "ckpt_name": "film_net_fp32.pt",
+      "clear_cache_after_n_frames": [
+        "68",
+        0
+      ],
+      "multiplier": [
+        "129",
+        1
+      ],
+      "frames": [
+        "207",
+        0
+      ]
+    },
+    "class_type": "FILM VFI"
+  },
+  "68": {
+    "inputs": {
+      "boolean": [
+        "123",
+        0
+      ],
+      "on_true": [
+        "35",
+        0
+      ],
+      "on_false": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]"
+  },
+  "80": {
+    "inputs": {
+      "ckpt_name": [
+        "195",
+        0
+      ],
+      "clear_cache_after_n_frames": [
+        "68",
+        0
+      ],
+      "multiplier": [
+        "129",
+        1
+      ],
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "207",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI"
+  },
+  "81": {
+    "inputs": {
+      "body": "-intFrms",
+      "delimiter": "",
+      "prepend": [
+        "92",
+        0
+      ],
+      "append": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "TextPlusPlus"
+  },
+  "92": {
+    "inputs": {
+      "body": "-interpolation_",
+      "delimiter": "",
+      "prepend": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "TextPlusPlus"
+  },
+  "93": {
+    "inputs": {
+      "on_true": "FILM",
+      "on_false": "RIFE",
+      "boolean": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "Switch string [Crystools]"
+  },
+  "101": {
+    "inputs": {
+      "switch": [
+        "197",
+        0
+      ],
+      "on_false": [
+        "149",
+        0
+      ],
+      "on_true": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "109": {
+    "inputs": {
+      "int_": [
+        "129",
+        1
+      ]
+    },
+    "class_type": "CR Integer To String"
+  },
+  "121": {
+    "inputs": {
+      "text": [
+        "81",
+        0
+      ],
+      "text2": "RIFE-interpolation_-intFrms4"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "123": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool"
+  },
+  "124": {
+    "inputs": {
+      "value": 10
+    },
+    "class_type": "Eden_Int"
+  },
+  "129": {
+    "inputs": {
+      "number": 2,
+      "integer": "round"
+    },
+    "class_type": "NumberPlusPlus"
+  },
+  "149": {
+    "inputs": {
+      "switch": [
+        "154",
+        0
+      ],
+      "on_false": [
+        "207",
+        0
+      ],
+      "on_true": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "154": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "129",
+        0
+      ],
+      "b": [
+        "202",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare"
+  },
+  "156": {
+    "inputs": {
+      "switch": [
+        "154",
+        0
+      ],
+      "on_false": [
+        "207",
+        0
+      ],
+      "on_true": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "160": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool"
+  },
+  "161": {
+    "inputs": {
+      "value": 30
+    },
+    "class_type": "Eden_Int"
+  },
+  "162": {
+    "inputs": {
+      "switch": [
+        "160",
+        0
+      ],
+      "on_false": [
+        "161",
+        0
+      ],
+      "on_true": [
+        "208",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "163": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "162",
+        0
+      ],
+      "b": [
+        "204",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare"
+  },
+  "165": {
+    "inputs": {
+      "switch": [
+        "163",
+        0
+      ],
+      "on_false": [
+        "161",
+        0
+      ],
+      "on_true": [
+        "162",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "190": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool"
+  },
+  "192": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool"
+  },
+  "193": {
+    "inputs": {
+      "menu": "rife49.pth, rife49.pth, FILM",
+      "delimiter": ", ",
+      "select_item": "rife49.pth"
+    },
+    "class_type": "DRMBT_String_Item_Menu"
+  },
+  "195": {
+    "inputs": {
+      "any_type_input": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter"
+  },
+  "196": {
+    "inputs": {
+      "value": "FILM"
+    },
+    "class_type": "Eden_String"
+  },
+  "197": {
+    "inputs": {
+      "comparison": "a == b",
+      "a": [
+        "196",
+        0
+      ],
+      "b": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare"
+  },
+  "202": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int"
+  },
+  "204": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int"
+  },
+  "207": {
+    "inputs": {
+      "video": "Count.mov",
+      "force_rate": 0,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo"
+  },
+  "208": {
+    "inputs": {
+      "video_info": [
+        "207",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo"
+  },
+  "209": {
+    "inputs": {
+      "batch": [
+        "101",
+        0
+      ]
+    },
+    "class_type": "BatchCount+"
+  },
+  "210": {
+    "inputs": {
+      "input": [
+        "209",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)"
+  }
+}

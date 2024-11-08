@@ -70,7 +70,7 @@ parameters:
 - name: pingpong
   label: Forward-Reverse Loop (pingpong)
   description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
-  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+  tip: This will loop the video, making a ping-pong forward to reverse seamless loop by appending the reversed output video to the end of the generated output.
   type: bool
   default: false
   comfyui: 

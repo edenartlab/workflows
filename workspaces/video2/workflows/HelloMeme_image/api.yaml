@@ -1,0 +1,60 @@
+name: Face Expression Image Transfer
+description: Apply the expression from one face to another
+thumbnail: app/face-expression-transfer-image-opt.mp4
+tip: Use this endpoint to transfer the facial expression and emotion from an input image to a target image. The model used is HelloMeme, which will limit all outputs to 512x512 square results. The task will fail if a valid face isn't recognized in both inputs. Optimal input images have a clear face occupying at least 30 percent of the image.
+output_type: image
+status: staging
+private: true
+visible: false
+cost_estimate: 1 
+handler: comfyui
+comfyui_output_node_id: 15
+parameters:
+- name: init_image
+  label: Input Image
+  description: Input image to transfer the expression to.
+  type: image
+  required: true
+  comfyui: 
+    node_id: 8
+    field: inputs
+    subfield: image
+- name: expression_image
+  label: Expression Image
+  description: Expression image to transfer the expression from.
+  type: image
+  required: true
+  comfyui: 
+    node_id: 9
+    field: inputs
+    subfield: image
+- name: prompt
+  label: Prompt
+  description: Add a text description to the output image
+  tip: The default quality modifiers are usually all that is necessary, but further prompting can have a nominal effect on the output
+  type: string
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: prompt
+- name: negative_prompt
+  label: Negative prompt
+  description: Negative text prompt, what you do *not* want to generate.
+  tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
+  type: string
+  default: 
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: negative_prompt
+- name: seed
+  label: Seed
+  description: Set random seed for reproducibility. If blank, will be set randomly.
+  type: int
+  default: random
+  minimum: 0
+  maximum: 100000
+  comfyui: 
+    node_id: 6
+    field: inputs
+    subfield: seed
