@@ -2,7 +2,7 @@ name: AI video effects
 description: Apply AI effects to regions of a video
 tip: This tool allows you to add creative AI effects to regions of a video. You can use this to apply cool post-effects on parts of existing videos, eg adding animated textures to a flat background, replacing bright objects (the sun, lights, etc) with motion graphics, but cannot be used to replace objects in a video. It can be tricky to achieve good results in the first go, tweaking of the settings is often required!
 output_type: video
-cost_estimate: 1.5 * n_frames * resolution/1024
+cost_estimate: 0.75 * n_frames * resolution/1024
 handler: comfyui
 status: stage
 comfyui_output_node_id: 13
@@ -55,7 +55,7 @@ parameters:
   default: -0.10
   minimum: -1.0
   maximum: 1.0
-  step: 0.01
+  step: 0.005
   required: true
   comfyui:
     node_id: 347
@@ -90,8 +90,8 @@ parameters:
     field: inputs
     subfield: rel_strength_c
 - name: max_denoise
-  label: AI effect strength
-  description: Strength of the AI effect on the target regions. 0.5-0.7 is a good range.
+  label: Total AI effect strength
+  description: Maximum strength of the AI effect on the combined target regions. 0.5-0.7 is a good range.
   tip: This is the denoising strength that will be applied to the masked regions of the video. Higher values will result in more stylized output. Lower values will stay closer to the original video.
   type: float
   default: 0.65
@@ -104,7 +104,7 @@ parameters:
     field: inputs
     subfield: value
 - name: min_denoise
-  label: Minimum effect strength
+  label: Minimum AI effect strength
   description: This effect strength will be applied to the non-targetted regions in the video. Suggested to keep this at zero unless you want to experiment with crazy stuff!
   tip: Keeping this at zero will result in the unmasked regions of the video being unchanged, only the masked regions will be stylized with the style image. Increasing this value will apply the AI effect to the unmasked regions as well, often causing loss of input details and weirder artifacts. In some cases this can create a more homogeneous look, but it is not recommended for most use cases.
   type: float
@@ -129,10 +129,6 @@ parameters:
     node_id: 193
     field: inputs
     subfield: value
-
-
-
-
 - name: seed
   label: Seed
   description: Set random seed for reproducibility. If blank, will be set to a random value.
