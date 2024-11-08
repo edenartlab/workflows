@@ -1,0 +1,175 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 689683562432575,
+      "steps": 30,
+      "cfg": 4.5,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "40",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "6": {
+    "inputs": {
+      "text": "closeup face depiction of Eve in the Garden of Eden, smiling and winking at the camera, branches and leaves, forward facing, ecology, compositing, line rendering, luminous, spellbound, veiled, plant manipulation, high contrast, sharp detail, minimal, abstract landscape",
+      "clip": [
+        "40",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "7": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "40",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "40",
+        2
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "21": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "length": 49,
+      "batch_size": 1
+    },
+    "class_type": "EmptyMochiLatentVideo"
+  },
+  "40": {
+    "inputs": {
+      "ckpt_name": "mochi_preview_fp8_scaled3.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "42": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "Mochi-preview",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine"
+  },
+  "45": {
+    "inputs": {
+      "upscale_model": [
+        "46",
+        0
+      ],
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel"
+  },
+  "46": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader"
+  },
+  "47": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 24,
+      "multiplier": 2,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI"
+  },
+  "48": {
+    "inputs": {
+      "switch": [
+        "50",
+        0
+      ],
+      "on_false": [
+        "8",
+        0
+      ],
+      "on_true": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "49": {
+    "inputs": {
+      "switch": [
+        "51",
+        0
+      ],
+      "on_false": [
+        "48",
+        0
+      ],
+      "on_true": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "InversionDemoLazySwitch"
+  },
+  "50": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool"
+  },
+  "51": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool"
+  }
+}
