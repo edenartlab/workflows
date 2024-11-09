@@ -3,6 +3,7 @@ description: Use Frame Interpolation to add in between frames to a video clip, c
 thumbnail: app/slow-motion-video.mp4
 tip: This workflow creates a slow motion movie, but adding interpolation frames to the input video with RIFE or FILM models. It is best used to slow down and smooth the output from other video endpoints, resulting in an output movie that is 2, 3 or 4x slower then the original input.
 status: prod
+output_type: video
 visible: false
 cost_estimate: 30 #this is totally made up, and requres front-end variables to be provided for resolution, and number of frames, as well as a log scale cost multiplier if visual_path sorting is enabled, and a time multiplier if FILM is selected. This is a non trivial thing to calculate, but will have wild effects on actual run time and our cost if we can't figure this out.
 handler: comfyui
