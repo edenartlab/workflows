@@ -135,7 +135,7 @@ parameters:
   description: Override the provided width and height parameters with the actual resolution of your starting image. 
   tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution and is almost always better than generating directly at a high resolution.
   type: bool
-  default: true
+  default: false
   visible_if: use_init_image=true
   comfyui: 
     node_id: 8
@@ -146,7 +146,7 @@ parameters:
   description: Round to the nearest optimized SDXL resolution, recommended.
   tip: It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution so might introduce a tiny bit distortion, which is typically not noticeable.
   type: bool
-  default: true
+  default: false
   visible_if: use_init_image=true
   comfyui: 
     node_id: 337
