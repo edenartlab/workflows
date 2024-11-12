@@ -49,9 +49,9 @@ parameters:
     field: inputs
     subfield: image
 - name: close_strength
-  label: Region strength on objects close to the camera
+  label: Region strength on objects/regions close to the camera
   description: Strength of the AI effect on regions in the video that are close to the camera (depth). (Negative values will instead cause far away stuff to be stylized)
-  tip: 
+  tip: This will create a the first (of three) mask that will determine where the AI stylization effect will occur in the source video.
   type: float
   default: -0.10
   minimum: -1.0
@@ -65,7 +65,7 @@ parameters:
 - name: edge_strength
   label: Region strength on edges and textures
   description: Strength of the AI effect on regions in the video that have lots of edges and texture. Setting this to a negative value is typically nice since regions with less texture (eg flat colors) are good targets for effects.
-  tip: 
+  tip: Generates the second (of three) masks, typically negative values here are good since this will apply the AI effect to flat regioins of the input video, destroying less information and instead adding new animated AI texture regions.
   type: float
   default: -0.20
   minimum: -1.0
@@ -79,7 +79,7 @@ parameters:
 - name: luminance_strength
   label: Region strength in bright regions
   description: Strength of the AI effect on regions in the video that are bright. Setting this to a negative value will cause dark regions to be stylized. (zero means brightness is not considered)
-  tip: 
+  tip: Third masking region (positive will target bright regions, negative will target dark regions). After this, all three masks will get combined to produce the final animation target mask.
   type: float
   default: 0.0
   minimum: -1.0
