@@ -1,8 +1,9 @@
 name: Extend an image (Outpaint)
 description: Expand an image to a different aspect ratio by outpainting.
 thumbnail: app/outpaint_edit_opt.mp4
-tip: This model uses SD1.5, so huge resolution changes will add potentially undesirable artifacting. Choosing an SDXL resolution will result in a larger image, but not necessarily a better one.
+tip: This model uses SD1.5, so huge resolution changes will add potentially undesirable artifacting. Choosing an SDXL resolution will result in a larger image, but not necessarily a better one. Keep in mind that a non-technical user may not have the vocabulary to describe what they want, and interpret their request with your best judgement as to whether or not the outpainting is what they are requesting, considering terms like outpaint, zoom out,expand, add to the side of this image,or other prompts for an image canvas to be larger as a suggestion to consider this tool when provided with such a request and an image to operate on.
 output_type: image
+base_model: SD1.5
 status: prod
 cost_estimate: 2 * n_samples
 handler: comfyui
@@ -20,7 +21,7 @@ parameters:
 - name: n_samples
   label: Number of samples
   description: Number of samples to generate
-  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+  tip: This is the number of creations to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
   type: int
   required: true
   default: 1
@@ -71,7 +72,7 @@ parameters:
 - name: left
   label: Left
   description: Increase the outpaint canvas by n pixels to the left
-  tip: this should only be set if i user specifies the direction left and a pixel amount, in which case use_custom_expand should be set true
+  tip: this should only be set if a user specifies the direction left and a pixel amount, in which case use_custom_expand should be set true
   type: int
   default: 0
   minimum: 0
@@ -85,7 +86,7 @@ parameters:
 - name: top
   label: Top
   description: Increase the outpaint canvas by n pixels to the top
-  tip: this should only be set if i user specifies the direction top or above, and a pixel amount, in which case use_custom_expand should be set true
+  tip: this should only be set if a user specifies the direction top or above, and a pixel amount, in which case use_custom_expand should be set true
   type: int
   default: 0
   minimum: 0
@@ -99,7 +100,7 @@ parameters:
 - name: right
   label: Right
   description: Increase the outpaint canvas by n pixels to the right
-  tip: this should only be set if i user specifies the direction right and a pixel amount, in which case use_custom_expand should be set true
+  tip: this should only be set if a user specifies the direction right and a pixel amount, in which case use_custom_expand should be set true
   type: int
   default: 0
   minimum: 0
@@ -113,7 +114,7 @@ parameters:
 - name: bottom
   label: Bottom
   description: Increase the outpaint canvas by n pixels to the bottom
-  tip: this should only be set if i user specifies the direction bottom, beneath or below, and a pixel amount, in which case use_custom_expand should be set true
+  tip: this should only be set if a user specifies the direction bottom, beneath or below, and a pixel amount, in which case use_custom_expand should be set true
   type: int
   default: 0
   minimum: 0
@@ -147,7 +148,7 @@ parameters:
     subfield: seed
 - name: steps
   label: Steps
-  description: Length of diffusion steps
+  description: Number of diffusion steps
   tip: Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. Only change this if you want to experiment with 'undercooking' the image, or are using a specialized model.
   type: int
   default: 20

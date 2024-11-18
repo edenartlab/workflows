@@ -1,8 +1,9 @@
 name: Create an image (SD3.5)
-description: Generate an image with SD3.5
-tip: This model uses SD3.5
+description: Generate an image with SD3.5 Large
+tip: This model uses SD3.5 Large, which is a more powerful and detailed model than SD3.5 Base. It is capable of generating more detailed and intricate images, but also requires more computational resources to run. The outputs are comparable to those of FLUX, but often more creative and weird. SD3 models are good at text generation, and when compared to FLUX, better at style adherance, NSFW, and has a good knowledge of celebrities and artists. Stable Diffusion 3+ models are trained on a dataset of images approximately 1 megapixel in size, and the provided resolutions list is the set of legal resolutions for this model, and should always be used unless a user requests a specific resolution. If an aspect ratio is specifically requested, always aim for dimensions that total approximately 1 megapixel and round to numbers that are divisible by 8.
 output_type: image
-base_model: sd3
+base_model: SD3.5 Large
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 cost_estimate: 2 * n_samples
 handler: comfyui
 status: prod
@@ -21,6 +22,7 @@ parameters:
 - name: prompt
   label: Prompt
   description: Prompt to describe what you want to generate.
+  tip: similarly to FLUX, SD3 uses a T5 text encoder in addition to CLIP, which allows for more conversational human-like natural language prompting. Create great T5 text encoder prompts by specifying the subject, style, composition, lighting, color palette, mood/atmosphere, technical details, and additional elements to guide the generation of detailed and cohesive visual descriptions.
   type: string
   required: true
   comfyui: 

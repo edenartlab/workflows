@@ -1,8 +1,9 @@
 name: Create sound effects
 description: Generate sound effects with Stable Audio.
 thumbnail: app/audio_craft_opt.mp4
-tip: Optimized for generating short audio samples, sound effects, and production elements. Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. The model was trained on data from Freesound and the Free Music Archive, respecting creator rights.
+tip: This tool uses the Stable Audio Open model, which is optimized for generating short audio samples, sound effects, and production elements. Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. The model was trained on data from Freesound and the Free Music Archive, respecting creator rights, and natively supports clip lengths of up to 47 seconds of audio. 
 output_type: audio
+base_model: Stable Audio Open
 status: prod
 cost_estimate: (1 + 0.1 * seconds) * n_samples
 handler: comfyui
@@ -11,7 +12,7 @@ parameters:
 - name: prompt
   label: Prompt
   description: Describe the music or sound effect to make
-  tip: Specifying tempo, key and style information can help guide the generation towards a more desirable result.
+  tip: StabilityAI recommends structuring prompts using Format, Genre, Sub-genre, Instruments, Moods, BPM and Styles, separating the structure with a | pipe character. An example prompt from their website looks like this: Genre: Trap | Styles: well arranged | Instruments: tap delay marimba arp, Shaker, Rim shot, 808 Kick, Syncopated Percussion, lush synthesizer pads, reverberating bongos, modular synth arp, granular synthesized | Moods: Ethereal, Transcendent, Atmospheric, Hypnotic | BPM: 130
   type: string
   required: true
   comfyui: 
@@ -20,7 +21,7 @@ parameters:
     subfield: text
 - name: negative
   label: Negative prompt
-  description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
+  description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default, adding items to the negative prompt after first running a generation and identifying undesirable elements.
   type: string
   default: 
   comfyui: 

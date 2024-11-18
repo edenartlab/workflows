@@ -3,6 +3,7 @@ description: Apply a new style to an existing video.
 thumbnail: app/vid2vid_sdxl_opt.mp4
 tip: This will create a new video with similar shapes / motions as the input video but a different texture corresponding to the style image input. It can be used to create stylistic re-interpretations of input videos.
 output_type: video
+base_model: SDXL
 cost_estimate: 1.5 * frame_cap * resolution/896
 handler: comfyui
 status: prod

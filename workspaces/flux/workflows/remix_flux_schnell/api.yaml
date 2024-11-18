@@ -1,7 +1,7 @@
 name: Remix an Image
 description: Create variations of an image (using FLUX-schnell).
 thumbnail: app/remix-flux-schnell_opt.png
-tip: Flux is a text to image model that excels at prompt coherence and text generation. The remix endpoint creates a variation on a starting image using Flux Schnell.
+tip: Flux is a text to image model that excels at prompt coherence and text generation. The remix endpoint creates a variation on a starting image using Flux Schnell. This is achieved by captioning the input image with Florence2, and running an img2img job through flux-schnell. This tools should be considered if a user asks for a variation on an existing image.
 output_type: image
 status: prod
 cost_estimate: 1.0 * n_samples
@@ -31,7 +31,7 @@ parameters:
 - name: denoise
   label: AI creativity strength
   description: Strength of the AI generation process on top of the starting image
-  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. A value of 1 is 100% AI creativity, ignoring all influence of the starting image composition, whereas a medium blend of about 50% will maintain pretty close adherance to the original input.
+  tip: Due to the small step count of the Flux-schnell model, the denoise parameter has a strong influence on the output. Anything above a value of .76 will effectively ignore the input image and exclusively use the prompt to generate the output result.
   type: float
   required: true
   default: 0.6

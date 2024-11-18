@@ -1,11 +1,12 @@
 name: Upscale an image
 description: Increase the resolution and detail of an image.
 thumbnail: app/upscale_beta_opt.mp4
-tip: Upscale and add new detail to an initial image
+tip: Upscale and add new detail to an initial image. This tool can be considered a "creative upscaler", and at high creativity strengths can hallucinate details that are not present in the original image.
 output_type: image
 status: prod
 cost_estimate: 2 * n_samples
 handler: comfyui
+base_model: SD1.5
 comfyui_output_node_id: 63
 parameters:
 - name: init_image
@@ -33,7 +34,7 @@ parameters:
 - name: denoise
   label: Creativity Strength
   description: Strength of AI denoising 
-  tip: This parameter controls the amount of added detail to the image. Low values (.01-.25) are better at preserving likeness, wheras high values (>.5) are prone to hallucination.
+  tip: This parameter controls the amount of added detail to the image. Low values (.01-.25) are better at preserving likeness, wheras high values (>.5) are prone to hallucination of details that are not present in the original image.
   type: float
   default: 0.25
   minimum: 0.0

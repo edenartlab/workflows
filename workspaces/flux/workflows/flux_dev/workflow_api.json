@@ -10,10 +10,7 @@
         2
       ]
     },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
+    "class_type": "VAEDecode"
   },
   "13": {
     "inputs": {
@@ -38,19 +35,13 @@
         0
       ]
     },
-    "class_type": "SamplerCustomAdvanced",
-    "_meta": {
-      "title": "SamplerCustomAdvanced"
-    }
+    "class_type": "SamplerCustomAdvanced"
   },
   "16": {
     "inputs": {
       "sampler_name": "euler"
     },
-    "class_type": "KSamplerSelect",
-    "_meta": {
-      "title": "KSamplerSelect"
-    }
+    "class_type": "KSamplerSelect"
   },
   "17": {
     "inputs": {
@@ -65,10 +56,7 @@
         0
       ]
     },
-    "class_type": "BasicScheduler",
-    "_meta": {
-      "title": "BasicScheduler"
-    }
+    "class_type": "BasicScheduler"
   },
   "22": {
     "inputs": {
@@ -81,10 +69,7 @@
         0
       ]
     },
-    "class_type": "BasicGuider",
-    "_meta": {
-      "title": "BasicGuider"
-    }
+    "class_type": "BasicGuider"
   },
   "25": {
     "inputs": {
@@ -93,10 +78,7 @@
         0
       ]
     },
-    "class_type": "RandomNoise",
-    "_meta": {
-      "title": "RandomNoise"
-    }
+    "class_type": "RandomNoise"
   },
   "62": {
     "inputs": {
@@ -115,10 +97,7 @@
         0
       ]
     },
-    "class_type": "ModelSamplingFlux",
-    "_meta": {
-      "title": "ModelSamplingFlux"
-    }
+    "class_type": "ModelSamplingFlux"
   },
   "72": {
     "inputs": {
@@ -128,10 +107,7 @@
         0
       ]
     },
-    "class_type": "FluxGuidance",
-    "_meta": {
-      "title": "FluxGuidance"
-    }
+    "class_type": "FluxGuidance"
   },
   "73": {
     "inputs": {
@@ -140,7 +116,7 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_cpxjr_00005_.png&type=temp&subfolder=&rand=0.9858379659696421"
+            "url": "/api/view?filename=rgthree.compare._temp_rpqhd_00002_.png&type=temp&subfolder=&rand=0.5794275081274174"
           }
         ]
       },
@@ -149,10 +125,7 @@
         0
       ]
     },
-    "class_type": "Image Comparer (rgthree)",
-    "_meta": {
-      "title": "Image Comparer (rgthree)"
-    }
+    "class_type": "Image Comparer (rgthree)"
   },
   "80": {
     "inputs": {
@@ -166,10 +139,7 @@
         0
       ]
     },
-    "class_type": "LoraLoaderModelOnly",
-    "_meta": {
-      "title": "lora"
-    }
+    "class_type": "LoraLoaderModelOnly"
   },
   "93": {
     "inputs": {
@@ -180,14 +150,11 @@
         0
       ]
     },
-    "class_type": "LoraLoaderModelOnly",
-    "_meta": {
-      "title": "LoraLoaderModelOnly"
-    }
+    "class_type": "LoraLoaderModelOnly"
   },
   "94": {
     "inputs": {
-      "strength_model": [
+      "ip_scale": [
         "137",
         0
       ],
@@ -204,10 +171,7 @@
         0
       ]
     },
-    "class_type": "ApplyFluxIPAdapter",
-    "_meta": {
-      "title": "Apply Flux IPAdapter"
-    }
+    "class_type": "ApplyFluxIPAdapter"
   },
   "95": {
     "inputs": {
@@ -215,10 +179,7 @@
       "clip_vision": "clip-vit-large-patch14/model.safetensors",
       "provider": "GPU"
     },
-    "class_type": "LoadFluxIPAdapter",
-    "_meta": {
-      "title": "Load Flux IPAdatpter"
-    }
+    "class_type": "LoadFluxIPAdapter"
   },
   "97": {
     "inputs": {
@@ -249,10 +210,7 @@
         0
       ]
     },
-    "class_type": "ControlNetApplySD3",
-    "_meta": {
-      "title": "Apply Controlnet with VAE"
-    }
+    "class_type": "ControlNetApplySD3"
   },
   "98": {
     "inputs": {
@@ -262,10 +220,7 @@
         0
       ]
     },
-    "class_type": "SetUnionControlNetType",
-    "_meta": {
-      "title": "SetUnionControlNetType"
-    }
+    "class_type": "SetUnionControlNetType"
   },
   "101": {
     "inputs": {
@@ -283,10 +238,7 @@
         1
       ]
     },
-    "class_type": "CLIPTextEncodeFlux",
-    "_meta": {
-      "title": "CLIPTextEncodeFlux"
-    }
+    "class_type": "CLIPTextEncodeFlux"
   },
   "103": {
     "inputs": {
@@ -299,10 +251,7 @@
         1
       ]
     },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Negative Prompt)"
-    }
+    "class_type": "CLIPTextEncode"
   },
   "104": {
     "inputs": {
@@ -316,10 +265,7 @@
         0
       ]
     },
-    "class_type": "AIO_Preprocessor",
-    "_meta": {
-      "title": "AIO Aux Preprocessor"
-    }
+    "class_type": "AIO_Preprocessor"
   },
   "119": {
     "inputs": {
@@ -328,73 +274,49 @@
       "output_multiplier": 1,
       "multiple_off": 8
     },
-    "class_type": "WidthHeightPicker",
-    "_meta": {
-      "title": "WidthHeightPicker"
-    }
+    "class_type": "WidthHeightPicker"
   },
   "120": {
     "inputs": {
-      "value": true
+      "value": false
     },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "Use input image size"
-    }
+    "class_type": "Eden_Bool"
   },
   "131": {
     "inputs": {
       "value": "a candid photo of a deer sitting in the garden of eden, surrounded by mystical magical plants and a gorgeous picturesque backgroungd"
     },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Prompt (Positive) (pre)"
-    }
+    "class_type": "Eden_String"
   },
   "132": {
     "inputs": {
       "value": ""
     },
-    "class_type": "Eden_String",
-    "_meta": {
-      "title": "Prompt (Negative)"
-    }
+    "class_type": "Eden_String"
   },
   "133": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_controlnet"
-    }
+    "class_type": "Eden_Bool"
   },
   "134": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_ipAdapter"
-    }
+    "class_type": "Eden_Bool"
   },
   "135": {
     "inputs": {
       "value": 0.5
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "controlnet_strength"
-    }
+    "class_type": "Eden_Float"
   },
   "137": {
     "inputs": {
-      "value": 1.36
+      "value": 0
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "ipadapter_strength"
-    }
+    "class_type": "Eden_Float"
   },
   "138": {
     "inputs": {
@@ -403,56 +325,38 @@
       "output_multiplier": 1,
       "multiple_off": 64
     },
-    "class_type": "WidthHeightPicker",
-    "_meta": {
-      "title": "clamp_max_resolution"
-    }
+    "class_type": "WidthHeightPicker"
   },
   "141": {
     "inputs": {
       "value": 0.7000000000000001
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "lora_strength"
-    }
+    "class_type": "Eden_Float"
   },
   "142": {
     "inputs": {
       "image": "A_black_image.jpg",
       "upload": "image"
     },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Style Image"
-    }
+    "class_type": "LoadImage"
   },
   "144": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_lora"
-    }
+    "class_type": "Eden_Bool"
   },
   "145": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_input_image"
-    }
+    "class_type": "Eden_Bool"
   },
   "146": {
     "inputs": {
       "value": 0
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "lora_strength_off"
-    }
+    "class_type": "Eden_Float"
   },
   "147": {
     "inputs": {
@@ -469,10 +373,7 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch any"
-    }
+    "class_type": "Switch any [Crystools]"
   },
   "169": {
     "inputs": {
@@ -487,22 +388,7 @@
         0
       ]
     },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
-    }
-  },
-  "171": {
-    "inputs": {
-      "images": [
-        "104",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
+    "class_type": "ImageResize+"
   },
   "206": {
     "inputs": {
@@ -534,10 +420,7 @@
         0
       ]
     },
-    "class_type": "SDPromptSaver",
-    "_meta": {
-      "title": "SD Prompt Saver"
-    }
+    "class_type": "SDPromptSaver"
   },
   "214": {
     "inputs": {
@@ -554,10 +437,7 @@
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch_IPADAPTER"
-    }
+    "class_type": "InversionDemoLazySwitch"
   },
   "215": {
     "inputs": {
@@ -574,10 +454,7 @@
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch_CN+"
-    }
+    "class_type": "InversionDemoLazySwitch"
   },
   "216": {
     "inputs": {
@@ -594,19 +471,13 @@
         1
       ]
     },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch_CN-"
-    }
+    "class_type": "InversionDemoLazySwitch"
   },
   "257": {
     "inputs": {
       "ckpt_name": "flux1-dev-fp8.safetensors"
     },
-    "class_type": "Checkpoint Loader (Simple)",
-    "_meta": {
-      "title": "Checkpoint Loader (Simple)"
-    }
+    "class_type": "Checkpoint Loader (Simple)"
   },
   "296": {
     "inputs": {
@@ -615,10 +486,7 @@
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]",
-    "_meta": {
-      "title": "🪛 Get resolution"
-    }
+    "class_type": "Get resolution [Crystools]"
   },
   "297": {
     "inputs": {
@@ -635,10 +503,7 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "switch width"
-    }
+    "class_type": "Switch any [Crystools]"
   },
   "298": {
     "inputs": {
@@ -655,10 +520,7 @@
         1
       ]
     },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "switch height"
-    }
+    "class_type": "Switch any [Crystools]"
   },
   "299": {
     "inputs": {
@@ -672,10 +534,7 @@
         3
       ]
     },
-    "class_type": "easy compare",
-    "_meta": {
-      "title": "init_image_supplied"
-    }
+    "class_type": "easy compare"
   },
   "300": {
     "inputs": {
@@ -685,30 +544,21 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
+    "class_type": "Display Any (rgthree)"
   },
   "301": {
     "inputs": {
       "image": "A_black_image.jpg",
       "upload": "image"
     },
-    "class_type": "Load image with metadata [Crystools]",
-    "_meta": {
-      "title": "dummy_image"
-    }
+    "class_type": "Load image with metadata [Crystools]"
   },
   "302": {
     "inputs": {
       "image": "A_black_image.jpg",
       "upload": "image"
     },
-    "class_type": "Load image with metadata [Crystools]",
-    "_meta": {
-      "title": "init_image"
-    }
+    "class_type": "Load image with metadata [Crystools]"
   },
   "303": {
     "inputs": {
@@ -718,10 +568,7 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
+    "class_type": "Display Any (rgthree)"
   },
   "304": {
     "inputs": {
@@ -731,10 +578,7 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
+    "class_type": "Display Any (rgthree)"
   },
   "305": {
     "inputs": {
@@ -748,10 +592,7 @@
         0
       ]
     },
-    "class_type": "ImpactMinMax",
-    "_meta": {
-      "title": "clamp_width"
-    }
+    "class_type": "ImpactMinMax"
   },
   "306": {
     "inputs": {
@@ -765,10 +606,7 @@
         1
       ]
     },
-    "class_type": "ImpactMinMax",
-    "_meta": {
-      "title": "clamp_height"
-    }
+    "class_type": "ImpactMinMax"
   },
   "307": {
     "inputs": {
@@ -778,10 +616,7 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
+    "class_type": "Display Any (rgthree)"
   },
   "308": {
     "inputs": {
@@ -791,10 +626,7 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
+    "class_type": "Display Any (rgthree)"
   },
   "309": {
     "inputs": {
@@ -815,10 +647,7 @@
         0
       ]
     },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
-    }
+    "class_type": "ImageResize+"
   },
   "310": {
     "inputs": {
@@ -832,10 +661,7 @@
       ],
       "op": "a AND b"
     },
-    "class_type": "BoolOperationNode",
-    "_meta": {
-      "title": "Bool Operation"
-    }
+    "class_type": "BoolOperationNode"
   },
   "311": {
     "inputs": {
@@ -849,10 +675,7 @@
       ],
       "op": "a AND b"
     },
-    "class_type": "BoolOperationNode",
-    "_meta": {
-      "title": "Bool Operation"
-    }
+    "class_type": "BoolOperationNode"
   },
   "312": {
     "inputs": {
@@ -866,10 +689,7 @@
         0
       ]
     },
-    "class_type": "ImpactMinMax",
-    "_meta": {
-      "title": "controlnet res"
-    }
+    "class_type": "ImpactMinMax"
   },
   "315": {
     "inputs": {
@@ -882,10 +702,7 @@
         2
       ]
     },
-    "class_type": "VAEEncode",
-    "_meta": {
-      "title": "VAE Encode"
-    }
+    "class_type": "VAEEncode"
   },
   "316": {
     "inputs": {
@@ -899,10 +716,7 @@
       ],
       "batch_size": 1
     },
-    "class_type": "EmptyLatentImage",
-    "_meta": {
-      "title": "Empty Latent Image"
-    }
+    "class_type": "EmptyLatentImage"
   },
   "317": {
     "inputs": {
@@ -919,10 +733,7 @@
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch Latent"
-    }
+    "class_type": "InversionDemoLazySwitch"
   },
   "319": {
     "inputs": {
@@ -931,10 +742,7 @@
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]",
-    "_meta": {
-      "title": "🪛 Get resolution"
-    }
+    "class_type": "Get resolution [Crystools]"
   },
   "320": {
     "inputs": {
@@ -955,28 +763,19 @@
         0
       ]
     },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
-    }
+    "class_type": "ImageResize+"
   },
   "322": {
     "inputs": {
       "value": 1
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "Eden_Float"
-    }
+    "class_type": "Eden_Float"
   },
   "323": {
     "inputs": {
-      "value": 0.8
+      "value": 1
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "denoise"
-    }
+    "class_type": "Eden_Float"
   },
   "325": {
     "inputs": {
@@ -993,10 +792,7 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch any"
-    }
+    "class_type": "Switch any [Crystools]"
   },
   "326": {
     "inputs": {
@@ -1010,10 +806,7 @@
       ],
       "op": "a AND b"
     },
-    "class_type": "BoolOperationNode",
-    "_meta": {
-      "title": "Bool Operation"
-    }
+    "class_type": "BoolOperationNode"
   },
   "329": {
     "inputs": {
@@ -1022,28 +815,19 @@
         0
       ]
     },
-    "class_type": "SDAnyConverter",
-    "_meta": {
-      "title": "SD Any Converter"
-    }
+    "class_type": "SDAnyConverter"
   },
   "330": {
     "inputs": {
-      "seed": 694193977076198
+      "seed": 222718431466742
     },
-    "class_type": "Eden_Seed",
-    "_meta": {
-      "title": "Eden_Seed"
-    }
+    "class_type": "Eden_Seed"
   },
   "332": {
     "inputs": {
       "control_net_name": "FLUX.1-dev-ControlNet-Union-Pro.safetensors"
     },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "Load ControlNet Model"
-    }
+    "class_type": "ControlNetLoader"
   },
   "337": {
     "inputs": {
@@ -1057,28 +841,19 @@
         0
       ]
     },
-    "class_type": "LoraLoaderModelOnly",
-    "_meta": {
-      "title": "style_lora"
-    }
+    "class_type": "LoraLoaderModelOnly"
   },
   "338": {
     "inputs": {
       "value": 0.7000000000000001
     },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "style_lora_strength"
-    }
+    "class_type": "Eden_Float"
   },
   "339": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_style_lora"
-    }
+    "class_type": "Eden_Bool"
   },
   "341": {
     "inputs": {
@@ -1095,9 +870,16 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch any"
-    }
+    "class_type": "Switch any [Crystools]"
+  },
+  "342": {
+    "inputs": {
+      "filename_prefix": "controlnet",
+      "images": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
   }
 }
