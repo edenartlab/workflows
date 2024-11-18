@@ -1,8 +1,8 @@
 name: Animate an image with depth
 description: Precise image animation using 3D-zoom.
 thumbnail: app/animate_3D_opt.mp4
-tip: This is the default tool to use when a user requests to make an animated version of a single, beautiful image, logo or frame. If the image has a clear or obvious foreground subject (eg a face), use a lower foreground_denoise strength to avoid corrupting the subject.
-output_type: video
+tip: This should be the default tool to use when a user requests to make a video out of an image with no other specific requirements. If the image has a clear or obvious foreground subject, use a lower foreground_denoise strength to avoid corrupting the subject. This tool works by separating the input image by approximated depth layers and animating them independently with a Ken Burns style parallax effect.output_type: video
+base_model: SD1.5
 status: stage
 private: true
 cost_estimate: 0.5 * n_seconds * 6 * n_steps/8 * resolution/1024

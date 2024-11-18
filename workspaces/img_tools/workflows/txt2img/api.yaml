@@ -1,18 +1,19 @@
 name: Create an image (SDXL)
 description: Generate an image from text using the classic SDXL model and trained concepts.
 thumbnail: app/txt2img.png
-tip: This is the legacy (battlehardened) function to generate an image from text a prompt. The outputs are not as detailed as FLUX, but often more creative and weird. With ControlNet guidance one can maintain the contours or shape outlines of an input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result. This tool uses SDXL, which as of now is the best model to use for guided image generation, and this tool should be chosen for image generations that match the unique characteristics of this model, which is decent at styles, NSFW, and has a good knowledge of celebrities and artists that newer base models lack context for. Users can supply a starting init input image and use controlnet guidance and or a latent encoding of the supplied input image, in which case shape and color characteristics from the supplied image will stay present in the resultant generation.
+tip: This is the legacy (battlehardened) function to generate an image from text a prompt. The outputs are not as detailed as FLUX, but often more creative and weird. With ControlNet guidance one can maintain the contours or shape outlines of an input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result. This tool uses SDXL, which as of now is the best model to use for guided image generation, and this tool should be chosen for image generations that match the unique characteristics of this model, which is decent at styles, NSFW, and has a good knowledge of celebrities and artists that newer base models lack context for. Users can supply a starting init input image and use controlnet guidance and or a latent encoding of the supplied input image, in which case shape and color characteristics from the supplied image will stay present in the resultant generation. Stable Diffusion XL is trained on a dataset of images approximately 1 megapixel in size, and the provided resolutions list is the set of legal resolutions for this model, and should always be used unless a user requests a specific resolution. If an aspect ratio is specifically requested, always aim for dimensions that total approximately 1 megapixel and round to numbers that are divisible by 8.
 output_type: image
 status: prod
 private: false
 visible: true
 cost_estimate: 1 * n_samples
 handler: comfyui
+base_model: SDXL
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 comfyui_output_node_id: 412
 comfyui_intermediate_outputs:
   - name: controlnet_signal
-    node_id: 323
+    node_id: 416
 parameters:
 - name: prompt
   label: Prompt
@@ -96,11 +97,10 @@ parameters:
     node_id: 96
     field: inputs
     subfield: value
-
 - name: use_init_image
   label: Use starting image
   description: Enable image-to-image, and controlnet guidance features
-  tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be true.
+  tip: Using a starting image helps guide your prompted creation towards the elements present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be always betrue.
   type: bool
   default: false
   comfyui: 
@@ -120,7 +120,7 @@ parameters:
 - name: denoise
   label: Generation strength
   description: Strength of the generation process on top of the starting image
-  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. Denoise should always stay at 1 unless an init image is employed; never use less than 1 unless you're specifically trying to do an img2img task. In this scenario, init_image should be true, and a non-default image should be supplied
+  tip: Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. Denoise should always stay at 1 unless an init image is employed; never use less than 1 unless you're specifically trying to do an img2img task. In scenario in which an image2image task is requested, the init_image should be true, and a starting image should be supplied. Never set this parameter to true unless an init image is provided.
   type: float
   default: 1.0
   minimum: 0.0
@@ -133,7 +133,7 @@ parameters:
 - name: size_from_input
   label: Use starting image size
   description: Override the provided width and height parameters with the actual resolution of your starting image. 
-  tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution and is almost always better than generating directly at a high resolution.
+  tip: It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution and is almost always better than generating directly at a high resolution. Keep in mind that stable diffusion will always scale dimensions to the nearest divisible by 8 resolution, so if an oddly shaped image is supplied, the output will preserve aspect ratio as closely as possible, but the dimensions will not match the input exactly.
   type: bool
   default: false
   visible_if: use_init_image=true
@@ -144,7 +144,7 @@ parameters:
 - name: enforce_SDXL_resolution
   label: Use optimized resolution
   description: Round to the nearest optimized SDXL resolution, recommended.
-  tip: It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution so might introduce a tiny bit distortion, which is typically not noticeable.
+  tip: It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution, producing results that are less likely to contain the artifacts typical of an unsupported resolution.
   type: bool
   default: false
   visible_if: use_init_image=true
@@ -156,7 +156,7 @@ parameters:
   label: Apply controlnet to starting image
   visible_if: use_init_image=true
   description: Apply Controlnet guidance to the image generation to guide the generated image towards the shape of the starting image.
-  tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image.
+  tip: Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image. This parameter should never be true if no starting image is supplied, and should always be true if an init image is supplied and the user's request suggests they want guidance towards the shape of the input image. Keep in mind that a non-technical user may not have the vocabulary to describe what they want, and interpret their request with your best judgement as to whether or not they want shape guidance. Shape guidance is a user friendly term used in Eden tools to refer to the application of controlnet conditioning.
   type: bool
   default: false
   comfyui: 
@@ -166,7 +166,7 @@ parameters:
 - name: preprocessor
   label: Controlnet preprocessor
   description: What type of shape guidance to apply. Different types have subtly different effects on the output.
-  tip:  depth will try to maintain the approximate depth of your input scene, and is best for 3 dimensional compositions. Canny edge creates strong edge detection adherance to the shape of your image. The scribble model will create guidance towards a rougher sketched shape of your starting image. pose follows an open pose skeleton of a character's body position. threshold creates a hard black and white matte from the input image, and lineart provides a crisp hard edge guidance from the input. 
+  tip: Use best judgement based on the supplied image and user request to select the correct controlnet preprocessor and model to suit their needs. Canny detects thin binary edges and is useful for tasks requiring fast edge detection, such as architectural designs or simple object outlines, but it may struggle with complex scenes or noise. Depth generates luminance-based depth maps and is ideal for creating realistic 3D-like compositions, such as emphasizing depth in landscapes or isolating foreground objects. HED excels at producing smooth, intricate edge detection and is suitable for detailed illustrations, artistic line work, or noise-sensitive scenes. OpenPose identifies human keypoints, making it a perfect choice for generating images with accurate human poses, such as action shots, dance scenes, or character positioning. LineArt converts images into detailed line drawings and is best for black-and-white artwork, manga-style illustrations, or clear contrast outlines. Scribble processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
   type: string
   default: canny
   choices: [none, canny, depth, scribble, pose, threshold, lineart]
@@ -178,7 +178,7 @@ parameters:
 - name: controlnet_strength
   label: Controlnet strength
   description: Strength of the shape guidance (controlnet)
-  tip: A good default is around 0.6, with ranges around 0.4 for more subtle guidance (more freedom for the AI model), and 0.8 for something more heavy handed
+  tip: A good default is around 0.6, with ranges around 0.4 for more subtle guidance (more freedom for the AI model), and 0.8-1.0 for something more heavy handed.
   type: float
   default: 0.6
   minimum: 0.0
@@ -191,7 +191,7 @@ parameters:
 - name: use_ipadapter
   label: Use style image
   description: Apply style elements from a given image
-  tip: Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image.
+  tip: Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image. It essentially interprets prompt conditioning from the use of an input image, and is often referred to vernacularly throughout Eden tools as a style image. A non-technical user may not have the vocabulary to describe what they want, interpret their request with your best judgement as to whether or not they want style guidance. Style guidance is a user friendly term used in Eden tools to refer to the application of ipAdapter conditioning.
   type: bool
   default: false
   comfyui: 

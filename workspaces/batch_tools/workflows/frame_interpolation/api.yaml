@@ -1,8 +1,9 @@
 name: Keyframe Interpolation
 description: Create a video from keyframe images through visual interpolation.
 thumbnail: app/frame_interpolation_opt.mp4
-tip: This workflow creates animations from a set of images that linearly connect those images into a visual, morphing video. The number of frames between each keyframe can be adjusted to create a smooth transition. The video can be looped back to the first frame to create a seamless loop.
+tip: This workflow creates animations from a set of images that linearly connect those images into a visual, morphing video. The number of frames between each keyframe can be adjusted to create a smooth transition. The video can be looped back to the first frame to create a seamless loop. This tool should be considered when a user supplies two or more still images and requests a blend, interpolation, morph or similar effect between them.
 output_type: video
+base_mopel: RIFE
 status: prod
 cost_estimate: interpolation_frames
 handler: comfyui
@@ -21,12 +22,13 @@ parameters:
     subfield: path
     preprocessing: folder
 - name: interpolation_frames
-  label: Transition Frames
+  label: Interpolation Factor
   description: How many frames to create for each keyframe transition
+  tip: This is a multiplier factor for the length of input key frames. If a user requests a specific length for their output video in seconds, this parameter can be calculated by multiplying the requested length in seconds by the FPS parameter, and then dividing by the number of keyframes. For example, if a user requests a 10 second video at 24 FPS with 4 keyframes, the Interpolation Factor should be set to 60 (10 * 24 / 4). If a request would require a greater number of frames than the maximum value allowed, use the maximum value instead, and inform the user that the output video will be generated based on the maximum value.
   type: int
   default: 24
   minimum: 2
-  maximum: 48
+  maximum: 60
   required: true
   comfyui: 
     node_id: 129
@@ -35,7 +37,7 @@ parameters:
 - name: sort
   label: Sort Method
   description: Method for sorting the keyframes. The visual_path method automatically puts visually similar images next to each other.
-  tip: This parameter should usually stay at the default of None to preserve the input order, but occasionally a random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. 
+  tip: This parameter should usually stay at the default of None to preserve the input order, but occasionally a random order may be desired by the user. The visual_path method should be used for a batch of images that a user wants ordered optimally for smoothest interpolation sequencing, but you should always inform the user that you are providing this optimization if this option is being selected. This setting applies a travelling salesman path solver to the images to find the optimal order.
   type: string
   required: true
   default: None
@@ -47,7 +49,7 @@ parameters:
 - name: loop
   label: Loop
   description: Make the animation a seamless loop by interpolating back to the first image
-  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+  tip: This will append a copy of the first frame to the end of the sequencec to make a seamless loop. Unless specifically requested, this should be kept at False (default), but set to True if the user requests a seamless loop. You should inform the user if you are using this parameter, and also let them know that a different way to achieve a seamless loop is by using the pingpong parameter. Usually these parameters are mutually exclusive, as it is not recommended to use this parameter if a pingpong is requested.
   type: bool
   default: false
   required: true
@@ -58,7 +60,7 @@ parameters:
 - name: FPS
   label: Output Video Framerate
   description: target output video framerate
-  tip: The output video will be confromed to this framerate. This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps(broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video conforms the total n_frames.
+  tip: The output video will be confromed to this framerate. This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps(broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video conforms the total number of frames when rendering a video from the image sequence generated.
   type: int
   default: 24
   minimum: 1
@@ -69,8 +71,8 @@ parameters:
     subfield: value
 - name: pingpong
   label: Forward-Reverse Loop (pingpong)
-  description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
-  tip: This will loop the video, making a ping-pong forward to reverse seamless loop by appending the reversed output video to the end of the generated output.
+  description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. 
+  tip: This will loop the video, making a ping-pong forward to reverse seamless loop by appending the reversed output video to the end of the generated output. This term is sometimes called bounce or pingpong in video editing vernacular; the video will play forwards and then reverse itself back to the beginning.
   type: bool
   default: false
   comfyui: 
@@ -89,7 +91,7 @@ parameters:
     subfield: reverse_order
 - name: model
   label: Interpolation Method
-  description: Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
+  description: Choose a frame interpolation model method. RIFE models are fast and cheap and should be considered the default for most use cases, whereas FILM is much slower and therefore more expensive, while having an identifiably different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6). FILM should only be considered if the user specifically requests this model by name.
   type: string
   default: rife49.pth
   choices: [rife47.pth, rife49.pth, FILM]

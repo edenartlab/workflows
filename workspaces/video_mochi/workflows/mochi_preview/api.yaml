@@ -4,6 +4,7 @@ thumbnail: app/Mochi-preview.mp4
 tip: Use this to make short video snippets from text prompts using the Mochi Preview model. This model is relatively prompt adherant, but only makes very short 1-2 seconds long clips natively. This time factor can be extended by using frame interpolation to create a slow motion version of the video
 output_type: video
 status: staging
+base_model: Mochi_preview
 private: true
 visible: false
 cost_estimate: 3 * n_frames

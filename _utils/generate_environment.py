@@ -22,8 +22,8 @@ def get_commit_date(repo_url, commit_hash):
     response = requests.get(api_url)
     
     if response.status_code != 200:
-        print(f"Failed to fetch commit info: {response.status_code} for {api_url}")
-        return 10000
+        print(f"Warning: Failed to fetch commit info: {response.status_code} for {api_url}")
+        return None  # Return None instead of an integer
     
     commit_data = response.json()
     commit_date = datetime.strptime(commit_data['commit']['committer']['date'], "%Y-%m-%dT%H:%M:%SZ")
@@ -36,6 +36,11 @@ def is_more_recent(repo_url, hash1, hash2):
     """
     date1 = get_commit_date(repo_url, hash1)
     date2 = get_commit_date(repo_url, hash2)
+    
+    if date1 is None or date2 is None:
+        print(f"Warning: Unable to compare commit dates for repo {repo_url} with hashes {hash1} and {hash2}. Skipping comparison.")
+        return False  # Default to False if comparison isn't possible
+    
     return date1 > date2
 
 def create_environment(root_dir):
@@ -52,33 +57,51 @@ def create_environment(root_dir):
             file_path = os.path.join(subdir_path, file_name)
             if os.path.exists(file_path):
                 with open(file_path, 'r') as f:
-                    all_downloads.update(json.load(f))
+                    try:
+                        all_downloads.update(json.load(f))
+                    except json.JSONDecodeError as e:
+                        print(f"Warning: Failed to parse {file_path}: {e}")
                 break
 
         for file_name in ['snapshot.json', 'auto_snapshot.json']:
             file_path = os.path.join(subdir_path, file_name)
             if os.path.exists(file_path):
                 with open(file_path, 'r') as f:
-                    snapshot = json.load(f)
-                
+                    try:
+                        snapshot = json.load(f)
+                    except json.JSONDecodeError as e:
+                        print(f"Warning: Failed to parse {file_path}: {e}")
+                        continue  # Skip this snapshot file
+
                 if snapshot.get("comfyui") != all_snapshots["comfyui"]:
                     if all_snapshots["comfyui"]:
                         print(f"Updating ComfyUI hash in {subdir_path}: {all_snapshots['comfyui']} -> {snapshot['comfyui']}")
                     all_snapshots["comfyui"] = snapshot["comfyui"]
-                
+
                 for repo, data in snapshot.get("git_custom_nodes", {}).items():
-                    if repo not in all_snapshots["git_custom_nodes"] or is_more_recent(repo, data["hash"], all_snapshots["git_custom_nodes"][repo]["hash"]):
+                    existing_data = all_snapshots["git_custom_nodes"].get(repo)
+                    if existing_data is None or is_more_recent(repo, data["hash"], existing_data.get("hash")):
                         all_snapshots["git_custom_nodes"][repo] = data
                         print(f"Updating hash for {repo} in {subdir_path}")
                 break
 
     # Save merged downloads.json
-    with open(os.path.join(root_dir, "downloads.json"), 'w') as f:
-        json.dump(all_downloads, f, indent=4)
+    downloads_path = os.path.join(root_dir, "downloads.json")
+    try:
+        with open(downloads_path, 'w') as f:
+            json.dump(all_downloads, f, indent=4)
+    except IOError as e:
+        print(f"Error: Failed to write to {downloads_path}: {e}")
+        sys.exit(1)
 
     # Save merged snapshot.json
-    with open(os.path.join(root_dir, "snapshot.json"), 'w') as f:
-        json.dump(all_snapshots, f, indent=4)
+    snapshot_path = os.path.join(root_dir, "snapshot.json")
+    try:
+        with open(snapshot_path, 'w') as f:
+            json.dump(all_snapshots, f, indent=4)
+    except IOError as e:
+        print(f"Error: Failed to write to {snapshot_path}: {e}")
+        sys.exit(1)
 
     print("Environment files created successfully.")
 

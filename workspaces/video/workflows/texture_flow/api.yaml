@@ -5,7 +5,7 @@ tip: This workflow creates animations from a set of images and several other inp
 output_type: video
 status: prod
 cost_estimate: 0.5 * n_seconds * (width + height)/(2*640) * n_steps
-base_model: sd15
+base_model: sd1.5
 handler: comfyui
 resolutions: [16-9_928x512, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_512x928]
 comfyui_output_node_id: 446

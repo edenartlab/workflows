@@ -3,6 +3,7 @@ description: Apply the expression from one face to another
 thumbnail: app/face-expression-transfer-image-opt.mp4
 tip: Use this endpoint to transfer the facial expression and emotion from an input image to a target image. The model used is HelloMeme, which will limit all outputs to 512x512 square results. The task will fail if a valid face isn't recognized in both inputs. Optimal input images have a clear face occupying at least 30 percent of the image.
 output_type: image
+base_model: HelloMeme
 status: staging
 private: true
 visible: false

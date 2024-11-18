@@ -5,17 +5,49 @@
     {
       "id": 1,
       "type": "Storydiffusion_Model_Loader",
-      "pos": [
-        107,
-        184
-      ],
+      "pos": {
+        "0": 107,
+        "1": 184
+      },
       "size": {
         "0": 315,
-        "1": 442
+        "1": 564
       },
       "flags": {},
       "order": 0,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "condition_image",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
       "outputs": [
         {
           "name": "model",
@@ -23,8 +55,8 @@
           "links": [
             1
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -32,31 +64,32 @@
       },
       "widgets_values": [
         "",
-        "Eden_SDXL.safetensors",
-        "none",
-        "none",
-        "none",
-        0.8,
         "",
-        "Euler",
-        "txt2img",
-        2,
-        0.4,
-        0.4,
+        "Eden_SDXL.safetensors",
+        "sdxl_vae.safetensors",
+        "none",
+        "none",
+        0.1,
+        "none",
+        "clip-vit-large-patch14/model.safetensors",
+        "",
+        "euler",
+        "normal",
+        1,
+        0.9,
         1024,
         1024,
         "v1",
-        true,
-        false
+        ""
       ]
     },
     {
       "id": 4,
       "type": "SaveImage",
-      "pos": [
-        1032,
-        183
-      ],
+      "pos": {
+        "0": 1032,
+        "1": 183
+      },
       "size": {
         "0": 472.2519226074219,
         "1": 401.5036926269531
@@ -71,6 +104,7 @@
           "link": 3
         }
       ],
+      "outputs": [],
       "properties": {
         "Node name for S&R": "SaveImage"
       },
@@ -81,10 +115,10 @@
     {
       "id": 2,
       "type": "Storydiffusion_Sampler",
-      "pos": [
-        470,
-        184
-      ],
+      "pos": {
+        "0": 470,
+        "1": 184
+      },
       "size": {
         "0": 506.80828857421875,
         "1": 803.96533203125
@@ -99,9 +133,10 @@
           "link": 1
         },
         {
-          "name": "image",
+          "name": "control_image",
           "type": "IMAGE",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "control_image",
@@ -116,8 +151,8 @@
           "links": [
             3
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "prompt_array",
@@ -132,22 +167,18 @@
       "widgets_values": [
         "[Tom] a cute little boy with blonde hair, wearing a small red backpack and a green jacket.\n[Neo] a man wearing a suit, black hair and glasses, Neo from the Matrix.",
         "[Tom] is hiking up a mountain;\n[Tom] standing on top of a snowy mountain peak looking at the panorama;\n[Neo] driving his car on the road, medium shot;\n[Neo] working at his desk in the company.",
-        "",
-        "",
-        "Realistic",
-        719373178,
+        "No_style",
+        381978482,
         "randomize",
         30,
-        7,
+        7.5,
+        1,
+        1,
         0.5,
-        20,
-        "none",
-        0.8,
+        1,
+        1,
+        true,
         0.5,
-        8,
-        false,
-        "none",
-        0.8,
         ""
       ]
     }
@@ -174,10 +205,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.0152559799477163,
+      "scale": 1.3310000000000006,
       "offset": [
-        121.49402465721859,
-        -70.03814900548733
+        -39.237606672162144,
+        -90.63407918995179
       ]
     }
   },

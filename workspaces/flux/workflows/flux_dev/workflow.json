@@ -1,34 +1,7 @@
 {
-  "last_node_id": 341,
-  "last_link_id": 674,
+  "last_node_id": 342,
+  "last_link_id": 676,
   "nodes": [
-    {
-      "id": 171,
-      "type": "PreviewImage",
-      "pos": {
-        "0": 1620,
-        "1": 1670
-      },
-      "size": {
-        "0": 411.60394287109375,
-        "1": 246
-      },
-      "flags": {},
-      "order": 66,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 293
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
-    },
     {
       "id": 132,
       "type": "Eden_String",
@@ -163,7 +136,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 35,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -474,7 +447,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 30,
+      "order": 29,
       "mode": 0,
       "inputs": [
         {
@@ -538,7 +511,7 @@
         "1": 76
       },
       "flags": {},
-      "order": 49,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -568,7 +541,7 @@
         "1": 80.82283782958984
       },
       "flags": {},
-      "order": 51,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -738,7 +711,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 46,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -965,7 +938,7 @@
         "%date/",
         "CheckpointYesmix_v35.safetensors",
         "kl-f8-anime2.ckpt",
-        230966201478789,
+        159998424022348,
         "randomize",
         30,
         8,
@@ -1091,8 +1064,7 @@
       ],
       "properties": {
         "Node name for S&R": "Get resolution [Crystools]"
-      },
-      "widgets_values": []
+      }
     },
     {
       "id": 318,
@@ -1268,7 +1240,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 52,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -1530,7 +1502,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 29,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -1582,7 +1554,7 @@
         "1": 82.96083068847656
       },
       "flags": {},
-      "order": 33,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -1631,7 +1603,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 47,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -1720,7 +1692,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 43,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -1772,7 +1744,7 @@
         "1": 40.80583190917969
       },
       "flags": {},
-      "order": 53,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -1810,7 +1782,7 @@
         "1": 218
       },
       "flags": {},
-      "order": 34,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -1861,10 +1833,10 @@
         "0": 1632,
         "1": 1175
       },
-      "size": {
-        "0": 315,
-        "1": 98
-      },
+      "size": [
+        315,
+        98
+      ],
       "flags": {},
       "order": 62,
       "mode": 0,
@@ -1887,11 +1859,11 @@
           "slot_index": 2
         },
         {
-          "name": "strength_model",
+          "name": "ip_scale",
           "type": "FLOAT",
-          "link": 652,
+          "link": 676,
           "widget": {
-            "name": "strength_model"
+            "name": "ip_scale"
           }
         }
       ],
@@ -1914,41 +1886,6 @@
       ]
     },
     {
-      "id": 137,
-      "type": "Eden_Float",
-      "pos": {
-        "0": -91.81922149658203,
-        "1": 1755.236328125
-      },
-      "size": {
-        "0": 240,
-        "1": 60
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            652
-          ],
-          "shape": 3
-        }
-      ],
-      "title": "ipadapter_strength",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        1.36
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 134,
       "type": "Eden_Bool",
       "pos": {
@@ -1960,7 +1897,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1985,52 +1922,16 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 120,
-      "type": "Eden_Bool",
-      "pos": {
-        "0": -324,
-        "1": 1547
-      },
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "links": [
-            622
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "Use input image size",
-      "properties": {
-        "Node name for S&R": "Eden_Bool"
-      },
-      "widgets_values": [
-        true
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 13,
       "type": "SamplerCustomAdvanced",
       "pos": {
         "0": 859,
         "1": -4
       },
-      "size": {
-        "0": 250.81639099121094,
-        "1": 106
-      },
+      "size": [
+        250.81639099121094,
+        326
+      ],
       "flags": {},
       "order": 73,
       "mode": 0,
@@ -2126,44 +2027,7 @@
       ],
       "properties": {
         "Node name for S&R": "Get resolution [Crystools]"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 323,
-      "type": "Eden_Float",
-      "pos": {
-        "0": -319,
-        "1": 1869
-      },
-      "size": {
-        "0": 210,
-        "1": 58
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            642
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "title": "denoise",
-      "properties": {
-        "Node name for S&R": "Eden_Float"
-      },
-      "widgets_values": [
-        0.8
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
+      }
     },
     {
       "id": 145,
@@ -2177,7 +2041,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 11,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2215,7 +2079,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 42,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -2268,7 +2132,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 12,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2326,7 +2190,7 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_cpxjr_00005_.png&type=temp&subfolder=&rand=0.9858379659696421"
+            "url": "/api/view?filename=rgthree.compare._temp_rpqhd_00002_.png&type=temp&subfolder=&rand=0.5794275081274174"
           }
         ]
       ]
@@ -2392,7 +2256,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 13,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2508,7 +2372,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 37,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -2626,7 +2490,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 50,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -2678,7 +2542,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 45,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
@@ -2772,57 +2636,6 @@
       ]
     },
     {
-      "id": 104,
-      "type": "AIO_Preprocessor",
-      "pos": {
-        "0": 1280,
-        "1": 1680
-      },
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 61,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 602
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "link": 605,
-          "widget": {
-            "name": "resolution"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            221,
-            293
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "DepthAnythingV2Preprocessor",
-        512
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 131,
       "type": "Eden_String",
       "pos": {
@@ -2834,7 +2647,7 @@
         "1": 163.98065185546875
       },
       "flags": {},
-      "order": 14,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2871,7 +2684,7 @@
         "1": 218
       },
       "flags": {},
-      "order": 32,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -2947,7 +2760,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 15,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2997,7 +2810,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 16,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3036,7 +2849,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 17,
+      "order": 14,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3094,7 +2907,7 @@
         "1": 325.79779052734375
       },
       "flags": {},
-      "order": 18,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3179,91 +2992,16 @@
       ]
     },
     {
-      "id": 95,
-      "type": "LoadFluxIPAdapter",
-      "pos": {
-        "0": 1622,
-        "1": 1009
-      },
-      "size": {
-        "0": 324.9691467285156,
-        "1": 106.67498779296875
-      },
-      "flags": {},
-      "order": 19,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "ipadapterFlux",
-          "type": "IP_ADAPTER_FLUX",
-          "links": [
-            194
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadFluxIPAdapter"
-      },
-      "widgets_values": [
-        "flux-ip-adapter.safetensors",
-        "clip-vit-large-patch14\\model.safetensors",
-        "GPU"
-      ]
-    },
-    {
-      "id": 330,
-      "type": "Eden_Seed",
-      "pos": {
-        "0": -330,
-        "1": 1679
-      },
-      "size": {
-        "0": 210,
-        "1": 102
-      },
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "seed",
-          "type": "INT",
-          "links": [
-            654
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "seed_string",
-          "type": "STRING",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Eden_Seed"
-      },
-      "widgets_values": [
-        694193977076198,
-        "randomize"
-      ]
-    },
-    {
       "id": 85,
       "type": "ConvertRasterToVector",
-      "pos": {
-        "0": 2402.2568359375,
-        "1": -1.9286612272262573
-      },
-      "size": {
-        "0": 242.4904327392578,
-        "1": 298
-      },
+      "pos": [
+        2402.2568359375,
+        -1.9286612272262573
+      ],
+      "size": [
+        242.4904327392578,
+        298
+      ],
       "flags": {},
       "order": 78,
       "mode": 4,
@@ -3358,7 +3096,7 @@
         26
       ],
       "flags": {},
-      "order": 31,
+      "order": 30,
       "mode": 0,
       "inputs": [
         {
@@ -3400,7 +3138,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 36,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -3456,7 +3194,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 21,
+      "order": 16,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3542,7 +3280,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 44,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -3600,7 +3338,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 48,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -3658,7 +3396,7 @@
         "1": 70
       },
       "flags": {},
-      "order": 22,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3694,7 +3432,7 @@
         "1": 70
       },
       "flags": {},
-      "order": 23,
+      "order": 18,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3730,7 +3468,7 @@
         "1": 70
       },
       "flags": {},
-      "order": 24,
+      "order": 19,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3766,7 +3504,7 @@
         "1": 70
       },
       "flags": {},
-      "order": 25,
+      "order": 20,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3789,6 +3527,269 @@
       ],
       "color": "#323",
       "bgcolor": "#535"
+    },
+    {
+      "id": 104,
+      "type": "AIO_Preprocessor",
+      "pos": {
+        "0": 1280,
+        "1": 1680
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 602
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "link": 605,
+          "widget": {
+            "name": "resolution"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            221,
+            675
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "DepthAnythingV2Preprocessor",
+        512
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 330,
+      "type": "Eden_Seed",
+      "pos": {
+        "0": -329,
+        "1": 1663
+      },
+      "size": {
+        "0": 210,
+        "1": 102
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            654
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "seed_string",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Eden_Seed"
+      },
+      "widgets_values": [
+        222718431466742,
+        "randomize"
+      ]
+    },
+    {
+      "id": 342,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1637,
+        "1": 1678
+      },
+      "size": [
+        410.1711730957031,
+        270
+      ],
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 675
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "controlnet"
+      ]
+    },
+    {
+      "id": 95,
+      "type": "LoadFluxIPAdapter",
+      "pos": {
+        "0": 1622,
+        "1": 1009
+      },
+      "size": {
+        "0": 324.9691467285156,
+        "1": 106.67498779296875
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ipadapterFlux",
+          "type": "IP_ADAPTER_FLUX",
+          "links": [
+            194
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadFluxIPAdapter"
+      },
+      "widgets_values": [
+        "flux-ip-adapter.safetensors",
+        "clip-vit-large-patch14/model.safetensors",
+        "GPU"
+      ]
+    },
+    {
+      "id": 137,
+      "type": "Eden_Float",
+      "pos": {
+        "0": -99,
+        "1": 1745
+      },
+      "size": {
+        "0": 240,
+        "1": 60
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            676
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "ipadapter_strength",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 323,
+      "type": "Eden_Float",
+      "pos": {
+        "0": -336,
+        "1": 1840
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            642
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "denoise",
+      "properties": {
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        1
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 120,
+      "type": "Eden_Bool",
+      "pos": {
+        "0": -333,
+        "1": 1539
+      },
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            622
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "Use input image size",
+      "properties": {
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
     }
   ],
   "links": [
@@ -3950,14 +3951,6 @@
       0,
       94,
       2,
-      "IMAGE"
-    ],
-    [
-      293,
-      104,
-      0,
-      171,
-      0,
       "IMAGE"
     ],
     [
@@ -4577,14 +4570,6 @@
       "FLOAT"
     ],
     [
-      652,
-      137,
-      0,
-      94,
-      3,
-      "FLOAT"
-    ],
-    [
       653,
       147,
       0,
@@ -4678,6 +4663,22 @@
       0,
       337,
       1,
+      "FLOAT"
+    ],
+    [
+      675,
+      104,
+      0,
+      342,
+      0,
+      "IMAGE"
+    ],
+    [
+      676,
+      137,
+      0,
+      94,
+      3,
       "FLOAT"
     ]
   ],
@@ -4782,10 +4783,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.0834705943388403,
+      "scale": 0.6209213230591554,
       "offset": [
-        382.32938037923384,
-        -2101.118309734804
+        -484.97154875721196,
+        -631.7999228346702
       ]
     }
   },

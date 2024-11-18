@@ -117,7 +117,7 @@
   },
   "27": {
     "inputs": {
-      "seed": 966290522216598
+      "seed": 120995746945129
     },
     "class_type": "Seed"
   },
@@ -675,7 +675,7 @@
         "311",
         0
       ],
-      "text2": "preprocessor_canny"
+      "text2": "preprocessor_lineart"
     },
     "class_type": "ShowText|pysssss"
   },
@@ -693,7 +693,7 @@
     "inputs": {
       "menu": "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
       "delimiter": ",",
-      "select_item": "canny"
+      "select_item": "lineart"
     },
     "class_type": "DRMBT_String_Item_Menu"
   },
@@ -858,15 +858,6 @@
       ]
     },
     "class_type": "TextPlusPlus"
-  },
-  "317": {
-    "inputs": {
-      "images": [
-        "284",
-        0
-      ]
-    },
-    "class_type": "PreviewImage"
   },
   "318": {
     "inputs": {
@@ -1216,6 +1207,16 @@
       "filename_prefix": "sdxl_eden_img",
       "images": [
         "210",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
+  },
+  "416": {
+    "inputs": {
+      "filename_prefix": "controlnet",
+      "images": [
+        "284",
         0
       ]
     },
