@@ -102,7 +102,7 @@ def convert_yaml(input_file, output_file, copy_tests=False):
         ('status', data.get('status')),
         ('visible', data.get('visible')),
         ('access', data.get('access')),
-        ('model', data.get('model')),
+        ('replicate_model', data.get('model')),
         ('version', data.get('version')),
         ('output_handler', data.get('output_handler')),
         ('base_model', base_model),
