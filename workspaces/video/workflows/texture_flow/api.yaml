@@ -5,7 +5,7 @@ tip: This workflow creates animations from a set of images and several other inp
 output_type: video
 status: prod
 cost_estimate: |-
-  0.5 * n_seconds * (width + height)/(2*640) * n_steps * (upscale ? 1.5 : 1)
+  0.5 * n_seconds * (width + height)/(2*640) * n_steps * (upscale ? 2 : 1)
 base_model: sd1.5
 handler: comfyui
 resolutions: [16-9_928x512, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_512x928]
@@ -69,7 +69,7 @@ parameters:
     subfield: height
 - name: upscale
   label: Activate upscale
-  description: Do an upscale pass at the end, making the animation full HD. (Activate this once you find your perfect settings!)
+  description: Upscale the resulting animation to full HD. 2x slower and 2x more expensive, so activate this once you find your perfect settings!
   tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
   type: bool
   default: false
