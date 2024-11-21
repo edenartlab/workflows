@@ -7198,78 +7198,6 @@
       ]
     },
     {
-      "id": 293,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 5892,
-        "1": 270
-      },
-      "size": {
-        "0": 233.210693359375,
-        "1": 184.49440002441406
-      },
-      "flags": {},
-      "order": 146,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 663
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 1170,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 1171,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            662
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        "lanczos",
-        "keep proportion",
-        "always",
-        8
-      ]
-    },
-    {
       "id": 523,
       "type": "Eden_Float",
       "pos": {
@@ -7378,78 +7306,6 @@
         "Node name for S&R": "ImageUpscaleWithModel"
       },
       "widgets_values": []
-    },
-    {
-      "id": 593,
-      "type": "ImageResize+",
-      "pos": {
-        "0": 7078,
-        "1": 404
-      },
-      "size": [
-        237.5133093594568,
-        170
-      ],
-      "flags": {},
-      "order": 152,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 1217
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 1219,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 1220,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1218
-          ],
-          "slot_index": 0,
-          "shape": 3
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        960,
-        960,
-        "lanczos",
-        "keep proportion",
-        "always",
-        0
-      ]
     },
     {
       "id": 597,
@@ -8279,6 +8135,150 @@
         true,
         true,
         1
+      ]
+    },
+    {
+      "id": 593,
+      "type": "ImageResize+",
+      "pos": {
+        "0": 7078,
+        "1": 404
+      },
+      "size": [
+        237.5133093594568,
+        170
+      ],
+      "flags": {},
+      "order": 152,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1217
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 1219,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 1220,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1218
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        960,
+        960,
+        "lanczos",
+        "keep proportion",
+        "always",
+        2
+      ]
+    },
+    {
+      "id": 293,
+      "type": "ImageResize+",
+      "pos": {
+        "0": 5892,
+        "1": 270
+      },
+      "size": {
+        "0": 233.210693359375,
+        "1": 184.49440002441406
+      },
+      "flags": {},
+      "order": 146,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 663
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 1170,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 1171,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            662
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "lanczos",
+        "keep proportion",
+        "always",
+        8
       ]
     }
   ],
@@ -10374,86 +10374,14 @@
   ],
   "groups": [
     {
-      "title": "Sampling",
+      "title": "ControlNet2",
       "bounding": [
-        4135,
-        -947,
-        1210,
-        1121
-      ],
-      "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "ControlNet1",
-      "bounding": [
-        1676,
-        410,
-        1253,
-        1188
+        3015,
+        411,
+        1279,
+        1175
       ],
       "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "IPAdapters",
-      "bounding": [
-        1354,
-        -2364,
-        2665,
-        2411
-      ],
-      "color": "#b06634",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Settings / Checkpoint",
-      "bounding": [
-        -1641,
-        -934,
-        1942,
-        1095
-      ],
-      "color": "#8A8",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Controlnet",
-      "bounding": [
-        -796,
-        324,
-        778,
-        966
-      ],
-      "color": "#b58b2a",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "Post-Process",
-      "bounding": [
-        7412,
-        -293,
-        578,
-        282
-      ],
-      "color": "#A88",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "title": "SecondPass",
-      "bounding": [
-        5649,
-        118,
-        1691,
-        803
-      ],
-      "color": "#3f789e",
       "font_size": 24,
       "flags": {}
     },
@@ -10470,14 +10398,86 @@
       "flags": {}
     },
     {
-      "title": "ControlNet2",
+      "title": "SecondPass",
       "bounding": [
-        3015,
-        411,
-        1279,
-        1175
+        5649,
+        118,
+        1691,
+        803
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Post-Process",
+      "bounding": [
+        7412,
+        -293,
+        578,
+        282
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Controlnet",
+      "bounding": [
+        -796,
+        324,
+        778,
+        966
       ],
       "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Settings / Checkpoint",
+      "bounding": [
+        -1641,
+        -934,
+        1942,
+        1095
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "IPAdapters",
+      "bounding": [
+        1354,
+        -2364,
+        2665,
+        2411
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "ControlNet1",
+      "bounding": [
+        1676,
+        410,
+        1253,
+        1188
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Sampling",
+      "bounding": [
+        4135,
+        -947,
+        1210,
+        1121
+      ],
+      "color": "#8A8",
       "font_size": 24,
       "flags": {}
     }
@@ -10485,10 +10485,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.19784466890013533,
+      "scale": 0.620921323059155,
       "offset": [
-        3136.66134862544,
-        1536.1526230722707
+        -6163.254465068445,
+        329.32044302919394
       ]
     }
   },
