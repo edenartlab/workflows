@@ -244,7 +244,7 @@
   },
   "116": {
     "inputs": {
-      "strength": 0.3,
+      "strength": 0.38,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -700,7 +700,7 @@
       "scheduler": "sgm_uniform",
       "denoise": 0.33,
       "model": [
-        "426",
+        "575",
         0
       ],
       "positive": [
@@ -1002,7 +1002,7 @@
   },
   "405": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.35000000000000003,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -1113,7 +1113,7 @@
         0
       ],
       "on_true": [
-        "445",
+        "593",
         0
       ]
     },
@@ -1158,6 +1158,10 @@
       "scale_multival": [
         "450",
         0
+      ],
+      "effect_multival": [
+        "583",
+        0
       ]
     },
     "class_type": "ADE_ApplyAnimateDiffModel",
@@ -1171,7 +1175,15 @@
       "noise_type": "default",
       "seed_gen": "comfy",
       "seed_offset": 0,
-      "adapt_denoise_steps": true
+      "adapt_denoise_steps": true,
+      "custom_cfg": [
+        "584",
+        0
+      ],
+      "sigma_schedule": [
+        "581",
+        0
+      ]
     },
     "class_type": "ADE_AnimateDiffSamplingSettings",
     "_meta": {
@@ -1282,6 +1294,22 @@
       "title": "Load Upscale Model"
     }
   },
+  "454": {
+    "inputs": {
+      "upscale_model": [
+        "453",
+        0
+      ],
+      "image": [
+        "445",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
   "484": {
     "inputs": {
       "target_n_frames": [
@@ -1364,7 +1392,7 @@
       "scheduler": "sgm_uniform",
       "denoise": 1,
       "model": [
-        "426",
+        "575",
         0
       ],
       "positive": [
@@ -1465,7 +1493,7 @@
   },
   "524": {
     "inputs": {
-      "value": 10
+      "value": 8
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -1535,7 +1563,10 @@
     "inputs": {
       "path": "input/a_black_video.mp4",
       "resize_images_to_first": true,
-      "image_load_cap": 0,
+      "image_load_cap": [
+        "569",
+        1
+      ],
       "start_index": 0,
       "start_index_use_seed": false,
       "seed": 0,
@@ -1604,7 +1635,7 @@
   },
   "570": {
     "inputs": {
-      "value": 6
+      "value": 4
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -1622,6 +1653,107 @@
     "class_type": "Display Int (rgthree)",
     "_meta": {
       "title": "Display Int (rgthree)"
+    }
+  },
+  "575": {
+    "inputs": {
+      "model": [
+        "426",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "581": {
+    "inputs": {
+      "beta_schedule": "lcm >> sqrt_linear"
+    },
+    "class_type": "ADE_SigmaSchedule",
+    "_meta": {
+      "title": "Sigma Schedule 🎭🅐🅓"
+    }
+  },
+  "583": {
+    "inputs": {
+      "float_val": 1.1
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Effect 🎭🅐🅓"
+    }
+  },
+  "584": {
+    "inputs": {
+      "cfg": 2
+    },
+    "class_type": "ADE_CustomCFGSimple",
+    "_meta": {
+      "title": "Custom CFG 🎭🅐🅓"
+    }
+  },
+  "593": {
+    "inputs": {
+      "width": [
+        "597",
+        0
+      ],
+      "height": [
+        "597",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "454",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "597": {
+    "inputs": {
+      "value": 1920
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "598": {
+    "inputs": {
+      "input": [
+        "569",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "599": {
+    "inputs": {
+      "loop_count": 0,
+      "filename_prefix": "TextureFlow",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 18,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
     }
   }
 }
