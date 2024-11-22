@@ -1,7 +1,19 @@
 name: TextureFlow
 description: Mix multiple images into a video, optionally add a driving motion or shape.
 thumbnail: app/style_mixing_opt.mp4
-tip: This workflow creates animations from a set of images and several other inputs. First is the motion template that controls how the content of the style images is mapped onto the video (spatially). Second is an optional controlnet image (set use_controlnet to true) and preprocessor type that can add very strong and specific guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
+tip: |-
+  This workflow creates smooth, trippy, artistic animations from a set of style (texture) images (and other optional inputs).
+  One to six images form the basis of this tool, driving the texture and content of the final animation. In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good default.
+  The motion mapping template controls how the content of the style images is mapped onto the video (spatially). When doing quick experimentation with settings you can set upscale:false to produce a fast but low resolution test render, once a sweet spot is found, you can set upscale:true to generate a full HD final output video.
+  There is an optional control_input (set use_controlnet1 to true) and preprocessor1 type that can add specific shape/motion guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. 
+  In general, running TextureFlow without a control_input almost always produces visually appealing results, adding a control_input is tricky. The wrong combination of control_input and style images may look bad (especially when the control strength is too high),
+  but the right combo can look absolutely amazing and is one of Edens special endpoints that make our platform unique!
+  Some example use cases for TextureFlow:
+  - abstract, artistic image animation using a single style image (this will completely deform the input image and lose lots of details but its great to generate smooth, animated textures)
+  - mixing multiple style_images using various motion mapping modes to create slick, looping VJ content (abstract, artistic animations)
+  - using a logo image as control_input + texture image(s) can create really cool logo animations. 
+  - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
+  - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the "None" controlnet (which is a luminance controlnet). Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable.
 output_type: video
 status: prod
 cost_estimate: |-
@@ -111,7 +123,7 @@ parameters:
 - name: preprocessor1
   label: Shape guidance type
   description: Type of shape guidance for controlnet. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
-  tip:  depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video.
+  tip:  In most cases, the default CannyEdgePreprocessor at strengths of 0.4-0.6 is great! Depth will try to maintain the perceived depth of the input scene. Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. Pose will try to extract the pose from a person and inject it into the video. And None refers to QRmonster which simply maintains luminance of the input (dark and bright regions)
   type: string
   visible_if: use_controlnet1=true
   default: CannyEdgePreprocessor
