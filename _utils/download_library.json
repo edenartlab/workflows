@@ -54,13 +54,21 @@
             "target": "models/clip/t5xxl_fp16.safetensors"
         },
         "flux1-redux-dev.safetensors": {
-            "source": "https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev/tree/main/flux1-redux-dev.safetensors",
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-redux-dev.safetensors",
             "target": "models/style_models/flux1-redux-dev.safetensors"
         },
        "sigclip_vision_patch14_384.safetensors": {
-            "source": "https://huggingface.co/Comfy-Org/sigclip_vision_384/tree/main/sigclip_vision_patch14_384.safetensors",
+            "source": "https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors",
             "target": "models/clip_vision/sigclip_vision_patch14_384.safetensors"
         },
+        "flux1-depth-dev-lora.safetensors": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-depth-dev-lora.safetensors",
+            "target": "models/loras/flux1-depth-dev-lora.safetensors"
+        }, 
+        "flux1-canny-dev-lora.safetensors": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-canny-dev-lora.safetensors",
+            "target": "models/loras/flux1-canny-dev-lora.safetensors"
+        }, 
         "ae.safetensors": {
             "source": "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors",
             "target": "models/vae/ae.safetensors"
