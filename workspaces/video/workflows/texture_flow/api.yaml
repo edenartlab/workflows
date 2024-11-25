@@ -81,10 +81,10 @@ parameters:
     subfield: height
 - name: upscale
   label: Activate upscale
-  description: Upscale the resulting animation to full HD. 2x slower and 2x more expensive, so activate this once you find your perfect settings!
-  tip: This toggle can be activated to create a really good, HD animation once all the settings are dialed in!
+  description: Upscale the resulting animation to full HD. (You can turn this off for faster and cheaper experimentation)
+  tip: This toggle can optionally be disactivated when you're not sure that the result is going to be good and are still exploring the best settings.
   type: bool
-  default: false
+  default: true
   required: true
   comfyui: 
     node_id: 415
