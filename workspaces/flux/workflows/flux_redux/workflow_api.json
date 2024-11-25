@@ -104,7 +104,7 @@
   },
   "25": {
     "inputs": {
-      "noise_seed": 774232992298714
+      "noise_seed": 539721347
     },
     "class_type": "RandomNoise"
   },
@@ -256,7 +256,7 @@
   },
   "61": {
     "inputs": {
-      "value": 1
+      "value": 0.5
     },
     "class_type": "Eden_Float"
   },
@@ -271,10 +271,10 @@
   },
   "66": {
     "inputs": {
-      "image": "A_black_image.jpg",
-      "resize": false,
-      "width": 512,
-      "height": 512,
+      "image": "black_dummy.jpg",
+      "resize": true,
+      "width": 1024,
+      "height": 1024,
       "repeat": 1,
       "keep_proportion": false,
       "divisible_by": 2,
@@ -284,22 +284,12 @@
     },
     "class_type": "LoadAndResizeImage"
   },
-  "67": {
-    "inputs": {
-      "text": [
-        "66",
-        4
-      ],
-      "text2": "/root/Data/Packages/ComfyUI-31/input/A_black_image.jpg"
-    },
-    "class_type": "ShowText|pysssss"
-  },
   "68": {
     "inputs": {
-      "image": "A_black_image.jpg",
+      "image": "black_dummy.jpg",
       "resize": false,
-      "width": 512,
-      "height": 512,
+      "width": 1024,
+      "height": 1024,
       "repeat": 1,
       "keep_proportion": false,
       "divisible_by": 2,
@@ -342,10 +332,10 @@
   },
   "71": {
     "inputs": {
-      "image": "Eden-drmbt-Steve is a stern middle aged man_ in the garden of eden-6692b9f4ed2ed558e8df10d1.jpg",
+      "image": "style-purple-fuzz.png",
       "resize": false,
-      "width": 512,
-      "height": 512,
+      "width": 1024,
+      "height": 1024,
       "repeat": 1,
       "keep_proportion": false,
       "divisible_by": 2,
@@ -391,7 +381,7 @@
   },
   "81": {
     "inputs": {
-      "body": "a man wearing cool meme sunglasses",
+      "body": "",
       "delimiter": ""
     },
     "class_type": "TextPlusPlus"
