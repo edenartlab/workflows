@@ -93,7 +93,7 @@ parameters:
     subfield: rel_strength_c
 - name: max_denoise
   label: Total AI effect strength
-  description: Maximum strength of the AI effect on the combined target regions. 0.5-0.7 is a good range.
+  description: Maximum strength of the AI effect on the combined target regions. 0.45-0.65 is a good range.
   tip: This is the denoising strength that will be applied to the masked regions of the video. Higher values will result in more stylized output. Lower values will stay closer to the original video.
   type: float
   default: 0.55
