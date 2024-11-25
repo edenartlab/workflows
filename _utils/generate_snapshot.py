@@ -201,6 +201,7 @@ additional_node_url_mappings = {
     "InversionDemoLazySwitch": "https://github.com/BadCafeCode/execution-inversion-demo-comfyui",
     "StringListToCombo": "https://github.com/aria1th/ComfyUI-LogicUtils",
     "Switch mask [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
+    "Switch any [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "Switch string [Crystools]": "https://github.com/crystian/ComfyUI-Crystools",
     "Eden_Math": "https://github.com/edenartlab/eden_comfy_pipelines",
     "Eden_Seed": "https://github.com/edenartlab/eden_comfy_pipelines",
@@ -209,7 +210,9 @@ additional_node_url_mappings = {
     "FloorNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
     "MultiplyNode": "https://github.com/aria1th/ComfyUI-LogicUtils.git",
     "ShowText|pysssss": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git",
-    "VHS_VideoCombine": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
+    "VHS_VideoCombine": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git",
+    "StyleModelApplyAdvanced": "https://github.com/kijai/ComfyUI-KJNodes",
+    "Label (rgthree)": "https://github.com/rgthree/rgthree-comfy.git"
     }
 
 
@@ -304,6 +307,7 @@ python generate_snapshot.py /home/rednax/SSD2TB/Github_repos/ComfyUI /home/redna
 
 drmbt:
 python generate_snapshot.py B:\AI\StabilityMatrix-win-x64\Data\Packages\ComfyUI-Flux C:\github\workflows\workspaces\batch_tools\workflows\background_removal
+python3 generate_snapshot.py ~/Data/Packages/ComfyUI-31 /mnt/c/github/workflows/workspaces/flux/workflows/flux_redux
     """
 
     if len(sys.argv) != 3:

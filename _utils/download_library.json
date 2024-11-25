@@ -45,6 +45,30 @@
             "source": "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors",
             "target": "models/checkpoints/flux1-dev-fp8.safetensors"
         },
+        "flux1-dev.safetensors": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-dev.safetensors",
+            "target": "models/unet/flux1-dev.safetensors"
+        },
+        "t5xxl_fp16.safetensors": {
+            "source": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors",
+            "target": "models/clip/t5xxl_fp16.safetensors"
+        },
+        "flux1-redux-dev.safetensors": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-redux-dev.safetensors",
+            "target": "models/style_models/flux1-redux-dev.safetensors"
+        },
+       "sigclip_vision_patch14_384.safetensors": {
+            "source": "https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors",
+            "target": "models/clip_vision/sigclip_vision_patch14_384.safetensors"
+        },
+        "flux1-depth-dev-lora.safetensors": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-depth-dev-lora.safetensors",
+            "target": "models/loras/flux1-depth-dev-lora.safetensors"
+        }, 
+        "flux1-canny-dev-lora.safetensors": {
+            "source": "https://edenartlab-lfs.s3.us-east-1.amazonaws.com/comfyui/models2/checkpoints/flux1-canny-dev-lora.safetensors",
+            "target": "models/loras/flux1-canny-dev-lora.safetensors"
+        }, 
         "ae.safetensors": {
             "source": "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors",
             "target": "models/vae/ae.safetensors"
@@ -132,8 +156,6 @@
             "source": "https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors",
             "target": "models/checkpoints/flux1-schnell-fp8.safetensors"
         },
-
-        
         "body_pose_model": {
             "source": "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/body_pose_model.pth",
             "target": "custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/body_pose_model.pth"

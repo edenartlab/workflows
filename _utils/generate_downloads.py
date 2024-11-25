@@ -63,7 +63,8 @@ python generate_downloads.py /home/rednax/SSD2TB/Github_repos/Eden/workflows/wor
 DRMBT
 
 cd C:\github\workflows\workspaces\flux\workflows\_utils
-python generate_downloads.py C:\github\workflows\workspaces\flux\workflows\remix-flux-schnell  
+python generate_downloads.py C:\github\workflows\workspaces\flux\workflows\remix-flux-schnell
+python3 generate_downloads.py /mnt/c/github/workflows/workspaces/flux/workflows/flux_redux
 
     """
 

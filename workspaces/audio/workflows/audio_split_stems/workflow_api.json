@@ -1,0 +1,71 @@
+{
+  "10": {
+    "inputs": {
+      "audio": "dictatorial speech (1).wav"
+    },
+    "class_type": "LoadAudio"
+  },
+  "11": {
+    "inputs": {
+      "chunk_fade_shape": "half_sine",
+      "chunk_length": 16,
+      "chunk_overlap": 0.1,
+      "audio": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "AudioSeparation"
+  },
+  "18": {
+    "inputs": {
+      "start_time": "0:00",
+      "end_time": "4:00",
+      "audio": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "AudioCrop"
+  },
+  "22": {
+    "inputs": {
+      "filename_prefix": "audio/audio-separation-bass",
+      "audio": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "SaveAudio"
+  },
+  "23": {
+    "inputs": {
+      "filename_prefix": "audio/audio-separation-drums",
+      "audio": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "SaveAudio"
+  },
+  "24": {
+    "inputs": {
+      "filename_prefix": "audio/audio-separation-other",
+      "audio": [
+        "11",
+        2
+      ]
+    },
+    "class_type": "SaveAudio"
+  },
+  "25": {
+    "inputs": {
+      "filename_prefix": "audio/audio-separation-vocals",
+      "audio": [
+        "11",
+        3
+      ]
+    },
+    "class_type": "SaveAudio"
+  }
+}
