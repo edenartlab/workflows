@@ -1,9 +1,12 @@
 {
   "3": {
     "inputs": {
-      "seed": 1074583956660702,
+      "seed": [
+        "82",
+        0
+      ],
       "steps": 30,
-      "cfg": 7,
+      "cfg": 6,
       "sampler_name": "euler",
       "scheduler": "normal",
       "denoise": 1,
@@ -65,16 +68,6 @@
       "title": "VAE Decode"
     }
   },
-  "12": {
-    "inputs": {
-      "image": "05.jpg",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "FaceImage"
-    }
-  },
   "16": {
     "inputs": {
       "pulid_file": "ip-adapter_pulid_sdxl_fp16.safetensors"
@@ -102,7 +95,7 @@
   },
   "22": {
     "inputs": {
-      "text": "a stylized depiction of a person, highly detailed, 4k, high resolution",
+      "text": "",
       "clip": [
         "4",
         1
@@ -124,16 +117,6 @@
     "class_type": "CLIPTextEncode",
     "_meta": {
       "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "48": {
-    "inputs": {
-      "image": "40.jpg",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "StyleImage"
     }
   },
   "51": {
@@ -189,7 +172,7 @@
       "crop_position": "center",
       "sharpening": 0.05,
       "image": [
-        "48",
+        "91",
         0
       ]
     },
@@ -202,7 +185,7 @@
     "inputs": {
       "filename_prefix": "face_styler",
       "images": [
-        "8",
+        "86",
         0
       ]
     },
@@ -220,7 +203,7 @@
       "condition": "always",
       "multiple_of": 32,
       "image": [
-        "12",
+        "90",
         0
       ]
     },
@@ -232,7 +215,7 @@
   "76": {
     "inputs": {
       "weight": 0.8,
-      "weight_type": "strong style transfer",
+      "weight_type": "ease in-out",
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
@@ -255,6 +238,60 @@
     "class_type": "IPAdapterClipVisionEnhancer",
     "_meta": {
       "title": "IPAdapter ClipVision Enhancer"
+    }
+  },
+  "82": {
+    "inputs": {
+      "seed": 89
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "84": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "86": {
+    "inputs": {
+      "upscale_model": [
+        "84",
+        0
+      ],
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "90": {
+    "inputs": {
+      "image": "08 (1).jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "91": {
+    "inputs": {
+      "image": "c10.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
     }
   }
 }

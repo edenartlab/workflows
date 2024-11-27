@@ -14,52 +14,62 @@ comfyui_output_node_id: 74
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 parameters:
 - name: person_image
-  label: image of person
+  label: Person image
   description: Make sure the face is not too small in the picture
   type: image
   required: true
   comfyui: 
-    node_id: 12
+    node_id: 90
     field: inputs
     subfield: image
 - name: style_image
-  label: style image
-  description: Stylistic image of an aesthetic style, texture or visual content you want to apply to the person
+  label: Style image
+  description: Stylistic image of an aesthetic style, texture or visual content you want to apply to the person (eg a 3D cartoon image)
   type: image
   required: true
   comfyui: 
-    node_id: 48
+    node_id: 91
     field: inputs
     subfield: image
+- name: style_strength
+  label: Strength of the style image (through IP_Adapter)
+  description: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.6) will give more freedom to interpret the prompt.
+  type: float
+  default: 0.8
+  minimum: 0.0
+  maximum: 1.0
+  comfyui: 
+    node_id: 76
+    field: inputs
+    subfield: weight
+- name: identity_strength
+  label: Strength of the identity (person) image
+  description: Higher values (>0.9) will try to make the img look more like the person. Lower values (<0.6) will give more freedom to interpret the style image.
+  type: float
+  default: 0.9
+  minimum: 0.0
+  maximum: 1.2
+  comfyui: 
+    node_id: 62
+    field: inputs
+    subfield: weight
 - name: prompt
   label: Prompt
-  description: An optional prompt to put the person in a specific situation or help the style guidance.
+  description: An optional prompt to put the person in a specific situation or help the style guidance. (Usually fine to leave this empty)
   tip: When changing this away from the default, you usually want to lower the style_strength since the style image may "fight" this prompt. Prompting strategies typical to SDXL CLIP text encoder based models should be used.
-  default: a stylized depiction of a person, highly detailed, 4k, high resolution
+  default: 
   type: string
   comfyui: 
     node_id: 22
     field: inputs
     subfield: text
-- name: style_strength
-  label: Strength of the style image (through IP_Adapter)
-  description: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.3) will give more freedom to interpret the prompt.
-  type: float
-  required: true
-  default: 0.8
-  minimum: 0.0
-  maximum: 1.0
-  comfyui: 
-    node_id: 62
-    field: inputs
-    subfield: weight
 - name: width
   label: Width
   description: Width of the generated image in n_pixels
   type: int
   default: 1024
-  minimum: 256
-  maximum: 2048
+  minimum: 512
+  maximum: 1536
   comfyui: 
     node_id: 5
     field: inputs
@@ -69,8 +79,8 @@ parameters:
   description: Height of the generated image in n_pixels
   type: int
   default: 1024
-  minimum: 256
-  maximum: 2048
+  minimum: 512
+  maximum: 1536
   comfyui: 
     node_id: 5
     field: inputs
@@ -84,7 +94,7 @@ parameters:
   minimum: 0
   maximum: 2147483647
   comfyui: 
-    node_id: 3
+    node_id: 82
     field: inputs
     subfield: seed
 - name: n_samples
