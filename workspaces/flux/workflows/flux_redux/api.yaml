@@ -1,6 +1,6 @@
 name: Remix Style Blend
 description: Blend or Remix Image(s) (using FLUX-redux).
-tip: Flux is a text to image model that excels at prompt coherence and text generation. The remux model uses clipvision to create a conditioning from an input image, creating image remix variations or a blend between multiple style images.
+tip: Flux is a text to image model that excels at prompt coherence and text generation. The remux model uses clipvision to create a conditioning from an input image, creating image remix variations or a blend between multiple style images. This tool should be the default for a high quality remix of an image, or a to blende between two images with some degree of promptability. 
 thumbnail: app/flux-redux_opt.mp4
 cost_estimate: 2.0 * n_samples
 output_type: image
@@ -64,7 +64,7 @@ parameters:
     subfield: image
 - name: style_image_blend
   type: float
-  label: Style image blend
+  label: Style image A to B blend
   description: Crossfade between style image influence to blend two images together.
   tip: |-
     This parameter crossfades conditioning influence between image A and image B. It is very sensitive, and it is recommended to leave it between .4 and .6 if you want to see influence from both images. If an optional image B is not provided, this parameter has no effect.

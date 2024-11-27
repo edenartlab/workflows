@@ -1,0 +1,525 @@
+{
+  "68": {
+    "inputs": {
+      "image": "frame-grayscale-no-text.png",
+      "resize": false,
+      "width": 1000,
+      "height": 64,
+      "repeat": 1,
+      "keep_proportion": false,
+      "divisible_by": 131,
+      "mask_channel": "alpha",
+      "background_color": "",
+      "upload": "image"
+    },
+    "class_type": "LoadAndResizeImage"
+  },
+  "111": {
+    "inputs": {
+      "text": "VINCENT NAPLES",
+      "font_name": "Oswald-Bold.ttf",
+      "font_size": 54,
+      "font_color": "custom",
+      "align": "center",
+      "justify": "left",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": 1158,
+      "position_y": 8,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#202124",
+      "image": [
+        "271",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text"
+  },
+  "113": {
+    "inputs": {
+      "text": "MARS RESEARCH",
+      "font_name": "Oswald-Bold.ttf",
+      "font_size": 54,
+      "font_color": "custom",
+      "align": "center",
+      "justify": "left",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": 1158,
+      "position_y": 150,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#202124",
+      "image": [
+        "111",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text"
+  },
+  "115": {
+    "inputs": {
+      "text": "FREESIDE",
+      "font_name": "Oswald-Bold.ttf",
+      "font_size": 54,
+      "font_color": "custom",
+      "align": "center",
+      "justify": "left",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": 1158,
+      "position_y": 285,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#202124",
+      "image": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text"
+  },
+  "116": {
+    "inputs": {
+      "image": "matte-alpha.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "117": {
+    "inputs": {
+      "text": "WINTER 2025",
+      "font_name": "Oswald-Bold.ttf",
+      "font_size": 70,
+      "font_color": "custom",
+      "align": "bottom",
+      "justify": "right",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": -135,
+      "position_y": -44,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#20212480",
+      "image": [
+        "115",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text"
+  },
+  "120": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "116",
+        0
+      ]
+    },
+    "class_type": "ImageToMask"
+  },
+  "123": {
+    "inputs": {
+      "mask": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "130": {
+    "inputs": {
+      "image": "Eden_creation_drmbt__6745a418d82068f696ccb1b7_0.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "142": {
+    "inputs": {
+      "width": 680,
+      "height": 680,
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "ImageResize+"
+  },
+  "144": {
+    "inputs": {
+      "image": "id-portrait-mask.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "150": {
+    "inputs": {
+      "image": "text_fields.png",
+      "resize": false,
+      "width": 856,
+      "height": 736,
+      "repeat": 1,
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "mask_channel": "alpha",
+      "background_color": "white",
+      "upload": "image"
+    },
+    "class_type": "LoadAndResizeImage"
+  },
+  "172": {
+    "inputs": {
+      "seed": [
+        "175",
+        1
+      ],
+      "sampler": "euler",
+      "scheduler": "simple",
+      "steps": "4",
+      "guidance": "3.5",
+      "max_shift": "0.50",
+      "base_shift": "1.15",
+      "denoise": "1",
+      "model": [
+        "177",
+        0
+      ],
+      "conditioning": [
+        "174",
+        0
+      ],
+      "latent_image": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "FluxSamplerParams+"
+  },
+  "173": {
+    "inputs": {
+      "samples": [
+        "172",
+        0
+      ],
+      "vae": [
+        "177",
+        2
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "174": {
+    "inputs": {
+      "text": [
+        "176",
+        0
+      ],
+      "clip": [
+        "177",
+        1
+      ]
+    },
+    "class_type": "TextEncodeForSamplerParams+"
+  },
+  "175": {
+    "inputs": {
+      "seed": 252589846714731
+    },
+    "class_type": "Eden_Seed"
+  },
+  "176": {
+    "inputs": {
+      "body": "a painterly concept art charcoal sketch of an otherworldly landscape, a futuristic Martian desert vista featuring windswept dunes and rocky outcrops, the two tone high contrast background is an endless barren desert featuring an encampment of structures, sci fi tents and trailers, a colorful paintstroke texture across the top of the composition, sunset gradient yellow orange and purple color palette, a colorful paintstroke texture across the top of the composition, sunset gradient yellow orange and purple color palette. There is no text or signature in the composition",
+      "delimiter": " "
+    },
+    "class_type": "TextPlusPlus"
+  },
+  "177": {
+    "inputs": {
+      "ckpt_name": "flux1-schnell-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "178": {
+    "inputs": {
+      "width": 2048,
+      "height": 1400,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "180": {
+    "inputs": {
+      "image": "planet.png",
+      "resize": false,
+      "width": 408,
+      "height": 1568,
+      "repeat": 1,
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "mask_channel": "alpha",
+      "background_color": "white",
+      "upload": "image"
+    },
+    "class_type": "LoadAndResizeImage"
+  },
+  "187": {
+    "inputs": {
+      "image": [
+        "271",
+        0
+      ],
+      "alpha": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha"
+  },
+  "188": {
+    "inputs": {
+      "filename_prefix": "id-blank",
+      "images": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
+  },
+  "189": {
+    "inputs": {
+      "filename_prefix": "bg-overlay",
+      "images": [
+        "173",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
+  },
+  "206": {
+    "inputs": {
+      "image": "barcode.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "212": {
+    "inputs": {
+      "text": "27564909878734",
+      "font_name": "Roboto-Regular.ttf",
+      "font_size": 72,
+      "font_color": "black",
+      "align": "bottom",
+      "justify": "left",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": 158,
+      "position_y": -154,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#202124",
+      "image": [
+        "275",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text"
+  },
+  "213": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "173",
+        0
+      ],
+      "image2": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "ImageBlend"
+  },
+  "256": {
+    "inputs": {
+      "image_1": [
+        "213",
+        0
+      ],
+      "image_2": [
+        "259",
+        0
+      ]
+    },
+    "class_type": "ImageAlphaComposite"
+  },
+  "259": {
+    "inputs": {
+      "image": [
+        "150",
+        0
+      ],
+      "alpha": [
+        "150",
+        1
+      ]
+    },
+    "class_type": "JoinImageWithAlpha"
+  },
+  "260": {
+    "inputs": {
+      "image": [
+        "180",
+        0
+      ],
+      "alpha": [
+        "180",
+        1
+      ]
+    },
+    "class_type": "JoinImageWithAlpha"
+  },
+  "261": {
+    "inputs": {
+      "image_1": [
+        "256",
+        0
+      ],
+      "image_2": [
+        "260",
+        0
+      ]
+    },
+    "class_type": "ImageAlphaComposite"
+  },
+  "271": {
+    "inputs": {
+      "text": "MARS COLLEGE",
+      "font": "Oswald-Bold.ttf",
+      "size": 192,
+      "color": "#f2f4dd",
+      "background_color": "#00000000",
+      "shadow_distance": 14,
+      "shadow_blur": 10,
+      "shadow_color": "#00000080",
+      "horizontal_align": "left",
+      "vertical_align": "top",
+      "offset_x": 132,
+      "offset_y": 18,
+      "direction": "ltr",
+      "img_composite": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "DrawText+"
+  },
+  "275": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "117",
+        0
+      ],
+      "image2": [
+        "206",
+        0
+      ]
+    },
+    "class_type": "ImageBlend"
+  },
+  "280": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "screen",
+      "image1": [
+        "284",
+        0
+      ],
+      "image2": [
+        "212",
+        0
+      ]
+    },
+    "class_type": "ImageBlend"
+  },
+  "281": {
+    "inputs": {
+      "width": 680,
+      "height": 680,
+      "X": 88,
+      "Y": 379,
+      "rotation": 0,
+      "feathering": 0,
+      "image": [
+        "144",
+        0
+      ],
+      "image_overlay": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "Image Transpose"
+  },
+  "283": {
+    "inputs": {
+      "images": [
+        "281",
+        0
+      ]
+    },
+    "class_type": "Images to RGB"
+  },
+  "284": {
+    "inputs": {
+      "blend_factor": 1,
+      "blend_mode": "multiply",
+      "image1": [
+        "283",
+        0
+      ],
+      "image2": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "ImageBlend"
+  },
+  "285": {
+    "inputs": {
+      "filename_prefix": "mars-id/mars-id",
+      "images": [
+        "287",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
+  },
+  "287": {
+    "inputs": {
+      "image": [
+        "280",
+        0
+      ],
+      "alpha": [
+        "288",
+        1
+      ]
+    },
+    "class_type": "JoinImageWithAlpha"
+  },
+  "288": {
+    "inputs": {
+      "image": "matte.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  }
+}
