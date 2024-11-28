@@ -1,5 +1,5 @@
-name: Mars Student ID
-description: Create your Mars College ID.
+name: ID Generator
+description: Create a Student ID.
 thumbnail: app/mars-id_opt.jpg
 tip: This is a tool for students of Mars College to create a Student ID card. This tool does not generate the portrait image, it requires a user supplied image to populate a generative form filled ID card template. If a user wants an image of a character or to use a LoRA or ipadapter for their portrait image, create that first with another tool and use that output as the portrait image input required by this tool.
 output_type: image
@@ -43,14 +43,14 @@ parameters:
     node_id: 111
     field: inputs
     subfield: text
-- name: camp
-  label: Camp Affiliation
-  description: What is the camp affiliation of the student or faculty member for whom this ID is being made?
+- name: institution_name
+  label: Institution Name
+  description: What is the name of the institution for which this ID is being made?
   required: true
   type: string
-  default: FREESIDE
+  default: MARS COLLEGE
   comfyui: 
-    node_id: 115
+    node_id: 271
     field: inputs
     subfield: text
 - name: department
@@ -61,6 +61,16 @@ parameters:
   default: MARS RESEARCH
   comfyui: 
     node_id: 113
+    field: inputs
+    subfield: text
+- name: camp
+  label: Camp Affiliation
+  description: What is the camp affiliation of the student or faculty member for whom this ID is being made?
+  required: true
+  type: string
+  default: FREESIDE
+  comfyui: 
+    node_id: 115
     field: inputs
     subfield: text
 - name: prompt
