@@ -87,7 +87,8 @@ parameters:
     subfield: boolean
 - name: style_image
   label: Style image
-  description: A style image to guide the animation (effect will be relative to the chosen animation strength values)
+  description: A style image to guide the animation (effect will be relative to the chosen animation strength values).
+  tip: The image will apply a style effect (using ip-adapter) that gets added in the most heavily denoised regions.
   type: image
   visible_if: apply_style=true
   comfyui: 
