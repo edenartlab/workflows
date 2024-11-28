@@ -40,6 +40,9 @@
 | `subfield` | Specific subfield within the node field |
 | `preprocessing` | Any preprocessing steps required to properly parse this input (e.g., "folder" for image arrays, which saves a set of imgs to a tmp folder and passes that path in ComfyUI) |
 
+Making toggle menus with folded parameters in the UI:
+`requires the toggle to start with use_ `
+
 Remapping labels to multiple nodes example:
 ```
 - name: preprocessor1
