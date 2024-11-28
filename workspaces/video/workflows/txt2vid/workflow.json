@@ -9,10 +9,10 @@
         1004,
         -117
       ],
-      "size": {
-        "0": 319.20001220703125,
-        "1": 182
-      },
+      "size": [
+        319.20001220703125,
+        202
+      ],
       "flags": {},
       "order": 7,
       "mode": 0,
@@ -25,27 +25,38 @@
         {
           "name": "motion_lora",
           "type": "MOTION_LORA",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "scale_multival",
           "type": "MULTIVAL",
-          "link": 18
+          "link": 18,
+          "shape": 7
         },
         {
           "name": "effect_multival",
           "type": "MULTIVAL",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "ad_keyframes",
           "type": "AD_KEYFRAMES",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "prev_m_models",
           "type": "M_MODELS",
-          "link": null
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "per_block",
+          "type": "PER_BLOCK",
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -74,10 +85,10 @@
         1019,
         130
       ],
-      "size": {
-        "0": 315,
-        "1": 118
-      },
+      "size": [
+        315,
+        118
+      ],
       "flags": {},
       "order": 11,
       "mode": 0,
@@ -90,17 +101,20 @@
         {
           "name": "m_models",
           "type": "M_MODELS",
-          "link": 8
+          "link": 8,
+          "shape": 7
         },
         {
           "name": "context_options",
           "type": "CONTEXT_OPTIONS",
-          "link": 9
+          "link": 9,
+          "shape": 7
         },
         {
           "name": "sample_settings",
           "type": "SAMPLE_SETTINGS",
-          "link": 10
+          "link": 10,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -127,10 +141,10 @@
         1006,
         -235
       ],
-      "size": {
-        "0": 315,
-        "1": 58
-      },
+      "size": [
+        315,
+        58
+      ],
       "flags": {},
       "order": 0,
       "mode": 0,
@@ -138,7 +152,8 @@
         {
           "name": "ad_settings",
           "type": "AD_SETTINGS",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -165,10 +180,10 @@
         1792,
         129
       ],
-      "size": {
-        "0": 140,
-        "1": 46
-      },
+      "size": [
+        140,
+        46
+      ],
       "flags": {},
       "order": 13,
       "mode": 0,
@@ -196,7 +211,8 @@
       ],
       "properties": {
         "Node name for S&R": "VAEDecode"
-      }
+      },
+      "widgets_values": []
     },
     {
       "id": 325,
@@ -205,10 +221,10 @@
         1997,
         109
       ],
-      "size": {
-        "0": 226.8000030517578,
-        "1": 46
-      },
+      "size": [
+        226.8000030517578,
+        46
+      ],
       "flags": {},
       "order": 14,
       "mode": 0,
@@ -236,7 +252,8 @@
       ],
       "properties": {
         "Node name for S&R": "ImageUpscaleWithModel"
-      }
+      },
+      "widgets_values": []
     },
     {
       "id": 326,
@@ -245,13 +262,14 @@
         1971,
         1
       ],
-      "size": {
-        "0": 278.6866760253906,
-        "1": 58
-      },
+      "size": [
+        278.6866760253906,
+        58
+      ],
       "flags": {},
       "order": 1,
       "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "UPSCALE_MODEL",
@@ -270,86 +288,16 @@
       ]
     },
     {
-      "id": 329,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        2621,
-        108
-      ],
-      "size": [
-        315,
-        530.5
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 17
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 24,
-        "loop_count": 0,
-        "filename_prefix": "AnimateDIFF-LCM",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 18,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "AnimateDIFF-LCM_00004.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 24
-          }
-        }
-      }
-    },
-    {
       "id": 279,
       "type": "ADE_AnimateDiffUniformContextOptions",
       "pos": [
         1017,
         314
       ],
-      "size": {
-        "0": 317.4000244140625,
-        "1": 270
-      },
+      "size": [
+        317.4000244140625,
+        270
+      ],
       "flags": {},
       "order": 2,
       "mode": 0,
@@ -357,12 +305,14 @@
         {
           "name": "prev_context",
           "type": "CONTEXT_OPTIONS",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "view_opts",
           "type": "VIEW_OPTS",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -398,10 +348,10 @@
         1426,
         131
       ],
-      "size": {
-        "0": 315,
-        "1": 262
-      },
+      "size": [
+        315,
+        262
+      ],
       "flags": {},
       "order": 12,
       "mode": 0,
@@ -434,8 +384,8 @@
           "links": [
             23
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -458,10 +408,10 @@
         1012,
         -353
       ],
-      "size": {
-        "0": 309.96392822265625,
-        "1": 58
-      },
+      "size": [
+        309.96392822265625,
+        58
+      ],
       "flags": {},
       "order": 3,
       "mode": 0,
@@ -469,7 +419,8 @@
         {
           "name": "mask_optional",
           "type": "MASK",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -479,8 +430,8 @@
           "links": [
             18
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -498,10 +449,10 @@
         517,
         394
       ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
+      "size": [
+        400,
+        200
+      ],
       "flags": {},
       "order": 10,
       "mode": 0,
@@ -536,13 +487,14 @@
         1426,
         -263
       ],
-      "size": {
-        "0": 315,
-        "1": 150
-      },
+      "size": [
+        315,
+        150
+      ],
       "flags": {},
       "order": 4,
       "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "width",
@@ -550,8 +502,8 @@
           "links": [
             24
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "height",
@@ -559,8 +511,8 @@
           "links": [
             25
           ],
-          "shape": 3,
-          "slot_index": 1
+          "slot_index": 1,
+          "shape": 3
         }
       ],
       "properties": {
@@ -580,10 +532,10 @@
         1426,
         -50
       ],
-      "size": {
-        "0": 315,
-        "1": 106
-      },
+      "size": [
+        315,
+        106
+      ],
       "flags": {},
       "order": 8,
       "mode": 0,
@@ -631,10 +583,10 @@
         517.4000244140625,
         130
       ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
+      "size": [
+        400,
+        200
+      ],
       "flags": {},
       "order": 9,
       "mode": 0,
@@ -669,10 +621,10 @@
         1011,
         -648
       ],
-      "size": {
-        "0": 315,
-        "1": 238
-      },
+      "size": [
+        315,
+        254
+      ],
       "flags": {},
       "order": 5,
       "mode": 0,
@@ -680,22 +632,26 @@
         {
           "name": "noise_layers",
           "type": "NOISE_LAYERS",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "iteration_opts",
           "type": "ITERATION_OPTS",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "custom_cfg",
           "type": "CUSTOM_CFG",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "sigma_schedule",
           "type": "SIGMA_SCHEDULE",
-          "link": null
+          "link": null,
+          "shape": 7
         },
         {
           "name": "seed_override",
@@ -704,6 +660,12 @@
           "widget": {
             "name": "seed_override"
           }
+        },
+        {
+          "name": "image_inject",
+          "type": "IMAGE_INJECT",
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -736,10 +698,10 @@
         2274,
         109
       ],
-      "size": {
-        "0": 319.20001220703125,
-        "1": 198
-      },
+      "size": [
+        319.20001220703125,
+        198
+      ],
       "flags": {},
       "order": 15,
       "mode": 0,
@@ -752,7 +714,8 @@
         {
           "name": "optional_interpolation_states",
           "type": "INTERPOLATION_STATES",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -784,13 +747,14 @@
         100,
         130
       ],
-      "size": {
-        "0": 315,
-        "1": 98
-      },
+      "size": [
+        315,
+        98
+      ],
       "flags": {},
       "order": 6,
       "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "MODEL",
@@ -824,6 +788,79 @@
       "widgets_values": [
         "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
       ]
+    },
+    {
+      "id": 329,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2621,
+        108
+      ],
+      "size": [
+        315,
+        310
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDIFF-LCM",
+        "format": "video/eden-video-faststart",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDIFF-LCM_00004.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24
+          }
+        }
+      }
     }
   ],
   "links": [
@@ -992,11 +1029,11 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 3.0912680532872074,
-      "offset": {
-        "0": -2528.9937417107894,
-        "1": -351.2852951194207
-      }
+      "scale": 0.6727499949326617,
+      "offset": [
+        -1218.0274608657528,
+        470.3145912824641
+      ]
     }
   },
   "version": 0.4

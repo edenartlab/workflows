@@ -1341,7 +1341,7 @@
       ],
       "size": [
         315,
-        615
+        306
       ],
       "flags": {},
       "order": 51,
@@ -1910,7 +1910,7 @@
       ],
       "size": [
         320,
-        620
+        306
       ],
       "flags": {},
       "order": 58,
@@ -2203,7 +2203,7 @@
       ],
       "size": [
         315,
-        615
+        306
       ],
       "flags": {},
       "order": 47,
@@ -2359,7 +2359,8 @@
       ],
       "properties": {
         "Node name for S&R": "ImageBatch"
-      }
+      },
+      "widgets_values": []
     },
     {
       "id": 16,
@@ -2632,88 +2633,6 @@
       "widgets_values": [
         false
       ]
-    },
-    {
-      "id": 92,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        4785,
-        1888
-      ],
-      "size": [
-        473.0155334472656,
-        773.0155029296875
-      ],
-      "flags": {},
-      "order": 66,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 182,
-          "shape": 7
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "link": null,
-          "shape": 7
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null,
-          "shape": 7
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": null,
-          "shape": 7
-        },
-        {
-          "name": "frame_rate",
-          "type": "*",
-          "link": 146,
-          "widget": {
-            "name": "frame_rate"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 654,
-        "loop_count": 0,
-        "filename_prefix": "Result",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "Result_00109.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 24
-          }
-        }
-      }
     },
     {
       "id": 4,
@@ -3341,6 +3260,88 @@
         1.1,
         ""
       ]
+    },
+    {
+      "id": 92,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        4785,
+        1888
+      ],
+      "size": [
+        473.0155334472656,
+        306
+      ],
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "*",
+          "link": 182,
+          "shape": 7
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "link": 146,
+          "widget": {
+            "name": "frame_rate"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 654,
+        "loop_count": 0,
+        "filename_prefix": "Result",
+        "format": "video/eden-video-faststart",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "Result_00109.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24
+          }
+        }
+      }
     }
   ],
   "links": [
@@ -4105,10 +4106,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7400249944259146,
+      "scale": 0.5054470284993692,
       "offset": [
-        916.029993580871,
-        -1550.759098820758
+        -2635.2246435192155,
+        -1044.5882020444944
       ]
     }
   },
