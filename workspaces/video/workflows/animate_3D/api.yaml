@@ -3,12 +3,15 @@ description: Precise image animation using 3D-zoom.
 thumbnail: app/animate_3D_opt.mp4
 tip: This should be the default tool to use when a user requests to make a video out of an image with no other specific requirements. If the image has a clear or obvious foreground subject, use a lower foreground_denoise strength to avoid corrupting the subject. This tool works by separating the input image by approximated depth layers and animating them independently with a Ken Burns style parallax effect.
 output_type: video
-status: prod
-base_model: SDXL, SD1.5
-cost_estimate: 0.5 * n_frames
+base_model: SD1.5
+status: stage
+private: false
+cost_estimate: 0.5 * n_seconds * 6 * n_steps/8 * resolution/1024
 handler: comfyui
-resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9-16_1152x2048]
-comfyui_output_node_id: 134
+comfyui_output_node_id: 92
+comfyui_intermediate_outputs:
+  - name: raw_3d_effect
+    node_id: 6
 parameters:
 - name: image
   label: Image
@@ -16,52 +19,100 @@ parameters:
   type: image
   required: true
   comfyui: 
-    node_id: 96
+    node_id: 7
     field: inputs
     subfield: image
 - name: background_denoise
   label: Background animation strength
-  description: Motion strength in the background
-  tip: Higher values cause more animation, but also stray further away from the background of the input image. This can usuaully be somewhat higher than the foreground motion strength unless the user requests otherwise or wants the background to remain fairly consistent.
+  description: AI strength for animating the background
+  tip: Higher values cause more animation, but also stray further away from the background of the input image. This can typically be somewhat higher than the foreground motion strength unless the user requests otherwise or wants the background to remain fairly consistent.
   type: float
   default: 0.65
-  minimum: 0.20
+  minimum: 0.0
   maximum: 1.0
+  step: 0.01
   comfyui: 
-    node_id: 260
+    node_id: 68
     field: inputs
     subfield: value
 - name: foreground_denoise
   label: Foreground animation strength
-  description: Motion strength in the foreground
-  tip: Higher values cause more animation, but also stray further away from the foreground of the input image. Typically, you want to keep this value in the low range (0.25 - 0.4) to avoid drifting too far away from the main subject in the image. If identity preservation to the input image is not important you can use higher values here to create more animation. If it is, use a lower value.
+  description: AI strength for animating the foreground
+  tip: Higher values cause more animation, but can also stray further away from the foreground of the input image. Typically, you want to keep this value in the low range (0.25 - 0.4) to avoid drifting too far away from the main subject in the image. If identity preservation to the input image is not important you can use higher values here to create more creative animation. If it is (eg for human faces), use a lower value like 0.2
   type: float
-  default: 0.35
-  minimum: 0.20
+  default: 0.30
+  minimum: 0.0
   maximum: 1.0
+  step: 0.01
   comfyui: 
-    node_id: 262
+    node_id: 67
     field: inputs
     subfield: value
-- name: n_frames
-  label: Number of frames
-  description: Number of video frames to generate.
-  tip: The output video will be 1 second long for every 8 frames generated. (The default of 32 frames will thus generate a 4s animation)
-  type: int
-  default: 32
-  minimum: 16
-  maximum: 128
+- name: n_seconds
+  label: Animation length
+  description: Number of seconds. Longer animations wont typically generate that much extra 'interesting' motion.
+  type: float
+  default: 3.5
+  minimum: 2.5
+  maximum: 10.0
+  step: 0.1
   comfyui: 
-    node_id: 249
+    node_id: 101
     field: inputs
     subfield: value
-- name: loop
-  label: Loop Animation
-  description: Make the animation a seamless loop
-  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+- name: depth_effect
+  label: Strength of the 3D effect
+  description: When increasing this value, you typically also want to make a longer animation with higher animation strength levels.
+  type: float
+  default: 0.25
+  minimum: 0.0
+  maximum: 1.0
+  step: 0.01
+  comfyui: 
+    node_id: 5
+    field: inputs
+    subfield: intensity
+- name: apply_style
+  label: Apply a style image
+  description: Steer the animation using a style image
+  tip: Activate this option to leverage the style_image for generating the animation. Note that the style image will be most active where the denoise value is the highest (foreground and/or background)!
   type: bool
   default: false
   comfyui: 
-    node_id: 229
+    node_id: 108
+    field: inputs
+    subfield: boolean
+- name: style_image
+  label: Style image
+  description: A style image to guide the animation (effect will be relative to the chosen animation strength values)
+  type: image
+  visible_if: apply_style=true
+  comfyui: 
+    node_id: 103
+    field: inputs
+    subfield: image
+- name: resolution
+  label: Resolution
+  description: Maximum of (Width, Height)
+  type: int
+  default: 1024
+  minimum: 768
+  maximum: 1536
+  step: 8
+  comfyui: 
+    node_id: 59
     field: inputs
     subfield: value
+- name: steps
+  label: Diffusion steps
+  description: Higher values can sometimes produce slightly more details. Low values can be used for quick & cheap tests.
+  type: int
+  default: 6
+  minimum: 4
+  maximum: 12
+  step: 1
+  comfyui: 
+    node_id: 105
+    field: inputs
+    subfield: value
+
