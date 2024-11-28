@@ -96,7 +96,7 @@
   },
   "7": {
     "inputs": {
-      "image": "Eden_creation_drmbt_a-flowering-plant-entwined-with-copper-wire-and-circuit-board-co_67282633190f6ae16584c8a5.png",
+      "image": "Earth-Day-Image.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -162,10 +162,7 @@
       "cfg": 1.5,
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
-      "denoise": [
-        "68",
-        0
-      ],
+      "denoise": 1,
       "model": [
         "50",
         0
@@ -274,10 +271,6 @@
       "scale_multival": [
         "22",
         0
-      ],
-      "effect_multival": [
-        "24",
-        0
       ]
     },
     "class_type": "ADE_AnimateDiffLoaderGen1",
@@ -317,7 +310,7 @@
   },
   "22": {
     "inputs": {
-      "float_val": 1.1
+      "float_val": 1.2
     },
     "class_type": "ADE_MultivalDynamic",
     "_meta": {
@@ -339,15 +332,6 @@
     "class_type": "ADE_AnimateDiffUniformContextOptions",
     "_meta": {
       "title": "Context Options 🎭🅐🅓"
-    }
-  },
-  "24": {
-    "inputs": {
-      "float_val": 1.1
-    },
-    "class_type": "ADE_MultivalDynamic",
-    "_meta": {
-      "title": "Effect 🎭🅐🅓"
     }
   },
   "25": {
@@ -587,28 +571,11 @@
   },
   "68": {
     "inputs": {
-      "value": 0.65
+      "value": 0.7000000000000001
     },
     "class_type": "Eden_Float",
     "_meta": {
       "title": "Background_denoise"
-    }
-  },
-  "69": {
-    "inputs": {
-      "expression": "a/b",
-      "a": [
-        "67",
-        0
-      ],
-      "b": [
-        "68",
-        0
-      ]
-    },
-    "class_type": "Eden_Math",
-    "_meta": {
-      "title": "Compute Min Mask value"
     }
   },
   "72": {
@@ -798,9 +765,12 @@
   },
   "96": {
     "inputs": {
-      "min": 1,
+      "min": [
+        "68",
+        0
+      ],
       "max": [
-        "69",
+        "67",
         0
       ],
       "mask": [
