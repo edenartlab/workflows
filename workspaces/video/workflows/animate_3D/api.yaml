@@ -1,11 +1,13 @@
 name: Animate an image with depth
 description: Precise image animation using 3D-zoom.
 thumbnail: app/animate_3D_opt.mp4
-tip: This should be the default tool to use when a user requests to make a video out of an image with no other specific requirements. If the image has a clear or obvious foreground subject, use a lower foreground_denoise strength to avoid corrupting the subject. This tool works by separating the input image by approximated depth layers and animating them independently with a Ken Burns style parallax effect.
+tip: |-
+  Creative image animation using AnimateDiff. This tool will apply subtle and artistic motion to an input image, and optionally apply a style effect.
+  By default, this tool applies a looping 3D warping effect which can be turned off.
+  If the image has a sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the subject details. 
 output_type: video
 base_model: SD1.5
 status: stage
-private: false
 cost_estimate: n_seconds * 6 * n_steps/6 * resolution/1024
 handler: comfyui
 comfyui_output_node_id: 92
