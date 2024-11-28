@@ -92,6 +92,7 @@ parameters:
   default: 0.7
   minimum: 0.0
   maximum: 1.0
+  step: 0.01
   visible_if: use_lora=true
   comfyui: 
     node_id: 96
@@ -125,6 +126,7 @@ parameters:
   default: 1.0
   minimum: 0.0
   maximum: 1.0
+  step: 0.01
   visible_if: use_init_image=true
   comfyui: 
     node_id: 220
@@ -183,6 +185,7 @@ parameters:
   default: 0.6
   minimum: 0.0
   maximum: 1.2
+  step: 0.01
   visible_if: use_controlnet=true
   comfyui: 
     node_id: 36
