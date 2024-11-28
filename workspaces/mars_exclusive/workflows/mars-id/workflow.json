@@ -518,7 +518,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 17,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -858,7 +858,7 @@
         46
       ],
       "flags": {},
-      "order": 16,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -899,7 +899,7 @@
         46
       ],
       "flags": {},
-      "order": 15,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -1244,76 +1244,9 @@
         "Node name for S&R": "Eden_Seed"
       },
       "widgets_values": [
-        49773327385429,
+        1122072064118433,
         "randomize"
       ]
-    },
-    {
-      "id": 180,
-      "type": "LoadAndResizeImage",
-      "pos": [
-        -1114,
-        -738
-      ],
-      "size": [
-        315,
-        566
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            502
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": [
-            503
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "image_path",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 4
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadAndResizeImage"
-      },
-      "widgets_values": [
-        "planet.png",
-        false,
-        408,
-        1568,
-        1,
-        false,
-        2,
-        "alpha",
-        "white",
-        "image"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 115,
@@ -1469,7 +1402,7 @@
         566
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1637,7 +1570,7 @@
         221.07711791992188
       ],
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1779,7 +1712,7 @@
         274.044189453125
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -1909,6 +1842,73 @@
         18,
         "ltr"
       ]
+    },
+    {
+      "id": 180,
+      "type": "LoadAndResizeImage",
+      "pos": [
+        -1114,
+        -738
+      ],
+      "size": [
+        315,
+        566
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            502
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            503
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "image_path",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAndResizeImage"
+      },
+      "widgets_values": [
+        "planet-alpha.png",
+        false,
+        408,
+        1568,
+        1,
+        false,
+        2,
+        "alpha",
+        "white",
+        "image"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -2322,10 +2322,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.3310000000000004,
+      "scale": 0.3855432894295319,
       "offset": [
-        -106.83396029055086,
-        -324.5112097752784
+        2382.228720325351,
+        1162.0673702174204
       ]
     },
     "groupNodes": {},
