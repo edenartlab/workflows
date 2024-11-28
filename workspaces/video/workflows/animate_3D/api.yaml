@@ -75,7 +75,7 @@ parameters:
     node_id: 5
     field: inputs
     subfield: intensity
-- name: apply_style
+- name: use_style_image
   label: Apply a style image
   description: Steer the animation using a style image
   tip: Activate this option to leverage the style_image for generating the animation. Note that the style image will be most active where the denoise value is the highest (foreground and/or background)!
@@ -90,7 +90,7 @@ parameters:
   description: A style image to guide the animation (effect will be relative to the chosen animation strength values).
   tip: The image will apply a style effect (using ip-adapter) that gets added in the most heavily denoised regions.
   type: image
-  visible_if: apply_style=true
+  visible_if: use_style_image=true
   comfyui: 
     node_id: 103
     field: inputs
