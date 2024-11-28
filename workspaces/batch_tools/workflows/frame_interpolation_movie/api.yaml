@@ -1,10 +1,10 @@
 name: Slow Motion Video
-description: Use Frame Interpolation to add in between frames to a video clip, creating a slow motion move
+description: Apply interpolation to add in-between frames to a video, creating a slow motion movie.
 thumbnail: app/slow-motion-video.mp4
 tip: This workflow creates a slow motion movie, by adding interpolation frames to the input video with RIFE or FILM models. It is best used to slow down and smooth the resulting creations from other video tools, resulting in an output movie that is 2, 3 or 4 times slower then the original input video.
 status: prod
 output_type: video
-visible: false
+visible: true
 base_mopel: RIFE
 cost_estimate: 30 #this is totally made up, and requres front-end variables to be provided for resolution, and number of frames, as well as a log scale cost multiplier if visual_path sorting is enabled, and a time multiplier if FILM is selected. This is a non trivial thing to calculate, but will have wild effects on actual run time and our cost if we can't figure this out.
 handler: comfyui
@@ -22,8 +22,8 @@ parameters:
     subfield: video
 - name: interpolation_frames
   label: Interpolation Factor
-  description: interpolation factor is a multiplier of the original frame count of the input video.
-  tip: This is a multiplier factor for the length of frames present in the input video. A value of 2 will result in a video double the length for example. The default should be two if this tool is requested with the maximum of 8 being a very extreme slow down that might be used as an effect.
+  description: A multiplier of the original frame count of the input video.
+  tip: This is a multiplier for the total number of frames present in the input video. A value of 2 will result in an output video double the amount of frames for example. The default should be 2 if this tool is requested with the maximum of 8 being a very extreme slow down that might be used as an effect.
   type: int
   default: 2
   minimum: 2
@@ -35,8 +35,8 @@ parameters:
     subfield: number
 - name: FPS
   label: Output Video Framerate
-  description: target output video framerate
-  tip: The output video will be confromed to this framerate. This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps(broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video conforms the total n_frames.
+  description: Output video framerate
+  tip: This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps (broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video plays, so this will affect the perceived speed of the output video!
   type: int
   default: 24
   minimum: 1

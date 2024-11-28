@@ -6,7 +6,7 @@ output_type: video
 base_model: SD1.5
 status: stage
 private: false
-cost_estimate: 0.5 * n_seconds * 6 * n_steps/8 * resolution/1024
+cost_estimate: n_seconds * 6 * n_steps/6 * resolution/1024
 handler: comfyui
 comfyui_output_node_id: 92
 comfyui_intermediate_outputs:
@@ -22,6 +22,19 @@ parameters:
     node_id: 7
     field: inputs
     subfield: image
+- name: n_seconds
+  label: Animation length
+  description: Number of seconds. Longer animations wont typically generate that much extra 'interesting' motion.
+  type: float
+  required: true
+  default: 3.5
+  minimum: 2.5
+  maximum: 10.0
+  step: 0.1
+  comfyui: 
+    node_id: 101
+    field: inputs
+    subfield: value
 - name: background_denoise
   label: Background animation strength
   description: AI strength for animating the background
@@ -46,18 +59,6 @@ parameters:
   step: 0.01
   comfyui: 
     node_id: 67
-    field: inputs
-    subfield: value
-- name: n_seconds
-  label: Animation length
-  description: Number of seconds. Longer animations wont typically generate that much extra 'interesting' motion.
-  type: float
-  default: 3.5
-  minimum: 2.5
-  maximum: 10.0
-  step: 0.1
-  comfyui: 
-    node_id: 101
     field: inputs
     subfield: value
 - name: depth_effect
