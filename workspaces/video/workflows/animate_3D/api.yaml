@@ -29,7 +29,7 @@ parameters:
   description: Number of seconds. Longer animations wont typically generate that much extra 'interesting' motion.
   type: float
   required: true
-  default: 3.5
+  default: 4.0
   minimum: 2.5
   maximum: 10.0
   step: 0.1
@@ -42,7 +42,7 @@ parameters:
   description: AI strength for animating the background
   tip: Higher values cause more animation, but also stray further away from the background of the input image. This can typically be somewhat higher than the foreground motion strength unless the user requests otherwise or wants the background to remain fairly consistent.
   type: float
-  default: 0.70
+  default: 0.75
   minimum: 0.0
   maximum: 1.0
   step: 0.01
@@ -55,7 +55,7 @@ parameters:
   description: AI strength for animating the foreground
   tip: Higher values cause more animation, but can also stray further away from the foreground of the input image. Typically, you want to keep this value in the low range (0.25 - 0.4) to avoid drifting too far away from the main subject in the image. If identity preservation to the input image is not important you can use higher values here to create more creative animation. If it is (eg for human faces), use a lower value like 0.2
   type: float
-  default: 0.35
+  default: 0.4
   minimum: 0.0
   maximum: 1.0
   step: 0.01
@@ -67,7 +67,7 @@ parameters:
   label: Strength of the 3D effect
   description: When increasing this value, you typically also want to make a longer animation with higher animation strength levels.
   type: float
-  default: 0.25
+  default: 0.2
   minimum: 0.0
   maximum: 1.0
   step: 0.01
@@ -99,7 +99,7 @@ parameters:
   label: Resolution
   description: Maximum of (Width, Height)
   type: int
-  default: 1024
+  default: 1152
   minimum: 768
   maximum: 1536
   step: 8
