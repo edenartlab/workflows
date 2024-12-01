@@ -1,3 +1,8 @@
+# TODO:
+# - use string and integer and boolean, not str and int and bool
+# - deal with anyOf
+
+
 import os
 import yaml
 from collections import OrderedDict
@@ -26,13 +31,13 @@ def convert_parameter_to_property(param):
         is_array = param['type'].endswith('[]')
         
         type_mapping = {
-            'string': 'str',
-            'str': 'str',
-            'int': 'int',
-            'integer': 'int',
+            'string': 'string',
+            'str': 'string',
+            'int': 'integer',
+            'integer': 'integer',
             'float': 'float',
-            'bool': 'bool',
-            'boolean': 'bool',
+            'bool': 'boolean',
+            'boolean': 'boolean',
             'image': 'image',  
             'video': 'video', 
             'audio': 'audio', 
@@ -44,7 +49,7 @@ def convert_parameter_to_property(param):
         
         if is_array:
             property_dict['type'] = 'array'
-            property_dict['items'] = {'type': mapped_type} if mapped_type in ['str', 'int', 'float', 'bool'] else {"type": mapped_type}
+            property_dict['items'] = {'type': mapped_type} if mapped_type in ['string', 'integer', 'float', 'boolean'] else {"type": mapped_type}
         else:
             property_dict['type'] = mapped_type
     
