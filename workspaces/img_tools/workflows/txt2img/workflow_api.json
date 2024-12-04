@@ -6,7 +6,10 @@
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]"
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
   },
   "7": {
     "inputs": {
@@ -15,13 +18,19 @@
       "output_multiplier": 1,
       "multiple_off": 8
     },
-    "class_type": "WidthHeightPicker"
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
   },
   "8": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool"
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use input image size"
+    }
   },
   "10": {
     "inputs": {
@@ -38,7 +47,10 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch width"
+    }
   },
   "11": {
     "inputs": {
@@ -55,7 +67,10 @@
         1
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch height"
+    }
   },
   "13": {
     "inputs": {
@@ -69,7 +84,10 @@
         3
       ]
     },
-    "class_type": "easy compare"
+    "class_type": "easy compare",
+    "_meta": {
+      "title": "init_image_supplied"
+    }
   },
   "14": {
     "inputs": {
@@ -79,21 +97,30 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "15": {
     "inputs": {
       "image": "A_black_image.jpg",
       "upload": "image"
     },
-    "class_type": "Load image with metadata [Crystools]"
+    "class_type": "Load image with metadata [Crystools]",
+    "_meta": {
+      "title": "dummy_image"
+    }
   },
   "16": {
     "inputs": {
       "image": "A_black_image.jpg",
       "upload": "image"
     },
-    "class_type": "Load image with metadata [Crystools]"
+    "class_type": "Load image with metadata [Crystools]",
+    "_meta": {
+      "title": "init_image"
+    }
   },
   "20": {
     "inputs": {
@@ -103,7 +130,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "21": {
     "inputs": {
@@ -113,13 +143,19 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "27": {
     "inputs": {
-      "seed": 120995746945129
+      "seed": 548530884408124
     },
-    "class_type": "Seed"
+    "class_type": "Seed",
+    "_meta": {
+      "title": "Seed"
+    }
   },
   "32": {
     "inputs": {
@@ -132,25 +168,37 @@
         1
       ]
     },
-    "class_type": "CLIPTextEncode"
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
   },
   "33": {
     "inputs": {
       "value": "embedding:negativeXL_D, (worst quality, low quality, normal quality:1.5)"
     },
-    "class_type": "Eden_String"
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt (Negative)"
+    }
   },
   "35": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool"
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_ipAdapter"
+    }
   },
   "36": {
     "inputs": {
       "value": 0.8
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
   },
   "38": {
     "inputs": {
@@ -195,13 +243,19 @@
         0
       ]
     },
-    "class_type": "KSampler"
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
   },
   "59": {
     "inputs": {
       "value": 0.8
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "ipadapter_strength"
+    }
   },
   "60": {
     "inputs": {
@@ -210,7 +264,10 @@
       "output_multiplier": 1,
       "multiple_off": 1
     },
-    "class_type": "WidthHeightPicker"
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "clamp_max_resolution"
+    }
   },
   "61": {
     "inputs": {
@@ -224,7 +281,10 @@
         0
       ]
     },
-    "class_type": "ImpactMinMax"
+    "class_type": "ImpactMinMax",
+    "_meta": {
+      "title": "clamp_width"
+    }
   },
   "62": {
     "inputs": {
@@ -238,7 +298,10 @@
         1
       ]
     },
-    "class_type": "ImpactMinMax"
+    "class_type": "ImpactMinMax",
+    "_meta": {
+      "title": "clamp_height"
+    }
   },
   "64": {
     "inputs": {
@@ -255,7 +318,10 @@
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch"
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_use_ipAdapter"
+    }
   },
   "80": {
     "inputs": {
@@ -266,7 +332,10 @@
         0
       ]
     },
-    "class_type": "ImageFromBatch"
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
   },
   "90": {
     "inputs": {
@@ -279,7 +348,10 @@
         2
       ]
     },
-    "class_type": "VAEEncode"
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
   },
   "91": {
     "inputs": {
@@ -292,7 +364,10 @@
         2
       ]
     },
-    "class_type": "VAEDecode"
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
   },
   "94": {
     "inputs": {
@@ -306,13 +381,19 @@
       ],
       "batch_size": 1
     },
-    "class_type": "EmptyLatentImage"
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
   },
   "96": {
     "inputs": {
       "value": 1
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength"
+    }
   },
   "125": {
     "inputs": {
@@ -321,7 +402,10 @@
         0
       ]
     },
-    "class_type": "PreviewImage"
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
   },
   "129": {
     "inputs": {
@@ -333,7 +417,10 @@
         0
       ]
     },
-    "class_type": "PrepImageForClipVision"
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
   },
   "133": {
     "inputs": {
@@ -342,7 +429,10 @@
         0
       ]
     },
-    "class_type": "PreviewImage"
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
   },
   "140": {
     "inputs": {
@@ -352,7 +442,10 @@
         0
       ]
     },
-    "class_type": "IPAdapterUnifiedLoader"
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
   },
   "141": {
     "inputs": {
@@ -380,14 +473,20 @@
         0
       ]
     },
-    "class_type": "IPAdapterClipVisionEnhancer"
+    "class_type": "IPAdapterClipVisionEnhancer",
+    "_meta": {
+      "title": "IPAdapter ClipVision Enhancer"
+    }
   },
   "145": {
     "inputs": {
       "image": "A_black_image.jpg",
       "upload": "image"
     },
-    "class_type": "LoadImage"
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Style Image"
+    }
   },
   "162": {
     "inputs": {
@@ -409,7 +508,10 @@
         1
       ]
     },
-    "class_type": "SDLoraLoader"
+    "class_type": "SDLoraLoader",
+    "_meta": {
+      "title": "SD Lora Loader"
+    }
   },
   "171": {
     "inputs": {
@@ -419,25 +521,37 @@
       "sampler_name": "euler",
       "scheduler": "normal"
     },
-    "class_type": "KSampler Config (rgthree)"
+    "class_type": "KSampler Config (rgthree)",
+    "_meta": {
+      "title": "KSampler Config (rgthree)"
+    }
   },
   "193": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool"
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_lora"
+    }
   },
   "198": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool"
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_init_image"
+    }
   },
   "204": {
     "inputs": {
       "value": 0
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength_off"
+    }
   },
   "205": {
     "inputs": {
@@ -454,7 +568,10 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
   },
   "210": {
     "inputs": {
@@ -464,7 +581,10 @@
         0
       ]
     },
-    "class_type": "ControlNetAuxSimpleAddText"
+    "class_type": "ControlNetAuxSimpleAddText",
+    "_meta": {
+      "title": "ControlNetAuxSimpleAddText"
+    }
   },
   "212": {
     "inputs": {
@@ -474,7 +594,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "213": {
     "inputs": {
@@ -484,7 +607,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "214": {
     "inputs": {
@@ -505,7 +631,10 @@
         0
       ]
     },
-    "class_type": "ImageResize+"
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Clamp Size"
+    }
   },
   "215": {
     "inputs": {
@@ -515,7 +644,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "217": {
     "inputs": {
@@ -529,7 +661,10 @@
       ],
       "op": "a AND b"
     },
-    "class_type": "BoolOperationNode"
+    "class_type": "BoolOperationNode",
+    "_meta": {
+      "title": "Bool Operation"
+    }
   },
   "218": {
     "inputs": {
@@ -543,19 +678,28 @@
       ],
       "op": "a AND b"
     },
-    "class_type": "BoolOperationNode"
+    "class_type": "BoolOperationNode",
+    "_meta": {
+      "title": "Bool Operation"
+    }
   },
   "219": {
     "inputs": {
       "value": 1
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
   },
   "220": {
     "inputs": {
       "value": 1
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "denoise"
+    }
   },
   "221": {
     "inputs": {
@@ -572,7 +716,10 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
   },
   "222": {
     "inputs": {
@@ -586,7 +733,10 @@
       ],
       "op": "a AND b"
     },
-    "class_type": "BoolOperationNode"
+    "class_type": "BoolOperationNode",
+    "_meta": {
+      "title": "Bool Operation"
+    }
   },
   "227": {
     "inputs": {
@@ -595,7 +745,10 @@
         0
       ]
     },
-    "class_type": "SDAnyConverter"
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
   },
   "233": {
     "inputs": {
@@ -609,7 +762,10 @@
         2
       ]
     },
-    "class_type": "ImpactMinMax"
+    "class_type": "ImpactMinMax",
+    "_meta": {
+      "title": "ImpactMinMax"
+    }
   },
   "238": {
     "inputs": {
@@ -622,7 +778,10 @@
         1
       ]
     },
-    "class_type": "CLIPTextEncode"
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
   },
   "239": {
     "inputs": {
@@ -635,7 +794,10 @@
         1
       ]
     },
-    "class_type": "CLIPTextEncode"
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
   },
   "240": {
     "inputs": {
@@ -652,7 +814,10 @@
         0
       ]
     },
-    "class_type": "ConditioningAverage"
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "Token Strength"
+    }
   },
   "241": {
     "inputs": {
@@ -661,13 +826,19 @@
         0
       ]
     },
-    "class_type": "Eden_String"
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt"
+    }
   },
   "243": {
     "inputs": {
       "value": ""
     },
-    "class_type": "Eden_String"
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "no_token_prompt"
+    }
   },
   "281": {
     "inputs": {
@@ -677,7 +848,10 @@
       ],
       "text2": "preprocessor_lineart"
     },
-    "class_type": "ShowText|pysssss"
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
   },
   "282": {
     "inputs": {
@@ -687,7 +861,10 @@
         1
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "283": {
     "inputs": {
@@ -695,7 +872,10 @@
       "delimiter": ",",
       "select_item": "lineart"
     },
-    "class_type": "DRMBT_String_Item_Menu"
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "preprocessor"
+    }
   },
   "284": {
     "inputs": {
@@ -712,7 +892,10 @@
         0
       ]
     },
-    "class_type": "AIO_Preprocessor"
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
   },
   "285": {
     "inputs": {
@@ -724,7 +907,10 @@
         1
       ]
     },
-    "class_type": "DRMBT_String_Item_Menu"
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
   },
   "286": {
     "inputs": {
@@ -735,7 +921,10 @@
       "separator": "$",
       "index": 0
     },
-    "class_type": "StringListToCombo"
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
   },
   "287": {
     "inputs": {
@@ -745,7 +934,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "288": {
     "inputs": {
@@ -762,7 +954,10 @@
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch"
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_conditioning_controlnet_w"
+    }
   },
   "289": {
     "inputs": {
@@ -771,7 +966,10 @@
         0
       ]
     },
-    "class_type": "ControlNetLoader"
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
   },
   "290": {
     "inputs": {
@@ -783,13 +981,19 @@
         1
       ]
     },
-    "class_type": "DRMBT_String_Item_Menu"
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
   },
   "292": {
     "inputs": {
       "value": 0
     },
-    "class_type": "Eden_Int"
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
   },
   "293": {
     "inputs": {
@@ -800,7 +1004,10 @@
       "separator": "$",
       "index": 0
     },
-    "class_type": "StringListToCombo"
+    "class_type": "StringListToCombo",
+    "_meta": {
+      "title": "String List to Combo"
+    }
   },
   "294": {
     "inputs": {
@@ -810,7 +1017,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "297": {
     "inputs": {
@@ -819,7 +1029,10 @@
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]"
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
   },
   "299": {
     "inputs": {
@@ -836,7 +1049,10 @@
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch"
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "preprocessor_image"
+    }
   },
   "309": {
     "inputs": {
@@ -846,7 +1062,10 @@
       ],
       "text2": "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant"
     },
-    "class_type": "ShowText|pysssss"
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
   },
   "311": {
     "inputs": {
@@ -857,7 +1076,10 @@
         0
       ]
     },
-    "class_type": "TextPlusPlus"
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
   },
   "318": {
     "inputs": {
@@ -867,7 +1089,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "323": {
     "inputs": {
@@ -881,7 +1106,10 @@
         0
       ]
     },
-    "class_type": "easy imageSave"
+    "class_type": "easy imageSave",
+    "_meta": {
+      "title": "SaveImage (Simple)"
+    }
   },
   "324": {
     "inputs": {
@@ -890,7 +1118,10 @@
         0
       ]
     },
-    "class_type": "LogicGateInvertBasic"
+    "class_type": "LogicGateInvertBasic",
+    "_meta": {
+      "title": "Invert Basic"
+    }
   },
   "328": {
     "inputs": {
@@ -911,7 +1142,10 @@
         0
       ]
     },
-    "class_type": "ImageResize+"
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
   },
   "333": {
     "inputs": {
@@ -920,7 +1154,10 @@
         0
       ]
     },
-    "class_type": "CM_NearestSDXLResolution"
+    "class_type": "CM_NearestSDXLResolution",
+    "_meta": {
+      "title": "NearestSDXLResolution"
+    }
   },
   "335": {
     "inputs": {
@@ -937,7 +1174,10 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "SDXL_width"
+    }
   },
   "336": {
     "inputs": {
@@ -954,13 +1194,19 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "SDXL_height"
+    }
   },
   "337": {
     "inputs": {
       "value": false
     },
-    "class_type": "Eden_Bool"
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Enforce_SDXL_resolution"
+    }
   },
   "345": {
     "inputs": {
@@ -977,7 +1223,10 @@
         1
       ]
     },
-    "class_type": "InversionDemoLazySwitch"
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "switch_conditioning_controlnet_w"
+    }
   },
   "351": {
     "inputs": {
@@ -1004,16 +1253,10 @@
         0
       ]
     },
-    "class_type": "ControlNetApplyAdvanced"
-  },
-  "358": {
-    "inputs": {
-      "input1": [
-        "220",
-        0
-      ]
-    },
-    "class_type": "FloorNode"
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
   },
   "361": {
     "inputs": {
@@ -1022,7 +1265,10 @@
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]"
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
   },
   "362": {
     "inputs": {
@@ -1032,24 +1278,30 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "363": {
     "inputs": {
       "switch": [
-        "405",
-        2
+        "422",
+        0
       ],
       "on_false": [
-        "90",
+        "94",
         0
       ],
       "on_true": [
-        "94",
+        "90",
         0
       ]
     },
-    "class_type": "InversionDemoLazySwitch"
+    "class_type": "InversionDemoLazySwitch",
+    "_meta": {
+      "title": "Use VAE Encoded Latent"
+    }
   },
   "364": {
     "inputs": {
@@ -1059,7 +1311,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "365": {
     "inputs": {
@@ -1069,7 +1324,10 @@
         1
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "366": {
     "inputs": {
@@ -1078,14 +1336,20 @@
         0
       ]
     },
-    "class_type": "Get resolution [Crystools]"
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
   },
   "370": {
     "inputs": {
       "body": "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant",
       "delimiter": " "
     },
-    "class_type": "TextPlusPlus"
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Prompt (Positive)"
+    }
   },
   "382": {
     "inputs": {
@@ -1095,7 +1359,10 @@
         0
       ]
     },
-    "class_type": "Display Any (rgthree)"
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
   },
   "388": {
     "inputs": {
@@ -1109,7 +1376,10 @@
         0
       ]
     },
-    "class_type": "Eden_Compare"
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
   },
   "391": {
     "inputs": {
@@ -1123,7 +1393,10 @@
         0
       ]
     },
-    "class_type": "Eden_Compare"
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
   },
   "396": {
     "inputs": {
@@ -1136,13 +1409,19 @@
         0
       ]
     },
-    "class_type": "MultiplyNode"
+    "class_type": "MultiplyNode",
+    "_meta": {
+      "title": "Multiply"
+    }
   },
   "399": {
     "inputs": {
       "value": true
     },
-    "class_type": "Eden_Bool"
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use input image size"
+    }
   },
   "400": {
     "inputs": {
@@ -1157,22 +1436,10 @@
         2
       ]
     },
-    "class_type": "NumberPlusPlus"
-  },
-  "405": {
-    "inputs": {
-      "number": 0,
-      "integer": "round",
-      "override_number": [
-        "358",
-        0
-      ],
-      "multiplier": [
-        "198",
-        0
-      ]
-    },
-    "class_type": "NumberPlusPlus"
+    "class_type": "NumberPlusPlus",
+    "_meta": {
+      "title": "Number ++"
+    }
   },
   "407": {
     "inputs": {
@@ -1186,7 +1453,10 @@
         0
       ]
     },
-    "class_type": "NumberRemap"
+    "class_type": "NumberRemap",
+    "_meta": {
+      "title": "Number Remap Range"
+    }
   },
   "408": {
     "inputs": {
@@ -1194,13 +1464,19 @@
       "on_false": "0.0",
       "on_true": "1.0"
     },
-    "class_type": "BoolPlusPlus"
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_controlnet"
+    }
   },
   "410": {
     "inputs": {
       "ckpt_name": "Eden_SDXL.safetensors"
     },
-    "class_type": "CheckpointLoaderSimple"
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
   },
   "412": {
     "inputs": {
@@ -1210,7 +1486,10 @@
         0
       ]
     },
-    "class_type": "SaveImage"
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
   },
   "416": {
     "inputs": {
@@ -1220,6 +1499,65 @@
         0
       ]
     },
-    "class_type": "SaveImage"
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "417": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "418": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "417",
+        0
+      ],
+      "b": [
+        "220",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "421": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "422",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "422": {
+    "inputs": {
+      "op": "And",
+      "a": [
+        "418",
+        0
+      ],
+      "b": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "Eden_BoolBinaryOperation",
+    "_meta": {
+      "title": "Eden_BoolBinaryOperation"
+    }
   }
 }
