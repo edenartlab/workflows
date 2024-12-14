@@ -18,7 +18,7 @@ output_type: video
 status: prod
 cost_estimate: |-
   0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.75 : 1)
-base_model: sd1.5
+base_model: sd15
 handler: comfyui
 resolutions: [16-9_1024x576, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_576x1024]
 comfyui_output_node_id: 446

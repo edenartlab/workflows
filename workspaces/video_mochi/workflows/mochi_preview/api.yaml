@@ -3,9 +3,8 @@ description: Creative, abstract text-driven animations using Mochi Preview model
 thumbnail: app/Mochi-preview.mp4
 tip: Use this to make short video snippets from text prompts using the Mochi Preview model. This model is relatively prompt adherant, but only makes very short 1-2 seconds long clips natively. This time factor can be extended by using frame interpolation to create a slow motion version of the video
 output_type: video
-status: staging
-base_model: Mochi_preview
-private: true
+status: stage
+base_model: mochi-preview
 visible: false
 cost_estimate: 3 * n_frames
 resolutions: [16-9_848x40, 1-1_512x512, 9-16_480x848]

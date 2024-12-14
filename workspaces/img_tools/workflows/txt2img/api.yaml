@@ -4,11 +4,9 @@ thumbnail: app/txt2img.png
 tip: This is the legacy (battlehardened) function to generate an image from text a prompt. The outputs are not as detailed as FLUX, but often more creative and weird. With ControlNet guidance one can maintain the contours or shape outlines of an input image while generating a new style or aesthetic on top of it, LoRA models to apply a pretrained fine tuned concept, and ipAdapter functionality to transfer the style from a Style Image to the output result. This tool uses SDXL, which as of now is the best model to use for guided image generation, and this tool should be chosen for image generations that match the unique characteristics of this model, which is decent at styles, NSFW, and has a good knowledge of celebrities and artists that newer base models lack context for. Users can supply a starting init input image and use controlnet guidance and or a latent encoding of the supplied input image, in which case shape and color characteristics from the supplied image will stay present in the resultant generation. Stable Diffusion XL is trained on a dataset of images approximately 1 megapixel in size, and the provided resolutions list is the set of legal resolutions for this model, and should always be used unless a user requests a specific resolution. If an aspect ratio is specifically requested, always aim for dimensions that total approximately 1 megapixel and round to numbers that are divisible by 8.
 output_type: image
 status: prod
-private: false
-visible: true
 cost_estimate: 1 * n_samples
 handler: comfyui
-base_model: SDXL
+base_model: sdxl
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 comfyui_output_node_id: 412
 comfyui_intermediate_outputs:
