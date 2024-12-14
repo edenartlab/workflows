@@ -212,7 +212,9 @@ additional_node_url_mappings = {
     "ShowText|pysssss": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git",
     "VHS_VideoCombine": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git",
     "StyleModelApplyAdvanced": "https://github.com/kijai/ComfyUI-KJNodes",
-    "Label (rgthree)": "https://github.com/rgthree/rgthree-comfy.git"
+    "Label (rgthree)": "https://github.com/rgthree/rgthree-comfy.git",
+    "MMAudioSampler": "https://github.com/kijai/ComfyUI-MMAudio.git",
+    "AudioSeparation": "https://github.com/drmbt/audio-separation-nodes-comfyui.git"
     }
 
 
