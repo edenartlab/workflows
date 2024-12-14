@@ -3,7 +3,7 @@ description: Generate sound effects with Stable Audio.
 thumbnail: app/audio_craft_opt.mp4
 tip: This tool uses the Stable Audio Open model, which is optimized for generating short audio samples, sound effects, and production elements. Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. The model was trained on data from Freesound and the Free Music Archive, respecting creator rights, and natively supports clip lengths of up to 47 seconds of audio. 
 output_type: audio
-base_model: Stable Audio Open
+base_model: stable-audio-open
 status: prod
 cost_estimate: (1 + 0.1 * seconds) * n_samples
 handler: comfyui

@@ -91,8 +91,8 @@ def convert_yaml(input_file, output_file, copy_tests=False):
     # Create initial OrderedDict with non-None values only
     new_data = OrderedDict()
     base_model = data.get('base_model')
-    if base_model:
-        base_model = base_model.replace("-", "_")
+    # if base_model:
+    #     base_model = base_model.replace("-", "_")
         
     for key, value in [
         ('name', data['name']),
@@ -120,11 +120,11 @@ def convert_yaml(input_file, output_file, copy_tests=False):
         if value is not None:
             new_data[key] = value
         if 'base_model' in key:
-            assert value in ['sd15', 'sdxl', 'sd3', 'flux-dev', 'flux-schnell'], f"base_model must be one of ['sd15', 'sdxl', 'sd3', 'flux-dev', 'flux-schnell'], got {value} for {key}, workflow: {data['name']}"
+            assert value in ['sd15', 'sdxl', 'sd3', 'sd35', 'flux-dev', 'flux-schnell', 'hellomeme', 'stable-audio-open', 'inspyrenet-rembg', 'mochi-preview'], f"base_model must be one of ['sd15', 'sdxl', 'sd3', 'flux-dev', 'flux-schnell', 'hellomeme'], got {value} for {key}, workflow: {data['name']}"
         if 'status' in key:
-            assert value in ['inactive', 'stage', 'prod']
+            assert value in ['inactive', 'stage', 'prod'], f"status must be one of ['inactive', 'stage', 'prod'], got {value} for {key}, workflow: {data['name']}"
         if 'output_type' in key:
-            assert value in ["boolean", "string", "integer", "float", "image", "video", "audio", "lora"]
+            assert value in ["boolean", "string", "integer", "float", "image", "video", "audio", "lora"], f"output_type must be one of ['boolean', 'string', 'integer', 'float', 'image', 'video', 'audio', 'lora'], got {value} for {key}, workflow: {data['name']}"
     
     new_data['parameters'] = OrderedDict()
     
@@ -198,12 +198,11 @@ def find_api_yaml_files(start_path="../workflows"):
     for root, dirs, files in os.walk(start_path):
         if "api.yaml" in files:
             root2 = root.replace("../workflows", "../workflows2")
-            print(root2)
             input_file = root + "/api.yaml"
             output_file = root2 + "/api.yaml"
-            print(input_file, output_file)
+            # print(input_file, output_file)
             # check if both files exist
-            # convert_yaml(input_file, output_file)
+            convert_yaml(input_file, output_file)
             # with open(input_file, 'r') as f:
             #     data = yaml.safe_load(f)
             #     keys = list(data.keys())

@@ -4,7 +4,7 @@ thumbnail: app/background_removal_opt.mp4
 tip: Background removal can do a great job of isolating a foreground subject, returns a .png image with an alpha channel where the background is removed. This tool is a good choice for isolating a subject from an image, and is often used in conjunction with other tools to generate images with a clean background. Keep in mind that a non-technical user may not have the vocabulary to describe what they want, and interpret their request with your best judgement as to whether or not the background removal is what they are requesting, considering terms like alpha, transparency, or other requests for an image with no background as a suggestion to consider this tool when provided with such a request and an image to operate on.
 output_type: image
 status: prod
-base_model: InspyrenetRembg
+base_model: inspyrenet-rembg
 cost_estimate: 1
 handler: comfyui
 comfyui_output_node_id: 38

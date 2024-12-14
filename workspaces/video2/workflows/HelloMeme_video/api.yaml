@@ -3,8 +3,8 @@ description: Apply the expression from one face to another
 thumbnail: app/HelloMeme.mp4
 tip: Use this endpoint to transfer the facial expression and emotion from an input image to a target image. The model used is HelloMeme, which will limit all outputs to 512x512 square results. The task will fail if a valid face isn't recognized in both inputs.
 output_type: video
-base_model: HelloMeme
-status: staging
+base_model: hellomeme
+status: stage
 visible: false
 cost_estimate: 100
 handler: comfyui

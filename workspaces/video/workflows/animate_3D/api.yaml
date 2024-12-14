@@ -6,7 +6,7 @@ tip: |-
   By default, this tool applies a looping 3D warping effect which can be turned off.
   If the image has a sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the subject details. 
 output_type: video
-base_model: SD1.5
+base_model: sd15
 status: prod
 cost_estimate: n_seconds * 6 * n_steps/6 * resolution/1024
 handler: comfyui

@@ -3,7 +3,7 @@ description: Create a video from keyframe images through visual interpolation.
 thumbnail: app/frame_interpolation_opt.mp4
 tip: This workflow creates animations from a set of images that linearly connect those images into a visual, morphing video. The number of frames between each keyframe can be adjusted to create a smooth transition. The video can be looped back to the first frame to create a seamless loop. This tool should be considered when a user supplies two or more still images and requests a blend, interpolation, morph or similar effect between them.
 output_type: video
-base_mopel: RIFE
+base_model: sdxl
 status: prod
 cost_estimate: interpolation_frames
 handler: comfyui

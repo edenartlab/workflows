@@ -5,7 +5,7 @@ tip: This workflow creates a slow motion movie, by adding interpolation frames t
 status: prod
 output_type: video
 visible: true
-base_mopel: RIFE
+base_model: sdxl
 cost_estimate: 30 #this is totally made up, and requres front-end variables to be provided for resolution, and number of frames, as well as a log scale cost multiplier if visual_path sorting is enabled, and a time multiplier if FILM is selected. This is a non trivial thing to calculate, but will have wild effects on actual run time and our cost if we can't figure this out.
 handler: comfyui
 comfyui_output_node_id: 15
