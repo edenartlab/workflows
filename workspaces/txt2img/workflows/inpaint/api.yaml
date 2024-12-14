@@ -20,7 +20,7 @@ parameters:
       field: inputs
       subfield: image
   masking_prompt:
-    type: str
+    type: string
     label: masking prompt
     description: Textual description of the region to inpaint.
     tip: |-
@@ -31,7 +31,7 @@ parameters:
       field: inputs
       subfield: prompt
   inpainting_prompt:
-    type: str
+    type: string
     label: inpainting prompt
     description: |-
       Prompt to inpaint the region selected by the masking prompt with what you want to generate.
@@ -41,7 +41,7 @@ parameters:
       field: inputs
       subfield: text
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     tip: |-
@@ -54,7 +54,7 @@ parameters:
       field: inputs
       subfield: seed
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-

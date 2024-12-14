@@ -28,7 +28,7 @@ parameters:
       field: inputs
       subfield: image
   resolution:
-    type: int
+    type: integer
     label: Processing resolution
     description: |-
       Higher resolutions usually leads to better quality output videos. 896 is a good default, 640 can be used to do a quick test, >1024 is for best quality but very slow
@@ -44,7 +44,7 @@ parameters:
       field: inputs
       subfield: value
   frame_cap:
-    type: int
+    type: integer
     label: Number of frames
     description: |-
       Max number of video frames to process (the output video duration will be n_frames / 8 seconds, so eg 24 will result in 3s).
@@ -73,7 +73,7 @@ parameters:
       field: inputs
       subfield: value
   diffusion_framerate:
-    type: int
+    type: integer
     label: Diffusion Framerate
     description: |-
       The framerate at which frames are extracted from the source video and processed by the model.
@@ -88,7 +88,7 @@ parameters:
       field: inputs
       subfield: value
   closed_loop:
-    type: bool
+    type: boolean
     label: Closed Loop Animation
     description: |-
       Whether or not to create a seamlessly looping animation where end frame is identical to starting frame.
@@ -100,7 +100,7 @@ parameters:
       field: inputs
       subfield: closed_loop
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set to a random value.
     tip: |-

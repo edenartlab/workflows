@@ -11,7 +11,7 @@ status: prod
 comfyui_output_node_id: 329
 parameters:
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Describe the video you want to generate.
     tip: Use the same tips / prompt guidelines as for the txt2img tool.
@@ -21,7 +21,7 @@ parameters:
       field: inputs
       subfield: text
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     default: 1024
@@ -33,7 +33,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     default: 1024
@@ -45,7 +45,7 @@ parameters:
       field: inputs
       subfield: height
   n_frames:
-    type: int
+    type: integer
     label: Number of frames
     description: |-
       Number of video frames to generate. The final video length will be n_frames / 12 seconds long.
@@ -58,7 +58,7 @@ parameters:
       field: inputs
       subfield: batch_size
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     default: random
@@ -81,7 +81,7 @@ parameters:
       field: inputs
       subfield: float_val
   closed_loop:
-    type: bool
+    type: boolean
     label: Closed Loop Animation
     description: |-
       Whether or not to create a seamlessly looping animation where end frame is identical to starting frame.

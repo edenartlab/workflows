@@ -22,7 +22,7 @@ parameters:
       field: inputs
       subfield: image
   masking_prompt:
-    type: str
+    type: string
     label: Region prompt
     description: |-
       Description (just one or a few words) of what object / region you want to replace / inpaint.
@@ -34,7 +34,7 @@ parameters:
       field: inputs
       subfield: value
   inpainting_prompt:
-    type: str
+    type: string
     label: Inpainting prompt
     description: |-
       A prompt describing what you want to replace the masked region with. No need to describe the entire scene, just the object or region you want to generate.
@@ -44,7 +44,7 @@ parameters:
       field: inputs
       subfield: value
   resolution:
-    type: int
+    type: integer
     label: Resolution
     description: The resolution at which the inpainted region is generated.
     tip: Can be adjusted to somewhat match the input resolution of the given image.
@@ -81,7 +81,7 @@ parameters:
       field: inputs
       subfield: strength
   mask_expand:
-    type: int
+    type: integer
     label: Expand the inpainting mask slightly
     description: Make the inpainting region slightly larger to make the results more realistic
     tip: |-
@@ -94,7 +94,7 @@ parameters:
       field: inputs
       subfield: expand
   mask_blur:
-    type: int
+    type: integer
     label: Blur the inpainting mask at the edges
     description: |-
       Making the inpainting region blurry at the edges can make the results slightly better
@@ -108,7 +108,7 @@ parameters:
       field: inputs
       subfield: amount
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     tip: |-
@@ -121,7 +121,7 @@ parameters:
       field: inputs
       subfield: seed
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-

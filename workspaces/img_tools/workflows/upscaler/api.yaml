@@ -18,7 +18,7 @@ parameters:
       field: inputs
       subfield: image
   longest_side:
-    type: int
+    type: integer
     label: Longest Side
     description: Pixel resolution of the longest side of the original image
     tip: |-
@@ -60,7 +60,7 @@ parameters:
       field: inputs
       subfield: strength
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     tip: |-
@@ -73,7 +73,7 @@ parameters:
       field: inputs
       subfield: noise_seed
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Text prompt
     default: masterpiece, best quality, highres, 4k, sharp details
@@ -82,7 +82,7 @@ parameters:
       field: inputs
       subfield: text
   negative_prompt:
-    type: str
+    type: string
     label: Negative prompt
     description: Negative text prompt, what you do *not* want to generate
     default: (worst quality, low quality, blurry, normal quality:1.25)
@@ -91,7 +91,7 @@ parameters:
       field: inputs
       subfield: text
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-

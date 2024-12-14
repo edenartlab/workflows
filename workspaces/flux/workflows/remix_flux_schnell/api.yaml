@@ -21,7 +21,7 @@ parameters:
       field: inputs
       subfield: image
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-
@@ -46,7 +46,7 @@ parameters:
       field: inputs
       subfield: number
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     required: true
@@ -59,7 +59,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     required: true
@@ -72,7 +72,7 @@ parameters:
       field: inputs
       subfield: height
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set to a random value.
     tip: |-
@@ -85,7 +85,7 @@ parameters:
       field: inputs
       subfield: seed
   use_advanced:
-    type: bool
+    type: boolean
     label: Show Advanced Parameteres
     description: Display advanced parameters for web users
     tip: |-
@@ -96,7 +96,7 @@ parameters:
       field: inputs
       subfield: value
   prompt:
-    type: str
+    type: string
     label: Inject details (optional)
     description: Describe additional details you'd like to see in the image
     tip: |-
@@ -108,7 +108,7 @@ parameters:
       field: inputs
       subfield: body
   caption_settings:
-    type: str
+    type: string
     label: Caption Setting
     description: |-
       Choose a method for captioning the input image. More detailed prompts will lead to remixes that maintain more details of the input image. Setting to none will not caption the input image at all.

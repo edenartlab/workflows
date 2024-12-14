@@ -21,7 +21,7 @@ parameters:
       field: inputs
       subfield: video
   negative_prompt:
-    type: str
+    type: string
     label: Negative prompt
     description: |-
       Negative text prompt, what you do *not* want to generate (you can usually leave this at default)
@@ -67,7 +67,7 @@ parameters:
       field: inputs
       subfield: max_source_sampling_fps
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     default: 1536
@@ -79,7 +79,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     default: 1536

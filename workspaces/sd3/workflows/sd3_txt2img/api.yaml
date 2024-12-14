@@ -10,7 +10,7 @@ base_model: sd3
 comfyui_output_node_id: 9
 parameters:
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-
@@ -20,7 +20,7 @@ parameters:
     minimum: 1
     maximum: 4
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Prompt to describe what you want to generate.
     required: true
@@ -29,7 +29,7 @@ parameters:
       field: inputs
       subfield: text
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     tip: |-
@@ -44,7 +44,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     tip: Use the description for width to understand how to use height well.
@@ -58,7 +58,7 @@ parameters:
       field: inputs
       subfield: height
   seed:
-    type: int
+    type: integer
     label: Seed
     description: |-
       Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.

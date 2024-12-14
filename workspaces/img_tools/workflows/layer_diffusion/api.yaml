@@ -11,7 +11,7 @@ status: prod
 comfyui_output_node_id: 30
 parameters:
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Describe an image with transparency
     required: true
@@ -20,7 +20,7 @@ parameters:
       field: inputs
       subfield: text
   negative:
-    type: str
+    type: string
     label: Negative prompt
     description: |-
       Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
@@ -29,7 +29,7 @@ parameters:
       field: inputs
       subfield: text
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     default: 1024
@@ -41,7 +41,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     default: 1024
@@ -53,7 +53,7 @@ parameters:
       field: inputs
       subfield: height
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     tip: |-
@@ -95,7 +95,7 @@ parameters:
       field: inputs
       subfield: cfg
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-

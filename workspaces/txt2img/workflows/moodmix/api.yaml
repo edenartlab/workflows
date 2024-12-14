@@ -63,7 +63,7 @@ parameters:
       field: inputs
       subfield: strength_model, strength_clip
   prompt:
-    type: str
+    type: string
     label: prompt
     description: Describe the image you want to generate.
     tip: |-
@@ -75,7 +75,7 @@ parameters:
       field: inputs
       subfield: text
   negative_prompt:
-    type: str
+    type: string
     label: negative prompt
     description: |-
       Negative text prompt, what you do *not* want to see in the image. Only add keywords here if you really want to make sure they do not show up in the generation.
@@ -84,7 +84,7 @@ parameters:
       field: inputs
       subfield: text
   num_samples:
-    type: int
+    type: integer
     label: Number of Images
     description: |-
       Number of images to generate (each one will use a random combination of the style images from the moodboard) (almost always, num_samples is 4 or 6)
@@ -95,7 +95,7 @@ parameters:
       field: inputs
       subfield: num_samples
   n_style_images:
-    type: int
+    type: integer
     label: Number of Style Images
     description: |-
       Number of style images that will be used per generation (this determines how many different visual elements are injected into each output img), (typical values are 1,2,3) (higher values tend to make outputs more homogeneous due to averaging all the style components)
@@ -105,7 +105,7 @@ parameters:
       field: inputs
       subfield: num_style_components
   width:
-    type: int
+    type: integer
     label: Width
     description: Width of the generated images in n_pixels (always a multiple of 64)
     required: true
@@ -118,7 +118,7 @@ parameters:
       field: inputs
       subfield: value
   height:
-    type: int
+    type: integer
     label: Height
     required: true
     description: Height of the  generated images in n_pixels (always a multiple of 64)

@@ -14,7 +14,7 @@ parameters:
   character_prompts:
     type: array
     items:
-      type: str
+      type: string
     label: Character Descriptions
     description: |-
       Format is an array of strings, each of which is formatted like "[Name] visual description", with name always in the beginning and in brackets.
@@ -30,7 +30,7 @@ parameters:
   scene_prompts:
     type: array
     items:
-      type: str
+      type: string
     label: Scene Descriptions
     description: |-
       Format is an array of strings, each of which is formatted as "[Name] scene description", where [Name] is one of the charactgers defined in the character_prompts.
@@ -44,7 +44,7 @@ parameters:
       subfield: scene_prompts
       preprocessing: concat
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     default: 1024
@@ -56,7 +56,7 @@ parameters:
       field: inputs
       subfield: img_width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     default: 1024
@@ -68,7 +68,7 @@ parameters:
       field: inputs
       subfield: img_height
   style:
-    type: str
+    type: string
     label: style modifier
     description: Adds a strong style modifier to each prompt
     tip: |-
@@ -80,7 +80,7 @@ parameters:
       field: inputs
       subfield: img_style
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     tip: |-

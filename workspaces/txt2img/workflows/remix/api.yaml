@@ -19,7 +19,7 @@ parameters:
       field: inputs
       subfield: image
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-
@@ -29,7 +29,7 @@ parameters:
     minimum: 1
     maximum: 4
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     default: 1024
@@ -41,7 +41,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     default: 1024
@@ -66,7 +66,7 @@ parameters:
       field: inputs
       subfield: weight
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set randomly.
     tip: |-

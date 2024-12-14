@@ -12,7 +12,7 @@ base_model: flux-dev
 comfyui_output_node_id: 206
 parameters:
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Describe an image
     tip: |-
@@ -24,7 +24,7 @@ parameters:
       field: inputs
       subfield: value
   use_init_image:
-    type: bool
+    type: boolean
     label: Use starting image
     description: Enable image-to-image, and controlnet guidance features
     tip: |-
@@ -46,7 +46,7 @@ parameters:
       field: inputs
       subfield: image
   size_from_input:
-    type: bool
+    type: boolean
     label: Use starting image size
     description: |-
       Override the width and height parameters with the actual resolution of your starting image.
@@ -73,7 +73,7 @@ parameters:
       field: inputs
       subfield: value
   use_lora:
-    type: bool
+    type: boolean
     label: Use LoRA
     description: Apply LoRA finetune model style to image generation
     tip: |-
@@ -107,7 +107,7 @@ parameters:
       field: inputs
       subfield: value
   use_style_lora:
-    type: bool
+    type: boolean
     label: Use Style LoRA
     description: |-
       Style LoRAs are handpicked third party flux loras trained by the opensource AI community
@@ -119,7 +119,7 @@ parameters:
       field: inputs
       subfield: value
   style_lora:
-    type: str
+    type: string
     label: Style LoRA
     description: Use a LoRA finetune on top of the base model.
     visible_if: use_style_lora=true
@@ -144,7 +144,7 @@ parameters:
       field: inputs
       subfield: value
   use_controlnet:
-    type: bool
+    type: boolean
     label: Use controlnet
     description: |-
       Apply Controlnet guidance to the image generation (using the starting image as shape guidance).
@@ -155,7 +155,7 @@ parameters:
       field: inputs
       subfield: value
   preprocessor:
-    type: str
+    type: string
     label: Controlnet preprocessor
     description: |-
       the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
@@ -184,7 +184,7 @@ parameters:
       field: inputs
       subfield: value
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     default: 1024
@@ -197,7 +197,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     default: 1024
@@ -210,7 +210,7 @@ parameters:
       field: inputs
       subfield: height
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set to a random value.
     tip: |-
@@ -223,7 +223,7 @@ parameters:
       field: inputs
       subfield: seed
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-

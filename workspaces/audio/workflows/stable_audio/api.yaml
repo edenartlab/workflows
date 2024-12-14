@@ -10,7 +10,7 @@ status: prod
 comfyui_output_node_id: 13
 parameters:
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Describe the music or sound effect to make
     tip: |-
@@ -21,7 +21,7 @@ parameters:
       field: inputs
       subfield: text
   negative:
-    type: str
+    type: string
     label: Negative prompt
     description: |-
       Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
@@ -42,7 +42,7 @@ parameters:
       field: inputs
       subfield: seconds
   seed:
-    type: int
+    type: integer
     label: Seed
     description: |-
       Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
@@ -56,7 +56,7 @@ parameters:
       field: inputs
       subfield: seed
   steps:
-    type: int
+    type: integer
     label: Steps
     description: Length of diffusion steps
     tip: |-
@@ -83,7 +83,7 @@ parameters:
       field: inputs
       subfield: cfg
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of generated sounds
     default: 1

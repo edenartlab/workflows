@@ -29,20 +29,22 @@ parameters:
       subfield: folder
       preprocessing: folder
   n_frames:
-    type: int
+    type: integer
     label: Frames
     description: |-
       Number of video frames to generate (8 frames = 1 second of video, although the final video will be interpolated to always be 24 fps)
-    default: 64
+    # required: true
     minimum: 16
     maximum: 192
+    default: 24
+    hide_from_agent: true
     step: 1
     comfyui:
       node_id: 510
       field: inputs
       subfield: value
   n_steps:
-    type: int
+    type: integer
     label: Sampling steps
     description: |-
       Number of LCM diffusion steps. Lower is cheaper / faster (for experimenting with settings), higher can sometimes yield slightly better quality.
@@ -55,7 +57,7 @@ parameters:
       field: inputs
       subfield: value
   width:
-    type: int
+    type: integer
     label: Width
     description: |-
       Width of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
@@ -68,7 +70,7 @@ parameters:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: |-
       Height of the video diffusion in number of pixels. High values often create artefacts like multiple faces etc.
@@ -81,7 +83,7 @@ parameters:
       field: inputs
       subfield: height
   upscale:
-    type: bool
+    type: boolean
     label: Activate upscale
     description: |-
       Do an upscale pass at the end, increasing the output resolution of the animation to 1024. (Suggested to leave this off for cheaper and faster testing until you hit a sweet spot!)
@@ -93,7 +95,7 @@ parameters:
       field: inputs
       subfield: value
   use_controlnet1:
-    type: bool
+    type: boolean
     label: Use controlnet
     description: Apply Controlnet shape guidance.
     tip: |-
@@ -104,7 +106,9 @@ parameters:
       field: inputs
       subfield: value
   control_input:
-    type: image|video
+    anyOf:
+      - type: image
+      - type: video
     label: Guidance input
     description: |-
       A guidance image/GIF/video used as input to the controlnet. Will guide the shape of the output video.
@@ -114,7 +118,7 @@ parameters:
       field: inputs
       subfield: path
   preprocessor1:
-    type: str
+    type: string
     label: Controlnet1 preprocessor
     description: |-
       Type of controlnet preprocessor. Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
@@ -123,7 +127,7 @@ parameters:
     visible_if: use_controlnet1=true
     default: CannyEdgePreprocessor
     choices: [CannyEdgePreprocessor, DepthAnythingV2Preprocessor, AnyLineArtPreprocessor_aux, DensePosePreprocessor, Scribble_XDoG_Preprocessor, none]
-    choices_labels: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR-code, dark/bright patterns)]
+    choices_labels: [Edges (Canny), Depth, Lineart, human pose, Scribble lines, Luminance (QR-code, Dark/bright patterns)]
     comfyui:
       node_id: 406
       field: inputs
@@ -156,7 +160,7 @@ parameters:
       field: inputs
       subfield: strength
   control_input_fit_strategy:
-    type: str
+    type: string
     label: Fit strategy
     description: |-
       Determines how your guidance input is resized to the target width/height of the generation
@@ -170,7 +174,7 @@ parameters:
       field: inputs
       subfield: method
   mapping_mode:
-    type: str
+    type: string
     label: Content Mapping Mode
     description: Mapping mode that controls how the style images will get mapped into the video
     choices: [concentric_circles_inwards, concentric_circles_outwards, concentric_rectangles_inwards, concentric_rectangles_outwards, rotating_segments_clockwise, rotating_segments_counter_clockwise, pushing_segments_clockwise, pushing_segments_counter_clockwise, vertical_stripes_left, vertical_stripes_right, horizontal_stripes_up, horizontal_stripes_down]
@@ -195,7 +199,7 @@ parameters:
       field: inputs
       subfield: float_val
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set to a random value.
     tip: |-
@@ -203,6 +207,7 @@ parameters:
     default: random
     minimum: 0
     maximum: 2147483647
+    default: random
     comfyui:
       node_id: 282
       field: inputs

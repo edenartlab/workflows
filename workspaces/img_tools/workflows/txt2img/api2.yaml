@@ -9,7 +9,7 @@ comfyui_intermediate_outputs:
   node_id: 323
 properties:
   prompt:
-    type: str
+    type: string
     label: Prompt
     description: Text prompt
     tip: "Prompts are specific, detailed, concise, and visually descriptive, avoiding unnecessary verbosity and abstract, generic terms. They usually have \u25CF Primary subject (i.e., person, character, animal, object, ...), e.g \"Renaissance noblewoman\", \"alien starship\". Should appear early in prompt. \u25CF Action of the subject, e.g. \"holding an ancient book\", \"orbiting a distant planet\", if there is no main subject, a good context description will do here (what is going on in the scene?). They sometimes have several stylistic modifiers near the end of the prompt, such as \u25CF Background, environment or context surrounding the subject, e.g. \"in a dimly lit Gothic castle\", \"in a futuristic 22nd century space station\". \u25CF Secondary items that enhance the subject or story. e.g. \"wearing an intricate lace collar\", \"standing next to a large, ancient tree\". \u25CF Color schemes, e.g. \"shades of deep red and gold\", \"monochrome palette with stark contrasts\", \"monochrome\", ... \u25CF Style or method of rendering, e.g. \"reminiscent of Vermeer's lighting techniques\", \"film noir\", \"cubism\", ... \u25CF Mood or atmospheric quality e.g. \"atmosphere of mystery\", \"serene mood\". \u25CF Lighting conditions e.g. \"bathed in soft, natural window light\", \"dramatic shadows under a spotlight\". \u25CF Perspective or or viewpoint, e.g. \"bird's eye view\", \"from a low angle\", \"fisheye\", .. \u25CF Textures or materials, e.g. \"textures of rich velvet and rough stone\". \u25CF Time Period, e.g. \"Victorian Era\", \"futuristic 22nd century\". \u25CF Cultural elements, e.g. \"inspired by Norse mythology\", \"traditional Japanese setting\". \u25CF Artistic medium, e.g. \"watercolor painting\", \"crisp digital Unreal Engine rendering\", \"8K UHD professional photo\", \"cartoon drawing\", ... They often end with trigger words that improve images in a general way, e.g. \"High Resolution\", \"HD\", \"sharp details\", \"masterpiece\", \"stunning composition\", ... If the prompt contains a request to render text, enclose the text in quotes, e.g. A Sign with the text \u201CPeace\u201D. IMPORTANT, If the user gives you a short, general, or visually vague prompt, you should augment their prompt by imagining richer details, following the tips above. If a user gives a long, detailed, or well-thought out composition, or requests to have their prompt strictly adhered to without revisions or embellishment, you should adhere to or repeat their exact prompt. The goal is to be authentic to the user's request, but to help them get better results when they are new, unsure, or lazy."
@@ -19,7 +19,7 @@ properties:
       field: inputs
       subfield: body
   n_samples:
-    type: int
+    type: integer
     label: Number of samples
     description: Number of samples to generate
     tip: |-
@@ -29,7 +29,7 @@ properties:
     minimum: 1
     maximum: 4
   use_init_image:
-    type: bool
+    type: boolean
     label: Use starting image
     description: Enable image-to-image, and controlnet guidance features
     tip: |-
@@ -40,7 +40,7 @@ properties:
       field: inputs
       subfield: value
   init_image:
-    type: str
+    type: string
     label: Starting image
     description: Initial image from which to start diffusion process
     visible_if: use_init_image=true
@@ -49,7 +49,7 @@ properties:
       field: inputs
       subfield: image
   size_from_input:
-    type: bool
+    type: boolean
     label: Use starting image size
     description: |-
       Override the width and height parameters with the actual resolution of your starting image.
@@ -62,7 +62,7 @@ properties:
       field: inputs
       subfield: value
   enforce_SDXL_resolution:
-    type: bool
+    type: boolean
     label: Use optimized resolution
     description: Round to the nearest optimized SDXL resolution.
     tip: |-
@@ -88,7 +88,7 @@ properties:
       field: inputs
       subfield: value
   use_lora:
-    type: bool
+    type: boolean
     label: Use LoRA
     description: Apply LoRA finetune model style to image generation
     tip: |-
@@ -99,7 +99,7 @@ properties:
       field: inputs
       subfield: value
   lora:
-    type: str
+    type: string
     label: LoRA
     description: Use a LoRA finetune on top of the base model.
     visible_if: use_lora=true
@@ -136,7 +136,7 @@ properties:
       field: inputs
       subfield: value
   lora_prompt:
-    type: str
+    type: string
     label: LoRA prompt
     description: textual embedding token, invoked to trigger the LoRA
     visible_if: use_lora=true
@@ -145,7 +145,7 @@ properties:
       field: inputs
       subfield: value
   use_controlnet:
-    type: bool
+    type: boolean
     label: Use controlnet
     description: Apply Controlnet guidance to the image generation.
     tip: |-
@@ -156,7 +156,7 @@ properties:
       field: inputs
       subfield: a
   preprocessor:
-    type: str
+    type: string
     label: Controlnet preprocessor
     description: |-
       the preprocessor you choose will prepare your input image to guide your diffusion towards that shape
@@ -192,7 +192,7 @@ properties:
       field: inputs
       subfield: value
   use_ipadapter:
-    type: bool
+    type: boolean
     label: Use style image
     description: Transfer style from image
     tip: |-
@@ -203,7 +203,7 @@ properties:
       field: inputs
       subfield: value
   style_image:
-    type: str
+    type: string
     label: Style image
     description: |-
       Image of an aesthetic style, texture or visual content transferred to the generated image creation
@@ -227,7 +227,7 @@ properties:
       field: inputs
       subfield: value
   ipadapter_mode:
-    type: str
+    type: string
     label: Ipadapter style transfer mode
     description: |-
       Allows for different types of style transfer using ipadapter, each with different characteristics and more or less content blending.
@@ -246,7 +246,7 @@ properties:
       field: inputs
       subfield: weight_type
   width:
-    type: int
+    type: integer
     label: Width
     description: Width in pixels
     tip: |-
@@ -261,7 +261,7 @@ properties:
       field: inputs
       subfield: width
   height:
-    type: int
+    type: integer
     label: Height
     description: Height in pixels
     tip: Use the description for width to understand how to use height well.
@@ -275,7 +275,7 @@ properties:
       field: inputs
       subfield: height
   negative_prompt:
-    type: str
+    type: string
     label: Negative prompt
     description: Negative text prompt, what you do *not* want to generate.
     tip: |-
@@ -286,7 +286,7 @@ properties:
       field: inputs
       subfield: value
   seed:
-    type: int
+    type: integer
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set to a random value.
     tip: |-
@@ -299,7 +299,7 @@ properties:
       field: inputs
       subfield: seed
   steps:
-    type: int
+    type: integer
     label: Steps
     description: Set the number of diffusion steps
     tip: |-

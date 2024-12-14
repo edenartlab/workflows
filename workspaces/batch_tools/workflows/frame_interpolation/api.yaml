@@ -29,7 +29,7 @@ parameters:
       subfield: path
       preprocessing: folder
   interpolation_frames:
-    type: int
+    type: integer
     label: Interpolation Frames
     description: |-
       interpolation frames is a multiplier of the original frame counter created between every provided frame of an image sequence or movie. A value of 2 will double the frames, effectively creating a half speed version. A value of 29 will stretch each frame to a full second per provided frame if the Framerate parameter is set to 30 FPS. A value of 1 will not create any interpolation frames; If Skip Frame Interval is set 1, this would effectively create a double speed video from a movie input.
@@ -44,7 +44,7 @@ parameters:
       field: inputs
       subfield: number
   FPS:
-    type: int
+    type: integer
     label: Output Video Framerate
     description: target output video framerate
     tip: |-
@@ -57,7 +57,7 @@ parameters:
       field: inputs
       subfield: value
   loop:
-    type: bool
+    type: boolean
     label: Loop First Frame
     description: Make the animation a seamless loop by interpolating back to the first frame
     tip: |-
@@ -68,7 +68,7 @@ parameters:
       field: inputs
       subfield: loop_first_frame
   pingpong:
-    type: bool
+    type: boolean
     label: Forward-Reverse Loop
     description: |-
       Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
@@ -80,7 +80,7 @@ parameters:
       field: inputs
       subfield: value
   use_advanced:
-    type: bool
+    type: boolean
     label: Show Advanced Parameters
     description: |-
       This toggle reveals advanced parameters to web front end users, and has no effect on the output.
@@ -90,7 +90,7 @@ parameters:
       field: inputs
       subfield: value
   sort:
-    type: str
+    type: string
     label: Sort Method
     description: |-
       Choose a method for sorting a sequence of input images. The visual_path method applies a traveling salesman solver to sort the images by their nearest visual proximity to each other
@@ -104,7 +104,7 @@ parameters:
       field: inputs
       subfield: sort
   reverse_order:
-    type: bool
+    type: boolean
     label: Reverse Order
     description: This toggle reverses the list order of image sequences.
     tip: |-
@@ -116,7 +116,7 @@ parameters:
       field: inputs
       subfield: reverse_order
   use_input_video_fps:
-    type: bool
+    type: boolean
     label: Retain Video FPS
     description: This toggle preserves the original FPS of an input video.
     tip: |-
@@ -128,7 +128,7 @@ parameters:
       field: inputs
       subfield: value
   image_load_cap:
-    type: int
+    type: integer
     label: Image Count Cap
     description: |-
       Limit the maximum number of images processed from a video or image sequence. A 0 value has no limit
@@ -145,7 +145,7 @@ parameters:
       field: inputs
       subfield: image_load_cap
   start_index:
-    type: int
+    type: integer
     label: Start Frame Index
     description: |-
       This parameter determines the first frame from a batch, skipping all of the frames that came before it.
@@ -162,7 +162,7 @@ parameters:
       field: inputs
       subfield: skip_n
   skip_n:
-    type: int
+    type: integer
     label: Image Skip Interval
     description: |-
       This parameter determines the number of images to skip from a sequence or video; setting the value to 1 would ignore every other frame.
@@ -179,7 +179,7 @@ parameters:
       field: inputs
       subfield: skip_n
   model:
-    type: str
+    type: string
     label: Interpolation Method
     description: |-
       Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
