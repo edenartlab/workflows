@@ -120,7 +120,7 @@ def convert_yaml(input_file, output_file, copy_tests=False):
         if value is not None:
             new_data[key] = value
         if 'base_model' in key:
-            assert value in ['sd15', 'sdxl', 'sd3', 'sd35', 'flux-dev', 'flux-schnell', 'hellomeme', 'stable-audio-open', 'inspyrenet-rembg', 'mochi-preview'], f"base_model must be one of ['sd15', 'sdxl', 'sd3', 'flux-dev', 'flux-schnell', 'hellomeme'], got {value} for {key}, workflow: {data['name']}"
+            assert value in ['librosa', 'sd15', 'sdxl', 'sd3', 'sd35', 'flux-dev', 'flux-schnell', 'hellomeme', 'mmaudio', 'stable-audio-open', 'inspyrenet-rembg', 'mochi-preview'], f"base_model must be one of ['sd15', 'sdxl', 'sd3', 'flux-dev', 'flux-schnell', 'hellomeme'], got {value} for {key}, workflow: {data['name']}"
         if 'status' in key:
             assert value in ['inactive', 'stage', 'prod'], f"status must be one of ['inactive', 'stage', 'prod'], got {value} for {key}, workflow: {data['name']}"
         if 'output_type' in key:
@@ -153,11 +153,11 @@ def convert_yaml(input_file, output_file, copy_tests=False):
 
 # Usage
 
-input_file = "workspaces/img_tools/workflows/txt2img/api.yaml"
-output_file = "workspaces/img_tools/workflows/txt2img/api2.yaml"
+# input_file = "workspaces/img_tools/workflows/txt2img/api.yaml"
+# output_file = "workspaces/img_tools/workflows/txt2img/api2.yaml"
 
 
-convert_yaml(input_file, output_file, copy_tests=False)
+# convert_yaml(input_file, output_file, copy_tests=False)
 
 
 
@@ -197,7 +197,7 @@ param_keys = []
 def find_api_yaml_files(start_path="../workflows"):
     for root, dirs, files in os.walk(start_path):
         if "api.yaml" in files:
-            root2 = root.replace("../workflows", "../workflows2")
+            root2 = root.replace("../workflows0", "../workflows")
             input_file = root + "/api.yaml"
             output_file = root2 + "/api.yaml"
             # print(input_file, output_file)
@@ -215,11 +215,11 @@ def find_api_yaml_files(start_path="../workflows"):
 
 find_api_yaml_files()
 
-all_unique_keys = set(all_keys)
-print("----")
-print(all_unique_keys)
+# all_unique_keys = set(all_keys)
+# print("----")
+# print(all_unique_keys)
 
-all_unique_param_keys = set(param_keys)
-print("----")
-print(all_unique_param_keys)
+# all_unique_param_keys = set(param_keys)
+# print("----")
+# print(all_unique_param_keys)
 
