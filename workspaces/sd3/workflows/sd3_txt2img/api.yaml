@@ -1,71 +1,77 @@
 name: Create an image (SD3.5)
 description: Generate an image with SD3.5 Large
-tip: This model uses SD3.5 Large, which is a more powerful and detailed model than SD3.5 Base. It is capable of generating more detailed and intricate images, but also requires more computational resources to run. The outputs are comparable to those of FLUX, but often more creative and weird. SD3 models are good at text generation, and when compared to FLUX, better at style adherance, NSFW, and has a good knowledge of celebrities and artists. Stable Diffusion 3+ models are trained on a dataset of images approximately 1 megapixel in size, and the provided resolutions list is the set of legal resolutions for this model, and should always be used unless a user requests a specific resolution. If an aspect ratio is specifically requested, always aim for dimensions that total approximately 1 megapixel and round to numbers that are divisible by 8.
-output_type: image
-base_model: sd35
-resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
+tip: |-
+  This model uses SD3.5 Large, which is a more powerful and detailed model than SD3.5 Base. It is capable of generating more detailed and intricate images, but also requires more computational resources to run. The outputs are comparable to those of FLUX, but often more creative and weird. SD3 models are good at text generation, and when compared to FLUX, better at style adherance, NSFW, and has a good knowledge of celebrities and artists. Stable Diffusion 3+ models are trained on a dataset of images approximately 1 megapixel in size, and the provided resolutions list is the set of legal resolutions for this model, and should always be used unless a user requests a specific resolution. If an aspect ratio is specifically requested, always aim for dimensions that total approximately 1 megapixel and round to numbers that are divisible by 8.
 cost_estimate: 2 * n_samples
+output_type: image
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 handler: comfyui
 status: prod
 visible: false
+base_model: sd35
 comfyui_output_node_id: 9
 parameters:
-- name: n_samples
-  label: Number of samples
-  description: Number of samples to generate
-  tip: This is the number of samples to generate for the prompt. If you get a request for n_samples larger than 1, you're still using a single prompt for the whole set.
-  type: int
-  required: true
-  default: 1
-  minimum: 1
-  maximum: 4
-- name: prompt
-  label: Prompt
-  description: Prompt to describe what you want to generate.
-  tip: similarly to FLUX, SD3 uses a T5 text encoder in addition to CLIP, which allows for more conversational human-like natural language prompting. Create great T5 text encoder prompts by specifying the subject, style, composition, lighting, color palette, mood/atmosphere, technical details, and additional elements to guide the generation of detailed and cohesive visual descriptions.
-  type: string
-  required: true
-  comfyui: 
-    node_id: 16
-    field: inputs
-    subfield: text
-- name: width
-  label: Width
-  description: Width in pixels
-  tip: Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
-  type: int
-  required: true
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  step: 32
-  comfyui: 
-    node_id: 53
-    field: inputs
-    subfield: width
-- name: height
-  label: Height
-  description: Height in pixels
-  tip: Use the description for width to understand how to use height well.
-  type: int
-  required: true
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  step: 32
-  comfyui: 
-    node_id: 53
-    field: inputs
-    subfield: height
-- name: seed
-  label: Seed
-  description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
-  tip: You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank! 
-  type: int
-  default: random
-  minimum: 0
-  maximum: 2147483647
-  comfyui: 
-    node_id: 3
-    field: inputs
-    subfield: seed
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      This is the number of samples to generate for the prompt. If you get a request for n_samples larger than 1, you're still using a single prompt for the whole set.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  prompt:
+    type: string
+    label: Prompt
+    description: Prompt to describe what you want to generate.
+    tip: |-
+      similarly to FLUX, SD3 uses a T5 text encoder in addition to CLIP, which allows for more conversational human-like natural language prompting. Create great T5 text encoder prompts by specifying the subject, style, composition, lighting, color palette, mood/atmosphere, technical details, and additional elements to guide the generation of detailed and cohesive visual descriptions.
+    required: true
+    comfyui:
+      node_id: 16
+      field: inputs
+      subfield: text
+  width:
+    type: integer
+    label: Width
+    description: Width in pixels
+    tip: |-
+      Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
+    required: true
+    default: 1024
+    minimum: 256
+    maximum: 2048
+    step: 32
+    comfyui:
+      node_id: 53
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: Height in pixels
+    tip: Use the description for width to understand how to use height well.
+    required: true
+    default: 1024
+    minimum: 256
+    maximum: 2048
+    step: 32
+    comfyui:
+      node_id: 53
+      field: inputs
+      subfield: height
+  seed:
+    type: integer
+    label: Seed
+    description: |-
+      Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 3
+      field: inputs
+      subfield: seed

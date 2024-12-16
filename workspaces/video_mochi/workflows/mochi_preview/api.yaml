@@ -1,122 +1,116 @@
 name: Create a video from text (Mochi Preview)
 description: Creative, abstract text-driven animations using Mochi Preview model
+tip: |-
+  Use this to make short video snippets from text prompts using the Mochi Preview model. This model is relatively prompt adherant, but only makes very short 1-2 seconds long clips natively. This time factor can be extended by using frame interpolation to create a slow motion version of the video
 thumbnail: app/Mochi-preview.mp4
-tip: Use this to make short video snippets from text prompts using the Mochi Preview model. This model is relatively prompt adherant, but only makes very short 1-2 seconds long clips natively. This time factor can be extended by using frame interpolation to create a slow motion version of the video
-output_type: video
-status: stage
-base_model: mochi-preview
-visible: false
 cost_estimate: 3 * n_frames
+output_type: video
 resolutions: [16-9_848x40, 1-1_512x512, 9-16_480x848]
 handler: comfyui
+status: stage
+visible: false
+base_model: mochi-preview
 comfyui_output_node_id: 42
 parameters:
-- name: prompt
-  label: Prompt
-  description: Describe the video you want to generate.
-  tip: Use the same tips / prompt guidelines as for the txt2img tool.
-  type: string
-  required: true
-  comfyui: 
-    node_id: 6
-    field: inputs
-    subfield: text
-- name: negative_prompt
-  label: Negative prompt
-  description: Negative text prompt, what you do *not* want to generate.
-  tip: Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
-  type: string
-  default: 
-  comfyui: 
-    node_id: 7
-    field: inputs
-    subfield: text
-- name: width
-  label: Width
-  description: Width in pixels
-  type: int
-  default: 848
-  minimum: 512
-  maximum: 848
-  step: 8
-  comfyui: 
-    node_id: 21
-    field: inputs
-    subfield: width
-- name: height
-  label: Height
-  description: Height in pixels
-  type: int
-  default: 848
-  minimum: 512
-  maximum: 848
-  step: 64
-  comfyui: 
-    node_id: 21
-    field: inputs
-    subfield: height
-- name: n_frames
-  label: Number of frames
-  description: Number of video frames to generate. The final video length will be n_frames / 24 seconds long.
-  type: int
-  default: 49
-  minimum: 25
-  maximum: 49
-  step: 1
-  comfyui: 
-    node_id: 21
-    field: inputs
-    subfield: length
-- name: pingpong
-  label: Forward-Reverse Loop (pingpong)
-  description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
-  tip: This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 42
-    field: inputs
-    subfield: pingpong
-- name: upscale_video
-  label: Upscale Video
-  description: apply a 2x upscale pass to double the output size
-  tip: this parameter uses RealESRGAN_2xplus to double size of the resulting output video
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 50
-    field: inputs
-    subfield: value
-- name: slow_motion
-  label: Slow Motion
-  description: apply a half speed frame interpolation to double the length of the output video.
-  tip: this parameter uses RIFE to add an interpolation_frame, 
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 51
-    field: inputs
-    subfield: value
-- name: seed
-  label: Seed
-  description: Set random seed for reproducibility. If blank, will be set randomly.
-  type: int
-  default: random
-  minimum: 0
-  maximum: 2147483647
-  comfyui: 
-    node_id: 3
-    field: inputs
-    subfield: seed
-# - name: prompt_strength
-#   label: Prompt Strength
-#   description: How strong the prompt CFG affects the generated video
-#   tip: 
-#   type: float
-#   default: 4.5
-#   minimum: 4.5
-#   maximum: 7.5
-#   comfyui: 
-#     node_id: 3
-#     field: inputs
-#     subfield: cfg
+  prompt:
+    type: string
+    label: Prompt
+    description: Describe the video you want to generate.
+    tip: Use the same tips / prompt guidelines as for the txt2img tool.
+    required: true
+    comfyui:
+      node_id: 6
+      field: inputs
+      subfield: text
+  negative_prompt:
+    type: string
+    label: Negative prompt
+    description: Negative text prompt, what you do *not* want to generate.
+    tip: |-
+      Keep this at default or at most, add to this prompt, unless specifically instructed otherwise.
+    default: null
+    comfyui:
+      node_id: 7
+      field: inputs
+      subfield: text
+  width:
+    type: integer
+    label: Width
+    description: Width in pixels
+    default: 848
+    minimum: 512
+    maximum: 848
+    step: 8
+    comfyui:
+      node_id: 21
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: Height in pixels
+    default: 848
+    minimum: 512
+    maximum: 848
+    step: 64
+    comfyui:
+      node_id: 21
+      field: inputs
+      subfield: height
+  n_frames:
+    type: integer
+    label: Number of frames
+    description: |-
+      Number of video frames to generate. The final video length will be n_frames / 24 seconds long.
+    default: 49
+    minimum: 25
+    maximum: 49
+    step: 1
+    comfyui:
+      node_id: 21
+      field: inputs
+      subfield: length
+  pingpong:
+    type: boolean
+    label: Forward-Reverse Loop (pingpong)
+    description: |-
+      Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
+    tip: |-
+      This will force the last frame to be identical to the first and make a seamless loop. Unless specifically requested, this should be kept at False (default).
+    default: false
+    comfyui:
+      node_id: 42
+      field: inputs
+      subfield: pingpong
+  upscale_video:
+    type: boolean
+    label: Upscale Video
+    description: apply a 2x upscale pass to double the output size
+    tip: |-
+      this parameter uses RealESRGAN_2xplus to double size of the resulting output video
+    default: false
+    comfyui:
+      node_id: 50
+      field: inputs
+      subfield: value
+  slow_motion:
+    type: boolean
+    label: Slow Motion
+    description: apply a half speed frame interpolation to double the length of the output video.
+    tip: this parameter uses RIFE to add an interpolation_frame,
+    default: false
+    comfyui:
+      node_id: 51
+      field: inputs
+      subfield: value
+  seed:
+    type: integer
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set randomly.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 3
+      field: inputs
+      subfield: seed
