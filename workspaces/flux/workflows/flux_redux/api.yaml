@@ -1,6 +1,7 @@
 name: Remix Style Blend
 description: Blend or Remix Image(s) (using FLUX-redux).
-tip: Flux is a text to image model that excels at prompt coherence and text generation. The remux model uses clipvision to create a conditioning from an input image, creating image remix variations or a blend between multiple style images. This tool should be the default for a high quality remix of an image, or a to blende between two images with some degree of promptability. 
+tip: |-
+  Flux is a text to image model that excels at prompt coherence and text generation. The remux model uses clipvision to create a conditioning from an input image, creating image remix variations or a blend between multiple style images. This tool should be the default for a high quality remix of an image, or a to blende between two images with some degree of promptability.
 thumbnail: app/flux-redux_opt.mp4
 cost_estimate: 2.0 * n_samples
 output_type: image
@@ -10,121 +11,122 @@ status: stage
 base_model: flux-dev
 comfyui_output_node_id: 72
 parameters:
-- name: width
-  type: int
-  label: Width
-  description: Width in pixels
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  required: true
-  step: 8
-  comfyui:
-    node_id: 62
-    field: inputs
-    subfield: width
-- name: height
-  type: int
-  label: Height
-  description: Height in pixels
-  default: 1024
-  minimum: 256
-  maximum: 2048
-  required: true
-  step: 8
-  comfyui:
-    node_id: 62
-    field: inputs
-    subfield: height
-- name: n_samples
-  label: Number of samples
-  description: Number of samples to generate
-  tip: This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
-  type: int
-  required: true
-  default: 1
-  minimum: 1
-  maximum: 4
-- name: image
-  type: image
-  label: Style Image A
-  description: Input image to remix
-  required: true
-  comfyui:
-    node_id: 71
-    field: inputs
-    subfield: image
-- name: image_b
-  type: image
-  label: Style Image B (optional)
-  description: Optional second input image to blend with Image A
-  comfyui:
-    node_id: 68
-    field: inputs
-    subfield: image
-- name: style_image_blend
-  type: float
-  label: Style image A to B blend
-  description: Crossfade between style image influence to blend two images together.
-  tip: |-
-    This parameter crossfades conditioning influence between image A and image B. It is very sensitive, and it is recommended to leave it between .4 and .6 if you want to see influence from both images. If an optional image B is not provided, this parameter has no effect.
-  default: 0.5
-  minimum: 0.0
-  maximum: 1.0
-  step: 0.01
-  comfyui:
-    node_id: 60
-    field: inputs
-    subfield: value
-- name: prompt
-  type: string
-  label: Prompt (optional)
-  description: Describe additional details you'd like to see in the image
-  tip: |-
-    Flux loves very detailed and descriptive prompts so try to be elaborate. A prompt is not optional for remixing or blending images, but if you do want to influence a prompted creation with your style image, be sure to turn down the style_strength parameter to a very low amount for your prompt influence to come through
-  default: 
-  comfyui:
-    node_id: 81
-    field: inputs
-    subfield: body
-- name: prompt_strength
-  type: float
-  label: Prompt strength
-  description: Strength of the prompt image influence on the creation result.
-  tip: |-
-    This parameter is super sensative. If you want any influence on the creation result from your text prompt, the recommended values are between .8-.95. Because this parameter effects conditioning average between the text and the image, the prompt length and input size and content have a variable effect, so its good try a few values with a locked seed to dial this in. This parameter has no effect if no prompt is provided.
-  default: 0.92
-  minimum: 0.0
-  maximum: 1.0
-  step: 0.01
-  comfyui:
-    node_id: 60
-    field: inputs
-    subfield: value
-- name: flux_guidance
-  type: float
-  label: Prompt Conditioning
-  description: Strength of the prompt and image conditiong influence on the creation result.
-  tip: |-
-    This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a higher value of 3.5-4 may be desirable, and for realistic images closer to 2 is a good value. Higher values will more closely follow the input text and images.
-  default: 3.5
-  minimum: 1.0
-  maximum: 4.0
-  step: 0.01
-  comfyui:
-    node_id: 26
-    field: inputs
-    subfield: guidance
-- name: seed
-  type: int
-  label: Seed
-  description: Set random seed for reproducibility. If blank, will be set to a random value.
-  tip: |-
-    You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank!
-  default: random
-  minimum: 0
-  maximum: 2147483647
-  comfyui:
-    node_id: 25
-    field: inputs
-    subfield: noise_seed
+  width:
+    type: integer
+    label: Width
+    description: Width in pixels
+    default: 1024
+    minimum: 256
+    maximum: 2048
+    required: true
+    step: 8
+    comfyui:
+      node_id: 62
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: Height in pixels
+    default: 1024
+    minimum: 256
+    maximum: 2048
+    required: true
+    step: 8
+    comfyui:
+      node_id: 62
+      field: inputs
+      subfield: height
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      This is the number of tries to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  image:
+    type: image
+    label: Style Image A
+    description: Input image to remix
+    required: true
+    comfyui:
+      node_id: 71
+      field: inputs
+      subfield: image
+  image_b:
+    type: image
+    label: Style Image B (optional)
+    description: Optional second input image to blend with Image A
+    comfyui:
+      node_id: 68
+      field: inputs
+      subfield: image
+  style_image_blend:
+    type: float
+    label: Style image A to B blend
+    description: Crossfade between style image influence to blend two images together.
+    tip: |-
+      This parameter crossfades conditioning influence between image A and image B. It is very sensitive, and it is recommended to leave it between .4 and .6 if you want to see influence from both images. If an optional image B is not provided, this parameter has no effect.
+    default: 0.5
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 60
+      field: inputs
+      subfield: value
+  prompt:
+    type: string
+    label: Prompt (optional)
+    description: Describe additional details you'd like to see in the image
+    tip: |-
+      Flux loves very detailed and descriptive prompts so try to be elaborate. A prompt is not optional for remixing or blending images, but if you do want to influence a prompted creation with your style image, be sure to turn down the style_strength parameter to a very low amount for your prompt influence to come through
+    default: null
+    comfyui:
+      node_id: 81
+      field: inputs
+      subfield: body
+  prompt_strength:
+    type: float
+    label: Prompt strength
+    description: Strength of the prompt image influence on the creation result.
+    tip: |-
+      This parameter is super sensative. If you want any influence on the creation result from your text prompt, the recommended values are between .8-.95. Because this parameter effects conditioning average between the text and the image, the prompt length and input size and content have a variable effect, so its good try a few values with a locked seed to dial this in. This parameter has no effect if no prompt is provided.
+    default: 0.92
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 60
+      field: inputs
+      subfield: value
+  flux_guidance:
+    type: float
+    label: Prompt Conditioning
+    description: Strength of the prompt and image conditiong influence on the creation result.
+    tip: |-
+      This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a higher value of 3.5-4 may be desirable, and for realistic images closer to 2 is a good value. Higher values will more closely follow the input text and images.
+    default: 3.5
+    minimum: 1.0
+    maximum: 4.0
+    step: 0.01
+    comfyui:
+      node_id: 26
+      field: inputs
+      subfield: guidance
+  seed:
+    type: integer
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set to a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 25
+      field: inputs
+      subfield: noise_seed

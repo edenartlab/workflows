@@ -1,104 +1,114 @@
 name: Slow Motion Video
-description: Apply interpolation to add in-between frames to a video, creating a slow motion movie.
+description: |-
+  Apply interpolation to add in-between frames to a video, creating a slow motion movie.
+tip: |-
+  This workflow creates a slow motion movie, by adding interpolation frames to the input video with RIFE or FILM models. It is best used to slow down and smooth the resulting creations from other video tools, resulting in an output movie that is 2, 3 or 4 times slower then the original input video.
 thumbnail: app/slow-motion-video.mp4
-tip: This workflow creates a slow motion movie, by adding interpolation frames to the input video with RIFE or FILM models. It is best used to slow down and smooth the resulting creations from other video tools, resulting in an output movie that is 2, 3 or 4 times slower then the original input video.
-status: prod
+cost_estimate: 30
 output_type: video
+handler: comfyui
+status: prod
 visible: true
 base_model: sdxl
-cost_estimate: 30 #this is totally made up, and requres front-end variables to be provided for resolution, and number of frames, as well as a log scale cost multiplier if visual_path sorting is enabled, and a time multiplier if FILM is selected. This is a non trivial thing to calculate, but will have wild effects on actual run time and our cost if we can't figure this out.
-handler: comfyui
 comfyui_output_node_id: 15
 parameters:
-parameters:
-- name: video
-  label: Input video
-  description: Input video to slow down
-  type: video
-  required: true
-  comfyui: 
-    node_id: 207
-    field: inputs
-    subfield: video
-- name: interpolation_frames
-  label: Interpolation Factor
-  description: A multiplier of the original frame count of the input video.
-  tip: This is a multiplier for the total number of frames present in the input video. A value of 2 will result in an output video double the amount of frames for example. The default should be 2 if this tool is requested with the maximum of 8 being a very extreme slow down that might be used as an effect.
-  type: int
-  default: 2
-  minimum: 2
-  maximum: 8
-  required: true
-  comfyui: 
-    node_id: 129
-    field: inputs
-    subfield: number
-- name: FPS
-  label: Output Video Framerate
-  description: Output video framerate
-  tip: This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps (broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video plays, so this will affect the perceived speed of the output video!
-  type: int
-  default: 24
-  minimum: 1
-  maximum: 60
-  comfyui: 
-    node_id: 161
-    field: inputs
-    subfield: value
-- name: use_advanced
-  label: Show Advanced Parameters
-  description: This toggle reveals advanced parameters to web front end users, and has no effect on the output.
-  type: bool
-  default: false
-  comfyui: 
-    node_id: 192
-    field: inputs
-    subfield: value
-- name: pingpong
-  label: Forward-Reverse Loop (pingpong)
-  description: Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
-  tip: This will loop the video, making a ping-pong forward to reverse seamless loop by appending the reversed output video to the end of the generated output. This term is sometimes called bounce or pingpong in video editing vernacular; the video will play forwards and then reverse itself back to the beginning.
-  type: bool
-  visible_if: use_advanced=true
-  default: false
-  comfyui: 
-    node_id: 190
-    field: inputs
-    subfield: value
-- name: use_input_video_fps
-  label: Retain Video FPS
-  description: This toggle preserves the original FPS of an input video. 
-  tip: This is useful for creating slow motion videos that play back at the original framerate, if that framerate differs from the default FPS value of 24. For instance, European cinematic standards are 25fps, and if you'd like to keep your output video conformed to this framerate, this value could be true. This is an advanced parameter that should always be falsue unless otherwise specified.
-  type: bool
-  default: false
-  visible_if: use_advanced=true
-  comfyui: 
-    node_id: 160
-    field: inputs
-    subfield: value
-- name: image_load_cap
-  label: Image Count Cap
-  description: Limit the maximum number of images processed from a video or image sequence. A 0 value has no limit
-  tip: This parameter can be used to only grab n number of images from a sequence or video clip. If a user asks to only use the first 10 seconds of a video clip, this calculation could be done by assuming a frame rate of 30FPS and limiting the Image Count Cap to 300 frames. This is also useful when sorting, for example a batch of provided images capped to three and sorted by random will always pick 3 random images from a list.
-  type: int
-  hide_from_ui: true
-  hide_from_agent: true
-  default: 0
-  minimum: 0
-  maximum: 1800
-  visible_if: use_advanced=true
-  comfyui: 
-    node_id: 207
-    field: inputs
-    subfield: frame_load_cap
-- name: model
-  label: Interpolation Method
-  description: Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
-  type: string
-  default: rife49.pth
-  choices: [rife47.pth, rife49.pth, FILM]
-  visible_if: use_advanced=true
-  comfyui: 
-    node_id: 193
-    field: inputs
-    subfield: select_item
+  video:
+    type: video
+    label: Input video
+    description: Input video to slow down
+    required: true
+    comfyui:
+      node_id: 207
+      field: inputs
+      subfield: video
+  interpolation_frames:
+    type: integer
+    label: Interpolation Factor
+    description: A multiplier of the original frame count of the input video.
+    tip: |-
+      This is a multiplier for the total number of frames present in the input video. A value of 2 will result in an output video double the amount of frames for example. The default should be 2 if this tool is requested with the maximum of 8 being a very extreme slow down that might be used as an effect.
+    default: 2
+    minimum: 2
+    maximum: 8
+    required: true
+    comfyui:
+      node_id: 129
+      field: inputs
+      subfield: number
+  FPS:
+    type: integer
+    label: Output Video Framerate
+    description: Output video framerate
+    tip: |-
+      This should stay at the default unless another FPS is specified by the user. Other common framerates are 60fps, 30fps (broadcast default), 24fps (cinema), or 12fps (anime). This parameter does not set the number of frames, only the rate at which the video plays, so this will affect the perceived speed of the output video!
+    default: 24
+    minimum: 1
+    maximum: 60
+    comfyui:
+      node_id: 161
+      field: inputs
+      subfield: value
+  use_advanced:
+    type: boolean
+    label: Show Advanced Parameters
+    description: |-
+      This toggle reveals advanced parameters to web front end users, and has no effect on the output.
+    default: false
+    comfyui:
+      node_id: 192
+      field: inputs
+      subfield: value
+  pingpong:
+    type: boolean
+    label: Forward-Reverse Loop (pingpong)
+    description: |-
+      Make the animation a seamless loop by concatenating a forward and reversed version of the animation. This term is sometimes called bounce or pingpong; the video will play forwards and then reverse itself back to the beginning.
+    tip: |-
+      This will loop the video, making a ping-pong forward to reverse seamless loop by appending the reversed output video to the end of the generated output. This term is sometimes called bounce or pingpong in video editing vernacular; the video will play forwards and then reverse itself back to the beginning.
+    visible_if: use_advanced=true
+    default: false
+    comfyui:
+      node_id: 190
+      field: inputs
+      subfield: value
+  use_input_video_fps:
+    type: boolean
+    label: Retain Video FPS
+    description: This toggle preserves the original FPS of an input video.
+    tip: |-
+      This is useful for creating slow motion videos that play back at the original framerate, if that framerate differs from the default FPS value of 24. For instance, European cinematic standards are 25fps, and if you'd like to keep your output video conformed to this framerate, this value could be true. This is an advanced parameter that should always be falsue unless otherwise specified.
+    default: false
+    visible_if: use_advanced=true
+    comfyui:
+      node_id: 160
+      field: inputs
+      subfield: value
+  image_load_cap:
+    type: integer
+    label: Image Count Cap
+    description: |-
+      Limit the maximum number of images processed from a video or image sequence. A 0 value has no limit
+    tip: |-
+      This parameter can be used to only grab n number of images from a sequence or video clip. If a user asks to only use the first 10 seconds of a video clip, this calculation could be done by assuming a frame rate of 30FPS and limiting the Image Count Cap to 300 frames. This is also useful when sorting, for example a batch of provided images capped to three and sorted by random will always pick 3 random images from a list.
+    hide_from_ui: true
+    hide_from_agent: true
+    default: 0
+    minimum: 0
+    maximum: 1800
+    visible_if: use_advanced=true
+    comfyui:
+      node_id: 207
+      field: inputs
+      subfield: frame_load_cap
+  model:
+    type: string
+    label: Interpolation Method
+    description: |-
+      Choose a frame interpolation model method. RIFE models are fast and cheap, whereas FILM is much slower and therefore more expensive, while having an identifiable different (but not necessarily better or higher quality) result when the interpolation_frames parameter value is high (greater than 6).
+    default: rife49.pth
+    choices: [rife47.pth, rife49.pth, FILM]
+    visible_if: use_advanced=true
+    comfyui:
+      node_id: 193
+      field: inputs
+      subfield: select_item
