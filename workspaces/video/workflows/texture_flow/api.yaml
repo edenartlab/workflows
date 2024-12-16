@@ -105,7 +105,9 @@ parameters:
       field: inputs
       subfield: value
   control_input:
-    type: image|video
+    anyOf:
+      - type: image
+      - type: video
     label: Shape input
     description: |-
       A shape image/GIF/video used as input to the controlnet. Will guide the shape of the output video.
