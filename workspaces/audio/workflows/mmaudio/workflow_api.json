@@ -1,0 +1,92 @@
+{
+  "1": {
+    "inputs": {
+      "mmaudio_model": "mmaudio_large_44k_v2_fp32.safetensors",
+      "base_precision": "fp32"
+    },
+    "class_type": "MMAudioModelLoader"
+  },
+  "2": {
+    "inputs": {
+      "vae_model": "mmaudio_vae_44k_fp32.safetensors",
+      "synchformer_model": "mmaudio_synchformer_fp32.safetensors",
+      "clip_model": "apple_DFN5B-CLIP-ViT-H-14-384_fp32.safetensors",
+      "mode": "44k",
+      "precision": "fp32"
+    },
+    "class_type": "MMAudioFeatureUtilsLoader"
+  },
+  "3": {
+    "inputs": {
+      "video": "jazz-quartet-edit-cherrypicked_piano.mp4",
+      "force_rate": 24,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo"
+  },
+  "4": {
+    "inputs": {
+      "video_info": [
+        "3",
+        3
+      ]
+    },
+    "class_type": "VHS_VideoInfo"
+  },
+  "5": {
+    "inputs": {
+      "duration": [
+        "4",
+        7
+      ],
+      "steps": 25,
+      "cfg": 4.5,
+      "seed": 1093615080719917,
+      "prompt": "a jazz quartet with piano bass drums and saxophone playing in a jazz club",
+      "negative_prompt": "",
+      "mask_away_clip": false,
+      "force_offload": true,
+      "mmaudio_model": [
+        "1",
+        0
+      ],
+      "feature_utils": [
+        "2",
+        0
+      ],
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "MMAudioSampler"
+  },
+  "7": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "audio",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "3",
+        0
+      ],
+      "audio": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine"
+  }
+}

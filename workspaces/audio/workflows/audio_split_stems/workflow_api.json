@@ -20,7 +20,7 @@
   "18": {
     "inputs": {
       "start_time": "0:00",
-      "end_time": "4:00",
+      "end_time": "10:00",
       "audio": [
         "10",
         0
@@ -64,6 +64,44 @@
       "audio": [
         "11",
         3
+      ]
+    },
+    "class_type": "SaveAudio"
+  },
+  "26": {
+    "inputs": {
+      "method": "add",
+      "audio_1": [
+        "11",
+        0
+      ],
+      "audio_2": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "AudioCombine"
+  },
+  "27": {
+    "inputs": {
+      "method": "add",
+      "audio_1": [
+        "26",
+        0
+      ],
+      "audio_2": [
+        "11",
+        2
+      ]
+    },
+    "class_type": "AudioCombine"
+  },
+  "28": {
+    "inputs": {
+      "filename_prefix": "audio/instrumentals/track",
+      "audio": [
+        "27",
+        0
       ]
     },
     "class_type": "SaveAudio"

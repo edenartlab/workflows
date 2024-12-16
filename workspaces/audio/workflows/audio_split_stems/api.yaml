@@ -1,0 +1,29 @@
+name: Split Audio Stems
+description: Generate isolated audio stem tracks from a mixed song
+thumbnail: app/audio_separate_stems.png
+tip: This tool takes a fully mixed audio track and splits it into isolated vocal, drums, bass, other tracks and an instrumental track without vocals. This is useful for removing vocals from a track, isolating vocals, or getting individual elements for further processing, mixing etc.
+output_type: audio
+base_model: librosa
+status: stage
+cost_estimate: 1
+handler: comfyui
+comfyui_output_node_id: 28
+comfyui_intermediate_outputs:
+  - name: isolated_vocals
+    node_id: 25
+  - name: isolated_drums
+    node_id: 23
+  - name: isolated_bass
+    node_id: 22
+  - name: isolated_other
+    node_id: 23
+parameters:
+- name: audio
+  label: Input audio
+  description: Input audio from which to derive stems
+  type: audio
+  required: true
+  comfyui: 
+    node_id: 10
+    field: inputs
+    subfield: audio
