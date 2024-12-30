@@ -1,6 +1,6 @@
 name: Animate an image with depth
 description: Precise image animation using 3D-zoom.
-tip: "Creative image animation using AnimateDiff. This tool will apply subtle and artistic motion to an input image, and optionally apply a style effect.\nBy default, this tool applies a looping 3D warping effect which can be turned off.\nIf the image has a sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the subject details. "
+tip: "Creative image animation using AnimateDiff. This should only be used for creating slightly animated versions of artworks with very subtle motion and is not suited for creating stories or prompt driven motion (use RunWay for that). This tool will apply subtle and artistic motion to an input image, and optionally apply a style effect.\nBy default, this tool applies a looping 3D warping effect which can be turned off.\nIf the image has a sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the subject details. "
 thumbnail: app/animate_3D_opt.mp4
 cost_estimate: n_seconds * 6 * n_steps/6 * resolution/1024
 output_type: video
