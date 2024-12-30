@@ -1,0 +1,39 @@
+{
+  "1": {
+    "inputs": {
+      "prompt": "A very close up view of this item. It is placed on a wooden table. The background is a dark room, the TV is on, and the screen is showing a cooking show. With text on the screen that reads 'Omini Control.RH'",
+      "seed": 930189974516926,
+      "subject_image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "RunningHub_Omini_Subject",
+    "_meta": {
+      "title": "OminiControl Subject"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "bd750efb4ea624d2afab2e6e69b261822140fed0b021679524a2e23c4aae7b14.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
