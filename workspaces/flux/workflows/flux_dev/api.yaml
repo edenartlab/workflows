@@ -235,7 +235,7 @@ parameters:
     label: Style strength
     description: Strength of the style image
     tip: |-
-      A good default for Flux Redux is around 0.75, with ranges between 0.5 for subtle guidance, and 0.9 for more heavy handed results.
+      A good default for Flux Redux is around 0.75, with ranges between 0.5 for subtle guidance, and 0.9 for more heavy handed results. This parameter is very sensative, and small changes can have a large impact on the output. The prompt length, source image, and other factors like custom model lora strength can all affect the optimal value for this parameter.
     default: 0.75
     minimum: 0.0
     maximum: 1.0
