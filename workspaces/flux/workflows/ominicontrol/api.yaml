@@ -1,0 +1,55 @@
+name: Instant LoRA
+description: Take a single example subject image and a prompt to reimagine that subject into a new context.
+tip: |-
+  OminiControl is a form of instant, single image lora. This means you can provide one example of a subject (perfect for toys, characters, objects and logo's) and then prompt that thing into a new context. A common example is placing a logo on a tshirt or coffee mug, or prompting a character into a new environment. It uses the FLUX model behind the scenes and often requires a few tries with different seeds to get a good result.
+thumbnail: app/flux.png
+cost_estimate: 2 * n_samples
+output_type: image
+handler: comfyui
+status: inactive
+base_model: flux-dev
+comfyui_output_node_id: 4
+parameters:
+  subject_image:
+    type: image
+    label: Subject image
+    description: Image showcasing the object/logo you want to generate
+    required: true
+    comfyui:
+      node_id: 2
+      field: inputs
+      subfield: image
+  prompt:
+    type: string
+    label: Prompt
+    description: Describe your generation, refering to the subject image as 'this item'
+    tip: |-
+      Flux loves very detailed and descriptive prompts so try to be elaborate. Flux is also great at drawing text in images when requested. Flux uses a T5 text encoder in addition to CLIP, which allows for more conversational human-like natural language prompting. Create great T5 text encoder prompts for Flux-dev by specifying the subject, style, composition, lighting, color palette, mood/atmosphere, technical details, and additional elements to guide the generation of detailed and cohesive visual descriptions.
+    required: true
+    default: null
+    comfyui:
+      node_id: 1
+      field: inputs
+      subfield: prompt
+  seed:
+    type: integer
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set to a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 1
+      field: inputs
+      subfield: seed
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      This is the number of outputs generated for this prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+    default: 1
+    minimum: 1
+    maximum: 4

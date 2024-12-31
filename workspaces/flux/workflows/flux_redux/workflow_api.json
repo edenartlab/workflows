@@ -10,7 +10,10 @@
         0
       ]
     },
-    "class_type": "CLIPTextEncode"
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
   },
   "8": {
     "inputs": {
@@ -23,13 +26,19 @@
         0
       ]
     },
-    "class_type": "VAEDecode"
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
   },
   "10": {
     "inputs": {
       "vae_name": "ae.safetensors"
     },
-    "class_type": "VAELoader"
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
   },
   "11": {
     "inputs": {
@@ -37,14 +46,20 @@
       "clip_name2": "clip_l.safetensors",
       "type": "flux"
     },
-    "class_type": "DualCLIPLoader"
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
   },
   "12": {
     "inputs": {
-      "unet_name": "flux1-dev.safetensors",
-      "weight_dtype": "default"
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
     },
-    "class_type": "UNETLoader"
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
   },
   "13": {
     "inputs": {
@@ -69,13 +84,19 @@
         0
       ]
     },
-    "class_type": "SamplerCustomAdvanced"
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
   },
   "16": {
     "inputs": {
       "sampler_name": "euler"
     },
-    "class_type": "KSamplerSelect"
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
   },
   "17": {
     "inputs": {
@@ -87,7 +108,10 @@
         0
       ]
     },
-    "class_type": "BasicScheduler"
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
   },
   "22": {
     "inputs": {
@@ -100,13 +124,19 @@
         0
       ]
     },
-    "class_type": "BasicGuider"
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
   },
   "25": {
     "inputs": {
       "noise_seed": 539721347
     },
-    "class_type": "RandomNoise"
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
   },
   "26": {
     "inputs": {
@@ -116,7 +146,10 @@
         0
       ]
     },
-    "class_type": "FluxGuidance"
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
   },
   "27": {
     "inputs": {
@@ -130,7 +163,10 @@
       ],
       "batch_size": 1
     },
-    "class_type": "EmptySD3LatentImage"
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
   },
   "30": {
     "inputs": {
@@ -149,16 +185,23 @@
         0
       ]
     },
-    "class_type": "ModelSamplingFlux"
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModelSamplingFlux"
+    }
   },
   "38": {
     "inputs": {
       "clip_name": "sigclip_vision_patch14_384.safetensors"
     },
-    "class_type": "CLIPVisionLoader"
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
   },
   "39": {
     "inputs": {
+      "crop": "center",
       "clip_vision": [
         "38",
         0
@@ -168,13 +211,19 @@
         0
       ]
     },
-    "class_type": "CLIPVisionEncode"
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
   },
   "42": {
     "inputs": {
       "style_model_name": "flux1-redux-dev.safetensors"
     },
-    "class_type": "StyleModelLoader"
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "Load Style Model"
+    }
   },
   "52": {
     "inputs": {
@@ -195,10 +244,14 @@
         0
       ]
     },
-    "class_type": "StyleModelApplyAdvanced"
+    "class_type": "StyleModelApplyAdvanced",
+    "_meta": {
+      "title": "Style Model Apply Advanced"
+    }
   },
   "56": {
     "inputs": {
+      "crop": "center",
       "clip_vision": [
         "38",
         0
@@ -208,7 +261,10 @@
         0
       ]
     },
-    "class_type": "CLIPVisionEncode"
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
   },
   "57": {
     "inputs": {
@@ -229,7 +285,10 @@
         0
       ]
     },
-    "class_type": "StyleModelApplyAdvanced"
+    "class_type": "StyleModelApplyAdvanced",
+    "_meta": {
+      "title": "Style Model Apply Advanced"
+    }
   },
   "58": {
     "inputs": {
@@ -246,19 +305,28 @@
         0
       ]
     },
-    "class_type": "ConditioningAverage"
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "ConditioningAverage"
+    }
   },
   "60": {
     "inputs": {
       "value": 0.92
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "prompt_strength"
+    }
   },
   "61": {
     "inputs": {
       "value": 0.5
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "image_influence_crossfader A/B"
+    }
   },
   "62": {
     "inputs": {
@@ -267,7 +335,10 @@
       "output_multiplier": 1,
       "multiple_off": 1
     },
-    "class_type": "WidthHeightPicker"
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
   },
   "66": {
     "inputs": {
@@ -282,7 +353,10 @@
       "background_color": "",
       "upload": "image"
     },
-    "class_type": "LoadAndResizeImage"
+    "class_type": "LoadAndResizeImage",
+    "_meta": {
+      "title": "dummy image"
+    }
   },
   "68": {
     "inputs": {
@@ -297,7 +371,10 @@
       "background_color": "",
       "upload": "image"
     },
-    "class_type": "LoadAndResizeImage"
+    "class_type": "LoadAndResizeImage",
+    "_meta": {
+      "title": "Load & Resize Image"
+    }
   },
   "69": {
     "inputs": {
@@ -311,7 +388,10 @@
         4
       ]
     },
-    "class_type": "Eden_Compare"
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
   },
   "70": {
     "inputs": {
@@ -328,7 +408,10 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
   },
   "71": {
     "inputs": {
@@ -343,7 +426,10 @@
       "background_color": "",
       "upload": "image"
     },
-    "class_type": "LoadAndResizeImage"
+    "class_type": "LoadAndResizeImage",
+    "_meta": {
+      "title": "Load & Resize Image"
+    }
   },
   "72": {
     "inputs": {
@@ -377,14 +463,20 @@
         0
       ]
     },
-    "class_type": "SDPromptSaver"
+    "class_type": "SDPromptSaver",
+    "_meta": {
+      "title": "SD Prompt Saver"
+    }
   },
   "81": {
     "inputs": {
       "body": "",
       "delimiter": ""
     },
-    "class_type": "TextPlusPlus"
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
   },
   "87": {
     "inputs": {
@@ -394,7 +486,10 @@
         0
       ]
     },
-    "class_type": "MathExpression|pysssss"
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
   },
   "92": {
     "inputs": {
@@ -408,7 +503,10 @@
         0
       ]
     },
-    "class_type": "Eden_Compare"
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
   },
   "93": {
     "inputs": {
@@ -425,18 +523,27 @@
         0
       ]
     },
-    "class_type": "Switch any [Crystools]"
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
   },
   "94": {
     "inputs": {
       "value": 1
     },
-    "class_type": "Eden_Float"
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "default"
+    }
   },
   "96": {
     "inputs": {
       "value": ""
     },
-    "class_type": "Eden_String"
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "empty_string"
+    }
   }
 }

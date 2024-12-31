@@ -174,6 +174,76 @@ parameters:
       node_id: 141
       field: inputs
       subfield: value
+  use_lora2:
+    type: boolean
+    label: Use a trained model 2
+    description: Apply LoRA finetune model style to image generation
+    tip: |-
+      Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+    default: false
+    comfyui:
+      node_id: 339
+      field: inputs
+      subfield: value
+  lora2:
+    type: lora
+    label: Trained model (LoRA) 2
+    description: Use a second LoRA finetune on top of the base model.
+    visible_if: use_lora2=true
+    comfyui:
+      node_id: 337
+      field: inputs
+      subfield: lora_name
+  lora_strength2:
+    type: float
+    label: Model Strength 2
+    description: Strength of the custom model (LoRA)
+    tip: |-
+      If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. A stronger LoRA strength around .9 is better to recreate faces when using a model trained on specific person.
+    default: 0.7
+    minimum: 0.0
+    maximum: 1.25
+    visible_if: use_lora2=true
+    comfyui:
+      node_id: 338
+      field: inputs
+      subfield: value
+  use_style_image:
+    type: boolean
+    label: Use a style image
+    description: Apply a style image to the generation
+    tip: |-
+      Style images can be used to guide the color palette, texture, and overall style of the generated image. This can be useful for creating images with a specific look or feel, such as a painting or photograph. This implementation uses the Flux Redux model to transfer traits of the style image to the output creation.
+    default: false
+    comfyui:
+      node_id: 146
+      field: inputs
+      subfield: value
+  style_image:
+    type: image
+    label: Style image
+    description: Image to use as a style reference
+    tip: |-
+      This can be used to guide the color palette, texture, and overall style of the generated image.
+    visible_if: use_style_image=true
+    comfyui:
+      node_id: 142
+      field: inputs
+      subfield: image
+  style_strength:
+    type: float
+    label: Style strength
+    description: Strength of the style image
+    tip: |-
+      A good default for Flux Redux is around 0.75, with ranges between 0.5 for subtle guidance, and 0.9 for more heavy handed results.
+    default: 0.75
+    minimum: 0.0
+    maximum: 1.0
+    visible_if: use_style_image=true
+    comfyui:
+      node_id: 381
+      field: inputs
+      subfield: value  
   seed:
     type: integer
     label: Seed
@@ -196,3 +266,41 @@ parameters:
     default: 1
     minimum: 1
     maximum: 4
+  steps:
+    type: integer
+    label: Steps
+    description: Number of steps to take in the diffusion process
+    tip: |-
+      The number of steps taken in the diffusion process. Higher values will result in more detailed images, but will also take longer to generate.
+    default: 25
+    minimum: 1
+    maximum: 35
+    comfyui:
+      node_id: 393
+      field: inputs
+      subfield: steps
+  flux_guidance:
+    type: float
+    label: Prompt Conditioning
+    description: Strength of the prompt and image conditiong influence on the creation result.
+    tip: |-
+      This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a higher value of 3.5-4 may be desirable, and for realistic images closer to 2 is a good value, with an extreme minimum around 1.2. Higher values will more closely follow the input text and images.
+    default: 3.5
+    minimum: 1.0
+    maximum: 4.0
+    step: 0.01
+    comfyui:
+      node_id: 101
+      field: inputs
+      subfield: guidance
+  include_caption:
+    type: boolean
+    label: Include caption
+    description: Include the prompt as a caption on the image
+    tip: |-
+      This will add the prompt as a caption to the generated image.
+    default: false
+    comfyui:
+      node_id: 407
+      field: inputs
+      subfield: value
