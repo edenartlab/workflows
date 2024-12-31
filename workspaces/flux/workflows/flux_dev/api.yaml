@@ -216,7 +216,7 @@ parameters:
       Style images can be used to guide the color palette, texture, and overall style of the generated image. This can be useful for creating images with a specific look or feel, such as a painting or photograph. This implementation uses the Flux Redux model to transfer traits of the style image to the output creation.
     default: false
     comfyui:
-      node_id: 146
+      node_id: 396
       field: inputs
       subfield: value
   style_image:
@@ -235,10 +235,11 @@ parameters:
     label: Style strength
     description: Strength of the style image
     tip: |-
-      A good default for Flux Redux is around 0.75, with ranges between 0.5 for subtle guidance, and 0.9 for more heavy handed results.
+      A good default for Flux Redux is around 0.75, with ranges between 0.5 for subtle guidance, and 0.9 for more heavy handed results. This parameter is very sensative, and small changes can have a large impact on the output. The prompt length, source image, and other factors like custom model lora strength can all affect the optimal value for this parameter.
     default: 0.75
     minimum: 0.0
     maximum: 1.0
+    step: 0.01
     visible_if: use_style_image=true
     comfyui:
       node_id: 381
