@@ -1,12 +1,12 @@
 name: Instant LoRA
 description: Take a single example subject image and a prompt to reimagine that subject into a new context.
 tip: |-
-  OminiControl is a form of instant, single image lora. This means you can provide one example of a subject (perfect for toys, characters, objects and logo's) and then prompt that thing into a new context. A common example is placing a logo on a tshirt or coffee mug, or prompting a character into a new environment. It uses the FLUX model behind the scenes and often requires a few tries with different seeds to get a good result.
+  OminiControl is a form of instant, single image lora. This means you can provide one example of a subject (perfect for toys, characters, objects and logo's) and then prompt that thing into a new context. A common example is placing a logo on a tshirt or coffee mug, or prompting a character or toy into a new environment. It uses the FLUX model behind the scenes and often requires a few tries with different seeds to get a good result.
 thumbnail: app/flux.png
 cost_estimate: 2 * n_samples
 output_type: image
 handler: comfyui
-status: inactive
+status: stage
 base_model: flux-dev
 comfyui_output_node_id: 4
 parameters:
@@ -22,7 +22,7 @@ parameters:
   prompt:
     type: string
     label: Prompt
-    description: Describe your generation, refering to the subject image as 'this item'
+    description: Describe your generation, always refering to the subject image as 'this item'
     tip: |-
       Flux loves very detailed and descriptive prompts so try to be elaborate. Flux is also great at drawing text in images when requested. Flux uses a T5 text encoder in addition to CLIP, which allows for more conversational human-like natural language prompting. Create great T5 text encoder prompts for Flux-dev by specifying the subject, style, composition, lighting, color palette, mood/atmosphere, technical details, and additional elements to guide the generation of detailed and cohesive visual descriptions.
     required: true
