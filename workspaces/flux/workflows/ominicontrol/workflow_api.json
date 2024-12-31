@@ -2,9 +2,9 @@
   "1": {
     "inputs": {
       "prompt": "A very close up view of this item. It is placed on a wooden table. The background is a dark room, the TV is on, and the screen is showing a cooking show. With text on the screen that reads 'Omini Control.RH'",
-      "seed": 930189974516926,
+      "seed": 354490708427411,
       "subject_image": [
-        "2",
+        "8",
         0
       ]
     },
@@ -15,7 +15,7 @@
   },
   "2": {
     "inputs": {
-      "image": "bd750efb4ea624d2afab2e6e69b261822140fed0b021679524a2e23c4aae7b14.webp",
+      "image": "EDEN-ICON-COLOUR.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -34,6 +34,24 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
     }
   }
 }

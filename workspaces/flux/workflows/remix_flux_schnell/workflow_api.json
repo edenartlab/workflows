@@ -78,7 +78,7 @@
         0
       ],
       "image": [
-        "122",
+        "181",
         0
       ],
       "florence2_model": [
@@ -118,7 +118,7 @@
   "44": {
     "inputs": {
       "pixels": [
-        "122",
+        "181",
         0
       ],
       "vae": [
@@ -153,7 +153,7 @@
         "89",
         1
       ],
-      "text2": "0.8560"
+      "text2": "0.7600"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -174,7 +174,7 @@
   },
   "89": {
     "inputs": {
-      "number": 0.76,
+      "number": 0.6,
       "from_range_min": 0,
       "from_range_max": 1,
       "to_range_min": [
@@ -214,32 +214,12 @@
   },
   "117": {
     "inputs": {
-      "image": "eden-logo_50gray.png",
+      "image": "ef0a13dfd87d1b56bfe745fff7dedaa6647e11d73851e28c615061276583b2d8.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "122": {
-    "inputs": {
-      "switch": [
-        "143",
-        0
-      ],
-      "on_false": [
-        "43",
-        0
-      ],
-      "on_true": [
-        "123",
-        0
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch"
     }
   },
   "123": {
@@ -367,7 +347,7 @@
       "time_format": "%H%M%S",
       "save_metadata_file": false,
       "images": [
-        "161",
+        "184",
         0
       ]
     },
@@ -379,7 +359,7 @@
   "152": {
     "inputs": {
       "image": [
-        "122",
+        "181",
         0
       ]
     },
@@ -393,7 +373,7 @@
       "body": "",
       "delimiter": " ",
       "append": [
-        "164",
+        "182",
         0
       ]
     },
@@ -409,26 +389,6 @@
     "class_type": "Eden_Bool",
     "_meta": {
       "title": "Show Advanced Parameters"
-    }
-  },
-  "161": {
-    "inputs": {
-      "switch": [
-        "162",
-        0
-      ],
-      "on_false": [
-        "16",
-        0
-      ],
-      "on_true": [
-        "93",
-        0
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch"
     }
   },
   "162": {
@@ -451,31 +411,11 @@
       "title": "String Item Menu"
     }
   },
-  "164": {
-    "inputs": {
-      "switch": [
-        "165",
-        0
-      ],
-      "on_false": [
-        "166",
-        0
-      ],
-      "on_true": [
-        "38",
-        2
-      ]
-    },
-    "class_type": "InversionDemoLazySwitch",
-    "_meta": {
-      "title": "Lazy Switch"
-    }
-  },
   "165": {
     "inputs": {
       "value": false,
-      "on_false": "0.0",
-      "on_true": "1.0",
+      "on_false": "1",
+      "on_true": "2",
       "override_bool": [
         "163",
         1
@@ -527,6 +467,135 @@
     "class_type": "Display Any (rgthree)",
     "_meta": {
       "title": "Display Any (rgthree)"
+    }
+  },
+  "179": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_msvxp_00005_.png&type=temp&subfolder=&rand=0.08365531485662081"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_msvxp_00006_.png&type=temp&subfolder=&rand=0.7167627257967157"
+          }
+        ]
+      },
+      "image_a": [
+        "184",
+        0
+      ],
+      "image_b": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "180": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2",
+      "override_bool": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "BOOL ++"
+    }
+  },
+  "181": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "180",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "43",
+        0
+      ],
+      "input2": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "182": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "165",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "166",
+        0
+      ],
+      "input2": [
+        "38",
+        2
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "184": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "185",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "16",
+        0
+      ],
+      "input2": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "185": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2",
+      "override_bool": [
+        "162",
+        0
+      ]
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "BOOL ++"
     }
   }
 }

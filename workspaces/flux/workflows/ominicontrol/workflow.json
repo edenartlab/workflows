@@ -1,6 +1,6 @@
 {
-  "last_node_id": 7,
-  "last_link_id": 10,
+  "last_node_id": 9,
+  "last_link_id": 15,
   "nodes": [
     {
       "id": 1,
@@ -14,13 +14,13 @@
         200
       ],
       "flags": {},
-      "order": 1,
+      "order": 2,
       "mode": 0,
       "inputs": [
         {
           "name": "subject_image",
           "type": "IMAGE",
-          "link": 1,
+          "link": 12,
           "slot_index": 0,
           "label": "subject_image"
         }
@@ -42,48 +42,8 @@
       },
       "widgets_values": [
         "A very close up view of this item. It is placed on a wooden table. The background is a dark room, the TV is on, and the screen is showing a cooking show. With text on the screen that reads 'Omini Control.RH'",
-        930189974516926,
+        354490708427411,
         "randomize"
-      ]
-    },
-    {
-      "id": 2,
-      "type": "LoadImage",
-      "pos": [
-        82.89458465576172,
-        -107.57931518554688
-      ],
-      "size": [
-        315,
-        314
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1
-          ],
-          "shape": 3,
-          "label": "IMAGE"
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "shape": 3,
-          "label": "MASK"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "bd750efb4ea624d2afab2e6e69b261822140fed0b021679524a2e23c4aae7b14.webp",
-        "image"
       ]
     },
     {
@@ -98,7 +58,7 @@
         270
       ],
       "flags": {},
-      "order": 2,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -115,22 +75,124 @@
       "widgets_values": [
         "ComfyUI"
       ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        -334.69158935546875,
+        -111.25019073486328
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "EDEN-ICON-COLOUR.png",
+        "image"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "ImageResize+",
+      "pos": [
+        32.47909164428711,
+        -112.0680160522461
+      ],
+      "size": [
+        315,
+        218
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "nearest",
+        "fill / crop",
+        "always",
+        0
+      ]
     }
   ],
   "links": [
     [
+      10,
       1,
-      2,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      8,
       0,
       1,
       0,
       "IMAGE"
     ],
     [
-      10,
-      1,
+      15,
+      2,
       0,
-      4,
+      8,
       0,
       "IMAGE"
     ]
@@ -139,10 +201,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.0610764609500016,
+      "scale": 1.191817653772834,
       "offset": [
-        -96.87979410444812,
-        335.71245880364313
+        711.8712042373213,
+        383.6389305402236
       ]
     },
     "0246.VERSION": [
@@ -150,7 +212,9 @@
       0,
       4
     ],
-    "ue_links": []
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0
   },
   "version": 0.4
 }
