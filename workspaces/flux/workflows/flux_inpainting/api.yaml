@@ -28,7 +28,7 @@ parameters:
       Description (just one or a few words) of what object / region you want to replace / inpaint.
     tip: |-
       This prompt will be used to highlight the object/region to inpaint, creating a mask. Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences. Some examples of good masking prompts are 'face', 'building', 'hair, headwear, hat', ...
-    required: true
+    required: false
     comfyui:
       node_id: 66
       field: inputs
