@@ -1,11 +1,23 @@
 {
-  "prompt": "TOK on the moon, planting an american flag on the surface, rocketship in the background",
-  "use_lora": true,
-  "lora": "67365909f8ef79aedc04abeb",
-  "lora_strength": 0.6,
-  "width": 1920,
-  "height": 1080,
-  "n_samples": 1,
-  "seed": 111
-}
-
+    "prompt": "banny eating a cheeseburger",
+    "width": 1024,
+    "height": 1024,
+    "use_init_image": false,
+    "denoise": 1,
+    "size_from_input": false,
+    "use_controlnet": false,
+    "preprocessor": "CannyEdgePreprocessor",
+    "controlnet_strength": 0.6,
+    "use_lora": true,
+    "lora": "6779fa55b727a6ce0d78b5fb",
+    "lora_strength": 1,
+    "use_lora2": false,
+    "lora_strength2": 0.7,
+    "use_style_image": false,
+    "style_strength": 0.75,
+    "seed": 2103323265,
+    "n_samples": 1,
+    "steps": 25,
+    "flux_guidance": 3.5,
+    "include_caption": false
+  }
