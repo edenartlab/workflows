@@ -163,12 +163,13 @@ parameters:
   lora_strength:
     type: float
     label: Model Strength
-    description: Strength of the custom model (LoRA)
+    description: Strength of the custom model (LoRA). Decrease this value to improve prompt adherence. Increase to get more of the LoRA style.
     tip: |-
       If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. A stronger LoRA strength around .9 is better to recreate faces when using a model trained on specific person.
-    default: 0.7
+    default: 0.8
     minimum: 0.0
     maximum: 1.25
+    step: 0.01
     visible_if: use_lora=true
     comfyui:
       node_id: 141
@@ -197,12 +198,13 @@ parameters:
   lora2_strength:
     type: float
     label: Model Strength 2
-    description: Strength of the custom model (LoRA)
+    description: Strength of the custom model (LoRA). Decrease this value to improve prompt adherence. Increase to get more of the LoRA style.
     tip: |-
       If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. A stronger LoRA strength around .9 is better to recreate faces when using a model trained on specific person.
-    default: 0.7
+    default: 0.8
     minimum: 0.0
     maximum: 1.25
+    step: 0.01
     visible_if: use_lora2=true
     comfyui:
       node_id: 338
