@@ -143,9 +143,9 @@ parameters:
   use_lora:
     type: boolean
     label: Use a trained model
-    description: Apply LoRA finetune model style to image generation
+    description: Activate a custom, LoRA finetuned model
     tip: |-
-      Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+      Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
     default: false
     comfyui:
       node_id: 144
@@ -154,7 +154,7 @@ parameters:
   lora:
     type: lora
     label: Trained model (LoRA)
-    description: Use a LoRA finetune on top of the base model.
+    description: Activate a custom, LoRA finetuned model
     visible_if: use_lora=true
     comfyui:
       node_id: 80
@@ -178,9 +178,9 @@ parameters:
   use_lora2:
     type: boolean
     label: Use a trained model 2
-    description: Apply LoRA finetune model style to image generation
+    description: Activate a custom, LoRA finetuned model
     tip: |-
-      Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+      Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
     default: false
     comfyui:
       node_id: 339
@@ -189,7 +189,7 @@ parameters:
   lora2:
     type: lora
     label: Trained model (LoRA) 2
-    description: Use a second LoRA finetune on top of the base model.
+    description: Activate a custom, LoRA finetuned model
     visible_if: use_lora2=true
     comfyui:
       node_id: 337
