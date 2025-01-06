@@ -297,10 +297,11 @@ parameters:
   include_caption:
     type: boolean
     label: Include caption
-    description: Include the prompt as a caption on the image
+    description: Add the prompt as text on top of the image
     tip: |-
       This will add the prompt as a caption to the generated image.
     default: false
+    hide_from_agent: true
     comfyui:
       node_id: 407
       field: inputs
