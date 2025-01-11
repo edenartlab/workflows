@@ -143,9 +143,9 @@ parameters:
   use_lora:
     type: boolean
     label: Use a trained model
-    description: Apply LoRA finetune model style to image generation
+    description: Activate a custom, LoRA finetuned model
     tip: |-
-      Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+      Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
     default: false
     comfyui:
       node_id: 144
@@ -154,7 +154,7 @@ parameters:
   lora:
     type: lora
     label: Trained model (LoRA)
-    description: Use a LoRA finetune on top of the base model.
+    description: Activate a custom, LoRA finetuned model
     visible_if: use_lora=true
     comfyui:
       node_id: 80
@@ -163,12 +163,13 @@ parameters:
   lora_strength:
     type: float
     label: Model Strength
-    description: Strength of the custom model (LoRA)
+    description: Strength of the custom model (LoRA). Decrease this value to improve prompt adherence. Increase to get more of the LoRA style.
     tip: |-
       If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. A stronger LoRA strength around .9 is better to recreate faces when using a model trained on specific person.
-    default: 0.7
+    default: 0.8
     minimum: 0.0
     maximum: 1.25
+    step: 0.01
     visible_if: use_lora=true
     comfyui:
       node_id: 141
@@ -177,9 +178,9 @@ parameters:
   use_lora2:
     type: boolean
     label: Use a trained model 2
-    description: Apply LoRA finetune model style to image generation
+    description: Activate a custom, LoRA finetuned model
     tip: |-
-      Models created with Eden LoRA trainer can add people, styles and conceptual embeddings into the diffusion model, giving it an idea of new information provided by the user.
+      Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
     default: false
     comfyui:
       node_id: 339
@@ -188,21 +189,22 @@ parameters:
   lora2:
     type: lora
     label: Trained model (LoRA) 2
-    description: Use a second LoRA finetune on top of the base model.
+    description: Activate a custom, LoRA finetuned model
     visible_if: use_lora2=true
     comfyui:
       node_id: 337
       field: inputs
       subfield: lora_name
-  lora_strength2:
+  lora2_strength:
     type: float
     label: Model Strength 2
-    description: Strength of the custom model (LoRA)
+    description: Strength of the custom model (LoRA). Decrease this value to improve prompt adherence. Increase to get more of the LoRA style.
     tip: |-
       If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. A stronger LoRA strength around .9 is better to recreate faces when using a model trained on specific person.
-    default: 0.7
+    default: 0.8
     minimum: 0.0
     maximum: 1.25
+    step: 0.01
     visible_if: use_lora2=true
     comfyui:
       node_id: 338
@@ -297,10 +299,11 @@ parameters:
   include_caption:
     type: boolean
     label: Include caption
-    description: Include the prompt as a caption on the image
+    description: Add the prompt as text on top of the image
     tip: |-
       This will add the prompt as a caption to the generated image.
     default: false
+    hide_from_agent: true
     comfyui:
       node_id: 407
       field: inputs

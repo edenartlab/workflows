@@ -98,6 +98,21 @@ parameters:
       node_id: 103
       field: inputs
       subfield: image
+  style_strength:
+    type: float
+    label: Style strength
+    description: Strength of the style image
+    tip: |-
+      A good default for ip-adapter is around 0.75, with ranges between 0.5 for subtle guidance, and 1.0 for more heavy handed results.
+    default: 0.75
+    minimum: 0.0
+    maximum: 1.25
+    step: 0.01
+    visible_if: use_style_image=true
+    comfyui:
+      node_id: 54
+      field: inputs
+      subfield: weight  
   resolution:
     type: integer
     label: Resolution
@@ -123,3 +138,16 @@ parameters:
       node_id: 105
       field: inputs
       subfield: value
+  seed:
+    type: integer
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set to a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this at default!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 77
+      field: inputs
+      subfield: seed
