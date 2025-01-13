@@ -158,6 +158,18 @@ parameters:
       node_id: 116
       field: inputs
       subfield: strength
+  denoise:
+    type: float
+    label: AI Strength (denoise)
+    description: Strength of the AI effect. Lowering this value will use the shape input pixel values as a base for generation.
+    default: 1.0
+    minimum: 0.1
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 612
+      field: inputs
+      subfield: value
   control_input_fit_strategy:
     type: string
     label: Fit strategy
