@@ -146,7 +146,7 @@ parameters:
     type: float
     label: Shape strength
     description: |-
-      set the guidance strength of the controlnet model, recommended values are 0.4-0.6
+      The guidance strength of the chosen controlnet model, enforcing the shape of the shape input, but allowing different colors and textures. Recommended values are 0.4-0.6
     tip: |-
       A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
     default: 0.5
@@ -160,12 +160,13 @@ parameters:
       subfield: strength
   denoise:
     type: float
-    label: AI Strength (denoise)
-    description: Strength of the AI effect. Lowering this value will use the shape input pixel values as a base for generation.
+    label: AI Strength on top of shape input (denoise)
+    description: Strength of the AI effect. Lowering this value will use the shape input pixel values as a base for generation. A value of 0.0 would just return the shape input with no change.
     default: 1.0
     minimum: 0.1
     maximum: 1.0
     step: 0.01
+    visible_if: use_controlnet1=true
     comfyui:
       node_id: 612
       field: inputs
