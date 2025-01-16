@@ -110,7 +110,7 @@ parameters:
       - type: video
     label: Shape input
     description: |-
-      A shape image/GIF/video used as input to the controlnet. Will guide the shape of the output video.
+      A shape image/GIF/video used as input to the controlnet. Will guide the shape of the output video. When doing videomapping this can eg be a photo of the surface you're projecting on.
     visible_if: use_controlnet1=true
     comfyui:
       node_id: 552
