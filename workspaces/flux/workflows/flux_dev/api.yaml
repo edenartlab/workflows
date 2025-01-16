@@ -287,8 +287,8 @@ parameters:
     label: Prompt Conditioning
     description: Strength of the prompt and image conditiong influence on the creation result.
     tip: |-
-      This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a higher value of 3.5-4 may be desirable, and for realistic images closer to 2 is a good value, with an extreme minimum around 1.2. Higher values will more closely follow the input text and images.
-    default: 3.5
+      This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a lower value of 2.0-2.5 may be desirable, and for realistic images closer to 3.0 is a good value, with an extreme minimum around 1.5. Higher values will more closely follow the input text and produce clean images but also have less diversity.
+    default: 2.5
     minimum: 1.0
     maximum: 4.0
     step: 0.01
