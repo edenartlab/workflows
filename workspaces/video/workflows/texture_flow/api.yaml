@@ -1,7 +1,27 @@
 name: TextureFlow
 description: Mix multiple images into a video, optionally add a driving motion or shape.
-tip: "This workflow creates smooth, trippy, artistic animations from a set of style (texture) images (and other optional inputs).\nOne to six images form the basis of this tool, driving the texture and content of the final animation. In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good default.\nThe motion mapping template controls how the content of the style images is mapped onto the video (spatially). When doing quick experimentation with settings you can set upscale:false to produce a fast but low resolution test render, once a sweet spot is found, you can set upscale:true to generate a full HD final output video.\nThere is an optional control_input (set use_controlnet1 to true) and preprocessor1 type that can add specific shape/motion guidance to the generated video like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping. \nIn general, running TextureFlow without a control_input almost always produces visually appealing results, adding a control_input is tricky. The wrong combination of control_input and style images may look bad (especially when the control strength is too high),\nbut the right combo can look absolutely amazing and is one of Edens special endpoints that make our platform unique!\nSome example use cases for TextureFlow:\n- abstract, artistic image animation using a single style image (this will completely deform the input image and lose lots of details but its great to generate beautiful, smooth, animated textures)\n- mixing multiple style_images using various motion mapping modes to create slick, looping VJ content (abstract, artistic animations)\n- using a logo image as control_input + texture image(s) can create really cool logo animations. \n- using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)\n- TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the \"None\" controlnet (which is a luminance controlnet). Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable."
-thumbnail: app/style_mixing_opt.mp4
+tip: |-
+  "This workflow creates smooth, trippy, artistic animations from a set of style (texture) images (and other optional inputs).
+  One to six images form the basis of this tool, driving the texture and content of the final animation. 
+  In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good default.
+  The motion mapping template controls how the content of the style images is mapped onto the video (spatially).
+  When doing quick experimentation with settings you can set upscale:false to produce a fast but low resolution test render, once a sweet spot is found, 
+  you can set upscale:true to generate a full HD final output video. Before using this tool, always print the settings your about to use and ask the user to confirm before executing the tool!
+  There is an optional control_input (set use_controlnet1 to true) and preprocessor1 type that can add specific shape/motion guidance to the generated video 
+  like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping.
+  In general, running TextureFlow without a control_input almost always produces visually appealing results, adding a control_input is tricky.
+  The wrong combination of control_input and style images may look bad (especially when the control strength is too high),
+  but the right combo can look absolutely amazing and is one of Edens special endpoints that make our platform unique!
+
+  Some example use cases for TextureFlow:
+  - abstract, artistic image animation using a single style image 
+  (this will completely deform the input image and lose lots of details but its great to generate beautiful, smooth, animated textures)
+  - mixing multiple style_images using various motion mapping modes to create slick, looping VJ content (abstract, artistic animations)
+  - using a logo image as control_input + texture image(s) can create really cool logo animations.
+  - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
+  - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the \"None\" controlnet mode (which corresponds to a luminance controlnet).
+  Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable."
+  thumbnail: app/style_mixing_opt.mp4
 cost_estimate: |-
   0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.75 : 1)
 output_type: video
