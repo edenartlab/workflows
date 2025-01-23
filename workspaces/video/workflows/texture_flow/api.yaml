@@ -21,7 +21,7 @@ tip: |-
   - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
   - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the \"None\" controlnet mode (which corresponds to a luminance controlnet).
   Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable."
-  thumbnail: app/style_mixing_opt.mp4
+thumbnail: app/style_mixing_opt.mp4
 cost_estimate: |-
   0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.75 : 1)
 output_type: video
