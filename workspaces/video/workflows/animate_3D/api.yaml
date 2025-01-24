@@ -69,15 +69,26 @@ parameters:
     type: float
     label: Strength of the 3D effect
     description: |-
-      When increasing this value, you typically also want to make a longer animation with higher animation strength levels.
+      When increasing this value, you typically also want to make a longer animation with slightly higher animation strength levels.
     default: 0.2
     minimum: 0.0
     maximum: 1.0
     step: 0.01
     comfyui:
-      node_id: 5
+      node_id: 130
       field: inputs
-      subfield: intensity
+      subfield: value
+  loop:
+    type: boolean
+    label: loop
+    description: Make a looping animation (end=start)
+    tip: |-
+      Activate this option to create a dolly zoom effect that generates a seamless loop. For short animations this can look a bit unnatural though.
+    default: false
+    comfyui:
+      node_id: 128
+      field: inputs
+      subfield: value
   use_style_image:
     type: boolean
     label: Apply a style image

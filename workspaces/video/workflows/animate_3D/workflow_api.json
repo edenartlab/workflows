@@ -46,7 +46,7 @@
         0
       ],
       "motion": [
-        "5",
+        "129",
         0
       ]
     },
@@ -61,8 +61,11 @@
       "feature_threshold": 0,
       "feature_param": "intensity",
       "feature_mode": "relative",
-      "intensity": 0.2,
-      "reverse": false,
+      "intensity": [
+        "130",
+        0
+      ],
+      "reverse": true,
       "depth": 1
     },
     "class_type": "DepthflowMotionPresetOrbital",
@@ -323,7 +326,10 @@
       "context_stride": 1,
       "context_overlap": 4,
       "context_schedule": "uniform",
-      "closed_loop": true,
+      "closed_loop": [
+        "128",
+        0
+      ],
       "fuse_method": "flat",
       "use_on_equal_length": false,
       "start_percent": 0,
@@ -472,7 +478,7 @@
   },
   "59": {
     "inputs": {
-      "value": 1024
+      "value": 512
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -854,6 +860,26 @@
       "title": "Preview Image"
     }
   },
+  "107": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "intensity",
+      "feature_mode": "relative",
+      "intensity": [
+        "130",
+        0
+      ],
+      "reverse": false,
+      "smooth": true,
+      "phase": 0,
+      "loop": false
+    },
+    "class_type": "DepthflowMotionPresetZoom",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Preset Zoom"
+    }
+  },
   "108": {
     "inputs": {
       "boolean": false,
@@ -898,6 +924,44 @@
     "class_type": "Eden_Math",
     "_meta": {
       "title": "Eden_Math"
+    }
+  },
+  "128": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Loop Animation"
+    }
+  },
+  "129": {
+    "inputs": {
+      "boolean": [
+        "128",
+        0
+      ],
+      "on_true": [
+        "5",
+        0
+      ],
+      "on_false": [
+        "107",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "130": {
+    "inputs": {
+      "value": 0.2
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Zoom Intensity"
     }
   }
 }
