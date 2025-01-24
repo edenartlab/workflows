@@ -1,7 +1,8 @@
 name: Animate an image
 description: Creative image animation (using AnimateDiff)
 tip: |-
-  This will animate a single image and produce an animated video version that can drift away a bit from the source image but produces creative outputs, ideal for abstract visuals, not ideal for realistic scenes. Dont use this tool whenever you need to use multiple images to create a video.
+  This will create an abstract animation based on the content of a single content image. The resulting animation can drift away quite a bit from the source image but sometimes produces creative outputs, ideal for abstract visuals, not ideal for realistic / narrative scenes.
+  This animation tool is also not very promptable so the animation is rather undirected (hit or miss). If specific object / character motion or narrative directions are requested, use the RunWay tool instead.
 thumbnail: app/img2vid_opt.mp4
 cost_estimate: 0.5 * num_frames
 output_type: video
@@ -9,6 +10,7 @@ resolutions: []
 handler: comfyui
 status: inactive
 visible: false
+active: false
 base_model: sd15
 comfyui_output_node_id: 466
 parameters:
