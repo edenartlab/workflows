@@ -83,7 +83,7 @@
         0
       ],
       "on_false": [
-        "72",
+        "260",
         0
       ]
     },
@@ -104,7 +104,7 @@
   },
   "53": {
     "inputs": {
-      "image": "GeneKogan.png",
+      "image": "eve2.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -163,7 +163,7 @@
   },
   "67": {
     "inputs": {
-      "value": "long, gray wizard beard"
+      "value": "forest with waterfall"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -408,7 +408,7 @@
   },
   "181": {
     "inputs": {
-      "filename_prefix": "Flux\\Inpaint\\2024-11-25\\segs1_",
+      "filename_prefix": "Flux\\Inpaint\\2025-01-27\\segs1_",
       "images": [
         "169",
         0
@@ -445,7 +445,7 @@
   },
   "190": {
     "inputs": {
-      "expand": 36,
+      "expand": 24,
       "tapered_corners": true,
       "mask": [
         "195",
@@ -459,7 +459,7 @@
   },
   "191": {
     "inputs": {
-      "amount": 140,
+      "amount": 32,
       "device": "gpu",
       "mask": [
         "190",
@@ -1002,6 +1002,126 @@
     "class_type": "GrowMask",
     "_meta": {
       "title": "GrowMask"
+    }
+  },
+  "255": {
+    "inputs": {
+      "torchscript_jit": "default",
+      "image": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembg",
+    "_meta": {
+      "title": "Inspyrenet Rembg"
+    }
+  },
+  "256": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Activate_rembg"
+    }
+  },
+  "258": {
+    "inputs": {
+      "images": [
+        "255",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "259": {
+    "inputs": {
+      "mask": [
+        "255",
+        1
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "260": {
+    "inputs": {
+      "boolean": [
+        "256",
+        0
+      ],
+      "on_true": [
+        "263",
+        0
+      ],
+      "on_false": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "Switch mask [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch mask"
+    }
+  },
+  "261": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Inpaint_Foreground"
+    }
+  },
+  "262": {
+    "inputs": {
+      "mask": [
+        "255",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "Invert Mask"
+    }
+  },
+  "263": {
+    "inputs": {
+      "boolean": [
+        "261",
+        0
+      ],
+      "on_true": [
+        "255",
+        1
+      ],
+      "on_false": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "Switch mask [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch mask"
+    }
+  },
+  "266": {
+    "inputs": {
+      "filename_prefix": "Inpaint_mask",
+      "images": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
     }
   }
 }

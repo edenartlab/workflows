@@ -11,6 +11,7 @@ base_model: flux-dev
 comfyui_output_node_id: 181
 comfyui_intermediate_outputs:
   inpaint_preview: 206
+  inpaint_mask: 266
 parameters:
   image:
     type: image
@@ -41,6 +42,29 @@ parameters:
     required: true
     comfyui:
       node_id: 67
+      field: inputs
+      subfield: value
+  activate_rembg:
+    type: boolean
+    label: Activate Foreground/Background separation (creates a mask)
+    description: Use background detection to create an inpainting mask
+    tip: |-
+      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image so you can typically reduce mask_expand and mask_blur to zero. This only has an effect if the masking_prompt is empty!
+    default: false
+    hide_from_ui: true
+    comfyui:
+      node_id: 256
+      field: inputs
+      subfield: value
+  inpaint_foreground:
+    type: boolean
+    label: flip mask to inpaint foreground
+    description: By default, activating 'activate_rembg' will inpaint the background. Set this to true if you want to inpaint the foreground instead.
+    visible_if: activate_rembg=true
+    default: false
+    hide_from_ui: true
+    comfyui:
+      node_id: 261
       field: inputs
       subfield: value
   resolution:
