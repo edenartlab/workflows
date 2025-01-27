@@ -49,7 +49,7 @@ parameters:
     label: Activate Foreground/Background separation (creates a mask)
     description: Use background detection to create an inpainting mask
     tip: |-
-      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image so you can typically reduce mask_expand and mask_blur to zero. This only has an effect if the masking_prompt is empty!
+      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image. When activating this, you can typically reduce mask_expand and mask_blur to zero. Make sure to leave masking_prompt empty when activating this!
     default: false
     hide_from_ui: true
     comfyui:
