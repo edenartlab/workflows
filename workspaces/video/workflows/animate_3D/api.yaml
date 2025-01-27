@@ -1,9 +1,9 @@
 name: Animate an image with depth
 description: Precise image animation using 3D-zoom.
 tip: |-
-  Creative image animation using AnimateDiff. This should only be used for creating subtly animated versions of artworks with very minimal motion and is not suited for creating stories or prompt driven motion (use RunWay for that).
-  With default settings this tool will apply subtle 3D-motion effect to an input image, add some motion to the background and optionally apply a style effect. By default, this tool creates a looping 3D zoom effect, but the looping can be turned off to create a zooming in effect instead.
-  If the image has a sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the subject details. This tool is pretty slow and typically used to create minimally animated versions of beautiful still art.
+  Creative image animation using AnimateDiff. This should only be used for creating subtly animated versions of artworks with very minimal motion and is not suited for creating stories or prompt driven motion (if a user requests specific motion, always use the runway tool which takes an input prompt).
+  With default settings this tool will a subtle 3D-zoom effect to an input image, adding some motion to the background, minimal motion to the foreground (subject) and optionally apply a style effect.
+  If the image has a detail sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the small details. This tool is pretty slow and typically used to create minimally animated versions of beautiful still art.
 thumbnail: app/animate_3D_opt.mp4
 cost_estimate: n_seconds * 6 * n_steps/6 * resolution/1024
 output_type: video
