@@ -31,7 +31,7 @@ parameters:
       Max number of video frames to process (the output video duration will be n_frames / 8 seconds, so eg 24 will result in 3s).
     default: 24
     minimum: 16
-    maximum: 264
+    maximum: 512
     required: true
     step: 1
     comfyui:
