@@ -12,7 +12,7 @@ load_dotenv()
 # Documentation template
 TEMPLATE = """1. Start with frontmatter containing aliases (include tool name variations)
 2. Title (same as first alias)
-3. Brief description explaining what the tool does and its key features/capabilities
+3. General description explaining what the tool does and its key features/capabilities. Describe the inputs and outputs and try to give example use cases of when/why this tool can be used.
 4. Overview section listing main features as bullet points (keep this minimal, don't get hyperbolic or use marketing language, essential features only)
 5. Quick Start section with:
    - Web UI steps (use format: Visit [Eden's Tool Name](https://www.eden.art/create/toolname))
@@ -299,8 +299,8 @@ def find_yaml_files(workspaces_dir, workflows=None):
 def tool_is_live_on_prod(yaml_content):
     # grab status (fallback to 'prod' if missing:)
     status = yaml_content.get('status', 'prod')
-    visible = yaml_content.get('status', True)
-    return (status == "prod") and visible
+    visible = yaml_content.get('visible', 'true')
+    return (status == "prod") and (visible == 'true')
 
 def maybe_inject_thumbnail(doc_content, yaml_content):
     thumbnail_url = yaml_content.get('thumbnail', '')
@@ -310,18 +310,24 @@ def maybe_inject_thumbnail(doc_content, yaml_content):
         thumbnail_url = "https://edenartlab-prod-data.s3.us-east-1.amazonaws.com/" + thumbnail_url
 
         if '.mp4' in thumbnail_url:
-            thumbnail_display = f"""<video width="50%" controls>
+            thumbnail_display = f"""<div align="center">
+<video width="50%" controls>
             <source src="{thumbnail_url}" type="video/mp4" />
-            </video>"""
+            </video>
+</div>"""
         else:
-            thumbnail_display = f"![alt text]({thumbnail_url})"
+            thumbnail_display = f"""<div align="center">
+<img src="{thumbnail_url}" width="50%" alt="thumbnail" />
+</div>"""
 
         lines = doc_content.split('\n')
         for i, line in enumerate(lines):
             if line.startswith('# '):
                 lines.insert(i + 1, thumbnail_display)
-        return '\n'.join(lines) 
-       
+                lines.insert(i + 2, '')  # Add empty line after thumbnail
+                break
+        return '\n'.join(lines)
+    
     return doc_content
 
 def generate_docs(workspaces_dir, workflows=None, output_dir=None):
