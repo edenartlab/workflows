@@ -247,8 +247,8 @@ Please generate the complete markdown documentation now. Do not ask any follow u
 given the context you have. If you are missing information to generate specific sections, just leave them out if you really have to. Your exact response will go live on our website as the documentation page for this tool."""
 
     message = client.messages.create(
-        #model="claude-3-5-sonnet-latest",
-        model="claude-3-5-haiku-latest",
+        model="claude-3-5-sonnet-latest",
+        #model="claude-3-5-haiku-latest",
         max_tokens=4096,
         #temperature=0.7,
         messages=[{"role": "user", "content": context}]
