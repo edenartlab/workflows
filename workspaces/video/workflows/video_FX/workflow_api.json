@@ -225,7 +225,7 @@
   },
   "32": {
     "inputs": {
-      "float_val": 1.151
+      "float_val": 1.1
     },
     "class_type": "ADE_MultivalDynamic",
     "_meta": {
@@ -236,7 +236,7 @@
     "inputs": {
       "context_length": 16,
       "context_stride": 1,
-      "context_overlap": 5,
+      "context_overlap": 4,
       "context_schedule": "uniform",
       "closed_loop": false,
       "fuse_method": "flat",
@@ -319,7 +319,7 @@
   },
   "41": {
     "inputs": {
-      "image": "mars_college.png",
+      "image": "tree.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -425,7 +425,7 @@
   },
   "179": {
     "inputs": {
-      "video": "output_video.mp4",
+      "video": "TextureFlow_00023.mp4",
       "force_rate": [
         "377",
         0
@@ -434,8 +434,8 @@
       "custom_width": 512,
       "custom_height": 512,
       "frame_load_cap": [
-        "194",
-        0
+        "379",
+        1
       ],
       "skip_first_frames": 0,
       "select_every_nth": 1
@@ -472,6 +472,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -496,6 +497,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -532,15 +534,6 @@
     "class_type": "Eden_Int",
     "_meta": {
       "title": "Resolution"
-    }
-  },
-  "194": {
-    "inputs": {
-      "value": 48
-    },
-    "class_type": "Eden_Int",
-    "_meta": {
-      "title": "n_frames"
     }
   },
   "196": {
@@ -608,6 +601,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -724,6 +718,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -862,6 +857,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -886,6 +882,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -1007,6 +1004,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -1031,6 +1029,7 @@
       "pix_fmt": "yuv420p",
       "crf": 30,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -1250,7 +1249,7 @@
   },
   "376": {
     "inputs": {
-      "value": 8
+      "value": 12
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -1267,6 +1266,32 @@
     "class_type": "Eden_FloatToInt",
     "_meta": {
       "title": "Eden_FloatToInt"
+    }
+  },
+  "378": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "n_seconds"
+    }
+  },
+  "379": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "378",
+        0
+      ],
+      "b": [
+        "376",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
     }
   }
 }

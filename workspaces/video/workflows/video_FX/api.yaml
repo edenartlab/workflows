@@ -3,7 +3,7 @@ description: Apply AI effects to regions of a video
 tip: |-
   This tool allows you to add creative AI effects to regions of a video. You can use this to apply cool post-effects on parts of existing videos, eg adding animated textures to a flat background, replacing bright objects (the sun, lights, etc) with motion graphics, but cannot be used to replace objects in a video. It can be tricky to achieve good results in the first go, tweaking of the settings is often required!
 thumbnail: app/video_FX_thumbnail.mp4
-cost_estimate: 0.75 * n_frames * resolution/1024
+cost_estimate: 0.75 * n_seconds * 12 * resolution/1024
 output_type: video
 handler: comfyui
 status: prod
@@ -24,18 +24,18 @@ parameters:
       node_id: 179
       field: inputs
       subfield: video
-  n_frames:
+  n_seconds:
     type: integer
-    label: Number of frames
+    label: Seconds of video to process
     description: |-
-      Max number of video frames to process (the output video duration will be n_frames / 8 seconds, so eg 24 will result in 3s).
-    default: 24
-    minimum: 16
-    maximum: 264
+      Max number of seconds of input video to process.
+    default: 3
+    minimum: 1
+    maximum: 30
     required: true
     step: 1
     comfyui:
-      node_id: 194
+      node_id: 378
       field: inputs
       subfield: value
   style_image:
