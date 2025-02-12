@@ -80,7 +80,7 @@ parameters:
       The framerate at which frames are extracted from the source video and processed by the model.
     tip: |-
       Typically you set this to the default of 8 because then you get more seconds of processed video per diffused frame. If the input video contains fast motion however, you can set this to 12 to maintain more of that motion intact and get less visual artefacts from the RIFE interpolation that brings the output video back to 24 fps.
-    default: 8
+    default: 12
     minimum: 8
     maximum: 12
     step: 4

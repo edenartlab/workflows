@@ -88,7 +88,6 @@
       "pix_fmt": "yuv420p",
       "crf": 23,
       "save_metadata": false,
-      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -163,7 +162,7 @@
   },
   "74": {
     "inputs": {
-      "folder": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_IMAGES/arid_nama",
+      "folder": "/home/rednax/SSD2TB/stored_CLIP_results/AAA_init_imgs/PARTY_VISUALS/adiff_rotational_tripping/test",
       "n_images": -1,
       "seed": [
         "282",
@@ -236,7 +235,7 @@
   },
   "107": {
     "inputs": {
-      "control_net_name": "control_v11p_sd15_canny.pth"
+      "control_net_name": "control_v11f1p_sd15_depth.pth"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -245,7 +244,7 @@
   },
   "116": {
     "inputs": {
-      "strength": 0.4,
+      "strength": 0.38,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -290,7 +289,7 @@
   },
   "148": {
     "inputs": {
-      "preprocessor": "none",
+      "preprocessor": "Scribble_XDoG_Preprocessor",
       "resolution": [
         "517",
         1
@@ -659,7 +658,6 @@
       "pix_fmt": "yuv420p",
       "crf": 23,
       "save_metadata": false,
-      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -915,7 +913,7 @@
   },
   "282": {
     "inputs": {
-      "seed": 7
+      "seed": 0
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -998,7 +996,7 @@
   },
   "404": {
     "inputs": {
-      "control_net_name": "controlnetQRPatternQR_v2Sd15.safetensors"
+      "control_net_name": "control_v11p_sd15_scribble.pth"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -1034,7 +1032,7 @@
   },
   "406": {
     "inputs": {
-      "preprocessor": "CannyEdgePreprocessor",
+      "preprocessor": "DepthAnythingV2Preprocessor",
       "resolution": [
         "517",
         1
@@ -1129,7 +1127,7 @@
   },
   "426": {
     "inputs": {
-      "beta_schedule": "lcm avg(sqrt_linear,linear)",
+      "beta_schedule": "lcm >> sqrt_linear",
       "model": [
         "171",
         0
@@ -1370,7 +1368,6 @@
       "pix_fmt": "yuv420p",
       "crf": 23,
       "save_metadata": true,
-      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -1399,10 +1396,7 @@
       ],
       "sampler_name": "lcm",
       "scheduler": "sgm_uniform",
-      "denoise": [
-        "612",
-        0
-      ],
+      "denoise": 1,
       "model": [
         "575",
         0
@@ -1416,7 +1410,7 @@
         0
       ],
       "latent_image": [
-        "616",
+        "13",
         0
       ]
     },
@@ -1550,7 +1544,7 @@
       ],
       "bands_visible_per_frame": 0.9,
       "angle": 0,
-      "mode": "horizontal_stripes_down",
+      "mode": "concentric_circles_outwards",
       "width": 512,
       "height": 512
     },
@@ -1573,7 +1567,7 @@
   },
   "552": {
     "inputs": {
-      "path": "input/A_black_image.jpg",
+      "path": "input/a_black_video.mp4",
       "resize_images_to_first": true,
       "image_load_cap": [
         "569",
@@ -1603,7 +1597,7 @@
     },
     "class_type": "Display Int (rgthree)",
     "_meta": {
-      "title": "Actual loaded frames from input"
+      "title": "Display Int (rgthree)"
     }
   },
   "562": {
@@ -1762,149 +1756,6 @@
     "class_type": "Eden_Float",
     "_meta": {
       "title": "cfg"
-    }
-  },
-  "603": {
-    "inputs": {
-      "pixels": [
-        "609",
-        0
-      ],
-      "vae": [
-        "1",
-        2
-      ]
-    },
-    "class_type": "VAEEncode",
-    "_meta": {
-      "title": "VAE Encode"
-    }
-  },
-  "609": {
-    "inputs": {
-      "target_n_frames": [
-        "91",
-        0
-      ],
-      "mode": "wrap_around",
-      "images": [
-        "262",
-        0
-      ]
-    },
-    "class_type": "Extend_Sequence",
-    "_meta": {
-      "title": "Extend_Sequence"
-    }
-  },
-  "611": {
-    "inputs": {
-      "expression": "max(4, a * (b^0.75))",
-      "a": [
-        "524",
-        0
-      ],
-      "b": [
-        "612",
-        0
-      ]
-    },
-    "class_type": "Eden_Math",
-    "_meta": {
-      "title": "Step_Adjust"
-    }
-  },
-  "612": {
-    "inputs": {
-      "value": 1
-    },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "Denoise Input"
-    }
-  },
-  "616": {
-    "inputs": {
-      "boolean": [
-        "617",
-        0
-      ],
-      "on_true": [
-        "13",
-        0
-      ],
-      "on_false": [
-        "603",
-        0
-      ]
-    },
-    "class_type": "Switch latent [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch latent"
-    }
-  },
-  "617": {
-    "inputs": {
-      "comparison": "a == b",
-      "a": [
-        "612",
-        0
-      ],
-      "b": [
-        "618",
-        0
-      ]
-    },
-    "class_type": "Eden_Compare",
-    "_meta": {
-      "title": "Full Denoise"
-    }
-  },
-  "618": {
-    "inputs": {
-      "value": 1
-    },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "Eden_Float"
-    }
-  },
-  "632": {
-    "inputs": {
-      "frame_rate": [
-        "487",
-        0
-      ],
-      "loop_count": 0,
-      "filename_prefix": "input_guidance",
-      "format": "video/h264-mp4",
-      "pix_fmt": "yuv420p",
-      "crf": 23,
-      "save_metadata": true,
-      "trim_to_audio": false,
-      "pingpong": false,
-      "save_output": false,
-      "images": [
-        "609",
-        0
-      ]
-    },
-    "class_type": "VHS_VideoCombine",
-    "_meta": {
-      "title": "Video Combine 🎥🅥🅗🅢"
-    }
-  },
-  "639": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "611",
-        1
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
     }
   }
 }
