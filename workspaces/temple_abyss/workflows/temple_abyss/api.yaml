@@ -35,7 +35,7 @@ parameters:
     comfyui:
       node_id: 88
       field: inputs
-      subfield: value
+      subfield: text
   negative_prompt:
     type: string
     label: Art Generation Prompt
@@ -47,7 +47,7 @@ parameters:
     comfyui:
       node_id: 89
       field: inputs
-      subfield: value
+      subfield: text
   seed:
     type: integer
     label: Generation Seed
@@ -144,19 +144,19 @@ parameters:
     required: true
     default: "420"
     comfyui:
-      node_id: 140
+      node_id: 63
       field: inputs
       subfield: text
-  lora:
-    type: lora
-    label: LoRA
-    description: Use a custom model (LoRA)
-    tip: name of the custom (SDXL) LoRA model.
-    default: froyd7sinsmodel_sdxl_lora.safetensors
-    comfyui:
-      node_id: 10
-      field: inputs
-      subfield: lora_name
+  # lora:
+  #   type: lora
+  #   label: LoRA
+  #   description: Use a custom model (LoRA)
+  #   tip: name of the custom (SDXL) LoRA model.
+  #   default: "froyd7sinsmodel_sdxl_lora.safetensors"
+  #   comfyui:
+  #     node_id: 10
+  #     field: inputs
+  #     subfield: lora_name
   lora_strength:
     type: float
     label: LoRA Strength
