@@ -1,0 +1,974 @@
+{
+  "10": {
+    "inputs": {
+      "lora_name": "froyd7sinsmodel_sdxl_lora.safetensors",
+      "strength_model": [
+        "95",
+        0
+      ],
+      "strength_clip": [
+        "95",
+        0
+      ],
+      "model": [
+        "86",
+        0
+      ],
+      "clip": [
+        "86",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "12": {
+    "inputs": {
+      "image": "A_black_image.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "rendered_art_image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "image": "Rare + Super Rare (Teal) Design #2@4.22x.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "background_image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "rounded_rect_radius": 14,
+      "anti_aliasing": 2,
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "detect": "mask_area",
+      "obj_ext_top": 0,
+      "obj_ext_bottom": 0,
+      "obj_ext_left": 0,
+      "obj_ext_right": 8,
+      "image": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: RoundedRectangle",
+    "_meta": {
+      "title": "LayerUtility: RoundedRectangle"
+    }
+  },
+  "17": {
+    "inputs": {
+      "image": "Grey-Ultra-Rare-Clan-Badge.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "clan_icon"
+    }
+  },
+  "19": {
+    "inputs": {
+      "width": 136,
+      "height": 136,
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "20": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 14,
+      "y_percent": 8,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "24",
+        0
+      ],
+      "layer_image": [
+        "19",
+        0
+      ],
+      "layer_mask": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "22": {
+    "inputs": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "threshold": 0,
+      "image": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "MaskFromColor+",
+    "_meta": {
+      "title": "🔧 Mask From Color"
+    }
+  },
+  "24": {
+    "inputs": {
+      "width": 2000,
+      "height": 2000,
+      "interpolation": "nearest",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "36": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 37.6,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "20",
+        0
+      ],
+      "layer_image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "51": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 13.5,
+      "y_percent": 95,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "36",
+        0
+      ],
+      "layer_image": [
+        "52",
+        0
+      ],
+      "layer_mask": [
+        "52",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "52": {
+    "inputs": {
+      "image": "Ultra-Rare-Jade@4.22x.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "rarity_icon"
+    }
+  },
+  "53": {
+    "inputs": {
+      "image": "Aura-Point-ICON@4.22x.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "aura_icon"
+    }
+  },
+  "54": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 79,
+      "y_percent": 95,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "51",
+        0
+      ],
+      "layer_image": [
+        "53",
+        0
+      ],
+      "layer_mask": [
+        "53",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "63": {
+    "inputs": {
+      "text": "420",
+      "font_name": "impact.ttf",
+      "font_size": 54,
+      "font_color": "custom",
+      "align": "top",
+      "justify": "center",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": 466,
+      "position_y": 1872,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#FFFFFF",
+      "image": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text",
+    "_meta": {
+      "title": "rng_points"
+    }
+  },
+  "65": {
+    "inputs": {
+      "value": "Steve stares you down with a look you can only interpret as disapproval. You'll later ask your therapist why it is you so desparately seek his validation."
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "card_text"
+    }
+  },
+  "71": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 50,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "63",
+        0
+      ],
+      "layer_image": [
+        "81",
+        0
+      ],
+      "layer_mask": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "72": {
+    "inputs": {
+      "image": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "74": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "81": {
+    "inputs": {
+      "text": [
+        "65",
+        0
+      ],
+      "image_width": [
+        "72",
+        1
+      ],
+      "image_height": [
+        "72",
+        2
+      ],
+      "font_name": "GothamBook.ttf",
+      "font_size": 48,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": true,
+      "x_percent": 0,
+      "y_percent": 72,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 12,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "margins": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "Draw Text 📝"
+    }
+  },
+  "84": {
+    "inputs": {
+      "rounded_rect_radius": 14,
+      "anti_aliasing": 2,
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "detect": "mask_area",
+      "obj_ext_top": 0,
+      "obj_ext_bottom": 0,
+      "obj_ext_left": 0,
+      "obj_ext_right": 8,
+      "image": [
+        "132",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: RoundedRectangle",
+    "_meta": {
+      "title": "LayerUtility: RoundedRectangle"
+    }
+  },
+  "85": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "86": {
+    "inputs": {
+      "ckpt_name": "juggernautXL_version6Rundiffusion.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "87": {
+    "inputs": {
+      "seed": 424994233865172,
+      "steps": 50,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "10",
+        0
+      ],
+      "positive": [
+        "98",
+        0
+      ],
+      "negative": [
+        "98",
+        1
+      ],
+      "latent_image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "88": {
+    "inputs": {
+      "text": "Steve is the curmudgeonly manager of the Garden of Eden, japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings",
+      "clip": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "prompt"
+    }
+  },
+  "89": {
+    "inputs": {
+      "text": "wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft",
+      "clip": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "negative_prompt"
+    }
+  },
+  "90": {
+    "inputs": {
+      "samples": [
+        "87",
+        0
+      ],
+      "vae": [
+        "86",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "91": {
+    "inputs": {
+      "image": "$91-0",
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "PreviewBridge",
+    "_meta": {
+      "title": "Preview Bridge (Image)"
+    }
+  },
+  "95": {
+    "inputs": {
+      "value": 0.68
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength"
+    }
+  },
+  "97": {
+    "inputs": {
+      "preprocessor": [
+        "141",
+        0
+      ],
+      "resolution": 1024,
+      "image": [
+        "100",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "controlnet_preprocessor"
+    }
+  },
+  "98": {
+    "inputs": {
+      "strength": 0.8,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "88",
+        0
+      ],
+      "negative": [
+        "89",
+        0
+      ],
+      "control_net": [
+        "135",
+        0
+      ],
+      "image": [
+        "97",
+        0
+      ],
+      "vae": [
+        "86",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "99": {
+    "inputs": {
+      "image": "steve.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "init_image"
+    }
+  },
+  "100": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "115": {
+    "inputs": {
+      "image": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "117": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2"
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_rendered_art_image"
+    }
+  },
+  "118": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "117",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "91",
+        0
+      ],
+      "input2": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "119": {
+    "inputs": {
+      "text": "STEVE",
+      "image_width": [
+        "115",
+        1
+      ],
+      "image_height": [
+        "115",
+        2
+      ],
+      "font_name": "horizon.ttf",
+      "font_size": 54,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": 0,
+      "x_percent": 26.900000000000002,
+      "y_percent": 6.8100000000000005,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "54",
+        0
+      ],
+      "margins": [
+        "122",
+        0
+      ],
+      "textbox": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "card_name"
+    }
+  },
+  "120": {
+    "inputs": {
+      "left": 144,
+      "right": 144,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "122": {
+    "inputs": {
+      "left": 0,
+      "right": 106,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "123": {
+    "inputs": {
+      "color": "black",
+      "opacity": 1,
+      "border_color": "black",
+      "border_opacity": 0,
+      "border_width": 6,
+      "corner_radius": 36,
+      "padding_left": 52,
+      "padding_right": 64,
+      "padding_top": 40,
+      "padding_bottom": 36,
+      "full_width": true,
+      "color_hex": "#FFFFFF",
+      "border_hex": "#000000"
+    },
+    "class_type": "TextBoxStyle",
+    "_meta": {
+      "title": "Text Box Style"
+    }
+  },
+  "127": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "128": {
+    "inputs": {
+      "text": "Eden's Manager\n",
+      "image_width": [
+        "131",
+        1
+      ],
+      "image_height": [
+        "131",
+        2
+      ],
+      "font_name": "GothamMedium.ttf",
+      "font_size": 54,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": 0,
+      "x_percent": 11.700000000000001,
+      "y_percent": 66,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "119",
+        0
+      ],
+      "margins": [
+        "129",
+        0
+      ],
+      "textbox": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "trait"
+    }
+  },
+  "129": {
+    "inputs": {
+      "left": 0,
+      "right": 106,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "130": {
+    "inputs": {
+      "color": "black",
+      "opacity": 1,
+      "border_color": "black",
+      "border_opacity": 0,
+      "border_width": 6,
+      "corner_radius": 36,
+      "padding_left": 38,
+      "padding_right": 64,
+      "padding_top": 42,
+      "padding_bottom": 30,
+      "full_width": true,
+      "color_hex": "#FFFFFF",
+      "border_hex": "#000000"
+    },
+    "class_type": "TextBoxStyle",
+    "_meta": {
+      "title": "Text Box Style"
+    }
+  },
+  "131": {
+    "inputs": {
+      "image": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "132": {
+    "inputs": {
+      "image": [
+        "71",
+        0
+      ],
+      "alpha": [
+        "13",
+        1
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "133": {
+    "inputs": {
+      "menu": "controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,diffusers_xl_canny_full.safetensors,controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "135": {
+    "inputs": {
+      "control_net_name": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "136": {
+    "inputs": {
+      "menu": "none,CannyEdgePreprocessor,CannyEdgePreprocessor,DepthAnythingV2Preprocessor,Scribble_PiDiNet_Preprocessor,OpenposePreprocessor,ScribblePreprocessor,LineartStandardPreprocessor",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "137",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "137": {
+    "inputs": {
+      "menu": "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
+      "delimiter": ",",
+      "select_item": "depth"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "controlnet"
+    }
+  },
+  "141": {
+    "inputs": {
+      "any_type_input": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SDAnyConverter"
+    }
+  },
+  "142": {
+    "inputs": {
+      "any_type_input": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SDAnyConverter"
+    }
+  },
+  "143": {
+    "inputs": {
+      "filename_prefix": "temple_abyss",
+      "images": [
+        "84",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
