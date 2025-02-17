@@ -126,6 +126,52 @@ def create_doc_filename(yaml_path, output_dir=None):
         # Default behavior: save next to yaml
         return Path(yaml_path).parent / "docs.md"
 
+def get_example_args(yaml_data, test_json=None):
+    """Get example args from test.json or fall back to api.yaml"""
+    if test_json and 'args' in test_json:
+        return test_json['args']
+    
+    # Fall back to generating examples from api.yaml parameters
+    example_args = {}
+    if 'parameters' in yaml_data:
+        for param, details in yaml_data['parameters'].items():
+            # Get example value based on parameter type
+            if 'default' in details:
+                example_args[param] = details['default']
+            elif 'type' in details:
+                if details['type'] == 'number':
+                    example_args[param] = 1.0
+                elif details['type'] == 'integer':
+                    example_args[param] = 1
+                elif details['type'] == 'boolean':
+                    example_args[param] = False
+                elif details['type'] == 'string':
+                    example_args[param] = "example_string"
+                elif details['type'] == 'url':
+                    example_args[param] = "https://example.com/image.jpg"
+    
+    return example_args
+
+def format_api_example(tool_name, yaml_data, test_json=None):
+    """Format API example using heredoc syntax"""
+    example_args = get_example_args(yaml_data, test_json)
+    if example_args:
+        args_json = json.dumps(example_args, indent=2)
+    else:
+        args_json = "    // parameters here"
+        
+    return f'''```bash
+curl -X POST "https://api.eden.art/v2/tasks/create" \\
+  -H "Content-Type: application/json" \\
+  -H "X-Api-Key: YOUR_API_KEY" \\
+  -d @- << 'EOF'
+{{
+  "tool": "{tool_name}",
+  "args": {args_json}
+}}
+EOF
+```'''
+
 def ask_claude(yaml_content, yaml_path, test_json=None):
     """Generate documentation using Claude"""
     client = anthropic.Client(api_key=os.getenv("ANTHROPIC_API_KEY"))
@@ -138,6 +184,9 @@ def ask_claude(yaml_content, yaml_path, test_json=None):
     tool_name = Path(yaml_path).parent.name
     print(f"Using case-sensitive tool name from directory: {tool_name}")
 
+    # Get formatted API example
+    api_example = format_api_example(tool_name, yaml_data, test_json)
+
     # Extract example URLs from test.json if available
     example_urls = {}
     if test_json:
@@ -145,6 +194,9 @@ def ask_claude(yaml_content, yaml_path, test_json=None):
             if key in test_json.get('args', {}):
                 example_urls[key] = test_json['args'][key]
     
+    # Get example args for response format
+    example_args = get_example_args(yaml_data, test_json)
+
     # Prepare the context
     context = f"""Please create markdown documentation for this tool following this exact structure and format.
 
@@ -157,18 +209,9 @@ Important formatting requirements:
    - Use the display name from YAML in the link text
    - Use beta.eden.art/create/{tool_name} as the URL (using case-sensitive tool_name)
    - Add "tool" at the end of the line
-5. API requests must follow this exact format, using the case-sensitive tool name:
-```bash
-curl -X POST "https://api.eden.art/v2/tasks/create" \\
-  -H "Content-Type: application/json" \\
-  -H "X-Api-Key: YOUR_API_KEY" \\
-  -d '{{
-    "tool": "{tool_name}",
-    "args": {{
-      // parameters here
-    }}
-  }}'
-```
+5. API requests must follow this exact format:
+
+{api_example}
 
 6. Response format must include a complete example with all fields:
 ```json
@@ -182,20 +225,7 @@ curl -X POST "https://api.eden.art/v2/tasks/create" \\
     "tool": "{tool_name}",
     "parent_tool": null,
     "output_type": "video",
-    "args": {{
-      "image": "https://example.com/image.jpg",
-      "n_seconds": 6.0,
-      "n_steps": 8,
-      "resolution": 1024,
-      "background_denoise": 0.6,
-      "foreground_denoise": 0.3,
-      "depth_effect": 0.4,
-      "loop": false,
-      "use_style_image": true,
-      "style_image": "https://example.com/style.jpg",
-      "style_strength": 0.8,
-      "seed": 1234567890
-    }},
+    "args": {json.dumps(example_args, indent=2)},
     "mock": false,
     "cost": 48,
     "handler_id": "fc-xxxxx",

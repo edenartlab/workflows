@@ -26,7 +26,7 @@
   },
   "12": {
     "inputs": {
-      "image": "A_black_image.jpg",
+      "image": "black_dummy.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -109,7 +109,7 @@
       "transform_method": "lanczos",
       "anti_aliasing": 0,
       "background_image": [
-        "24",
+        "155",
         0
       ],
       "layer_image": [
@@ -243,10 +243,10 @@
       "invert_mask": true,
       "blend_mode": "normal",
       "opacity": 100,
-      "x_percent": 79,
+      "x_percent": 80,
       "y_percent": 95,
       "mirror": "None",
-      "scale": 1,
+      "scale": 0.9400000000000001,
       "aspect_ratio": 1,
       "rotate": 0,
       "transform_method": "lanczos",
@@ -269,31 +269,6 @@
       "title": "LayerUtility: ImageBlendAdvance V2"
     }
   },
-  "63": {
-    "inputs": {
-      "text": "420",
-      "font_name": "impact.ttf",
-      "font_size": 54,
-      "font_color": "custom",
-      "align": "top",
-      "justify": "center",
-      "margins": 0,
-      "line_spacing": 0,
-      "position_x": 466,
-      "position_y": 1872,
-      "rotation_angle": 0,
-      "rotation_options": "text center",
-      "font_color_hex": "#FFFFFF",
-      "image": [
-        "128",
-        0
-      ]
-    },
-    "class_type": "CR Overlay Text",
-    "_meta": {
-      "title": "rng_points"
-    }
-  },
   "65": {
     "inputs": {
       "value": "Steve stares you down with a look you can only interpret as disapproval. You'll later ask your therapist why it is you so desparately seek his validation."
@@ -303,60 +278,16 @@
       "title": "card_text"
     }
   },
-  "71": {
-    "inputs": {
-      "invert_mask": false,
-      "blend_mode": "normal",
-      "opacity": 100,
-      "x_percent": 50,
-      "y_percent": 50,
-      "mirror": "None",
-      "scale": 1,
-      "aspect_ratio": 1,
-      "rotate": 0,
-      "transform_method": "lanczos",
-      "anti_aliasing": 0,
-      "background_image": [
-        "63",
-        0
-      ],
-      "layer_image": [
-        "81",
-        0
-      ],
-      "layer_mask": [
-        "74",
-        0
-      ]
-    },
-    "class_type": "LayerUtility: ImageBlendAdvance V2",
-    "_meta": {
-      "title": "LayerUtility: ImageBlendAdvance V2"
-    }
-  },
   "72": {
     "inputs": {
       "image": [
-        "63",
+        "144",
         0
       ]
     },
     "class_type": "GetImageSizeAndCount",
     "_meta": {
       "title": "Get Image Size & Count"
-    }
-  },
-  "74": {
-    "inputs": {
-      "channel": "red",
-      "image": [
-        "81",
-        0
-      ]
-    },
-    "class_type": "ImageToMask",
-    "_meta": {
-      "title": "Convert Image to Mask"
     }
   },
   "81": {
@@ -392,6 +323,10 @@
       "language": "en_US",
       "font_color_hex": "#FFFFFF",
       "bg_color_hex": "#000000",
+      "img_composite": [
+        "72",
+        0
+      ],
       "margins": [
         "120",
         0
@@ -404,7 +339,7 @@
   },
   "84": {
     "inputs": {
-      "rounded_rect_radius": 14,
+      "rounded_rect_radius": 13,
       "anti_aliasing": 2,
       "top": 0,
       "bottom": 0,
@@ -447,7 +382,7 @@
   },
   "87": {
     "inputs": {
-      "seed": 424994233865172,
+      "seed": 343973193871648,
       "steps": 50,
       "cfg": 8,
       "sampler_name": "euler",
@@ -515,19 +450,6 @@
     "class_type": "VAEDecode",
     "_meta": {
       "title": "VAE Decode"
-    }
-  },
-  "91": {
-    "inputs": {
-      "image": "$91-0",
-      "images": [
-        "90",
-        0
-      ]
-    },
-    "class_type": "PreviewBridge",
-    "_meta": {
-      "title": "Preview Bridge (Image)"
     }
   },
   "95": {
@@ -615,18 +537,6 @@
       "title": "🔧 Image Resize"
     }
   },
-  "115": {
-    "inputs": {
-      "image": [
-        "24",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
   "117": {
     "inputs": {
       "value": false,
@@ -648,7 +558,7 @@
       "selection_out": 1,
       "validate_typing": false,
       "input1": [
-        "91",
+        "90",
         0
       ],
       "input2": [
@@ -665,11 +575,11 @@
     "inputs": {
       "text": "STEVE",
       "image_width": [
-        "115",
+        "24",
         1
       ],
       "image_height": [
-        "115",
+        "24",
         2
       ],
       "font_name": "horizon.ttf",
@@ -868,12 +778,12 @@
   "132": {
     "inputs": {
       "image": [
-        "71",
+        "81",
         0
       ],
       "alpha": [
-        "13",
-        1
+        "156",
+        0
       ]
     },
     "class_type": "JoinImageWithAlpha",
@@ -943,7 +853,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SDAnyConverter"
+      "title": "SD Any Converter"
     }
   },
   "142": {
@@ -955,7 +865,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SDAnyConverter"
+      "title": "SD Any Converter"
     }
   },
   "143": {
@@ -969,6 +879,98 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Image"
+    }
+  },
+  "144": {
+    "inputs": {
+      "text": "804",
+      "image_width": 512,
+      "image_height": 512,
+      "font_name": "horizon.ttf",
+      "font_size": 54,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "black",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": false,
+      "x_percent": 82.5,
+      "y_percent": 93.60000000000001,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "rng_points"
+    }
+  },
+  "147": {
+    "inputs": {
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "155": {
+    "inputs": {
+      "fill_background": true,
+      "background_color": "#000000",
+      "RGBA_image": [
+        "24",
+        0
+      ],
+      "mask": [
+        "160",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageRemoveAlpha",
+    "_meta": {
+      "title": "LayerUtility: ImageRemoveAlpha"
+    }
+  },
+  "156": {
+    "inputs": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "threshold": 127,
+      "image": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "MaskFromColor+",
+    "_meta": {
+      "title": "🔧 Mask From Color"
+    }
+  },
+  "160": {
+    "inputs": {
+      "mask": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
     }
   }
 }
