@@ -24,6 +24,7 @@ Optional Parameters:
     --rng-points "123"                       : Point value (default: "420")
     --controlnet-strength 0.8                : Strength of image guidance (0.0-1.0)
     --controlnet depth                       : Type of image guidance (depth/canny/etc)
+    --lora "67a222bae707584b6d669623"      : Custom LoRA model ID to use
     --lora-strength 0.68                     : Strength of style effect (0.0-1.0)
 
 Example:
@@ -52,7 +53,7 @@ class EdenAIClient:
             "tool": "temple_abyss",
             "args": {
                 "n_samples": 1,
-                "prompt": "Steve is the curmudgeonly manager of the Garden of Eden, japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings",
+                "prompt": "Steve is the curmudgeonly manager of the Garden of Eden, japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows",
                 "negative_prompt": "wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft",
                 "seed": 214748364,
                 "use_rendered_art_image": False,
@@ -68,6 +69,7 @@ class EdenAIClient:
                 "rng_points": "420",
                 "controlnet_strength": 0.80,
                 "controlnet": "depth",
+                "lora": "67a222bae707584b6d669623",
                 "lora_strength": 0.68
             }
         }
@@ -153,6 +155,7 @@ def main():
     parser.add_argument('--rng-points', default="420", help='Point value for the card')
     parser.add_argument('--controlnet-strength', type=float, default=0.80, help='Strength of ControlNet guidance')
     parser.add_argument('--controlnet', default="depth", choices=['none', 'canny', 'depth', 'scribble', 'pose', 'threshold', 'lineart'], help='Type of ControlNet preprocessor')
+    parser.add_argument('--lora', default="67a222bae707584b6d669623", help='Custom LoRA model ID to use')
     parser.add_argument('--lora-strength', type=float, default=0.68, help='Strength of the LoRA effect')
     args = parser.parse_args()
     

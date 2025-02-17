@@ -382,7 +382,7 @@
   },
   "87": {
     "inputs": {
-      "seed": 343973193871648,
+      "seed": 104498876980890,
       "steps": 50,
       "cfg": 8,
       "sampler_name": "euler",
@@ -412,7 +412,7 @@
   },
   "88": {
     "inputs": {
-      "text": "Steve is the curmudgeonly manager of the Garden of Eden, japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings",
+      "text": "in the style of (embedding:froyd7sinsmodel_sdxl_embeddings.safetensors), japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, Crimson-robed figure casting a ritual in a dimly lit abandoned ruin, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows",
       "clip": [
         "10",
         1
@@ -467,7 +467,10 @@
         "141",
         0
       ],
-      "resolution": 1024,
+      "resolution": [
+        "167",
+        0
+      ],
       "image": [
         "100",
         0
@@ -511,7 +514,7 @@
   },
   "99": {
     "inputs": {
-      "image": "steve.png",
+      "image": "black_dummy.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -684,7 +687,7 @@
   },
   "128": {
     "inputs": {
-      "text": "Eden's Manager\n",
+      "text": "TRAIT",
       "image_width": [
         "131",
         1
@@ -915,18 +918,6 @@
       "title": "rng_points"
     }
   },
-  "147": {
-    "inputs": {
-      "images": [
-        "90",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "155": {
     "inputs": {
       "fill_background": true,
@@ -971,6 +962,48 @@
     "class_type": "InvertMask",
     "_meta": {
       "title": "InvertMask"
+    }
+  },
+  "162": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_creation",
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "167": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "100",
+        1
+      ],
+      "b": [
+        "100",
+        2
+      ]
+    },
+    "class_type": "DRMBT_MultiMinMax",
+    "_meta": {
+      "title": "Multi Min/Max"
+    }
+  },
+  "168": {
+    "inputs": {
+      "images": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
     }
   }
 }

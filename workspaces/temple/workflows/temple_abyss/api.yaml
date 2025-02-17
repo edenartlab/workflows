@@ -4,15 +4,16 @@ tip: |-
   This tool generates custom Temple Abyss CCG cards. You can either generate new card art or use an existing rendered image.
   The workflow combines generated or supplied art with card template elements including clan icons, rarity markers, and card text.
   For best results, provide detailed prompts for the art generation and ensure text fits within standard card layout constraints.
-
 thumbnail: app/temple-abyss-card_opt.jpg
 cost_estimate: 3.0 * n_samples
 output_type: image
-resolutions: []
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 handler: comfyui
-visible: false
+active: false
 base_model: sdxl
 comfyui_output_node_id: 143
+comfyui_intermediate_outputs:
+  generated_art: 162
 parameters:
   n_samples:
     type: integer
@@ -130,7 +131,7 @@ parameters:
   trait:
     type: string
     label: Trait
-    description: Name of the card
+    description: Card trait attribute 
     required: true
     default: "TRAIT"
     comfyui:
@@ -157,16 +158,16 @@ parameters:
       node_id: 144
       field: inputs
       subfield: text
-  # lora:
-  #   type: lora
-  #   label: LoRA
-  #   description: Use a custom model (LoRA)
-  #   tip: name of the custom (SDXL) LoRA model.
-  #   default: "froyd7sinsmodel_sdxl_lora.safetensors"
-  #   comfyui:
-  #     node_id: 10
-  #     field: inputs
-  #     subfield: lora_name
+  lora:
+    type: lora
+    label: LoRA
+    description: Use a custom model (LoRA)
+    tip: name of the custom (SDXL) LoRA model.
+    default: 67a222bae707584b6d669623
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: lora_name
   lora_strength:
     type: float
     label: LoRA Strength

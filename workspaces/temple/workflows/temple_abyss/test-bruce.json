@@ -1,12 +1,4 @@
-#!/bin/bash
-
-curl -X POST "https://api.eden.art/v2/tasks/create" \
-  -H "Content-Type: application/json" \
-  -H "X-Api-Key: YOUR_API_KEY \
-  -d @- << 'EOF'
 {
-  "tool": "temple_abyss",
-  "args": {
     "n_samples": 1,
     "prompt": "japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, An enigmatic figure in a crimson cloak stands on a mountain peak, surrounded by ancient symbols, overlooking a vast landscape, as a blue energy pulse fades into the setting sun., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows",
     "negative_prompt": "wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft",
@@ -26,6 +18,4 @@ curl -X POST "https://api.eden.art/v2/tasks/create" \
     "controlnet": "depth",
     "lora": "67a222bae707584b6d669623",
     "lora_strength": 0.68
-  }
 }
-EOF
