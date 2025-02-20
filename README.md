@@ -75,3 +75,4 @@ Remapping labels to multiple nodes example:
           - input: none
             output: controlnetQRPatternQR_v2Sd15.safetensors
 ```
+# test
