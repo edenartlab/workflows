@@ -1,7 +1,7 @@
 name: Create an image (SDXL)
 description: Generate an image from text using the classic SDXL model and trained concepts (LoRAs).
 tip: |-
-  In most vanilla txt2img cases FLUX should be used instead of this tool.
+  In most txt2img cases flux_schnell or flux_dev_lora should be used instead of this tool. Only use this tool if you are specifically asked to use SDXL.
   This tool uses StableDiffusionXL (SDXL) for image generation, which, while older, can produce creative and artistic results with weird artefacts. It works best with approximately 1-megapixel images, and resolutions should be divisible by 8. The model supports:
   - ControlNet guidance to preserve shapes from input images
   - LoRA models for applying fine-tuned concepts
