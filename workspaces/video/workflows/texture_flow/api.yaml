@@ -1,7 +1,7 @@
 name: TextureFlow
 description: Mix multiple images into a video, optionally add a driving motion or shape.
 tip: |-
-  "This workflow creates smooth, trippy, artistic animations from a set of style (texture) images (and other optional inputs).
+  This workflow creates smooth, trippy, artistic, or morphing animations from a set of style (texture) images (and other optional inputs). Very good for VJing.
   One to six images form the basis of this tool, driving the texture and content of the final animation. 
   In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good default.
   The motion mapping template controls how the content of the style images is mapped onto the video (spatially).
@@ -20,7 +20,8 @@ tip: |-
   - using a logo image as control_input + texture image(s) can create really cool logo animations.
   - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
   - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the \"None\" controlnet mode (which corresponds to a luminance controlnet).
-  Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable."
+  
+  Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable.
 thumbnail: app/style_mixing_opt.mp4
 cost_estimate: |-
   0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.75 : 1)
