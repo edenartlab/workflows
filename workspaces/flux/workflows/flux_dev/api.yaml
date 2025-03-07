@@ -78,7 +78,7 @@ parameters:
   denoise:
     type: float
     label: AI strength
-    description: Strength of the AI generation process on top of the starting image
+    description: Strength of the AI generation process on top of the starting image. 0 will just return the starting image, 1 will ignore it completely. A good range is around 0.7-0.8
     tip: |-
       Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. You typically want to use this with high denoise values >0.8 for Flux unless you only want only very subtle variations of the starting image.
     default: 1.0
