@@ -1,12 +1,7 @@
 name: Create an image (SDXL)
 description: Generate an image from text using the classic SDXL model and trained concepts (LoRAs).
 tip: |-
-  In most txt2img cases flux_schnell or flux_dev_lora should be used instead of this tool. Only use this tool if you are specifically asked to use SDXL.
-  This tool uses StableDiffusionXL (SDXL) for image generation, which, while older, can produce creative and artistic results with weird artefacts. It works best with approximately 1-megapixel images, and resolutions should be divisible by 8. The model supports:
-  - ControlNet guidance to preserve shapes from input images
-  - LoRA models for applying fine-tuned concepts
-  - ipAdapter for style transfer from reference images
-  While it may struggle with complex prompts and text rendering, it can produce unique and imaginative outputs, especially when using trained SDXL LoRAs. Users can provide an initial image to maintain high-level shape and color characteristics in the final generation.
+  Only use this tool for image generation if you are specifically asked to use Stable Diffusion (SDXL) or to use a Lora with SDXL as its base model. Otherwise you should always prefer one of the Flux models for image generation. Although lower quality, SDXL can produce artistic results with more unusual characteristics.
 thumbnail: app/txt2img.png
 cost_estimate: 1 * n_samples
 output_type: image
@@ -21,12 +16,9 @@ parameters:
   prompt:
     type: string
     label: Prompt
-    description: Describe an image
+    description: Image prompt
     tip: |-
-      Effective prompts are concise and specific, starting with a primary subject and its action. They can include context elements like background, secondary items, color schemes, style, mood, lighting, perspective, textures, time period, and cultural elements. End with artistic medium and quality enhancers like "HD" or "masterpiece". Use quotes for text elements.
-      IMPORTANT, If the user gives you a short, general, or visually vague prompt, you should augment their prompt by imagining richer details, following the tips above. 
-      If a user gives a long, detailed, or well-thought out composition, or requests to have their prompt strictly adhered to without revisions or embellishment, you should adhere to or repeat their exact prompt. 
-      The goal is to be authentic to the user's request, but to help them get better results when they are new, unsure, or lazy."
+      Should contain a primary subject and its action, including context like background, secondary items, color schemes, style, mood, lighting, perspective, textures, time period, and cultural elements. End with artistic medium and quality enhancers like "HD" or "masterpiece".
     required: true
     comfyui:
       node_id: 370
@@ -37,7 +29,7 @@ parameters:
     label: Width
     description: Width in pixels
     tip: |-
-      Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
+      Default to using a resolution of at least 1 megapixel. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait for taller things. When using portrait, do not exceed 1:1.5. Only do square if the user requests it.
     required: true
     default: 1024
     minimum: 256
@@ -52,7 +44,6 @@ parameters:
     type: integer
     label: Height
     description: Height in pixels
-    tip: Use the description for width to understand how to use height well.
     required: true
     default: 1024
     minimum: 256
@@ -87,7 +78,7 @@ parameters:
     type: lora
     label: LoRA
     description: Use a custom model (LoRA)
-    tip: name of the custom (SDXL) LoRA model.
+    tip: name of the custom SDXL LoRA model. Do not use Flux Loras for this tool.
     visible_if: use_lora=true
     comfyui:
       node_id: 162
@@ -96,9 +87,9 @@ parameters:
   lora_strength:
     type: float
     label: Custom model strength
-    description: Strength of the custom model (LoRA)
+    description: Strength of the LoRA model
     tip: |-
-      If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. If outputs dont look enough like the training images, increase the LoRA strength..
+      If outputs resemble the LoRA but have low prompt adherence or all look too similar, turn down the LoRA strength. If outputs dont look enough like the training images, increase it.
     default: 0.7
     minimum: 0.0
     maximum: 1.0
@@ -113,7 +104,7 @@ parameters:
     label: Use starting image
     description: Enable image-to-image, and controlnet guidance features
     tip: |-
-      Using a starting image helps guide your prompted creation towards the elements present in your initial input. if an image is supplied with the prompt or controlnet is employed, this should be always betrue.
+      This guides your content towards the init_image. If this is true, an init_image must be set. If controlnet is used, this must be true.
     default: false
     comfyui:
       node_id: 198
@@ -124,7 +115,7 @@ parameters:
     label: Starting image
     description: Initial image from which to start diffusion process
     tip: |-
-      a starting image will set the base for the diffusion process to generate from, and will guide the output towards the colors and general composition of the starting image. This is useful for image-to-image tasks.
+      Guides the output towards the colors and general composition of the starting image. Useful for image-to-image tasks.
     visible_if: use_init_image=true
     comfyui:
       node_id: 16
@@ -135,7 +126,7 @@ parameters:
     label: Generation strength
     description: Strength of the generation process on top of the starting image
     tip: |-
-      Decreasing generation strength increases the influence of a starting image in image-to-image workflows. The default of 1 is 100% AI creativity, ignoring all traces of the starting image, whereas a medium blend of about 50% will maintain close adherance to the original input. Denoise should always stay at 1 unless an init image is employed; never use less than 1 unless you're specifically trying to do an img2img task. In scenario in which an image2image task is requested, the init_image should be true, and a starting image should be supplied. Never set this parameter to true unless an init image is provided.
+      Decreasing this increases the influence of a starting image. The default of 1 is 100% AI creativity, ignoring any starting image, whereas a value of 0.5 will adhere closely to the original input. Denoise must be 1 if there is no init image, and must be less than 1 if there is one.
     default: 1.0
     minimum: 0.0
     maximum: 1.0
@@ -150,8 +141,6 @@ parameters:
     label: Use starting image size
     description: |-
       Override the provided width and height parameters with the actual resolution of your starting image.
-    tip: |-
-      It's best practice to use resolutions included in the models training data. Upscaling later can get you to a higher resolution and is almost always better than generating directly at a high resolution. Keep in mind that stable diffusion will always scale dimensions to the nearest divisible by 8 resolution, so if an oddly shaped image is supplied, the output will preserve aspect ratio as closely as possible, but the dimensions will not match the input exactly.
     default: false
     visible_if: use_init_image=true
     comfyui:
@@ -162,8 +151,6 @@ parameters:
     type: boolean
     label: Use optimized resolution
     description: Round to the nearest optimized SDXL resolution, recommended.
-    tip: |-
-      It's best practice to use resolutions included in the models training data. This option will fill or crop the input image to a legal SDXL resolution, producing results that are less likely to contain the artifacts typical of an unsupported resolution.
     default: false
     visible_if: use_init_image=true
     comfyui:
@@ -175,9 +162,9 @@ parameters:
     label: Apply controlnet to starting image
     visible_if: use_init_image=true
     description: |-
-      Apply Controlnet guidance to the image generation to guide the generated image towards the shape of the starting image.
+      Apply Controlnet to guide the image towards the shape of the starting image.
     tip: |-
-      Controlnet uses an assortment of image preprocessors to guide the output results towards the shape of a Starting Image. This parameter should never be true if no starting image is supplied, and should always be true if an init image is supplied and the user's request suggests they want guidance towards the shape of the input image. Keep in mind that a non-technical user may not have the vocabulary to describe what they want, and interpret their request with your best judgement as to whether or not they want shape guidance. Shape guidance is a user friendly term used in Eden tools to refer to the application of controlnet conditioning.
+      Guides the output image to match the shape and structure of the starting image. Enable this when a starting image is provided and shape guidance is desired. Shape guidance refers to controlnet conditioning.
     default: false
     comfyui:
       node_id: 408
@@ -189,7 +176,7 @@ parameters:
     description: |-
       What type of shape guidance to apply. Different types have subtly different effects on the output.
     tip: |-
-      Use best judgement based on the supplied image and user request to select the correct controlnet preprocessor and model to suit their needs. Canny detects thin binary edges and is useful for tasks requiring fast edge detection, such as architectural designs or simple object outlines, but it may struggle with complex scenes or noise. Depth generates luminance-based depth maps and is ideal for creating realistic 3D-like compositions, such as emphasizing depth in landscapes or isolating foreground objects. HED excels at producing smooth, intricate edge detection and is suitable for detailed illustrations, artistic line work, or noise-sensitive scenes. OpenPose identifies human keypoints, making it a perfect choice for generating images with accurate human poses, such as action shots, dance scenes, or character positioning. LineArt converts images into detailed line drawings and is best for black-and-white artwork, manga-style illustrations, or clear contrast outlines. Scribble processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
+      Canny detects edges, good for architecture and objects. Depth creates depth maps for 3D-like images. HED provides smooth edge detection for detailed art. OpenPose detects human poses. LineArt creates line drawings for black-and-white art. Scribble converts sketches into structured inputs.
     default: canny
     choices: [none, canny, depth, scribble, pose, threshold, lineart]
     visible_if: use_controlnet=true
@@ -202,7 +189,7 @@ parameters:
     label: Controlnet strength
     description: Strength of the shape guidance (controlnet)
     tip: |-
-      A good default is around 0.6, with ranges around 0.4 for more subtle guidance (more freedom for the AI model), and 0.8-1.0 for something more heavy handed.
+      0.6 is a good default, use 0.4 for subtle guidance (more freedom for the AI), and 0.8-1.0 for heavy guidance.
     default: 0.6
     minimum: 0.0
     maximum: 1.2
@@ -217,7 +204,7 @@ parameters:
     label: Use style image
     description: Apply style elements from a given image
     tip: |-
-      Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image. It essentially interprets prompt conditioning from the use of an input image, and is often referred to vernacularly throughout Eden tools as a style image. A non-technical user may not have the vocabulary to describe what they want, interpret their request with your best judgement as to whether or not they want style guidance. Style guidance is a user friendly term used in Eden tools to refer to the application of ipAdapter conditioning.
+      Uses a style image to guide the composition, subjects and aesthetics of the generated image.
     default: false
     comfyui:
       node_id: 35
@@ -227,7 +214,7 @@ parameters:
     type: image
     label: Style image
     description: |-
-      Image of an aesthetic style, texture or visual content to be transferred to the generated image
+      Image of an style, texture or visual aesthetic to transfer to the image
     visible_if: use_ipadapter=true
     comfyui:
       node_id: 145
@@ -236,7 +223,7 @@ parameters:
   ipadapter_strength:
     type: float
     label: Style strength
-    description: set the strength of the image style transfer
+    description: Style transfer strength
     tip: |-
       Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.4) will give more freedom to interpret the prompt.
     default: 0.8
@@ -283,9 +270,9 @@ parameters:
   seed:
     type: integer
     label: Seed
-    description: Set random seed for reproducibility. If blank, will be set to a random value.
+    description: Reproducibility seed.
     tip: |-
-      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank. Great for redoing an image generation you like with a slightly modified prompt, but otherwise you should usually leave this blank.
+      You should only set this if you want to start from/copy the seed of a previous image. Great for redoing an image generation you like with a slightly modified prompt. Unless one is specified, you should leave this blank, and it will be randomly chosen.
     default: random
     minimum: 0
     maximum: 2147483647
@@ -296,9 +283,9 @@ parameters:
   steps:
     type: integer
     label: Steps
-    description: Set the number of diffusion steps
+    description: Diffusion steps
     tip: |-
-      The default value is sufficient for most jobs, but at a speed cost can be increased, or decreased to undercook the image generation.
+      More steps is better, but slower. Use default unless requested otherwise.
     default: 35
     step: 1
     minimum: 10
