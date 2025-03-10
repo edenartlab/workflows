@@ -3,7 +3,7 @@ description: Generate a .png image with alpha channel.
 tip: |-
   The background removal tool is the default way to produce transparency (chained after any img generation tool). However, in rare cases a fully opaque masked object may not be enough. Layer Diffusion generates transparency directly, returning a .png image with gradient alpha values per pixel which means it can generate partially transparent surfaces like glass that can then be placed on top of other images. Use this tool if a user needs a transparent image layer that is to be further composited with other images or backgrounds. In all other cases, use the background removal tool in combination with the image generation tools to produce transparency.
 thumbnail: app/layer_diffusion.png
-cost_estimate: 1 * n_samples
+cost_estimate: 3 * n_samples
 output_type: image
 resolutions: [16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344]
 handler: comfyui

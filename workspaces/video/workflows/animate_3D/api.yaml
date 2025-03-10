@@ -5,7 +5,7 @@ tip: |-
   With default settings this tool will a subtle 3D-zoom effect to an input image, adding some motion to the background, minimal motion to the foreground (subject) and optionally apply a style effect.
   If the image has a detail sensitive or very specific foreground subject (like a human face or character), a lower foreground_denoise strength can be used to avoid corrupting the small details. This tool is pretty slow and typically used to create minimally animated versions of beautiful still art.
 thumbnail: app/animate_3D_opt.mp4
-cost_estimate: n_seconds * 6 * n_steps/6 * resolution/1024
+cost_estimate: n_seconds * 10 * n_steps/6 * resolution/1024
 output_type: video
 handler: comfyui
 status: prod

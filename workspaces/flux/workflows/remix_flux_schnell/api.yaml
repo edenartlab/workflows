@@ -3,7 +3,7 @@ description: Create variations of an image (using FLUX-schnell).
 tip: |-
   Flux is a text to image model that excels at prompt coherence and text generation. The remix endpoint creates a variation on a starting image using Flux Schnell. This is achieved by captioning the input image with Florence2, and running an img2img job through flux-schnell. This tools should be considered if a user asks for a variation on an existing image.
 thumbnail: app/remix-flux-schnell_opt.png
-cost_estimate: 1.0 * n_samples
+cost_estimate: 1 * n_samples
 output_type: image
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9x16_1152x2048, 9-21_640x1536]
 handler: comfyui
