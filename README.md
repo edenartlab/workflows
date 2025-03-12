@@ -6,7 +6,7 @@
 | `name` | Unique identifier for the tool |
 | `description` | Detailed explanation of the parameter's purpose and usage |
 | `tip` | Additional advice or context for using the parameter effectively (targetted to help AI agents use the tool well) |
-| `output_type` | Output type of the tool (image, video, audio) |
+| `output_type` | Output type of the tool (image, video, audio, string) |
 | `handler` | What backend the tool is running on |
 | `comfyui_output_node_id` | ComfyUI output node id if applicable |
 | `base_model` | Display the base model in the UI (flux-dev, flux-schnell, sdxl, sd15, sd3) |
