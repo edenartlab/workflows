@@ -1,0 +1,114 @@
+name: Create a stylized selfie
+description: Generate a stylized image featuring a specific person.
+tip: |-
+  This pipeline takes an input picture of a person to extract their identity and a style image to extract stylistic elements / textures. It then generates an image of the same person in the referenced style.
+  This tool also takes an optional input prompt. By setting the style strength to zero and writing a good prompt, this pipeline can also be used to place the person in a specific situation without applying the style from the image, just using a prompt!
+  If a users asks something like eg "cartoonize this person", you can simply generate a cartoon image first (if not provided) and then use that as the style_image in combination with the user provided person_image.
+output_type: image
+cost_estimate: 2 * n_samples
+thumbnail: app/face_styler.mp4
+status: prod
+visible: true
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
+handler: comfyui
+base_model: sdxl
+comfyui_output_node_id: 74
+parameters:
+  person_image:
+    type: image
+    label: Person image
+    description: Make sure the face is not too small in the picture
+    required: true
+    comfyui:
+      node_id: 90
+      field: inputs
+      subfield: image
+  style_image:
+    type: image
+    label: Style image
+    description: Stylistic image of an aesthetic style, texture or visual content you want to apply to the person (eg a 3D cartoon image)
+    required: true
+    comfyui:
+      node_id: 91
+      field: inputs
+      subfield: image
+  style_strength:
+    type: float
+    label: Strength of the style image (through IP_Adapter)
+    description: Higher values (>0.8) will cause strong adherence to the style image, lower values (<0.6) will give more freedom to interpret the prompt.
+    default: 0.8
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 76
+      field: inputs
+      subfield: weight
+  identity_strength:
+    type: float
+    label: Strength of the identity (person) image
+    description: Higher values (>0.9) will try to make the img look more like the person. Lower values (<0.6) will give more freedom to interpret the style image.
+    default: 0.9
+    minimum: 0.0
+    maximum: 1.2
+    comfyui:
+      node_id: 62
+      field: inputs
+      subfield: weight
+  prompt:
+    type: string
+    label: Prompt
+    description: An optional prompt to put the person in a specific situation or help the style guidance. (Usually fine to leave this empty)
+    tip: |-
+      When changing this away from the default, you usually want to lower the style_strength since the style image may fight this prompt. 
+      Prompting strategies typical to SDXL CLIP text encoder based models should be used.
+    default: null
+    comfyui:
+      node_id: 22
+      field: inputs
+      subfield: text
+  width:
+    type: integer
+    label: Width
+    description: Width of the generated image in n_pixels
+    default: 1024
+    minimum: 512
+    maximum: 1536
+    comfyui:
+      node_id: 5
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: Height of the generated image in n_pixels
+    default: 1024
+    minimum: 512
+    maximum: 1536
+    comfyui:
+      node_id: 5
+      field: inputs
+      subfield: height
+  seed:
+    type: integer
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set randomly.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. 
+      Unless one is specified, you should leave this blank!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 82
+      field: inputs
+      subfield: seed
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      This is the number of tries to generate for the prompt. 
+      If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+    default: 1
+    minimum: 1
+    maximum: 4

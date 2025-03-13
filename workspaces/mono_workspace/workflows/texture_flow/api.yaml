@@ -1,0 +1,299 @@
+name: TextureFlow
+description: Mix multiple images into a video, optionally add a driving motion or shape.
+tip: |-
+  This workflow creates smooth, trippy, artistic, or morphing animations from a set of style (texture) images (and other optional inputs). Very good for VJing.
+  One to six images form the basis of this tool, driving the texture and content of the final animation. 
+  In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good default.
+  The motion mapping template controls how the content of the style images is mapped onto the video (spatially).
+  When doing quick experimentation with settings you can set upscale:false to produce a fast but low resolution test render, once a sweet spot is found, 
+  you can set upscale:true to generate a full HD final output video. Before using this tool, always print the settings your about to use and ask the user to confirm before executing the tool!
+  There is an optional control_input (set use_controlnet1 to true) and preprocessor1 type that can add specific shape/motion guidance to the generated video 
+  like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping.
+  In general, running TextureFlow without a control_input almost always produces visually appealing results, adding a control_input is tricky.
+  The wrong combination of control_input and style images may look bad (especially when the control strength is too high),
+  but the right combo can look absolutely amazing and is one of Edens special endpoints that make our platform unique!
+
+  Some example use cases for TextureFlow:
+  - abstract, artistic image animation using a single style image 
+  (this will completely deform the input image and lose lots of details but its great to generate beautiful, smooth, animated textures)
+  - mixing multiple style_images using various motion mapping modes to create slick, looping VJ content (abstract, artistic animations)
+  - using a logo image as control_input + texture image(s) can create really cool logo animations.
+  - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
+  - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the \"None\" controlnet mode (which corresponds to a luminance controlnet).
+  
+  Make sure to set the controlnet_strength1 high enough to make the QR code animation scanable.
+output_type: video
+cost_estimate: '0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.75 : 1)'
+thumbnail: app/style_mixing_opt.mp4
+status: prod
+visible: true
+resolutions: [16-9_1024x576, 3-2_864x576, 1-1_640x640, 2-3_576x864, 9-16_576x1024]
+handler: comfyui
+base_model: sd15
+comfyui_output_node_id: 446
+comfyui_intermediate_outputs:
+  control_signal_1: 501
+  mapping_motion: 199
+parameters:
+  images:
+    type: array
+    items:
+      type: image
+    label: Style Images
+    description: |-
+      Style images driving the content of the generated video (through IP-adapter)
+    min_length: 1
+    max_length: 6
+    required: true
+    comfyui:
+      node_id: 74
+      field: inputs
+      subfield: folder
+      preprocessing: folder
+  n_seconds:
+    type: float
+    label: Video length (seconds)
+    description: Number of seconds of video to generate.
+    default: 6.0
+    minimum: 2.0
+    maximum: 24.0
+    required: true
+    step: 0.5
+    comfyui:
+      node_id: 570
+      field: inputs
+      subfield: value
+  width:
+    type: integer
+    label: Width
+    description: |- 
+      Width of the video generation in pixels. 
+      High values sometimes cause duplication artefacts like multiple faces etc.
+    default: 640
+    minimum: 384
+    maximum: 1024
+    required: true
+    step: 32
+    comfyui:
+      node_id: 261
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: |-
+      Height of the video generation in pixels. 
+      High values sometimes cause duplication artefacts like multiple faces etc.
+    default: 640
+    minimum: 384
+    maximum: 1024
+    required: true
+    step: 32
+    comfyui:
+      node_id: 261
+      field: inputs
+      subfield: height
+  upscale:
+    type: boolean
+    label: Activate upscale
+    description: |-
+      Upscale the resulting animation to full HD. (You can turn this off for faster and cheaper experimentation)
+    tip: |-  
+      This toggle can optionally be disactivated when youre not sure that the result is going to be good and are still exploring the best settings.
+    default: true
+    required: true
+    comfyui:
+      node_id: 415
+      field: inputs
+      subfield: value
+  upscale_resolution:
+    type: integer
+    label: Max(w,h) post upscale
+    hide_from_ui: true
+    hide_from_agent: true
+    description: Number of pixels to upscale to
+    default: 1280
+    comfyui:
+      node_id: 568
+      field: inputs
+      subfield: value
+  use_controlnet1:
+    type: boolean
+    label: Add shape input
+    description: |-
+      Apply Controlnet shape guidance.
+    tip: |-  
+      Controlnet uses image preprocessors to guide the output results towards the shape of a Guidance Image.
+    default: false
+    comfyui:
+      node_id: 273
+      field: inputs
+      subfield: value
+  control_input:
+    anyOf:
+    - type: image
+    - type: video
+    label: Shape input
+    description: |-
+      A shape image/GIF/video used as input to the controlnet. 
+      Will guide the shape of the output video. 
+      When doing videomapping this can eg be a photo of the surface you're projecting on.
+    visible_if: use_controlnet1=true
+    comfyui:
+      node_id: 552
+      field: inputs
+      subfield: path
+  preprocessor1:
+    type: string
+    label: Shape guidance type
+    description: |-
+      Type of shape guidance for controlnet. 
+      Examples can be seen at https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-depth
+    tip: |-  
+      In most cases, the default CannyEdgePreprocessor at strengths of 0.4-0.6 is great! 
+      Depth will try to maintain the perceived depth of the input scene. 
+      Canny edge creates strong edges adhering to the shape of your image, whereas scribble will create guidance towards a rougher sketched shape of your starting image and often produces better quality video at the cost of less finegrained correspondence with the control image. 
+      Pose will try to extract the pose from a person and inject it into the video. And None refers to QRmonster which simply maintains luminance of the input (dark and bright regions)
+    visible_if: use_controlnet1=true
+    default: CannyEdgePreprocessor
+    choices: 
+      - CannyEdgePreprocessor
+      - DepthAnythingV2Preprocessor
+      - AnyLineArtPreprocessor_aux
+      - DensePosePreprocessor
+      - none
+    choices_labels: 
+      - Edges (Canny)
+      - Depth
+      - Lineart
+      - human pose
+      - Luminance (QR-code; dark/bright regions)
+    comfyui:
+      node_id: 406
+      field: inputs
+      subfield: preprocessor
+      remap:
+      - node_id: 107
+        field: inputs
+        subfield: control_net_name
+        map:
+          AnyLineArtPreprocessor_aux: control_v11p_sd15_lineart.pth
+          CannyEdgePreprocessor: control_v11p_sd15_canny.pth
+          DensePosePreprocessor: control_v11p_sd15_openpose.pth
+          DepthAnythingV2Preprocessor: control_v11f1p_sd15_depth.pth
+          none: controlnetQRPatternQR_v2Sd15.safetensors
+  controlnet_strength1:
+    type: float
+    label: Shape strength
+    description: The guidance strength of the chosen controlnet model, enforcing the shape of the shape input, but allowing different colors and textures. Recommended values are 0.4-0.6
+    tip:   A good default is around 0.5, with ranges between 0.35-0.5 for subtle guidance, and 0.5-0.8 for something more heavy handed
+    default: 0.5
+    minimum: 0.0
+    maximum: 1.5
+    step: 0.01
+    visible_if: use_controlnet1=true
+    comfyui:
+      node_id: 116
+      field: inputs
+      subfield: strength
+  denoise:
+    type: float
+    label: AI Strength on top of shape input (denoise)
+    description: Strength of the AI effect. Lowering this value will use the shape input pixel values as a base for generation. A value of 0.0 would just return the shape input with no change.
+    default: 1.0
+    minimum: 0.1
+    maximum: 1.0
+    step: 0.01
+    visible_if: use_controlnet1=true
+    comfyui:
+      node_id: 612
+      field: inputs
+      subfield: value
+  control_input_fit_strategy:
+    type: string
+    label: Fit strategy
+    description: |-
+      How should your shape input get resized to the target width/height of the generation?
+    tip: |-
+      fill / crop will cut off edges, stretch will distort the control_input and pad can cause strong visual artefacts (not recommended).
+    visible_if: use_controlnet1=true
+    default: fill / crop
+    choices: [stretch, fill / crop, pad]
+    comfyui:
+      node_id: 262
+      field: inputs
+      subfield: method
+  mapping_mode:
+    type: string
+    label: Style Mapping Mode
+    description: |-
+      Controls the motion by which the style images will get mapped into the video
+    choices: [concentric_circles_inwards, concentric_circles_outwards, concentric_rectangles_inwards, concentric_rectangles_outwards, rotating_segments_clockwise, rotating_segments_counter_clockwise, pushing_segments_clockwise, pushing_segments_counter_clockwise, vertical_stripes_left, vertical_stripes_right, horizontal_stripes_up, horizontal_stripes_down]
+    default: concentric_circles_outwards
+    comfyui:
+      node_id: 536
+      field: inputs
+      subfield: mode
+  n_steps:
+    type: integer
+    label: Generation steps
+    description: |-
+      Number of LCM denoising steps. 
+      Lower is cheaper & faster (for experimenting with settings), 
+      higher can sometimes yield slightly better quality.
+    default: 8
+    minimum: 4
+    maximum: 14
+    step: 1
+    comfyui:
+      node_id: 524
+      field: inputs
+      subfield: value
+  motion_scale:
+    type: float
+    label: Motion Strength
+    description: |-
+      Motion scale for the animation, controls how much animated motion will be generated. 
+      Lower this value for more gentle, subtle motion. 
+      Highly recommended to stay in range [0.9-1.2]
+    tip: |-
+      The default value of 1.1 is good for most cases. 
+      Lowering to eg 0.9 will result in very subtle texture motion, increasing to eg 1.25 will result in more motion. 
+      Going above 1.3 is almost never desirable.
+    default: 1.1
+    minimum: 0.7
+    maximum: 1.4
+    step: 0.01
+    comfyui:
+      node_id: 450
+      field: inputs
+      subfield: float_val
+  feathering_fraction:
+    type: float
+    label: Boundary softness
+    description: |-
+      Controls how sharp/soft the boundary is between different style regions in the video. 
+      0.0 will cause perfectly outlined style regions, 0.25 will have much smoother transitions.
+    default: 0.1
+    minimum: 0.0
+    maximum: 0.25
+    step: 0.01
+    comfyui:
+      node_id: 136
+      field: inputs
+      subfield: feathering_fraction
+  seed:
+    type: integer
+    label: Seed
+    description: |-
+      Set random seed for reproducibility. If blank, will be set to a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. 
+      Unless one is specified, you should leave this at default!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 282
+      field: inputs
+      subfield: seed

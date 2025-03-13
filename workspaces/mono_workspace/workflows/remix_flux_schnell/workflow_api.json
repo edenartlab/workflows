@@ -1,0 +1,545 @@
+{
+  "12": {
+    "inputs": {
+      "seed": [
+        "135",
+        1
+      ],
+      "sampler": "euler",
+      "scheduler": "simple",
+      "steps": "6",
+      "guidance": "3.5",
+      "max_shift": "0.50",
+      "base_shift": "1.15",
+      "denoise": [
+        "75",
+        0
+      ],
+      "model": [
+        "169",
+        0
+      ],
+      "conditioning": [
+        "73",
+        0
+      ],
+      "latent_image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "FluxSamplerParams+",
+    "_meta": {
+      "title": "🔧 Flux Sampler Parameters"
+    }
+  },
+  "16": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "169",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "37": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "38": {
+    "inputs": {
+      "text_input": "",
+      "task": [
+        "167",
+        0
+      ],
+      "fill_mask": true,
+      "keep_model_loaded": true,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": [
+        "135",
+        0
+      ],
+      "image": [
+        "181",
+        0
+      ],
+      "florence2_model": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "43": {
+    "inputs": {
+      "width": [
+        "145",
+        0
+      ],
+      "height": [
+        "145",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "44": {
+    "inputs": {
+      "pixels": [
+        "181",
+        0
+      ],
+      "vae": [
+        "169",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "73": {
+    "inputs": {
+      "text": [
+        "155",
+        0
+      ],
+      "clip": [
+        "169",
+        1
+      ]
+    },
+    "class_type": "TextEncodeForSamplerParams+",
+    "_meta": {
+      "title": "🔧Text Encode for Sampler Params"
+    }
+  },
+  "75": {
+    "inputs": {
+      "text": [
+        "89",
+        1
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "76": {
+    "inputs": {
+      "any_type_input": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "89": {
+    "inputs": {
+      "number": 0.6,
+      "from_range_min": 0,
+      "from_range_max": 1,
+      "to_range_min": [
+        "130",
+        0
+      ],
+      "to_range_max": [
+        "131",
+        0
+      ]
+    },
+    "class_type": "NumberRemap",
+    "_meta": {
+      "title": "Creativity Strength"
+    }
+  },
+  "93": {
+    "inputs": {
+      "order_by": "none",
+      "cols_value": "none",
+      "cols_num": 2,
+      "add_prompt": "true",
+      "add_params": "true",
+      "images": [
+        "16",
+        0
+      ],
+      "params": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "PlotParameters+",
+    "_meta": {
+      "title": "🔧 Plot Sampler Parameters"
+    }
+  },
+  "117": {
+    "inputs": {
+      "image": "ef0a13dfd87d1b56bfe745fff7dedaa6647e11d73851e28c615061276583b2d8.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "123": {
+    "inputs": {
+      "width": [
+        "124",
+        0
+      ],
+      "height": [
+        "124",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "124": {
+    "inputs": {
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "CM_NearestSDXLResolution",
+    "_meta": {
+      "title": "NearestSDXLResolution"
+    }
+  },
+  "130": {
+    "inputs": {
+      "value": 0.4
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "131": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "135": {
+    "inputs": {
+      "seed": 0
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "139": {
+    "inputs": {
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "143": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "force SDXL resolution"
+    }
+  },
+  "145": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "output_multiplier": 1,
+      "multiple_off": 8
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  },
+  "152": {
+    "inputs": {
+      "image": [
+        "181",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]",
+    "_meta": {
+      "title": "🪛 Get resolution"
+    }
+  },
+  "155": {
+    "inputs": {
+      "body": "",
+      "delimiter": " ",
+      "append": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Detail injection"
+    }
+  },
+  "160": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Show Advanced Parameters"
+    }
+  },
+  "162": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "print caption"
+    }
+  },
+  "163": {
+    "inputs": {
+      "menu": "none,caption,detailed_caption,more_detailed_caption",
+      "delimiter": ",",
+      "select_item": "detailed_caption"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "165": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2",
+      "override_bool": [
+        "163",
+        1
+      ]
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "BOOL ++"
+    }
+  },
+  "166": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "167": {
+    "inputs": {
+      "any_type_input": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "169": {
+    "inputs": {
+      "ckpt_name": "flux1-schnell-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "174": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "155",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "180": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2",
+      "override_bool": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "BOOL ++"
+    }
+  },
+  "181": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "180",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "43",
+        0
+      ],
+      "input2": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "182": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "165",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "166",
+        0
+      ],
+      "input2": [
+        "38",
+        2
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "184": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "185",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "16",
+        0
+      ],
+      "input2": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "185": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2",
+      "override_bool": [
+        "162",
+        0
+      ]
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "BOOL ++"
+    }
+  },
+  "186": {
+    "inputs": {
+      "filename_prefix": "remix-flux-schnell",
+      "images": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

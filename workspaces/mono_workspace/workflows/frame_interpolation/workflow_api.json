@@ -1,0 +1,663 @@
+{
+  "15": {
+    "inputs": {
+      "frame_rate": [
+        "209",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": [
+        "121",
+        0
+      ],
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": [
+        "190",
+        0
+      ],
+      "save_output": true,
+      "images": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "35": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "129",
+        1
+      ],
+      "b": [
+        "174",
+        4
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "39": {
+    "inputs": {
+      "ckpt_name": "film_net_fp32.pt",
+      "clear_cache_after_n_frames": [
+        "68",
+        0
+      ],
+      "multiplier": [
+        "129",
+        1
+      ],
+      "frames": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "FILM VFI",
+    "_meta": {
+      "title": "FILM VFI"
+    }
+  },
+  "68": {
+    "inputs": {
+      "boolean": [
+        "123",
+        0
+      ],
+      "on_true": [
+        "35",
+        0
+      ],
+      "on_false": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "80": {
+    "inputs": {
+      "ckpt_name": [
+        "195",
+        0
+      ],
+      "clear_cache_after_n_frames": [
+        "68",
+        0
+      ],
+      "multiplier": [
+        "129",
+        1
+      ],
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "81": {
+    "inputs": {
+      "body": "-intFrms",
+      "delimiter": "",
+      "prepend": [
+        "92",
+        0
+      ],
+      "append": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
+  },
+  "92": {
+    "inputs": {
+      "body": "-interpolation_",
+      "delimiter": "",
+      "prepend": [
+        "93",
+        0
+      ],
+      "append": [
+        "188",
+        1
+      ]
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
+  },
+  "93": {
+    "inputs": {
+      "on_true": "FILM",
+      "on_false": "RIFE",
+      "boolean": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "Switch string [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch string"
+    }
+  },
+  "109": {
+    "inputs": {
+      "int_": [
+        "129",
+        1
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "114": {
+    "inputs": {
+      "delimiter": ", ",
+      "text_list": [
+        "116",
+        0
+      ]
+    },
+    "class_type": "Text List to Text",
+    "_meta": {
+      "title": "Text List to Text"
+    }
+  },
+  "116": {
+    "inputs": {
+      "any_type_input": [
+        "174",
+        5
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "118": {
+    "inputs": {
+      "text": [
+        "114",
+        0
+      ],
+      "separator": ",",
+      "reverse": false,
+      "return_half": "First Half"
+    },
+    "class_type": "TextSplit",
+    "_meta": {
+      "title": "TextSplit"
+    }
+  },
+  "119": {
+    "inputs": {
+      "text": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "121": {
+    "inputs": {
+      "text": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "123": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Cache All Frames"
+    }
+  },
+  "124": {
+    "inputs": {
+      "value": 10
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "clear cache after n frames"
+    }
+  },
+  "129": {
+    "inputs": {
+      "number": 14,
+      "integer": "round"
+    },
+    "class_type": "NumberPlusPlus",
+    "_meta": {
+      "title": "Interpolation Frames"
+    }
+  },
+  "138": {
+    "inputs": {
+      "text": [
+        "118",
+        0
+      ],
+      "separator": ".",
+      "reverse": false,
+      "return_half": "First Half"
+    },
+    "class_type": "TextSplit",
+    "_meta": {
+      "title": "TextSplit"
+    }
+  },
+  "154": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "129",
+        0
+      ],
+      "b": [
+        "202",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "160": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_input_video_fps"
+    }
+  },
+  "161": {
+    "inputs": {
+      "value": 30
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "FPS"
+    }
+  },
+  "166": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "209",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "FPS"
+    }
+  },
+  "174": {
+    "inputs": {
+      "path": "B:\\AI\\StabilityMatrix-win-x64\\Data\\Images\\input\\xander",
+      "resize_images_to_first": true,
+      "image_load_cap": 0,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 714,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": true
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "Load Media (img, vid or dir)"
+    }
+  },
+  "188": {
+    "inputs": {
+      "item_indices": "0",
+      "debug": true,
+      "list_input": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "ListItemSelector",
+    "_meta": {
+      "title": "List Item Selector"
+    }
+  },
+  "190": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "pingpong"
+    }
+  },
+  "192": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "show_advanced"
+    }
+  },
+  "193": {
+    "inputs": {
+      "menu": "rife49.pth, rife49.pth, FILM",
+      "delimiter": ", ",
+      "select_item": "rife49.pth"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "MODEL SELECTOR"
+    }
+  },
+  "195": {
+    "inputs": {
+      "any_type_input": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "196": {
+    "inputs": {
+      "value": "FILM"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "197": {
+    "inputs": {
+      "comparison": "a == b",
+      "a": [
+        "196",
+        0
+      ],
+      "b": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "202": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "207": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "160",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "208": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "209": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "212",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "161",
+        0
+      ],
+      "input2": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "210": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "207",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "211": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "210",
+        0
+      ],
+      "b": [
+        "208",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "212": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "211",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "213": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "214": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "213",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "174",
+        0
+      ],
+      "input2": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "215": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "216": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "215",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "174",
+        0
+      ],
+      "input2": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "217": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "218",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "214",
+        0
+      ],
+      "input2": [
+        "216",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "218": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "219": {
+    "inputs": {
+      "image": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  }
+}

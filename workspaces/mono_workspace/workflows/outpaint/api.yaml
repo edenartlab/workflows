@@ -1,0 +1,177 @@
+name: Extend an image (Outpaint)
+description: Expand an image to a different aspect ratio by outpainting.
+tip: |-
+  This model uses SD1.5, so huge resolution changes will add potentially undesirable artifacting. 
+  Choosing an SDXL resolution will result in a larger image, but not necessarily a better one. 
+  Keep in mind that a non-technical user may not have the vocabulary to describe what they want, and interpret their request with your best judgement as to whether or not the outpainting is what they are requesting, considering terms like outpaint, zoom out,expand, add to the side of this image,or other prompts for an image canvas to be larger as a suggestion to consider this tool when provided with such a request and an image to operate on.
+output_type: image
+cost_estimate: 2 * n_samples
+thumbnail: app/outpaint_edit_opt.mp4
+status: prod
+visible: true
+resolutions: null
+handler: comfyui
+base_model: sd15
+comfyui_output_node_id: 181
+parameters:
+  init_image:
+    type: image
+    label: Starting image
+    description: Initial image from which to start diffusion process
+    required: true
+    comfyui:
+      node_id: 58
+      field: inputs
+      subfield: image
+  n_samples:
+    type: integer
+    label:  Number of samples
+    description: Number of samples to generate
+    tip: |-
+      This is the number of creations to generate for the prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  prompt:
+    type: string
+    label: Prompt
+    description: Optional prompt to describe what you want to generate.
+    tip: |-
+      Leave blank if no prompt is specified
+    comfyui:
+      node_id: 138
+      field: inputs
+      subfield: string
+  aspect_ratio:
+    type: string
+    label: Aspect Ratio
+    description: This parameter selects the size of the output canvas
+    tip: |-
+      This parameter is overriden and can be left set to default if use_custom_expand parameter is true
+    default: 16-9_landscape_1344x768
+    choices: [1-1_square_1024x1024, 4-3_landscape_1152x896, 3-2_landscape_1216x832, 16-9_landscape_1344x768, 21-9_landscape_1536x640, 3-4_portrait_896x1152, 5-8_portrait_832x1216, 9-16_portrait_768x1344, 9-21_portrait_640x1536]
+    visible_if: use_custom_expand=false
+    comfyui:
+      node_id: 179
+      field: inputs
+      subfield: aspect_ratio
+  justification:
+    type: string
+    label: Justification
+    description: This parameter selects the starting justification of the input image in relation to the outpaint canvas result
+    tip: |-
+      This parameter changes conditionally based on whether the input image is landscape or portait orientation, and is overriden and can be left set to default if use_custom_expand parameter is true.
+    default: center
+    choices: [top-left, center, bottom-right]
+    comfyui:
+      node_id: 179
+      field: inputs
+      subfield: justification
+  use_custom_expand:
+    type: boolean
+    label: Custom Expand
+    description: Specify the pixels in each direction from the starting image, leaving its resolution unchanged.
+    tip: |-
+      This should only be active if a user wants to outpaint with a specified direction and pixel count. A zoomed out image could be made by adding an even pixel could like 128 to each of args left top right and bottom, but that number should really not be any higher than 256, 128 is a good default
+    default: false
+    comfyui:
+      node_id: 112
+      field: inputs
+      subfield: boolean
+  left:
+    type: integer
+    label: Left
+    description: Increase the outpaint canvas by n pixels to the left
+    tip: |-
+      This should only be set if a user specifies the direction left and a pixel amount, in which case use_custom_expand should be set true
+    default: 0
+    minimum: 0
+    maximum: 1024
+    step: 8
+    visible_if: use_custom_expand=true
+    comfyui:
+      node_id: 104
+      field: inputs
+      subfield: int
+  top:
+    type: integer
+    label: Top
+    description: Increase the outpaint canvas by n pixels to the top
+    tip: |-
+      This should only be set if a user specifies the direction top or above, and a pixel amount, in which case use_custom_expand should be set true
+    default: 0
+    minimum: 0
+    maximum: 1024
+    step: 8
+    visible_if: use_custom_expand=true
+    comfyui:
+      node_id: 105
+      field: inputs
+      subfield: int
+  right:
+    type: integer
+    label: Right
+    description: Increase the outpaint canvas by n pixels to the right
+    tip: |-
+      This should only be set if a user specifies the direction right and a pixel amount, in which case use_custom_expand should be set true
+    default: 0
+    minimum: 0
+    maximum: 1024
+    step: 8
+    visible_if: use_custom_expand=true
+    comfyui:
+      node_id: 106
+      field: inputs
+      subfield: int
+  bottom:
+    type: integer
+    label: Bottom
+    description: Increase the outpaint canvas by n pixels to the bottom
+    tip: |-
+      This should only be set if a user specifies the direction bottom, beneath or below, and a pixel amount, in which case use_custom_expand should be set true
+    default: 0
+    minimum: 0
+    maximum: 1024
+    step: 8
+    visible_if: use_custom_expand=true
+    comfyui:
+      node_id: 107
+      field: inputs
+      subfield: int
+  negative:
+    type: string
+    label: Negative prompt
+    description: Negative text prompt, what you do *not* want to generate. You usually want to keep this at default or at most, add stuff to this prompt.
+    default: embedding:easynegative, text, watermark, caption, sentance, words, nude, naked, nsfw
+    comfyui:
+      node_id: 158
+      field: inputs
+      subfield: string
+  seed:
+    type: integer
+    label: Seed
+    description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
+    tip: |-
+      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank!
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 171
+      field: inputs
+      subfield: seed
+  steps:
+    type: integer
+    label: Steps
+    description: Number of diffusion steps
+    tip: |-
+      Increasing the steps increases the quality of the image with diminishing returns beyond 35, as well as the run time. 
+      Only change this if you want to experiment with undercooking the image, or are using a specialized model.
+    default: 20
+    minimum: 1
+    maximum: 50
+    comfyui:
+      node_id: 171
+      field: inputs
+      subfield: steps

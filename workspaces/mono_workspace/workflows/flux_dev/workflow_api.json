@@ -1,0 +1,1306 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "410",
+        0
+      ],
+      "vae": [
+        "390",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "62": {
+    "inputs": {
+      "max_shift": 1.1500000000000001,
+      "base_shift": 0.5,
+      "width": [
+        "432",
+        0
+      ],
+      "height": [
+        "433",
+        0
+      ],
+      "model": [
+        "337",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModelSamplingFlux"
+    }
+  },
+  "80": {
+    "inputs": {
+      "lora_name": "realism_lora_comfy_converted.safetensors",
+      "strength_model": [
+        "147",
+        0
+      ],
+      "model": [
+        "388",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "lora"
+    }
+  },
+  "97": {
+    "inputs": {
+      "strength": [
+        "135",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 0.8,
+      "positive": [
+        "101",
+        0
+      ],
+      "negative": [
+        "103",
+        0
+      ],
+      "control_net": [
+        "98",
+        0
+      ],
+      "vae": [
+        "390",
+        0
+      ],
+      "image": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplySD3",
+    "_meta": {
+      "title": "Apply Controlnet with VAE"
+    }
+  },
+  "98": {
+    "inputs": {
+      "type": "auto",
+      "control_net": [
+        "332",
+        0
+      ]
+    },
+    "class_type": "SetUnionControlNetType",
+    "_meta": {
+      "title": "SetUnionControlNetType"
+    }
+  },
+  "101": {
+    "inputs": {
+      "clip_l": [
+        "131",
+        0
+      ],
+      "t5xxl": [
+        "131",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "389",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "103": {
+    "inputs": {
+      "text": [
+        "132",
+        0
+      ],
+      "clip": [
+        "389",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "104": {
+    "inputs": {
+      "preprocessor": "CannyEdgePreprocessor",
+      "resolution": [
+        "348",
+        0
+      ],
+      "image": [
+        "359",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "119": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "output_multiplier": 1,
+      "multiple_off": 8
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  },
+  "120": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use input image size"
+    }
+  },
+  "131": {
+    "inputs": {
+      "value": "a candid photo of a deer sitting in the garden of eden, surrounded by mystical magical plants and a gorgeous picturesque background"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt (Positive) (pre)"
+    }
+  },
+  "132": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt (Negative)"
+    }
+  },
+  "133": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_controlnet"
+    }
+  },
+  "134": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_ipAdapter"
+    }
+  },
+  "135": {
+    "inputs": {
+      "value": 0.5
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "137": {
+    "inputs": {
+      "value": 0.91
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "ipadapter_strength"
+    }
+  },
+  "138": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "output_multiplier": 1,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "clamp_max_resolution"
+    }
+  },
+  "141": {
+    "inputs": {
+      "value": 0.7000000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength"
+    }
+  },
+  "142": {
+    "inputs": {
+      "image": "black_dummy.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Style Image"
+    }
+  },
+  "144": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_lora"
+    }
+  },
+  "145": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_input_image"
+    }
+  },
+  "146": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength_off"
+    }
+  },
+  "147": {
+    "inputs": {
+      "boolean": [
+        "144",
+        0
+      ],
+      "on_true": [
+        "141",
+        0
+      ],
+      "on_false": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "297": {
+    "inputs": {
+      "boolean": [
+        "357",
+        0
+      ],
+      "on_true": [
+        "351",
+        1
+      ],
+      "on_false": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch width"
+    }
+  },
+  "298": {
+    "inputs": {
+      "boolean": [
+        "357",
+        0
+      ],
+      "on_true": [
+        "351",
+        2
+      ],
+      "on_false": [
+        "119",
+        1
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "switch height"
+    }
+  },
+  "301": {
+    "inputs": {
+      "image": "black_dummy.jpg",
+      "upload": "image"
+    },
+    "class_type": "Load image with metadata [Crystools]",
+    "_meta": {
+      "title": "dummy_image"
+    }
+  },
+  "302": {
+    "inputs": {
+      "image": "black_dummy.jpg",
+      "upload": "image"
+    },
+    "class_type": "Load image with metadata [Crystools]",
+    "_meta": {
+      "title": "init_image"
+    }
+  },
+  "315": {
+    "inputs": {
+      "pixels": [
+        "352",
+        0
+      ],
+      "vae": [
+        "390",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "316": {
+    "inputs": {
+      "width": [
+        "432",
+        0
+      ],
+      "height": [
+        "433",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "322": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
+    }
+  },
+  "323": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "denoise"
+    }
+  },
+  "325": {
+    "inputs": {
+      "boolean": [
+        "360",
+        0
+      ],
+      "on_true": [
+        "323",
+        0
+      ],
+      "on_false": [
+        "322",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "329": {
+    "inputs": {
+      "any_type_input": [
+        "325",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "330": {
+    "inputs": {
+      "seed": 29
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "332": {
+    "inputs": {
+      "control_net_name": "FLUX.1-dev-ControlNet-Union-Pro.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "337": {
+    "inputs": {
+      "lora_name": "realism_lora_comfy_converted.safetensors",
+      "strength_model": [
+        "341",
+        0
+      ],
+      "model": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "style_lora"
+    }
+  },
+  "338": {
+    "inputs": {
+      "value": 0.7000000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "style_lora_strength"
+    }
+  },
+  "339": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_style_lora"
+    }
+  },
+  "341": {
+    "inputs": {
+      "boolean": [
+        "339",
+        0
+      ],
+      "on_true": [
+        "338",
+        0
+      ],
+      "on_false": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "342": {
+    "inputs": {
+      "filename_prefix": "controlnet",
+      "images": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "348": {
+    "inputs": {
+      "text": "min(%aux%, %aux2%)",
+      "output_type": "FORMULA",
+      "aux": [
+        "432",
+        0
+      ],
+      "aux2": [
+        "433",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "ControlnetResolution"
+    }
+  },
+  "349": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "358",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "316",
+        0
+      ],
+      "input2": [
+        "315",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "Latent Switch"
+    }
+  },
+  "351": {
+    "inputs": {
+      "image": [
+        "359",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "352": {
+    "inputs": {
+      "width": [
+        "432",
+        0
+      ],
+      "height": [
+        "433",
+        0
+      ],
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "359",
+        0
+      ]
+    },
+    "class_type": "ImageResizeFaceAware",
+    "_meta": {
+      "title": "Image Resize Face Aware"
+    }
+  },
+  "356": {
+    "inputs": {
+      "text": "%aux% != %aux2%",
+      "output_type": "FORMULA",
+      "aux": [
+        "438",
+        0
+      ],
+      "aux2": [
+        "439",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "Input Image Loaded"
+    }
+  },
+  "357": {
+    "inputs": {
+      "text": "%aux% and %aux2%",
+      "output_type": "FORMULA",
+      "aux": [
+        "145",
+        0
+      ],
+      "aux2": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "input image size selected"
+    }
+  },
+  "358": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "145",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "SelectLatent"
+    }
+  },
+  "359": {
+    "inputs": {
+      "width": [
+        "138",
+        0
+      ],
+      "height": [
+        "138",
+        1
+      ],
+      "interpolation": "nearest",
+      "method": "fill / crop",
+      "condition": "downscale if bigger",
+      "multiple_of": 0,
+      "image": [
+        "302",
+        0
+      ]
+    },
+    "class_type": "ImageResizeFaceAware",
+    "_meta": {
+      "title": "Image Resize Face Aware"
+    }
+  },
+  "360": {
+    "inputs": {
+      "text": "%aux% and %aux2%",
+      "output_type": "FORMULA",
+      "aux": [
+        "145",
+        0
+      ],
+      "aux2": [
+        "356",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "denoise switch"
+    }
+  },
+  "361": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "362",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "101",
+        0
+      ],
+      "input2": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "Latent Switch CN+"
+    }
+  },
+  "362": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "SelectLatent"
+    }
+  },
+  "364": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "362",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "103",
+        0
+      ],
+      "input2": [
+        "97",
+        1
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "Latent Switch CN-"
+    }
+  },
+  "376": {
+    "inputs": {
+      "clip_name": "sigclip_vision_patch14_384.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "377": {
+    "inputs": {
+      "style_model_name": "flux1-redux-dev.safetensors"
+    },
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "Load Style Model"
+    }
+  },
+  "378": {
+    "inputs": {
+      "strength": [
+        "382",
+        1
+      ],
+      "conditioning": [
+        "361",
+        0
+      ],
+      "style_model": [
+        "377",
+        0
+      ],
+      "clip_vision_output": [
+        "379",
+        0
+      ]
+    },
+    "class_type": "StyleModelApplyAdvanced",
+    "_meta": {
+      "title": "Style Model Apply Advanced"
+    }
+  },
+  "379": {
+    "inputs": {
+      "crop": "center",
+      "clip_vision": [
+        "376",
+        0
+      ],
+      "image": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "380": {
+    "inputs": {
+      "conditioning_to_strength": [
+        "382",
+        1
+      ],
+      "conditioning_to": [
+        "378",
+        0
+      ],
+      "conditioning_from": [
+        "361",
+        0
+      ]
+    },
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "ConditioningAverage"
+    }
+  },
+  "381": {
+    "inputs": {
+      "value": 0.7000000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Style Strength"
+    }
+  },
+  "382": {
+    "inputs": {
+      "expression": "(a * (b+1)) / (a * (b+1) + (1 - a) * 729)",
+      "a": [
+        "381",
+        0
+      ],
+      "b": [
+        "398",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "388": {
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "389": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp16.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "390": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "391": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "392",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "Latent Switch CN-"
+    }
+  },
+  "392": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "SelectLatent"
+    }
+  },
+  "393": {
+    "inputs": {
+      "seed": [
+        "330",
+        0
+      ],
+      "steps": 25,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": [
+        "329",
+        0
+      ],
+      "model": [
+        "391",
+        0
+      ],
+      "positive": [
+        "395",
+        0
+      ],
+      "negative": [
+        "364",
+        0
+      ],
+      "latent_image": [
+        "349",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "394": {
+    "inputs": {
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "395": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "397",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "361",
+        0
+      ],
+      "input2": [
+        "380",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "Latent Switch CN+"
+    }
+  },
+  "396": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use Style Image"
+    }
+  },
+  "397": {
+    "inputs": {
+      "text": "[1,2][%aux% and %aux2% != %aux3%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "396",
+        0
+      ],
+      "aux2": [
+        "438",
+        0
+      ],
+      "aux3": [
+        "440",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "SelectLatent"
+    }
+  },
+  "398": {
+    "inputs": {
+      "text": [
+        "131",
+        0
+      ],
+      "clip": [
+        "389",
+        0
+      ]
+    },
+    "class_type": "JNodes_TokenCounter",
+    "_meta": {
+      "title": "Token Counter"
+    }
+  },
+  "405": {
+    "inputs": {
+      "text_x": 10,
+      "text_y": 2,
+      "height": 200,
+      "font_size": 32,
+      "font_color": "white",
+      "label_color": "black",
+      "font": "FreeMono.ttf",
+      "text": [
+        "431",
+        0
+      ],
+      "direction": "down",
+      "image": [
+        "394",
+        0
+      ]
+    },
+    "class_type": "AddLabel",
+    "_meta": {
+      "title": "Add Label"
+    }
+  },
+  "406": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "408",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "394",
+        0
+      ],
+      "input2": [
+        "405",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "add caption"
+    }
+  },
+  "407": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_caption"
+    }
+  },
+  "408": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "407",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "add caption"
+    }
+  },
+  "409": {
+    "inputs": {
+      "noise_seed": 45768566167201,
+      "steps": 25,
+      "timestep_to_start_cfg": 26,
+      "true_gs": 1,
+      "image_to_image_strength": 0,
+      "denoise_strength": 1,
+      "model": [
+        "391",
+        0
+      ],
+      "conditioning": [
+        "361",
+        0
+      ],
+      "neg_conditioning": [
+        "364",
+        0
+      ],
+      "latent_image": [
+        "349",
+        0
+      ]
+    },
+    "class_type": "XlabsSampler",
+    "_meta": {
+      "title": "Xlabs Sampler"
+    }
+  },
+  "410": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "411",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "393",
+        0
+      ],
+      "input2": [
+        "409",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "411": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "use_ipadapter"
+    }
+  },
+  "427": {
+    "inputs": {
+      "any_type_input": [
+        "394",
+        3
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "431": {
+    "inputs": {
+      "text": "%aux% + %aux2%",
+      "output_type": "STRING",
+      "aux": [
+        "131",
+        0
+      ],
+      "aux2": [
+        "427",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "432": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "297",
+        0
+      ],
+      "b": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "DRMBT_MultiMinMax",
+    "_meta": {
+      "title": "clamp_width"
+    }
+  },
+  "433": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "298",
+        0
+      ],
+      "b": [
+        "138",
+        1
+      ]
+    },
+    "class_type": "DRMBT_MultiMinMax",
+    "_meta": {
+      "title": "clamp_height"
+    }
+  },
+  "438": {
+    "inputs": {
+      "images": [
+        "301",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "439": {
+    "inputs": {
+      "images": [
+        "302",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "440": {
+    "inputs": {
+      "images": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "443": {
+    "inputs": {
+      "filename_prefix": "flux_dev",
+      "images": [
+        "406",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

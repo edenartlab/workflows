@@ -1,0 +1,526 @@
+{
+  "6": {
+    "inputs": {
+      "text": [
+        "81",
+        0
+      ],
+      "clip": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "13",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "10": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "11": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp16.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "12": {
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "13": {
+    "inputs": {
+      "noise": [
+        "25",
+        0
+      ],
+      "guider": [
+        "22",
+        0
+      ],
+      "sampler": [
+        "16",
+        0
+      ],
+      "sigmas": [
+        "17",
+        0
+      ],
+      "latent_image": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "16": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "17": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 20,
+      "denoise": 1,
+      "model": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "22": {
+    "inputs": {
+      "model": [
+        "30",
+        0
+      ],
+      "conditioning": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "25": {
+    "inputs": {
+      "noise_seed": 539721347
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "26": {
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "27": {
+    "inputs": {
+      "width": [
+        "62",
+        0
+      ],
+      "height": [
+        "62",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "30": {
+    "inputs": {
+      "max_shift": 1.15,
+      "base_shift": 0.5,
+      "width": [
+        "62",
+        0
+      ],
+      "height": [
+        "62",
+        1
+      ],
+      "model": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModelSamplingFlux"
+    }
+  },
+  "38": {
+    "inputs": {
+      "clip_name": "sigclip_vision_patch14_384.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "39": {
+    "inputs": {
+      "crop": "center",
+      "clip_vision": [
+        "38",
+        0
+      ],
+      "image": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "42": {
+    "inputs": {
+      "style_model_name": "flux1-redux-dev.safetensors"
+    },
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "Load Style Model"
+    }
+  },
+  "52": {
+    "inputs": {
+      "strength": [
+        "93",
+        0
+      ],
+      "conditioning": [
+        "26",
+        0
+      ],
+      "style_model": [
+        "42",
+        0
+      ],
+      "clip_vision_output": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "StyleModelApplyAdvanced",
+    "_meta": {
+      "title": "Style Model Apply Advanced"
+    }
+  },
+  "56": {
+    "inputs": {
+      "crop": "center",
+      "clip_vision": [
+        "38",
+        0
+      ],
+      "image": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "57": {
+    "inputs": {
+      "strength": [
+        "93",
+        0
+      ],
+      "conditioning": [
+        "26",
+        0
+      ],
+      "style_model": [
+        "42",
+        0
+      ],
+      "clip_vision_output": [
+        "56",
+        0
+      ]
+    },
+    "class_type": "StyleModelApplyAdvanced",
+    "_meta": {
+      "title": "Style Model Apply Advanced"
+    }
+  },
+  "58": {
+    "inputs": {
+      "conditioning_to_strength": [
+        "61",
+        0
+      ],
+      "conditioning_to": [
+        "57",
+        0
+      ],
+      "conditioning_from": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "ConditioningAverage"
+    }
+  },
+  "60": {
+    "inputs": {
+      "value": 0.92
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "prompt_strength"
+    }
+  },
+  "61": {
+    "inputs": {
+      "value": 0.5
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "image_influence_crossfader A/B"
+    }
+  },
+  "62": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "output_multiplier": 1,
+      "multiple_off": 1
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  },
+  "66": {
+    "inputs": {
+      "image": "black_dummy.jpg",
+      "resize": true,
+      "width": 1024,
+      "height": 1024,
+      "repeat": 1,
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "mask_channel": "alpha",
+      "background_color": "",
+      "upload": "image"
+    },
+    "class_type": "LoadAndResizeImage",
+    "_meta": {
+      "title": "dummy image"
+    }
+  },
+  "68": {
+    "inputs": {
+      "image": "black_dummy.jpg",
+      "resize": false,
+      "width": 1024,
+      "height": 1024,
+      "repeat": 1,
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "mask_channel": "alpha",
+      "background_color": "",
+      "upload": "image"
+    },
+    "class_type": "LoadAndResizeImage",
+    "_meta": {
+      "title": "Load & Resize Image"
+    }
+  },
+  "69": {
+    "inputs": {
+      "comparison": "a != b",
+      "a": [
+        "68",
+        4
+      ],
+      "b": [
+        "66",
+        4
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "70": {
+    "inputs": {
+      "boolean": [
+        "69",
+        0
+      ],
+      "on_true": [
+        "68",
+        0
+      ],
+      "on_false": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "71": {
+    "inputs": {
+      "image": "style-purple-fuzz.png",
+      "resize": false,
+      "width": 1024,
+      "height": 1024,
+      "repeat": 1,
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "mask_channel": "alpha",
+      "background_color": "",
+      "upload": "image"
+    },
+    "class_type": "LoadAndResizeImage",
+    "_meta": {
+      "title": "Load & Resize Image"
+    }
+  },
+  "81": {
+    "inputs": {
+      "body": "",
+      "delimiter": ""
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
+  },
+  "87": {
+    "inputs": {
+      "expression": "1-a",
+      "a": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "92": {
+    "inputs": {
+      "comparison": "a != b",
+      "a": [
+        "96",
+        0
+      ],
+      "b": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "93": {
+    "inputs": {
+      "boolean": [
+        "92",
+        0
+      ],
+      "on_true": [
+        "87",
+        1
+      ],
+      "on_false": [
+        "94",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "94": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "default"
+    }
+  },
+  "96": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "empty_string"
+    }
+  },
+  "100": {
+    "inputs": {
+      "filename_prefix": "flux_redux",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

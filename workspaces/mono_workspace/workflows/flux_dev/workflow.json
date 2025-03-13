@@ -1,0 +1,6742 @@
+{
+  "last_node_id": 443,
+  "last_link_id": 894,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1839.75439453125,
+        1101.54638671875
+      ],
+      "size": [
+        241.75079345703125,
+        105.25548553466797
+      ],
+      "flags": {},
+      "order": 87,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 832
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 767
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            782
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 62,
+      "type": "ModelSamplingFlux",
+      "pos": [
+        -1483.1348876953125,
+        1738.317138671875
+      ],
+      "size": [
+        315,
+        170
+      ],
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 673
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "pos": [
+            10,
+            84
+          ],
+          "widget": {
+            "name": "width"
+          },
+          "link": 873
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "pos": [
+            10,
+            108
+          ],
+          "widget": {
+            "name": "height"
+          },
+          "link": 878
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            768,
+            805
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.1500000000000001,
+        0.5,
+        1024,
+        1024
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 80,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1483.1348876953125,
+        1488.3170166015625
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "label": "model",
+          "type": "MODEL",
+          "link": 893
+        },
+        {
+          "name": "strength_model",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            60
+          ],
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": 653
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "label": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            672
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "lora",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "realism_lora_comfy_converted.safetensors",
+        0
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 97,
+      "type": "ControlNetApplySD3",
+      "pos": [
+        948.5135498046875,
+        1821.4864501953125
+      ],
+      "size": [
+        413.26361083984375,
+        206
+      ],
+      "flags": {},
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 199
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 203
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 433
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 796
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 221
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            116
+          ],
+          "widget": {
+            "name": "strength"
+          },
+          "link": 557
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "shape": 3,
+          "links": [
+            729
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "shape": 3,
+          "links": [
+            774
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "ControlNetApplySD3"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0.8
+      ]
+    },
+    {
+      "id": 98,
+      "type": "SetUnionControlNetType",
+      "pos": [
+        588.5135498046875,
+        1911.4864501953125
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 655
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "shape": 3,
+          "links": [
+            433
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "SetUnionControlNetType"
+      },
+      "widgets_values": [
+        "auto"
+      ]
+    },
+    {
+      "id": 101,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        -1493.1348876953125,
+        1938.317138671875
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 798
+        },
+        {
+          "name": "clip_l",
+          "type": "STRING",
+          "pos": [
+            10,
+            36
+          ],
+          "widget": {
+            "name": "clip_l"
+          },
+          "link": 850
+        },
+        {
+          "name": "t5xxl",
+          "type": "STRING",
+          "pos": [
+            10,
+            60
+          ],
+          "widget": {
+            "name": "t5xxl"
+          },
+          "link": 802
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "shape": 3,
+          "links": [
+            199,
+            728
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "",
+        "",
+        3.5
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 103,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1491.1837158203125,
+        2088.402587890625
+      ],
+      "size": [
+        315,
+        98.21724700927734
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 799
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 285
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "shape": 3,
+          "links": [
+            203,
+            773
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 104,
+      "type": "AIO_Preprocessor",
+      "pos": [
+        588.5135498046875,
+        2021.4864501953125
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 72,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 718
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "pos": [
+            10,
+            60
+          ],
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 700
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            221,
+            675
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "1.0.5",
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "CannyEdgePreprocessor",
+        512
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 119,
+      "type": "WidthHeightPicker",
+      "pos": [
+        -1014.6287231445312,
+        1412.3692626953125
+      ],
+      "size": [
+        210,
+        150
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "shape": 3,
+          "links": [
+            619
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "shape": 3,
+          "links": [
+            620
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "WidthHeightPicker"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1,
+        8
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 120,
+      "type": "Eden_Bool",
+      "pos": [
+        -1014.6287231445312,
+        1613.3692626953125
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            708
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Use input image size",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 131,
+      "type": "Eden_String",
+      "pos": [
+        -1009.7845458984375,
+        1088.560546875
+      ],
+      "size": [
+        445.43408203125,
+        135.15420532226562
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "shape": 3,
+          "links": [
+            794,
+            802,
+            850,
+            858
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Prompt (Positive) (pre)",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "a candid photo of a deer sitting in the garden of eden, surrounded by mystical magical plants and a gorgeous picturesque background"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 132,
+      "type": "Eden_String",
+      "pos": [
+        -1002.7099609375,
+        1324.0440673828125
+      ],
+      "size": [
+        458.9576721191406,
+        88
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "shape": 3,
+          "links": [
+            285
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Prompt (Negative)",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 133,
+      "type": "Eden_Bool",
+      "pos": [
+        -1002.7971801757812,
+        2303.054443359375
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            803
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_controlnet",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 134,
+      "type": "Eden_Bool",
+      "pos": [
+        -760,
+        1710
+      ],
+      "size": [
+        240.69190979003906,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            771,
+            830,
+            846
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_ipAdapter",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 135,
+      "type": "Eden_Float",
+      "pos": [
+        -1009.083251953125,
+        2438.393310546875
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            557
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "controlnet_strength",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.5
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 137,
+      "type": "Eden_Float",
+      "pos": [
+        -755.7716674804688,
+        1805.93603515625
+      ],
+      "size": [
+        240,
+        60
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            819
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "ipadapter_strength",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.91
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 138,
+      "type": "WidthHeightPicker",
+      "pos": [
+        -760,
+        1400
+      ],
+      "size": [
+        242.69190979003906,
+        150
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "shape": 3,
+          "links": [
+            716,
+            870
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "shape": 3,
+          "links": [
+            717,
+            875
+          ],
+          "slot_index": 1
+        }
+      ],
+      "title": "clamp_max_resolution",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "WidthHeightPicker"
+      },
+      "widgets_values": [
+        2048,
+        2048,
+        1,
+        64
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 141,
+      "type": "Eden_Float",
+      "pos": [
+        -750,
+        2520
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            247
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "lora_strength",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.7000000000000001
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 144,
+      "type": "Eden_Bool",
+      "pos": [
+        -750,
+        2380
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            249
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_lora",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 145,
+      "type": "Eden_Bool",
+      "pos": [
+        -750,
+        1600
+      ],
+      "size": [
+        240.69190979003906,
+        58
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            707,
+            714,
+            724
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_input_image",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 146,
+      "type": "Eden_Float",
+      "pos": [
+        -740,
+        2510
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            248,
+            670
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "lora_strength_off",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 147,
+      "type": "Switch any [Crystools]",
+      "pos": [
+        -670,
+        2570
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 247
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 248
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "boolean"
+          },
+          "link": 249
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            653
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 297,
+      "type": "Switch any [Crystools]",
+      "pos": [
+        -226.8535614013672,
+        1972.311279296875
+      ],
+      "size": [
+        292.7738952636719,
+        98
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 692
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 619
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "pos": [
+            10,
+            56
+          ],
+          "widget": {
+            "name": "boolean"
+          },
+          "link": 710
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            869
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "switch width",
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 298,
+      "type": "Switch any [Crystools]",
+      "pos": [
+        -226.22425842285156,
+        2118.11181640625
+      ],
+      "size": [
+        292.7738952636719,
+        98
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 693
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 620
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "pos": [
+            10,
+            56
+          ],
+          "widget": {
+            "name": "boolean"
+          },
+          "link": 711
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            874
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "switch height",
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 301,
+      "type": "Load image with metadata [Crystools]",
+      "pos": [
+        31.810375213623047,
+        1035.71533203125
+      ],
+      "size": [
+        292.7738952636719,
+        354
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            883
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "prompt",
+          "type": "JSON",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "Metadata RAW",
+          "type": "METADATA_RAW",
+          "shape": 3,
+          "links": [],
+          "slot_index": 3
+        }
+      ],
+      "title": "dummy_image",
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Load image with metadata [Crystools]"
+      },
+      "widgets_values": [
+        "black_dummy.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 302,
+      "type": "Load image with metadata [Crystools]",
+      "pos": [
+        -244.53627014160156,
+        1082.3543701171875
+      ],
+      "size": [
+        306.4615478515625,
+        354
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            715,
+            884
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "prompt",
+          "type": "JSON",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "Metadata RAW",
+          "type": "METADATA_RAW",
+          "shape": 3,
+          "links": [],
+          "slot_index": 3
+        }
+      ],
+      "title": "init_image",
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Load image with metadata [Crystools]"
+      },
+      "widgets_values": [
+        "black_dummy.jpg",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 315,
+      "type": "VAEEncode",
+      "pos": [
+        140,
+        2560
+      ],
+      "size": [
+        188.7344970703125,
+        46
+      ],
+      "flags": {},
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 696
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 797
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "shape": 3,
+          "links": [
+            688
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 316,
+      "type": "EmptyLatentImage",
+      "pos": [
+        -255.61724853515625,
+        2679.6240234375
+      ],
+      "size": [
+        315,
+        126
+      ],
+      "flags": {},
+      "order": 67,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "pos": [
+            10,
+            36
+          ],
+          "widget": {
+            "name": "width"
+          },
+          "link": 880
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "pos": [
+            10,
+            60
+          ],
+          "widget": {
+            "name": "height"
+          },
+          "link": 876
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "shape": 3,
+          "links": [
+            687
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 322,
+      "type": "Eden_Float",
+      "pos": [
+        -921.6288452148438,
+        1944.3692626953125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            643
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 323,
+      "type": "Eden_Float",
+      "pos": [
+        -1012.2236328125,
+        1896.802001953125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            642
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "denoise",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        1
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 325,
+      "type": "Switch any [Crystools]",
+      "pos": [
+        -957.680419921875,
+        2030.3350830078125
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 642
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 643
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "boolean"
+          },
+          "link": 723
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            650
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 329,
+      "type": "SDAnyConverter",
+      "pos": [
+        1838.3690185546875,
+        1947.149169921875
+      ],
+      "size": [
+        253.60000610351562,
+        26
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_type_input",
+          "type": "*",
+          "shape": 7,
+          "link": 650
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ANY_TYPE_OUTPUT",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            786
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "SDAnyConverter"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 330,
+      "type": "Eden_Seed",
+      "pos": [
+        -1010.6287841796875,
+        1737.3692626953125
+      ],
+      "size": [
+        210,
+        102
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "shape": 3,
+          "links": [
+            777
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "seed_string",
+          "type": "STRING",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Seed"
+      },
+      "widgets_values": [
+        29,
+        "increment"
+      ]
+    },
+    {
+      "id": 332,
+      "type": "ControlNetLoader",
+      "pos": [
+        588.5135498046875,
+        1811.4864501953125
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "shape": 3,
+          "links": [
+            655
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "FLUX.1-dev-ControlNet-Union-Pro.safetensors"
+      ]
+    },
+    {
+      "id": 337,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1483.1348876953125,
+        1613.24072265625
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "label": "model",
+          "type": "MODEL",
+          "link": 672
+        },
+        {
+          "name": "strength_model",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            60
+          ],
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": 674
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "label": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            673
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "style_lora",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "realism_lora_comfy_converted.safetensors",
+        0
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 338,
+      "type": "Eden_Float",
+      "pos": [
+        -1018.2129516601562,
+        2725.613037109375
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": [
+            667
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "style_lora_strength",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.7000000000000001
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 339,
+      "type": "Eden_Bool",
+      "pos": [
+        -1017.2946166992188,
+        2585.289306640625
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            669
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_style_lora",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 341,
+      "type": "Switch any [Crystools]",
+      "pos": [
+        -730,
+        2640
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_true",
+          "type": "*",
+          "link": 667
+        },
+        {
+          "name": "on_false",
+          "type": "*",
+          "link": 670
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "pos": [
+            10,
+            56
+          ],
+          "widget": {
+            "name": "boolean"
+          },
+          "link": 669
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            674
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-crystools",
+        "ver": "72e2e9af4a6b9a58ca5d753cacff37ba1ff9bfa8",
+        "Node name for S&R": "Switch any [Crystools]"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 342,
+      "type": "SaveImage",
+      "pos": [
+        958.5135498046875,
+        2081.486328125
+      ],
+      "size": [
+        410.1711730957031,
+        270
+      ],
+      "flags": {},
+      "order": 76,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 675
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "controlnet"
+      ]
+    },
+    {
+      "id": 348,
+      "type": "DataMonitor",
+      "pos": [
+        140,
+        2310
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 871
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 877
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            700
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "ControlnetResolution",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "min(%aux%, %aux2%)",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 349,
+      "type": "UniversalSwitch",
+      "pos": [
+        140,
+        2020
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 687
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 688
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 713
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            780,
+            827
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Latent Switch",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 351,
+      "type": "GetImageSizeAndCount",
+      "pos": [
+        140.16580200195312,
+        1502.26025390625
+      ],
+      "size": [
+        193.95957946777344,
+        93.43218231201172
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 719
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            692
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            693
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3f141b8f1ca1c832a1c6accd806f2d2f40fd4075",
+        "Node name for S&R": "GetImageSizeAndCount"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 352,
+      "type": "ImageResizeFaceAware",
+      "pos": [
+        -253.1791534423828,
+        2444.88525390625
+      ],
+      "size": [
+        243.52598571777344,
+        218
+      ],
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 720
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "pos": [
+            10,
+            76
+          ],
+          "widget": {
+            "name": "width"
+          },
+          "link": 872
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "pos": [
+            10,
+            100
+          ],
+          "widget": {
+            "name": "height"
+          },
+          "link": 879
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            696
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "ImageResizeFaceAware"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "nearest",
+        "fill / crop",
+        "always",
+        0
+      ]
+    },
+    {
+      "id": 356,
+      "type": "DataMonitor",
+      "pos": [
+        113.63306427001953,
+        1218.144287109375
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 885
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 886
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            725
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Input Image Loaded",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "%aux% != %aux2%",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 357,
+      "type": "DataMonitor",
+      "pos": [
+        -240,
+        1719.13037109375
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 707
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 708
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            710,
+            711
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "input image size selected",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "%aux% and %aux2%",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 358,
+      "type": "DataMonitor",
+      "pos": [
+        140,
+        2650
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 714
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            713
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "SelectLatent",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 359,
+      "type": "ImageResizeFaceAware",
+      "pos": [
+        -240,
+        1500
+      ],
+      "size": [
+        210,
+        218
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 715
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "pos": [
+            10,
+            76
+          ],
+          "widget": {
+            "name": "width"
+          },
+          "link": 716
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "pos": [
+            10,
+            100
+          ],
+          "widget": {
+            "name": "height"
+          },
+          "link": 717
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            718,
+            719,
+            720
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "ImageResizeFaceAware"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "nearest",
+        "fill / crop",
+        "downscale if bigger",
+        0
+      ]
+    },
+    {
+      "id": 360,
+      "type": "DataMonitor",
+      "pos": [
+        -1001.7988891601562,
+        2027.683837890625
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 724
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 725
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            723
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "denoise switch",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "%aux% and %aux2%",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 361,
+      "type": "UniversalSwitch",
+      "pos": [
+        1398.5135498046875,
+        1821.4864501953125
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 728
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 729
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 734
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            760,
+            761,
+            789,
+            825
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Latent Switch CN+",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 362,
+      "type": "DataMonitor",
+      "pos": [
+        588.5135498046875,
+        2151.486328125
+      ],
+      "size": [
+        315,
+        212
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 803
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            734,
+            735
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "SelectLatent",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 364,
+      "type": "UniversalSwitch",
+      "pos": [
+        1398.5135498046875,
+        2121.486328125
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 773
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 774
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 735
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            779,
+            826
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Latent Switch CN-",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 366,
+      "type": "ImageResizeFaceAware",
+      "pos": [
+        614.7603759765625,
+        2476.939208984375
+      ],
+      "size": [
+        243.52598571777344,
+        218
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 736
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            806
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "ImageResizeFaceAware"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "nearest",
+        "fill / crop",
+        "downscale if bigger",
+        0
+      ]
+    },
+    {
+      "id": 376,
+      "type": "CLIPVisionLoader",
+      "pos": [
+        610,
+        1260
+      ],
+      "size": [
+        286.4698791503906,
+        66.91861724853516
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            749
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "CLIPVisionLoader"
+      },
+      "widgets_values": [
+        "sigclip_vision_patch14_384.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 377,
+      "type": "StyleModelLoader",
+      "pos": [
+        610,
+        1150
+      ],
+      "size": [
+        286.4698791503906,
+        58
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STYLE_MODEL",
+          "type": "STYLE_MODEL",
+          "links": [
+            746
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "StyleModelLoader"
+      },
+      "widgets_values": [
+        "flux1-redux-dev.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 378,
+      "type": "StyleModelApplyAdvanced",
+      "pos": [
+        956.9878540039062,
+        1113.2537841796875
+      ],
+      "size": [
+        262,
+        118
+      ],
+      "flags": {},
+      "order": 81,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 760
+        },
+        {
+          "name": "style_model",
+          "type": "STYLE_MODEL",
+          "link": 746
+        },
+        {
+          "name": "clip_vision_output",
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 747
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            76
+          ],
+          "widget": {
+            "name": "strength"
+          },
+          "link": 748
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            750
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3f141b8f1ca1c832a1c6accd806f2d2f40fd4075",
+        "Node name for S&R": "StyleModelApplyAdvanced"
+      },
+      "widgets_values": [
+        0.075
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 379,
+      "type": "CLIPVisionEncode",
+      "pos": [
+        956.9878540039062,
+        1263.2537841796875
+      ],
+      "size": [
+        262,
+        78
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 749
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 792
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP_VISION_OUTPUT",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            747
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "CLIPVisionEncode"
+      },
+      "widgets_values": [
+        "center"
+      ]
+    },
+    {
+      "id": 380,
+      "type": "ConditioningAverage",
+      "pos": [
+        910.6091918945312,
+        1378.7171630859375
+      ],
+      "size": [
+        312.3999938964844,
+        98
+      ],
+      "flags": {},
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_to",
+          "type": "CONDITIONING",
+          "link": 750
+        },
+        {
+          "name": "conditioning_from",
+          "type": "CONDITIONING",
+          "link": 761
+        },
+        {
+          "name": "conditioning_to_strength",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            56
+          ],
+          "widget": {
+            "name": "conditioning_to_strength"
+          },
+          "link": 752
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            790
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "ConditioningAverage"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 381,
+      "type": "Eden_Float",
+      "pos": [
+        610,
+        1370
+      ],
+      "size": [
+        286.4698791503906,
+        64.75653076171875
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            753
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Style Strength",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Float"
+      },
+      "widgets_values": [
+        0.7000000000000001
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 382,
+      "type": "MathExpression|pysssss",
+      "pos": [
+        956.9878540039062,
+        1525.2843017578125
+      ],
+      "size": [
+        262,
+        128
+      ],
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "shape": 7,
+          "link": 753
+        },
+        {
+          "name": "b",
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "shape": 7,
+          "link": 795
+        },
+        {
+          "name": "c",
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            748,
+            752
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.0.0",
+        "Node name for S&R": "MathExpression|pysssss"
+      },
+      "widgets_values": [
+        "(a * (b+1)) / (a * (b+1) + (1 - a) * 729)"
+      ]
+    },
+    {
+      "id": 388,
+      "type": "UNETLoader",
+      "pos": [
+        -1495.8980712890625,
+        1071.94970703125
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            893
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux1-dev-fp8.safetensors",
+        "fp8_e4m3fn"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 389,
+      "type": "DualCLIPLoader",
+      "pos": [
+        -1493.1348876953125,
+        1218.3165283203125
+      ],
+      "size": [
+        315,
+        122
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "shape": 3,
+          "links": [
+            798,
+            799,
+            800
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp16.safetensors",
+        "clip_l.safetensors",
+        "flux",
+        "default"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 390,
+      "type": "VAELoader",
+      "pos": [
+        -1493.1348876953125,
+        1368.31689453125
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "shape": 3,
+          "links": [
+            767,
+            796,
+            797
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 391,
+      "type": "UniversalSwitch",
+      "pos": [
+        1419.5865478515625,
+        2440
+      ],
+      "size": [
+        211.35130310058594,
+        259.78265380859375
+      ],
+      "flags": {},
+      "order": 77,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 768
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 807
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 772
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            775,
+            822
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Latent Switch CN-",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 392,
+      "type": "DataMonitor",
+      "pos": [
+        1400,
+        2740
+      ],
+      "size": [
+        211.35130310058594,
+        212
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 771
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            772
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "SelectLatent",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 393,
+      "type": "KSampler",
+      "pos": [
+        1833.4609375,
+        1390.135986328125
+      ],
+      "size": [
+        254.0561065673828,
+        478.05609130859375
+      ],
+      "flags": {},
+      "order": 85,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 775
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 791
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 779
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 780
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "pos": [
+            10,
+            96
+          ],
+          "widget": {
+            "name": "seed"
+          },
+          "link": 777
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            216
+          ],
+          "widget": {
+            "name": "denoise"
+          },
+          "link": 786
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "shape": 3,
+          "links": [
+            833
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        101466152538484,
+        "randomize",
+        25,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 394,
+      "type": "GetImageSizeAndCount",
+      "pos": [
+        1847.7396240234375,
+        1242.412353515625
+      ],
+      "size": [
+        248.9454345703125,
+        92.14229583740234
+      ],
+      "flags": {},
+      "order": 88,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 782
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            812,
+            817
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [],
+          "slot_index": 2
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": [
+            855
+          ],
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3f141b8f1ca1c832a1c6accd806f2d2f40fd4075",
+        "Node name for S&R": "GetImageSizeAndCount"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 395,
+      "type": "UniversalSwitch",
+      "pos": [
+        1295.369873046875,
+        1109.409423828125
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 84,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 789
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 790
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 788
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            791
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Latent Switch CN+",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 396,
+      "type": "Eden_Bool",
+      "pos": [
+        -755.5426025390625,
+        1920.66796875
+      ],
+      "size": [
+        235.12026977539062,
+        58
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            787
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Use Style Image",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 397,
+      "type": "DataMonitor",
+      "pos": [
+        1282.8619384765625,
+        1409.457763671875
+      ],
+      "size": [
+        228.9118194580078,
+        212
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 787
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 888
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": 889
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            788
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "SelectLatent",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux% and %aux2% != %aux3%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 398,
+      "type": "JNodes_TokenCounter",
+      "pos": [
+        610,
+        1490
+      ],
+      "size": [
+        286.4698791503906,
+        78
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 800
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "pos": [
+            10,
+            56
+          ],
+          "widget": {
+            "name": "text"
+          },
+          "link": 794
+        }
+      ],
+      "outputs": [
+        {
+          "name": "COUNT",
+          "type": "INT",
+          "links": [
+            795
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "COUNT_AS_STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "JaredTherriault/ComfyUI-JNodes",
+        "ver": "5e7ad57e9cba200a796925e5a6666fd73c0ada8e",
+        "Node name for S&R": "JNodes_TokenCounter"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 399,
+      "type": "LoadFluxIPAdapter",
+      "pos": [
+        909.481201171875,
+        2639.42138671875
+      ],
+      "size": [
+        295.67633056640625,
+        106
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ipadapterFlux",
+          "type": "IP_ADAPTER_FLUX",
+          "shape": 3,
+          "links": [
+            804
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "XLabs-AI/x-flux-comfyui",
+        "ver": "00328556efc9472410d903639dc9e68a8471f7ac",
+        "Node name for S&R": "LoadFluxIPAdapter"
+      },
+      "widgets_values": [
+        "ip_adapter.safetensors",
+        "clip_vit_l_14.safetensors",
+        "GPU"
+      ]
+    },
+    {
+      "id": 400,
+      "type": "ApplyFluxIPAdapter",
+      "pos": [
+        912.6239624023438,
+        2490.99951171875
+      ],
+      "size": [
+        210,
+        118
+      ],
+      "flags": {},
+      "order": 73,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 805,
+          "slot_index": 0
+        },
+        {
+          "name": "ip_adapter_flux",
+          "type": "IP_ADAPTER_FLUX",
+          "link": 804
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 806,
+          "slot_index": 2
+        },
+        {
+          "name": "ip_scale",
+          "type": "FLOAT",
+          "pos": [
+            10,
+            76
+          ],
+          "widget": {
+            "name": "ip_scale"
+          },
+          "link": 819
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            807
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "XLabs-AI/x-flux-comfyui",
+        "ver": "00328556efc9472410d903639dc9e68a8471f7ac",
+        "Node name for S&R": "ApplyFluxIPAdapter"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 405,
+      "type": "AddLabel",
+      "pos": [
+        1833.5224609375,
+        2089.668212890625
+      ],
+      "size": [
+        305.3239440917969,
+        314
+      ],
+      "flags": {},
+      "order": 91,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 817
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "shape": 7,
+          "pos": [
+            10,
+            252
+          ],
+          "widget": {
+            "name": "caption"
+          },
+          "link": null
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "pos": [
+            10,
+            204
+          ],
+          "widget": {
+            "name": "text"
+          },
+          "link": 894
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            813
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3f141b8f1ca1c832a1c6accd806f2d2f40fd4075",
+        "Node name for S&R": "AddLabel"
+      },
+      "widgets_values": [
+        10,
+        2,
+        200,
+        32,
+        "white",
+        "black",
+        "FreeMono.ttf",
+        "Text",
+        "down",
+        ""
+      ]
+    },
+    {
+      "id": 406,
+      "type": "UniversalSwitch",
+      "pos": [
+        2413.754638671875,
+        2124.98974609375
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 92,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 812
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 813
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 816
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            892
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "add caption",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 407,
+      "type": "Eden_Bool",
+      "pos": [
+        1833.5224609375,
+        2389.452392578125
+      ],
+      "size": [
+        305.3239440917969,
+        61.95689392089844
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            815
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_caption",
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 408,
+      "type": "DataMonitor",
+      "pos": [
+        2414.7744140625,
+        2430.95654296875
+      ],
+      "size": [
+        210,
+        262.1600646972656
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 815
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            816
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "add caption",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 409,
+      "type": "XlabsSampler",
+      "pos": [
+        1898.1531982421875,
+        1435.172607421875
+      ],
+      "size": [
+        291.4068298339844,
+        534.7640991210938
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 82,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 822,
+          "slot_index": 0
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 825
+        },
+        {
+          "name": "neg_conditioning",
+          "type": "CONDITIONING",
+          "link": 826
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "shape": 7,
+          "link": 827
+        },
+        {
+          "name": "controlnet_condition",
+          "type": "ControlNetCondition",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "shape": 3,
+          "links": [
+            831
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "XLabs-AI/x-flux-comfyui",
+        "ver": "00328556efc9472410d903639dc9e68a8471f7ac",
+        "Node name for S&R": "XlabsSampler"
+      },
+      "widgets_values": [
+        45768566167201,
+        "randomize",
+        25,
+        26,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 410,
+      "type": "UniversalSwitch",
+      "pos": [
+        2160.879150390625,
+        2135.2412109375
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 833
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 831
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "pos": [
+            10,
+            160
+          ],
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 829
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            832
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 411,
+      "type": "DataMonitor",
+      "pos": [
+        2236.16650390625,
+        2422.1591796875
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 830
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            829
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_ipadapter",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 415,
+      "type": "MemoryStorage",
+      "pos": [
+        911.2613525390625,
+        2786.432861328125
+      ],
+      "size": [
+        210,
+        160
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "Input",
+          "type": "*",
+          "shape": 7,
+          "link": 846
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Output",
+          "type": "*",
+          "links": [
+            836
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "MemoryStorage"
+      },
+      "widgets_values": [
+        "USE_IPADAPTER",
+        false,
+        false,
+        "Value: False"
+      ]
+    },
+    {
+      "id": 416,
+      "type": "DataMonitor",
+      "pos": [
+        636.081298828125,
+        2967.18798828125
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            837
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "get USE_IPADAPTER",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "%USE_IPADAPTER%",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 417,
+      "type": "DataMonitor",
+      "pos": [
+        913.4666748046875,
+        2979.066162109375
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 836
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 837
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            838,
+            845
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "denoise switch",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "1 if not %aux% and %aux2% else 0",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 419,
+      "type": "UnloadModels",
+      "pos": [
+        1152.7869873046875,
+        2797.999267578125
+      ],
+      "size": [
+        211.35130310058594,
+        78
+      ],
+      "flags": {},
+      "order": 63,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "Passthrough",
+          "type": "*",
+          "link": 838
+        },
+        {
+          "name": "ForceUnload",
+          "type": "BOOLEAN",
+          "pos": [
+            10,
+            36
+          ],
+          "widget": {
+            "name": "ForceUnload"
+          },
+          "link": 847
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UnloadModels"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 423,
+      "type": "DataMonitor",
+      "pos": [
+        1155.0806884765625,
+        2981.392333984375
+      ],
+      "size": [
+        210,
+        212
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": 845
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            847
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "SelectLatent",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "False",
+        "BOOLEAN"
+      ]
+    },
+    {
+      "id": 427,
+      "type": "SDAnyConverter",
+      "pos": [
+        1842.0177001953125,
+        2018.1202392578125
+      ],
+      "size": [
+        253.60000610351562,
+        26
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 89,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_type_input",
+          "type": "*",
+          "shape": 7,
+          "link": 855
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ANY_TYPE_OUTPUT",
+          "type": "*",
+          "shape": 3,
+          "links": [
+            867
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "SDAnyConverter"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 429,
+      "type": "Reroute",
+      "pos": [
+        2112.951416015625,
+        1343.4847412109375
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 858
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            866
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 431,
+      "type": "DataMonitor",
+      "pos": [
+        2146.38623046875,
+        2038.99462890625
+      ],
+      "size": [
+        516.5999755859375,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 90,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 866
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": 867
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            894
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "%aux% + %aux2%",
+        "STRING"
+      ]
+    },
+    {
+      "id": 432,
+      "type": "DRMBT_MultiMinMax",
+      "pos": [
+        -202.74307250976562,
+        2278.5029296875
+      ],
+      "size": [
+        315,
+        198
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 869
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 870
+        },
+        {
+          "name": "c",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "d",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "e",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "f",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "g",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "h",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            871,
+            872,
+            873,
+            880
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "clamp_width",
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "DRMBT_MultiMinMax"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 433,
+      "type": "DRMBT_MultiMinMax",
+      "pos": [
+        -220.90333557128906,
+        2360.916748046875
+      ],
+      "size": [
+        315,
+        198
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "*",
+          "link": 874
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "link": 875
+        },
+        {
+          "name": "c",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "d",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "e",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "f",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "g",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "h",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            876,
+            877,
+            878,
+            879
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "clamp_height",
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "DRMBT_MultiMinMax"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 438,
+      "type": "Image to Seed",
+      "pos": [
+        119.27710723876953,
+        1058.404541015625
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 883
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "shape": 6,
+          "links": [
+            885,
+            888
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "ver": "056badacda52e88d29d6a65f9509cd3115ace0f2",
+        "Node name for S&R": "Image to Seed"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 439,
+      "type": "Image to Seed",
+      "pos": [
+        123.07935333251953,
+        1135.7384033203125
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 884
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "shape": 6,
+          "links": [
+            886
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "ver": "056badacda52e88d29d6a65f9509cd3115ace0f2",
+        "Node name for S&R": "Image to Seed"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 440,
+      "type": "Image to Seed",
+      "pos": [
+        618.4771118164062,
+        1602.1829833984375
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 887
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "shape": 6,
+          "links": [
+            889
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "ver": "056badacda52e88d29d6a65f9509cd3115ace0f2",
+        "Node name for S&R": "Image to Seed"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 443,
+      "type": "SaveImage",
+      "pos": [
+        2302.11572265625,
+        1121.435546875
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 93,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 892
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "flux_dev"
+      ]
+    },
+    {
+      "id": 142,
+      "type": "LoadImage",
+      "pos": [
+        -750,
+        2010
+      ],
+      "size": [
+        237.71302795410156,
+        325.79779052734375
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            736,
+            792,
+            887
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "title": "Style Image",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "black_dummy.jpg",
+        "image"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    }
+  ],
+  "links": [
+    [
+      199,
+      101,
+      0,
+      97,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      203,
+      103,
+      0,
+      97,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      221,
+      104,
+      0,
+      97,
+      4,
+      "IMAGE"
+    ],
+    [
+      247,
+      141,
+      0,
+      147,
+      0,
+      "*"
+    ],
+    [
+      248,
+      146,
+      0,
+      147,
+      1,
+      "*"
+    ],
+    [
+      249,
+      144,
+      0,
+      147,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      285,
+      132,
+      0,
+      103,
+      1,
+      "STRING"
+    ],
+    [
+      433,
+      98,
+      0,
+      97,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      557,
+      135,
+      0,
+      97,
+      5,
+      "FLOAT"
+    ],
+    [
+      619,
+      119,
+      0,
+      297,
+      1,
+      "*"
+    ],
+    [
+      620,
+      119,
+      1,
+      298,
+      1,
+      "*"
+    ],
+    [
+      642,
+      323,
+      0,
+      325,
+      0,
+      "*"
+    ],
+    [
+      643,
+      322,
+      0,
+      325,
+      1,
+      "*"
+    ],
+    [
+      650,
+      325,
+      0,
+      329,
+      0,
+      "*"
+    ],
+    [
+      653,
+      147,
+      0,
+      80,
+      1,
+      "FLOAT"
+    ],
+    [
+      655,
+      332,
+      0,
+      98,
+      0,
+      "CONTROL_NET"
+    ],
+    [
+      667,
+      338,
+      0,
+      341,
+      0,
+      "*"
+    ],
+    [
+      669,
+      339,
+      0,
+      341,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      670,
+      146,
+      0,
+      341,
+      1,
+      "*"
+    ],
+    [
+      672,
+      80,
+      0,
+      337,
+      0,
+      "MODEL"
+    ],
+    [
+      673,
+      337,
+      0,
+      62,
+      0,
+      "MODEL"
+    ],
+    [
+      674,
+      341,
+      0,
+      337,
+      1,
+      "FLOAT"
+    ],
+    [
+      675,
+      104,
+      0,
+      342,
+      0,
+      "IMAGE"
+    ],
+    [
+      687,
+      316,
+      0,
+      349,
+      0,
+      "*"
+    ],
+    [
+      688,
+      315,
+      0,
+      349,
+      1,
+      "*"
+    ],
+    [
+      692,
+      351,
+      1,
+      297,
+      0,
+      "*"
+    ],
+    [
+      693,
+      351,
+      2,
+      298,
+      0,
+      "*"
+    ],
+    [
+      696,
+      352,
+      0,
+      315,
+      0,
+      "IMAGE"
+    ],
+    [
+      700,
+      348,
+      0,
+      104,
+      1,
+      "INT"
+    ],
+    [
+      707,
+      145,
+      0,
+      357,
+      1,
+      "*"
+    ],
+    [
+      708,
+      120,
+      0,
+      357,
+      2,
+      "*"
+    ],
+    [
+      710,
+      357,
+      0,
+      297,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      711,
+      357,
+      0,
+      298,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      713,
+      358,
+      0,
+      349,
+      6,
+      "INT"
+    ],
+    [
+      714,
+      145,
+      0,
+      358,
+      1,
+      "*"
+    ],
+    [
+      715,
+      302,
+      0,
+      359,
+      0,
+      "IMAGE"
+    ],
+    [
+      716,
+      138,
+      0,
+      359,
+      1,
+      "INT"
+    ],
+    [
+      717,
+      138,
+      1,
+      359,
+      2,
+      "INT"
+    ],
+    [
+      718,
+      359,
+      0,
+      104,
+      0,
+      "IMAGE"
+    ],
+    [
+      719,
+      359,
+      0,
+      351,
+      0,
+      "IMAGE"
+    ],
+    [
+      720,
+      359,
+      0,
+      352,
+      0,
+      "IMAGE"
+    ],
+    [
+      723,
+      360,
+      0,
+      325,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      724,
+      145,
+      0,
+      360,
+      1,
+      "*"
+    ],
+    [
+      725,
+      356,
+      0,
+      360,
+      2,
+      "*"
+    ],
+    [
+      728,
+      101,
+      0,
+      361,
+      0,
+      "*"
+    ],
+    [
+      729,
+      97,
+      0,
+      361,
+      1,
+      "*"
+    ],
+    [
+      734,
+      362,
+      0,
+      361,
+      6,
+      "INT"
+    ],
+    [
+      735,
+      362,
+      0,
+      364,
+      6,
+      "INT"
+    ],
+    [
+      736,
+      142,
+      0,
+      366,
+      0,
+      "IMAGE"
+    ],
+    [
+      746,
+      377,
+      0,
+      378,
+      1,
+      "STYLE_MODEL"
+    ],
+    [
+      747,
+      379,
+      0,
+      378,
+      2,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      748,
+      382,
+      1,
+      378,
+      3,
+      "FLOAT"
+    ],
+    [
+      749,
+      376,
+      0,
+      379,
+      0,
+      "CLIP_VISION"
+    ],
+    [
+      750,
+      378,
+      0,
+      380,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      752,
+      382,
+      1,
+      380,
+      2,
+      "FLOAT"
+    ],
+    [
+      753,
+      381,
+      0,
+      382,
+      0,
+      "INT,FLOAT,IMAGE,LATENT"
+    ],
+    [
+      760,
+      361,
+      0,
+      378,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      761,
+      361,
+      0,
+      380,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      767,
+      390,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      768,
+      62,
+      0,
+      391,
+      0,
+      "*"
+    ],
+    [
+      771,
+      134,
+      0,
+      392,
+      1,
+      "*"
+    ],
+    [
+      772,
+      392,
+      0,
+      391,
+      6,
+      "INT"
+    ],
+    [
+      773,
+      103,
+      0,
+      364,
+      0,
+      "*"
+    ],
+    [
+      774,
+      97,
+      1,
+      364,
+      1,
+      "*"
+    ],
+    [
+      775,
+      391,
+      0,
+      393,
+      0,
+      "MODEL"
+    ],
+    [
+      777,
+      330,
+      0,
+      393,
+      4,
+      "INT"
+    ],
+    [
+      779,
+      364,
+      0,
+      393,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      780,
+      349,
+      0,
+      393,
+      3,
+      "LATENT"
+    ],
+    [
+      782,
+      8,
+      0,
+      394,
+      0,
+      "IMAGE"
+    ],
+    [
+      786,
+      329,
+      0,
+      393,
+      5,
+      "FLOAT"
+    ],
+    [
+      787,
+      396,
+      0,
+      397,
+      1,
+      "*"
+    ],
+    [
+      788,
+      397,
+      0,
+      395,
+      6,
+      "INT"
+    ],
+    [
+      789,
+      361,
+      0,
+      395,
+      0,
+      "*"
+    ],
+    [
+      790,
+      380,
+      0,
+      395,
+      1,
+      "*"
+    ],
+    [
+      791,
+      395,
+      0,
+      393,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      792,
+      142,
+      0,
+      379,
+      1,
+      "IMAGE"
+    ],
+    [
+      794,
+      131,
+      0,
+      398,
+      1,
+      "STRING"
+    ],
+    [
+      795,
+      398,
+      0,
+      382,
+      1,
+      "INT,FLOAT,IMAGE,LATENT"
+    ],
+    [
+      796,
+      390,
+      0,
+      97,
+      3,
+      "VAE"
+    ],
+    [
+      797,
+      390,
+      0,
+      315,
+      1,
+      "VAE"
+    ],
+    [
+      798,
+      389,
+      0,
+      101,
+      0,
+      "CLIP"
+    ],
+    [
+      799,
+      389,
+      0,
+      103,
+      0,
+      "CLIP"
+    ],
+    [
+      800,
+      389,
+      0,
+      398,
+      0,
+      "CLIP"
+    ],
+    [
+      802,
+      131,
+      0,
+      101,
+      2,
+      "STRING"
+    ],
+    [
+      803,
+      133,
+      0,
+      362,
+      1,
+      "*"
+    ],
+    [
+      804,
+      399,
+      0,
+      400,
+      1,
+      "IP_ADAPTER_FLUX"
+    ],
+    [
+      805,
+      62,
+      0,
+      400,
+      0,
+      "MODEL"
+    ],
+    [
+      806,
+      366,
+      0,
+      400,
+      2,
+      "IMAGE"
+    ],
+    [
+      807,
+      400,
+      0,
+      391,
+      1,
+      "*"
+    ],
+    [
+      812,
+      394,
+      0,
+      406,
+      0,
+      "*"
+    ],
+    [
+      813,
+      405,
+      0,
+      406,
+      1,
+      "*"
+    ],
+    [
+      815,
+      407,
+      0,
+      408,
+      1,
+      "*"
+    ],
+    [
+      816,
+      408,
+      0,
+      406,
+      6,
+      "INT"
+    ],
+    [
+      817,
+      394,
+      0,
+      405,
+      0,
+      "IMAGE"
+    ],
+    [
+      819,
+      137,
+      0,
+      400,
+      3,
+      "FLOAT"
+    ],
+    [
+      822,
+      391,
+      0,
+      409,
+      0,
+      "MODEL"
+    ],
+    [
+      825,
+      361,
+      0,
+      409,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      826,
+      364,
+      0,
+      409,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      827,
+      349,
+      0,
+      409,
+      3,
+      "LATENT"
+    ],
+    [
+      829,
+      411,
+      0,
+      410,
+      6,
+      "INT"
+    ],
+    [
+      830,
+      134,
+      0,
+      411,
+      1,
+      "*"
+    ],
+    [
+      831,
+      409,
+      0,
+      410,
+      1,
+      "*"
+    ],
+    [
+      832,
+      410,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      833,
+      393,
+      0,
+      410,
+      0,
+      "*"
+    ],
+    [
+      836,
+      415,
+      0,
+      417,
+      1,
+      "*"
+    ],
+    [
+      837,
+      416,
+      0,
+      417,
+      2,
+      "*"
+    ],
+    [
+      838,
+      417,
+      0,
+      419,
+      0,
+      "*"
+    ],
+    [
+      845,
+      417,
+      0,
+      423,
+      0,
+      "*"
+    ],
+    [
+      846,
+      134,
+      0,
+      415,
+      0,
+      "*"
+    ],
+    [
+      847,
+      423,
+      0,
+      419,
+      1,
+      "BOOLEAN"
+    ],
+    [
+      850,
+      131,
+      0,
+      101,
+      1,
+      "STRING"
+    ],
+    [
+      855,
+      394,
+      3,
+      427,
+      0,
+      "*"
+    ],
+    [
+      858,
+      131,
+      0,
+      429,
+      0,
+      "*"
+    ],
+    [
+      866,
+      429,
+      0,
+      431,
+      1,
+      "*"
+    ],
+    [
+      867,
+      427,
+      0,
+      431,
+      2,
+      "*"
+    ],
+    [
+      869,
+      297,
+      0,
+      432,
+      0,
+      "*"
+    ],
+    [
+      870,
+      138,
+      0,
+      432,
+      1,
+      "*"
+    ],
+    [
+      871,
+      432,
+      0,
+      348,
+      1,
+      "*"
+    ],
+    [
+      872,
+      432,
+      0,
+      352,
+      1,
+      "INT"
+    ],
+    [
+      873,
+      432,
+      0,
+      62,
+      1,
+      "INT"
+    ],
+    [
+      874,
+      298,
+      0,
+      433,
+      0,
+      "*"
+    ],
+    [
+      875,
+      138,
+      1,
+      433,
+      1,
+      "*"
+    ],
+    [
+      876,
+      433,
+      0,
+      316,
+      1,
+      "INT"
+    ],
+    [
+      877,
+      433,
+      0,
+      348,
+      2,
+      "*"
+    ],
+    [
+      878,
+      433,
+      0,
+      62,
+      2,
+      "INT"
+    ],
+    [
+      879,
+      433,
+      0,
+      352,
+      2,
+      "INT"
+    ],
+    [
+      880,
+      432,
+      0,
+      316,
+      0,
+      "INT"
+    ],
+    [
+      883,
+      301,
+      0,
+      438,
+      0,
+      "IMAGE"
+    ],
+    [
+      884,
+      302,
+      0,
+      439,
+      0,
+      "IMAGE"
+    ],
+    [
+      885,
+      438,
+      0,
+      356,
+      1,
+      "*"
+    ],
+    [
+      886,
+      439,
+      0,
+      356,
+      2,
+      "*"
+    ],
+    [
+      887,
+      142,
+      0,
+      440,
+      0,
+      "IMAGE"
+    ],
+    [
+      888,
+      438,
+      0,
+      397,
+      2,
+      "*"
+    ],
+    [
+      889,
+      440,
+      0,
+      397,
+      3,
+      "*"
+    ],
+    [
+      892,
+      406,
+      0,
+      443,
+      0,
+      "IMAGE"
+    ],
+    [
+      893,
+      388,
+      0,
+      80,
+      0,
+      "MODEL"
+    ],
+    [
+      894,
+      431,
+      0,
+      405,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 5,
+      "title": "FLUX MODELS/LORA",
+      "bounding": [
+        -1544.4600830078125,
+        998.2137451171875,
+        393.1617431640625,
+        1143.15673828125
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "controls",
+      "bounding": [
+        -1033.40087890625,
+        1005.3972778320312,
+        561,
+        1815
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 1,
+      "title": "init image and resolution",
+      "bounding": [
+        -258.5989685058594,
+        1005.774658203125,
+        608,
+        1872
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "Flux Redux",
+      "bounding": [
+        588.1380615234375,
+        1021.6073608398438,
+        936.0554809570312,
+        663.0010986328125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "ControlNet Union",
+      "bounding": [
+        582.3199462890625,
+        1738.9613037109375,
+        1071.7747802734375,
+        642.55078125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "ipadapter",
+      "bounding": [
+        591.0851440429688,
+        2400.0126953125,
+        797.1754760742188,
+        808.3779907226562
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "flux-SamplerCustomAdvanced",
+      "bounding": [
+        1807.754150390625,
+        1026.5465087890625,
+        839.1510009765625,
+        1443.76513671875
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8264462809917354,
+      "offset": [
+        1649.6877534875002,
+        -1212.0617626899193
+      ]
+    },
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "node_versions": {
+      "comfyui-crystools": "03a61d690379f22c6bffc42ea4845f797deb316c",
+      "eden_comfy_pipelines": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+      "ControlFlowUtils": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+      "comfy-core": "0.3.13",
+      "comfyui-kjnodes": "1.0.5",
+      "ComfyUI-JNodes": "0a8dcc4655b3b8adac324ad1aaba664db7292849",
+      "comfyui-custom-scripts": "1.0.0",
+      "comfyui_controlnet_aux": "1.0.5",
+      "rgthree-comfy": "5d771b8b56a343c24a26e8cea1f0c87c3d58102f",
+      "comfyui-impact-pack": "8.8",
+      "x-flux-comfyui": "00328556efc9472410d903639dc9e68a8471f7ac",
+      "comfyui-prompt-reader-node": "d1916686070917e07d1ac9e95d59bebf75ee5c9c",
+      "comfyui-timer-nodes": "0.1.0",
+      "comfyui-dreambait-nodes": "c518b81ee4d2bff187f03fa7541de36d6a4c2008",
+      "ComfyUI-ToSVG": "970301889c354558076a20e6721b944a854136cd"
+    },
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
