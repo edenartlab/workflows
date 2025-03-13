@@ -1080,13 +1080,9 @@
       "noise_type": "default",
       "seed_gen": "comfy",
       "seed_offset": 0,
-      "adapt_denoise_steps": true,
+      "adapt_denoise_steps": false,
       "custom_cfg": [
         "584",
-        0
-      ],
-      "sigma_schedule": [
-        "581",
         0
       ]
     },
@@ -1166,9 +1162,6 @@
       "loop_count": 0,
       "filename_prefix": "TextureFlow",
       "format": "video/eden-video-faststart",
-      "pix_fmt": "yuv420p",
-      "crf": 23,
-      "save_metadata": true,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -1473,7 +1466,7 @@
   },
   "552": {
     "inputs": {
-      "path": "input/A_black_image.jpg",
+      "path": "input/black_dummy.jpg",
       "resize_images_to_first": true,
       "image_load_cap": [
         "569",
