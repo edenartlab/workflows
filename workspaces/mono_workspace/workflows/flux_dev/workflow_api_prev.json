@@ -6,8 +6,8 @@
         0
       ],
       "vae": [
-        "444",
-        2
+        "390",
+        0
       ]
     },
     "class_type": "VAEDecode",
@@ -45,7 +45,7 @@
         0
       ],
       "model": [
-        "444",
+        "388",
         0
       ]
     },
@@ -75,8 +75,8 @@
         0
       ],
       "vae": [
-        "444",
-        2
+        "390",
+        0
       ],
       "image": [
         "104",
@@ -113,8 +113,8 @@
       ],
       "guidance": 3.5,
       "clip": [
-        "444",
-        1
+        "389",
+        0
       ]
     },
     "class_type": "CLIPTextEncodeFlux",
@@ -129,8 +129,8 @@
         0
       ],
       "clip": [
-        "444",
-        1
+        "389",
+        0
       ]
     },
     "class_type": "CLIPTextEncode",
@@ -253,7 +253,8 @@
   },
   "142": {
     "inputs": {
-      "image": "black_dummy.jpg"
+      "image": "black_dummy.jpg",
+      "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -349,7 +350,8 @@
   },
   "301": {
     "inputs": {
-      "image": "black_dummy.jpg"
+      "image": "black_dummy.jpg",
+      "upload": "image"
     },
     "class_type": "Load image with metadata [Crystools]",
     "_meta": {
@@ -358,7 +360,8 @@
   },
   "302": {
     "inputs": {
-      "image": "black_dummy.jpg"
+      "image": "black_dummy.jpg",
+      "upload": "image"
     },
     "class_type": "Load image with metadata [Crystools]",
     "_meta": {
@@ -372,8 +375,8 @@
         0
       ],
       "vae": [
-        "444",
-        2
+        "390",
+        0
       ]
     },
     "class_type": "VAEEncode",
@@ -445,12 +448,12 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SDAnyConverter"
+      "title": "SD Any Converter"
     }
   },
   "330": {
     "inputs": {
-      "seed": 33
+      "seed": 29
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -868,6 +871,37 @@
       "title": "Math Expression 🐍"
     }
   },
+  "388": {
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "389": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp16.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "390": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
   "391": {
     "inputs": {
       "mode": "SWITCH",
@@ -1010,8 +1044,8 @@
         0
       ],
       "clip": [
-        "444",
-        1
+        "389",
+        0
       ]
     },
     "class_type": "JNodes_TokenCounter",
@@ -1091,7 +1125,7 @@
   },
   "409": {
     "inputs": {
-      "noise_seed": 239048216044733,
+      "noise_seed": 45768566167201,
       "steps": 25,
       "timestep_to_start_cfg": 26,
       "true_gs": 1,
@@ -1165,7 +1199,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SDAnyConverter"
+      "title": "SD Any Converter"
     }
   },
   "431": {
@@ -1267,15 +1301,6 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Image"
-    }
-  },
-  "444": {
-    "inputs": {
-      "ckpt_name": "flux1-dev-fp8.safetensors"
-    },
-    "class_type": "CheckpointLoaderSimple",
-    "_meta": {
-      "title": "Load Checkpoint"
     }
   }
 }
