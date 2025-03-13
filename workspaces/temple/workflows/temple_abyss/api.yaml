@@ -1,0 +1,222 @@
+name: Temple Abyss Card Generator
+description: Create a custom Temple Abyss CCG card with background art generation and card layout composition.
+tip: |-
+  This tool generates custom Temple Abyss CCG cards. You can either generate new card art or use an existing rendered image.
+  The workflow combines generated or supplied art with card template elements including clan icons, rarity markers, and card text.
+  For best results, provide detailed prompts for the art generation and ensure text fits within standard card layout constraints.
+thumbnail: app/temple-abyss-card_opt.jpg
+cost_estimate: 3.0 * n_samples
+output_type: image
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
+handler: comfyui
+active: false
+base_model: sdxl
+comfyui_output_node_id: 143
+comfyui_intermediate_outputs:
+  generated_art: 162
+parameters:
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      Number of variations to generate for the card art. Only applies when generating new art rather than using a rendered image.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  prompt:
+    type: string
+    label: Art Generation Prompt
+    description: Describe the art you want generated for the card
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+    required: true
+    default: comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings
+    comfyui:
+      node_id: 88
+      field: inputs
+      subfield: text
+  negative_prompt:
+    type: string
+    label: Art Generation Prompt
+    description: Describe what you don't want in the art
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+    required: true
+    default: wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft
+    comfyui:
+      node_id: 89
+      field: inputs
+      subfield: text
+  seed:
+    type: integer
+    label: Generation Seed
+    description: Set random seed for reproducible art generation
+    tip: |-
+      Leave blank for random results. Set a specific seed to reproduce previous generations.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 87
+      field: inputs
+      subfield: seed
+  use_rendered_art_image:
+    type: boolean
+    label: Use Pre-rendered Art
+    description: Toggle between generating new art or using an existing rendered image
+    required: false
+    default: false
+    comfyui:
+      node_id: 117
+      field: inputs
+      subfield: value
+  rendered_art_image:
+    type: image
+    label: Rendered Art Image
+    description: Pre-rendered art image to use for the card
+    required: false
+    visible_if: use_rendered_art_image=true
+    comfyui:
+      node_id: 12
+      field: inputs
+      subfield: image
+  background_image:
+    type: image
+    label: Card Background Template
+    description: Background template image for the card
+    required: true
+    comfyui:
+      node_id: 13
+      field: inputs
+      subfield: image
+  clan_icon:
+    type: image
+    label: Clan Icon
+    description: Icon representing the card's clan affiliation
+    required: true
+    comfyui:
+      node_id: 17
+      field: inputs
+      subfield: image
+  rarity_icon:
+    type: image
+    label: Rarity Icon
+    description: Icon indicating the card's rarity level
+    required: true
+    comfyui:
+      node_id: 52
+      field: inputs
+      subfield: image
+  aura_icon:
+    type: image
+    label: Aura Icon
+    description: Icon representing the card's aura type
+    required: true
+    comfyui:
+      node_id: 53
+      field: inputs
+      subfield: image
+  card_name:
+    type: string
+    label: Card Name
+    description: Name of the card
+    required: true
+    default: "CARD_NAME"
+    comfyui:
+      node_id: 119
+      field: inputs
+      subfield: text
+  trait:
+    type: string
+    label: Trait
+    description: Card trait attribute 
+    required: true
+    default: "TRAIT"
+    comfyui:
+      node_id: 128
+      field: inputs
+      subfield: text
+  card_text:
+    type: string
+    label: Card Description
+    description: Main text/description for the card
+    required: true
+    default: "Card effect description goes here"
+    comfyui:
+      node_id: 81
+      field: inputs
+      subfield: text
+  rng_points:
+    type: string
+    label: RNG Points
+    description: Point value for the card
+    required: true
+    default: "420"
+    comfyui:
+      node_id: 144
+      field: inputs
+      subfield: text
+  lora:
+    type: lora
+    label: LoRA
+    description: Use a custom model (LoRA)
+    tip: name of the custom (SDXL) LoRA model.
+    default: 67a222bae707584b6d669623
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: lora_name
+  lora_strength:
+    type: float
+    label: LoRA Strength
+    description: Strength of the LoRA effect on generation
+    required: true
+    default: 0.68
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 95
+      field: inputs
+      subfield: value
+  init_image:
+    type: image
+    label: Initial Image
+    description: Reference image for ControlNet guidance
+    required: false
+    tip: |-
+      Upload a reference image to guide the art generation. This works with ControlNet to maintain key elements of the reference image.
+    comfyui:
+      node_id: 99
+      field: inputs
+      subfield: image
+  controlnet_strength:
+    type: float
+    label: ControlNet Strength
+    description: Strength of the ControlNet guidance
+    tip: |-
+      Controls how strongly the generation follows the reference image. Higher values (closer to 1.0) follow the reference more closely,
+      while lower values allow more creative freedom.
+    required: false
+    default: 0.8
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 98
+      field: inputs
+      subfield: strength
+  controlnet:
+    type: string
+    label: Controlnet preprocessor
+    description: |-
+      What type of shape guidance to apply. Different types have subtly different effects on the output.
+    tip: |-
+      Use best judgement based on the supplied image and user request to select the correct controlnet preprocessor and model to suit their needs. Canny detects thin binary edges and is useful for tasks requiring fast edge detection, such as architectural designs or simple object outlines, but it may struggle with complex scenes or noise. Depth generates luminance-based depth maps and is ideal for creating realistic 3D-like compositions, such as emphasizing depth in landscapes or isolating foreground objects. HED excels at producing smooth, intricate edge detection and is suitable for detailed illustrations, artistic line work, or noise-sensitive scenes. OpenPose identifies human keypoints, making it a perfect choice for generating images with accurate human poses, such as action shots, dance scenes, or character positioning, but will fail if a person isn't detected, so only use this one if you have reason to believe an image containing a person was provided as init. LineArt converts images into detailed line drawings and is best for black-and-white artwork, manga-style illustrations, or clear contrast outlines. Scribble processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
+    default: depth
+    choices: [none, canny, depth, scribble, pose, threshold, lineart]
+    visible_if: use_controlnet=true
+    comfyui:
+      node_id: 137
+      field: inputs
+      subfield: select_item
