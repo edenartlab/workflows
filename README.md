@@ -1,3 +1,9 @@
+This repository contains the in-production ComfyUI workflows for https://www.eden.art/
+Our public node pack can be found here: https://github.com/edenartlab/eden_comfy_pipelines
+
+Anyone is warmly welcomed to contribute ComfyUI tools, which can then become usable by all Eden.art creative agents.
+Revenue sharing models with tool-builders are in the making, more news soon.
+
 
 # Global Tool Fields (at the top of api.yaml)
 
