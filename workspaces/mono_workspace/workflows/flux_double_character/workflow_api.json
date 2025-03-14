@@ -1,0 +1,712 @@
+{
+  "3": {
+    "inputs": {
+      "noise_seed": [
+        "121",
+        0
+      ],
+      "steps": 10,
+      "timestep_to_start_cfg": 8,
+      "true_gs": 1,
+      "image_to_image_strength": 0,
+      "denoise_strength": 1,
+      "model": [
+        "108",
+        0
+      ],
+      "conditioning": [
+        "5",
+        0
+      ],
+      "neg_conditioning": [
+        "19",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "XlabsSampler",
+    "_meta": {
+      "title": "Xlabs Sampler"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_l": [
+        "152",
+        0
+      ],
+      "t5xxl": [
+        "152",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "153",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "6": {
+    "inputs": {
+      "width": 1512,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "153",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "19": {
+    "inputs": {
+      "clip_l": "",
+      "t5xxl": "",
+      "guidance": 0,
+      "clip": [
+        "153",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "106": {
+    "inputs": {
+      "lora_name": "flux_turbo_v1_1.safetensors",
+      "strength_model": 1,
+      "model": [
+        "153",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "108": {
+    "inputs": {
+      "lora_name": "flux/banny/bannyv2_20241214_1828.zip-step00004000.safetensors",
+      "strength_model": 0.9,
+      "model": [
+        "106",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "109": {
+    "inputs": {
+      "value": "a photo of subj_1 in full body armour next to subj_2 holding a massive sword, stunning mountain panorama photography, full body shot, masterpiece, best quality, 8K, HDR, highres"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt"
+    }
+  },
+  "110": {
+    "inputs": {
+      "noise": [
+        "119",
+        0
+      ],
+      "guider": [
+        "120",
+        0
+      ],
+      "sampler": [
+        "118",
+        0
+      ],
+      "sigmas": [
+        "116",
+        0
+      ],
+      "latent_image": [
+        "146",
+        2
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "114": {
+    "inputs": {
+      "samples": [
+        "110",
+        0
+      ],
+      "vae": [
+        "153",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "116": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 8,
+      "denoise": 0.8,
+      "model": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "118": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "119": {
+    "inputs": {
+      "noise_seed": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "120": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "133",
+        0
+      ],
+      "positive": [
+        "136",
+        0
+      ],
+      "negative": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFGGuider"
+    }
+  },
+  "121": {
+    "inputs": {
+      "seed": 49
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "122": {
+    "inputs": {
+      "text": [
+        "139",
+        0
+      ],
+      "image": [
+        "7",
+        0
+      ],
+      "clipseg_model": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "CLIPSeg Masking",
+    "_meta": {
+      "title": "CLIPSeg Masking"
+    }
+  },
+  "123": {
+    "inputs": {
+      "model": "CIDAS/clipseg-rd64-refined"
+    },
+    "class_type": "CLIPSeg Model Loader",
+    "_meta": {
+      "title": "CLIPSeg Model Loader"
+    }
+  },
+  "124": {
+    "inputs": {
+      "images": [
+        "122",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "127": {
+    "inputs": {
+      "mask": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "128": {
+    "inputs": {
+      "expand": 12,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 24,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "129": {
+    "inputs": {
+      "value": 0.25,
+      "mask": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "ThresholdMask",
+    "_meta": {
+      "title": "ThresholdMask"
+    }
+  },
+  "130": {
+    "inputs": {
+      "mask": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "131": {
+    "inputs": {
+      "expand": 12,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 24,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "132": {
+    "inputs": {
+      "mask": [
+        "131",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "133": {
+    "inputs": {
+      "lora_name": "flux/20250311_1659_gene-step00006000.safetensors",
+      "strength_model": 0.9500000000000001,
+      "model": [
+        "106",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "135": {
+    "inputs": {
+      "control_net_name": "FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "136": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "19",
+        0
+      ],
+      "control_net": [
+        "135",
+        0
+      ],
+      "vae": [
+        "153",
+        2
+      ],
+      "image": [
+        "7",
+        0
+      ],
+      "mask": [
+        "131",
+        0
+      ]
+    },
+    "class_type": "ControlNetInpaintingAliMamaApply",
+    "_meta": {
+      "title": "ControlNetInpaintingAliMamaApply"
+    }
+  },
+  "138": {
+    "inputs": {
+      "value": "Banny, a yellow cartoon bananaman"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "trigger_1"
+    }
+  },
+  "139": {
+    "inputs": {
+      "value": "man with curly brown hair, beard, and neutral expression"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "trigger_2"
+    }
+  },
+  "142": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "152",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "146": {
+    "inputs": {
+      "noise_mask": true,
+      "positive": [
+        "136",
+        0
+      ],
+      "negative": [
+        "136",
+        1
+      ],
+      "vae": [
+        "153",
+        2
+      ],
+      "pixels": [
+        "7",
+        0
+      ],
+      "mask": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "InpaintModelConditioning"
+    }
+  },
+  "151": {
+    "inputs": {
+      "source_string": [
+        "109",
+        0
+      ],
+      "regex_pattern": "subj_1",
+      "replacement": [
+        "138",
+        0
+      ],
+      "max_n_replacements": -1,
+      "case_sensitive": false
+    },
+    "class_type": "Eden_Regex_Replace",
+    "_meta": {
+      "title": "Eden_Regex_Replace"
+    }
+  },
+  "152": {
+    "inputs": {
+      "source_string": [
+        "151",
+        0
+      ],
+      "regex_pattern": "subj_2",
+      "replacement": [
+        "139",
+        0
+      ],
+      "max_n_replacements": -1,
+      "case_sensitive": false
+    },
+    "class_type": "Eden_Regex_Replace",
+    "_meta": {
+      "title": "Eden_Regex_Replace"
+    }
+  },
+  "153": {
+    "inputs": {
+      "ckpt_name": "flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "156": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "161": {
+    "inputs": {
+      "filename_prefix": "double_char_img_02",
+      "images": [
+        "114",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "164": {
+    "inputs": {
+      "images": [
+        "167",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "165": {
+    "inputs": {
+      "expand": 8,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 16,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "166": {
+    "inputs": {
+      "mask": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "167": {
+    "inputs": {
+      "text": [
+        "138",
+        0
+      ],
+      "image": [
+        "7",
+        0
+      ],
+      "clipseg_model": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "CLIPSeg Masking",
+    "_meta": {
+      "title": "CLIPSeg Masking"
+    }
+  },
+  "168": {
+    "inputs": {
+      "expression": "a-b",
+      "conversion_mode": "mean",
+      "a": [
+        "131",
+        0
+      ],
+      "b": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "Eden_Image_Math",
+    "_meta": {
+      "title": "Eden_Image_Math"
+    }
+  },
+  "169": {
+    "inputs": {
+      "mask": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "170": {
+    "inputs": {
+      "min": 0,
+      "max": 1,
+      "mask": [
+        "168",
+        1
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "172": {
+    "inputs": {
+      "filename_prefix": "double_char_img_01",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "173": {
+    "inputs": {
+      "filename_prefix": "double_char_mask",
+      "images": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "174": {
+    "inputs": {
+      "mask": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  }
+}
