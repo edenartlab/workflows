@@ -1,17 +1,36 @@
-# Introduction
+<div align="center">
+  <img src="assets/eden.png" alt="Eden.art Logo" width="300">
+  <h1>Eden.art ComfyUI Tools</h1>
+</div>
 
-This repository contains all in-production ComfyUI workflows for https://www.eden.art/
+## 🌿 Introduction
 
-Our public node pack can be found here: https://github.com/edenartlab/eden_comfy_pipelines
+Welcome to the official repository of all production-ready ComfyUI workflows for [Eden.art](https://www.eden.art/). This collection powers our creative AI platform, enabling rich generative experiences through our ecosystem of creative agents.
 
-Anyone is warmly welcomed to contribute custom ComfyUI tools, which can then become usable by all Eden.art creative agents.
-Revenue sharing models with tool-builders are in the making, more news coming soon.
+Our mission is to build an open, collaborative platform where creators can contribute their custom tools and reach a wider audience through Eden's creative agents.
 
-# api.yaml Interface
-Every comfyui "tool" has an api.yaml file that describes what the tool does + its inputs / outputs. This lets all our creative agents call these tools through natural language conversation.
-For a demo of our stack, have a chat with Eve: https://beta.eden.art/chat/eve
+For those interested in extending our ecosystem, our public node pack is available on [GitHub](https://github.com/edenartlab/eden_comfy_pipelines).
 
-## Global Tool Fields (at the top of api.yaml)
+## 🤝 Contribute Your Tools
+
+We enthusiastically welcome contributions from the community! By adding your custom ComfyUI tools to our repository, you make them available to all Eden.art creative agents.
+
+We're currently developing revenue-sharing models for tool builders. This means you can potentially earn from your contributions as they're used across our platform. Stay tuned for more details on this exciting opportunity.
+
+## 🔧 How Tools Work: The api.yaml Interface
+
+Each ComfyUI "tool" in our ecosystem comes with an `api.yaml` file that defines:
+- The tool's functionality
+- Required inputs
+- Expected outputs
+
+This standardized interface allows our creative agents to discover and utilize these tools through natural language conversation.
+
+To see this in action, have a chat with [Eve](https://beta.eden.art/chat/eve), our flagship creative agent.
+
+### Global Tool Fields
+
+The top section of each `api.yaml` file contains global parameters that define the tool's core properties...
 
 | Field | Description |
 |-------|-------------|
