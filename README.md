@@ -1,11 +1,17 @@
-This repository contains the in-production ComfyUI workflows for https://www.eden.art/
+# Introduction
+
+This repository contains all in-production ComfyUI workflows for https://www.eden.art/
+
 Our public node pack can be found here: https://github.com/edenartlab/eden_comfy_pipelines
 
-Anyone is warmly welcomed to contribute ComfyUI tools, which can then become usable by all Eden.art creative agents.
-Revenue sharing models with tool-builders are in the making, more news soon.
+Anyone is warmly welcomed to contribute custom ComfyUI tools, which can then become usable by all Eden.art creative agents.
+Revenue sharing models with tool-builders are in the making, more news coming soon.
 
+# api.yaml Interface
+Every comfyui "tool" has an api.yaml file that describes what the tool does + its inputs / outputs. This lets all our creative agents call these tools through natural language conversation.
+For a demo of our stack, have a chat with Eve: https://beta.eden.art/chat/eve
 
-# Global Tool Fields (at the top of api.yaml)
+## Global Tool Fields (at the top of api.yaml)
 
 | Field | Description |
 |-------|-------------|
@@ -18,7 +24,7 @@ Revenue sharing models with tool-builders are in the making, more news soon.
 | `base_model` | Display the base model in the UI (flux-dev, flux-schnell, sdxl, sd15, sd3) |
 | `active` | (true/false) |
 
-# Parameter Fields
+## Parameter Fields
 
 | Field | Description |
 |-------|-------------|
