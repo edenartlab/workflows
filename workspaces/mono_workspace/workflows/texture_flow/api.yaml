@@ -3,9 +3,9 @@ description: Mix multiple images into a video, optionally add a driving motion o
 tip: |-
   This workflow creates smooth, trippy, artistic, or morphing animations from a set of style (texture) images (and other optional inputs). Very good for VJing.
   One to six images form the basis of this tool, driving the texture and content of the final animation. 
-  In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good default.
+  In general, the video length should be scaled proportionally with the number of style images, 3s of animation per style image is a good rule of thumb.
   The motion mapping template controls how the content of the style images is mapped onto the video (spatially).
-  When doing quick experimentation with settings you can set upscale:false to produce a fast but low resolution test render, once a sweet spot is found, 
+  When doing quick experimentation with settings you can set upscale:false to produce a faster but lower resolution test render, once a sweet spot is found, 
   you can set upscale:true to generate a full HD final output video. Before using this tool, always print the settings your about to use and ask the user to confirm before executing the tool!
   There is an optional control_input (set use_controlnet1 to true) and preprocessor1 type that can add specific shape/motion guidance to the generated video 
   like embedding the contours of a logo or word into the video or eg applying the lines or perceived depth of a projection surface when doing videomapping.
@@ -158,12 +158,14 @@ parameters:
     default: CannyEdgePreprocessor
     choices: 
       - CannyEdgePreprocessor
+      - Scribble_XDoG_Preprocessor
       - DepthAnythingV2Preprocessor
       - AnyLineArtPreprocessor_aux
       - DensePosePreprocessor
       - none
     choices_labels: 
       - Edges (Canny)
+      - Scribble
       - Depth
       - Lineart
       - human pose
