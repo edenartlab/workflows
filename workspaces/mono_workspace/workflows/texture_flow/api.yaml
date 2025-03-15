@@ -179,10 +179,11 @@ parameters:
         field: inputs
         subfield: control_net_name
         map:
-          AnyLineArtPreprocessor_aux: control_v11p_sd15_lineart.pth
           CannyEdgePreprocessor: control_v11p_sd15_canny.pth
-          DensePosePreprocessor: control_v11p_sd15_openpose.pth
+          Scribble_XDoG_Preprocessor: control_v11p_sd15_scribble.pth
           DepthAnythingV2Preprocessor: control_v11f1p_sd15_depth.pth
+          AnyLineArtPreprocessor_aux: control_v11p_sd15_lineart.pth
+          DensePosePreprocessor: control_v11p_sd15_openpose.pth
           none: controlnetQRPatternQR_v2Sd15.safetensors
   controlnet_strength1:
     type: float
