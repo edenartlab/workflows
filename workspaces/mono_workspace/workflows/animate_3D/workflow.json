@@ -772,73 +772,66 @@
         {
           "name": "noise_layers",
           "type": "NOISE_LAYERS",
-          "link": null,
-          "slot_index": 0,
-          "shape": 7
+          "shape": 7,
+          "link": null
         },
         {
           "name": "iteration_opts",
           "type": "ITERATION_OPTS",
-          "link": null,
-          "shape": 7
+          "shape": 7,
+          "link": null
         },
         {
           "name": "custom_cfg",
           "type": "CUSTOM_CFG",
+          "shape": 7,
           "link": 35,
-          "slot_index": 2,
-          "shape": 7
+          "slot_index": 2
         },
         {
           "name": "sigma_schedule",
           "type": "SIGMA_SCHEDULE",
-          "link": 36,
+          "shape": 7,
           "slot_index": 3,
-          "shape": 7
+          "link": 36
         },
         {
           "name": "image_inject",
           "type": "IMAGE_INJECT",
-          "link": null,
-          "widget": {
-            "name": "seed_override"
-          },
-          "shape": 7
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "ancestral_opts",
+          "type": "ANCESTRAL_OPTS",
+          "shape": 7,
+          "link": null
         },
         {
           "name": "seed_override",
           "type": "INT",
-          "link": null,
+          "shape": 7,
           "widget": {
             "name": "seed_override"
           },
-          "shape": 7
-        },
-        {
-          "name": "image_inject",
-          "type": "IMAGE_INJECT",
-          "link": null,
-          "shape": 7
+          "link": null
         }
       ],
       "outputs": [
         {
           "name": "settings",
           "type": "SAMPLE_SETTINGS",
+          "shape": 3,
           "links": [
             32
           ],
-          "slot_index": 0,
-          "shape": 3
+          "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "ADE_AnimateDiffSamplingSettings",
-        "ttNbgOverride": {
-          "color": "#2a363b",
-          "bgcolor": "#3f5159",
-          "groupcolor": "#3f789e"
-        }
+        "cnr_id": "comfyui-animatediff-evolved",
+        "ver": "94eb45621c7e5a5286968b3938b1b7689d34ced0",
+        "Node name for S&R": "ADE_AnimateDiffSamplingSettings"
       },
       "widgets_values": [
         0,

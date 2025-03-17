@@ -6,7 +6,7 @@ output_type: image
 cost_estimate: 2 * n_samples
 thumbnail: app/flux.png
 status: prod
-visible: true
+active: false
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 handler: comfyui
 base_model: flux-dev
@@ -18,7 +18,7 @@ parameters:
   prompt:
     type: string
     label: Prompt
-    description: Describe an image depicting two characters/objects, each from a different LoRA model. The image will combine the two characters/objects into a single image. Make sure the prompt contains the name of each LoRA a description of the scene.
+    description: Describe an image depicting two characters/objects by mentioning their LoRA name.
     tip: |-
       Try to keep the prompt somewhat short and to the point (max 30 words). The more concise and clear your prompt, the better the results.
     required: true
@@ -29,19 +29,21 @@ parameters:
       subfield: value
   trigger_1:
     type: string
-    label: Prompt
+    label: trigger_text_1
     description: Trigger text for lora_1
-    required: true
     default: null
+    hide_from_ui: true
+    hide_from_agent: true
     comfyui:
       node_id: 138
       field: inputs
       subfield: value
   trigger_2:
     type: string
-    label: Prompt
+    label: trigger_text_2
     description: Trigger text for lora_2
-    required: true
+    hide_from_ui: true
+    hide_from_agent: true
     default: null
     comfyui:
       node_id: 139
@@ -77,6 +79,7 @@ parameters:
     type: lora
     label: Trained model (LoRA)
     description: Activate a custom, LoRA finetuned model
+    required: true
     comfyui:
       node_id: 108
       field: inputs
@@ -99,6 +102,7 @@ parameters:
     type: lora
     label: Trained model (LoRA) 2
     description: Activate a custom, LoRA finetuned model
+    required: true
     comfyui:
       node_id: 133
       field: inputs

@@ -85,6 +85,7 @@
       "pix_fmt": "yuv420p",
       "crf": 19,
       "save_metadata": false,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -99,8 +100,7 @@
   },
   "7": {
     "inputs": {
-      "image": "Earth-Day-Image.jpg",
-      "upload": "image"
+      "image": "Earth-Day-Image.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -497,6 +497,7 @@
       "pix_fmt": "yuv420p",
       "crf": 23,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -721,6 +722,7 @@
       "pix_fmt": "yuv420p",
       "crf": 23,
       "save_metadata": true,
+      "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
       "images": [
@@ -754,9 +756,6 @@
       "loop_count": 0,
       "filename_prefix": "Result",
       "format": "video/eden-video-faststart",
-      "pix_fmt": "yuv420p",
-      "crf": 23,
-      "save_metadata": true,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -831,8 +830,7 @@
   },
   "103": {
     "inputs": {
-      "image": "A_black_image.jpg",
-      "upload": "image"
+      "image": "A_black_image.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
