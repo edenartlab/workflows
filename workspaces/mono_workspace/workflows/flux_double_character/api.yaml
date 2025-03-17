@@ -121,6 +121,21 @@ parameters:
       node_id: 133
       field: inputs
       subfield: strength_model
+  second_pass_denoise:
+    type: float
+    label: Second character denoise
+    description: AI strength when using the second lora
+    tip: |-
+      This determines how much denoising is done when the second (inpainting) pass is happening with lora2. Increase this value when the second character is not coming through strong enough or has too many visual features of character 1.
+    hide_from_agent: true
+    default: 0.85
+    minimum: 0.5
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 116
+      field: inputs
+      subfield: denoise
   seed:
     type: integer
     label: Seed
