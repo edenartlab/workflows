@@ -4,7 +4,7 @@ tip: |-
   Flux is a text to image model by Black Forest Labs (ex StabilityAI employees ) that excels at prompt coherence, aesthetics and text generation. This tool is a strong choice for generating an image from text! Flux-dev can use ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, and LoRA models to apply a pretrained fine tuned concept. While controlnet exists for this tool, the controlnet models released so far are considered inferior to those from SDXL, and the other tools should be preferred for shape guidance creations. Flux-dev was trained on a dataset ranging in size from .1 to 2 megapixels, and is capable of generating images at higher resolutions than Stable Diffusion without noticable artifacting. While best practice seems to dictate that Flux likes similar resolutions to Stable Diffusion (such as those in the resolutions: list), it is capable of good results higher resolutions, rounded to 64 pixels such as 1920x1088, 1408x1408, 1728x1152, 1664x1216 etc.
 output_type: image
 cost_estimate: 2 * n_samples
-thumbnail: app/flux.png
+thumbnail: app/flux.jpg
 status: prod
 visible: true
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
