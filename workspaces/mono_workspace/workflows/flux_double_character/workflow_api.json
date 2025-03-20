@@ -5,13 +5,13 @@
         "121",
         0
       ],
-      "steps": 10,
+      "steps": 8,
       "timestep_to_start_cfg": 8,
       "true_gs": 1,
       "image_to_image_strength": 0,
       "denoise_strength": 1,
       "model": [
-        "108",
+        "176",
         0
       ],
       "conditioning": [
@@ -111,8 +111,11 @@
   },
   "108": {
     "inputs": {
-      "lora_name": "flux/banny/bannyv2_20241214_1828.zip-step00004000.safetensors",
-      "strength_model": 0.9,
+      "lora_name": [
+        "305",
+        0
+      ],
+      "strength_model": 0.9500000000000001,
       "model": [
         "106",
         0
@@ -125,7 +128,7 @@
   },
   "109": {
     "inputs": {
-      "value": "a photo of subj_1 in full body armour next to subj_2 holding a massive sword, stunning mountain panorama photography, full body shot, masterpiece, best quality, 8K, HDR, highres"
+      "value": "a photo of subj_1 standing next to a subj_2, wide angle mountain panorama shot, full body shot, castle in the background, setting sun, surrounded by high snowy mountain peaks in the distance, epic masterpiece, movie poster"
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -179,10 +182,13 @@
   "116": {
     "inputs": {
       "scheduler": "simple",
-      "steps": 8,
-      "denoise": 0.8,
+      "steps": 7,
+      "denoise": [
+        "308",
+        0
+      ],
       "model": [
-        "133",
+        "184",
         0
       ]
     },
@@ -216,7 +222,7 @@
     "inputs": {
       "cfg": 1,
       "model": [
-        "133",
+        "184",
         0
       ],
       "positive": [
@@ -235,7 +241,7 @@
   },
   "121": {
     "inputs": {
-      "seed": 49
+      "seed": 128
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -297,7 +303,7 @@
   },
   "128": {
     "inputs": {
-      "expand": 12,
+      "expand": 16,
       "incremental_expandrate": 0,
       "tapered_corners": true,
       "flip_input": false,
@@ -317,7 +323,7 @@
   },
   "129": {
     "inputs": {
-      "value": 0.25,
+      "value": 0.2,
       "mask": [
         "128",
         0
@@ -342,11 +348,11 @@
   },
   "131": {
     "inputs": {
-      "expand": 12,
+      "expand": 48,
       "incremental_expandrate": 0,
       "tapered_corners": true,
       "flip_input": false,
-      "blur_radius": 24,
+      "blur_radius": 0,
       "lerp_alpha": 1,
       "decay_factor": 1,
       "fill_holes": false,
@@ -374,8 +380,11 @@
   },
   "133": {
     "inputs": {
-      "lora_name": "flux/20250311_1659_gene-step00006000.safetensors",
-      "strength_model": 0.9500000000000001,
+      "lora_name": [
+        "305",
+        0
+      ],
+      "strength_model": 0,
       "model": [
         "106",
         0
@@ -399,13 +408,13 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 1,
+      "end_percent": 0.5,
       "positive": [
-        "5",
+        "289",
         0
       ],
       "negative": [
-        "19",
+        "288",
         0
       ],
       "control_net": [
@@ -417,11 +426,11 @@
         2
       ],
       "image": [
-        "7",
+        "220",
         0
       ],
       "mask": [
-        "131",
+        "230",
         0
       ]
     },
@@ -477,11 +486,11 @@
         2
       ],
       "pixels": [
-        "7",
+        "220",
         0
       ],
       "mask": [
-        "170",
+        "230",
         0
       ]
     },
@@ -537,32 +546,6 @@
       "title": "Load Checkpoint"
     }
   },
-  "156": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "109",
-        0
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
-  "161": {
-    "inputs": {
-      "filename_prefix": "double_char_img_02",
-      "images": [
-        "114",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
   "164": {
     "inputs": {
       "images": [
@@ -577,11 +560,11 @@
   },
   "165": {
     "inputs": {
-      "expand": 8,
+      "expand": 16,
       "incremental_expandrate": 0,
       "tapered_corners": true,
       "flip_input": false,
-      "blur_radius": 16,
+      "blur_radius": 24,
       "lerp_alpha": 1,
       "decay_factor": 1,
       "fill_holes": false,
@@ -636,25 +619,13 @@
         0
       ],
       "b": [
-        "165",
+        "180",
         0
       ]
     },
     "class_type": "Eden_Image_Math",
     "_meta": {
       "title": "Eden_Image_Math"
-    }
-  },
-  "169": {
-    "inputs": {
-      "mask": [
-        "170",
-        0
-      ]
-    },
-    "class_type": "MaskPreview+",
-    "_meta": {
-      "title": "🔧 Mask Preview"
     }
   },
   "170": {
@@ -673,7 +644,7 @@
   },
   "172": {
     "inputs": {
-      "filename_prefix": "double_char_img_01",
+      "filename_prefix": "double_char_img_00",
       "images": [
         "7",
         0
@@ -684,11 +655,346 @@
       "title": "Save Image"
     }
   },
-  "173": {
+  "175": {
     "inputs": {
-      "filename_prefix": "double_char_mask",
+      "lora_name": [
+        "305",
+        0
+      ],
+      "strength_model": 0.25,
+      "model": [
+        "106",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "176": {
+    "inputs": {
+      "lora_name": [
+        "306",
+        0
+      ],
+      "strength_model": 0.25,
+      "model": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "180": {
+    "inputs": {
+      "value": 0.2,
+      "mask": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "ThresholdMask",
+    "_meta": {
+      "title": "ThresholdMask"
+    }
+  },
+  "181": {
+    "inputs": {
+      "mask": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "182": {
+    "inputs": {
+      "expand": 48,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 0,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "183": {
+    "inputs": {
+      "mask": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "184": {
+    "inputs": {
+      "lora_name": [
+        "306",
+        0
+      ],
+      "strength_model": 0,
+      "model": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "185": {
+    "inputs": {
+      "lora_name": [
+        "306",
+        0
+      ],
+      "strength_model": 0.9500000000000001,
+      "model": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "206": {
+    "inputs": {
+      "expression": "a-b",
+      "conversion_mode": "mean",
+      "a": [
+        "182",
+        0
+      ],
+      "b": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "Eden_Image_Math",
+    "_meta": {
+      "title": "Eden_Image_Math"
+    }
+  },
+  "207": {
+    "inputs": {
+      "min": 0,
+      "max": 1,
+      "mask": [
+        "206",
+        1
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "208": {
+    "inputs": {
+      "mask": [
+        "230",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "215": {
+    "inputs": {
+      "padding_factor": 1.8,
+      "threshold": 0.2,
+      "min_face_ratio": 0.01,
+      "image": [
+        "7",
+        0
+      ],
+      "face_mask": [
+        "207",
+        0
+      ]
+    },
+    "class_type": "Eden_Face_Crop",
+    "_meta": {
+      "title": "Eden_Face_Crop"
+    }
+  },
+  "220": {
+    "inputs": {
+      "width": [
+        "222",
+        0
+      ],
+      "height": [
+        "222",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 2,
+      "image": [
+        "215",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "222": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "223": {
+    "inputs": {
+      "input": [
+        "215",
+        6
+      ]
+    },
+    "class_type": "Eden_Debug_Anything",
+    "_meta": {
+      "title": "Eden_Debug_Anything"
+    }
+  },
+  "228": {
+    "inputs": {
+      "width": [
+        "220",
+        1
+      ],
+      "height": [
+        "220",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 2,
+      "image": [
+        "229",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "229": {
+    "inputs": {
+      "mask": [
+        "215",
+        6
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "230": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "228",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "232": {
+    "inputs": {
+      "width": [
+        "215",
+        3
+      ],
+      "height": [
+        "215",
+        4
+      ],
+      "interpolation": "lanczos",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "114",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "234": {
+    "inputs": {
+      "x": [
+        "215",
+        1
+      ],
+      "y": [
+        "215",
+        2
+      ],
+      "resize_source": false,
+      "destination": [
+        "7",
+        0
+      ],
+      "source": [
+        "232",
+        0
+      ],
+      "mask": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "235": {
+    "inputs": {
+      "filename_prefix": "double_char_img_01",
       "images": [
-        "174",
+        "234",
         0
       ]
     },
@@ -697,16 +1003,511 @@
       "title": "Save Image"
     }
   },
-  "174": {
+  "261": {
+    "inputs": {
+      "noise_mask": true,
+      "positive": [
+        "270",
+        0
+      ],
+      "negative": [
+        "270",
+        1
+      ],
+      "vae": [
+        "153",
+        2
+      ],
+      "pixels": [
+        "276",
+        0
+      ],
+      "mask": [
+        "272",
+        0
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "InpaintModelConditioning"
+    }
+  },
+  "262": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "263": {
+    "inputs": {
+      "noise": [
+        "264",
+        0
+      ],
+      "guider": [
+        "266",
+        0
+      ],
+      "sampler": [
+        "262",
+        0
+      ],
+      "sigmas": [
+        "265",
+        0
+      ],
+      "latent_image": [
+        "261",
+        2
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "264": {
+    "inputs": {
+      "noise_seed": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "265": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 7,
+      "denoise": [
+        "308",
+        0
+      ],
+      "model": [
+        "185",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "266": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "185",
+        0
+      ],
+      "positive": [
+        "270",
+        0
+      ],
+      "negative": [
+        "270",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFGGuider"
+    }
+  },
+  "269": {
+    "inputs": {
+      "control_net_name": "FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "270": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 0.5,
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "19",
+        0
+      ],
+      "control_net": [
+        "269",
+        0
+      ],
+      "vae": [
+        "153",
+        2
+      ],
+      "image": [
+        "276",
+        0
+      ],
+      "mask": [
+        "272",
+        0
+      ]
+    },
+    "class_type": "ControlNetInpaintingAliMamaApply",
+    "_meta": {
+      "title": "ControlNetInpaintingAliMamaApply"
+    }
+  },
+  "271": {
+    "inputs": {
+      "input": [
+        "280",
+        6
+      ]
+    },
+    "class_type": "Eden_Debug_Anything",
+    "_meta": {
+      "title": "Eden_Debug_Anything"
+    }
+  },
+  "272": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "273",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "273": {
+    "inputs": {
+      "width": [
+        "276",
+        1
+      ],
+      "height": [
+        "276",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 2,
+      "image": [
+        "274",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "274": {
     "inputs": {
       "mask": [
-        "170",
-        0
+        "280",
+        6
       ]
     },
     "class_type": "MaskToImage",
     "_meta": {
       "title": "Convert Mask to Image"
+    }
+  },
+  "275": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "276": {
+    "inputs": {
+      "width": [
+        "275",
+        0
+      ],
+      "height": [
+        "275",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 2,
+      "image": [
+        "280",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "277": {
+    "inputs": {
+      "mask": [
+        "272",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "279": {
+    "inputs": {
+      "samples": [
+        "263",
+        0
+      ],
+      "vae": [
+        "153",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "280": {
+    "inputs": {
+      "padding_factor": 1.8,
+      "threshold": 0.2,
+      "min_face_ratio": 0.01,
+      "image": [
+        "234",
+        0
+      ],
+      "face_mask": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "Eden_Face_Crop",
+    "_meta": {
+      "title": "Eden_Face_Crop"
+    }
+  },
+  "281": {
+    "inputs": {
+      "width": [
+        "280",
+        3
+      ],
+      "height": [
+        "280",
+        4
+      ],
+      "interpolation": "lanczos",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "279",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "282": {
+    "inputs": {
+      "filename_prefix": "double_char_img_02",
+      "images": [
+        "283",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "283": {
+    "inputs": {
+      "x": [
+        "280",
+        1
+      ],
+      "y": [
+        "280",
+        2
+      ],
+      "resize_source": false,
+      "destination": [
+        "234",
+        0
+      ],
+      "source": [
+        "281",
+        0
+      ],
+      "mask": [
+        "301",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "285": {
+    "inputs": {
+      "images": [
+        "220",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "288": {
+    "inputs": {
+      "clip_l": "",
+      "t5xxl": "",
+      "guidance": 0,
+      "clip": [
+        "153",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "289": {
+    "inputs": {
+      "clip_l": [
+        "152",
+        0
+      ],
+      "t5xxl": [
+        "152",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "153",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "292": {
+    "inputs": {
+      "images": [
+        "276",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "301": {
+    "inputs": {
+      "expand": 0,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 0,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "272",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "302": {
+    "inputs": {
+      "mask": [
+        "301",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "303": {
+    "inputs": {
+      "expand": 0,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 0,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "230",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "305": {
+    "inputs": {
+      "lora_name": "flux/banny/bannyv2_20241214_1828.zip-step00004000.safetensors"
+    },
+    "class_type": "LoraSelector",
+    "_meta": {
+      "title": "🏴 LoRA Selector"
+    }
+  },
+  "306": {
+    "inputs": {
+      "lora_name": "flux/20250311_1659_gene-step00006000.safetensors"
+    },
+    "class_type": "LoraSelector",
+    "_meta": {
+      "title": "🏴 LoRA Selector"
+    }
+  },
+  "308": {
+    "inputs": {
+      "value": 0.85
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Eden_Float"
     }
   }
 }

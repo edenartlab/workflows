@@ -10,15 +10,15 @@ active: true
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 handler: comfyui
 base_model: flux-dev
-comfyui_output_node_id: 161
+comfyui_output_node_id: 282
 comfyui_intermediate_outputs:
-  double_char_img_01: 172
-  double_char_mask: 173
+  double_char_img_00: 172
+  double_char_img_01: 235
 parameters:
   prompt:
     type: string
     label: Prompt
-    description: Describe an image depicting two characters/objects by mentioning their LoRA name.
+    description: a photo of subj_1 standing next to subj_2
     tip: |-
       Try to keep the prompt somewhat short and to the point (max 30 words). The more concise and clear your prompt, the better the results.
     required: true
@@ -81,16 +81,16 @@ parameters:
     description: Activate a custom, LoRA finetuned model
     required: true
     comfyui:
-      node_id: 108
+      node_id: 305
       field: inputs
       subfield: lora_name
   lora_strength:
     type: float
-    label: Model Strength
-    description: Strength of the custom model (LoRA). Decrease this value to improve prompt adherence. Increase to get more of the LoRA style.
+    label: Model 1 Strength
+    description: Strength of the first model (LoRA).
     tip: |-
-      If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. Typical range is 0.5-1.0
-    default: 0.85
+      You can almost always leave this at default. If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down this strength. Typical range is 0.5-1.0
+    default: 0.95
     minimum: 0.0
     maximum: 1.25
     step: 0.01
@@ -104,12 +104,12 @@ parameters:
     description: Activate a custom, LoRA finetuned model
     required: true
     comfyui:
-      node_id: 133
+      node_id: 306
       field: inputs
       subfield: lora_name
   lora2_strength:
     type: float
-    label: Model Strength 2
+    label: Model 2 Strength
     description: Strength of the second model (LoRA).
     tip: |-
       You can almost always leave this at default. If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down this strength. Typical range is 0.5-1.0
@@ -118,24 +118,26 @@ parameters:
     maximum: 1.25
     step: 0.01
     comfyui:
-      node_id: 133
+      node_id: 185
       field: inputs
       subfield: strength_model
   second_pass_denoise:
     type: float
-    label: Second character denoise
-    description: AI strength when using the second lora
+    label: Second pass denoise
+    description: AI strength when doing the second pass
+    hide_from_agent: true
+    hide_from_ui: true
     tip: |-
-      This determines how much denoising is done when the second (inpainting) pass is happening with lora2. Increase this value when the second character is not coming through strong enough or has too many visual features of character 1.
+      This determines how much denoising is done when the second (inpainting) pass is happening on top of the base img (first pass). Increase this value when the characters dont look enough like the training data. Decrease this value if the composition looks weird.
     hide_from_agent: true
     default: 0.85
     minimum: 0.5
     maximum: 1.0
     step: 0.01
     comfyui:
-      node_id: 116
+      node_id: 308
       field: inputs
-      subfield: denoise
+      subfield: value
   seed:
     type: integer
     label: Seed
