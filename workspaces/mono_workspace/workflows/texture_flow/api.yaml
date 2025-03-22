@@ -20,7 +20,7 @@ tip: |-
   - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
   - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the none controlnet mode.
 output_type: video
-cost_estimate: '0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.66 : 1)'
+cost_estimate: '0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (use_upscale ? (1.75*(upscale_resolution/1280)*(upscale_resolution/1280)) : 1)'
 thumbnail: app/style_mixing_opt.mp4
 status: prod
 visible: true
@@ -90,57 +90,22 @@ parameters:
       node_id: 261
       field: inputs
       subfield: height
-  upscale:
-    type: boolean
-    label: Activate upscale
-    description: |-
-      Upscale the resulting animation to full HD. (You can turn this off for faster and cheaper experimentation)
-    tip: |-  
-      This toggle can optionally be disactivated when youre not sure that the result is going to be good and are still exploring settings.
-    default: true
-    required: true
-    comfyui:
-      node_id: 415
-      field: inputs
-      subfield: value
-  upscale_resolution:
-    type: integer
-    label: Max(w,h) post upscale
-    visible_if: upscale=true
-    hide_from_ui: true
-    hide_from_agent: true
-    description: Number of pixels to upscale to
-    default: 1280
-    comfyui:
-      node_id: 568
-      field: inputs
-      subfield: value
-  upscale_esrgan:
-    type: boolean
-    label: Activate ESRGAN treatment
-    description: |-
-      This will activate ESRGAN postprocessing which increases resolution to full HD, but also has a bit of an aesthetic. Typically great for realistic animations, less so for stylistic stuff.
-    default: true
-    visible_if: upscale=true
-    comfyui:
-      node_id: 686
-      field: inputs
-      subfield: value
   base_model:
     type: string
-    label: Base SD model type
+    label: Base SD model (style)
     description: Choose between different SD15 base models, each with its own aesthetic.
     tip: |-  
       Juggernaut is typically the best (ideal for photorealistic look), protogen is better for anime/cartoon (flat colors) and darkSushi for more abstract creative outputs and more bleak/pastel colors.
+    required: true
     default: SD15/juggernaut_reborn.safetensors
     choices: 
       - SD15/juggernaut_reborn.safetensors
       - SD15/darkSushiMixMix_225D.safetensors
       - SD15/protogenV22Anime_protogenV22.safetensors
     choices_labels: 
-      - realistic (juggernaut)
-      - creative (darkMix)
-      - anime/cartoon (protogen)
+      - Realistic (Juggernaut)
+      - Creative (DarkMix)
+      - Anime/Cartoon (Protogen)
     comfyui:
       node_id: 1
       field: inputs
@@ -192,8 +157,8 @@ parameters:
       - DensePosePreprocessor
       - none
     choices_labels: 
-      - Edges (Canny)
       - Scribble
+      - Edges (Canny)
       - Depth
       - Lineart
       - human pose
@@ -207,8 +172,8 @@ parameters:
         field: inputs
         subfield: control_net_name
         map:
-          CannyEdgePreprocessor: control_v11p_sd15_canny.pth
           Scribble_XDoG_Preprocessor: control_v11p_sd15_scribble.pth
+          CannyEdgePreprocessor: control_v11p_sd15_canny.pth
           DepthAnythingV2Preprocessor: control_v11f1p_sd15_depth.pth
           AnyLineArtPreprocessor_aux: control_v11p_sd15_lineart.pth
           DensePosePreprocessor: control_v11p_sd15_openpose.pth
@@ -258,7 +223,7 @@ parameters:
     type: boolean
     label: Map shape input onto style regions
     description: |-
-      Advanced feature that uses n_style_images color clusters from the shape input to spatially map the style images into the final animation.
+      Advanced feature that uses n_style_images color clusters from the shape input to spatially map the style images into the final animation. (Overrides Style Mapping Mode)
     tip: |-  
       This is a very advanced mode and should only be enabled when the input shape contains mostly flat, single color regions that should be mapped to a specific texture image (spatially).
     visible_if: use_controlnet1=true
@@ -271,10 +236,9 @@ parameters:
     type: string
     label: Style Mapping Mode
     description: |-
-      Controls the motion pattern by which the style images will get mapped into the video
+      Controls the motion pattern by which the style images will get mapped into the video. (Ignore when mapping shape input onto style regions)
     tip: |-
       avoid using rotating_segments unless asked for.
-    visible_if: map_shape_input_to_ip_masks=false
     choices: [concentric_circles_inwards, concentric_circles_outwards, concentric_rectangles_inwards, concentric_rectangles_outwards, rotating_segments_clockwise, rotating_segments_counter_clockwise, pushing_segments_clockwise, pushing_segments_counter_clockwise, vertical_stripes_left, vertical_stripes_right, horizontal_stripes_up, horizontal_stripes_down]
     default: concentric_circles_outwards
     comfyui:
@@ -315,6 +279,42 @@ parameters:
       node_id: 450
       field: inputs
       subfield: float_val
+  use_upscale:
+    type: boolean
+    label: Activate upscale
+    description: |-
+      Upscale the animation to full HD. (Turn this off for faster and cheaper experimentation)
+    tip: |-  
+      This toggle can optionally be disactivated when youre not sure that the result is going to be good and are still exploring settings.
+    default: true
+    comfyui:
+      node_id: 415
+      field: inputs
+      subfield: value
+  upscale_resolution:
+    type: integer
+    label: Max(w,h) latent upscale.
+    description: Does a second diffusion pass (latent upscale).
+    visible_if: use_upscale=true
+    default: 1280
+    minimum: 1024
+    maximum: 1536
+    step: 64
+    comfyui:
+      node_id: 568
+      field: inputs
+      subfield: value
+  upscale_esrgan:
+    type: boolean
+    label: Activate ESRGAN treatment
+    description: |-
+      This will activate ESRGAN postprocessing which increases resolution to full HD (1080p), but also has a particular aesthetic. Typically great for sharp, realistic animations, less ideal for organic, stylistic stuff.
+    default: true
+    visible_if: use_upscale=true
+    comfyui:
+      node_id: 686
+      field: inputs
+      subfield: value
   seed:
     type: integer
     label: Seed
