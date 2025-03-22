@@ -3,7 +3,7 @@ description: Combine two LoRA characters into a single image
 tip: |-
   This tool uses two FLUX LoRA models to generate an image that combines the character/object of each model into a single image.
 output_type: image
-cost_estimate: 4 * n_samples
+cost_estimate: 3 * n_samples * ( speed_quality_slider * 3 + (1-speed_quality_slider) * 1.0)
 thumbnail: app/double_character.jpg
 status: prod
 active: true
@@ -12,19 +12,119 @@ handler: comfyui
 base_model: flux-dev
 comfyui_output_node_id: 282
 comfyui_intermediate_outputs:
-  double_char_img_00: 172
+  double_char_img_00: 313
   double_char_img_01: 235
 parameters:
   prompt:
     type: string
-    label: Prompt
+    label: Prompt combining 'subj_1' and 'subj_2'
     description: a photo of subj_1 standing next to subj_2
     tip: |-
-      Try to keep the prompt somewhat short and to the point (max 30 words). The more concise and clear your prompt, the better the results.
+      Try to keep the prompt somewhat short and to the point (max 30 words). The more concise and clear your prompt, the better the results. Always reference the characters as 'subj_1' (lora) and 'subj_2' (lora2)
     required: true
     default: null
     comfyui:
       node_id: 109
+      field: inputs
+      subfield: value
+  width:
+    type: integer
+    label: Width
+    description: Width in pixels
+    required: true
+    default: 1344
+    minimum: 256
+    maximum: 2048
+    step: 8
+    comfyui:
+      node_id: 6
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: Height in pixels
+    required: true
+    default: 768
+    minimum: 256
+    maximum: 2048
+    step: 8
+    comfyui:
+      node_id: 6
+      field: inputs
+      subfield: height
+  lora:
+    type: lora
+    label: Trained model (LoRA)
+    description: Activate a custom, LoRA finetuned model
+    required: true
+    comfyui:
+      node_id: 305
+      field: inputs
+      subfield: lora_name
+  lora2:
+    type: lora
+    label: Trained model (LoRA) 2
+    description: Activate a custom, LoRA finetuned model
+    required: true
+    comfyui:
+      node_id: 306
+      field: inputs
+      subfield: lora_name
+  speed_quality_slider:
+    type: float
+    label: Speed/Quality slider
+    description: Fast = 0.0, Best-quality = 1.0 (very slow) Ideal values are 0.2-0.4
+    default: 0.25
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 315
+      field: inputs
+      subfield: value
+  base_lora_strength:
+    type: float
+    label: Base LoRA Strength (template img)
+    description: LoRA Strength when generating base img template
+    hide_from_agent: true
+    hide_from_ui: true
+    default: 0.25
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 328
+      field: inputs
+      subfield: value
+  inpaint_lora_strength:
+    type: float
+    label: Inpaint LoRA Strength
+    description: LoRA Strength during inpainting passes
+    hide_from_agent: true
+    hide_from_ui: true
+    default: 0.95
+    minimum: 0.0
+    maximum: 1.25
+    step: 0.01
+    comfyui:
+      node_id: 329
+      field: inputs
+      subfield: value
+  second_pass_denoise:
+    type: float
+    label: Second pass denoise
+    description: AI strength when doing the second pass
+    hide_from_agent: true
+    hide_from_ui: true
+    tip: |-
+      This determines how much denoising is done when the second (inpainting) pass is happening on top of the base template img. Increase this value when the characters dont look enough like the training data. Decrease this value if the composition looks weird.
+    default: 0.75
+    minimum: 0.4
+    maximum: 1.0
+    step: 0.01
+    comfyui:
+      node_id: 308
       field: inputs
       subfield: value
   trigger_1:
@@ -42,100 +142,11 @@ parameters:
     type: string
     label: trigger_text_2
     description: Trigger text for lora_2
+    default: null
     hide_from_ui: true
     hide_from_agent: true
-    default: null
     comfyui:
       node_id: 139
-      field: inputs
-      subfield: value
-  width:
-    type: integer
-    label: Width
-    description: Width in pixels
-    required: true
-    default: 1024
-    minimum: 256
-    maximum: 2048
-    step: 8
-    comfyui:
-      node_id: 6
-      field: inputs
-      subfield: width
-  height:
-    type: integer
-    label: Height
-    description: Height in pixels
-    required: true
-    default: 1024
-    minimum: 256
-    maximum: 2048
-    step: 8
-    comfyui:
-      node_id: 6
-      field: inputs
-      subfield: height
-  lora:
-    type: lora
-    label: Trained model (LoRA)
-    description: Activate a custom, LoRA finetuned model
-    required: true
-    comfyui:
-      node_id: 305
-      field: inputs
-      subfield: lora_name
-  lora_strength:
-    type: float
-    label: Model 1 Strength
-    description: Strength of the first model (LoRA).
-    tip: |-
-      You can almost always leave this at default. If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down this strength. Typical range is 0.5-1.0
-    default: 0.95
-    minimum: 0.0
-    maximum: 1.25
-    step: 0.01
-    comfyui:
-      node_id: 108
-      field: inputs
-      subfield: strength_model
-  lora2:
-    type: lora
-    label: Trained model (LoRA) 2
-    description: Activate a custom, LoRA finetuned model
-    required: true
-    comfyui:
-      node_id: 306
-      field: inputs
-      subfield: lora_name
-  lora2_strength:
-    type: float
-    label: Model 2 Strength
-    description: Strength of the second model (LoRA).
-    tip: |-
-      You can almost always leave this at default. If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down this strength. Typical range is 0.5-1.0
-    default: 0.95
-    minimum: 0.0
-    maximum: 1.25
-    step: 0.01
-    comfyui:
-      node_id: 185
-      field: inputs
-      subfield: strength_model
-  second_pass_denoise:
-    type: float
-    label: Second pass denoise
-    description: AI strength when doing the second pass
-    hide_from_agent: true
-    hide_from_ui: true
-    tip: |-
-      This determines how much denoising is done when the second (inpainting) pass is happening on top of the base img (first pass). Increase this value when the characters dont look enough like the training data. Decrease this value if the composition looks weird.
-    hide_from_agent: true
-    default: 0.85
-    minimum: 0.5
-    maximum: 1.0
-    step: 0.01
-    comfyui:
-      node_id: 308
       field: inputs
       subfield: value
   seed:

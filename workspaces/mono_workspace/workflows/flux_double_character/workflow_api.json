@@ -1,37 +1,4 @@
 {
-  "3": {
-    "inputs": {
-      "noise_seed": [
-        "121",
-        0
-      ],
-      "steps": 8,
-      "timestep_to_start_cfg": 8,
-      "true_gs": 1,
-      "image_to_image_strength": 0,
-      "denoise_strength": 1,
-      "model": [
-        "176",
-        0
-      ],
-      "conditioning": [
-        "5",
-        0
-      ],
-      "neg_conditioning": [
-        "19",
-        0
-      ],
-      "latent_image": [
-        "6",
-        0
-      ]
-    },
-    "class_type": "XlabsSampler",
-    "_meta": {
-      "title": "Xlabs Sampler"
-    }
-  },
   "5": {
     "inputs": {
       "clip_l": [
@@ -55,29 +22,13 @@
   },
   "6": {
     "inputs": {
-      "width": 1512,
-      "height": 1024,
+      "width": 1344,
+      "height": 768,
       "batch_size": 1
     },
     "class_type": "EmptyLatentImage",
     "_meta": {
       "title": "Empty Latent Image"
-    }
-  },
-  "7": {
-    "inputs": {
-      "samples": [
-        "3",
-        0
-      ],
-      "vae": [
-        "153",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
     }
   },
   "19": {
@@ -98,7 +49,10 @@
   "106": {
     "inputs": {
       "lora_name": "flux_turbo_v1_1.safetensors",
-      "strength_model": 1,
+      "strength_model": [
+        "317",
+        0
+      ],
       "model": [
         "153",
         0
@@ -115,7 +69,10 @@
         "305",
         0
       ],
-      "strength_model": 0.9500000000000001,
+      "strength_model": [
+        "329",
+        0
+      ],
       "model": [
         "106",
         0
@@ -128,7 +85,7 @@
   },
   "109": {
     "inputs": {
-      "value": "a photo of subj_1 standing next to a subj_2, wide angle mountain panorama shot, full body shot, castle in the background, setting sun, surrounded by high snowy mountain peaks in the distance, epic masterpiece, movie poster"
+      "value": "a cartoon depicting subj_1 standing next to subj_2 inside of a prison cell. They are chained and wearing a prison outfit, looking sad."
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -182,7 +139,10 @@
   "116": {
     "inputs": {
       "scheduler": "simple",
-      "steps": 7,
+      "steps": [
+        "309",
+        0
+      ],
       "denoise": [
         "308",
         0
@@ -241,7 +201,7 @@
   },
   "121": {
     "inputs": {
-      "seed": 128
+      "seed": 133
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -255,7 +215,7 @@
         0
       ],
       "image": [
-        "7",
+        "312",
         0
       ],
       "clipseg_model": [
@@ -408,13 +368,13 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 0.5,
+      "end_percent": 0.6,
       "positive": [
-        "289",
+        "5",
         0
       ],
       "negative": [
-        "288",
+        "19",
         0
       ],
       "control_net": [
@@ -597,7 +557,7 @@
         0
       ],
       "image": [
-        "7",
+        "312",
         0
       ],
       "clipseg_model": [
@@ -642,26 +602,16 @@
       "title": "Remap Mask Range"
     }
   },
-  "172": {
-    "inputs": {
-      "filename_prefix": "double_char_img_00",
-      "images": [
-        "7",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
   "175": {
     "inputs": {
       "lora_name": [
         "305",
         0
       ],
-      "strength_model": 0.25,
+      "strength_model": [
+        "328",
+        0
+      ],
       "model": [
         "106",
         0
@@ -678,7 +628,10 @@
         "306",
         0
       ],
-      "strength_model": 0.25,
+      "strength_model": [
+        "328",
+        0
+      ],
       "model": [
         "175",
         0
@@ -769,7 +722,10 @@
         "306",
         0
       ],
-      "strength_model": 0.9500000000000001,
+      "strength_model": [
+        "329",
+        0
+      ],
       "model": [
         "133",
         0
@@ -830,7 +786,7 @@
       "threshold": 0.2,
       "min_face_ratio": 0.01,
       "image": [
-        "7",
+        "312",
         0
       ],
       "face_mask": [
@@ -973,7 +929,7 @@
       ],
       "resize_source": false,
       "destination": [
-        "7",
+        "312",
         0
       ],
       "source": [
@@ -981,7 +937,7 @@
         0
       ],
       "mask": [
-        "303",
+        "230",
         0
       ]
     },
@@ -1084,7 +1040,10 @@
   "265": {
     "inputs": {
       "scheduler": "simple",
-      "steps": 7,
+      "steps": [
+        "309",
+        0
+      ],
       "denoise": [
         "308",
         0
@@ -1133,7 +1092,7 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 0.5,
+      "end_percent": 0.6,
       "positive": [
         "5",
         0
@@ -1362,7 +1321,7 @@
         0
       ],
       "mask": [
-        "301",
+        "272",
         0
       ]
     },
@@ -1383,42 +1342,6 @@
       "title": "Preview Image"
     }
   },
-  "288": {
-    "inputs": {
-      "clip_l": "",
-      "t5xxl": "",
-      "guidance": 0,
-      "clip": [
-        "153",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncodeFlux",
-    "_meta": {
-      "title": "CLIPTextEncodeFlux"
-    }
-  },
-  "289": {
-    "inputs": {
-      "clip_l": [
-        "152",
-        0
-      ],
-      "t5xxl": [
-        "152",
-        0
-      ],
-      "guidance": 3.5,
-      "clip": [
-        "153",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncodeFlux",
-    "_meta": {
-      "title": "CLIPTextEncodeFlux"
-    }
-  },
   "292": {
     "inputs": {
       "images": [
@@ -1429,58 +1352,6 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "Preview Image"
-    }
-  },
-  "301": {
-    "inputs": {
-      "expand": 0,
-      "incremental_expandrate": 0,
-      "tapered_corners": true,
-      "flip_input": false,
-      "blur_radius": 0,
-      "lerp_alpha": 1,
-      "decay_factor": 1,
-      "fill_holes": false,
-      "mask": [
-        "272",
-        0
-      ]
-    },
-    "class_type": "GrowMaskWithBlur",
-    "_meta": {
-      "title": "Grow Mask With Blur"
-    }
-  },
-  "302": {
-    "inputs": {
-      "mask": [
-        "301",
-        0
-      ]
-    },
-    "class_type": "MaskPreview+",
-    "_meta": {
-      "title": "🔧 Mask Preview"
-    }
-  },
-  "303": {
-    "inputs": {
-      "expand": 0,
-      "incremental_expandrate": 0,
-      "tapered_corners": true,
-      "flip_input": false,
-      "blur_radius": 0,
-      "lerp_alpha": 1,
-      "decay_factor": 1,
-      "fill_holes": false,
-      "mask": [
-        "230",
-        0
-      ]
-    },
-    "class_type": "GrowMaskWithBlur",
-    "_meta": {
-      "title": "Grow Mask With Blur"
     }
   },
   "305": {
@@ -1503,11 +1374,167 @@
   },
   "308": {
     "inputs": {
-      "value": 0.85
+      "value": 0.75
     },
     "class_type": "Eden_Float",
     "_meta": {
-      "title": "Eden_Float"
+      "title": "Inpainting Denoise"
+    }
+  },
+  "309": {
+    "inputs": {
+      "value": [
+        "316",
+        1
+      ]
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "n_steps"
+    }
+  },
+  "311": {
+    "inputs": {
+      "seed": [
+        "121",
+        0
+      ],
+      "steps": [
+        "309",
+        0
+      ],
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "176",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "19",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "312": {
+    "inputs": {
+      "samples": [
+        "311",
+        0
+      ],
+      "vae": [
+        "153",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "313": {
+    "inputs": {
+      "filename_prefix": "double_char_img_00",
+      "images": [
+        "312",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "315": {
+    "inputs": {
+      "value": 0.25
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Speed - Quality TradeOff"
+    }
+  },
+  "316": {
+    "inputs": {
+      "expression": "a*25+(1-a)*8",
+      "a": [
+        "315",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "317": {
+    "inputs": {
+      "expression": "(1-a)**1.5",
+      "a": [
+        "315",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "318": {
+    "inputs": {
+      "input": [
+        "316",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "319": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "317",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "328": {
+    "inputs": {
+      "value": 0.25
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Start LoRA Strength"
+    }
+  },
+  "329": {
+    "inputs": {
+      "value": 0.9500000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Inpaint LoRA Strength"
     }
   }
 }
