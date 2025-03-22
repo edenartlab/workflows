@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "ckpt_name": "SD15/protogenV22Anime_protogenV22.safetensors"
+      "ckpt_name": "SD15/juggernaut_reborn.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -223,10 +223,7 @@
   },
   "116": {
     "inputs": {
-      "strength": [
-        "666",
-        1
-      ],
+      "strength": 0.4,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -867,7 +864,7 @@
   },
   "273": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -876,7 +873,7 @@
   },
   "282": {
     "inputs": {
-      "seed": 338
+      "seed": 340
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -968,10 +965,7 @@
   },
   "405": {
     "inputs": {
-      "strength": [
-        "667",
-        1
-      ],
+      "strength": 0.35000000000000003,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -1240,7 +1234,7 @@
       "format": "video/h264-mp4",
       "pix_fmt": "yuv420p",
       "crf": 18,
-      "save_metadata": true,
+      "save_metadata": false,
       "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
@@ -1265,7 +1259,7 @@
       "format": "video/h264-mp4",
       "pix_fmt": "yuv420p",
       "crf": 23,
-      "save_metadata": true,
+      "save_metadata": false,
       "trim_to_audio": false,
       "pingpong": false,
       "save_output": [
@@ -1293,7 +1287,7 @@
       "format": "video/h264-mp4",
       "pix_fmt": "yuv420p",
       "crf": 23,
-      "save_metadata": true,
+      "save_metadata": false,
       "trim_to_audio": false,
       "pingpong": false,
       "save_output": false,
@@ -1429,7 +1423,7 @@
   },
   "524": {
     "inputs": {
-      "value": 8
+      "value": 4
     },
     "class_type": "Eden_Int",
     "_meta": {
@@ -1524,7 +1518,7 @@
   },
   "570": {
     "inputs": {
-      "value": 6
+      "value": 4
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -1680,10 +1674,7 @@
   },
   "612": {
     "inputs": {
-      "value": [
-        "663",
-        1
-      ]
+      "value": 1
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -1959,75 +1950,16 @@
       "title": "Data Monitor / bool to int"
     }
   },
-  "663": {
-    "inputs": {
-      "seed": [
-        "282",
-        0
-      ],
-      "min_value": 1,
-      "max_value": 1
-    },
-    "class_type": "Eden_RandomNumberSampler",
-    "_meta": {
-      "title": "Random Number Sampler 🎲"
-    }
-  },
-  "664": {
-    "inputs": {
-      "seed": [
-        "282",
-        0
-      ],
-      "min_value": 1,
-      "max_value": 1
-    },
-    "class_type": "Eden_RandomNumberSampler",
-    "_meta": {
-      "title": "Random Number Sampler 🎲"
-    }
-  },
   "665": {
     "inputs": {
-      "width": 768,
+      "width": 512,
       "height": 512,
-      "output_multiplier": [
-        "664",
-        1
-      ],
+      "output_multiplier": 1,
       "multiple_off": 16
     },
     "class_type": "WidthHeightPicker",
     "_meta": {
       "title": "WidthHeightPicker"
-    }
-  },
-  "666": {
-    "inputs": {
-      "seed": [
-        "282",
-        0
-      ],
-      "min_value": 0.1,
-      "max_value": 0.25
-    },
-    "class_type": "Eden_RandomNumberSampler",
-    "_meta": {
-      "title": "Random Number Sampler 🎲"
-    }
-  },
-  "667": {
-    "inputs": {
-      "seed": [
-        "282",
-        0
-      ],
-      "min_value": 0.2,
-      "max_value": 0.35000000000000003
-    },
-    "class_type": "Eden_RandomNumberSampler",
-    "_meta": {
-      "title": "Random Number Sampler 🎲"
     }
   },
   "673": {
@@ -2205,7 +2137,10 @@
   },
   "717": {
     "inputs": {
-      "frame_rate": 12,
+      "frame_rate": [
+        "487",
+        0
+      ],
       "loop_count": 0,
       "filename_prefix": "mapping_motion",
       "format": "video/h264-mp4",
@@ -2242,7 +2177,10 @@
   },
   "720": {
     "inputs": {
-      "path": "",
+      "path": [
+        "733",
+        0
+      ],
       "image_load_cap": [
         "562",
         1
@@ -2279,6 +2217,21 @@
     "class_type": "Eden_Bool",
     "_meta": {
       "title": "Eden_PROD_DEBUG"
+    }
+  },
+  "733": {
+    "inputs": {
+      "directory_path": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_VIDEOS/QR_blackwhite",
+      "seed": 76806055013040,
+      "file_extension": "",
+      "include_subdirectories": false,
+      "filter_string": "",
+      "filter_mode": "contains",
+      "case_sensitive": false
+    },
+    "class_type": "Eden_RandomFilepathSampler",
+    "_meta": {
+      "title": "Random Filepath Sampler 🎲"
     }
   }
 }

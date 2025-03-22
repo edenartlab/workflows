@@ -30,7 +30,7 @@ base_model: sd15
 comfyui_output_node_id: 446
 comfyui_intermediate_outputs:
   control_signal_1: 501
-  mapping_motion: 199
+  mapping_motion: 717
 parameters:
   images:
     type: array
@@ -106,6 +106,7 @@ parameters:
   upscale_resolution:
     type: integer
     label: Max(w,h) post upscale
+    visible_if: upscale=true
     hide_from_ui: true
     hide_from_agent: true
     description: Number of pixels to upscale to
@@ -114,6 +115,36 @@ parameters:
       node_id: 568
       field: inputs
       subfield: value
+  upscale_esrgan:
+    type: boolean
+    label: Activate ESRGAN treatment
+    description: |-
+      This will activate ESRGAN postprocessing which increases resolution to full HD, but also has a bit of an aesthetic. Typically great for realistic animations, less so for stylistic stuff.
+    default: true
+    visible_if: upscale=true
+    comfyui:
+      node_id: 686
+      field: inputs
+      subfield: value
+  base_model:
+    type: string
+    label: Base SD model type
+    description: Choose between different SD15 base models, each with its own aesthetic.
+    tip: |-  
+      Juggernaut is typically the best (ideal for photorealistic look), protogen is better for anime/cartoon (flat colors) and darkSushi for more abstract creative outputs and more bleak/pastel colors.
+    default: Scribble_XDoG_Preprocessor
+    choices: 
+      - SD15/juggernaut_reborn.safetensors
+      - SD15/darkSushiMixMix_225D.safetensors
+      - SD15/protogenV22Anime_protogenV22.safetensors
+    choices_labels: 
+      - realistic (juggernaut)
+      - creative (darkMix)
+      - anime/cartoon (protogen)
+    comfyui:
+      node_id: 1
+      field: inputs
+      subfield: ckpt_name
   use_controlnet1:
     type: boolean
     label: Add shape input
@@ -189,7 +220,7 @@ parameters:
     tip:   A good default is around 0.45, with ranges between 0.35-0.45 for subtle guidance, and 0.45-0.65 for something more heavy handed
     default: 0.45
     minimum: 0.0
-    maximum: 1.4
+    maximum: 1.0
     step: 0.01
     visible_if: use_controlnet1=true
     comfyui:
@@ -223,13 +254,27 @@ parameters:
       node_id: 262
       field: inputs
       subfield: method
+  map_shape_input_to_ip_masks:
+    type: boolean
+    label: Map shape input onto style regions
+    description: |-
+      Advanced feature that uses n_style_images color clusters from the shape input to spatially map the style images into the final animation.
+    tip: |-  
+      This is a very advanced mode and should only be enabled when the input shape contains mostly flat, single color regions that should be mapped to a specific texture image (spatially).
+    visible_if: use_controlnet1=true
+    default: false
+    comfyui:
+      node_id: 676
+      field: inputs
+      subfield: value
   mapping_mode:
     type: string
     label: Style Mapping Mode
     description: |-
-      Controls the motion by which the style images will get mapped into the video
+      Controls the motion pattern by which the style images will get mapped into the video
     tip: |-
       avoid using rotating_segments unless asked for.
+    visible_if: map_shape_input_to_ip_masks=false
     choices: [concentric_circles_inwards, concentric_circles_outwards, concentric_rectangles_inwards, concentric_rectangles_outwards, rotating_segments_clockwise, rotating_segments_counter_clockwise, pushing_segments_clockwise, pushing_segments_counter_clockwise, vertical_stripes_left, vertical_stripes_right, horizontal_stripes_up, horizontal_stripes_down]
     default: concentric_circles_outwards
     comfyui:
@@ -270,20 +315,6 @@ parameters:
       node_id: 450
       field: inputs
       subfield: float_val
-  feathering_fraction:
-    type: float
-    label: Boundary softness
-    description: |-
-      Controls how sharp/soft the boundary is between different style regions in the video. 
-      0.0 will cause perfectly outlined style regions, 0.25 will have much smoother transitions.
-    default: 0.1
-    minimum: 0.0
-    maximum: 0.25
-    step: 0.01
-    comfyui:
-      node_id: 136
-      field: inputs
-      subfield: feathering_fraction
   seed:
     type: integer
     label: Seed
