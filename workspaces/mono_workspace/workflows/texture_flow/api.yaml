@@ -20,7 +20,7 @@ tip: |-
   - using a simple motion input video or gif (with simple lines / edges / contours) is a great way to drive unique animations (and add new textures with style images)
   - TextureFlow can even produce animated QR codes by setting the QR code image as control_input and using the none controlnet mode.
 output_type: video
-cost_estimate: '0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.75 : 1)'
+cost_estimate: '0.4 * (1 + n_seconds) * (width + height)/(2*640) * (2 + n_steps) * (upscale ? 1.66 : 1)'
 thumbnail: app/style_mixing_opt.mp4
 status: prod
 visible: true
@@ -132,7 +132,7 @@ parameters:
     description: Choose between different SD15 base models, each with its own aesthetic.
     tip: |-  
       Juggernaut is typically the best (ideal for photorealistic look), protogen is better for anime/cartoon (flat colors) and darkSushi for more abstract creative outputs and more bleak/pastel colors.
-    default: Scribble_XDoG_Preprocessor
+    default: SD15/juggernaut_reborn.safetensors
     choices: 
       - SD15/juggernaut_reborn.safetensors
       - SD15/darkSushiMixMix_225D.safetensors
@@ -168,7 +168,7 @@ parameters:
       When doing videomapping this can eg be a photo of the surface you're projecting on.
     visible_if: use_controlnet1=true
     comfyui:
-      node_id: 552
+      node_id: 720
       field: inputs
       subfield: path
   preprocessor1:

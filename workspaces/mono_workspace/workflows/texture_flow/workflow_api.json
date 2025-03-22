@@ -1163,11 +1163,10 @@
       ],
       "loop_count": 0,
       "filename_prefix": "TextureFlow",
-      "format": "video/h264-mp4",
+      "format": "video/eden-video-faststart",
       "pix_fmt": "yuv420p",
-      "crf": 19,
+      "crf": 23,
       "save_metadata": true,
-      "trim_to_audio": false,
       "pingpong": false,
       "save_output": true,
       "images": [
@@ -2177,10 +2176,7 @@
   },
   "720": {
     "inputs": {
-      "path": [
-        "733",
-        0
-      ],
+      "path": "",
       "image_load_cap": [
         "562",
         1
@@ -2217,21 +2213,6 @@
     "class_type": "Eden_Bool",
     "_meta": {
       "title": "Eden_PROD_DEBUG"
-    }
-  },
-  "733": {
-    "inputs": {
-      "directory_path": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_VIDEOS/QR_blackwhite",
-      "seed": 76806055013040,
-      "file_extension": "",
-      "include_subdirectories": false,
-      "filter_string": "",
-      "filter_mode": "contains",
-      "case_sensitive": false
-    },
-    "class_type": "Eden_RandomFilepathSampler",
-    "_meta": {
-      "title": "Random Filepath Sampler 🎲"
     }
   }
 }
