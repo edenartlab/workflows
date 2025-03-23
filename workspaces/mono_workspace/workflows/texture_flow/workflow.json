@@ -1,6 +1,6 @@
 {
-  "last_node_id": 739,
-  "last_link_id": 1492,
+  "last_node_id": 741,
+  "last_link_id": 1502,
   "nodes": [
     {
       "id": 159,
@@ -101,7 +101,7 @@
         334
       ],
       "flags": {},
-      "order": 144,
+      "order": 143,
       "mode": 4,
       "inputs": [
         {
@@ -182,7 +182,7 @@
         334
       ],
       "flags": {},
-      "order": 145,
+      "order": 144,
       "mode": 4,
       "inputs": [
         {
@@ -613,7 +613,7 @@
         298
       ],
       "flags": {},
-      "order": 155,
+      "order": 156,
       "mode": 0,
       "inputs": [
         {
@@ -777,7 +777,7 @@
         298
       ],
       "flags": {},
-      "order": 140,
+      "order": 139,
       "mode": 0,
       "inputs": [
         {
@@ -951,7 +951,7 @@
         334
       ],
       "flags": {},
-      "order": 139,
+      "order": 138,
       "mode": 4,
       "inputs": [
         {
@@ -1295,7 +1295,7 @@
         334
       ],
       "flags": {},
-      "order": 141,
+      "order": 140,
       "mode": 4,
       "inputs": [
         {
@@ -1376,7 +1376,7 @@
         334
       ],
       "flags": {},
-      "order": 142,
+      "order": 141,
       "mode": 4,
       "inputs": [
         {
@@ -1457,7 +1457,7 @@
         334
       ],
       "flags": {},
-      "order": 143,
+      "order": 142,
       "mode": 4,
       "inputs": [
         {
@@ -1864,7 +1864,7 @@
         26
       ],
       "flags": {},
-      "order": 162,
+      "order": 164,
       "mode": 0,
       "inputs": [
         {
@@ -1903,7 +1903,7 @@
         298
       ],
       "flags": {},
-      "order": 160,
+      "order": 162,
       "mode": 0,
       "inputs": [
         {
@@ -2201,7 +2201,7 @@
         218
       ],
       "flags": {},
-      "order": 165,
+      "order": 167,
       "mode": 0,
       "inputs": [
         {
@@ -2438,7 +2438,7 @@
         118
       ],
       "flags": {},
-      "order": 161,
+      "order": 163,
       "mode": 0,
       "inputs": [
         {
@@ -2485,266 +2485,6 @@
       },
       "widgets_values": [
         "lcm avg(sqrt_linear,linear)"
-      ]
-    },
-    {
-      "id": 644,
-      "type": "DataMonitor",
-      "pos": [
-        3914.813720703125,
-        564.0521240234375
-      ],
-      "size": [
-        218.39999389648438,
-        226.87255859375
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 51,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "passthrough",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux",
-          "type": "*",
-          "shape": 7,
-          "link": 1302
-        },
-        {
-          "name": "aux2",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux3",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux4",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux5",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            1301
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Data Monitor / bool to int",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "DataMonitor",
-        "aux_id": "drmbt/ControlFlowUtils"
-      },
-      "widgets_values": [
-        "[1,2][%aux%]",
-        "FORMULA"
-      ]
-    },
-    {
-      "id": 646,
-      "type": "DataMonitor",
-      "pos": [
-        3924.814208984375,
-        914.0521240234375
-      ],
-      "size": [
-        218.39999389648438,
-        226.87255859375
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 52,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "passthrough",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux",
-          "type": "*",
-          "shape": 7,
-          "link": 1306
-        },
-        {
-          "name": "aux2",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux3",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux4",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "aux5",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            1305
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Data Monitor / bool to int",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "DataMonitor",
-        "aux_id": "drmbt/ControlFlowUtils"
-      },
-      "widgets_values": [
-        "[1,2][%aux%]",
-        "FORMULA"
-      ]
-    },
-    {
-      "id": 643,
-      "type": "UniversalSwitch",
-      "pos": [
-        3904.814208984375,
-        614.0521240234375
-      ],
-      "size": [
-        210,
-        250
-      ],
-      "flags": {},
-      "order": 157,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 1322
-        },
-        {
-          "name": "input2",
-          "type": "*",
-          "shape": 7,
-          "link": 1304
-        },
-        {
-          "name": "input3",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input4",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input5",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input6",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 1301
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            1309
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "💠 Universal Switch_CN+",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "UniversalSwitch",
-        "aux_id": "drmbt/ControlFlowUtils"
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
       ]
     },
     {
@@ -2880,7 +2620,7 @@
         262
       ],
       "flags": {},
-      "order": 147,
+      "order": 146,
       "mode": 4,
       "inputs": [
         {
@@ -2943,7 +2683,7 @@
         306
       ],
       "flags": {},
-      "order": 136,
+      "order": 150,
       "mode": 0,
       "inputs": [
         {
@@ -2964,7 +2704,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 1448
+          "link": 1497
         },
         {
           "name": "mask_optional",
@@ -3131,7 +2871,7 @@
         250
       ],
       "flags": {},
-      "order": 173,
+      "order": 175,
       "mode": 0,
       "inputs": [
         {
@@ -3349,7 +3089,7 @@
         46
       ],
       "flags": {},
-      "order": 170,
+      "order": 172,
       "mode": 0,
       "inputs": [
         {
@@ -3429,7 +3169,7 @@
         250
       ],
       "flags": {},
-      "order": 172,
+      "order": 174,
       "mode": 0,
       "inputs": [
         {
@@ -3612,7 +3352,7 @@
         46
       ],
       "flags": {},
-      "order": 169,
+      "order": 171,
       "mode": 0,
       "inputs": [
         {
@@ -3659,7 +3399,7 @@
         218
       ],
       "flags": {},
-      "order": 171,
+      "order": 173,
       "mode": 0,
       "inputs": [
         {
@@ -3873,7 +3613,9 @@
           "links": [
             153,
             1242,
-            1365
+            1365,
+            1494,
+            1499
           ],
           "slot_index": 0
         }
@@ -4432,7 +4174,7 @@
         318
       ],
       "flags": {},
-      "order": 163,
+      "order": 165,
       "mode": 0,
       "inputs": [
         {
@@ -4505,7 +4247,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1060845331506010,
+        349730316127143,
         "randomize",
         10,
         1,
@@ -4634,7 +4376,7 @@
         46
       ],
       "flags": {},
-      "order": 149,
+      "order": 148,
       "mode": 0,
       "inputs": [
         {
@@ -5151,7 +4893,7 @@
         46
       ],
       "flags": {},
-      "order": 167,
+      "order": 169,
       "mode": 0,
       "inputs": [
         {
@@ -5195,7 +4937,7 @@
         278
       ],
       "flags": {},
-      "order": 168,
+      "order": 170,
       "mode": 0,
       "inputs": [
         {
@@ -5252,7 +4994,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        272855649094879,
+        307481499446517,
         "randomize",
         4,
         1,
@@ -5672,7 +5414,7 @@
         46
       ],
       "flags": {},
-      "order": 156,
+      "order": 157,
       "mode": 4,
       "inputs": [
         {
@@ -6281,114 +6023,6 @@
       ]
     },
     {
-      "id": 645,
-      "type": "UniversalSwitch",
-      "pos": [
-        3914.813720703125,
-        964.0521240234375
-      ],
-      "size": [
-        210,
-        250
-      ],
-      "flags": {},
-      "order": 158,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 1323
-        },
-        {
-          "name": "input2",
-          "type": "*",
-          "shape": 7,
-          "link": 1308
-        },
-        {
-          "name": "input3",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input4",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input5",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input6",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 1305
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            1310
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "💠 Universal Switch_CN-",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "UniversalSwitch",
-        "aux_id": "drmbt/ControlFlowUtils"
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
-      ]
-    },
-    {
       "id": 107,
       "type": "ControlNetLoader",
       "pos": [
@@ -6537,59 +6171,6 @@
       ]
     },
     {
-      "id": 609,
-      "type": "Extend_Sequence",
-      "pos": [
-        699.79931640625,
-        174.75875854492188
-      ],
-      "size": [
-        222.35113525390625,
-        102
-      ],
-      "flags": {},
-      "order": 134,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 1243
-        },
-        {
-          "name": "target_n_frames",
-          "type": "INT",
-          "widget": {
-            "name": "target_n_frames"
-          },
-          "link": 1242
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "shape": 3,
-          "links": [
-            1273,
-            1279,
-            1437
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Extend_Sequence",
-        "aux_id": "edenartlab/eden_comfy_pipelines"
-      },
-      "widgets_values": [
-        24,
-        "wrap_around"
-      ]
-    },
-    {
       "id": 647,
       "type": "UniversalSwitch",
       "pos": [
@@ -6601,7 +6182,7 @@
         250
       ],
       "flags": {},
-      "order": 150,
+      "order": 154,
       "mode": 0,
       "inputs": [
         {
@@ -6685,115 +6266,6 @@
         }
       ],
       "title": "💠 Universal Switch_CN+",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "UniversalSwitch",
-        "aux_id": "drmbt/ControlFlowUtils"
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
-      ]
-    },
-    {
-      "id": 649,
-      "type": "UniversalSwitch",
-      "pos": [
-        2700.140869140625,
-        864.1410522460938
-      ],
-      "size": [
-        210,
-        250
-      ],
-      "flags": {},
-      "order": 151,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 1318
-        },
-        {
-          "name": "input2",
-          "type": "*",
-          "shape": 7,
-          "link": 1319
-        },
-        {
-          "name": "input3",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input4",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input5",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "input6",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 1312
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            1321,
-            1323
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "💠 Universal Switch_CN-",
       "properties": {
         "cnr_id": "ControlFlowUtils",
         "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
@@ -6960,57 +6432,6 @@
       ]
     },
     {
-      "id": 148,
-      "type": "AIO_Preprocessor",
-      "pos": [
-        3032.315673828125,
-        532.258056640625
-      ],
-      "size": [
-        325.3860168457031,
-        102
-      ],
-      "flags": {},
-      "order": 124,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 597
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "widget": {
-            "name": "resolution"
-          },
-          "link": 1072
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "shape": 3,
-          "links": [
-            1446,
-            1447
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui_controlnet_aux",
-        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "CannyEdgePreprocessor",
-        512
-      ]
-    },
-    {
       "id": 404,
       "type": "ControlNetLoader",
       "pos": [
@@ -7057,7 +6478,7 @@
         306
       ],
       "flags": {},
-      "order": 154,
+      "order": 158,
       "mode": 0,
       "inputs": [
         {
@@ -7078,7 +6499,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 1446
+          "link": 1502
         },
         {
           "name": "mask_optional",
@@ -7155,158 +6576,6 @@
       ]
     },
     {
-      "id": 517,
-      "type": "Eden_Math",
-      "pos": [
-        1568.96142578125,
-        735.3037719726562
-      ],
-      "size": [
-        210,
-        98
-      ],
-      "flags": {},
-      "order": 117,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "shape": 7,
-          "link": 1069
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "shape": 7,
-          "link": 1070
-        },
-        {
-          "name": "c",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "result (float)",
-          "type": "FLOAT",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "result (int)",
-          "type": "INT",
-          "shape": 3,
-          "links": [
-            1068,
-            1071,
-            1072
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "result (float_str)",
-          "type": "STRING",
-          "shape": 3,
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Math",
-        "aux_id": "edenartlab/eden_comfy_pipelines"
-      },
-      "widgets_values": [
-        "min(a,b)"
-      ]
-    },
-    {
-      "id": 518,
-      "type": "Display Any (rgthree)",
-      "pos": [
-        1569.7921142578125,
-        876.494384765625
-      ],
-      "size": [
-        210,
-        88
-      ],
-      "flags": {},
-      "order": 122,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "dir": 3,
-          "link": 1068
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "32142fe476878a354dda6e2d4b5ea98960de3ced",
-        "Node name for S&R": "Display Any (rgthree)"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
-      "id": 406,
-      "type": "AIO_Preprocessor",
-      "pos": [
-        1796.8724365234375,
-        552.4928588867188
-      ],
-      "size": [
-        329.47674560546875,
-        102
-      ],
-      "flags": {},
-      "order": 123,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 896
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "widget": {
-            "name": "resolution"
-          },
-          "link": 1071
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "shape": 3,
-          "links": [
-            1448,
-            1449
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui_controlnet_aux",
-        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "Scribble_XDoG_Preprocessor",
-        512
-      ]
-    },
-    {
       "id": 719,
       "type": "MaskToImage",
       "pos": [
@@ -7353,7 +6622,7 @@
       ],
       "size": [
         448.75048828125,
-        877.1412353515625
+        1654.25146484375
       ],
       "flags": {},
       "order": 119,
@@ -7420,13 +6689,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "pre_cluster_mapping_00005.mp4",
+            "filename": "pre_cluster_mapping_00007.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
             "frame_rate": 8,
-            "workflow": "pre_cluster_mapping_00005.png",
-            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/temp/pre_cluster_mapping_00005.mp4"
+            "workflow": "pre_cluster_mapping_00007.png",
+            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/temp/pre_cluster_mapping_00007.mp4"
           }
         }
       }
@@ -8078,7 +7347,7 @@
         46
       ],
       "flags": {},
-      "order": 164,
+      "order": 166,
       "mode": 0,
       "inputs": [
         {
@@ -8123,10 +7392,10 @@
       ],
       "size": [
         445.04608154296875,
-        872.7422485351562
+        1643.13818359375
       ],
       "flags": {},
-      "order": 148,
+      "order": 147,
       "mode": 0,
       "inputs": [
         {
@@ -8190,13 +7459,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "input_guidance_00005.mp4",
+            "filename": "input_guidance_00007.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
             "frame_rate": 8,
-            "workflow": "input_guidance_00005.png",
-            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/temp/input_guidance_00005.mp4"
+            "workflow": "input_guidance_00007.png",
+            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/temp/input_guidance_00007.mp4"
           },
           "muted": false
         }
@@ -8578,100 +7847,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 720,
-      "type": "Eden_AllMediaLoader",
-      "pos": [
-        -694.60205078125,
-        514.4850463867188
-      ],
-      "size": [
-        237.0743865966797,
-        274
-      ],
-      "flags": {},
-      "order": 90,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "force_rate",
-          "type": "FLOAT",
-          "widget": {
-            "name": "force_rate"
-          },
-          "link": 1466
-        },
-        {
-          "name": "image_load_cap",
-          "type": "INT",
-          "widget": {
-            "name": "image_load_cap"
-          },
-          "link": 1470
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            1464
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "WIDTH",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "HEIGHT",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "COUNT",
-          "type": "INT",
-          "links": [
-            1451,
-            1452,
-            1465
-          ],
-          "slot_index": 3
-        },
-        {
-          "name": "FILE_NAME",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 4
-        },
-        {
-          "name": "FILE_PATH",
-          "type": "STRING",
-          "links": [
-            1455
-          ],
-          "slot_index": 5
-        },
-        {
-          "name": "FPS",
-          "type": "FLOAT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "4f3554ce19a4b3e3474402eb6ab707da0645fd37",
-        "Node name for S&R": "Eden_AllMediaLoader"
-      },
-      "widgets_values": [
-        "",
-        0,
-        8,
-        2048,
-        "None"
-      ]
-    },
-    {
       "id": 444,
       "type": "RIFE VFI",
       "pos": [
@@ -8683,7 +7858,7 @@
         218
       ],
       "flags": {},
-      "order": 174,
+      "order": 176,
       "mode": 0,
       "inputs": [
         {
@@ -8786,10 +7961,10 @@
       ],
       "size": [
         419.1211242675781,
-        841.9563598632812
+        354
       ],
       "flags": {},
-      "order": 166,
+      "order": 168,
       "mode": 0,
       "inputs": [
         {
@@ -8923,7 +8098,7 @@
         374
       ],
       "flags": {},
-      "order": 146,
+      "order": 145,
       "mode": 0,
       "inputs": [
         {
@@ -9007,15 +8182,417 @@
       }
     },
     {
-      "id": 501,
-      "type": "VHS_VideoCombine",
+      "id": 729,
+      "type": "Eden_Bool",
       "pos": [
-        1911.1441650390625,
-        711.9325561523438
+        -2297.88916015625,
+        126.80580139160156
       ],
       "size": [
-        219.3603515625,
-        374
+        239.9732666015625,
+        58
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            1471,
+            1472
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Eden_PROD_DEBUG",
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "4f3554ce19a4b3e3474402eb6ab707da0645fd37",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 612,
+      "type": "Eden_Float",
+      "pos": [
+        -1359.814453125,
+        46.991485595703125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            1252,
+            1266,
+            1440
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Denoise",
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 415,
+      "type": "Eden_Bool",
+      "pos": [
+        6135.92138671875,
+        12.725687980651855
+      ],
+      "size": [
+        261.3160705566406,
+        58
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            1296
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Upscale",
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 273,
+      "type": "Eden_Bool",
+      "pos": [
+        2195.49658203125,
+        276.5567626953125
+      ],
+      "size": [
+        344.18170166015625,
+        58
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "shape": 3,
+          "links": [
+            1313,
+            1314
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "use_controlnet",
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -2304.146240234375,
+        -943.3655395507812
+      ],
+      "size": [
+        468.9360046386719,
+        98
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            1183
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "shape": 3,
+          "links": [
+            1184
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "shape": 3,
+          "links": [
+            1473
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "SD15/juggernaut_reborn.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 446,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        7426.35205078125,
+        319.69091796875
+      ],
+      "size": [
+        759.7296142578125,
+        1236.777099609375
+      ],
+      "flags": {},
+      "order": 177,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 951
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 1078
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4c7858ddd5126f7293dc3c9f6e0fc4c263cde079",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "TextureFlow",
+        "format": "video/eden-video-faststart",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "TextureFlow_00001.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "TextureFlow_00001.png",
+            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/output/TextureFlow_00001.mp4"
+          },
+          "muted": false
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 609,
+      "type": "Extend_Sequence",
+      "pos": [
+        699.79931640625,
+        174.75875854492188
+      ],
+      "size": [
+        222.35113525390625,
+        102
+      ],
+      "flags": {},
+      "order": 134,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1243
+        },
+        {
+          "name": "target_n_frames",
+          "type": "INT",
+          "widget": {
+            "name": "target_n_frames"
+          },
+          "link": 1242
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            1273,
+            1279,
+            1437
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Extend_Sequence",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        24,
+        "wrap_around"
+      ]
+    },
+    {
+      "id": 148,
+      "type": "AIO_Preprocessor",
+      "pos": [
+        3038.98974609375,
+        386.4447326660156
+      ],
+      "size": [
+        325.3860168457031,
+        102
+      ],
+      "flags": {},
+      "order": 124,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 597
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 1072
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            1500
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "CannyEdgePreprocessor",
+        512
+      ]
+    },
+    {
+      "id": 741,
+      "type": "Extend_Sequence",
+      "pos": [
+        3143.14990234375,
+        556.860107421875
+      ],
+      "size": [
+        222.35113525390625,
+        102
       ],
       "flags": {},
       "order": 137,
@@ -9024,8 +8601,250 @@
         {
           "name": "images",
           "type": "IMAGE",
+          "link": 1500
+        },
+        {
+          "name": "target_n_frames",
+          "type": "INT",
+          "widget": {
+            "name": "target_n_frames"
+          },
+          "link": 1499
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            1501,
+            1502
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Extend_Sequence",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        24,
+        "wrap_around"
+      ]
+    },
+    {
+      "id": 503,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        3144.6689453125,
+        728.2059326171875
+      ],
+      "size": [
+        219.3603515625,
+        966.0810546875
+      ],
+      "flags": {},
+      "order": 151,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
           "shape": 7,
-          "link": 1449
+          "link": 1501
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "shape": 7,
+          "link": 1337
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "*",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 1045
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4c7858ddd5126f7293dc3c9f6e0fc4c263cde079",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "control_signal_2",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "control_signal_2_00007.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 8,
+            "workflow": "control_signal_2_00007.png",
+            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/temp/control_signal_2_00007.mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 406,
+      "type": "AIO_Preprocessor",
+      "pos": [
+        1819.617919921875,
+        394.782958984375
+      ],
+      "size": [
+        329.47674560546875,
+        102
+      ],
+      "flags": {},
+      "order": 123,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 896
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 1071
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            1495
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "Scribble_XDoG_Preprocessor",
+        512
+      ]
+    },
+    {
+      "id": 740,
+      "type": "Extend_Sequence",
+      "pos": [
+        1927.6878662109375,
+        544.55517578125
+      ],
+      "size": [
+        222.35113525390625,
+        102
+      ],
+      "flags": {},
+      "order": 136,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1495
+        },
+        {
+          "name": "target_n_frames",
+          "type": "INT",
+          "widget": {
+            "name": "target_n_frames"
+          },
+          "link": 1494
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            1496,
+            1497
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Extend_Sequence",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        24,
+        "wrap_around"
+      ]
+    },
+    {
+      "id": 501,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1930.915283203125,
+        702.0304565429688
+      ],
+      "size": [
+        219.3603515625,
+        986.0810546875
+      ],
+      "flags": {},
+      "order": 149,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 1496
         },
         {
           "name": "audio",
@@ -9103,167 +8922,581 @@
       }
     },
     {
-      "id": 503,
-      "type": "VHS_VideoCombine",
+      "id": 517,
+      "type": "Eden_Math",
       "pos": [
-        3137.776123046875,
-        697.138916015625
+        1623.2239990234375,
+        648.6702270507812
       ],
       "size": [
-        219.3603515625,
-        604.7404174804688
+        210,
+        98
       ],
       "flags": {},
-      "order": 138,
+      "order": 117,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
-          "type": "IMAGE",
-          "shape": 7,
-          "link": 1447
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "shape": 7,
-          "link": 1337
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "frame_rate",
+          "name": "a",
           "type": "*",
-          "widget": {
-            "name": "frame_rate"
-          },
-          "link": 1045
+          "shape": 7,
+          "link": 1069
+        },
+        {
+          "name": "b",
+          "type": "*",
+          "shape": 7,
+          "link": 1070
+        },
+        {
+          "name": "c",
+          "type": "*",
+          "shape": 7,
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
+          "name": "result (float)",
+          "type": "FLOAT",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "result (int)",
+          "type": "INT",
+          "shape": 3,
+          "links": [
+            1068,
+            1071,
+            1072
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "result (float_str)",
+          "type": "STRING",
           "shape": 3,
           "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4c7858ddd5126f7293dc3c9f6e0fc4c263cde079",
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 8,
-        "loop_count": 0,
-        "filename_prefix": "control_signal_2",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 23,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": false,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "control_signal_2_00005.mp4",
-            "subfolder": "",
-            "type": "temp",
-            "format": "video/h264-mp4",
-            "frame_rate": 8,
-            "workflow": "control_signal_2_00005.png",
-            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/temp/control_signal_2_00005.mp4"
-          },
-          "muted": false
-        }
-      }
-    },
-    {
-      "id": 729,
-      "type": "Eden_Bool",
-      "pos": [
-        -2297.88916015625,
-        126.80580139160156
-      ],
-      "size": [
-        239.9732666015625,
-        58
-      ],
-      "flags": {},
-      "order": 39,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "links": [
-            1471,
-            1472
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Eden_PROD_DEBUG",
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "4f3554ce19a4b3e3474402eb6ab707da0645fd37",
-        "Node name for S&R": "Eden_Bool"
-      },
-      "widgets_values": [
-        true
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 612,
-      "type": "Eden_Float",
-      "pos": [
-        -1359.814453125,
-        46.991485595703125
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 40,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            1252,
-            1266,
-            1440
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Denoise",
-      "properties": {
         "cnr_id": "eden_comfy_pipelines",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float",
+        "Node name for S&R": "Eden_Math",
         "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
-        1
+        "min(a,b)"
+      ]
+    },
+    {
+      "id": 518,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        1632.697998046875,
+        802.6155395507812
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 122,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "dir": 3,
+          "link": 1068
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "32142fe476878a354dda6e2d4b5ea98960de3ced",
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 649,
+      "type": "UniversalSwitch",
+      "pos": [
+        2689.55224609375,
+        862.8953247070312
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 155,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 1318
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 1319
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 1312
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            1321,
+            1323
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "💠 Universal Switch_CN-",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "drmbt/ControlFlowUtils"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 644,
+      "type": "DataMonitor",
+      "pos": [
+        3906.3212890625,
+        465.5257568359375
+      ],
+      "size": [
+        218.39999389648438,
+        226.87255859375
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 1302
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1301
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Data Monitor / bool to int",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "drmbt/ControlFlowUtils"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 643,
+      "type": "UniversalSwitch",
+      "pos": [
+        3900.946044921875,
+        515.1085205078125
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 160,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 1322
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 1304
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 1301
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            1309
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "💠 Universal Switch_CN+",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "drmbt/ControlFlowUtils"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 646,
+      "type": "DataMonitor",
+      "pos": [
+        3904.842529296875,
+        817.977783203125
+      ],
+      "size": [
+        218.39999389648438,
+        226.87255859375
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux",
+          "type": "*",
+          "shape": 7,
+          "link": 1306
+        },
+        {
+          "name": "aux2",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1305
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Data Monitor / bool to int",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "drmbt/ControlFlowUtils"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 645,
+      "type": "UniversalSwitch",
+      "pos": [
+        3892.43310546875,
+        871.188232421875
+      ],
+      "size": [
+        210,
+        250
+      ],
+      "flags": {},
+      "order": 161,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 1323
+        },
+        {
+          "name": "input2",
+          "type": "*",
+          "shape": 7,
+          "link": 1308
+        },
+        {
+          "name": "input3",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input4",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input5",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "input6",
+          "type": "*",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 1305
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            1310
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "💠 Universal Switch_CN-",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "drmbt/ControlFlowUtils"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
       ]
     },
     {
@@ -9278,7 +9511,7 @@
         150
       ],
       "flags": {},
-      "order": 41,
+      "order": 44,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -9316,227 +9549,98 @@
       "bgcolor": "#335"
     },
     {
-      "id": 415,
-      "type": "Eden_Bool",
+      "id": 720,
+      "type": "Eden_AllMediaLoader",
       "pos": [
-        6135.92138671875,
-        12.725687980651855
+        -694.60205078125,
+        514.4850463867188
       ],
       "size": [
-        261.3160705566406,
-        58
+        237.0743865966797,
+        274
       ],
       "flags": {},
-      "order": 42,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "shape": 3,
-          "links": [
-            1296
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Upscale",
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool",
-        "aux_id": "edenartlab/eden_comfy_pipelines"
-      },
-      "widgets_values": [
-        true
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 273,
-      "type": "Eden_Bool",
-      "pos": [
-        2195.49658203125,
-        276.5567626953125
-      ],
-      "size": [
-        344.18170166015625,
-        58
-      ],
-      "flags": {},
-      "order": 43,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "shape": 3,
-          "links": [
-            1313,
-            1314
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "use_controlnet",
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool",
-        "aux_id": "edenartlab/eden_comfy_pipelines"
-      },
-      "widgets_values": [
-        false
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 1,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -2304.146240234375,
-        -943.3655395507812
-      ],
-      "size": [
-        468.9360046386719,
-        98
-      ],
-      "flags": {},
-      "order": 44,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "shape": 3,
-          "links": [
-            1183
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "shape": 3,
-          "links": [
-            1184
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "shape": 3,
-          "links": [
-            1473
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "SD15/juggernaut_reborn.safetensors"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 446,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        7426.35205078125,
-        319.69091796875
-      ],
-      "size": [
-        759.7296142578125,
-        1228.4593505859375
-      ],
-      "flags": {},
-      "order": 175,
+      "order": 90,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
-          "type": "IMAGE",
-          "shape": 7,
-          "link": 951
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "frame_rate",
+          "name": "force_rate",
           "type": "FLOAT",
           "widget": {
-            "name": "frame_rate"
+            "name": "force_rate"
           },
-          "link": 1078
+          "link": 1466
+        },
+        {
+          "name": "image_load_cap",
+          "type": "INT",
+          "widget": {
+            "name": "image_load_cap"
+          },
+          "link": 1470
         }
       ],
       "outputs": [
         {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "shape": 3,
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            1464
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "WIDTH",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "HEIGHT",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "COUNT",
+          "type": "INT",
+          "links": [
+            1451,
+            1452,
+            1465
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "FILE_NAME",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 4
+        },
+        {
+          "name": "FILE_PATH",
+          "type": "STRING",
+          "links": [
+            1455
+          ],
+          "slot_index": 5
+        },
+        {
+          "name": "FPS",
+          "type": "FLOAT",
           "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4c7858ddd5126f7293dc3c9f6e0fc4c263cde079",
-        "Node name for S&R": "VHS_VideoCombine"
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "4f3554ce19a4b3e3474402eb6ab707da0645fd37",
+        "Node name for S&R": "Eden_AllMediaLoader"
       },
-      "widgets_values": {
-        "frame_rate": 24,
-        "loop_count": 0,
-        "filename_prefix": "TextureFlow",
-        "format": "video/eden-video-faststart",
-        "pix_fmt": "yuv420p",
-        "crf": 23,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "TextureFlow_00001.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 24,
-            "workflow": "TextureFlow_00001.png",
-            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/output/TextureFlow_00001.mp4"
-          },
-          "muted": false
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
+      "widgets_values": [
+        "input/a_black_video.mp4",
+        0,
+        8,
+        2048,
+        "None"
+      ]
     }
   ],
   "links": [
@@ -11429,38 +11533,6 @@
       "IMAGE"
     ],
     [
-      1446,
-      148,
-      0,
-      405,
-      3,
-      "IMAGE"
-    ],
-    [
-      1447,
-      148,
-      0,
-      503,
-      0,
-      "IMAGE"
-    ],
-    [
-      1448,
-      406,
-      0,
-      116,
-      3,
-      "IMAGE"
-    ],
-    [
-      1449,
-      406,
-      0,
-      501,
-      0,
-      "IMAGE"
-    ],
-    [
       1451,
       720,
       3,
@@ -11571,6 +11643,70 @@
       717,
       5,
       "FLOAT,INT"
+    ],
+    [
+      1494,
+      91,
+      0,
+      740,
+      1,
+      "INT"
+    ],
+    [
+      1495,
+      406,
+      0,
+      740,
+      0,
+      "IMAGE"
+    ],
+    [
+      1496,
+      740,
+      0,
+      501,
+      0,
+      "IMAGE"
+    ],
+    [
+      1497,
+      740,
+      0,
+      116,
+      3,
+      "IMAGE"
+    ],
+    [
+      1499,
+      91,
+      0,
+      741,
+      1,
+      "INT"
+    ],
+    [
+      1500,
+      148,
+      0,
+      741,
+      0,
+      "IMAGE"
+    ],
+    [
+      1501,
+      741,
+      0,
+      503,
+      0,
+      "IMAGE"
+    ],
+    [
+      1502,
+      741,
+      0,
+      405,
+      3,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -11658,8 +11794,8 @@
       "bounding": [
         3022.315673828125,
         224.40341186523438,
-        1112.49853515625,
-        999.6488647460938
+        1116.3231201171875,
+        906.2091674804688
       ],
       "color": "#b58b2a",
       "font_size": 24,
@@ -11734,10 +11870,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.1464100000000105,
+      "scale": 0.25937424601000336,
       "offset": [
-        2211.2886900496164,
-        2506.017848042838
+        2999.6155547926824,
+        873.482178018463
       ]
     },
     "ue_links": [],

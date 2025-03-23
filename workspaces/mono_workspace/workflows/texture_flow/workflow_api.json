@@ -239,7 +239,7 @@
         0
       ],
       "image": [
-        "406",
+        "740",
         0
       ]
     },
@@ -981,7 +981,7 @@
         0
       ],
       "image": [
-        "148",
+        "741",
         0
       ]
     },
@@ -1266,7 +1266,7 @@
         0
       ],
       "images": [
-        "406",
+        "740",
         0
       ]
     },
@@ -1291,7 +1291,7 @@
       "pingpong": false,
       "save_output": false,
       "images": [
-        "148",
+        "741",
         0
       ]
     },
@@ -2176,7 +2176,7 @@
   },
   "720": {
     "inputs": {
-      "path": "",
+      "path": "input/a_black_video.mp4",
       "image_load_cap": [
         "562",
         1
@@ -2213,6 +2213,40 @@
     "class_type": "Eden_Bool",
     "_meta": {
       "title": "Eden_PROD_DEBUG"
+    }
+  },
+  "740": {
+    "inputs": {
+      "target_n_frames": [
+        "91",
+        0
+      ],
+      "mode": "wrap_around",
+      "images": [
+        "406",
+        0
+      ]
+    },
+    "class_type": "Extend_Sequence",
+    "_meta": {
+      "title": "Extend_Sequence"
+    }
+  },
+  "741": {
+    "inputs": {
+      "target_n_frames": [
+        "91",
+        0
+      ],
+      "mode": "wrap_around",
+      "images": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "Extend_Sequence",
+    "_meta": {
+      "title": "Extend_Sequence"
     }
   }
 }
