@@ -712,7 +712,7 @@
         126
       ],
       "flags": {},
-      "order": 38,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -1612,7 +1612,7 @@
       },
       "widgets_values": [
         4,
-        1000000383489433,
+        117710723026714,
         "randomize",
         20,
         1,
@@ -1890,51 +1890,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 1,
-      "type": "LoadImage",
-      "pos": [
-        29.526002883911133,
-        84.91338348388672
-      ],
-      "size": [
-        445.4789123535156,
-        326
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "shape": 3,
-          "type": "IMAGE",
-          "slot_index": 0,
-          "links": [
-            57,
-            219
-          ]
-        },
-        {
-          "name": "MASK",
-          "shape": 3,
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "7737deb23ff6cbb2ccf322b5122b45ff8187453f7dd768f4e8f7602044996a3c.jpg",
-        "image"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 29,
       "type": "Note",
       "pos": [
@@ -1946,7 +1901,7 @@
         103.11583709716797
       ],
       "flags": {},
-      "order": 18,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2174,62 +2129,6 @@
         1,
         1,
         false
-      ]
-    },
-    {
-      "id": 153,
-      "type": "Image Save",
-      "pos": [
-        2070.708740234375,
-        1651.9144287109375
-      ],
-      "size": [
-        325,
-        626
-      ],
-      "flags": {},
-      "order": 81,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 227
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        },
-        {
-          "name": "files",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "was-node-suite-comfyui",
-        "ver": "9ae952b1b435d2bd846bfe6516919b5a8b9201aa",
-        "Node name for S&R": "Image Save"
-      },
-      "widgets_values": [
-        "[time(%Y-%m-%d)]",
-        "upscaled",
-        "_",
-        4,
-        "false",
-        "png",
-        300,
-        100,
-        "true",
-        "false",
-        "false",
-        "false",
-        "true",
-        "true",
-        "true"
       ]
     },
     {
@@ -2737,7 +2636,7 @@
         98.25724792480469
       ],
       "flags": {},
-      "order": 19,
+      "order": 18,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3059,7 +2958,7 @@
         58
       ],
       "flags": {},
-      "order": 20,
+      "order": 19,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3096,7 +2995,7 @@
         82
       ],
       "flags": {},
-      "order": 21,
+      "order": 20,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3134,7 +3033,7 @@
         132.6090545654297
       ],
       "flags": {},
-      "order": 22,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -3179,7 +3078,7 @@
         58
       ],
       "flags": {},
-      "order": 23,
+      "order": 22,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3215,7 +3114,7 @@
         58
       ],
       "flags": {},
-      "order": 24,
+      "order": 23,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3251,7 +3150,7 @@
         86
       ],
       "flags": {},
-      "order": 35,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
@@ -3306,7 +3205,7 @@
         82
       ],
       "flags": {},
-      "order": 25,
+      "order": 24,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3330,42 +3229,6 @@
         25,
         "fixed"
       ]
-    },
-    {
-      "id": 148,
-      "type": "Eden_Bool",
-      "pos": [
-        31.17782211303711,
-        1021.167236328125
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 26,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "type": "BOOLEAN",
-          "links": [
-            214
-          ]
-        }
-      ],
-      "title": "high_quality",
-      "properties": {
-        "cnr_id": "eden",
-        "ver": "a2c844fd379f9c1e3a8302ee22d52f0125e2f081",
-        "Node name for S&R": "Eden_Bool"
-      },
-      "widgets_values": [
-        false
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
     },
     {
       "id": 151,
@@ -3494,7 +3357,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 39,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -3939,7 +3802,7 @@
         58
       ],
       "flags": {},
-      "order": 27,
+      "order": 25,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3976,7 +3839,7 @@
         58
       ],
       "flags": {},
-      "order": 28,
+      "order": 26,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4110,7 +3973,7 @@
         58.634071350097656
       ],
       "flags": {},
-      "order": 29,
+      "order": 27,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4325,7 +4188,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 36,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -4377,114 +4240,6 @@
       "bgcolor": "#000"
     },
     {
-      "id": 131,
-      "type": "UniversalSwitch",
-      "pos": [
-        1119.1898193359375,
-        2006.53759765625
-      ],
-      "size": [
-        315,
-        230
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 55,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 253
-        },
-        {
-          "name": "input2",
-          "shape": 7,
-          "type": "*",
-          "link": 254
-        },
-        {
-          "name": "input3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input6",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 201
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "links": [
-            188
-          ]
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "properties": {
-        "aux_id": "drmbt/ControlFlowUtils",
-        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch",
-        "cnr_id": "ControlFlowUtils"
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
-      ]
-    },
-    {
       "id": 125,
       "type": "DataMonitor",
       "pos": [
@@ -4498,7 +4253,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 40,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -4611,7 +4366,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 37,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -4684,7 +4439,7 @@
         102
       ],
       "flags": {},
-      "order": 30,
+      "order": 28,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4709,7 +4464,7 @@
         "Node name for S&R": "Eden_Seed"
       },
       "widgets_values": [
-        0,
+        804844062413485,
         "randomize"
       ]
     },
@@ -4727,7 +4482,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 34,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -4779,6 +4534,171 @@
         "keep proportion",
         "downscale if bigger",
         0
+      ]
+    },
+    {
+      "id": 153,
+      "type": "Image Save",
+      "pos": [
+        2073.913818359375,
+        1663.134033203125
+      ],
+      "size": [
+        325,
+        626
+      ],
+      "flags": {},
+      "order": 81,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 227
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "9ae952b1b435d2bd846bfe6516919b5a8b9201aa",
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "upscaled",
+        "_",
+        4,
+        "false",
+        "png",
+        300,
+        100,
+        "true",
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true",
+        ""
+      ]
+    },
+    {
+      "id": 131,
+      "type": "UniversalSwitch",
+      "pos": [
+        1112.091552734375,
+        1958.2666015625
+      ],
+      "size": [
+        315,
+        230
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 253
+        },
+        {
+          "name": "input2",
+          "shape": 7,
+          "type": "*",
+          "link": 254
+        },
+        {
+          "name": "input3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input6",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 201
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            188
+          ]
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch",
+        "cnr_id": "ControlFlowUtils"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
       ]
     },
     {
@@ -4890,14 +4810,6 @@
             "name": "seed"
           },
           "link": 241
-        },
-        {
-          "name": "text_input",
-          "type": "STRING",
-          "widget": {
-            "name": "text_input"
-          },
-          "link": null
         }
       ],
       "outputs": [
@@ -4947,8 +4859,90 @@
         3,
         false,
         "",
-        277790961143055,
+        974626251524842,
         "randomize"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        29.526002883911133,
+        84.91338348388672
+      ],
+      "size": [
+        445.4789123535156,
+        326
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            57,
+            219
+          ]
+        },
+        {
+          "name": "MASK",
+          "shape": 3,
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "black_dummy.jpg",
+        "image",
+        ""
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 148,
+      "type": "Eden_Bool",
+      "pos": [
+        31.17782211303711,
+        1021.167236328125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            214
+          ]
+        }
+      ],
+      "title": "high_quality",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "a2c844fd379f9c1e3a8302ee22d52f0125e2f081",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        true
       ],
       "color": "#222",
       "bgcolor": "#000"
@@ -6045,10 +6039,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1,
+      "scale": 0.5644739300537773,
       "offset": [
-        153.71033269903413,
-        -86.43639360662851
+        1225.4255239305908,
+        97.51982746695313
       ]
     },
     "ue_links": [],
