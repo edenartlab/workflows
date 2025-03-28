@@ -11,7 +11,7 @@ visible: true
 resolutions: null
 handler: comfyui
 base_model: flux-dev
-comfyui_output_node_id: 181
+comfyui_output_node_id: 278
 comfyui_intermediate_outputs:
   inpaint_preview: 206
   inpaint_mask: 266
@@ -159,3 +159,52 @@ parameters:
     default: 1
     minimum: 1
     maximum: 4
+  use_lora:
+    type: boolean
+    label: Use a trained model
+    description: Activate a custom, LoRA finetuned model
+    tip: |-
+      Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
+    default: false
+    comfyui:
+      node_id: 274
+      field: inputs
+      subfield: value
+  lora:
+    type: lora
+    label: Trained model (LoRA)
+    description: Activate a custom, LoRA finetuned model
+    visible_if: use_lora=true
+    comfyui:
+      node_id: 268
+      field: inputs
+      subfield: lora_name
+  lora_strength:
+    type: float
+    label: Model Strength
+    description: Strength of the custom model (LoRA). Decrease this value to improve prompt adherence. Increase to get more of the LoRA style.
+    tip: |-
+      If outputs resemble the LoRA but have low prompt adherence or all look the same, turn down the LoRA strength. 
+      A stronger LoRA strength around .9 is better to recreate faces when using a model trained on specific person.
+    default: 0.85
+    minimum: 0.0
+    maximum: 1.25
+    step: 0.01
+    visible_if: use_lora=true
+    comfyui:
+      node_id: 275
+      field: inputs
+      subfield: value
+  trigger_text:
+    type: string
+    label: Model Trigger Text
+    description: Text to prepend to the prompt when using LoRA models
+    tip: |-
+      This text is added before the prompt to help trigger the LoRA model's effects.
+      The trigger text from training is injected into the prompt automatically if not provided.
+    default: ""
+    visible_if: use_lora=true
+    comfyui:
+      node_id: 269
+      field: inputs
+      subfield: Prepend

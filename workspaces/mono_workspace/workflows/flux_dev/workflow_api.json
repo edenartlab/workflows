@@ -2,7 +2,7 @@
   "8": {
     "inputs": {
       "samples": [
-        "410",
+        "393",
         0
       ],
       "vae": [
@@ -45,7 +45,7 @@
         0
       ],
       "model": [
-        "444",
+        "447",
         0
       ]
     },
@@ -111,7 +111,7 @@
         "131",
         0
       ],
-      "guidance": 3.5,
+      "guidance": 2.5,
       "clip": [
         "444",
         1
@@ -203,15 +203,6 @@
       "title": "use_controlnet"
     }
   },
-  "134": {
-    "inputs": {
-      "value": false
-    },
-    "class_type": "Eden_Bool",
-    "_meta": {
-      "title": "use_ipAdapter"
-    }
-  },
   "135": {
     "inputs": {
       "value": 0.5
@@ -219,15 +210,6 @@
     "class_type": "Eden_Float",
     "_meta": {
       "title": "controlnet_strength"
-    }
-  },
-  "137": {
-    "inputs": {
-      "value": 0.91
-    },
-    "class_type": "Eden_Float",
-    "_meta": {
-      "title": "ipadapter_strength"
     }
   },
   "138": {
@@ -244,7 +226,7 @@
   },
   "141": {
     "inputs": {
-      "value": 0.7000000000000001
+      "value": 1
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -356,15 +338,6 @@
       "title": "dummy_image"
     }
   },
-  "302": {
-    "inputs": {
-      "image": "black_dummy.jpg"
-    },
-    "class_type": "Load image with metadata [Crystools]",
-    "_meta": {
-      "title": "init_image"
-    }
-  },
   "315": {
     "inputs": {
       "pixels": [
@@ -450,7 +423,7 @@
   },
   "330": {
     "inputs": {
-      "seed": 33
+      "seed": 604375721122698
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -485,7 +458,7 @@
   },
   "338": {
     "inputs": {
-      "value": 0.7000000000000001
+      "value": 1
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -676,7 +649,7 @@
       "condition": "downscale if bigger",
       "multiple_of": 0,
       "image": [
-        "302",
+        "458",
         0
       ]
     },
@@ -844,7 +817,7 @@
   },
   "381": {
     "inputs": {
-      "value": 0.7000000000000001
+      "value": 0
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -868,46 +841,16 @@
       "title": "Math Expression 🐍"
     }
   },
-  "391": {
-    "inputs": {
-      "mode": "SWITCH",
-      "selection_in": [
-        "392",
-        0
-      ],
-      "selection_out": 1,
-      "validate_typing": false,
-      "input1": [
-        "62",
-        0
-      ]
-    },
-    "class_type": "UniversalSwitch",
-    "_meta": {
-      "title": "Latent Switch CN-"
-    }
-  },
-  "392": {
-    "inputs": {
-      "text": "[1,2][%aux%]",
-      "output_type": "FORMULA",
-      "aux": [
-        "134",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "SelectLatent"
-    }
-  },
   "393": {
     "inputs": {
       "seed": [
         "330",
         0
       ],
-      "steps": 25,
+      "steps": [
+        "453",
+        0
+      ],
       "cfg": 1,
       "sampler_name": "euler",
       "scheduler": "simple",
@@ -916,7 +859,7 @@
         0
       ],
       "model": [
-        "391",
+        "473",
         0
       ],
       "positive": [
@@ -974,7 +917,7 @@
   },
   "396": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -1034,7 +977,7 @@
       ],
       "direction": "down",
       "image": [
-        "394",
+        "472",
         0
       ]
     },
@@ -1089,78 +1032,11 @@
       "title": "add caption"
     }
   },
-  "409": {
-    "inputs": {
-      "noise_seed": 239048216044733,
-      "steps": 25,
-      "timestep_to_start_cfg": 26,
-      "true_gs": 1,
-      "image_to_image_strength": 0,
-      "denoise_strength": 1,
-      "model": [
-        "391",
-        0
-      ],
-      "conditioning": [
-        "361",
-        0
-      ],
-      "neg_conditioning": [
-        "364",
-        0
-      ],
-      "latent_image": [
-        "349",
-        0
-      ]
-    },
-    "class_type": "XlabsSampler",
-    "_meta": {
-      "title": "Xlabs Sampler"
-    }
-  },
-  "410": {
-    "inputs": {
-      "mode": "SWITCH",
-      "selection_in": [
-        "411",
-        0
-      ],
-      "selection_out": 1,
-      "validate_typing": false,
-      "input1": [
-        "393",
-        0
-      ],
-      "input2": [
-        "409",
-        0
-      ]
-    },
-    "class_type": "UniversalSwitch",
-    "_meta": {
-      "title": "💠 Universal Switch"
-    }
-  },
-  "411": {
-    "inputs": {
-      "text": "[1,2][%aux%]",
-      "output_type": "FORMULA",
-      "aux": [
-        "134",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "use_ipadapter"
-    }
-  },
   "427": {
     "inputs": {
       "any_type_input": [
-        "394",
-        3
+        "329",
+        0
       ]
     },
     "class_type": "SDAnyConverter",
@@ -1170,7 +1046,7 @@
   },
   "431": {
     "inputs": {
-      "text": "%aux% + %aux2%",
+      "text": "%aux%  exec: %aux3% denoise: %aux2% ",
       "output_type": "STRING",
       "aux": [
         "131",
@@ -1179,11 +1055,15 @@
       "aux2": [
         "427",
         0
+      ],
+      "aux3": [
+        "475",
+        0
       ]
     },
     "class_type": "DataMonitor",
     "_meta": {
-      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+      "title": "caption_logic"
     }
   },
   "432": {
@@ -1235,7 +1115,7 @@
   "439": {
     "inputs": {
       "images": [
-        "302",
+        "467",
         0
       ]
     },
@@ -1256,26 +1136,268 @@
       "title": "Image to Seed"
     }
   },
-  "443": {
+  "444": {
     "inputs": {
+      "ckpt_name": "FLUX1/flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "445": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "382",
+        1
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "447": {
+    "inputs": {
+      "lora_name": "flux/flux_turbo_v1_1.safetensors",
+      "strength_model": [
+        "452",
+        0
+      ],
+      "model": [
+        "444",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "lora_fast"
+    }
+  },
+  "449": {
+    "inputs": {
+      "value": 25
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "steps"
+    }
+  },
+  "451": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "strength_fast"
+    }
+  },
+  "452": {
+    "inputs": {
+      "text": "[%aux4%, %aux2%][%aux3%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "459",
+        0
+      ],
+      "aux2": [
+        "451",
+        0
+      ],
+      "aux3": [
+        "463",
+        0
+      ],
+      "aux4": [
+        "461",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "strength_fast_logic"
+    }
+  },
+  "453": {
+    "inputs": {
+      "text": "[%aux2%, %aux3%][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "463",
+        0
+      ],
+      "aux2": [
+        "459",
+        0
+      ],
+      "aux3": [
+        "449",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "steps_fast_logic"
+    }
+  },
+  "458": {
+    "inputs": {
+      "image": [
+        "467",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "459": {
+    "inputs": {
+      "value": [
+        "460",
+        1
+      ]
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "n_steps"
+    }
+  },
+  "460": {
+    "inputs": {
+      "expression": "a*25+(1-a)*8",
+      "a": [
+        "462",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "fast_steps_math"
+    }
+  },
+  "461": {
+    "inputs": {
+      "expression": "(1-a)**1.5",
+      "a": [
+        "462",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "fast_strength_math"
+    }
+  },
+  "462": {
+    "inputs": {
+      "value": 0.25
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Speed - Quality TradeOff"
+    }
+  },
+  "463": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_manual_quality"
+    }
+  },
+  "467": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "init_image"
+    }
+  },
+  "469": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "easy string",
+    "_meta": {
+      "title": "String"
+    }
+  },
+  "470": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
       "filename_prefix": "flux_dev",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
       "images": [
         "406",
         0
       ]
     },
-    "class_type": "SaveImage",
+    "class_type": "Image Save",
     "_meta": {
-      "title": "Save Image"
+      "title": "Image Save"
     }
   },
-  "444": {
+  "472": {
     "inputs": {
-      "ckpt_name": "flux1-dev-fp8.safetensors"
+      "mode": "stop",
+      "name": "Timer",
+      "any_input": [
+        "394",
+        0
+      ],
+      "timer": [
+        "473",
+        1
+      ]
     },
-    "class_type": "CheckpointLoaderSimple",
+    "class_type": "TimerNodeKJ",
     "_meta": {
-      "title": "Load Checkpoint"
+      "title": "Timer Node KJ"
+    }
+  },
+  "473": {
+    "inputs": {
+      "mode": "start",
+      "name": "Timer",
+      "any_input": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "TimerNodeKJ",
+    "_meta": {
+      "title": "Timer Node KJ"
+    }
+  },
+  "475": {
+    "inputs": {
+      "text": "round(%aux%, 1)",
+      "output_type": "FORMULA",
+      "aux": [
+        "472",
+        2
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "round time"
     }
   }
 }

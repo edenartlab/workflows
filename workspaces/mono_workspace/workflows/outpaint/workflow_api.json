@@ -1,110 +1,11 @@
 {
-  "45": {
-    "inputs": {
-      "brushnet": "PowerPaint-v2-1/diffusion_pytorch_model.safetensors",
-      "dtype": "float16"
-    },
-    "class_type": "BrushNetLoader",
-    "_meta": {
-      "title": "BrushNet Loader"
-    }
-  },
-  "49": {
-    "inputs": {
-      "text": [
-        "133",
-        0
-      ],
-      "clip": [
-        "155",
-        2
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "50": {
-    "inputs": {
-      "text": [
-        "158",
-        0
-      ],
-      "clip": [
-        "155",
-        2
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
   "58": {
     "inputs": {
-      "image": "black_dummy.jpg",
-      "upload": "image"
+      "image": "black_dummy.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "65": {
-    "inputs": {
-      "fitting": 1,
-      "function": "image outpainting",
-      "scale": 1,
-      "start_at": 0,
-      "end_at": 10000,
-      "save_memory": "none",
-      "model": [
-        "119",
-        0
-      ],
-      "vae": [
-        "160",
-        3
-      ],
-      "image": [
-        "77",
-        0
-      ],
-      "mask": [
-        "77",
-        1
-      ],
-      "powerpaint": [
-        "45",
-        0
-      ],
-      "clip": [
-        "66",
-        0
-      ],
-      "positive": [
-        "49",
-        0
-      ],
-      "negative": [
-        "50",
-        0
-      ]
-    },
-    "class_type": "PowerPaint",
-    "_meta": {
-      "title": "PowerPaint"
-    }
-  },
-  "66": {
-    "inputs": {
-      "base": "model.fp16.safetensors",
-      "powerpaint": "PowerPaint-v2-1/pytorch_model.bin"
-    },
-    "class_type": "PowerPaintCLIPLoader",
-    "_meta": {
-      "title": "PowerPaint CLIP Loader"
     }
   },
   "77": {
@@ -146,18 +47,6 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "Preview Image"
-    }
-  },
-  "85": {
-    "inputs": {
-      "image": [
-        "171",
-        5
-      ]
-    },
-    "class_type": "Get resolution [Crystools]",
-    "_meta": {
-      "title": "🪛 Get resolution"
     }
   },
   "99": {
@@ -357,87 +246,6 @@
       "title": "Custom Expand"
     }
   },
-  "115": {
-    "inputs": {
-      "image": [
-        "58",
-        0
-      ]
-    },
-    "class_type": "Get resolution [Crystools]",
-    "_meta": {
-      "title": "🪛 Get resolution"
-    }
-  },
-  "118": {
-    "inputs": {
-      "preset": "PLUS (high strength)",
-      "model": [
-        "160",
-        1
-      ]
-    },
-    "class_type": "IPAdapterUnifiedLoader",
-    "_meta": {
-      "title": "IPAdapter Unified Loader"
-    }
-  },
-  "119": {
-    "inputs": {
-      "weight": 0.2,
-      "weight_type": "ease in-out",
-      "combine_embeds": "concat",
-      "start_at": 0,
-      "end_at": 1,
-      "sharpening": 0.05,
-      "embeds_scaling": "V only",
-      "model": [
-        "118",
-        0
-      ],
-      "ipadapter": [
-        "118",
-        1
-      ],
-      "image": [
-        "103",
-        0
-      ]
-    },
-    "class_type": "IPAdapterTiled",
-    "_meta": {
-      "title": "IPAdapter Tiled"
-    }
-  },
-  "133": {
-    "inputs": {
-      "boolean": [
-        "178",
-        0
-      ],
-      "on_true": [
-        "139",
-        0
-      ],
-      "on_false": [
-        "138",
-        0
-      ]
-    },
-    "class_type": "Switch any [Crystools]",
-    "_meta": {
-      "title": "🪛 Switch any"
-    }
-  },
-  "137": {
-    "inputs": {
-      "string": ""
-    },
-    "class_type": "Primitive string [Crystools]",
-    "_meta": {
-      "title": "🪛 Primitive string"
-    }
-  },
   "138": {
     "inputs": {
       "string": ""
@@ -447,67 +255,6 @@
       "title": "Positive Prompt"
     }
   },
-  "139": {
-    "inputs": {
-      "string": "empty scene"
-    },
-    "class_type": "Primitive string [Crystools]",
-    "_meta": {
-      "title": "🪛 Primitive string"
-    }
-  },
-  "143": {
-    "inputs": {
-      "output": "",
-      "source": [
-        "133",
-        0
-      ]
-    },
-    "class_type": "Display Any (rgthree)",
-    "_meta": {
-      "title": "Display Any (rgthree)"
-    }
-  },
-  "155": {
-    "inputs": {
-      "model": [
-        "157",
-        0
-      ],
-      "clip": [
-        "157",
-        1
-      ],
-      "vae": [
-        "157",
-        2
-      ],
-      "text_pos_g": [
-        "138",
-        0
-      ],
-      "text_neg_g": [
-        "158",
-        0
-      ]
-    },
-    "class_type": "Context Big (rgthree)",
-    "_meta": {
-      "title": "Context Big (rgthree)"
-    }
-  },
-  "157": {
-    "inputs": {
-      "ckpt_name": "juggernaut_reborn.safetensors",
-      "prompt": "[none]",
-      "example": "[none]"
-    },
-    "class_type": "CheckpointLoader|pysssss",
-    "_meta": {
-      "title": "Checkpoint Loader 🐍"
-    }
-  },
   "158": {
     "inputs": {
       "string": "embedding:easynegative, text, watermark, caption, sentance, words, nude, naked, nsfw"
@@ -515,119 +262,6 @@
     "class_type": "Primitive string multiline [Crystools]",
     "_meta": {
       "title": "Negative Prompt"
-    }
-  },
-  "159": {
-    "inputs": {
-      "base_ctx": [
-        "155",
-        0
-      ],
-      "model": [
-        "65",
-        0
-      ],
-      "positive": [
-        "171",
-        1
-      ],
-      "negative": [
-        "171",
-        2
-      ],
-      "latent": [
-        "171",
-        3
-      ],
-      "images": [
-        "171",
-        5
-      ]
-    },
-    "class_type": "Context Big (rgthree)",
-    "_meta": {
-      "title": "Context Big (rgthree)"
-    }
-  },
-  "160": {
-    "inputs": {
-      "base_ctx": [
-        "155",
-        0
-      ]
-    },
-    "class_type": "Context Big (rgthree)",
-    "_meta": {
-      "title": "Context Big (rgthree)"
-    }
-  },
-  "171": {
-    "inputs": {
-      "seed": 755946912609480,
-      "steps": 25,
-      "cfg": 7.5,
-      "sampler_name": "euler",
-      "scheduler": "normal",
-      "denoise": 1,
-      "preview_method": "none",
-      "vae_decode": "true",
-      "model": [
-        "65",
-        0
-      ],
-      "positive": [
-        "65",
-        1
-      ],
-      "negative": [
-        "65",
-        2
-      ],
-      "latent_image": [
-        "65",
-        3
-      ],
-      "optional_vae": [
-        "155",
-        3
-      ]
-    },
-    "class_type": "KSampler (Efficient)",
-    "_meta": {
-      "title": "KSampler (Efficient)"
-    }
-  },
-  "174": {
-    "inputs": {
-      "samples": [
-        "171",
-        3
-      ],
-      "vae": [
-        "171",
-        4
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "178": {
-    "inputs": {
-      "comparison": "a == b",
-      "a": [
-        "137",
-        0
-      ],
-      "b": [
-        "138",
-        0
-      ]
-    },
-    "class_type": "Eden_Compare",
-    "_meta": {
-      "title": "Eden_Compare"
     }
   },
   "179": {
@@ -644,17 +278,194 @@
       "title": "AspectPadImageForOutpainting"
     }
   },
-  "181": {
+  "182": {
     "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "159",
-        7
+      "samples": [
+        "190",
+        0
+      ],
+      "vae": [
+        "191",
+        0
       ]
     },
-    "class_type": "SaveImage",
+    "class_type": "VAEDecode",
     "_meta": {
-      "title": "Save Image"
+      "title": "VAE Decode"
+    }
+  },
+  "183": {
+    "inputs": {
+      "noise_mask": false,
+      "positive": [
+        "185",
+        0
+      ],
+      "negative": [
+        "193",
+        0
+      ],
+      "vae": [
+        "191",
+        0
+      ],
+      "pixels": [
+        "77",
+        0
+      ],
+      "mask": [
+        "77",
+        1
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "InpaintModelConditioning"
+    }
+  },
+  "184": {
+    "inputs": {
+      "model": [
+        "186",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "185": {
+    "inputs": {
+      "guidance": 30,
+      "conditioning": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "186": {
+    "inputs": {
+      "unet_name": "flux1-fill-dev.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "187": {
+    "inputs": {
+      "text": [
+        "138",
+        0
+      ],
+      "clip": [
+        "188",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "188": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "190": {
+    "inputs": {
+      "seed": 35443063607571,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "184",
+        0
+      ],
+      "positive": [
+        "183",
+        0
+      ],
+      "negative": [
+        "183",
+        1
+      ],
+      "latent_image": [
+        "183",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "191": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "192": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
+      "filename_prefix": "ComfyUI",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "193": {
+    "inputs": {
+      "text": [
+        "158",
+        0
+      ],
+      "clip": [
+        "188",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
     }
   }
 }

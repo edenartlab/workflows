@@ -6,8 +6,8 @@
         0
       ],
       "clip": [
-        "11",
-        0
+        "101",
+        1
       ]
     },
     "class_type": "CLIPTextEncode",
@@ -22,44 +22,13 @@
         0
       ],
       "vae": [
-        "10",
-        0
+        "101",
+        2
       ]
     },
     "class_type": "VAEDecode",
     "_meta": {
       "title": "VAE Decode"
-    }
-  },
-  "10": {
-    "inputs": {
-      "vae_name": "ae.safetensors"
-    },
-    "class_type": "VAELoader",
-    "_meta": {
-      "title": "Load VAE"
-    }
-  },
-  "11": {
-    "inputs": {
-      "clip_name1": "t5xxl_fp16.safetensors",
-      "clip_name2": "clip_l.safetensors",
-      "type": "flux",
-      "device": "default"
-    },
-    "class_type": "DualCLIPLoader",
-    "_meta": {
-      "title": "DualCLIPLoader"
-    }
-  },
-  "12": {
-    "inputs": {
-      "unet_name": "flux1-dev-fp8.safetensors",
-      "weight_dtype": "fp8_e4m3fn"
-    },
-    "class_type": "UNETLoader",
-    "_meta": {
-      "title": "Load Diffusion Model"
     }
   },
   "13": {
@@ -132,7 +101,7 @@
   },
   "25": {
     "inputs": {
-      "noise_seed": 539721347
+      "noise_seed": 405748527297274
     },
     "class_type": "RandomNoise",
     "_meta": {
@@ -182,7 +151,7 @@
         1
       ],
       "model": [
-        "12",
+        "102",
         0
       ]
     },
@@ -351,8 +320,7 @@
       "keep_proportion": false,
       "divisible_by": 2,
       "mask_channel": "alpha",
-      "background_color": "",
-      "upload": "image"
+      "background_color": ""
     },
     "class_type": "LoadAndResizeImage",
     "_meta": {
@@ -369,8 +337,7 @@
       "keep_proportion": false,
       "divisible_by": 2,
       "mask_channel": "alpha",
-      "background_color": "",
-      "upload": "image"
+      "background_color": ""
     },
     "class_type": "LoadAndResizeImage",
     "_meta": {
@@ -424,8 +391,7 @@
       "keep_proportion": false,
       "divisible_by": 2,
       "mask_channel": "alpha",
-      "background_color": "",
-      "upload": "image"
+      "background_color": ""
     },
     "class_type": "LoadAndResizeImage",
     "_meta": {
@@ -510,17 +476,54 @@
       "title": "empty_string"
     }
   },
-  "100": {
+  "101": {
     "inputs": {
+      "ckpt_name": "FLUX1/flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "102": {
+    "inputs": {
+      "lora_name": "flux/flux_turbo_v1_1.safetensors",
+      "strength_model": 1,
+      "model": [
+        "101",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "103": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
       "filename_prefix": "flux_redux",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
       "images": [
         "8",
         0
       ]
     },
-    "class_type": "SaveImage",
+    "class_type": "Image Save",
     "_meta": {
-      "title": "Save Image"
+      "title": "Image Save"
     }
   }
 }

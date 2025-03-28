@@ -1,0 +1,325 @@
+name: Start End Frame Interpolation
+description: Create smooth transitions between two images using either LTXV or WanVideo models.
+tip: |-
+  This tool creates smooth transitions between two images using either LTXV (Lightricks Video) or WanVideo models.
+  The LTXV model is optimized for shorter, high-quality transitions while WanVideo is better for longer, more stylized animations.
+  Key features:
+  Switch between LTXV and WanVideo models
+  LTXV works best with 16 FPS and shorter durations (2-4 seconds)
+  WanVideo works well with 24 FPS and longer durations (4-8 seconds)
+  Use prompt enhancement for more detailed control over the transition
+  Enable frame interpolation for smoother results at the cost of longer processing time
+output_type: video
+cost_estimate: '0.4 * duration_seconds * (width + height)/(2*640) * (use_frame_interpolation ? 2 : 1)'
+thumbnail: app/sei_ltxv_wan_opt.mp4
+status: prod
+visible: true
+resolutions: [16-9_1024x576, 3-2_768x512, 1-1_640x640, 2-3_512x768, 9-16_576x1024]
+handler: comfyui
+base_model: ltxv
+comfyui_output_node_id: 103
+comfyui_intermediate_outputs:
+  no-interpolation: 189
+  grid: 30
+parameters:
+  start_image:
+    type: image
+    label: Start Image
+    description: The image to start the transition from
+    required: true
+    comfyui:
+      node_id: 63
+      field: inputs
+      subfield: image
+  end_image:
+    type: image
+    label: End Image
+    description: The image to transition to
+    required: true
+    comfyui:
+      node_id: 58
+      field: inputs
+      subfield: image
+  duration_seconds:
+    type: float
+    label: Duration (seconds)
+    description: Length of the transition in seconds
+    default: 6.0
+    minimum: 2.0
+    maximum: 12.0
+    step: 0.5
+    required: true
+    comfyui:
+      node_id: 173
+      field: inputs
+      subfield: value
+  use_wan_video:
+    type: boolean
+    label: High Quality (wan)
+    description: Switch between LTXV (false) and WanVideo (true) models
+    default: false
+    comfyui:
+      node_id: 148
+      field: inputs
+      subfield: value
+  prompt:
+    type: string
+    label: Transition Description
+    description: Describe how the transition should happen between the images
+    default: "the first image smoothly transitions into the second image"
+    required: true
+    comfyui:
+      node_id: 135
+      field: inputs
+      subfield: value
+  use_prompt_enhance:
+    type: boolean
+    label: Enhance Prompt
+    description: Use AI to enhance the transition prompt for better results
+    default: true
+    comfyui:
+      node_id: 156
+      field: inputs
+      subfield: value
+  width:
+    type: integer
+    label: Width
+    description: Width of the output video in pixels
+    default: 512
+    minimum: 320
+    maximum: 1280
+    step: 64
+    required: true
+    comfyui:
+      node_id: 76
+      field: inputs
+      subfield: width
+  height:
+    type: integer
+    label: Height
+    description: Height of the output video in pixels
+    default: 512
+    minimum: 320
+    maximum: 1280
+    step: 64
+    required: true
+    comfyui:
+      node_id: 76
+      field: inputs
+      subfield: height
+  use_frame_interpolation:
+    type: boolean
+    label: Enable Frame Interpolation
+    description: Use RIFE to generate additional frames for smoother motion
+    default: true
+    comfyui:
+      node_id: 177
+      field: inputs
+      subfield: value
+  use_manual_fps:
+    type: boolean
+    label: Use Manual Frame Count
+    description: Override automatic frame count calculation
+    default: false
+    comfyui:
+      node_id: 183
+      field: inputs
+      subfield: value
+  fps:
+    type: integer
+    label: FPS
+    description: Frames per second for the output video
+    default: 16
+    minimum: 8
+    maximum: 30
+    step: 1 
+    visible_if: use_manual_fps=true 
+    comfyui:
+      node_id: 174
+      field: inputs
+      subfield: value
+  duration_frames:
+    type: integer
+    label: Manual Frame Count
+    description: Number of frames to generate when manual frame count is enabled
+    default: 24
+    minimum: 8
+    maximum: 120
+    step: 1
+    visible_if: use_manual_fps=true
+    comfyui:
+      node_id: 166
+      field: inputs
+      subfield: value
+  seed:
+    type: integer
+    label: Seed
+    description: Random seed for reproducible results. Leave at 1 for random.
+    default: 1
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 160
+      field: inputs
+      subfield: seed
+  add_caption:
+    type: boolean
+    label: Add Debug Caption
+    description: Add technical information overlay to the output video
+    default: true
+    comfyui:
+      node_id: 141
+      field: inputs
+      subfield: value
+  use_advanced_parameters:
+    type: boolean
+    label: Show Advanced Parameters
+    description: Enable advanced WanVideo model parameters for fine-tuning
+    default: false
+    comfyui:
+      node_id: 199
+      field: inputs
+      subfield: value
+  wan_model:
+    type: string
+    label: WanVideo Model
+    description: Choose which WanVideo model to use for generation
+    default: "Wan2_1-I2V-14B-480P_fp8_e5m2.safetensors"
+    visible_if: use_advanced_parameters=true
+    choices:
+      - "Wan2_1-I2V-14B-480P_fp8_e5m2.safetensors"
+      - "Wan2_1-I2V-14B-480P_fp8_e4m3fn.safetensors"
+      - "Wan2_1-I2V-14B-720P_fp8_e5m2.safetensors"
+      - "Wan2_1-I2V-14B-720P_fp8_e4m3fn.safetensors"
+    comfyui:
+      node_id: 22
+      field: inputs
+      subfield: model
+  wan_base_precision:
+    type: string
+    label: Base Precision
+    description: Base precision for the WanVideo model
+    default: "fp16_fast"
+    visible_if: use_advanced_parameters=true
+    choices: ["fp16_fast"]
+    comfyui:
+      node_id: 22
+      field: inputs
+      subfield: base_precision
+  wan_quantization:
+    type: string
+    label: Quantization
+    description: Quantization method for the WanVideo model
+    default: "fp8_e5m2"
+    visible_if: use_advanced_parameters=true
+    choices: ["fp8_e5m2", "fp8_e4m3fn"]
+    comfyui:
+      node_id: 22
+      field: inputs
+      subfield: quantization
+  wan_attention_mode:
+    type: string
+    label: Attention Mode
+    description: Attention mechanism for the WanVideo model
+    default: "sageattn"
+    visible_if: use_advanced_parameters=true
+    choices: ["sageattn"]
+    comfyui:
+      node_id: 22
+      field: inputs
+      subfield: attention_mode
+  wan_blocks_to_swap:
+    type: integer
+    label: Blocks to Swap
+    description: Number of blocks to swap in the WanVideo model
+    default: 20
+    minimum: 1
+    maximum: 40
+    visible_if: use_advanced_parameters=true
+    comfyui:
+      node_id: 39
+      field: inputs
+      subfield: blocks_to_swap
+  wan_t5_model:
+    type: string
+    label: T5 Text Encoder
+    description: T5 text encoder model to use
+    default: "umt5-xxl-enc-bf16.safetensors"
+    visible_if: use_advanced_parameters=true
+    choices: ["umt5-xxl-enc-bf16.safetensors"]
+    comfyui:
+      node_id: 11
+      field: inputs
+      subfield: model_name
+  wan_t5_precision:
+    type: string
+    label: T5 Precision
+    description: Precision for the T5 text encoder
+    default: "bf16"
+    visible_if: use_advanced_parameters=true
+    choices: ["bf16"]
+    comfyui:
+      node_id: 11
+      field: inputs
+      subfield: precision
+  wan_tea_cache_thresh:
+    type: float
+    label: TeaCache Threshold
+    description: Relative L1 threshold for TeaCache
+    default: 0.22
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.01
+    visible_if: use_advanced_parameters=true
+    comfyui:
+      node_id: 52
+      field: inputs
+      subfield: rel_l1_thresh
+  wan_tea_cache_start:
+    type: integer
+    label: TeaCache Start Step
+    description: Starting step for TeaCache
+    default: 1
+    minimum: 1
+    maximum: 20
+    visible_if: use_advanced_parameters=true
+    comfyui:
+      node_id: 52
+      field: inputs
+      subfield: start_step
+  wan_slg_blocks:
+    type: string
+    label: SLG Blocks
+    description: Number of blocks for SLG
+    default: "9"
+    visible_if: use_advanced_parameters=true
+    comfyui:
+      node_id: 72
+      field: inputs
+      subfield: blocks
+  wan_slg_start_percent:
+    type: float
+    label: SLG Start Percent
+    description: Starting percentage for SLG
+    default: 0.2
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.05
+    visible_if: use_advanced_parameters=true
+    comfyui:
+      node_id: 72
+      field: inputs
+      subfield: start_percent
+  wan_slg_end_percent:
+    type: float
+    label: SLG End Percent
+    description: Ending percentage for SLG
+    default: 0.8
+    minimum: 0.0
+    maximum: 1.0
+    step: 0.05
+    visible_if: use_advanced_parameters=true
+    comfyui:
+      node_id: 72
+      field: inputs
+      subfield: end_percent 
