@@ -3,7 +3,7 @@ description: Generate an image from text using Flux.
 tip: |-
   Flux is a text to image model by Black Forest Labs (ex StabilityAI employees ) that excels at prompt coherence, aesthetics and text generation. This tool is a strong choice for generating an image from text! Flux-dev can use ControlNet guidance to maintain the contours or shape outlines of the input image while generating a new style or aesthetic on top of it, and LoRA models to apply a pretrained fine tuned concept. While controlnet exists for this tool, the controlnet models released so far are considered inferior to those from SDXL, and the other tools should be preferred for shape guidance creations. Flux-dev was trained on a dataset ranging in size from .1 to 2 megapixels, and is capable of generating images at higher resolutions than Stable Diffusion without noticable artifacting. While best practice seems to dictate that Flux likes similar resolutions to Stable Diffusion (such as those in the resolutions: list), it is capable of good results higher resolutions, rounded to 64 pixels such as 1920x1088, 1408x1408, 1728x1152, 1664x1216 etc.
 output_type: image
-cost_estimate: 2 * n_samples
+cost_estimate: 1.5 * n_samples * ( speed_quality_tradeoff * 3 + (1-speed_quality_tradeoff) * 1.0) * ((steps+5)/25)
 thumbnail: app/flux.jpg
 status: prod
 visible: true
@@ -57,29 +57,6 @@ parameters:
       node_id: 119
       field: inputs
       subfield: height
-  use_init_image:
-    type: boolean
-    label: Add a starting image
-    description: Enable image-to-image, and controlnet guidance features
-    tip: |-
-      Using a starting image helps guide your prompted creation towards the colors present in your initial input. 
-      If an image is supplied with the prompt or controlnet is employed, this should be true.
-    default: false
-    comfyui:
-      node_id: 145
-      field: inputs
-      subfield: value
-  init_image:
-    type: image
-    label: Starting image
-    description: Initial image from which to start
-    tip: |-
-      This can be used to guide the image generation with colors and shapes of an input image.
-    visible_if: use_init_image=true
-    comfyui:
-      node_id: 467
-      field: inputs
-      subfield: image
   speed_quality_tradeoff:
     type: float
     label: Speed <-> Quality
@@ -95,31 +72,16 @@ parameters:
       node_id: 462
       field: inputs
       subfield: value
-  use_manual_quality:
+  use_init_image:
     type: boolean
-    label: Use manual quality settings
-    description: Override automatic quality settings derived from speed-quality tradeoff
+    label: Add a starting image
+    description: Enable image-to-image, and controlnet guidance features
     tip: |-
-      When enabled, allows manual control of steps and strength through the steps and denoise parameters.
-      When disabled, these values are automatically calculated based on the speed-quality tradeoff.
-    default: true
+      Using a starting image helps guide your prompted creation towards the colors present in your initial input. 
+      If an image is supplied with the prompt or controlnet is employed, this should be true.
+    default: false
     comfyui:
-      node_id: 463
-      field: inputs
-      subfield: value
-  strength_fast:
-    type: float
-    label: Fast mode strength
-    description: Strength setting when using fast mode
-    tip: |-
-      Only applies when manual quality settings are disabled.
-      Lower values produce faster but potentially lower quality results.
-    default: 0.0
-    minimum: 0.0
-    maximum: 1.0
-    visible_if: use_manual_quality=true
-    comfyui:
-      node_id: 451
+      node_id: 145
       field: inputs
       subfield: value
   denoise:
@@ -151,9 +113,21 @@ parameters:
       node_id: 120
       field: inputs
       subfield: value
+  init_image:
+    type: image
+    label: Starting image
+    description: Initial image from which to start
+    tip: |-
+      This can be used to guide the image generation with colors and shapes of an input image.
+    visible_if: use_init_image=true
+    comfyui:
+      node_id: 467
+      field: inputs
+      subfield: image
   use_controlnet:
     type: boolean
-    label: Use starting image as shape guide
+    visible_if: use_init_image=true
+    label: Use starting image as shape guide (controlnet)
     description: Activate Controlnet to use the starting image shape in the generation.
     tip: |-
       Controlnet guides the generated output towards the shape of the Starting Image.
@@ -266,6 +240,37 @@ parameters:
     visible_if: use_lora2=true
     comfyui:
       node_id: 338
+      field: inputs
+      subfield: value
+  use_manual_quality:
+    type: boolean
+    hide_from_ui: true
+    hide_from_agent: true
+    label: Use manual quality settings
+    description: Override automatic quality settings derived from speed-quality tradeoff
+    tip: |-
+      When enabled, allows manual control of steps and strength through the steps and denoise parameters.
+      When disabled, these values are automatically calculated based on the speed-quality tradeoff.
+    default: false
+    comfyui:
+      node_id: 463
+      field: inputs
+      subfield: value
+  strength_fast:
+    type: float
+    hide_from_ui: true
+    hide_from_agent: true
+    label: Fast mode strength
+    description: Strength setting when using fast mode
+    tip: |-
+      Only applies when manual quality settings are disabled.
+      Lower values produce faster but potentially lower quality results.
+    default: 0.0
+    minimum: 0.0
+    maximum: 1.0
+    visible_if: use_manual_quality=true
+    comfyui:
+      node_id: 451
       field: inputs
       subfield: value
   use_style_image:
