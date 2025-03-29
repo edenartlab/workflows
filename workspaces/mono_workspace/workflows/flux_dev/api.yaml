@@ -10,7 +10,7 @@ visible: true
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 1-1_1024x1024, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 handler: comfyui
 base_model: flux-dev
-comfyui_output_node_id: 443
+comfyui_output_node_id: 470
 comfyui_intermediate_outputs:
   controlnet_guidance: 342
 parameters:
@@ -77,9 +77,51 @@ parameters:
       This can be used to guide the image generation with colors and shapes of an input image.
     visible_if: use_init_image=true
     comfyui:
-      node_id: 302
+      node_id: 467
       field: inputs
       subfield: image
+  speed_quality_tradeoff:
+    type: float
+    label: Speed <-> Quality
+    description: Balance between generation speed and quality
+    tip: |-
+      Lower values (0.0-0.3) prioritize speed with more steps and less turbo lora.
+      Higher values (0.7-1.0) prioritize quality with fewer steps and more turbo lora.
+      A value of 0.25 provides a sweet spot balance of speed and quality.
+    default: 0.25
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 462
+      field: inputs
+      subfield: value
+  use_manual_quality:
+    type: boolean
+    label: Use manual quality settings
+    description: Override automatic quality settings derived from speed-quality tradeoff
+    tip: |-
+      When enabled, allows manual control of steps and strength through the steps and denoise parameters.
+      When disabled, these values are automatically calculated based on the speed-quality tradeoff.
+    default: true
+    comfyui:
+      node_id: 463
+      field: inputs
+      subfield: value
+  strength_fast:
+    type: float
+    label: Fast mode strength
+    description: Strength setting when using fast mode
+    tip: |-
+      Only applies when manual quality settings are disabled.
+      Lower values produce faster but potentially lower quality results.
+    default: 0.0
+    minimum: 0.0
+    maximum: 1.0
+    visible_if: use_manual_quality=true
+    comfyui:
+      node_id: 451
+      field: inputs
+      subfield: value
   denoise:
     type: float
     label: AI strength
@@ -134,8 +176,8 @@ parameters:
       ScribblePreprocessor processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
     visible_if: use_controlnet=true
     default: CannyEdgePreprocessor
-    choices: [CannyEdgePreprocessor, MiDaS-DepthMapPreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, ScribblePreprocessor]
-    choices_labels: [edges (canny), depth, lines (lineart), soft lines (HED), human pose, scribble]
+    choices: [CannyEdgePreprocessor, MiDaS-DepthMapPreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, ScribblePreprocessor, none]
+    choices_labels: [edges (canny), depth, lines (lineart), soft lines (HED), human pose, scribble, none]
     comfyui:
       node_id: 104
       field: inputs

@@ -1,0 +1,1297 @@
+{
+  "3": {
+    "inputs": {
+      "seed": [
+        "340",
+        0
+      ],
+      "steps": [
+        "373",
+        0
+      ],
+      "cfg": 2,
+      "sampler_name": "lcm",
+      "scheduler": "sgm_uniform",
+      "denoise": [
+        "355",
+        0
+      ],
+      "model": [
+        "270",
+        0
+      ],
+      "positive": [
+        "59",
+        0
+      ],
+      "negative": [
+        "59",
+        1
+      ],
+      "latent_image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "SD15/LCM/realismBYSTABLEYOGI_v4LCM.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "nsfw, nude, naked, text, watermark, low resolution, ugly, blurry, out of focus, worst quality, low quality, NSFW, exposed breasts, boobs, embedding:NEG_EMBED_STABLE_YOGI_V3",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "pixels": [
+        "198",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "13": {
+    "inputs": {
+      "frame_rate": [
+        "350",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "Result",
+      "format": "video/eden-video-faststart",
+      "pix_fmt": "yuv420p",
+      "crf": 23,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "351",
+        0
+      ],
+      "audio": [
+        "179",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "26": {
+    "inputs": {
+      "weight": 1.3,
+      "weight_type": "ease in-out",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "40",
+        0
+      ],
+      "ipadapter": [
+        "40",
+        1
+      ],
+      "image": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "28": {
+    "inputs": {
+      "model_name": "AnimateLCM_sd15_t2v.ckpt",
+      "beta_schedule": "lcm >> sqrt_linear",
+      "model": [
+        "4",
+        0
+      ],
+      "context_options": [
+        "33",
+        0
+      ],
+      "ad_settings": [
+        "36",
+        0
+      ],
+      "sample_settings": [
+        "29",
+        0
+      ],
+      "scale_multival": [
+        "32",
+        0
+      ],
+      "effect_multival": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderGen1",
+    "_meta": {
+      "title": "AnimateDiff Loader 🎭🅐🅓①"
+    }
+  },
+  "29": {
+    "inputs": {
+      "batch_offset": 0,
+      "noise_type": "default",
+      "seed_gen": "comfy",
+      "seed_offset": 0,
+      "adapt_denoise_steps": false,
+      "custom_cfg": [
+        "35",
+        0
+      ],
+      "sigma_schedule": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffSamplingSettings",
+    "_meta": {
+      "title": "Sample Settings 🎭🅐🅓"
+    }
+  },
+  "30": {
+    "inputs": {
+      "beta_schedule": "lcm >> sqrt_linear"
+    },
+    "class_type": "ADE_SigmaSchedule",
+    "_meta": {
+      "title": "Sigma Schedule 🎭🅐🅓"
+    }
+  },
+  "32": {
+    "inputs": {
+      "float_val": 1.1
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Scale 🎭🅐🅓"
+    }
+  },
+  "33": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "context_schedule": "uniform",
+      "closed_loop": false,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_AnimateDiffUniformContextOptions",
+    "_meta": {
+      "title": "Context Options 🎭🅐🅓"
+    }
+  },
+  "34": {
+    "inputs": {
+      "float_val": 1.1
+    },
+    "class_type": "ADE_MultivalDynamic",
+    "_meta": {
+      "title": "Effect 🎭🅐🅓"
+    }
+  },
+  "35": {
+    "inputs": {
+      "cfg": 2
+    },
+    "class_type": "ADE_CustomCFGSimple",
+    "_meta": {
+      "title": "Custom CFG 🎭🅐🅓"
+    }
+  },
+  "36": {
+    "inputs": {
+      "pe_adjust": [
+        "37",
+        0
+      ],
+      "weight_adjust": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffSettings",
+    "_meta": {
+      "title": "AnimateDiff Settings 🎭🅐🅓"
+    }
+  },
+  "37": {
+    "inputs": {
+      "sweetspot": 16,
+      "new_sweetspot": 18,
+      "print_adjustment": false
+    },
+    "class_type": "ADE_AdjustPESweetspotStretch",
+    "_meta": {
+      "title": "Adjust PE [Sweetspot] 🎭🅐🅓"
+    }
+  },
+  "38": {
+    "inputs": {
+      "all_MULT": 1.01,
+      "print_adjustment": false
+    },
+    "class_type": "ADE_AdjustWeightAllMult",
+    "_meta": {
+      "title": "Adjust Weight [All◆Mult] 🎭🅐🅓"
+    }
+  },
+  "40": {
+    "inputs": {
+      "preset": "PLUS (high strength)",
+      "model": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "41": {
+    "inputs": {
+      "image": "tree.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "44": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "mask": [
+        "363",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask",
+    "_meta": {
+      "title": "Set Latent Noise Mask"
+    }
+  },
+  "47": {
+    "inputs": {
+      "strength": 0.35000000000000003,
+      "start_percent": 0,
+      "end_percent": 1,
+      "control_net": [
+        "48",
+        0
+      ],
+      "image": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "Control Net Stacker",
+    "_meta": {
+      "title": "Control Net Stacker"
+    }
+  },
+  "48": {
+    "inputs": {
+      "control_net_name": "control_v11f1p_sd15_depth.pth"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "56": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_lineart.pth"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "59": {
+    "inputs": {
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "cnet_stack": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "Apply ControlNet Stack",
+    "_meta": {
+      "title": "Apply ControlNet Stack"
+    }
+  },
+  "170": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "198",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "mask": [
+        "363",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "179": {
+    "inputs": {
+      "video": "TextureFlow_00023.mp4",
+      "force_rate": [
+        "377",
+        0
+      ],
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": [
+        "379",
+        1
+      ],
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "180": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "center",
+      "sharpening": 0.05,
+      "image": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prep Image For ClipVision"
+    }
+  },
+  "187": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "depth",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "188": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "texture",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "192",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "192": {
+    "inputs": {
+      "preprocessor": "AnyLineArtPreprocessor_aux",
+      "resolution": [
+        "296",
+        1
+      ],
+      "image": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "193": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Resolution"
+    }
+  },
+  "196": {
+    "inputs": {
+      "preprocessor": "DepthAnythingV2Preprocessor",
+      "resolution": [
+        "296",
+        1
+      ],
+      "image": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "198": {
+    "inputs": {
+      "width": [
+        "193",
+        0
+      ],
+      "height": [
+        "193",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "208": {
+    "inputs": {
+      "images": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "210": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "cut",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "198",
+        0
+      ],
+      "audio": [
+        "179",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "270": {
+    "inputs": {
+      "model": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "278": {
+    "inputs": {
+      "min": 0,
+      "max": 1,
+      "mask": [
+        "303",
+        1
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "279": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "280": {
+    "inputs": {
+      "mask": [
+        "278",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "287": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "325",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "289": {
+    "inputs": {
+      "mask": [
+        "363",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "290": {
+    "inputs": {
+      "mask": [
+        "298",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "291": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "luminance2",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "290",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "296": {
+    "inputs": {
+      "expression": "min(a,b)",
+      "a": [
+        "198",
+        1
+      ],
+      "b": [
+        "198",
+        2
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "298": {
+    "inputs": {
+      "min": 0,
+      "max": 1,
+      "mask": [
+        "306",
+        1
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "303": {
+    "inputs": {
+      "expression": "1 / (1 + exp(-5 * (a - 0.5)))",
+      "conversion_mode": "mean",
+      "a": [
+        "279",
+        0
+      ]
+    },
+    "class_type": "Eden_Image_Math",
+    "_meta": {
+      "title": "Eden_Image_Math"
+    }
+  },
+  "306": {
+    "inputs": {
+      "expression": "1 / (1 + exp(-7 * (a - 0.5)))",
+      "conversion_mode": "mean",
+      "a": [
+        "287",
+        0
+      ]
+    },
+    "class_type": "Eden_Image_Math",
+    "_meta": {
+      "title": "Eden_Image_Math"
+    }
+  },
+  "309": {
+    "inputs": {
+      "ckpt_name": "rife47.pth",
+      "clear_cache_after_n_frames": 24,
+      "multiplier": [
+        "312",
+        1
+      ],
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "RIFE VFI (recommend rife47 and rife49)"
+    }
+  },
+  "312": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "350",
+        0
+      ],
+      "b": [
+        "376",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "FPS_multiplier"
+    }
+  },
+  "325": {
+    "inputs": {
+      "preprocessor": "ImageLuminanceDetector",
+      "resolution": [
+        "296",
+        1
+      ],
+      "image": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "326": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "luminance",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "325",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "328": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "texture2",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "336",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "332": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "192",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "333": {
+    "inputs": {
+      "value": 0.03
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Edge_Blur_Fraction"
+    }
+  },
+  "334": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "333",
+        0
+      ],
+      "b": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "335": {
+    "inputs": {
+      "min": 0,
+      "max": 1,
+      "mask": [
+        "349",
+        1
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "336": {
+    "inputs": {
+      "mask": [
+        "335",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "339": {
+    "inputs": {
+      "expand": 16,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": [
+        "334",
+        0
+      ],
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "332",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "340": {
+    "inputs": {
+      "seed": 1
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "344": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "depth2",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "280",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "345": {
+    "inputs": {
+      "frame_rate": [
+        "376",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "DiffusionMask",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 30,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "289",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "347": {
+    "inputs": {
+      "rel_strength_a": 0.02,
+      "rel_strength_b": 0.02,
+      "rel_strength_c": 0.03,
+      "lower_clamp": 6,
+      "upper_clamp": 94,
+      "gamma": 0.75,
+      "mask_a": [
+        "278",
+        0
+      ],
+      "mask_b": [
+        "335",
+        0
+      ],
+      "mask_c": [
+        "298",
+        0
+      ]
+    },
+    "class_type": "Eden_MaskCombiner",
+    "_meta": {
+      "title": "Eden_MaskCombiner"
+    }
+  },
+  "349": {
+    "inputs": {
+      "expression": "1 / (1 + exp(-7 * (a - 0.5)))",
+      "conversion_mode": "mean",
+      "a": [
+        "339",
+        0
+      ]
+    },
+    "class_type": "Eden_Image_Math",
+    "_meta": {
+      "title": "Eden_Image_Math"
+    }
+  },
+  "350": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Output_FPS"
+    }
+  },
+  "351": {
+    "inputs": {
+      "boolean": [
+        "352",
+        0
+      ],
+      "on_true": [
+        "309",
+        0
+      ],
+      "on_false": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "Interpolate"
+    }
+  },
+  "352": {
+    "inputs": {
+      "comparison": "a > b",
+      "a": [
+        "312",
+        1
+      ],
+      "b": [
+        "353",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Eden_Compare"
+    }
+  },
+  "353": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "354": {
+    "inputs": {
+      "min": [
+        "369",
+        0
+      ],
+      "max": 1,
+      "mask": [
+        "347",
+        0
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "355": {
+    "inputs": {
+      "value": 0.75
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Max_Denoise"
+    }
+  },
+  "363": {
+    "inputs": {
+      "expand": -5,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": [
+        "366",
+        0
+      ],
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "354",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "366": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "367",
+        0
+      ],
+      "b": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "367": {
+    "inputs": {
+      "value": 0.01
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Edge_Blur_Fraction"
+    }
+  },
+  "368": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Min_Denoise"
+    }
+  },
+  "369": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "368",
+        0
+      ],
+      "b": [
+        "355",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Compute Min Mask value"
+    }
+  },
+  "373": {
+    "inputs": {
+      "value": 10
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "n_steps"
+    }
+  },
+  "376": {
+    "inputs": {
+      "value": 12
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Diffusion_FPS"
+    }
+  },
+  "377": {
+    "inputs": {
+      "a": [
+        "376",
+        0
+      ]
+    },
+    "class_type": "Eden_FloatToInt",
+    "_meta": {
+      "title": "Eden_FloatToInt"
+    }
+  },
+  "378": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "n_seconds"
+    }
+  },
+  "379": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "378",
+        0
+      ],
+      "b": [
+        "376",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  }
+}

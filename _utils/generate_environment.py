@@ -1,4 +1,5 @@
 import json
+from logging import exception
 import os
 import re
 import sys
@@ -72,12 +73,13 @@ def create_environment(root_dir):
                     except json.JSONDecodeError as e:
                         print(f"Warning: Failed to parse {file_path}: {e}")
                         continue  # Skip this snapshot file
-
-                if snapshot.get("comfyui") != all_snapshots["comfyui"]:
-                    if all_snapshots["comfyui"]:
-                        print(f"Updating ComfyUI hash in {subdir_path}: {all_snapshots['comfyui']} -> {snapshot['comfyui']}")
+                try:    
+                    if snapshot.get("comfyui") != all_snapshots["comfyui"]:
+                        if all_snapshots["comfyui"]:
+                            print(f"Updating ComfyUI hash in {subdir_path}: {all_snapshots['comfyui']} -> {snapshot['comfyui']}")
                     all_snapshots["comfyui"] = snapshot["comfyui"]
-
+                except Exception as e:
+                    print(f"Warning: Failed to update ComfyUI hash in {subdir_path}: {e}")
                 for repo, data in snapshot.get("git_custom_nodes", {}).items():
                     existing_data = all_snapshots["git_custom_nodes"].get(repo)
                     if existing_data is None or is_more_recent(repo, data["hash"], existing_data.get("hash")):

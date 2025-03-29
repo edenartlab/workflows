@@ -1,8 +1,7 @@
 {
   "1": {
     "inputs": {
-      "image": "black_dummy.jpg",
-      "upload": "image"
+      "image": "black_dummy.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -58,7 +57,10 @@
   },
   "5": {
     "inputs": {
-      "text": "masterpiece, best quality, highres",
+      "text": [
+        "133",
+        0
+      ],
       "clip": [
         "4",
         1
@@ -98,7 +100,7 @@
         0
       ],
       "image": [
-        "46",
+        "151",
         0
       ]
     },
@@ -122,7 +124,7 @@
   },
   "12": {
     "inputs": {
-      "tile_size": 1024,
+      "tile_size": 960,
       "overlap": 64,
       "temporal_size": 64,
       "temporal_overlap": 8,
@@ -186,8 +188,8 @@
   "16": {
     "inputs": {
       "method": "MultiDiffusion",
-      "tile_width": 1024,
-      "tile_height": 1024,
+      "tile_width": 960,
+      "tile_height": 960,
       "tile_overlap": 128,
       "tile_batch_size": 4,
       "model": [
@@ -211,7 +213,7 @@
   },
   "18": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.5000000000000001,
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
@@ -227,7 +229,7 @@
         0
       ],
       "image": [
-        "46",
+        "151",
         0
       ]
     },
@@ -249,7 +251,7 @@
     "inputs": {
       "model_type": "SD1",
       "steps": 25,
-      "denoise": 0.35000000000000003
+      "denoise": 0.15000000000000002
     },
     "class_type": "AlignYourStepsScheduler",
     "_meta": {
@@ -259,7 +261,10 @@
   "25": {
     "inputs": {
       "add_noise": true,
-      "noise_seed": 5398475983,
+      "noise_seed": [
+        "158",
+        0
+      ],
       "cfg": 8,
       "model": [
         "107",
@@ -293,7 +298,7 @@
   },
   "26": {
     "inputs": {
-      "tile_size": 1024,
+      "tile_size": 960,
       "overlap": 64,
       "temporal_size": 64,
       "temporal_overlap": 8,
@@ -329,29 +334,14 @@
       "title": "🔧 Image Resize_clamp maximum"
     }
   },
-  "63": {
-    "inputs": {
-      "filename_prefix": "upscaled",
-      "add_timestamp": true,
-      "save_metadata_json": false,
-      "images": [
-        "105",
-        0
-      ]
-    },
-    "class_type": "SaveImageAdvanced",
-    "_meta": {
-      "title": "SaveImageAdvanced"
-    }
-  },
   "85": {
     "inputs": {
       "width": [
-        "86",
+        "165",
         0
       ],
       "height": [
-        "86",
+        "165",
         0
       ],
       "interpolation": "lanczos",
@@ -375,18 +365,6 @@
     "class_type": "Eden_Int",
     "_meta": {
       "title": "LONGEST SIDE"
-    }
-  },
-  "87": {
-    "inputs": {
-      "image": [
-        "1",
-        0
-      ]
-    },
-    "class_type": "Get resolution [Crystools]",
-    "_meta": {
-      "title": "🪛 Get resolution"
     }
   },
   "89": {
@@ -495,16 +473,6 @@
       "title": "USE COLOR MATCH"
     }
   },
-  "101": {
-    "inputs": {
-      "text": "[1,2][%aux%]",
-      "output_type": "ANY"
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "bool to int"
-    }
-  },
   "102": {
     "inputs": {
       "text": "[1,2][%aux%]",
@@ -577,6 +545,541 @@
     "class_type": "UniversalSwitch",
     "_meta": {
       "title": "💠 Universal Switch"
+    }
+  },
+  "108": {
+    "inputs": {
+      "ckpt_name": "FLUX1/flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "109": {
+    "inputs": {
+      "clip_l": [
+        "112",
+        2
+      ],
+      "t5xxl": [
+        "112",
+        2
+      ],
+      "guidance": [
+        "157",
+        0
+      ],
+      "clip": [
+        "108",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "110": {
+    "inputs": {
+      "model_name": "4x_foolhardy_Remacri.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "111": {
+    "inputs": {
+      "guidance": [
+        "157",
+        0
+      ],
+      "conditioning": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "112": {
+    "inputs": {
+      "text_input": "",
+      "task": "more_detailed_caption",
+      "fill_mask": true,
+      "keep_model_loaded": true,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": false,
+      "output_mask_select": "",
+      "seed": [
+        "158",
+        0
+      ],
+      "image": [
+        "151",
+        1
+      ],
+      "florence2_model": [
+        "114",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "114": {
+    "inputs": {
+      "model": "gokaygokay/Florence-2-Flux-Large",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "119": {
+    "inputs": {
+      "upscale_by": [
+        "131",
+        0
+      ],
+      "seed": [
+        "158",
+        0
+      ],
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 0.15000000000000002,
+      "mode_type": "Linear",
+      "tile_width": [
+        "138",
+        0
+      ],
+      "tile_height": [
+        "138",
+        0
+      ],
+      "mask_blur": 8,
+      "tile_padding": 32,
+      "seam_fix_mode": "None",
+      "seam_fix_denoise": 1,
+      "seam_fix_width": 64,
+      "seam_fix_mask_blur": 8,
+      "seam_fix_padding": 8,
+      "force_uniform_tiles": true,
+      "tiled_decode": false,
+      "image": [
+        "151",
+        1
+      ],
+      "model": [
+        "108",
+        0
+      ],
+      "positive": [
+        "111",
+        0
+      ],
+      "negative": [
+        "139",
+        0
+      ],
+      "vae": [
+        "108",
+        2
+      ],
+      "upscale_model": [
+        "110",
+        0
+      ]
+    },
+    "class_type": "UltimateSDUpscale",
+    "_meta": {
+      "title": "Ultimate SD Upscale"
+    }
+  },
+  "123": {
+    "inputs": {
+      "select": [
+        "126",
+        0
+      ],
+      "sel_mode": false,
+      "input1": [
+        "109",
+        0
+      ],
+      "input2": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "1: AUTO │ 2: Manual"
+    }
+  },
+  "125": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "126": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool-to-int"
+    }
+  },
+  "129": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "upscale_by_factor"
+    }
+  },
+  "130": {
+    "inputs": {
+      "value": 2.0000000000000004
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "upscale_factor"
+    }
+  },
+  "131": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "125",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "137",
+        0
+      ],
+      "input2": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "133": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "135": {
+    "inputs": {
+      "image": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "136": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "manual_prompt"
+    }
+  },
+  "137": {
+    "inputs": {
+      "expression": "a/(max(b,c))",
+      "a": [
+        "86",
+        0
+      ],
+      "b": [
+        "135",
+        1
+      ],
+      "c": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "138": {
+    "inputs": {
+      "value": 512
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "tile_size"
+    }
+  },
+  "139": {
+    "inputs": {
+      "clip_l": [
+        "133",
+        0
+      ],
+      "t5xxl": [
+        "133",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "108",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "MANUAL PROMPT"
+    }
+  },
+  "148": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "high_quality"
+    }
+  },
+  "149": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to int_FLUX"
+    }
+  },
+  "150": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "149",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "105",
+        0
+      ],
+      "input2": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "151": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": 1,
+      "selection_out": [
+        "149",
+        0
+      ],
+      "validate_typing": false,
+      "input1": [
+        "135",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch high quality flux"
+    }
+  },
+  "152": {
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "153": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
+      "filename_prefix": "upscaled",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "150",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "157": {
+    "inputs": {
+      "value": 2.5000000000000004
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "guidance"
+    }
+  },
+  "158": {
+    "inputs": {
+      "seed": 804844062413485
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "160": {
+    "inputs": {
+      "expression": "a*b",
+      "a": [
+        "86",
+        0
+      ],
+      "b": [
+        "137",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "164": {
+    "inputs": {
+      "expression": "c/max(a,b)",
+      "a": [
+        "46",
+        1
+      ],
+      "b": [
+        "46",
+        2
+      ],
+      "c": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "165": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "125",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "86",
+        0
+      ],
+      "input2": [
+        "166",
+        1
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "166": {
+    "inputs": {
+      "expression": "c * max(a,b)",
+      "a": [
+        "46",
+        1
+      ],
+      "b": [
+        "46",
+        2
+      ],
+      "c": [
+        "164",
+        1
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
     }
   }
 }

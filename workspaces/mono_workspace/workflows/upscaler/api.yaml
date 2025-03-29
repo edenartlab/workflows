@@ -11,7 +11,7 @@ visible: true
 resolutions: null
 handler: comfyui
 base_model: sd15
-comfyui_output_node_id: 63
+comfyui_output_node_id: 153
 parameters:
   init_image:
     type: image
@@ -43,7 +43,7 @@ parameters:
     tip: |-
       This parameter controls the amount of added detail to the image. 
       Low values (.01-.25) are better at preserving likeness, wheras high values (>.5) are prone to hallucination of details that are not present in the original image.
-    default: 0.25
+    default: 0.15
     minimum: 0.0
     maximum: 1.0
     step: 0.01
@@ -112,3 +112,48 @@ parameters:
     default: 1
     minimum: 1
     maximum: 4
+  high_quality:
+    type: boolean
+    label: High Quality Mode
+    description: Enable high quality upscaling mode with additional parameters
+    default: false
+    comfyui:
+      node_id: 148
+      field: inputs
+      subfield: value
+  tile_size:
+    type: integer
+    label: Tile Size
+    description: Size of tiles for high quality upscaling
+    default: 512
+    minimum: 64
+    maximum: 1024
+    step: 8
+    visible_if: high_quality=true
+    comfyui:
+      node_id: 138
+      field: inputs
+      subfield: value
+  guidance:
+    type: float
+    label: Guidance Scale
+    description: Guidance scale for high quality upscaling
+    default: 2.5
+    minimum: 1.0
+    maximum: 4.0
+    step: 0.1
+    visible_if: high_quality=true
+    comfyui:
+      node_id: 157
+      field: inputs
+      subfield: value
+  manual_prompt:
+    type: boolean
+    label: Manual Prompt
+    description: Use manual prompt instead of auto-generated prompt
+    default: false
+    visible_if: high_quality=true
+    comfyui:
+      node_id: 136
+      field: inputs
+      subfield: value

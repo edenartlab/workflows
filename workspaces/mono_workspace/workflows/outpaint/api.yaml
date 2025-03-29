@@ -1,8 +1,7 @@
 name: Extend an image (Outpaint)
 description: Expand an image to a different aspect ratio by outpainting.
 tip: |-
-  This model uses SD1.5, so huge resolution changes will add potentially undesirable artifacting. 
-  Choosing an SDXL resolution will result in a larger image, but not necessarily a better one. 
+  This tool uses FLUX.1. 
   Keep in mind that a non-technical user may not have the vocabulary to describe what they want, and interpret their request with your best judgement as to whether or not the outpainting is what they are requesting, considering terms like outpaint, zoom out,expand, add to the side of this image,or other prompts for an image canvas to be larger as a suggestion to consider this tool when provided with such a request and an image to operate on.
 output_type: image
 cost_estimate: 2 * n_samples
@@ -12,7 +11,7 @@ visible: true
 resolutions: null
 handler: comfyui
 base_model: sd15
-comfyui_output_node_id: 181
+comfyui_output_node_id: 192
 parameters:
   init_image:
     type: image
@@ -158,7 +157,7 @@ parameters:
     minimum: 0
     maximum: 2147483647
     comfyui:
-      node_id: 171
+      node_id: 190
       field: inputs
       subfield: seed
   steps:
@@ -172,6 +171,6 @@ parameters:
     minimum: 1
     maximum: 50
     comfyui:
-      node_id: 171
+      node_id: 190
       field: inputs
       subfield: steps

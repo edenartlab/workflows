@@ -1,6 +1,6 @@
 {
-  "last_node_id": 443,
-  "last_link_id": 894,
+  "last_node_id": 444,
+  "last_link_id": 901,
   "nodes": [
     {
       "id": 8,
@@ -14,7 +14,7 @@
         105.25548553466797
       ],
       "flags": {},
-      "order": 87,
+      "order": 85,
       "mode": 0,
       "inputs": [
         {
@@ -25,7 +25,7 @@
         {
           "name": "vae",
           "type": "VAE",
-          "link": 767
+          "link": 900
         }
       ],
       "outputs": [
@@ -57,7 +57,7 @@
         170
       ],
       "flags": {},
-      "order": 69,
+      "order": 67,
       "mode": 0,
       "inputs": [
         {
@@ -68,10 +68,6 @@
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            84
-          ],
           "widget": {
             "name": "width"
           },
@@ -80,10 +76,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            108
-          ],
           "widget": {
             "name": "height"
           },
@@ -128,22 +120,18 @@
         102
       ],
       "flags": {},
-      "order": 53,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "label": "model",
           "type": "MODEL",
-          "link": 893
+          "link": 895
         },
         {
           "name": "strength_model",
           "type": "FLOAT",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "strength_model"
           },
@@ -192,7 +180,7 @@
         206
       ],
       "flags": {},
-      "order": 75,
+      "order": 73,
       "mode": 0,
       "inputs": [
         {
@@ -213,7 +201,7 @@
         {
           "name": "vae",
           "type": "VAE",
-          "link": 796
+          "link": 899
         },
         {
           "name": "image",
@@ -223,10 +211,6 @@
         {
           "name": "strength",
           "type": "FLOAT",
-          "pos": [
-            10,
-            116
-          ],
           "widget": {
             "name": "strength"
           },
@@ -276,7 +260,7 @@
         58
       ],
       "flags": {},
-      "order": 43,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -319,21 +303,17 @@
       "flags": {
         "collapsed": false
       },
-      "order": 45,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 798
+          "link": 896
         },
         {
           "name": "clip_l",
           "type": "STRING",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "clip_l"
           },
@@ -342,10 +322,6 @@
         {
           "name": "t5xxl",
           "type": "STRING",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "t5xxl"
           },
@@ -391,13 +367,13 @@
       "flags": {
         "collapsed": true
       },
-      "order": 46,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 799
+          "link": 897
         },
         {
           "name": "text",
@@ -444,7 +420,7 @@
         102
       ],
       "flags": {},
-      "order": 72,
+      "order": 70,
       "mode": 0,
       "inputs": [
         {
@@ -455,10 +431,6 @@
         {
           "name": "resolution",
           "type": "INT",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "resolution"
           },
@@ -525,9 +497,10 @@
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "WidthHeightPicker"
+        "Node name for S&R": "WidthHeightPicker",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1024,
@@ -566,9 +539,10 @@
       ],
       "title": "Use input image size",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -607,9 +581,10 @@
       ],
       "title": "Prompt (Positive) (pre)",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a candid photo of a deer sitting in the garden of eden, surrounded by mystical magical plants and a gorgeous picturesque background"
@@ -647,9 +622,10 @@
       ],
       "title": "Prompt (Negative)",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         ""
@@ -685,9 +661,10 @@
       ],
       "title": "use_controlnet",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -725,9 +702,10 @@
       ],
       "title": "use_ipAdapter",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -763,9 +741,10 @@
       ],
       "title": "controlnet_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.5
@@ -801,9 +780,10 @@
       ],
       "title": "ipadapter_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.91
@@ -852,9 +832,10 @@
       ],
       "title": "clamp_max_resolution",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "WidthHeightPicker"
+        "Node name for S&R": "WidthHeightPicker",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         2048,
@@ -893,9 +874,10 @@
       ],
       "title": "lora_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.7000000000000001
@@ -931,9 +913,10 @@
       ],
       "title": "use_lora",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -971,9 +954,10 @@
       ],
       "title": "use_input_image",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1012,9 +996,10 @@
       ],
       "title": "lora_strength_off",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0
@@ -1036,7 +1021,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 39,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -1094,7 +1079,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 60,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -1110,10 +1095,6 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "boolean"
           },
@@ -1155,7 +1136,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 61,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -1171,10 +1152,6 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "boolean"
           },
@@ -1333,7 +1310,7 @@
         46
       ],
       "flags": {},
-      "order": 74,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -1344,7 +1321,7 @@
         {
           "name": "vae",
           "type": "VAE",
-          "link": 797
+          "link": 898
         }
       ],
       "outputs": [
@@ -1377,16 +1354,12 @@
         126
       ],
       "flags": {},
-      "order": 67,
+      "order": 65,
       "mode": 0,
       "inputs": [
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "width"
           },
@@ -1395,10 +1368,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "height"
           },
@@ -1456,9 +1425,10 @@
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -1492,9 +1462,10 @@
       ],
       "title": "denoise",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -1516,7 +1487,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 66,
+      "order": 64,
       "mode": 0,
       "inputs": [
         {
@@ -1572,7 +1543,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 71,
+      "order": 69,
       "mode": 0,
       "inputs": [
         {
@@ -1594,9 +1565,10 @@
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "SDAnyConverter"
+        "Node name for S&R": "SDAnyConverter",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": []
     },
@@ -1633,12 +1605,13 @@
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Seed"
+        "Node name for S&R": "Eden_Seed",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
-        29,
+        33,
         "increment"
       ]
     },
@@ -1689,7 +1662,7 @@
         102
       ],
       "flags": {},
-      "order": 59,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -1701,10 +1674,6 @@
         {
           "name": "strength_model",
           "type": "FLOAT",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "strength_model"
           },
@@ -1769,9 +1738,10 @@
       ],
       "title": "style_lora_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.7000000000000001
@@ -1807,9 +1777,10 @@
       ],
       "title": "use_style_lora",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1831,7 +1802,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 44,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -1847,10 +1818,6 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "boolean"
           },
@@ -1891,7 +1858,7 @@
         270
       ],
       "flags": {},
-      "order": 76,
+      "order": 74,
       "mode": 0,
       "inputs": [
         {
@@ -1922,7 +1889,7 @@
         212
       ],
       "flags": {},
-      "order": 68,
+      "order": 66,
       "mode": 0,
       "inputs": [
         {
@@ -1974,9 +1941,10 @@
       ],
       "title": "ControlnetResolution",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "min(%aux%, %aux2%)",
@@ -1995,7 +1963,7 @@
         250
       ],
       "flags": {},
-      "order": 78,
+      "order": 76,
       "mode": 0,
       "inputs": [
         {
@@ -2036,10 +2004,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2084,9 +2048,10 @@
       ],
       "title": "Latent Switch",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -2107,7 +2072,7 @@
         93.43218231201172
       ],
       "flags": {},
-      "order": 54,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -2124,6 +2089,7 @@
         },
         {
           "name": "width",
+          "label": "1024 width",
           "type": "INT",
           "links": [
             692
@@ -2132,6 +2098,7 @@
         },
         {
           "name": "height",
+          "label": "1024 height",
           "type": "INT",
           "links": [
             693
@@ -2140,6 +2107,7 @@
         },
         {
           "name": "count",
+          "label": "1 count",
           "type": "INT",
           "links": null
         }
@@ -2163,7 +2131,7 @@
         218
       ],
       "flags": {},
-      "order": 70,
+      "order": 68,
       "mode": 0,
       "inputs": [
         {
@@ -2174,10 +2142,6 @@
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            76
-          ],
           "widget": {
             "name": "width"
           },
@@ -2186,10 +2150,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            100
-          ],
           "widget": {
             "name": "height"
           },
@@ -2242,7 +2202,7 @@
         212
       ],
       "flags": {},
-      "order": 55,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -2294,9 +2254,10 @@
       ],
       "title": "Input Image Loaded",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "%aux% != %aux2%",
@@ -2315,7 +2276,7 @@
         212
       ],
       "flags": {},
-      "order": 37,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -2368,9 +2329,10 @@
       ],
       "title": "input image size selected",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "%aux% and %aux2%",
@@ -2389,7 +2351,7 @@
         212
       ],
       "flags": {},
-      "order": 38,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -2441,9 +2403,10 @@
       ],
       "title": "SelectLatent",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -2462,7 +2425,7 @@
         218
       ],
       "flags": {},
-      "order": 41,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
@@ -2473,10 +2436,6 @@
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            76
-          ],
           "widget": {
             "name": "width"
           },
@@ -2485,10 +2444,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            100
-          ],
           "widget": {
             "name": "height"
           },
@@ -2543,7 +2498,7 @@
         212
       ],
       "flags": {},
-      "order": 62,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -2595,9 +2550,10 @@
       ],
       "title": "denoise switch",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "%aux% and %aux2%",
@@ -2616,7 +2572,7 @@
         250
       ],
       "flags": {},
-      "order": 79,
+      "order": 77,
       "mode": 0,
       "inputs": [
         {
@@ -2657,10 +2613,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2707,9 +2659,10 @@
       ],
       "title": "Latent Switch CN+",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -2730,7 +2683,7 @@
         212
       ],
       "flags": {},
-      "order": 33,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -2783,9 +2736,10 @@
       ],
       "title": "SelectLatent",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -2804,7 +2758,7 @@
         250
       ],
       "flags": {},
-      "order": 80,
+      "order": 78,
       "mode": 0,
       "inputs": [
         {
@@ -2845,10 +2799,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2893,9 +2843,10 @@
       ],
       "title": "Latent Switch CN-",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -2916,7 +2867,7 @@
         218
       ],
       "flags": {},
-      "order": 49,
+      "order": 44,
       "mode": 4,
       "inputs": [
         {
@@ -2960,78 +2911,6 @@
       ]
     },
     {
-      "id": 376,
-      "type": "CLIPVisionLoader",
-      "pos": [
-        610,
-        1260
-      ],
-      "size": [
-        286.4698791503906,
-        66.91861724853516
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP_VISION",
-          "type": "CLIP_VISION",
-          "links": [
-            749
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "CLIPVisionLoader"
-      },
-      "widgets_values": [
-        "sigclip_vision_patch14_384.safetensors"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 377,
-      "type": "StyleModelLoader",
-      "pos": [
-        610,
-        1150
-      ],
-      "size": [
-        286.4698791503906,
-        58
-      ],
-      "flags": {},
-      "order": 22,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STYLE_MODEL",
-          "type": "STYLE_MODEL",
-          "links": [
-            746
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "StyleModelLoader"
-      },
-      "widgets_values": [
-        "flux1-redux-dev.safetensors"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 378,
       "type": "StyleModelApplyAdvanced",
       "pos": [
@@ -3043,7 +2922,7 @@
         118
       ],
       "flags": {},
-      "order": 81,
+      "order": 79,
       "mode": 0,
       "inputs": [
         {
@@ -3064,10 +2943,6 @@
         {
           "name": "strength",
           "type": "FLOAT",
-          "pos": [
-            10,
-            76
-          ],
           "widget": {
             "name": "strength"
           },
@@ -3107,7 +2982,7 @@
         78
       ],
       "flags": {},
-      "order": 50,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -3152,7 +3027,7 @@
         98
       ],
       "flags": {},
-      "order": 83,
+      "order": 81,
       "mode": 0,
       "inputs": [
         {
@@ -3168,10 +3043,6 @@
         {
           "name": "conditioning_to_strength",
           "type": "FLOAT",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "conditioning_to_strength"
           },
@@ -3209,7 +3080,7 @@
         64.75653076171875
       ],
       "flags": {},
-      "order": 23,
+      "order": 21,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3224,9 +3095,10 @@
       ],
       "title": "Style Strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.7000000000000001
@@ -3246,7 +3118,7 @@
         128
       ],
       "flags": {},
-      "order": 56,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -3295,125 +3167,6 @@
       ]
     },
     {
-      "id": 388,
-      "type": "UNETLoader",
-      "pos": [
-        -1495.8980712890625,
-        1071.94970703125
-      ],
-      "size": [
-        315,
-        82
-      ],
-      "flags": {},
-      "order": 24,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "shape": 3,
-          "links": [
-            893
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "UNETLoader"
-      },
-      "widgets_values": [
-        "flux1-dev-fp8.safetensors",
-        "fp8_e4m3fn"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 389,
-      "type": "DualCLIPLoader",
-      "pos": [
-        -1493.1348876953125,
-        1218.3165283203125
-      ],
-      "size": [
-        315,
-        122
-      ],
-      "flags": {},
-      "order": 25,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "shape": 3,
-          "links": [
-            798,
-            799,
-            800
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "DualCLIPLoader"
-      },
-      "widgets_values": [
-        "t5xxl_fp16.safetensors",
-        "clip_l.safetensors",
-        "flux",
-        "default"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 390,
-      "type": "VAELoader",
-      "pos": [
-        -1493.1348876953125,
-        1368.31689453125
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 26,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "shape": 3,
-          "links": [
-            767,
-            796,
-            797
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "VAELoader"
-      },
-      "widgets_values": [
-        "ae.safetensors"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 391,
       "type": "UniversalSwitch",
       "pos": [
@@ -3425,7 +3178,7 @@
         259.78265380859375
       ],
       "flags": {},
-      "order": 77,
+      "order": 75,
       "mode": 0,
       "inputs": [
         {
@@ -3466,10 +3219,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -3514,9 +3263,10 @@
       ],
       "title": "Latent Switch CN-",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -3537,7 +3287,7 @@
         212
       ],
       "flags": {},
-      "order": 34,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -3589,9 +3339,10 @@
       ],
       "title": "SelectLatent",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -3610,7 +3361,7 @@
         478.05609130859375
       ],
       "flags": {},
-      "order": 85,
+      "order": 83,
       "mode": 0,
       "inputs": [
         {
@@ -3636,10 +3387,6 @@
         {
           "name": "seed",
           "type": "INT",
-          "pos": [
-            10,
-            96
-          ],
           "widget": {
             "name": "seed"
           },
@@ -3648,10 +3395,6 @@
         {
           "name": "denoise",
           "type": "FLOAT",
-          "pos": [
-            10,
-            216
-          ],
           "widget": {
             "name": "denoise"
           },
@@ -3675,7 +3418,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        101466152538484,
+        336588811620980,
         "randomize",
         25,
         1,
@@ -3696,7 +3439,7 @@
         92.14229583740234
       ],
       "flags": {},
-      "order": 88,
+      "order": 86,
       "mode": 0,
       "inputs": [
         {
@@ -3717,18 +3460,21 @@
         },
         {
           "name": "width",
+          "label": "1024 width",
           "type": "INT",
           "links": [],
           "slot_index": 1
         },
         {
           "name": "height",
+          "label": "1024 height",
           "type": "INT",
           "links": [],
           "slot_index": 2
         },
         {
           "name": "count",
+          "label": "1 count",
           "type": "INT",
           "links": [
             855
@@ -3755,7 +3501,7 @@
         250
       ],
       "flags": {},
-      "order": 84,
+      "order": 82,
       "mode": 0,
       "inputs": [
         {
@@ -3796,10 +3542,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -3843,9 +3585,10 @@
       ],
       "title": "Latent Switch CN+",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -3866,7 +3609,7 @@
         58
       ],
       "flags": {},
-      "order": 27,
+      "order": 22,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3882,9 +3625,10 @@
       ],
       "title": "Use Style Image",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         true
@@ -3904,7 +3648,7 @@
         212
       ],
       "flags": {},
-      "order": 57,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -3956,9 +3700,10 @@
       ],
       "title": "SelectLatent",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux% and %aux2% != %aux3%]",
@@ -3977,21 +3722,17 @@
         78
       ],
       "flags": {},
-      "order": 47,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 800
+          "link": 901
         },
         {
           "name": "text",
           "type": "STRING",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "text"
           },
@@ -4014,9 +3755,10 @@
         }
       ],
       "properties": {
-        "aux_id": "JaredTherriault/ComfyUI-JNodes",
+        "cnr_id": "ComfyUI-JNodes",
         "ver": "5e7ad57e9cba200a796925e5a6666fd73c0ada8e",
-        "Node name for S&R": "JNodes_TokenCounter"
+        "Node name for S&R": "JNodes_TokenCounter",
+        "aux_id": "JaredTherriault/ComfyUI-JNodes"
       },
       "widgets_values": [
         ""
@@ -4034,7 +3776,7 @@
         106
       ],
       "flags": {},
-      "order": 28,
+      "order": 23,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -4049,9 +3791,10 @@
         }
       ],
       "properties": {
-        "aux_id": "XLabs-AI/x-flux-comfyui",
+        "cnr_id": "x-flux-comfyui",
         "ver": "00328556efc9472410d903639dc9e68a8471f7ac",
-        "Node name for S&R": "LoadFluxIPAdapter"
+        "Node name for S&R": "LoadFluxIPAdapter",
+        "aux_id": "XLabs-AI/x-flux-comfyui"
       },
       "widgets_values": [
         "ip_adapter.safetensors",
@@ -4071,7 +3814,7 @@
         118
       ],
       "flags": {},
-      "order": 73,
+      "order": 71,
       "mode": 4,
       "inputs": [
         {
@@ -4094,10 +3837,6 @@
         {
           "name": "ip_scale",
           "type": "FLOAT",
-          "pos": [
-            10,
-            76
-          ],
           "widget": {
             "name": "ip_scale"
           },
@@ -4116,9 +3855,10 @@
         }
       ],
       "properties": {
-        "aux_id": "XLabs-AI/x-flux-comfyui",
+        "cnr_id": "x-flux-comfyui",
         "ver": "00328556efc9472410d903639dc9e68a8471f7ac",
-        "Node name for S&R": "ApplyFluxIPAdapter"
+        "Node name for S&R": "ApplyFluxIPAdapter",
+        "aux_id": "XLabs-AI/x-flux-comfyui"
       },
       "widgets_values": [
         1
@@ -4136,7 +3876,7 @@
         314
       ],
       "flags": {},
-      "order": 91,
+      "order": 89,
       "mode": 0,
       "inputs": [
         {
@@ -4148,10 +3888,6 @@
           "name": "caption",
           "type": "STRING",
           "shape": 7,
-          "pos": [
-            10,
-            252
-          ],
           "widget": {
             "name": "caption"
           },
@@ -4160,10 +3896,6 @@
         {
           "name": "text",
           "type": "STRING",
-          "pos": [
-            10,
-            204
-          ],
           "widget": {
             "name": "text"
           },
@@ -4210,7 +3942,7 @@
         250
       ],
       "flags": {},
-      "order": 92,
+      "order": 90,
       "mode": 0,
       "inputs": [
         {
@@ -4251,10 +3983,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -4298,9 +4026,10 @@
       ],
       "title": "add caption",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -4321,7 +4050,7 @@
         61.95689392089844
       ],
       "flags": {},
-      "order": 29,
+      "order": 24,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4336,9 +4065,10 @@
       ],
       "title": "use_caption",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -4360,7 +4090,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 48,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -4412,9 +4142,10 @@
       ],
       "title": "add caption",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -4435,7 +4166,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 82,
+      "order": 80,
       "mode": 0,
       "inputs": [
         {
@@ -4479,12 +4210,13 @@
         }
       ],
       "properties": {
-        "aux_id": "XLabs-AI/x-flux-comfyui",
+        "cnr_id": "x-flux-comfyui",
         "ver": "00328556efc9472410d903639dc9e68a8471f7ac",
-        "Node name for S&R": "XlabsSampler"
+        "Node name for S&R": "XlabsSampler",
+        "aux_id": "XLabs-AI/x-flux-comfyui"
       },
       "widgets_values": [
-        45768566167201,
+        239048216044733,
         "randomize",
         25,
         26,
@@ -4505,7 +4237,7 @@
         250
       ],
       "flags": {},
-      "order": 86,
+      "order": 84,
       "mode": 0,
       "inputs": [
         {
@@ -4546,10 +4278,6 @@
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -4592,9 +4320,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -4617,7 +4346,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 35,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -4669,9 +4398,10 @@
       ],
       "title": "use_ipadapter",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -4690,7 +4420,7 @@
         160
       ],
       "flags": {},
-      "order": 36,
+      "order": 34,
       "mode": 4,
       "inputs": [
         {
@@ -4711,9 +4441,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "MemoryStorage"
+        "Node name for S&R": "MemoryStorage",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "USE_IPADAPTER",
@@ -4734,7 +4465,7 @@
         212
       ],
       "flags": {},
-      "order": 30,
+      "order": 25,
       "mode": 4,
       "inputs": [
         {
@@ -4786,9 +4517,10 @@
       ],
       "title": "get USE_IPADAPTER",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "%USE_IPADAPTER%",
@@ -4807,7 +4539,7 @@
         212
       ],
       "flags": {},
-      "order": 52,
+      "order": 50,
       "mode": 4,
       "inputs": [
         {
@@ -4860,9 +4592,10 @@
       ],
       "title": "denoise switch",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "1 if not %aux% and %aux2% else 0",
@@ -4881,7 +4614,7 @@
         78
       ],
       "flags": {},
-      "order": 63,
+      "order": 61,
       "mode": 4,
       "inputs": [
         {
@@ -4892,10 +4625,6 @@
         {
           "name": "ForceUnload",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "ForceUnload"
           },
@@ -4911,9 +4640,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UnloadModels"
+        "Node name for S&R": "UnloadModels",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         false
@@ -4931,7 +4661,7 @@
         212
       ],
       "flags": {},
-      "order": 58,
+      "order": 56,
       "mode": 4,
       "inputs": [
         {
@@ -4983,9 +4713,10 @@
       ],
       "title": "SelectLatent",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "False",
@@ -5006,7 +4737,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 89,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -5028,9 +4759,10 @@
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "SDAnyConverter"
+        "Node name for S&R": "SDAnyConverter",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": []
     },
@@ -5046,7 +4778,7 @@
         26
       ],
       "flags": {},
-      "order": 32,
+      "order": 30,
       "mode": 0,
       "inputs": [
         {
@@ -5084,7 +4816,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 90,
+      "order": 88,
       "mode": 0,
       "inputs": [
         {
@@ -5135,9 +4867,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "%aux% + %aux2%",
@@ -5158,7 +4891,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 64,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
@@ -5245,7 +4978,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 65,
+      "order": 63,
       "mode": 0,
       "inputs": [
         {
@@ -5330,7 +5063,7 @@
         26
       ],
       "flags": {},
-      "order": 40,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -5370,7 +5103,7 @@
         26
       ],
       "flags": {},
-      "order": 42,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -5409,7 +5142,7 @@
         26
       ],
       "flags": {},
-      "order": 51,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -5445,10 +5178,10 @@
       ],
       "size": [
         315,
-        58
+        270
       ],
       "flags": {},
-      "order": 93,
+      "order": 91,
       "mode": 0,
       "inputs": [
         {
@@ -5479,7 +5212,7 @@
         325.79779052734375
       ],
       "flags": {},
-      "order": 31,
+      "order": 26,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5513,6 +5246,132 @@
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 377,
+      "type": "StyleModelLoader",
+      "pos": [
+        610,
+        1150
+      ],
+      "size": [
+        378.16021728515625,
+        58
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STYLE_MODEL",
+          "type": "STYLE_MODEL",
+          "links": [
+            746
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "StyleModelLoader"
+      },
+      "widgets_values": [
+        "flux1-redux-dev.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 376,
+      "type": "CLIPVisionLoader",
+      "pos": [
+        610,
+        1260
+      ],
+      "size": [
+        286.4698791503906,
+        66.91861724853516
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            749
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "CLIPVisionLoader"
+      },
+      "widgets_values": [
+        "sigclip_vision_patch14_384.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 444,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -1498.598876953125,
+        1154.3973388671875
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            895
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            896,
+            897,
+            901
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            898,
+            899,
+            900
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "flux1-dev-fp8.safetensors"
+      ]
     }
   ],
   "links": [
@@ -5981,14 +5840,6 @@
       "CONDITIONING"
     ],
     [
-      767,
-      390,
-      0,
-      8,
-      1,
-      "VAE"
-    ],
-    [
       768,
       62,
       0,
@@ -6139,46 +5990,6 @@
       382,
       1,
       "INT,FLOAT,IMAGE,LATENT"
-    ],
-    [
-      796,
-      390,
-      0,
-      97,
-      3,
-      "VAE"
-    ],
-    [
-      797,
-      390,
-      0,
-      315,
-      1,
-      "VAE"
-    ],
-    [
-      798,
-      389,
-      0,
-      101,
-      0,
-      "CLIP"
-    ],
-    [
-      799,
-      389,
-      0,
-      103,
-      0,
-      "CLIP"
-    ],
-    [
-      800,
-      389,
-      0,
-      398,
-      0,
-      "CLIP"
     ],
     [
       802,
@@ -6597,20 +6408,68 @@
       "IMAGE"
     ],
     [
-      893,
-      388,
-      0,
-      80,
-      0,
-      "MODEL"
-    ],
-    [
       894,
       431,
       0,
       405,
       2,
       "STRING"
+    ],
+    [
+      895,
+      444,
+      0,
+      80,
+      0,
+      "MODEL"
+    ],
+    [
+      896,
+      444,
+      1,
+      101,
+      0,
+      "CLIP"
+    ],
+    [
+      897,
+      444,
+      1,
+      103,
+      0,
+      "CLIP"
+    ],
+    [
+      898,
+      444,
+      2,
+      315,
+      1,
+      "VAE"
+    ],
+    [
+      899,
+      444,
+      2,
+      97,
+      3,
+      "VAE"
+    ],
+    [
+      900,
+      444,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      901,
+      444,
+      1,
+      398,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [
@@ -6709,10 +6568,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8264462809917354,
+      "scale": 0.4177248169415665,
       "offset": [
-        1649.6877534875002,
-        -1212.0617626899193
+        480.48043206443873,
+        -889.9824676790332
       ]
     },
     "ue_links": [],

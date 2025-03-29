@@ -1,0 +1,1127 @@
+{
+  "28": {
+    "inputs": {
+      "model": "sam2_hiera_base_plus.safetensors",
+      "segmentor": "single_image",
+      "device": "cuda",
+      "precision": "bf16"
+    },
+    "class_type": "DownloadAndLoadSAM2Model",
+    "_meta": {
+      "title": "(Down)Load SAM2Model"
+    }
+  },
+  "29": {
+    "inputs": {
+      "keep_model_loaded": true,
+      "individual_objects": [
+        "164",
+        0
+      ],
+      "sam2_model": [
+        "28",
+        0
+      ],
+      "image": [
+        "75",
+        0
+      ],
+      "bboxes": [
+        "30",
+        1
+      ]
+    },
+    "class_type": "Sam2Segmentation",
+    "_meta": {
+      "title": "Sam2Segmentation"
+    }
+  },
+  "30": {
+    "inputs": {
+      "index": [
+        "163",
+        0
+      ],
+      "batch": false,
+      "data": [
+        "62",
+        3
+      ]
+    },
+    "class_type": "Florence2toCoordinates",
+    "_meta": {
+      "title": "Florence2 Coordinates"
+    }
+  },
+  "31": {
+    "inputs": {
+      "mask_opacity": 1,
+      "mask_color": "0,0,0",
+      "pass_through": true,
+      "image": [
+        "189",
+        0
+      ],
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ImageAndMaskPreview",
+    "_meta": {
+      "title": "ImageAndMaskPreview"
+    }
+  },
+  "47": {
+    "inputs": {
+      "boolean": [
+        "216",
+        0
+      ],
+      "on_true": [
+        "29",
+        0
+      ],
+      "on_false": [
+        "260",
+        0
+      ]
+    },
+    "class_type": "Switch mask [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch mask"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image": "A_black_image.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Mask Image"
+    }
+  },
+  "53": {
+    "inputs": {
+      "image": "eve2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "62": {
+    "inputs": {
+      "text_input": [
+        "66",
+        0
+      ],
+      "task": "caption_to_phrase_grounding",
+      "fill_mask": true,
+      "keep_model_loaded": true,
+      "max_new_tokens": 1024,
+      "num_beams": 4,
+      "do_sample": false,
+      "output_mask_select": "",
+      "seed": [
+        "65",
+        0
+      ],
+      "image": [
+        "75",
+        0
+      ],
+      "florence2_model": [
+        "245",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "65": {
+    "inputs": {
+      "seed": 99
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "66": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Masking Prompt"
+    }
+  },
+  "67": {
+    "inputs": {
+      "value": "forest with waterfall"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Inpainting Prompt"
+    }
+  },
+  "72": {
+    "inputs": {
+      "channel": "blue",
+      "image": [
+        "73",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "73": {
+    "inputs": {
+      "width": [
+        "75",
+        1
+      ],
+      "height": [
+        "75",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "74": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Resolution"
+    }
+  },
+  "75": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "114": {
+    "inputs": {
+      "padding": [
+        "203",
+        1
+      ],
+      "region_type": "dominant",
+      "mask": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "Mask Crop Region",
+    "_meta": {
+      "title": "Mask Crop Region"
+    }
+  },
+  "115": {
+    "inputs": {
+      "width": [
+        "114",
+        6
+      ],
+      "height": [
+        "114",
+        7
+      ],
+      "position": "top-left",
+      "x_offset": [
+        "114",
+        3
+      ],
+      "y_offset": [
+        "114",
+        2
+      ],
+      "image": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "ImageCrop+",
+    "_meta": {
+      "title": "🔧 Image Crop"
+    }
+  },
+  "119": {
+    "inputs": {
+      "padding": 0,
+      "region_type": "dominant",
+      "mask": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "Mask Crop Region",
+    "_meta": {
+      "title": "Mask Crop Region"
+    }
+  },
+  "122": {
+    "inputs": {
+      "mask": [
+        "114",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "128": {
+    "inputs": {
+      "images": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "163": {
+    "inputs": {
+      "on_true": "",
+      "on_false": "0",
+      "boolean": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "Switch string [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch string"
+    }
+  },
+  "164": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Multiple Objects"
+    }
+  },
+  "166": {
+    "inputs": {
+      "mask": [
+        "53",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "169": {
+    "inputs": {
+      "x": [
+        "114",
+        3
+      ],
+      "y": [
+        "114",
+        2
+      ],
+      "resize_source": false,
+      "destination": [
+        "75",
+        0
+      ],
+      "source": [
+        "170",
+        0
+      ],
+      "mask": [
+        "250",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "170": {
+    "inputs": {
+      "width": [
+        "114",
+        6
+      ],
+      "height": [
+        "114",
+        7
+      ],
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 0,
+      "crop": "disabled",
+      "image": [
+        "238",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "181": {
+    "inputs": {
+      "filename_prefix": "Flux\\Inpaint\\2025-01-27\\segs1_",
+      "images": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "189": {
+    "inputs": {
+      "width": [
+        "74",
+        0
+      ],
+      "height": [
+        "74",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "115",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "190": {
+    "inputs": {
+      "expand": 24,
+      "tapered_corners": true,
+      "mask": [
+        "195",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
+    }
+  },
+  "191": {
+    "inputs": {
+      "amount": 32,
+      "device": "gpu",
+      "mask": [
+        "190",
+        0
+      ]
+    },
+    "class_type": "MaskBlur+",
+    "_meta": {
+      "title": "🔧 Mask Blur"
+    }
+  },
+  "192": {
+    "inputs": {
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "194": {
+    "inputs": {
+      "mask": [
+        "114",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "195": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "196": {
+    "inputs": {
+      "width": [
+        "74",
+        0
+      ],
+      "height": [
+        "74",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 8,
+      "image": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "197": {
+    "inputs": {
+      "max_token": 250,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4-vision Low",
+      "prompt": [
+        "221",
+        0
+      ],
+      "image": [
+        "200",
+        0
+      ]
+    },
+    "class_type": "ImageDescriptionNode",
+    "_meta": {
+      "title": "ImageDescriptionNode"
+    }
+  },
+  "198": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "200": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": true,
+      "destination": [
+        "189",
+        0
+      ],
+      "source": [
+        "201",
+        0
+      ],
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "201": {
+    "inputs": {
+      "width": [
+        "189",
+        1
+      ],
+      "height": [
+        "189",
+        2
+      ],
+      "red": 0,
+      "green": 0,
+      "blue": 0
+    },
+    "class_type": "Image Blank",
+    "_meta": {
+      "title": "Image Blank"
+    }
+  },
+  "202": {
+    "inputs": {
+      "images": [
+        "200",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "203": {
+    "inputs": {
+      "expression": "a*0.5",
+      "a": [
+        "119",
+        6
+      ]
+    },
+    "class_type": "Eden_Math",
+    "_meta": {
+      "title": "Eden_Math"
+    }
+  },
+  "206": {
+    "inputs": {
+      "filename_prefix": "Inpaint_preview",
+      "images": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "216": {
+    "inputs": {
+      "comparison": "a != b",
+      "a": [
+        "66",
+        0
+      ],
+      "b": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "Eden_Compare",
+    "_meta": {
+      "title": "Masking Prompt is Empty"
+    }
+  },
+  "217": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Empty_String"
+    }
+  },
+  "219": {
+    "inputs": {
+      "mask": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "221": {
+    "inputs": {
+      "delimiter": " ",
+      "clean_whitespace": "true",
+      "text_a": [
+        "222",
+        0
+      ],
+      "text_b": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "222": {
+    "inputs": {
+      "value": "Propose a visual description for this image. IMPORTANT: re-imagine the black (masked) regions in the image based on the provided inpainting prompt. If no inpainting prompt is given, just imagine what might naturally fit in those spaces. Limit the final imagined image description to 50 words. Dont mention the black regions, just reply with the full description of that new imagined image, nothing else. Inpainting prompt:"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "223": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "221",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "225": {
+    "inputs": {
+      "ckpt_name": "flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "226": {
+    "inputs": {
+      "strength": 0.85,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "228",
+        0
+      ],
+      "negative": [
+        "229",
+        0
+      ],
+      "control_net": [
+        "227",
+        0
+      ],
+      "vae": [
+        "225",
+        2
+      ],
+      "image": [
+        "189",
+        0
+      ],
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ControlNetInpaintingAliMamaApply",
+    "_meta": {
+      "title": "ControlNetInpaintingAliMamaApply"
+    }
+  },
+  "227": {
+    "inputs": {
+      "control_net_name": "FLUX.1-dev-Controlnet-Inpainting-Alpha.safetensors.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "228": {
+    "inputs": {
+      "clip_l": [
+        "197",
+        0
+      ],
+      "t5xxl": [
+        "197",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "225",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "229": {
+    "inputs": {
+      "clip_l": "",
+      "t5xxl": "",
+      "guidance": 3.5,
+      "clip": [
+        "225",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "232": {
+    "inputs": {
+      "noise": [
+        "235",
+        0
+      ],
+      "guider": [
+        "237",
+        0
+      ],
+      "sampler": [
+        "233",
+        0
+      ],
+      "sigmas": [
+        "234",
+        0
+      ],
+      "latent_image": [
+        "236",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "233": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "234": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 30,
+      "denoise": 1,
+      "model": [
+        "225",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "235": {
+    "inputs": {
+      "noise_seed": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "236": {
+    "inputs": {
+      "width": [
+        "189",
+        1
+      ],
+      "height": [
+        "189",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "237": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "225",
+        0
+      ],
+      "positive": [
+        "226",
+        0
+      ],
+      "negative": [
+        "226",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFGGuider"
+    }
+  },
+  "238": {
+    "inputs": {
+      "samples": [
+        "232",
+        0
+      ],
+      "vae": [
+        "225",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "241": {
+    "inputs": {
+      "images": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "245": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "bf16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "246": {
+    "inputs": {
+      "image": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "247": {
+    "inputs": {
+      "input": [
+        "246",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "248": {
+    "inputs": {
+      "input": [
+        "246",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "250": {
+    "inputs": {
+      "expand": 12,
+      "tapered_corners": true,
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
+    }
+  },
+  "255": {
+    "inputs": {
+      "torchscript_jit": "default",
+      "image": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembg",
+    "_meta": {
+      "title": "Inspyrenet Rembg"
+    }
+  },
+  "256": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Activate_rembg"
+    }
+  },
+  "258": {
+    "inputs": {
+      "images": [
+        "255",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "259": {
+    "inputs": {
+      "mask": [
+        "255",
+        1
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "260": {
+    "inputs": {
+      "boolean": [
+        "256",
+        0
+      ],
+      "on_true": [
+        "263",
+        0
+      ],
+      "on_false": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "Switch mask [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch mask"
+    }
+  },
+  "261": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Inpaint_Foreground"
+    }
+  },
+  "262": {
+    "inputs": {
+      "mask": [
+        "255",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "Invert Mask"
+    }
+  },
+  "263": {
+    "inputs": {
+      "boolean": [
+        "261",
+        0
+      ],
+      "on_true": [
+        "255",
+        1
+      ],
+      "on_false": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "Switch mask [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch mask"
+    }
+  },
+  "266": {
+    "inputs": {
+      "filename_prefix": "Inpaint_mask",
+      "images": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
