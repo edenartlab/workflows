@@ -184,7 +184,7 @@ parameters:
   lora:
     type: lora
     label: Trained model (LoRA)
-    description: Activate a custom, LoRA finetuned model
+    description: Activate a custom, LoRA finetuned model. Trigger the model by using its exact name in the prompt.
     visible_if: use_lora=true
     comfyui:
       node_id: 80
@@ -355,6 +355,8 @@ parameters:
   flux_guidance:
     type: float
     label: Prompt Conditioning
+    hide_from_ui: true
+    hide_from_agent: true
     description: Strength of the prompt and image conditiong influence on the creation result.
     tip: |-
       This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a lower value of 2.0-2.5 may be desirable, and for realistic images closer to 3.0 is a good value, with an extreme minimum around 1.5. Higher values will more closely follow the input text and produce clean images but also have less diversity.
