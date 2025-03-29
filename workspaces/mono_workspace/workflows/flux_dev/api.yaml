@@ -341,9 +341,11 @@ parameters:
     type: integer
     label: Steps
     description: Number of steps to take in the diffusion process
+    hide_from_ui: true
+    hide_from_agent: true
     tip: |-
       The number of steps taken in the diffusion process. Higher values will result in more detailed images, but will also take longer to generate.
-    default: 25
+    default: 30
     minimum: 1
     maximum: 35
     comfyui:
