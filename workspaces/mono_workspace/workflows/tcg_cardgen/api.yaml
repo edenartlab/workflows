@@ -25,31 +25,171 @@ parameters:
     default: 1
     minimum: 1
     maximum: 4
-  prompt:
+  card_name:
     type: string
-    label: Prompt
+    label: Card Name
+    description: Name of the card
+    required: true
+    default: ""
+    comfyui:
+      node_id: 313
+      field: inputs
+      subfield: value
+  prompt_art:
+    type: string
+    label: Prompt Art
     description: Describe the art you want generated for the card
     tip: |-
       Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
-    required: true
+    default: ""
+    comfyui:
+      node_id: 309
+      field: inputs
+      subfield: value
+   prompt_background:
+    type: string
+    label: Prompt Background Art
+    description: Describe the art you want generated for the card
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
     default: comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings
     comfyui:
       node_id: 309
       field: inputs
       subfield: value
-  negative_prompt:
+  card_type:
     type: string
-    label: Negative Prompt
-    description: Describe what you don't want in the art
-    tip: |-
-      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
-      Only works with SDXL models
-    required: true
-    default: (text:1.4) signature watermark (words:1.4) sentences letters captions (writing:1.4)
+    label: Card Type
+    description: Type and subtype of the card
+    default: ""
     comfyui:
-      node_id: 423
+      node_id: 312
       field: inputs
       subfield: value
+  card_cost:
+    type: string
+    label: Card Cost
+    description: Mana cost of the card
+    default: "{0}"
+    comfyui:
+      node_id: 304
+      field: inputs
+      subfield: value
+  card_text:
+    type: string
+    label: Card Description
+    description: Main text/description for the card
+    default: ""
+    comfyui:
+      node_id: 305
+      field: inputs
+      subfield: value
+  card_flavor:
+    type: string
+    label: Flavor Text
+    description: Flavor text for the card
+    default: ""
+    comfyui:
+      node_id: 306
+      field: inputs
+      subfield: value
+  card_stats:
+    type: string
+    label: Card Stats
+    description: Power/Toughness or other stats for the card
+    default: ""
+    comfyui:
+      node_id: 308
+      field: inputs
+      subfield: value
+  card_rarity:
+    type: string
+    label: Card Rarity
+    description: Rarity level of the card
+    default: ""
+    comfyui:
+      node_id: 307
+      field: inputs
+      subfield: value
+  cost_opacity:
+    type: float
+    label: Cost Text Opacity
+    description: Opacity of the mana cost text
+    default: 1.0
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 377
+      field: inputs
+      subfield: font_opacity
+  stats_opacity:
+    type: float
+    label: Stats Text Opacity
+    description: Opacity of the power/toughness text
+    required: false
+    default: 1.0
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 144
+      field: inputs
+      subfield: font_opacity
+  lora_sdxl:
+    type: lora
+    label: LoRA SDXL
+    description: Use a custom model (LoRA)
+    tip: name of the custom (SDXL) LoRA model.
+    default: 67a222bae707584b6d669623
+    comfyui:
+      node_id: 174
+      field: inputs
+      subfield: lora_name
+  lora_strength_sdxl:
+    type: float
+    label: LoRA Strength SDXL
+    description: Strength of the LoRA effect on generation
+    default: 0.68
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 179
+      field: inputs
+      subfield: value
+  lora_flux:
+    type: lora
+    label: LoRA FLUX
+    description: Use a custom model (LoRA)
+    tip: name of the custom (SDXL) LoRA model.
+    default: 67a222bae707584b6d669623
+    comfyui:
+      node_id: 201
+      field: inputs
+      subfield: lora_name
+  lora_strength_flux:
+    type: float
+    label: LoRA Strength FLUX
+    description: Strength of the LoRA effect on generation
+    default: 0.0
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 201
+      field: inputs
+      subfield: strength_model
+  controlnet_strength:
+    type: float
+    label: ControlNet Strength
+    description: Strength of the ControlNet guidance
+    tip: |-
+      Controls how strongly the generation follows the reference image. Higher values (closer to 1.0) follow the reference more closely,
+      while lower values allow more creative freedom.
+    default: 0.5
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 180
+      field: inputs
+      subfield: strength
   seed:
     type: integer
     label: Generation Seed
@@ -78,6 +218,7 @@ parameters:
     label: Rendered Card Art
     description: Pre-rendered art image to use for the card
     required: false
+    default: false
     visible_if: use_rendered_art=true
     comfyui:
       node_id: 12
@@ -123,167 +264,6 @@ parameters:
       node_id: 287
       field: inputs
       subfield: value
-  background_image_template:
-    type: image
-    label: Background Template
-    description: Template image for ControlNet guidance of border generation
-    comfyui:
-      node_id: 13
-      field: inputs
-      subfield: image
-  card_name:
-    type: string
-    label: Card Name
-    description: Name of the card
-    required: true
-    default: "CARD_NAME"
-    comfyui:
-      node_id: 313
-      field: inputs
-      subfield: value
-  card_type:
-    type: string
-    label: Card Type
-    description: Type and subtype of the card
-    required: true
-    default: ""
-    comfyui:
-      node_id: 312
-      field: inputs
-      subfield: value
-  card_cost:
-    type: string
-    label: Card Cost
-    description: Mana cost of the card
-    required: true
-    default: "{0}"
-    comfyui:
-      node_id: 304
-      field: inputs
-      subfield: value
-  card_text:
-    type: string
-    label: Card Description
-    description: Main text/description for the card
-    required: true
-    default: ""
-    comfyui:
-      node_id: 305
-      field: inputs
-      subfield: value
-  card_flavor:
-    type: string
-    label: Flavor Text
-    description: Flavor text for the card
-    required: true
-    default: ""
-    comfyui:
-      node_id: 306
-      field: inputs
-      subfield: value
-  card_stats:
-    type: string
-    label: Card Stats
-    description: Power/Toughness or other stats for the card
-    required: true
-    default: ""
-    comfyui:
-      node_id: 308
-      field: inputs
-      subfield: value
-  card_rarity:
-    type: string
-    label: Card Rarity
-    description: Rarity level of the card
-    required: true
-    default: ""
-    comfyui:
-      node_id: 307
-      field: inputs
-      subfield: value
-  cost_opacity:
-    type: float
-    label: Cost Text Opacity
-    description: Opacity of the mana cost text
-    required: false
-    default: 1.0
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 377
-      field: inputs
-      subfield: font_opacity
-  stats_opacity:
-    type: float
-    label: Stats Text Opacity
-    description: Opacity of the power/toughness text
-    required: false
-    default: 1.0
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 144
-      field: inputs
-      subfield: font_opacity
-  lora_sdxl:
-    type: lora
-    label: LoRA SDXL
-    description: Use a custom model (LoRA)
-    tip: name of the custom (SDXL) LoRA model.
-    default: 67a222bae707584b6d669623
-    comfyui:
-      node_id: 174
-      field: inputs
-      subfield: lora_name
-  lora_strength_sdxl:
-    type: float
-    label: LoRA Strength SDXL
-    description: Strength of the LoRA effect on generation
-    required: true
-    default: 0.68
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 179
-      field: inputs
-      subfield: value
-  lora_flux:
-    type: lora
-    label: LoRA FLUX
-    description: Use a custom model (LoRA)
-    tip: name of the custom (SDXL) LoRA model.
-    default: 67a222bae707584b6d669623
-    comfyui:
-      node_id: 201
-      field: inputs
-      subfield: lora_name
-  lora_strength_flux:
-    type: float
-    label: LoRA Strength FLUX
-    description: Strength of the LoRA effect on generation
-    required: true
-    default: 0.0
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 201
-      field: inputs
-      subfield: strength_model
-  controlnet_strength:
-    type: float
-    label: ControlNet Strength
-    description: Strength of the ControlNet guidance
-    tip: |-
-      Controls how strongly the generation follows the reference image. Higher values (closer to 1.0) follow the reference more closely,
-      while lower values allow more creative freedom.
-    required: false
-    default: 0.5
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 180
-      field: inputs
-      subfield: strength
   system_prompt:
     type: string
     label: System Prompt
@@ -438,3 +418,24 @@ parameters:
       node_id: 340
       field: inputs
       subfield: enhancement_instructions
+    negative_prompt:
+    type: string
+    label: Negative Prompt
+    description: Describe what you don't want in the art
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+      Only works with SDXL models
+    required: true
+    default: (text:1.4) signature watermark (words:1.4) sentences letters captions (writing:1.4)
+    comfyui:
+      node_id: 423
+      field: inputs
+      subfield: value
+  background_image_template:
+    type: image
+    label: Background Template
+    description: Template image for ControlNet guidance of border generation
+    comfyui:
+      node_id: 13
+      field: inputs
+      subfield: image
