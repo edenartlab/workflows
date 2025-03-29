@@ -88,57 +88,6 @@ parameters:
       node_id: 74
       field: inputs
       subfield: value
-  mask_image:
-    type: image
-    label: Mask Image
-    description: |-
-      Optionally provide a mask image yourself (white regions will get inpainted).
-      To activate the mask image, make sure your masking prompt is empty!!
-    comfyui:
-      node_id: 48
-      field: inputs
-      subfield: image
-  creativity:
-    type: float
-    label: AI creativity
-    description: How much the surrounding scene influences the inpainting. Recommended values 0.7-0.9
-    tip: |-
-      This controls how much the inpainting looks at the surrounding (fixed) content in the image.
-      Lower values can produce more creative outputs that have better prompt adherence but they often tend to look misplaced and out of context with the rest of the scene.
-    default: 0.85
-    minimum: 0.0
-    maximum: 1.1
-    step: 0.01
-    comfyui:
-      node_id: 226
-      field: inputs
-      subfield: strength
-  mask_expand:
-    type: integer
-    label: Expand the inpainting mask slightly
-    description: Make the inpainting region slightly larger to make the results more realistic
-    tip: |-
-      The default is typically fine. If the masking prompt is targetting a small object, but the inpainting object is something larger, you may want to increase this value to give the inpainting model enough space to draw the new thing. 
-      If the inpainting region needs to be very precise you can very rarely decrease this value to eg 24.
-    default: 12
-    minimum: 0
-    maximum: 64
-    comfyui:
-      node_id: 190
-      field: inputs
-      subfield: expand
-  mask_blur:
-    type: integer
-    label: Blur the inpainting mask at the edges
-    description: Making the inpainting region blurry at the edges can make the results slightly better
-    tip: The default is typically fine. If the mask has lots of fine edges, you can consider tuning this down to avoid erasing the details in the mask.
-    default: 24
-    minimum: 0
-    maximum: 160
-    comfyui:
-      node_id: 191
-      field: inputs
-      subfield: amount
   use_lora:
     type: boolean
     label: Use a trained model
@@ -190,6 +139,57 @@ parameters:
       node_id: 269
       field: inputs
       subfield: Prepend
+  mask_image:
+    type: image
+    label: Mask Image
+    description: |-
+      Optionally provide a mask image yourself (white regions will get inpainted).
+      To activate the mask image, make sure your masking prompt is empty!!
+    comfyui:
+      node_id: 48
+      field: inputs
+      subfield: image
+  creativity:
+    type: float
+    label: AI creativity
+    description: How much the surrounding scene influences the inpainting. Recommended values 0.7-0.9
+    tip: |-
+      This controls how much the inpainting looks at the surrounding (fixed) content in the image.
+      Lower values can produce more creative outputs that have better prompt adherence but they often tend to look misplaced and out of context with the rest of the scene.
+    default: 0.85
+    minimum: 0.0
+    maximum: 1.1
+    step: 0.01
+    comfyui:
+      node_id: 226
+      field: inputs
+      subfield: strength
+  mask_expand:
+    type: integer
+    label: Expand the inpainting mask slightly
+    description: Make the inpainting region slightly larger to make the results more realistic
+    tip: |-
+      The default is typically fine. If the masking prompt is targetting a small object, but the inpainting object is something larger, you may want to increase this value to give the inpainting model enough space to draw the new thing. 
+      If the inpainting region needs to be very precise you can very rarely decrease this value to eg 24.
+    default: 12
+    minimum: 0
+    maximum: 64
+    comfyui:
+      node_id: 190
+      field: inputs
+      subfield: expand
+  mask_blur:
+    type: integer
+    label: Blur the inpainting mask at the edges
+    description: Making the inpainting region blurry at the edges can make the results slightly better
+    tip: The default is typically fine. If the mask has lots of fine edges, you can consider tuning this down to avoid erasing the details in the mask.
+    default: 24
+    minimum: 0
+    maximum: 160
+    comfyui:
+      node_id: 191
+      field: inputs
+      subfield: amount
   seed:
     type: integer
     label: Seed

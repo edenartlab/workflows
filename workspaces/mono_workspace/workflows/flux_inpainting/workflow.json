@@ -2,7 +2,7 @@
   "id": "66c7f228-d65e-410e-928c-d9b76bd204b9",
   "revision": 0,
   "last_node_id": 278,
-  "last_link_id": 478,
+  "last_link_id": 479,
   "nodes": [
     {
       "id": 28,
@@ -132,7 +132,7 @@
         4,
         false,
         "",
-        1046561517943210,
+        1069791406913887,
         "randomize"
       ]
     },
@@ -249,7 +249,7 @@
         102
       ],
       "flags": {},
-      "order": 42,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -395,7 +395,7 @@
         207.9859161376953
       ],
       "flags": {},
-      "order": 33,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -1173,7 +1173,9 @@
         "ver": "0.3.26",
         "Node name for S&R": "PreviewImage"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 201,
@@ -1322,7 +1324,7 @@
         106
       ],
       "flags": {},
-      "order": 37,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -1381,7 +1383,9 @@
         "ver": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
         "Node name for S&R": "MaskPreview+"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 170,
@@ -2108,7 +2112,7 @@
         26
       ],
       "flags": {},
-      "order": 29,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
@@ -2123,9 +2127,7 @@
           "shape": 3,
           "type": "IMAGE",
           "slot_index": 0,
-          "links": [
-            467
-          ]
+          "links": []
         }
       ],
       "properties": {
@@ -2147,7 +2149,7 @@
         178
       ],
       "flags": {},
-      "order": 27,
+      "order": 29,
       "mode": 0,
       "inputs": [
         {
@@ -2376,7 +2378,9 @@
         "ver": "0.3.26",
         "Node name for S&R": "PreviewImage"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 192,
@@ -2437,7 +2441,8 @@
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "Inpaint_mask"
+        "Inpaint_mask",
+        ""
       ]
     },
     {
@@ -2452,7 +2457,7 @@
         284.9778747558594
       ],
       "flags": {},
-      "order": 41,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -2467,7 +2472,9 @@
         "ver": "0.3.26",
         "Node name for S&R": "PreviewImage"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 228,
@@ -2578,55 +2585,6 @@
       ],
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 268,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        5456.15576171875,
-        -435.77587890625
-      ],
-      "size": [
-        307.242431640625,
-        82
-      ],
-      "flags": {},
-      "order": 32,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 458
-        },
-        {
-          "name": "strength_model",
-          "type": "FLOAT",
-          "widget": {
-            "name": "strength_model"
-          },
-          "link": 477
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            459,
-            460
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.26",
-        "Node name for S&R": "LoraLoaderModelOnly"
-      },
-      "widgets_values": [
-        "realism_lora_comfy_converted.safetensors",
-        1.1500000000000001
-      ]
     },
     {
       "id": 269,
@@ -2777,7 +2735,7 @@
         126
       ],
       "flags": {},
-      "order": 31,
+      "order": 32,
       "mode": 4,
       "inputs": [
         {
@@ -2832,7 +2790,7 @@
         130
       ],
       "flags": {},
-      "order": 36,
+      "order": 37,
       "mode": 4,
       "inputs": [
         {
@@ -2865,45 +2823,6 @@
       "bgcolor": "#0b2900"
     },
     {
-      "id": 274,
-      "type": "Eden_Bool",
-      "pos": [
-        5449.4208984375,
-        -569.2537841796875
-      ],
-      "size": [
-        210,
-        75.15776824951172
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "BOOLEAN",
-          "shape": 3,
-          "type": "BOOLEAN",
-          "slot_index": 0,
-          "links": [
-            476
-          ]
-        }
-      ],
-      "title": "use_lora",
-      "properties": {
-        "cnr_id": "eden_comfy_pipelines",
-        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool",
-        "aux_id": "edenartlab/eden_comfy_pipelines"
-      },
-      "widgets_values": [
-        false
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 277,
       "type": "Eden_Float",
       "pos": [
@@ -2917,7 +2836,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2958,7 +2877,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 26,
+      "order": 28,
       "mode": 0,
       "inputs": [
         {
@@ -3014,7 +2933,7 @@
         70
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3042,44 +2961,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 67,
-      "type": "Eden_String",
-      "pos": [
-        2025.05029296875,
-        -662.6041870117188
-      ],
-      "size": [
-        379.25299072265625,
-        129.9491729736328
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 3,
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            379
-          ]
-        }
-      ],
-      "title": "Inpainting Prompt",
-      "properties": {
-        "cnr_id": "eden",
-        "ver": "6c5272c32b913df78349ea58e027a7368e0f4a24",
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "a magnificent white stag"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 227,
       "type": "ControlNetLoader",
       "pos": [
@@ -3091,7 +2972,7 @@
         58
       ],
       "flags": {},
-      "order": 15,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3127,7 +3008,7 @@
         314
       ],
       "flags": {},
-      "order": 16,
+      "order": 14,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3156,7 +3037,7 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "tree-orb.png",
+        "clipspace/clipspace-mask-112903554.1.png [input]",
         "image",
         ""
       ],
@@ -3227,7 +3108,7 @@
         26
       ],
       "flags": {},
-      "order": 34,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -3267,7 +3148,7 @@
         218
       ],
       "flags": {},
-      "order": 28,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -3451,12 +3332,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_ctlbp_00017_.png&type=temp&subfolder=&rand=0.14668963405794022"
+            "url": "/api/view?filename=rgthree.compare._temp_fzjby_00003_.png&type=temp&subfolder=&rand=0.19046713652064118"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_ctlbp_00018_.png&type=temp&subfolder=&rand=0.9535985285581319"
+            "url": "/api/view?filename=rgthree.compare._temp_fzjby_00004_.png&type=temp&subfolder=&rand=0.7139597944457898"
           }
         ]
       ]
@@ -3473,7 +3354,7 @@
         58
       ],
       "flags": {},
-      "order": 17,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3508,7 +3389,7 @@
         26
       ],
       "flags": {},
-      "order": 45,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -3606,7 +3487,7 @@
         246
       ],
       "flags": {},
-      "order": 43,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -3621,7 +3502,9 @@
         "ver": "0.3.26",
         "Node name for S&R": "PreviewImage"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 255,
@@ -3682,10 +3565,10 @@
       ],
       "size": [
         210,
-        235.2509765625
+        246
       ],
       "flags": {},
-      "order": 44,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -3700,7 +3583,9 @@
         "ver": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
         "Node name for S&R": "MaskPreview+"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 260,
@@ -3776,7 +3661,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 46,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -3817,7 +3702,7 @@
         218
       ],
       "flags": {},
-      "order": 40,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -3891,7 +3776,7 @@
         88
       ],
       "flags": {},
-      "order": 18,
+      "order": 16,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3914,13 +3799,13 @@
         26
       ],
       "flags": {},
-      "order": 35,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
           "name": "",
           "type": "*",
-          "link": 467
+          "link": 479
         }
       ],
       "outputs": [
@@ -3931,40 +3816,6 @@
           "links": [
             427
           ]
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      }
-    },
-    {
-      "id": 242,
-      "type": "Reroute",
-      "pos": [
-        2483.531005859375,
-        -39.700191497802734
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 22,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 425
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "IMAGE",
-          "slot_index": 0,
-          "links": []
         }
       ],
       "properties": {
@@ -4072,7 +3923,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 19,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4095,45 +3946,6 @@
       "widgets_values": [
         ""
       ]
-    },
-    {
-      "id": 66,
-      "type": "Eden_String",
-      "pos": [
-        2037.1455078125,
-        -239.5760498046875
-      ],
-      "size": [
-        363.7626037597656,
-        120.81829833984375
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 3,
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            93,
-            369
-          ]
-        }
-      ],
-      "title": "Masking Prompt",
-      "properties": {
-        "cnr_id": "eden",
-        "ver": "6c5272c32b913df78349ea58e027a7368e0f4a24",
-        "Node name for S&R": "Eden_String"
-      },
-      "widgets_values": [
-        "a glass orb"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 47,
@@ -4222,7 +4034,9 @@
         "ver": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
         "Node name for S&R": "MaskPreview+"
       },
-      "widgets_values": []
+      "widgets_values": [
+        ""
+      ]
     },
     {
       "id": 169,
@@ -4305,7 +4119,7 @@
       ],
       "size": [
         315,
-        414
+        626
       ],
       "flags": {},
       "order": 88,
@@ -4349,7 +4163,8 @@
         "false",
         "true",
         "true",
-        "true"
+        "true",
+        ""
       ]
     },
     {
@@ -4380,8 +4195,210 @@
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "Inpaint_preview"
+        "Inpaint_preview",
+        ""
       ]
+    },
+    {
+      "id": 268,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        5456.15576171875,
+        -435.77587890625
+      ],
+      "size": [
+        307.242431640625,
+        82
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 458
+        },
+        {
+          "name": "strength_model",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": 477
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            459,
+            460
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "20241218_1715_xander-step00003000.safetensors",
+        1.1500000000000001
+      ]
+    },
+    {
+      "id": 274,
+      "type": "Eden_Bool",
+      "pos": [
+        5449.4208984375,
+        -569.2537841796875
+      ],
+      "size": [
+        210,
+        75.15776824951172
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
+          "links": [
+            476
+          ]
+        }
+      ],
+      "title": "use_lora",
+      "properties": {
+        "cnr_id": "eden_comfy_pipelines",
+        "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 67,
+      "type": "Eden_String",
+      "pos": [
+        2025.05029296875,
+        -662.6041870117188
+      ],
+      "size": [
+        379.25299072265625,
+        129.9491729736328
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            379
+          ]
+        }
+      ],
+      "title": "Inpainting Prompt",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "6c5272c32b913df78349ea58e027a7368e0f4a24",
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "a man's head in a sphere"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 66,
+      "type": "Eden_String",
+      "pos": [
+        2037.1455078125,
+        -239.5760498046875
+      ],
+      "size": [
+        363.7626037597656,
+        120.81829833984375
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            93,
+            369
+          ]
+        }
+      ],
+      "title": "Masking Prompt",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "6c5272c32b913df78349ea58e027a7368e0f4a24",
+        "Node name for S&R": "Eden_String"
+      },
+      "widgets_values": [
+        "a glass orb"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 242,
+      "type": "Reroute",
+      "pos": [
+        2483.531005859375,
+        -39.700191497802734
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 425
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            479
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
     }
   ],
   "links": [
@@ -5298,14 +5315,6 @@
       "*"
     ],
     [
-      467,
-      166,
-      0,
-      244,
-      0,
-      "*"
-    ],
-    [
       469,
       193,
       0,
@@ -5384,6 +5393,14 @@
       278,
       0,
       "IMAGE"
+    ],
+    [
+      479,
+      242,
+      0,
+      244,
+      0,
+      "*"
     ]
   ],
   "groups": [
@@ -5508,10 +5525,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.4125540478874201,
+      "scale": 1,
       "offset": [
-        -4601.235492807264,
-        966.3896715229691
+        -1275.2294159799412,
+        721.2738965994699
       ]
     },
     "ue_links": [],
