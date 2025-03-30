@@ -25,127 +25,42 @@ parameters:
     default: 1
     minimum: 1
     maximum: 4
-  prompt:
-    type: string
-    label: Art Generation Prompt
-    description: Describe the art you want generated for the card
-    tip: |-
-      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
-    required: true
-    default: comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings
-    comfyui:
-      node_id: 309
-      field: inputs
-      subfield: value
-  negative_prompt:
-    type: string
-    label: Art Generation Prompt
-    description: Describe what you don't want in the art
-    tip: |-
-      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
-      Only works with SDXL models
-    required: true
-    default: (text:1.4) signature watermark (words:1.4) sentences letters captions (writing:1.4)
-    comfyui:
-      node_id: 423
-      field: inputs
-      subfield: value
-  seed:
-    type: integer
-    label: Generation Seed
-    description: Set random seed for reproducible art generation
-    tip: |-
-      Leave blank for random results. Set a specific seed to reproduce previous generations.
-    default: random
-    minimum: 0
-    maximum: 2147483647
-    comfyui:
-      node_id: 425
-      field: inputs
-      subfield: seed
-  use_rendered_art:
-    type: boolean
-    label: Use Pre-rendered Art
-    description: Toggle between generating new art or using an existing rendered image
-    required: false
-    default: false
-    comfyui:
-      node_id: 117
-      field: inputs
-      subfield: value
-  rendered_card_art:
-    type: image
-    label: Rendered Card Art
-    description: Pre-rendered art image to use for the card
-    required: false
-    visible_if: use_rendered_art=true
-    comfyui:
-      node_id: 12
-      field: inputs
-      subfield: image
-  use_flux_art:
-    type: boolean
-    label: Use Flux Art Generation
-    description: Toggle between SDXL and Flux art generation
-    required: false
-    default: false
-    comfyui:
-      node_id: 271
-      field: inputs
-      subfield: value
-  use_rendered_background:
-    type: boolean
-    label: Use Pre-rendered Background
-    description: Toggle between generating new background or using an existing rendered image
-    required: false
-    default: false
-    comfyui:
-      node_id: 260
-      field: inputs
-      subfield: value
-  rendered_card_background:
-    type: image
-    label: Rendered Card Background
-    description: Pre-rendered background image to use for the card
-    required: false
-    visible_if: use_rendered_background=true
-    comfyui:
-      node_id: 258
-      field: inputs
-      subfield: image
-  use_flux_background:
-    type: boolean
-    label: Use Flux Background Generation
-    description: Toggle between SDXL and Flux background generation
-    required: false
-    default: false
-    comfyui:
-      node_id: 287
-      field: inputs
-      subfield: value
-  background_image_template:
-    type: image
-    label: Background Template
-    description: Template image for ControlNet guidance of border generation
-    comfyui:
-      node_id: 13
-      field: inputs
-      subfield: image
   card_name:
     type: string
     label: Card Name
     description: Name of the card
     required: true
-    default: "CARD_NAME"
+    default: ""
     comfyui:
       node_id: 313
+      field: inputs
+      subfield: value
+  prompt_art:
+    type: string
+    label: Prompt Art
+    description: Describe the art you want generated for the card
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+    default: ""
+    comfyui:
+      node_id: 309
+      field: inputs
+      subfield: value
+   prompt_background:
+    type: string
+    label: Prompt Background Art
+    description: Describe the art you want generated for the card
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+    default: comic book dark fantasy style, thick thick thick bold linework, illustration, Steve, the dissapointed Manager of the garden of eden stares disapprovingly, obscure symbols glowing on the stone floor, shadows flickering around, candles illuminating the scene with warm light., the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, embedding:froyd7sinsmodel_sdxl_embeddings
+    comfyui:
+      node_id: 309
       field: inputs
       subfield: value
   card_type:
     type: string
     label: Card Type
     description: Type and subtype of the card
-    required: true
     default: ""
     comfyui:
       node_id: 312
@@ -155,7 +70,6 @@ parameters:
     type: string
     label: Card Cost
     description: Mana cost of the card
-    required: true
     default: "{0}"
     comfyui:
       node_id: 304
@@ -165,7 +79,6 @@ parameters:
     type: string
     label: Card Description
     description: Main text/description for the card
-    required: true
     default: ""
     comfyui:
       node_id: 305
@@ -175,7 +88,6 @@ parameters:
     type: string
     label: Flavor Text
     description: Flavor text for the card
-    required: true
     default: ""
     comfyui:
       node_id: 306
@@ -185,7 +97,6 @@ parameters:
     type: string
     label: Card Stats
     description: Power/Toughness or other stats for the card
-    required: true
     default: ""
     comfyui:
       node_id: 308
@@ -195,7 +106,6 @@ parameters:
     type: string
     label: Card Rarity
     description: Rarity level of the card
-    required: true
     default: ""
     comfyui:
       node_id: 307
@@ -205,7 +115,6 @@ parameters:
     type: float
     label: Cost Text Opacity
     description: Opacity of the mana cost text
-    required: false
     default: 1.0
     minimum: 0.0
     maximum: 1.0
@@ -239,7 +148,6 @@ parameters:
     type: float
     label: LoRA Strength SDXL
     description: Strength of the LoRA effect on generation
-    required: true
     default: 0.68
     minimum: 0.0
     maximum: 1.0
@@ -261,7 +169,6 @@ parameters:
     type: float
     label: LoRA Strength FLUX
     description: Strength of the LoRA effect on generation
-    required: true
     default: 0.0
     minimum: 0.0
     maximum: 1.0
@@ -276,7 +183,6 @@ parameters:
     tip: |-
       Controls how strongly the generation follows the reference image. Higher values (closer to 1.0) follow the reference more closely,
       while lower values allow more creative freedom.
-    required: false
     default: 0.5
     minimum: 0.0
     maximum: 1.0
@@ -284,6 +190,80 @@ parameters:
       node_id: 180
       field: inputs
       subfield: strength
+  seed:
+    type: integer
+    label: Generation Seed
+    description: Set random seed for reproducible art generation
+    tip: |-
+      Leave blank for random results. Set a specific seed to reproduce previous generations.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 425
+      field: inputs
+      subfield: seed
+  use_rendered_art:
+    type: boolean
+    label: Use Pre-rendered Art
+    description: Toggle between generating new art or using an existing rendered image
+    required: false
+    default: false
+    comfyui:
+      node_id: 117
+      field: inputs
+      subfield: value
+  rendered_card_art:
+    type: image
+    label: Rendered Card Art
+    description: Pre-rendered art image to use for the card
+    required: false
+    default: false
+    visible_if: use_rendered_art=true
+    comfyui:
+      node_id: 12
+      field: inputs
+      subfield: image
+  use_flux_art:
+    type: boolean
+    label: Use Flux Art Generation
+    description: Toggle between SDXL and Flux art generation
+    required: false
+    default: false
+    comfyui:
+      node_id: 271
+      field: inputs
+      subfield: value
+  use_rendered_background:
+    type: boolean
+    label: Use Pre-rendered Background
+    description: Toggle between generating new background or using an existing rendered image
+    required: false
+    default: false
+    comfyui:
+      node_id: 287
+      field: inputs
+      subfield: value
+  rendered_card_background:
+    type: image
+    label: Rendered Card Background
+    description: Pre-rendered background image to use for the card
+    required: false
+    visible_if: use_rendered_background=true
+    comfyui:
+      node_id: 258
+      field: inputs
+      subfield: image
+  use_flux_background:
+    type: boolean
+    label: Use Flux Background Generation
+    description: Toggle between SDXL and Flux background generation
+    required: false
+    default: false
+    comfyui:
+      node_id: 260
+      field: inputs
+      subfield: value
   system_prompt:
     type: string
     label: System Prompt
@@ -438,3 +418,24 @@ parameters:
       node_id: 340
       field: inputs
       subfield: enhancement_instructions
+    negative_prompt:
+    type: string
+    label: Negative Prompt
+    description: Describe what you don't want in the art
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+      Only works with SDXL models
+    required: true
+    default: (text:1.4) signature watermark (words:1.4) sentences letters captions (writing:1.4)
+    comfyui:
+      node_id: 423
+      field: inputs
+      subfield: value
+  background_image_template:
+    type: image
+    label: Background Template
+    description: Template image for ControlNet guidance of border generation
+    comfyui:
+      node_id: 13
+      field: inputs
+      subfield: image
