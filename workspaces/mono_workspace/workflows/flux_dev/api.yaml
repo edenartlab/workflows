@@ -14,6 +14,15 @@ comfyui_output_node_id: 470
 comfyui_intermediate_outputs:
   controlnet_guidance: 342
 parameters:
+  n_samples:
+      type: integer
+      label: Number of samples
+      description: Number of samples to generate
+      tip: |-
+        This is the number of outputs generated for this prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+      default: 1
+      minimum: 1
+      maximum: 4
   prompt:
     type: string
     label: Prompt
@@ -274,7 +283,8 @@ parameters:
     label: Fast mode strength
     description: Strength setting when using fast mode
     tip: |-
-      Only applies when manual quality settings are disabled.
+      The strength of turbo LoRA. 12 inference steps and .66 strength is a good tradeoff between speed and quality.
+      When using manual quality settings, this value is ignored.
       Lower values produce faster but potentially lower quality results.
     default: 0.0
     minimum: 0.0
@@ -339,15 +349,6 @@ parameters:
       node_id: 330
       field: inputs
       subfield: seed
-  n_samples:
-    type: integer
-    label: Number of samples
-    description: Number of samples to generate
-    tip: |-
-      This is the number of outputs generated for this prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
-    default: 1
-    minimum: 1
-    maximum: 4
   steps:
     type: integer
     label: Steps
@@ -360,7 +361,7 @@ parameters:
     minimum: 1
     maximum: 35
     comfyui:
-      node_id: 393
+      node_id: 449
       field: inputs
       subfield: steps
   flux_guidance:

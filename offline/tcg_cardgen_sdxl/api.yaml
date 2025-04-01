@@ -1,4 +1,4 @@
-name: TCG Card Generator (FLUX)
+name: TCG Card Generator (SDXL)
 description: Create a custom TCG card with background art generation and card layout composition.
 tip: |-
   This tool generates custom TCG cards. You can either generate new card art or use an existing rendered image.
@@ -9,7 +9,7 @@ output_type: image
 handler: comfyui
 active: true
 visible: true
-base_model: flux-dev
+base_model: sdxl
 comfyui_output_node_id: 401
 comfyui_intermediate_outputs:
   card_art: 406
@@ -129,9 +129,7 @@ parameters:
     type: string
     label: Card Cost
     description: Mana cost of the card
-    tip: |-
-      This should be a string wrapped in brackets representing the major color families.
-      The form {4}{W}{U}{B}{R}{G} for the card to render tradition MTG style mana cost.
+    tip: This should be a string of the form {4}{W}{U}{B}{R}{G} for the card to render tradition MTG style mana cost.
     default: ""
     comfyui:
       node_id: 304
@@ -156,7 +154,7 @@ parameters:
     tip: |-
       Turn this on if you want to use a flux model for the card art. 
       This should be true if using a flux lora model.
-    default: true
+    default: false
     comfyui:
       node_id: 271
       field: inputs
@@ -168,7 +166,7 @@ parameters:
     tip: |-
       Turn this on if you want to use a flux model for the background card frame and art. 
       This should be true if using a flux lora model.
-    default: true
+    default: false
     comfyui:
       node_id: 260
       field: inputs
@@ -178,8 +176,6 @@ parameters:
     label: LoRA SDXL
     description: Use a custom model (LoRA)
     tip: name of the custom (SDXL) LoRA model.
-    hide_from_ui: true
-    hide_from_agent: true
     comfyui:
       node_id: 174
       field: inputs
@@ -192,8 +188,6 @@ parameters:
     default: 0.00
     minimum: 0.0
     maximum: 1.0
-    hide_from_ui: true
-    hide_from_agent: true
     comfyui:
       node_id: 179
       field: inputs
@@ -203,10 +197,12 @@ parameters:
     label: LoRA FLUX
     description: Use a custom model (LoRA)
     tip: name of the custom FLUX LoRA model.
+    hide_from_ui: true
+    hide_from_agent: true
     comfyui:
       node_id: 201
       field: inputs
-      subfield: lora_name
+      subfield: opacity
   lora_strength_flux:
     type: float
     label: LoRA Strength FLUX
@@ -215,10 +211,53 @@ parameters:
     default: 0.0
     minimum: 0.0
     maximum: 1.0
+    hide_from_ui: true
+    hide_from_agent: true
     comfyui:
       node_id: 201
       field: inputs
       subfield: strength_model
+  controlnet_strength:
+    type: float
+    label: ControlNet Strength
+    description: Strength of the ControlNet guidance
+    tip: |-
+      Controls how strongly the background art generation follows the reference image. 
+      Higher values (closer to 1.0) follow the reference more closely, while lower values allow more creative freedom.
+    default: 0.5
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 180
+      field: inputs
+      subfield: strength
+  denoise:
+    type: float
+    label: Flux BG Denoise
+    description: Strength of the I2I frame template blend when using flux background generation
+    tip: |-
+      Controls how strongly the background art generation denoises the reference template. 
+      Higher values (closer to 1.0) follow the reference more closely, while lower values allow more creative freedom.
+      For SDXL, the sweet spot is about 0.93.
+    default: 0.93
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 205
+      field: inputs
+      subfield: denoise
+  seed:
+    type: integer
+    label: Generation Seed
+    description: Set random seed for reproducible art generation
+    tip: Leave blank for random results. Set a specific seed to reproduce previous generations.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 425
+      field: inputs
+      subfield: seed
   use_rendered_art:
     type: boolean
     label: Use Pre-rendered Art
@@ -265,18 +304,6 @@ parameters:
       node_id: 258
       field: inputs
       subfield: image
-  seed:
-    type: integer
-    label: Generation Seed
-    description: Set random seed for reproducible art generation
-    tip: Leave blank for random results. Set a specific seed to reproduce previous generations.
-    default: random
-    minimum: 0
-    maximum: 2147483647
-    comfyui:
-      node_id: 425
-      field: inputs
-      subfield: seed
   system_prompt:
     type: string
     label: System Prompt
@@ -285,107 +312,109 @@ parameters:
       The system prompt that guides the card generation process. This controls the overall style, theme, and behavior of the card generation.
       The default prompt includes necessary logic regarding outputs that the workflow expects; if its to be changed, make sure to include this logic no matter what.
     default: |-
+      <> is the theme if this round of cards.
+      use influence from the other thematic elements below to help craft a strong card. respect input that looks like its a final user submission, 
+      but take blanks or low effort inputs and make them great, hillarious, interesting, beautiful, aesthetic, demented or twisted. 
+      
       any color, any card type, any ability or flavor. You should be a mtg creature with a recognizeable flavor, an odd modern or darkly humorous twist, a spell or enchantment, bomb or cantrip with with good flavor. not every spell is a winner, some are really powerful and others quite stupid.
 
       This game is a MTG parody set in the desert near the Salton Sea at Mars College just outside of Bombay Beach California, at Mars College, a research institute for AI enthusiasts, off gridders and hippy/philosopher types. Some of the in joke references are here; Use this information in helping generate cards or interacting with user card prompts. 
       
       Vanlifers and techies live in an off grid bombed out beach town going on adventures, attempting to solve conflicts and reinvent governence, ride electric unicycles, and dance. be creative, irreverent, and exasperate the off grid problems of low privacy, survival cos play and the tropes of cyber techie future optimistic off grid high tech low cost living. Jokes and card ideas to draw inspiration from. make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lews or blue, and should always be clever
 
-      Townies
-      Day Jobbers
-      Dirty Dishes
-      Part‑Timers
-      Tool Campers
-      Finish Your Projects
-      Workshops
-      Trash Day
-      Day 45
-      Chihuahua Town
-      Kitchen Grandma
-      Colorado Boys
-      WiFi Password
-      Pseudo Scientists
-      Chibafication
-      Will
-      AI Camp
-      All Night Hackathon
-      Seva
-      Hacker Night
-      AI Film Festival
-      Unfinished Project
-      The Simulation
-      WiFi Down
-      All Black Everything
-      Freeloaders
-      Alejandro the Darkest
-      Scorpion Hunt
-      Dark Arts Faculty Club
-      Black Metal Jam
-      Crypto Grifters
-      Flypocalypse
-      Cult of AI Accelerationists
-      Mahashivaratri
-      Violent Women's Brunch
-      JMill (For Hire)
-      Thunder Talks
-      Lightning Talks
-      Spark Talks
-      Dance Party
-      Bangers
-      Steak Night
-      Mars Web
-      Wooks
-      The Raphalots
-      Xander
-      Rapha is Bored
-      Ritual Theater
-      Sunflower Lab
-      Body Campers
-      Freesiders
-      Hippies
-      Crystal Hippies
-      Woo Cult
-      Oatka
-      Winco Run
-      Local Legends
-      Saturnites
-      Eden Art Lab
-      Solar Shower
-      2x4
-      4x8
-      Hex Bit
-      Dewalt Battery
-      Laptop Charger
-      USB C Cable
-      Wireless Mouse
-      Raspberry Pi
-      Screens
-      Mechanical Duck
-      The Mars NAS
-      Suss Tea
-      The Desert
-      Mars
-      The Institute
-      Ass Camp
-      Club 86
-      Sub Club
-      Tool Camp
-      Electric Lounge
-      Cipher Temple
-      Slab Cities
-      Tao Ruspoli
-      Bombay Beach Biennale
-      Vincent the 'Mancer
-      Cat
-      Gene Kogan
-      Vanessa
-      Cyberpunks
-
-      for this round, use Garden of Eden themed card names   
+      Townies 
+      Day Jobbers 
+      Dirty Dishes 
+      Part‑Timers 
+      Tool Campers 
+      Finish Your Projects 
+      Workshops 
+      Trash Day 
+      Day 45 
+      Chihuahua Town 
+      Kitchen Grandma 
+      Colorado Boys 
+      WiFi Password 
+      Pseudo Scientists 
+      Chibafication 
+      Will 
+      AI Camp 
+      All Night Hackathon 
+      Seva 
+      Hacker Night 
+      AI Film Festival 
+      Unfinished Project 
+      The Simulation 
+      WiFi Down 
+      All Black Everything 
+      Freeloaders 
+      Alejandro the Darkest 
+      Scorpion Hunt 
+      Dark Arts Faculty Club 
+      Black Metal Jam 
+      Crypto Grifters 
+      Flypocalypse 
+      Cult of AI Accelerationists 
+      Mahashivaratri 
+      Violent Women's Brunch 
+      JMill (For Hire) 
+      Thunder Talks 
+      Lightning Talks 
+      Spark Talks 
+      Dance Party 
+      Bangers 
+      Steak Night 
+      Mars Web 
+      Wooks 
+      The Raphalots 
+      Xander 
+      Rapha is Bored 
+      Ritual Theater 
+      Sunflower Lab 
+      Body Campers 
+      Freesiders 
+      Hippies 
+      Crystal Hippies 
+      Woo Cult 
+      Oatka 
+      Winco Run 
+      Local Legends 
+      Saturnites 
+      Eden Art Lab 
+      Solar Shower 
+      2x4 
+      4x8 
+      Hex Bit 
+      Dewalt Battery 
+      Laptop Charger 
+      USB C Cable 
+      Wireless Mouse 
+      Raspberry Pi 
+      Screens 
+      Mechanical Duck 
+      The Mars NAS 
+      Suss Tea 
+      The Desert 
+      Mars 
+      The Institute 
+      Ass Camp 
+      Club 86 
+      Sub Club 
+      Tool Camp 
+      Electric Lounge 
+      Cipher Temple 
+      Slab Cities 
+      Tao Ruspoli 
+      Bombay Beach Biennale 
+      Vincent the 'Mancer 
+      Cat 
+      Gene Kogan 
+      Vanessa 
+      Cyberpunks 
     comfyui:
-      node_id: 451
+      node_id: 444
       field: inputs
-      subfield: value
+      subfield: body
   speed_quality_tradeoff:
     type: float
     label: Flux Speed <-> Quality
@@ -462,9 +491,13 @@ parameters:
     maximum: 35
     visible_if: use_manual_quality=true
     comfyui:
-      node_id: 447
+      node_id: 368
       field: inputs
-      subfield: value
+      subfield: steps
+      remap:
+      - node_id: 187
+        field: inputs
+        subfield: steps
   steps_flux:
     type: integer
     label: Steps Flux
@@ -495,9 +528,13 @@ parameters:
     maximum: 4.0
     step: 0.01
     comfyui:
-      node_id: 448
+      node_id: 215
       field: inputs
-      subfield: value
+      subfield: guidance
+      remap:
+      - node_id: 267
+        field: inputs
+        subfield: guidance
   negative_prompt:
     type: string
     label: Negative Prompt
@@ -524,32 +561,3 @@ parameters:
       node_id: 13
       field: inputs
       subfield: image
-  controlnet_strength:
-    type: float
-    label: ControlNet Strength
-    description: Strength of the ControlNet guidance
-    tip: |-
-      Controls how strongly the background art generation follows the reference image. 
-      Higher values (closer to 1.0) follow the reference more closely, while lower values allow more creative freedom.
-    default: 0.5
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 180
-      field: inputs
-      subfield: strength
-  denoise:
-    type: float
-    label: Flux BG Denoise
-    description: Strength of the I2I frame template blend when using flux background generation
-    tip: |-
-      Controls how strongly the background art generation denoises the reference template. 
-      Higher values (closer to 1.0) follow the reference more closely, while lower values allow more creative freedom.
-      For SDXL, the sweet spot is about 0.93.
-    default: 0.93
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 205
-      field: inputs
-      subfield: denoise
