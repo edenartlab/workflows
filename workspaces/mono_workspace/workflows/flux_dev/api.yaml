@@ -156,6 +156,17 @@ parameters:
       node_id: 104
       field: inputs
       subfield: preprocessor
+  bypass_preprocessor:
+    type: boolean
+    label: Bypass preprocessor
+    description: Use Init Image as Controlnet guidance
+    tip: |-
+      Activate this to use the starting image as controlnet guidance.
+    default: false
+    comfyui:
+      node_id: 476
+      field: inputs
+      subfield: value
   controlnet_strength:
     type: float
     label: Controlnet strength

@@ -206,7 +206,7 @@
         0
       ],
       "latent_image": [
-        "434",
+        "426",
         0
       ]
     },
@@ -234,40 +234,6 @@
     "class_type": "WidthHeightPicker",
     "_meta": {
       "title": "clamp_max_resolution"
-    }
-  },
-  "61": {
-    "inputs": {
-      "mode": false,
-      "a": [
-        "10",
-        0
-      ],
-      "b": [
-        "60",
-        0
-      ]
-    },
-    "class_type": "ImpactMinMax",
-    "_meta": {
-      "title": "clamp_width"
-    }
-  },
-  "62": {
-    "inputs": {
-      "mode": false,
-      "a": [
-        "11",
-        0
-      ],
-      "b": [
-        "60",
-        1
-      ]
-    },
-    "class_type": "ImpactMinMax",
-    "_meta": {
-      "title": "clamp_height"
     }
   },
   "80": {
@@ -396,8 +362,7 @@
   },
   "145": {
     "inputs": {
-      "image": "black_dummy.jpg",
-      "upload": "image"
+      "image": "black_dummy.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -481,7 +446,7 @@
     "inputs": {
       "output": "",
       "source": [
-        "61",
+        "442",
         0
       ]
     },
@@ -494,7 +459,7 @@
     "inputs": {
       "output": "",
       "source": [
-        "62",
+        "443",
         0
       ]
     },
@@ -605,24 +570,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SD Any Converter"
-    }
-  },
-  "233": {
-    "inputs": {
-      "mode": false,
-      "a": [
-        "328",
-        1
-      ],
-      "b": [
-        "328",
-        2
-      ]
-    },
-    "class_type": "ImpactMinMax",
-    "_meta": {
-      "title": "ImpactMinMax"
+      "title": "SDAnyConverter"
     }
   },
   "238": {
@@ -703,7 +651,8 @@
       "text": [
         "311",
         0
-      ]
+      ],
+      "text2": "preprocessor_lineart"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -727,7 +676,7 @@
     "inputs": {
       "menu": "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
       "delimiter": ",",
-      "select_item": "lineart"
+      "select_item": "canny"
     },
     "class_type": "DRMBT_String_Item_Menu",
     "_meta": {
@@ -741,7 +690,7 @@
         0
       ],
       "resolution": [
-        "233",
+        "444",
         0
       ],
       "image": [
@@ -836,7 +785,8 @@
       "text": [
         "370",
         0
-      ]
+      ],
+      "text2": "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant"
     },
     "class_type": "ShowText|pysssss",
     "_meta": {
@@ -917,7 +867,7 @@
         0
       ],
       "on_false": [
-        "61",
+        "442",
         0
       ]
     },
@@ -937,7 +887,7 @@
         1
       ],
       "on_false": [
-        "62",
+        "443",
         0
       ]
     },
@@ -1013,7 +963,7 @@
         0
       ],
       "image": [
-        "284",
+        "448",
         0
       ]
     },
@@ -1050,7 +1000,7 @@
   "366": {
     "inputs": {
       "image": [
-        "284",
+        "448",
         0
       ]
     },
@@ -1171,24 +1121,11 @@
       "title": "Load Checkpoint"
     }
   },
-  "412": {
-    "inputs": {
-      "filename_prefix": "sdxl_eden_img",
-      "images": [
-        "210",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
   "416": {
     "inputs": {
       "filename_prefix": "controlnet",
       "images": [
-        "284",
+        "448",
         0
       ]
     },
@@ -1365,8 +1302,7 @@
   },
   "430": {
     "inputs": {
-      "image": "black_dummy.jpg",
-      "upload": "image"
+      "image": "black_dummy.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -1399,28 +1335,11 @@
   },
   "433": {
     "inputs": {
-      "image": "black_dummy.jpg",
-      "upload": "image"
+      "image": "black_dummy.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "dummy"
-    }
-  },
-  "434": {
-    "inputs": {
-      "image": "$434-0",
-      "preview_method": "Latent2RGB-SDXL",
-      "block": false,
-      "restore_mask": "never",
-      "latent": [
-        "426",
-        0
-      ]
-    },
-    "class_type": "PreviewBridgeLatent",
-    "_meta": {
-      "title": "Preview Bridge (Latent)"
     }
   },
   "436": {
@@ -1432,7 +1351,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SD Any Converter"
+      "title": "SDAnyConverter"
     }
   },
   "437": {
@@ -1444,7 +1363,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SD Any Converter"
+      "title": "SDAnyConverter"
     }
   },
   "438": {
@@ -1516,6 +1435,133 @@
     "class_type": "LoraLoader",
     "_meta": {
       "title": "Load LoRA"
+    }
+  },
+  "442": {
+    "inputs": {
+      "text": "min(%aux%, %aux2%)",
+      "output_type": "FORMULA",
+      "aux": [
+        "10",
+        0
+      ],
+      "aux2": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "clamp width"
+    }
+  },
+  "443": {
+    "inputs": {
+      "text": "min(%aux%, %aux2%)",
+      "output_type": "FORMULA",
+      "aux": [
+        "11",
+        0
+      ],
+      "aux2": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "clamp height"
+    }
+  },
+  "444": {
+    "inputs": {
+      "text": "min(%aux%, %aux2%)",
+      "output_type": "FORMULA",
+      "aux": [
+        "328",
+        1
+      ],
+      "aux2": [
+        "328",
+        2
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "preprocessor resolution"
+    }
+  },
+  "446": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "bypass_preprocessor"
+    }
+  },
+  "447": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "446",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to int"
+    }
+  },
+  "448": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "447",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "284",
+        0
+      ],
+      "input2": [
+        "430",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch bypass preprocesor"
+    }
+  },
+  "449": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
+      "filename_prefix": "ComfyUI",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
     }
   }
 }

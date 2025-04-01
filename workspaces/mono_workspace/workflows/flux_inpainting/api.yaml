@@ -59,7 +59,6 @@ parameters:
       When activating this, you can typically reduce mask_expand and mask_blur to zero.
       Make sure to leave masking_prompt empty when activating this!
     default: false
-    hide_from_ui: true
     comfyui:
       node_id: 256
       field: inputs
@@ -70,7 +69,6 @@ parameters:
     description: By default, activating 'activate_rembg' will inpaint the background. Set this to true if you want to inpaint the foreground instead.
     visible_if: activate_rembg=true
     default: false
-    hide_from_ui: true
     comfyui:
       node_id: 261
       field: inputs
@@ -136,9 +134,9 @@ parameters:
     default: ""
     visible_if: use_lora=true
     comfyui:
-      node_id: 269
+      node_id: 280
       field: inputs
-      subfield: Prepend
+      subfield: value
   mask_image:
     type: image
     label: Mask Image

@@ -89,7 +89,7 @@
     },
     "class_type": "Switch mask [Crystools]",
     "_meta": {
-      "title": "🪛 Switch mask"
+      "title": "Use masking prompt"
     }
   },
   "48": {
@@ -103,7 +103,7 @@
   },
   "53": {
     "inputs": {
-      "image": "clipspace/clipspace-mask-112903554.1.png [input]"
+      "image": "65f626f9a5fdc49aafa62922d13fce77a9e9cc8e4eb30260abd347cd136bd47b.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -143,7 +143,7 @@
   },
   "65": {
     "inputs": {
-      "seed": 100
+      "seed": 0
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -152,7 +152,7 @@
   },
   "66": {
     "inputs": {
-      "value": "a glass orb"
+      "value": ""
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -323,12 +323,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_fzjby_00003_.png&type=temp&subfolder=&rand=0.19046713652064118"
+            "url": "/api/view?filename=rgthree.compare._temp_hxcbd_00003_.png&type=temp&subfolder=&rand=0.20008035035405158"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_fzjby_00004_.png&type=temp&subfolder=&rand=0.7139597944457898"
+            "url": "/api/view?filename=rgthree.compare._temp_hxcbd_00004_.png&type=temp&subfolder=&rand=0.17060258729687527"
           }
         ]
       },
@@ -570,7 +570,7 @@
     "inputs": {
       "output": "",
       "source": [
-        "269",
+        "197",
         0
       ]
     },
@@ -673,7 +673,7 @@
     },
     "class_type": "Eden_Compare",
     "_meta": {
-      "title": "Masking Prompt is Empty"
+      "title": "Masking Prompt Given"
     }
   },
   "217": {
@@ -783,7 +783,7 @@
   },
   "227": {
     "inputs": {
-      "control_net_name": "FLUX.1/FLUX.1-dev-Controlnet-Inpainting-Alpha.safetensors"
+      "control_net_name": "FLUX.1/FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -793,11 +793,11 @@
   "228": {
     "inputs": {
       "clip_l": [
-        "269",
+        "279",
         0
       ],
       "t5xxl": [
-        "269",
+        "279",
         0
       ],
       "guidance": 3.5,
@@ -1118,20 +1118,6 @@
       "title": "LoraLoaderModelOnly"
     }
   },
-  "269": {
-    "inputs": {
-      "Prepend": "",
-      "Append": [
-        "197",
-        0
-      ],
-      "Delimiter": ", "
-    },
-    "class_type": "DF_String_Concatenate",
-    "_meta": {
-      "title": "trigger_text"
-    }
-  },
   "272": {
     "inputs": {
       "image": [
@@ -1216,6 +1202,57 @@
     "class_type": "Image Save",
     "_meta": {
       "title": "Image Save"
+    }
+  },
+  "279": {
+    "inputs": {
+      "text": "%aux%, %aux2%",
+      "output_type": "ANY",
+      "aux": [
+        "280",
+        0
+      ],
+      "aux2": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "concat"
+    }
+  },
+  "280": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "trigger_text"
+    }
+  },
+  "282": {
+    "inputs": {
+      "mask": [
+        "263",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "283": {
+    "inputs": {
+      "mask": [
+        "260",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
     }
   }
 }

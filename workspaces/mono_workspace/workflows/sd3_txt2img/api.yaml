@@ -12,9 +12,10 @@ output_type: image
   approximately 1 megapixel and round to numbers that are divisible by 8.
 output_type: image
 cost_estimate: 3 * n_samples
-thumbnail: ''
-status: prod
+thumbnail: app/SD3.jpeg
+status: stage
 visible: true
+active: true
 resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
 handler: comfyui
 base_model: sd35
@@ -40,6 +41,18 @@ parameters:
     required: true
     comfyui:
       node_id: 16
+      field: inputs
+      subfield: text
+  negative_prompt:
+    type: string
+    label: Negative Prompt
+    description: Negative prompt to describe what you do not want to generate.
+    tip: |-
+      Negative prompts are used to guide the generation of detailed and cohesive visual descriptions.
+      Describe what you do not want to generate in the image.
+    required: false
+    comfyui:
+      node_id: 40
       field: inputs
       subfield: text
   width:
@@ -90,7 +103,7 @@ parameters:
     description: Set the number of diffusion steps
     tip: |-
       The default value is sufficient for most jobs, but at a speed cost can be increased, or decreased to undercook the image generation.
-    default: 25
+    default: 20
     step: 1
     minimum: 10
     maximum: 50
@@ -98,3 +111,30 @@ parameters:
       node_id: 3
       field: inputs
       subfield: steps
+  cfg:
+    type: float
+    label: CFG
+    hide_from_ui: true
+    hide_from_agent: true
+    description: Strength of the prompt and image conditiong influence on the creation result.
+    tip: |-
+      This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a lower value of 2.0-2.5 may be desirable, and for realistic images closer to 3.0 is a good value, with an extreme minimum around 1.5. Higher values will more closely follow the input text and produce clean images but also have less diversity.
+    default: 4.0
+    minimum: 1.0
+    maximum: 8.0
+    step: 0.05
+    comfyui:
+      node_id: 3
+      field: inputs
+      subfield: cfg
+  SD_model:
+    type: string
+    label: SD Model
+    description: Pick which SDXL model to use
+    hide_from_agent: true
+    default: SD3.5/sd3.5_large_turbo.safetensors
+    choices: [SD3.5/sd3.5_large_turbo.safetensors, SD3.5/sd3.5_large_fp8_scaled.safetensors]
+    comfyui:
+      node_id: 4
+      field: inputs
+      subfield: ckpt_name
