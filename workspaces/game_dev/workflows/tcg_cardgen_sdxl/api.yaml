@@ -3,7 +3,7 @@ description: Create a custom TCG card with background art generation and card la
 tip: |-
   This tool generates custom TCG cards. You can either generate new card art or use an existing rendered image.
   The workflow combines generated or supplied art with card template elements including card type, rarity, and card text.
-thumbnail: app/temple-abyss-card_opt.jpg
+thumbnail: app/tcg_cardgen_sdxl.jpg
 cost_estimate: 3.0 * n_samples
 output_type: image
 handler: comfyui
@@ -24,11 +24,111 @@ parameters:
     default: 1
     minimum: 1
     maximum: 4
+  prompt:
+    type: string
+    label: System Prompt
+    description: Describe any relevant information about the card you want to create.
+    tip: |-
+      The system prompt that guides the card generation process. This controls the overall style, theme, and behavior of the card generation.
+      The default prompt includes necessary logic regarding outputs that the workflow expects; if its to be changed, make sure to include this logic no matter what.
+    required: true
+    comfyui:
+      node_id: 451
+      field: inputs
+      subfield: value
+  use_lora:
+    type: boolean
+    label: Use custom model
+    description: Toggle between using a custom LoRA model or not
+    tip: |-
+      If you want to use a custom LoRA model, turn this on. 
+      This endpoint can only use SDXL LoRAs, there's another endpoint for Flux LoRAs.
+    default: false
+    required: true
+    comfyui:
+      node_id: 483
+      field: inputs
+      subfield: value
+  lora_strength:
+    type: float
+    label: LoRA Strength SDXL
+    description: Strength of the SDXL LoRA effect on generation
+    tip: This should be between .4 and 1.15 if using an SDXL LoRA model, with 0.85 being the default.
+    default: 0.85
+    minimum: 0.0
+    maximum: 1.15
+    required: true
+    visible_if: use_lora=true
+    comfyui:
+      node_id: 179
+      field: inputs
+      subfield: value
+  lora_sdxl:
+    type: lora
+    label: LoRA SDXL
+    description: Use a custom model (LoRA)
+    tip: |-
+      name of the custom (SDXL) LoRA model.
+      This only has an effect if use_lora is true and use_sdxl is true.
+    visible_if: use_lora=true
+    hide_from_ui: true
+    hide_from_agent: true
+    comfyui:
+      node_id: 174
+      field: inputs
+      subfield: lora_name
+  lora_flux:
+    type: lora
+    label: LoRA FLUX
+    description: Use a custom model (LoRA)
+    tip: |-
+      name of the custom FLUX LoRA model. 
+      This only has an effect if use_lora is true and use_flux is true.
+    visible_if: use_lora=true
+    comfyui:
+      node_id: 201
+      field: inputs
+      subfield: lora_name
+  world_prompt:
+    type: string
+    label: World Prompt
+    description: Worldbuilding prompt for the universe of the game.
+    tip: |-
+      The world prompt that guides the card generation process. This controls the overall style, theme, and behavior of the card generation.
+      Verbosity is key here.
+    default: |-
+
+      world building prompt:
+
+      The world you're crafting in is the universe of Mars College, an off grid encampment in the desert near the Salton Sea just outside of Bombay Beach California 
+
+      Mars College is a research institute for AI enthusiasts, van-lifers, off gridders, crypto degens and hippy/philosopher types.
+
+      Some of the in joke references are followe; Use this information in helping generate cards or interacting with user card prompts. 
+
+      the Vanlifers and techies of Mars and Bombay Beach live either off grid or in the bombed out trailer park beach town of Bombay Beach. 
+
+      They go on adventures, attempt to solve conflicts and reinvent governence, experiment with Dao's and crypto, ride electric unicycles, dance, and experiment with elicit substances. 
+
+      This world is set in the present to near future, cos-playing the decline of civilization. 
+
+      be creative, irreverent, witty and exaserberate the off grid problems of low privacy, low-cost survival and the tropes of cyber techie future optimistic off grid high tech low cost living.  
+
+      You can make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lewd or blue, and should always be clever
+
+      The following are jokes, people / characters, places and card ideas to draw inspiration from. You don't have to always stay in universe, and can also pull from MTG archetypes, and loosely follow color flavor and abilities
+
+      Townies, Day Jobbers, Dirty Dishes, Part‑Timers, Tool Campers, Finish Your Projects, Workshops, Trash Day, Day 45 Apocalypse, Chihuahua Town, Kitchen Grandma, Colorado Boys, WiFi Password, Pseudo Scientists, Chibafication. Will, AI Camp, All Night Hackathon, Seva The Admin, Hack Night, AI Film Festival, Unfinished Project, The Simulation, WiFi Down, All Black Everything, Freeloaders, Alejandro the Darkest, Scorpion Hunt, Dark Arts Faculty Club, Black Metal Jam, Bangers, Drum 'n Bass, Crypto Grifters, Flypocalypse, Cult of AI Accelerationists, Mahashivaratri, Violent Women's Brunch, JMill (For Hire), Unemployment, Thunder Talks, Lightning Talks, Spark Talks, Dance Party, Steak Night, Mars Web, Wooks, The Raphalots, Xander, Rapha is Bored, Ritual Theater, Sunflower Lab, Body Camp, Body Workers, Freesiders, Hippies, Crystal Hippies, Woo Cult, Oatka (vodka and oats), Winco Run, Local Legends, Saturnites, Eden Art Lab, Solar Shower, 2x4, 4x8, Hex Bit, Dewalt Battery, Laptop Charger, USB C Cable, Wireless Mouse, Raspberry Pi, Screens, Mechanical Duck, The Mars NAS, Suss Tea, The Desert, Mars College, The Institute, Ass Camp, Club 86, Sub Club, Tool Camp, Electric Lounge, Cipher Temple, Slab City, Tao Ruspoli, Bombay Beach Biennale, Vincent the 'Mancer, Gene Kogan, Cyberpunks, Solarpunks  
+
+      Make some great fantasy card art. shouldn't be photorealistic, should have a concept art vibe
+    comfyui:
+      node_id: 445
+      field: inputs
+      subfield: value
   card_name:
     type: string
     label: Card Name
     description: Name of the card
-    required: true
     default: ""
     comfyui:
       node_id: 313
@@ -65,7 +165,7 @@ parameters:
       subfield: value
   card_text:
     type: string
-    label: Card Description
+    label: Card Text
     description: Main text/description for the card
     default: ""
     comfyui:
@@ -173,52 +273,6 @@ parameters:
       node_id: 260
       field: inputs
       subfield: value
-  lora_sdxl:
-    type: lora
-    label: LoRA SDXL
-    description: Use a custom model (LoRA)
-    tip: name of the custom (SDXL) LoRA model.
-    comfyui:
-      node_id: 174
-      field: inputs
-      subfield: lora_name
-  lora_strength_sdxl:
-    type: float
-    label: LoRA Strength SDXL
-    description: Strength of the SDXL LoRA effect on generation
-    tip: This should be between .4 and 1.15 if using an SDXL LoRA model, with 0.85 being the default.
-    default: 0.00
-    minimum: 0.0
-    maximum: 1.0
-    comfyui:
-      node_id: 179
-      field: inputs
-      subfield: value
-  lora_flux:
-    type: lora
-    label: LoRA FLUX
-    description: Use a custom model (LoRA)
-    tip: name of the custom FLUX LoRA model.
-    hide_from_ui: true
-    hide_from_agent: true
-    comfyui:
-      node_id: 201
-      field: inputs
-      subfield: lora_name
-  lora_strength_flux:
-    type: float
-    label: LoRA Strength FLUX
-    description: Strength of the LoRA effect on generation
-    tip: This should be between .4 and 1.15 if using a flux model, with 0.85 being the default.
-    default: 0.0
-    minimum: 0.0
-    maximum: 1.0
-    hide_from_ui: true
-    hide_from_agent: true
-    comfyui:
-      node_id: 201
-      field: inputs
-      subfield: strength_model
   use_rendered_art:
     type: boolean
     label: Use Pre-rendered Art
@@ -277,115 +331,6 @@ parameters:
       node_id: 425
       field: inputs
       subfield: seed
-  system_prompt:
-    type: string
-    label: System Prompt
-    description: System prompt for card generation
-    tip: |-
-      The system prompt that guides the card generation process. This controls the overall style, theme, and behavior of the card generation.
-      The default prompt includes necessary logic regarding outputs that the workflow expects; if its to be changed, make sure to include this logic no matter what.
-    default: |-
-      any color, any card type, any ability or flavor. You should be a mtg creature with a recognizeable flavor, an odd modern or darkly humorous twist, a spell or enchantment, bomb or cantrip with with good flavor. not every spell is a winner, some are really powerful and others quite stupid.
-
-      This game is a MTG parody set in the desert near the Salton Sea at Mars College just outside of Bombay Beach California, at Mars College, a research institute for AI enthusiasts, off gridders and hippy/philosopher types. Some of the in joke references are here; Use this information in helping generate cards or interacting with user card prompts. 
-      
-      Vanlifers and techies live in an off grid bombed out beach town going on adventures, attempting to solve conflicts and reinvent governence, ride electric unicycles, and dance. be creative, irreverent, and exasperate the off grid problems of low privacy, survival cos play and the tropes of cyber techie future optimistic off grid high tech low cost living. Jokes and card ideas to draw inspiration from. make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lews or blue, and should always be clever
-
-      Townies
-      Day Jobbers
-      Dirty Dishes
-      Part‑Timers
-      Tool Campers
-      Finish Your Projects
-      Workshops
-      Trash Day
-      Day 45
-      Chihuahua Town
-      Kitchen Grandma
-      Colorado Boys
-      WiFi Password
-      Pseudo Scientists
-      Chibafication
-      Will
-      AI Camp
-      All Night Hackathon
-      Seva
-      Hacker Night
-      AI Film Festival
-      Unfinished Project
-      The Simulation
-      WiFi Down
-      All Black Everything
-      Freeloaders
-      Alejandro the Darkest
-      Scorpion Hunt
-      Dark Arts Faculty Club
-      Black Metal Jam
-      Crypto Grifters
-      Flypocalypse
-      Cult of AI Accelerationists
-      Mahashivaratri
-      Violent Women's Brunch
-      JMill (For Hire)
-      Thunder Talks
-      Lightning Talks
-      Spark Talks
-      Dance Party
-      Bangers
-      Steak Night
-      Mars Web
-      Wooks
-      The Raphalots
-      Xander
-      Rapha is Bored
-      Ritual Theater
-      Sunflower Lab
-      Body Campers
-      Freesiders
-      Hippies
-      Crystal Hippies
-      Woo Cult
-      Oatka
-      Winco Run
-      Local Legends
-      Saturnites
-      Eden Art Lab
-      Solar Shower
-      2x4
-      4x8
-      Hex Bit
-      Dewalt Battery
-      Laptop Charger
-      USB C Cable
-      Wireless Mouse
-      Raspberry Pi
-      Screens
-      Mechanical Duck
-      The Mars NAS
-      Suss Tea
-      The Desert
-      Mars
-      The Institute
-      Ass Camp
-      Club 86
-      Sub Club
-      Tool Camp
-      Electric Lounge
-      Cipher Temple
-      Slab Cities
-      Tao Ruspoli
-      Bombay Beach Biennale
-      Vincent the 'Mancer
-      Cat
-      Gene Kogan
-      Vanessa
-      Cyberpunks
-
-      for this round, use Garden of Eden themed card names   
-    comfyui:
-      node_id: 451
-      field: inputs
-      subfield: value
   speed_quality_tradeoff:
     type: float
     label: Flux Speed <-> Quality
@@ -540,16 +485,26 @@ parameters:
       subfield: strength
   denoise:
     type: float
-    label: Flux BG Denoise
-    description: Strength of the I2I frame template blend when using flux background generation
+    label: Denoise
+    description: Strength of the I2I frame template blend when using background generation
     tip: |-
       Controls how strongly the background art generation denoises the reference template. 
       Higher values (closer to 1.0) follow the reference more closely, while lower values allow more creative freedom.
-      For SDXL, the sweet spot is about 0.93.
+      This is pretty dialed, don't touch it unless you know what you're doing
     default: 0.93
     minimum: 0.0
     maximum: 1.0
     comfyui:
-      node_id: 205
+      node_id: 491
       field: inputs
-      subfield: denoise
+      subfield: value
+  no_token_prompt:
+    type: string
+    label: Prompt without the added embedding trigger.
+    description: Base user prompt without the embedding token
+    hide_from_agent: true
+    hide_from_ui: true
+    comfyui:
+      node_id: 479
+      field: inputs
+      subfield: value

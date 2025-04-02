@@ -25,19 +25,6 @@ parameters:
       node_id: 53
       field: inputs
       subfield: image
-  masking_prompt:
-    type: string
-    label: Region prompt
-    description: Description (just one or a few words) of what object / region you want to replace / inpaint.
-    tip: |-
-      This prompt will be used to highlight the object/region to inpaint, creating a mask.
-      Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences.
-      Some examples of good masking prompts are face, building, hair, headwear, hat, ...
-    required: false
-    comfyui:
-      node_id: 66
-      field: inputs
-      subfield: value
   inpainting_prompt:
     type: string
     label: Inpainting prompt
@@ -50,27 +37,17 @@ parameters:
       node_id: 67
       field: inputs
       subfield: value
-  activate_rembg:
-    type: boolean
-    label: Activate Foreground/Background separation (creates a mask)
-    description: Use background detection to create an inpainting mask
+  masking_prompt:
+    type: string
+    label: Region prompt
+    description: Description (just one or a few words) of what object / region you want to replace / inpaint.
     tip: |-
-      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image.
-      When activating this, you can typically reduce mask_expand and mask_blur to zero.
-      Make sure to leave masking_prompt empty when activating this!
-    default: false
+      This prompt will be used to highlight the object/region to inpaint, creating a mask.
+      Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences.
+      Some examples of good masking prompts are face, building, hair, headwear, hat, ...
+    required: false
     comfyui:
-      node_id: 256
-      field: inputs
-      subfield: value
-  inpaint_foreground:
-    type: boolean
-    label: flip mask to inpaint foreground
-    description: By default, activating 'activate_rembg' will inpaint the background. Set this to true if you want to inpaint the foreground instead.
-    visible_if: activate_rembg=true
-    default: false
-    comfyui:
-      node_id: 261
+      node_id: 66
       field: inputs
       subfield: value
   resolution:
@@ -93,6 +70,7 @@ parameters:
     tip: |-
       Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
     default: false
+    required: true
     comfyui:
       node_id: 274
       field: inputs
@@ -118,6 +96,7 @@ parameters:
     maximum: 1.25
     step: 0.01
     visible_if: use_lora=true
+    required: true
     comfyui:
       node_id: 275
       field: inputs
@@ -147,6 +126,29 @@ parameters:
       node_id: 48
       field: inputs
       subfield: image
+  activate_rembg:
+    type: boolean
+    label: Activate Foreground/Background separation (creates a mask)
+    description: Use background detection to create an inpainting mask
+    tip: |-
+      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image.
+      When activating this, you can typically reduce mask_expand and mask_blur to zero.
+      Make sure to leave masking_prompt empty when activating this!
+    default: false
+    comfyui:
+      node_id: 256
+      field: inputs
+      subfield: value
+  inpaint_foreground:
+    type: boolean
+    label: flip mask to inpaint foreground
+    description: By default, activating 'activate_rembg' will inpaint the background. Set this to true if you want to inpaint the foreground instead.
+    visible_if: activate_rembg=true
+    default: false
+    comfyui:
+      node_id: 261
+      field: inputs
+      subfield: value
   creativity:
     type: float
     label: AI creativity

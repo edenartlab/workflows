@@ -8,9 +8,6 @@ tip: |-
   Stable Diffusion 3+ models are trained on a dataset of images approximately 1 megapixel in size, and the provided resolutions list is the set of legal resolutions for this model, and should always be used unless a user requests a specific resolution. 
   If an aspect ratio is specifically requested, always aim for dimensions that total approximately 1 megapixel and round to numbers that are divisible by 8.
 output_type: image
-  ratio is specifically requested, always aim for dimensions that total
-  approximately 1 megapixel and round to numbers that are divisible by 8.
-output_type: image
 cost_estimate: 3 * n_samples
 thumbnail: app/SD3.jpeg
 status: stage
@@ -26,7 +23,8 @@ parameters:
     label: Number of samples
     description: Number of samples to generate
     tip: |-
-      This is the number of samples to generate for the prompt. If you get a request for n_samples larger than 1, youre still using a single prompt for the whole set.
+      This is the number of samples to generate for the prompt. 
+      If you get a request for n_samples larger than 1, youre still using a single prompt for the whole set.
     required: true
     default: 1
     minimum: 1
@@ -60,7 +58,8 @@ parameters:
     label: Width
     description: Width in pixels
     tip: |-
-      Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
+      Default to using a high resolution of at least 1 megapixel for the image. Use landscape aspect ratio for prompts that are wide or more landscape-oriented, and portrait aspect ratio for tall things. 
+      When using portrait aspect ratio, do not exceed 1:1.5 aspect ratio. Only do square if the user requests it. Use your best judgment.
     required: true
     default: 1024
     minimum: 256
@@ -89,7 +88,8 @@ parameters:
     label: Seed
     description: Set random seed for reproducibility. If blank, will be set to -1 to supply a random value.
     tip: |-
-      You should only set this if you want to start from/copy the seed of a previous image. Unless one is specified, you should leave this blank!
+      You should only set this if you want to start from/copy the seed of a previous image. 
+      Unless one is specified, you should leave this blank!
     default: random
     minimum: 0
     maximum: 2147483647
@@ -102,8 +102,9 @@ parameters:
     label: Steps
     description: Set the number of diffusion steps
     tip: |-
-      The default value is sufficient for most jobs, but at a speed cost can be increased, or decreased to undercook the image generation.
-    default: 20
+      The default value of 4 works well with the SD3.5/sd3.5_large_turbo.safetensors model
+      20 steps should be used for higher quality standard large model
+    default: 4
     step: 1
     minimum: 10
     maximum: 50
@@ -118,7 +119,8 @@ parameters:
     hide_from_agent: true
     description: Strength of the prompt and image conditiong influence on the creation result.
     tip: |-
-      This parameter controls the influence of propmt conditioning guidance on image generation. For stylized images a lower value of 2.0-2.5 may be desirable, and for realistic images closer to 3.0 is a good value, with an extreme minimum around 1.5. Higher values will more closely follow the input text and produce clean images but also have less diversity.
+      This parameter controls the influence of propmt conditioning guidance on image generation. 
+      For stylized images a lower value of 2.0-2.5 may be desirable, and for realistic images closer to 3.0 is a good value, with an extreme minimum around 1.5. Higher values will more closely follow the input text and produce clean images but also have less diversity.
     default: 4.0
     minimum: 1.0
     maximum: 8.0
@@ -131,6 +133,9 @@ parameters:
     type: string
     label: SD Model
     description: Pick which SDXL model to use
+    tip: |-
+      The SD3.5/sd3.5_large_turbo.safetensors model is the default and recommended model for most jobs. Set steps low to default 4 for this model
+      The SD3.5/sd3.5_large_fp8_scaled.safetensors model is a higher quality model that may be used for more detailed images. Set steps to default 20 for this model
     hide_from_agent: true
     default: SD3.5/sd3.5_large_turbo.safetensors
     choices: [SD3.5/sd3.5_large_turbo.safetensors, SD3.5/sd3.5_large_fp8_scaled.safetensors]

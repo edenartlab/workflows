@@ -46,7 +46,7 @@ parameters:
     label: Swap Direction
     description: Toggle to swap the direction of face replacement
     tip: When true, Face B will be placed onto Face A. When false, Face A will be placed onto Face B.
-    default: false
+    default: true
     comfyui:
       node_id: 7
       field: inputs
@@ -77,7 +77,7 @@ parameters:
     label: Source Face Order
     tip: The order of faces in the source image.
     description: Order of faces in the source image
-    default: right-left
+    default: left-right
     choices: [left-right, right-left]
     comfyui:
       node_id: 12

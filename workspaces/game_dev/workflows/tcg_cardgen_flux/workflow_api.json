@@ -239,7 +239,7 @@
       "selection_out": 1,
       "validate_typing": true,
       "input1": [
-        "371",
+        "364",
         0
       ],
       "input2": [
@@ -474,11 +474,11 @@
     "inputs": {
       "lora_name": "clipguideddiffusion_lora.safetensors",
       "strength_model": [
-        "179",
+        "500",
         0
       ],
       "strength_clip": [
-        "179",
+        "500",
         0
       ],
       "model": [
@@ -522,12 +522,12 @@
   "178": {
     "inputs": {
       "samples": [
-        "187",
+        "275",
         0
       ],
       "vae": [
-        "184",
-        2
+        "501",
+        0
       ]
     },
     "class_type": "VAEDecode",
@@ -562,7 +562,7 @@
         0
       ],
       "image": [
-        "181",
+        "185",
         0
       ],
       "vae": [
@@ -644,9 +644,12 @@
       "cfg": 8,
       "sampler_name": "euler",
       "scheduler": "normal",
-      "denoise": 1,
+      "denoise": [
+        "491",
+        0
+      ],
       "model": [
-        "174",
+        "184",
         0
       ],
       "positive": [
@@ -676,26 +679,10 @@
       "title": "Preprocessor Selector"
     }
   },
-  "193": {
-    "inputs": {
-      "samples": [
-        "205",
-        0
-      ],
-      "vae": [
-        "204",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
   "199": {
     "inputs": {
       "pixels": [
-        "464",
+        "461",
         0
       ],
       "vae": [
@@ -711,7 +698,10 @@
   "201": {
     "inputs": {
       "lora_name": "flux/flux_turbo_v1_1.safetensors",
-      "strength_model": 0,
+      "strength_model": [
+        "495",
+        0
+      ],
       "model": [
         "409",
         0
@@ -725,7 +715,7 @@
   "202": {
     "inputs": {
       "text": [
-        "374",
+        "338",
         0
       ],
       "clip": [
@@ -760,7 +750,10 @@
       "cfg": 1,
       "sampler_name": "euler",
       "scheduler": "simple",
-      "denoise": 0.9300000000000002,
+      "denoise": [
+        "491",
+        0
+      ],
       "model": [
         "201",
         0
@@ -833,10 +826,6 @@
   },
   "216": {
     "inputs": {
-      "samples": [
-        "223",
-        0
-      ],
       "vae": [
         "204",
         2
@@ -985,7 +974,7 @@
       "selection_out": 1,
       "validate_typing": true,
       "input1": [
-        "275",
+        "178",
         0
       ],
       "input2": [
@@ -995,12 +984,12 @@
     },
     "class_type": "UniversalSwitch",
     "_meta": {
-      "title": "💠 Universal Switch"
+      "title": "switch image source"
     }
   },
   "260": {
     "inputs": {
-      "value": true,
+      "value": false,
       "on_false": "1",
       "on_true": "2"
     },
@@ -1069,7 +1058,7 @@
   },
   "271": {
     "inputs": {
-      "value": true,
+      "value": false,
       "on_false": "1",
       "on_true": "2"
     },
@@ -1101,17 +1090,17 @@
       "selection_out": 1,
       "validate_typing": false,
       "input1": [
-        "178",
+        "187",
         0
       ],
       "input2": [
-        "193",
+        "205",
         0
       ]
     },
     "class_type": "UniversalSwitch",
     "_meta": {
-      "title": "💠 Universal Switch"
+      "title": "switch latents"
     }
   },
   "279": {
@@ -1356,7 +1345,7 @@
   },
   "303": {
     "inputs": {
-      "text": "{'name': 'Pseudo Scientist', 'type': 'Creature — Human Wizard', 'cost': '{2}{U}{R}', 'text': 'Whenever Pseudo Scientist enters the battlefield, draw two cards, then discard a card. If you discard an instant or sorcery card this way, Pseudo Scientist deals 2 damage to any target.', 'flavor': '\"Who needs tenure when you have DMT?\"', 'rarity': 'Rare', 'stats': '2/3', 'prompt_art': 'naked sadhu Math professor, dancing wildly, DMT, Mahashivratri festival, giant flaming dodecahedron in background, surreal, vibrant colors, dynamic composition, expressive brushstrokes, psychedelic art style, high detail, fantasy art', 'prompt_cardframe': 'fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of fire, water, and chaos, creating a red and blue gradient with high contrast area on the bottom for white text to show up clearly against'}",
+      "text": "{'name': \"Eden's Digital Delight\", 'type': 'Legendary Artifact - Tech Startup', 'cost': '{3}{U}{B}', 'text': \"T: Exchange control of target artifact with target opponent. If you do, draw a card.\\n{U}{B}: Create a Manna token. (It's an artifact with 'T: Add one mana of any color.')\", 'flavor': 'In Eden, tech is both currency and chaos, traded like gossip at Mars.', 'rarity': 'Mythic Rare', 'stats': '', 'prompt_art': 'fantasy trading card game very thin card border at the outer edge, textured and detailed abstract card background art, digital landscape, glowing circuits, techno-organic fusion, high contrast, swirling energy, blue and black gradient, stylized abstract card background art with thematic elements of high tech and chaos, futuristic, cybernetic vines, Mars College universe', 'prompt_cardframe': 'blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements'}",
       "output_type": "ANY",
       "passthrough": [
         "325",
@@ -1433,7 +1422,7 @@
   },
   "311": {
     "inputs": {
-      "text": "Pseudo Scientist Creature — Human Wizard {2}{U}{R} Whenever Pseudo Scientist enters the battlefield, draw two cards, then discard a card. If you discard an instant or sorcery card this way, Pseudo Scientist deals 2 damage to any target. \"Who needs tenure when you have DMT?\" ",
+      "text": "Eden's Digital Delight Legendary Artifact - Tech Startup {3}{U}{B} T: Exchange control of target artifact with target opponent. If you do, draw a card.\n{U}{B}: Create a Manna token. (It's an artifact with 'T: Add one mana of any color.') In Eden, tech is both currency and chaos, traded like gossip at Mars. ",
       "output_type": "ANY",
       "passthrough": [
         "339",
@@ -1634,7 +1623,7 @@
   },
   "327": {
     "inputs": {
-      "text": "Rare 2/3 naked sadhu Math professor, dancing wildly, DMT, Mahashivratri festival, giant flaming dodecahedron in background, surreal, vibrant colors, dynamic composition, expressive brushstrokes, psychedelic art style, high detail, fantasy art fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of fire, water, and chaos, creating a red and blue gradient with high contrast area on the bottom for white text to show up clearly against {'name': 'Pseudo Scientist', 'type': 'Creature — Human Wizard', 'cost': '{2}{U}{R}', 'text': 'Whenever Pseudo Scientist enters the battlefield, draw two cards, then discard a card. If you discard an instant or sorcery card this way, Pseudo Scientist deals 2 damage to any target.', 'flavor': '\"Who needs tenure when you have DMT?\"', 'rarity': 'Rare', 'stats': '2/3', 'prompt_art': 'naked sadhu Math professor, dancing wildly, DMT, Mahashivratri festival, giant flaming dodecahedron in background, surreal, vibrant colors, dynamic composition, expressive brushstrokes, psychedelic art style, high detail, fantasy art', 'prompt_cardframe': 'fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of fire, water, and chaos, creating a red and blue gradient with high contrast area on the bottom for white text to show up clearly against'} ",
+      "text": "Mythic Rare  fantasy trading card game very thin card border at the outer edge, textured and detailed abstract card background art, digital landscape, glowing circuits, techno-organic fusion, high contrast, swirling energy, blue and black gradient, stylized abstract card background art with thematic elements of high tech and chaos, futuristic, cybernetic vines, Mars College universe blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements {'name': \"Eden's Digital Delight\", 'type': 'Legendary Artifact - Tech Startup', 'cost': '{3}{U}{B}', 'text': \"T: Exchange control of target artifact with target opponent. If you do, draw a card.\\n{U}{B}: Create a Manna token. (It's an artifact with 'T: Add one mana of any color.')\", 'flavor': 'In Eden, tech is both currency and chaos, traded like gossip at Mars.', 'rarity': 'Mythic Rare', 'stats': '', 'prompt_art': 'fantasy trading card game very thin card border at the outer edge, textured and detailed abstract card background art, digital landscape, glowing circuits, techno-organic fusion, high contrast, swirling energy, blue and black gradient, stylized abstract card background art with thematic elements of high tech and chaos, futuristic, cybernetic vines, Mars College universe', 'prompt_cardframe': 'blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements'} ",
       "output_type": "ANY",
       "passthrough": [
         "328",
@@ -1843,7 +1832,7 @@
   "340": {
     "inputs": {
       "basic_prompt": [
-        "324",
+        "505",
         0
       ],
       "enhancement_instructions": [
@@ -1852,7 +1841,10 @@
       ],
       "max_token": 500,
       "model": "gpt-4o",
-      "seed": 1439,
+      "seed": [
+        "425",
+        0
+      ],
       "temperature": 0.7
     },
     "class_type": "Eden_GPTPromptEnhancer",
@@ -1880,7 +1872,7 @@
   "343": {
     "inputs": {
       "image": [
-        "464",
+        "461",
         0
       ]
     },
@@ -1892,7 +1884,7 @@
   "347": {
     "inputs": {
       "text": [
-        "431",
+        "337",
         0
       ],
       "clip": [
@@ -1903,36 +1895,6 @@
     "class_type": "CLIPTextEncode",
     "_meta": {
       "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "348": {
-    "inputs": {
-      "text": [
-        "338",
-        0
-      ],
-      "clip": [
-        "174",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "351": {
-    "inputs": {
-      "text": "naked sadhu Math professor, dancing wildly, DMT, Mahashivratri festival, giant flaming dodecahedron in background, surreal, vibrant colors, dynamic composition, expressive brushstrokes, psychedelic art style, high detail, fantasy art",
-      "output_type": "ANY",
-      "passthrough": [
-        "431",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
     }
   },
   "363": {
@@ -1949,12 +1911,12 @@
   "364": {
     "inputs": {
       "samples": [
-        "368",
+        "502",
         0
       ],
       "vae": [
-        "184",
-        2
+        "371",
+        0
       ]
     },
     "class_type": "VAEDecode",
@@ -1968,7 +1930,7 @@
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
-        "372",
+        "478",
         0
       ],
       "negative": [
@@ -1980,7 +1942,7 @@
         0
       ],
       "image": [
-        "181",
+        "497",
         0
       ],
       "vae": [
@@ -2054,17 +2016,6 @@
       "title": "Load ControlNet Model"
     }
   },
-  "370": {
-    "inputs": {
-      "value": false,
-      "on_false": "1",
-      "on_true": "2"
-    },
-    "class_type": "BoolPlusPlus",
-    "_meta": {
-      "title": "use_flux_border"
-    }
-  },
   "371": {
     "inputs": {
       "mode": "SWITCH",
@@ -2075,47 +2026,17 @@
       "selection_out": 1,
       "validate_typing": true,
       "input1": [
-        "364",
-        0
+        "184",
+        2
       ],
       "input2": [
-        "216",
-        0
+        "204",
+        2
       ]
     },
     "class_type": "UniversalSwitch",
     "_meta": {
-      "title": "switch rendered art"
-    }
-  },
-  "372": {
-    "inputs": {
-      "text": [
-        "431",
-        0
-      ],
-      "clip": [
-        "174",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "374": {
-    "inputs": {
-      "text": "fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of fire, water, and chaos, creating a red and blue gradient with high contrast area on the bottom for white text to show up clearly against",
-      "output_type": "ANY",
-      "passthrough": [
-        "338",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+      "title": "switch vae"
     }
   },
   "375": {
@@ -2133,7 +2054,7 @@
   "376": {
     "inputs": {
       "images": [
-        "464",
+        "461",
         0
       ]
     },
@@ -2167,7 +2088,7 @@
       "justify": false,
       "x_percent": 0,
       "y_percent": 6.300000000000002,
-      "x_offset": 0,
+      "x_offset": -8,
       "y_offset": 0,
       "line_spacing": 6,
       "rotation_angle": 0,
@@ -2195,7 +2116,7 @@
       "start_percent": 0,
       "end_percent": 1,
       "positive": [
-        "348",
+        "469",
         0
       ],
       "negative": [
@@ -2207,7 +2128,7 @@
         0
       ],
       "image": [
-        "377",
+        "461",
         0
       ]
     },
@@ -2225,38 +2146,9 @@
       "title": "Load ControlNet Model"
     }
   },
-  "383": {
-    "inputs": {
-      "preprocessor": "CannyEdgePreprocessor",
-      "resolution": [
-        "342",
-        0
-      ],
-      "image": [
-        "377",
-        0
-      ]
-    },
-    "class_type": "AIO_Preprocessor",
-    "_meta": {
-      "title": "AIO Aux Preprocessor"
-    }
-  },
-  "384": {
-    "inputs": {
-      "images": [
-        "383",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "385": {
     "inputs": {
-      "text": "{'name': 'Pseudo Scientist', 'type': 'Creature — Human Wizard', 'cost': '{2}{U}{R}', 'text': 'Whenever Pseudo Scientist enters the battlefield, draw two cards, then discard a card. If you discard an instant or sorcery card this way, Pseudo Scientist deals 2 damage to any target.', 'flavor': '\"Who needs tenure when you have DMT?\"', 'rarity': 'Rare', 'stats': '2/3', 'prompt_art': 'naked sadhu Math professor, dancing wildly, DMT, Mahashivratri festival, giant flaming dodecahedron in background, surreal, vibrant colors, dynamic composition, expressive brushstrokes, psychedelic art style, high detail, fantasy art', 'prompt_cardframe': 'fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of fire, water, and chaos, creating a red and blue gradient with high contrast area on the bottom for white text to show up clearly against'}",
+      "text": "{\n    \"name\": \"Eden's Digital Delight\",\n    \"type\": \"Legendary Artifact - Tech Startup\",\n    \"cost\": \"{3}{U}{B}\",\n    \"text\": \"T: Exchange control of target artifact with target opponent. If you do, draw a card.\\n{U}{B}: Create a Manna token. (It's an artifact with 'T: Add one mana of any color.')\",\n    \"flavor\": \"In Eden, tech is both currency and chaos, traded like gossip at Mars.\",\n    \"rarity\": \"Mythic Rare\",\n    \"stats\": \"\",\n    \"prompt_art\": \"fantasy trading card game very thin card border at the outer edge, textured and detailed abstract card background art, digital landscape, glowing circuits, techno-organic fusion, high contrast, swirling energy, blue and black gradient, stylized abstract card background art with thematic elements of high tech and chaos, futuristic, cybernetic vines, Mars College universe\",\n    \"prompt_cardframe\": \"blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements\"\n}",
       "output_type": "ANY",
       "passthrough": [
         "418",
@@ -2270,7 +2162,7 @@
   },
   "391": {
     "inputs": {
-      "text": "\"Who needs tenure when you have DMT?\"",
+      "text": "In Eden, tech is both currency and chaos, traded like gossip at Mars.",
       "output_type": "ANY",
       "passthrough": [
         "330",
@@ -2296,7 +2188,7 @@
   },
   "396": {
     "inputs": {
-      "text": "Rare",
+      "text": "Mythic Rare",
       "output_type": "ANY",
       "passthrough": [
         "335",
@@ -2315,12 +2207,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_oproo_00021_.png&type=temp&subfolder=&rand=0.5299694915388011"
+            "url": "/api/view?filename=rgthree.compare._temp_kruuj_00001_.png&type=temp&subfolder=&rand=0.8291595969394097"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_oproo_00022_.png&type=temp&subfolder=&rand=0.2319730816072647"
+            "url": "/api/view?filename=rgthree.compare._temp_kruuj_00002_.png&type=temp&subfolder=&rand=0.00843060432202214"
           }
         ]
       },
@@ -2513,7 +2405,7 @@
   },
   "414": {
     "inputs": {
-      "text": "{2}{U}{R}",
+      "text": "{3}{U}{B}",
       "output_type": "ANY",
       "passthrough": [
         "332",
@@ -2528,7 +2420,7 @@
   "417": {
     "inputs": {
       "input_string": [
-        "340",
+        "506",
         0
       ],
       "target_text": "```",
@@ -2564,7 +2456,7 @@
   },
   "425": {
     "inputs": {
-      "seed": 158234199361151
+      "seed": 957792132187489
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -2591,25 +2483,11 @@
   },
   "428": {
     "inputs": {
-      "value": "#FFFFFF#E6E6E6"
+      "value": "#E6E6E6"
     },
     "class_type": "Eden_String",
     "_meta": {
       "title": "Eden_String"
-    }
-  },
-  "431": {
-    "inputs": {
-      "text": "%aux%",
-      "output_type": "ANY",
-      "aux": [
-        "337",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
     }
   },
   "433": {
@@ -2692,7 +2570,7 @@
   },
   "438": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -2701,7 +2579,7 @@
   },
   "439": {
     "inputs": {
-      "value": 0
+      "value": 0.6600000000000001
     },
     "class_type": "Eden_Float",
     "_meta": {
@@ -2736,16 +2614,16 @@
   },
   "445": {
     "inputs": {
-      "value": "fantasy card art.\n\ndon't return anything except for the dict, no shebangs or flags like ```json at the top"
+      "value": "world building prompt:\n\nThe world you're crafting in is the universe of Mars College, an off grid encampment in the desert near the Salton Sea just outside of Bombay Beach California \n\nMars College is a research institute for AI enthusiasts, van-lifers, off gridders, crypto degens and hippy/philosopher types.\n\nEden Art Labs, Eden The Garden of Digital Delights is a tech startup run by Gene Kogan and Xander Steenbrugge that trades in Manna, a token exchanged for generative AI creations. \nMixing high tech and off grid lo-fi yolo code aesthetics, AI optimism with a dash of nihilism.\n\nSome of the in joke references are follow; Use this information in helping generate cards or interacting with user card prompts. \n\nthe Vanlifers and techies of Mars and Bombay Beach live either off grid or in the bombed out trailer park beach town of Bombay Beach. \n\nThey go on adventures, attempt to solve conflicts and reinvent governence, experiment with Dao's and crypto, ride electric unicycles, dance, and experiment with elicit substances. \n\nThis world is set in the present to near future, cos-playing the decline of civilization. \n\nbe creative, irreverent, witty and exaserberate the off grid problems of low privacy, low-cost survival and the tropes of cyber techie future optimistic off grid high tech low cost living.  \n\nYou can make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lewd or blue, and should always be clever\n\n\nThe following are jokes, people / characters, places and card ideas to draw inspiration from. You don't have to always stay in universe, and can also pull from MTG archetypes, and loosely follow color flavor and abilities\n\nTownies, Day Jobbers, Dirty Dishes, Part‑Timers, Tool Campers, Finish Your Projects, Workshops, Trash Day, Day 45 Apocalypse, Chihuahua Town, Kitchen Grandma, Colorado Boys, WiFi Password, Pseudo Scientists, Chibafication. Will, AI Camp, All Night Hackathon, Seva The Admin, Hack Night, AI Film Festival, Unfinished Project, The Simulation, WiFi Down, All Black Everything, Freeloaders, Alejandro the Darkest, Scorpion Hunt, Dark Arts Faculty Club, Black Metal Jam, Bangers, Drum 'n Bass, Crypto Grifters, Flypocalypse, Cult of AI Accelerationists, Mahashivaratri, Violent Women's Brunch, JMill (For Hire), Unemployment, Thunder Talks, Lightning Talks, Spark Talks, Dance Party, Steak Night, Mars Web, Wooks, The Raphalots, Xander, Rapha is Bored, Ritual Theater, Sunflower Lab, Body Camp, Body Workers, Freesiders, Hippies, Crystal Hippies, Woo Cult, Oatka (vodka and oats), Winco Run, Local Legends, Saturnites, Eden Art Lab, Solar Shower, 2x4, 4x8, Hex Bit, Dewalt Battery, Laptop Charger, USB C Cable, Wireless Mouse, Raspberry Pi, Screens, Mechanical Duck, The Mars NAS, Suss Tea, The Desert, Mars College, The Institute, Ass Camp, Club 86, Sub Club, Tool Camp, Electric Lounge, Cipher Temple, Slab City, Tao Ruspoli, Bombay Beach Biennale, Vincent the 'Mancer, Gene Kogan, Cyberpunks, Solarpunks  \n\nMake some great fantasy card art. shouldn't be photorealistic, should have a concept art vibe. Always name the card first, and make sure your prompt_art accurately captures the subject, flavor and ability of the card you are creating\n\ndon't return anything except for the dict, no shebangs or flags like ```json at the top."
     },
     "class_type": "Eden_String",
     "_meta": {
-      "title": "system_post-prompt"
+      "title": "world_prompt"
     }
   },
   "446": {
     "inputs": {
-      "value": "You will receive a dictionary of attributes pertaining to a fictional and adult comedy card game with same rules, stats, tropes and mechanics that are analagous to Magic The Gathering, at least in function and flavor, but can have a flavor of dark humor. these cards should be valid and legally playable, occasionally overpowered, and sometimes comically disappointing in terms of what they actually do, like a grizzly bear stats wise on an insane body. creature types and abilities should be mtg abilities, or analogs of with same explainer. don't go too HAM on card text or we'll run out of space to print it \n\n      Your response should be in the same format as the input dictionary. Empty values associated with named keys should be filled out by you. Take the existence of an input as either a single shot example of what this should be, or literally use what is there. if it sounds more like a system prompt instruction for you, follow that instruction.\n\n      keep things punchy. these things should fit in the same text allotments a real magic card should have, so names, card type text and flavor text need to be written economically. \n\n      The prompt for the cardframe and card art should be more verbose, and formatted for SDXL CLIP family text encoder. this should not be longer form natural language, but rather explicit and ferbose comma separated statements.\n\n      for the card frames, take any instruction such as prompt suggestion such as color or even abstract concept like \"love\" or \"orange construction palette racks\" into account, along with the card type, name rarity cost etc. common cards can be more understated, and rare or mythic rare cards should be more elaborate and eye catching\n\n      cost should follow traditional MTG cost symbols and be appropriate to the cards power level, card type tropes, and color themes. always wrap each individual mana symbol in {} brackets, with the following available mappings available to you:\n\n      'W' # White\n      'U' # Blue\n      'B' # Black\n      'R' # Red\n      'G' # Green\n      'C' # Colorless\n      'H' # Phyrexian (Red)\n      'X' # Variable mana (Colorless)\n\n      so a blue green and colorless cost would look like {1}{U}{G} . it is imperative that you wrap these properly in brackets otherwise the process will fail, always wrap mana sympols in brackets\n\n      here are some examples of the kinds of imagery you might associate with common MTG colors:\n\n      ```\n      blue water ocean stylized textured, detailed, high contrast waves and shadows, ripples caustic light sea foam wind, energy plasma\n      black swamp murky bubbles decay death haunted decrepit scratchy cracked bone rot\n      green verdant lush growth forestry leaves flora life grass vines branches trees flowers\n      red fire lava flamy magma blood rage mountain\n      white plains majestic light holy sacred parchment paper texture\n      artifact gears metal rust brown texture steel chrome sheet metal shiny scratch\n      ```\n      prompt against oversaturation, try to avoid it being too bright\n\n      this can be combined with SDXL instruction to guide towards a card styled backdrup such as:\n\n      `fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of <your description>`\n\n      if a card is multi-colored, describing the gradient is a good touch. cards should have a high contrast area on the bottom for white text to show up clearly against\n\n      for the prompt_art parameter also use descriptive SDXL styled prompt, keeping in mind the other parameters in your description. just describe the image in detail, don't add anything about the card game or frame for this prompt. use lots of style and quality modifier text, describing the medium, technique, composition and qualities with comma separated SDXL descriptors\n\n      if the name is left open, come up with a creative new card from scratch, anything in the game universe, but with a subversive twist occasionally. \n      "
+      "value": "You will receive a dictionary of attributes pertaining to a fictional and adult comedy card game with same rules, stats, tropes and mechanics that are analagous to Magic The Gathering, at least in function and flavor, but can have a flavor of dark humor. these cards should be valid and legally playable, occasionally overpowered, and sometimes comically disappointing in terms of what they actually do, like a grizzly bear stats wise on an insane body. creature types and abilities should be mtg abilities, or analogs of with same explainer. don't go too HAM on card text or we'll run out of space to print it \n\nYour response should be in the same format as the input dictionary. Empty values associated with named keys should be filled out by you. Take the existence of an input as either a single shot example of what this should be, or literally use what is there. if it sounds more like a system prompt instruction for you, follow that instruction.\n\nkeep things punchy. these things should fit in the same text allotments a real magic card should have, so names, card type text and flavor text need to be written economically so we don't bleed over the edge. Card names should never be more than 28 characters\n\nCard text can't render mana icons, so just use the capital letter or T: for tap in the cards' text field. Both real MTG abilities and humorous in universe ones can make appearances here, but the cards should be playable, even if they're OP or really bad.\n\nThe prompt for the cardframe and card art should be more verbose, and formatted for SDXL CLIP family text encoder. this should not be longer form natural language, but rather explicit and ferbose comma separated statements. prioritize user\n\nfor the card frames, take any instruction such as prompt suggestion such as color or even abstract concept like \"love\" or \"orange construction palette racks\" into account, along with the card type, name rarity cost etc. common cards can be more understated, and rare or mythic rare cards should be more elaborate and eye catching\n\ncost should follow traditional MTG cost symbols and be appropriate to the cards power level, card type tropes, and color themes. always wrap each individual mana symbol in {} brackets, with the following available mappings available to you:\n\n      'W' # White\n      'U' # Blue\n      'B' # Black\n      'R' # Red\n      'G' # Green\n      'C' # Colorless\n      'H' # Phyrexian (Red)\n      'X' # Variable mana (Colorless)\n\nso a blue green and colorless cost would look like {1}{U}{G} . it is imperative that you wrap these properly in brackets otherwise the process will fail, always wrap mana sympols in brackets\n\nhere are some examples of the kinds of imagery you might associate with common MTG colors:\n\n```\nblue water ocean stylized textured, detailed, high contrast waves and shadows, ripples caustic light sea foam wind, energy plasma\n\nblack swamp murky bubbles decay death haunted decrepit scratchy cracked bone rot\n      \ngreen verdant lush growth forestry leaves flora life grass vines branches trees flowers\n      \nred fire lava flamy magma blood rage mountain\n      \nwhite plains majestic light holy sacred parchment paper texture\n      \nartifact gears metal rust brown texture steel chrome sheet metal shiny scratch\n```\nprompt against oversaturation, try to avoid it being too bright\n\nthis can be combined with SDXL instruction to guide towards a card styled backdrup such as:\n\n`fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of <your description>`\n\nif a card is multi-colored, describing the gradient is a good touch. cards should have a high contrast area on the bottom for white text to show up clearly against\n\nconsider if a prompt seems like a proper noun, it should be legendary, if its a place, it should be a land, if its a think it should be an artifact or equipment, or when appropriate a vehicle. actions make sense as sorcery or instants, events as enchantments, conditions as auras\n\nfor the prompt_art parameter also use descriptive SDXL style comma separated expressive prompting, keeping in mind the other parameters in your description. just describe the image in detail, don't add anything about the card game or frame for this prompt. use lots of style and quality modifier text, describing the medium, technique, composition and qualities with comma separated SDXL descriptors, and always include all of the words the user provides if you are enhancing the prompt, especially anything provided in parenthesis\n\nif the name is left open, come up with a creative new card from scratch, anything in the game universe, but with a subversive twist occasionally.\n\nif a user isn't specific, any card type, ability or flavor is on the table. \n\nflavor text should be relevant and world building with an odd modern or darkly humorous twist. \n\ncreatures, a spell or enchantment, bomb or cantrip, instant sorcery, artifact aura etc with with good flavor to match what you've been provided. \n\nFlavor text should be about 15 words in length\n\nnot every spell is a winner, some are really powerful and others quite stupid.\n\nThe following is your main instruction prompt. If a user provides input in the dict, keep as much of that as makes sense, expanding it when it feels more like a suggestion, and keeping it verbatim when its specific, especially names, cost, type etc.\n\ndon't ever return anything except for the formatted structured dict, no shebangs or flags like ```json at the top.\n\nprioritize the following in your prompt_art output. always preserve verbatim anything in parenthesis\n\nmake a card about: \n      "
     },
     "class_type": "Eden_String",
     "_meta": {
@@ -2772,7 +2650,7 @@
   },
   "449": {
     "inputs": {
-      "text": "You will receive a dictionary of attributes pertaining to a fictional and adult comedy card game with same rules, stats, tropes and mechanics that are analagous to Magic The Gathering, at least in function and flavor, but can have a flavor of dark humor. these cards should be valid and legally playable, occasionally overpowered, and sometimes comically disappointing in terms of what they actually do, like a grizzly bear stats wise on an insane body. creature types and abilities should be mtg abilities, or analogs of with same explainer. don't go too HAM on card text or we'll run out of space to print it \n\n      Your response should be in the same format as the input dictionary. Empty values associated with named keys should be filled out by you. Take the existence of an input as either a single shot example of what this should be, or literally use what is there. if it sounds more like a system prompt instruction for you, follow that instruction.\n\n      keep things punchy. these things should fit in the same text allotments a real magic card should have, so names, card type text and flavor text need to be written economically. \n\n      The prompt for the cardframe and card art should be more verbose, and formatted for SDXL CLIP family text encoder. this should not be longer form natural language, but rather explicit and ferbose comma separated statements.\n\n      for the card frames, take any instruction such as prompt suggestion such as color or even abstract concept like \"love\" or \"orange construction palette racks\" into account, along with the card type, name rarity cost etc. common cards can be more understated, and rare or mythic rare cards should be more elaborate and eye catching\n\n      cost should follow traditional MTG cost symbols and be appropriate to the cards power level, card type tropes, and color themes. always wrap each individual mana symbol in {} brackets, with the following available mappings available to you:\n\n      'W' # White\n      'U' # Blue\n      'B' # Black\n      'R' # Red\n      'G' # Green\n      'C' # Colorless\n      'H' # Phyrexian (Red)\n      'X' # Variable mana (Colorless)\n\n      so a blue green and colorless cost would look like {1}{U}{G} . it is imperative that you wrap these properly in brackets otherwise the process will fail, always wrap mana sympols in brackets\n\n      here are some examples of the kinds of imagery you might associate with common MTG colors:\n\n      ```\n      blue water ocean stylized textured, detailed, high contrast waves and shadows, ripples caustic light sea foam wind, energy plasma\n      black swamp murky bubbles decay death haunted decrepit scratchy cracked bone rot\n      green verdant lush growth forestry leaves flora life grass vines branches trees flowers\n      red fire lava flamy magma blood rage mountain\n      white plains majestic light holy sacred parchment paper texture\n      artifact gears metal rust brown texture steel chrome sheet metal shiny scratch\n      ```\n      prompt against oversaturation, try to avoid it being too bright\n\n      this can be combined with SDXL instruction to guide towards a card styled backdrup such as:\n\n      `fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of <your description>`\n\n      if a card is multi-colored, describing the gradient is a good touch. cards should have a high contrast area on the bottom for white text to show up clearly against\n\n      for the prompt_art parameter also use descriptive SDXL styled prompt, keeping in mind the other parameters in your description. just describe the image in detail, don't add anything about the card game or frame for this prompt. use lots of style and quality modifier text, describing the medium, technique, composition and qualities with comma separated SDXL descriptors\n\n      if the name is left open, come up with a creative new card from scratch, anything in the game universe, but with a subversive twist occasionally. \n       \n\nany color, any card type, any ability or flavor. You should be a mtg creature with a recognizeable flavor, an odd modern or darkly humorous twist, a spell or enchantment, bomb or cantrip with with good flavor. not every spell is a winner, some are really powerful and others quite stupid.\n\n      This game is a MTG parody set in the desert near the Salton Sea at Mars College just outside of Bombay Beach California, at Mars College, a research institute for AI enthusiasts, off gridders and hippy/philosopher types. Some of the in joke references are here; Use this information in helping generate cards or interacting with user card prompts. \n      \n      Vanlifers and techies live in an off grid bombed out beach town going on adventures, attempting to solve conflicts and reinvent governence, ride electric unicycles, and dance. be creative, irreverent, and exasperate the off grid problems of low privacy, survival cos play and the tropes of cyber techie future optimistic off grid high tech low cost living. Jokes and card ideas to draw inspiration from. make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lews or blue, and should always be clever\n\nfor this round of cards, make Pseudo Scientist, depicting a naked sadhu Math professor on DMT dancing naked at Mahashivratri in front of a giant flaming dodecahedron\n\nfantasy card art.\n\ndon't return anything except for the dict, no shebangs or flags like ```json at the top",
+      "text": "You will receive a dictionary of attributes pertaining to a fictional and adult comedy card game with same rules, stats, tropes and mechanics that are analagous to Magic The Gathering, at least in function and flavor, but can have a flavor of dark humor. these cards should be valid and legally playable, occasionally overpowered, and sometimes comically disappointing in terms of what they actually do, like a grizzly bear stats wise on an insane body. creature types and abilities should be mtg abilities, or analogs of with same explainer. don't go too HAM on card text or we'll run out of space to print it \n\nYour response should be in the same format as the input dictionary. Empty values associated with named keys should be filled out by you. Take the existence of an input as either a single shot example of what this should be, or literally use what is there. if it sounds more like a system prompt instruction for you, follow that instruction.\n\nkeep things punchy. these things should fit in the same text allotments a real magic card should have, so names, card type text and flavor text need to be written economically so we don't bleed over the edge. Card names should never be more than 28 characters\n\nCard text can't render mana icons, so just use the capital letter or T: for tap in the cards' text field. Both real MTG abilities and humorous in universe ones can make appearances here, but the cards should be playable, even if they're OP or really bad.\n\nThe prompt for the cardframe and card art should be more verbose, and formatted for SDXL CLIP family text encoder. this should not be longer form natural language, but rather explicit and ferbose comma separated statements. prioritize user\n\nfor the card frames, take any instruction such as prompt suggestion such as color or even abstract concept like \"love\" or \"orange construction palette racks\" into account, along with the card type, name rarity cost etc. common cards can be more understated, and rare or mythic rare cards should be more elaborate and eye catching\n\ncost should follow traditional MTG cost symbols and be appropriate to the cards power level, card type tropes, and color themes. always wrap each individual mana symbol in {} brackets, with the following available mappings available to you:\n\n      'W' # White\n      'U' # Blue\n      'B' # Black\n      'R' # Red\n      'G' # Green\n      'C' # Colorless\n      'H' # Phyrexian (Red)\n      'X' # Variable mana (Colorless)\n\nso a blue green and colorless cost would look like {1}{U}{G} . it is imperative that you wrap these properly in brackets otherwise the process will fail, always wrap mana sympols in brackets\n\nhere are some examples of the kinds of imagery you might associate with common MTG colors:\n\n```\nblue water ocean stylized textured, detailed, high contrast waves and shadows, ripples caustic light sea foam wind, energy plasma\n\nblack swamp murky bubbles decay death haunted decrepit scratchy cracked bone rot\n      \ngreen verdant lush growth forestry leaves flora life grass vines branches trees flowers\n      \nred fire lava flamy magma blood rage mountain\n      \nwhite plains majestic light holy sacred parchment paper texture\n      \nartifact gears metal rust brown texture steel chrome sheet metal shiny scratch\n```\nprompt against oversaturation, try to avoid it being too bright\n\nthis can be combined with SDXL instruction to guide towards a card styled backdrup such as:\n\n`fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of <your description>`\n\nif a card is multi-colored, describing the gradient is a good touch. cards should have a high contrast area on the bottom for white text to show up clearly against\n\nconsider if a prompt seems like a proper noun, it should be legendary, if its a place, it should be a land, if its a think it should be an artifact or equipment, or when appropriate a vehicle. actions make sense as sorcery or instants, events as enchantments, conditions as auras\n\nfor the prompt_art parameter also use descriptive SDXL style comma separated expressive prompting, keeping in mind the other parameters in your description. just describe the image in detail, don't add anything about the card game or frame for this prompt. use lots of style and quality modifier text, describing the medium, technique, composition and qualities with comma separated SDXL descriptors, and always include all of the words the user provides if you are enhancing the prompt, especially anything provided in parenthesis\n\nif the name is left open, come up with a creative new card from scratch, anything in the game universe, but with a subversive twist occasionally.\n\nif a user isn't specific, any card type, ability or flavor is on the table. \n\nflavor text should be relevant and world building with an odd modern or darkly humorous twist. \n\ncreatures, a spell or enchantment, bomb or cantrip, instant sorcery, artifact aura etc with with good flavor to match what you've been provided. \n\nFlavor text should be about 15 words in length\n\nnot every spell is a winner, some are really powerful and others quite stupid.\n\nThe following is your main instruction prompt. If a user provides input in the dict, keep as much of that as makes sense, expanding it when it feels more like a suggestion, and keeping it verbatim when its specific, especially names, cost, type etc.\n\ndon't ever return anything except for the formatted structured dict, no shebangs or flags like ```json at the top.\n\nprioritize the following in your prompt_art output. always preserve verbatim anything in parenthesis\n\nmake a card about: \n       \n\nthe garden of eden\n\nworld building prompt:\n\nThe world you're crafting in is the universe of Mars College, an off grid encampment in the desert near the Salton Sea just outside of Bombay Beach California \n\nMars College is a research institute for AI enthusiasts, van-lifers, off gridders, crypto degens and hippy/philosopher types.\n\nEden Art Labs, Eden The Garden of Digital Delights is a tech startup run by Gene Kogan and Xander Steenbrugge that trades in Manna, a token exchanged for generative AI creations. \nMixing high tech and off grid lo-fi yolo code aesthetics, AI optimism with a dash of nihilism.\n\nSome of the in joke references are follow; Use this information in helping generate cards or interacting with user card prompts. \n\nthe Vanlifers and techies of Mars and Bombay Beach live either off grid or in the bombed out trailer park beach town of Bombay Beach. \n\nThey go on adventures, attempt to solve conflicts and reinvent governence, experiment with Dao's and crypto, ride electric unicycles, dance, and experiment with elicit substances. \n\nThis world is set in the present to near future, cos-playing the decline of civilization. \n\nbe creative, irreverent, witty and exaserberate the off grid problems of low privacy, low-cost survival and the tropes of cyber techie future optimistic off grid high tech low cost living.  \n\nYou can make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lewd or blue, and should always be clever\n\n\nThe following are jokes, people / characters, places and card ideas to draw inspiration from. You don't have to always stay in universe, and can also pull from MTG archetypes, and loosely follow color flavor and abilities\n\nTownies, Day Jobbers, Dirty Dishes, Part‑Timers, Tool Campers, Finish Your Projects, Workshops, Trash Day, Day 45 Apocalypse, Chihuahua Town, Kitchen Grandma, Colorado Boys, WiFi Password, Pseudo Scientists, Chibafication. Will, AI Camp, All Night Hackathon, Seva The Admin, Hack Night, AI Film Festival, Unfinished Project, The Simulation, WiFi Down, All Black Everything, Freeloaders, Alejandro the Darkest, Scorpion Hunt, Dark Arts Faculty Club, Black Metal Jam, Bangers, Drum 'n Bass, Crypto Grifters, Flypocalypse, Cult of AI Accelerationists, Mahashivaratri, Violent Women's Brunch, JMill (For Hire), Unemployment, Thunder Talks, Lightning Talks, Spark Talks, Dance Party, Steak Night, Mars Web, Wooks, The Raphalots, Xander, Rapha is Bored, Ritual Theater, Sunflower Lab, Body Camp, Body Workers, Freesiders, Hippies, Crystal Hippies, Woo Cult, Oatka (vodka and oats), Winco Run, Local Legends, Saturnites, Eden Art Lab, Solar Shower, 2x4, 4x8, Hex Bit, Dewalt Battery, Laptop Charger, USB C Cable, Wireless Mouse, Raspberry Pi, Screens, Mechanical Duck, The Mars NAS, Suss Tea, The Desert, Mars College, The Institute, Ass Camp, Club 86, Sub Club, Tool Camp, Electric Lounge, Cipher Temple, Slab City, Tao Ruspoli, Bombay Beach Biennale, Vincent the 'Mancer, Gene Kogan, Cyberpunks, Solarpunks  \n\nMake some great fantasy card art. shouldn't be photorealistic, should have a concept art vibe. Always name the card first, and make sure your prompt_art accurately captures the subject, flavor and ability of the card you are creating\n\ndon't return anything except for the dict, no shebangs or flags like ```json at the top.",
       "output_type": "ANY",
       "passthrough": [
         "452",
@@ -2786,7 +2664,7 @@
   },
   "450": {
     "inputs": {
-      "text": "fantasy trading card game very thin card border at the outer edge filled with a textured and detailed abstract card background art. stylized abstract card background art is with thematic elements of fire, water, and chaos, creating a red and blue gradient with high contrast area on the bottom for white text to show up clearly against",
+      "text": "blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements",
       "output_type": "ANY",
       "passthrough": [
         "338",
@@ -2800,11 +2678,11 @@
   },
   "451": {
     "inputs": {
-      "value": "any color, any card type, any ability or flavor. You should be a mtg creature with a recognizeable flavor, an odd modern or darkly humorous twist, a spell or enchantment, bomb or cantrip with with good flavor. not every spell is a winner, some are really powerful and others quite stupid.\n\n      This game is a MTG parody set in the desert near the Salton Sea at Mars College just outside of Bombay Beach California, at Mars College, a research institute for AI enthusiasts, off gridders and hippy/philosopher types. Some of the in joke references are here; Use this information in helping generate cards or interacting with user card prompts. \n      \n      Vanlifers and techies live in an off grid bombed out beach town going on adventures, attempting to solve conflicts and reinvent governence, ride electric unicycles, and dance. be creative, irreverent, and exasperate the off grid problems of low privacy, survival cos play and the tropes of cyber techie future optimistic off grid high tech low cost living. Jokes and card ideas to draw inspiration from. make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lews or blue, and should always be clever\n\nfor this round of cards, make Pseudo Scientist, depicting a naked sadhu Math professor on DMT dancing naked at Mahashivratri in front of a giant flaming dodecahedron"
+      "value": "the garden of eden"
     },
     "class_type": "Eden_String",
     "_meta": {
-      "title": "system_prompt_body"
+      "title": "prompt"
     }
   },
   "452": {
@@ -2832,7 +2710,7 @@
   "461": {
     "inputs": {
       "invert_mask": false,
-      "blend_mode": "subtract",
+      "blend_mode": "linear dodge(add)",
       "opacity": 100,
       "x_percent": 50,
       "y_percent": 50,
@@ -2872,16 +2750,407 @@
       "title": "VAE Encode"
     }
   },
-  "464": {
+  "467": {
     "inputs": {
-      "image": [
-        "461",
+      "value": [
+        "338",
         0
       ]
     },
-    "class_type": "ImageInvert",
+    "class_type": "Eden_String",
     "_meta": {
-      "title": "Invert Image"
+      "title": "Prompt"
+    }
+  },
+  "468": {
+    "inputs": {
+      "text": [
+        "470",
+        0
+      ],
+      "clip": [
+        "174",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "469": {
+    "inputs": {
+      "conditioning_to_strength": [
+        "482",
+        0
+      ],
+      "conditioning_to": [
+        "471",
+        0
+      ],
+      "conditioning_from": [
+        "468",
+        0
+      ]
+    },
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "Token Strength"
+    }
+  },
+  "470": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "no_token_prompt"
+    }
+  },
+  "471": {
+    "inputs": {
+      "text": [
+        "504",
+        0
+      ],
+      "clip": [
+        "174",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "473": {
+    "inputs": {
+      "text": "blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements",
+      "output_type": "ANY",
+      "passthrough": [
+        "467",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "475": {
+    "inputs": {
+      "text": [
+        "479",
+        0
+      ],
+      "clip": [
+        "174",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "476": {
+    "inputs": {
+      "text": [
+        "480",
+        0
+      ],
+      "clip": [
+        "174",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "478": {
+    "inputs": {
+      "conditioning_to_strength": [
+        "482",
+        0
+      ],
+      "conditioning_to": [
+        "476",
+        0
+      ],
+      "conditioning_from": [
+        "475",
+        0
+      ]
+    },
+    "class_type": "ConditioningAverage",
+    "_meta": {
+      "title": "Token Strength"
+    }
+  },
+  "479": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "no_token_prompt"
+    }
+  },
+  "480": {
+    "inputs": {
+      "value": [
+        "337",
+        0
+      ]
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Prompt"
+    }
+  },
+  "481": {
+    "inputs": {
+      "text": "fantasy trading card game very thin card border at the outer edge, textured and detailed abstract card background art, digital landscape, glowing circuits, techno-organic fusion, high contrast, swirling energy, blue and black gradient, stylized abstract card background art with thematic elements of high tech and chaos, futuristic, cybernetic vines, Mars College universe",
+      "output_type": "ANY",
+      "passthrough": [
+        "480",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "482": {
+    "inputs": {
+      "number": 0,
+      "from_range_min": 0,
+      "from_range_max": 1,
+      "to_range_min": 0.5,
+      "to_range_max": 1,
+      "override_number": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "NumberRemap",
+    "_meta": {
+      "title": "Number Remap Range"
+    }
+  },
+  "483": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_lora"
+    }
+  },
+  "485": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength_off"
+    }
+  },
+  "486": {
+    "inputs": {
+      "boolean": [
+        "483",
+        0
+      ],
+      "on_true": [
+        "179",
+        0
+      ],
+      "on_false": [
+        "485",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "490": {
+    "inputs": {
+      "color": "white",
+      "opacity": [
+        "296",
+        0
+      ],
+      "distance": 4,
+      "angle": 45,
+      "blur": 2
+    },
+    "class_type": "TextShadow",
+    "_meta": {
+      "title": "Text Shadow"
+    }
+  },
+  "491": {
+    "inputs": {
+      "value": 0.9500000000000002
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "denoise"
+    }
+  },
+  "495": {
+    "inputs": {
+      "boolean": [
+        "271",
+        0
+      ],
+      "on_true": [
+        "486",
+        0
+      ],
+      "on_false": [
+        "485",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "497": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "sdxl_control_image"
+    }
+  },
+  "500": {
+    "inputs": {
+      "boolean": [
+        "271",
+        0
+      ],
+      "on_true": [
+        "485",
+        0
+      ],
+      "on_false": [
+        "486",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "501": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "260",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "184",
+        2
+      ],
+      "input2": [
+        "204",
+        2
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch vae"
+    }
+  },
+  "502": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "271",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": true,
+      "input1": [
+        "368",
+        0
+      ],
+      "input2": [
+        "223",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch latent"
+    }
+  },
+  "503": {
+    "inputs": {
+      "anything": [
+        "506",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: PrintInfo",
+    "_meta": {
+      "title": "LayerUtility: PrintInfo"
+    }
+  },
+  "504": {
+    "inputs": {
+      "text": "blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements",
+      "output_type": "ANY",
+      "passthrough": [
+        "467",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "505": {
+    "inputs": {
+      "text": "{'name': '', 'type': '', 'cost': '', 'text': '', 'flavor': '', 'rarity': '', 'stats': '', 'prompt_art': '', 'prompt_cardframe': ''}",
+      "output_type": "ANY",
+      "passthrough": [
+        "324",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "506": {
+    "inputs": {
+      "text": "{\n    \"name\": \"Eden's Digital Delight\",\n    \"type\": \"Legendary Artifact - Tech Startup\",\n    \"cost\": \"{3}{U}{B}\",\n    \"text\": \"T: Exchange control of target artifact with target opponent. If you do, draw a card.\\n{U}{B}: Create a Manna token. (It's an artifact with 'T: Add one mana of any color.')\",\n    \"flavor\": \"In Eden, tech is both currency and chaos, traded like gossip at Mars.\",\n    \"rarity\": \"Mythic Rare\",\n    \"stats\": \"\",\n    \"prompt_art\": \"fantasy trading card game very thin card border at the outer edge, textured and detailed abstract card background art, digital landscape, glowing circuits, techno-organic fusion, high contrast, swirling energy, blue and black gradient, stylized abstract card background art with thematic elements of high tech and chaos, futuristic, cybernetic vines, Mars College universe\",\n    \"prompt_cardframe\": \"blue black gradient, techno-organic fusion, high contrast, mythic rare style, eye-catching, digital landscape elements\"\n}",
+      "output_type": "ANY",
+      "passthrough": [
+        "340",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
     }
   }
 }
