@@ -1,8 +1,8 @@
 {
   "3": {
     "inputs": {
-      "seed": 108091418795077,
-      "steps": 25,
+      "seed": 520958987218538,
+      "steps": 20,
       "cfg": 4.01,
       "sampler_name": "euler",
       "scheduler": "sgm_uniform",
@@ -31,7 +31,7 @@
   },
   "4": {
     "inputs": {
-      "ckpt_name": "sd3.5_large_fp8_scaled.safetensors"
+      "ckpt_name": "SD3.5/sd3.5_large_turbo.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -71,8 +71,8 @@
     "inputs": {
       "text": "a bottle with a pink and red galaxy inside it on top of a wooden table on a table in the middle of a modern kitchen with a window to the outdoors mountain range bright sun clouds forest",
       "clip": [
-        "4",
-        1
+        "55",
+        0
       ]
     },
     "class_type": "CLIPTextEncode",
@@ -84,8 +84,8 @@
     "inputs": {
       "text": "",
       "clip": [
-        "4",
-        1
+        "55",
+        0
       ]
     },
     "class_type": "CLIPTextEncode",
@@ -102,6 +102,17 @@
     "class_type": "EmptySD3LatentImage",
     "_meta": {
       "title": "EmptySD3LatentImage"
+    }
+  },
+  "55": {
+    "inputs": {
+      "clip_name1": "clip_g.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "clip_name3": "t5xxl_fp8_e4m3fn.safetensors"
+    },
+    "class_type": "TripleCLIPLoader",
+    "_meta": {
+      "title": "TripleCLIPLoader"
     }
   }
 }

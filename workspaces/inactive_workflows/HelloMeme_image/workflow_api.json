@@ -1,0 +1,191 @@
+{
+  "2": {
+    "inputs": {
+      "gpu_id": 0,
+      "deployment": "huggingface"
+    },
+    "class_type": "HMFaceToolkitsLoader",
+    "_meta": {
+      "title": "Load Face Toolkits"
+    }
+  },
+  "39": {
+    "inputs": {
+      "image": [
+        "62",
+        0
+      ],
+      "face_toolkits": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CropPortrait",
+    "_meta": {
+      "title": "Crop Portrait"
+    }
+  },
+  "43": {
+    "inputs": {
+      "face_toolkits": [
+        "2",
+        0
+      ],
+      "images": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "GetFaceLandmarks",
+    "_meta": {
+      "title": "Get Face Landmarks"
+    }
+  },
+  "44": {
+    "inputs": {
+      "face_toolkits": [
+        "2",
+        0
+      ],
+      "images": [
+        "57",
+        0
+      ],
+      "landmarks": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "GetDrivePose",
+    "_meta": {
+      "title": "Get Drive Pose"
+    }
+  },
+  "57": {
+    "inputs": {
+      "image": "eve-looking-back.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "expression"
+    }
+  },
+  "58": {
+    "inputs": {
+      "trans_ratio": 0,
+      "prompt": "(best quality), highly detailed, ultra-detailed, headshot, person, well-placed five sense organs, looking at the viewer, centered composition, sharp focus, realistic skin texture",
+      "negative_prompt": "",
+      "steps": 25,
+      "seed": 655833116581459,
+      "guidance_scale": 2,
+      "gpu_id": 0,
+      "hm_image_pipeline": [
+        "63",
+        0
+      ],
+      "face_toolkits": [
+        "2",
+        0
+      ],
+      "ref_image": [
+        "39",
+        0
+      ],
+      "drive_pose": [
+        "44",
+        0
+      ],
+      "drive_exp": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "HMPipelineImage",
+    "_meta": {
+      "title": "HelloMeme Image Pipeline"
+    }
+  },
+  "61": {
+    "inputs": {
+      "face_toolkits": [
+        "2",
+        0
+      ],
+      "images": [
+        "57",
+        0
+      ],
+      "landmarks": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "GetDriveExpression",
+    "_meta": {
+      "title": "Get Drive Expression"
+    }
+  },
+  "62": {
+    "inputs": {
+      "image": "eve-poison-ivy.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "face"
+    }
+  },
+  "63": {
+    "inputs": {
+      "checkpoint": "SD1.5",
+      "lora": "None",
+      "vae": "same as checkpoint",
+      "version": "v2",
+      "stylize": "x1",
+      "deployment": "huggingface"
+    },
+    "class_type": "HMImagePipelineLoader",
+    "_meta": {
+      "title": "Load HelloMemeImage Pipeline"
+    }
+  },
+  "64": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "65": {
+    "inputs": {
+      "upscale_model": [
+        "64",
+        0
+      ],
+      "image": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "66": {
+    "inputs": {
+      "filename_prefix": "HelloMeme-image",
+      "images": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

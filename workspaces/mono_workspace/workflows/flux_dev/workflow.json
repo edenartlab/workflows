@@ -1,8 +1,8 @@
 {
   "id": "cc11c9ea-6187-4c9c-a4de-bc8a56cb0c92",
   "revision": 0,
-  "last_node_id": 475,
-  "last_link_id": 976,
+  "last_node_id": 479,
+  "last_link_id": 983,
   "nodes": [
     {
       "id": 342,
@@ -16,13 +16,13 @@
         270
       ],
       "flags": {},
-      "order": 76,
+      "order": 80,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 675
+          "link": 982
         }
       ],
       "outputs": [],
@@ -32,8 +32,7 @@
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "controlnet",
-        ""
+        "controlnet"
       ]
     },
     {
@@ -48,7 +47,7 @@
         250
       ],
       "flags": {},
-      "order": 78,
+      "order": 82,
       "mode": 0,
       "inputs": [
         {
@@ -158,7 +157,7 @@
         250
       ],
       "flags": {},
-      "order": 79,
+      "order": 83,
       "mode": 0,
       "inputs": [
         {
@@ -268,7 +267,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 64,
+      "order": 66,
       "mode": 0,
       "inputs": [
         {
@@ -353,7 +352,7 @@
         26
       ],
       "flags": {},
-      "order": 46,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
@@ -392,7 +391,7 @@
         206
       ],
       "flags": {},
-      "order": 75,
+      "order": 81,
       "mode": 0,
       "inputs": [
         {
@@ -418,7 +417,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 221
+          "link": 983
         },
         {
           "name": "strength",
@@ -594,7 +593,7 @@
         78
       ],
       "flags": {},
-      "order": 32,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -639,7 +638,7 @@
         102
       ],
       "flags": {},
-      "order": 66,
+      "order": 68,
       "mode": 0,
       "inputs": [
         {
@@ -699,7 +698,7 @@
         170
       ],
       "flags": {},
-      "order": 71,
+      "order": 73,
       "mode": 0,
       "inputs": [
         {
@@ -844,7 +843,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 38,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
@@ -902,7 +901,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 37,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -958,7 +957,7 @@
         102
       ],
       "flags": {},
-      "order": 58,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -1020,7 +1019,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 52,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -1096,7 +1095,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 60,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
@@ -1140,52 +1139,6 @@
       ]
     },
     {
-      "id": 315,
-      "type": "VAEEncode",
-      "pos": [
-        -700.7780151367188,
-        2541.238037109375
-      ],
-      "size": [
-        292.7738952636719,
-        98
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 73,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "pixels",
-          "type": "IMAGE",
-          "link": 696
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 898
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "shape": 3,
-          "type": "LATENT",
-          "slot_index": 0,
-          "links": [
-            688
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.16",
-        "Node name for S&R": "VAEEncode"
-      },
-      "widgets_values": []
-    },
-    {
       "id": 360,
       "type": "DataMonitor",
       "pos": [
@@ -1199,7 +1152,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 57,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -1518,7 +1471,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 67,
+      "order": 69,
       "mode": 0,
       "inputs": [
         {
@@ -1574,7 +1527,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 68,
+      "order": 70,
       "mode": 0,
       "inputs": [
         {
@@ -1648,7 +1601,7 @@
         95.12173461914062
       ],
       "flags": {},
-      "order": 45,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -1707,7 +1660,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 51,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -1780,7 +1733,7 @@
         96.811279296875
       ],
       "flags": {},
-      "order": 56,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -1828,79 +1781,6 @@
       "widgets_values": []
     },
     {
-      "id": 352,
-      "type": "ImageResizeFaceAware",
-      "pos": [
-        -700.7780151367188,
-        2721.23828125
-      ],
-      "size": [
-        292.7738952636719,
-        218
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 69,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 720
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 872
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 879
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "slot_index": 0,
-          "links": [
-            696
-          ]
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-dreambait-nodes",
-        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
-        "Node name for S&R": "ImageResizeFaceAware"
-      },
-      "widgets_values": [
-        512,
-        512,
-        "nearest",
-        "fill / crop",
-        "always",
-        0
-      ]
-    },
-    {
       "id": 432,
       "type": "DRMBT_MultiMinMax",
       "pos": [
@@ -1914,7 +1794,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 63,
+      "order": 65,
       "mode": 0,
       "inputs": [
         {
@@ -2001,7 +1881,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 34,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -2077,7 +1957,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 59,
+      "order": 61,
       "mode": 0,
       "inputs": [
         {
@@ -2134,7 +2014,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 35,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -2198,156 +2078,6 @@
       ]
     },
     {
-      "id": 349,
-      "type": "UniversalSwitch",
-      "pos": [
-        -700.7780151367188,
-        2481.238037109375
-      ],
-      "size": [
-        292.7738952636719,
-        230
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 77,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 687
-        },
-        {
-          "name": "input2",
-          "shape": 7,
-          "type": "*",
-          "link": 688
-        },
-        {
-          "name": "input3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input6",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 713
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "slot_index": 0,
-          "links": [
-            780
-          ]
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "Latent Switch",
-      "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
-        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch",
-        "cnr_id": "ControlFlowUtils"
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
-      ]
-    },
-    {
-      "id": 438,
-      "type": "Image to Seed",
-      "pos": [
-        -700.7780151367188,
-        2171.23828125
-      ],
-      "size": [
-        292.7738952636719,
-        26
-      ],
-      "flags": {},
-      "order": 33,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 883
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "shape": 6,
-          "type": "INT",
-          "slot_index": 0,
-          "links": [
-            885,
-            888
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "pr-was-node-suite-comfyui-47064894",
-        "ver": "056badacda52e88d29d6a65f9509cd3115ace0f2",
-        "Node name for S&R": "Image to Seed"
-      },
-      "widgets_values": []
-    },
-    {
       "id": 332,
       "type": "ControlNetLoader",
       "pos": [
@@ -2396,7 +2126,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 61,
+      "order": 63,
       "mode": 0,
       "inputs": [
         {
@@ -2484,11 +2214,11 @@
         1380
       ],
       "size": [
-        262,
+        312.3999938964844,
         80.0309066772461
       ],
       "flags": {},
-      "order": 81,
+      "order": 85,
       "mode": 0,
       "inputs": [
         {
@@ -2541,7 +2271,7 @@
         98
       ],
       "flags": {},
-      "order": 43,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -2605,7 +2335,7 @@
         98
       ],
       "flags": {},
-      "order": 44,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -2669,7 +2399,7 @@
         274
       ],
       "flags": {},
-      "order": 87,
+      "order": 91,
       "mode": 0,
       "inputs": [
         {
@@ -2735,7 +2465,7 @@
         58
       ],
       "flags": {},
-      "order": 50,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -2939,7 +2669,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 54,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
@@ -3013,7 +2743,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 55,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -3169,7 +2899,7 @@
         212
       ],
       "flags": {},
-      "order": 39,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -3314,7 +3044,7 @@
         102
       ],
       "flags": {},
-      "order": 62,
+      "order": 64,
       "mode": 0,
       "inputs": [
         {
@@ -3413,7 +3143,7 @@
         671.7054443359375
       ],
       "flags": {},
-      "order": 90,
+      "order": 94,
       "mode": 0,
       "inputs": [
         {
@@ -3454,8 +3184,7 @@
         "false",
         "true",
         "true",
-        "true",
-        ""
+        "true"
       ]
     },
     {
@@ -3470,7 +3199,7 @@
         46.184478759765625
       ],
       "flags": {},
-      "order": 84,
+      "order": 88,
       "mode": 0,
       "inputs": [
         {
@@ -3551,7 +3280,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 42,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -3615,7 +3344,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 40,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -3668,7 +3397,7 @@
         250
       ],
       "flags": {},
-      "order": 82,
+      "order": 86,
       "mode": 0,
       "inputs": [
         {
@@ -3776,7 +3505,7 @@
         92.14229583740234
       ],
       "flags": {},
-      "order": 85,
+      "order": 89,
       "mode": 0,
       "inputs": [
         {
@@ -3880,7 +3609,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 70,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -3921,7 +3650,7 @@
         58
       ],
       "flags": {},
-      "order": 36,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -3962,7 +3691,7 @@
         250
       ],
       "flags": {},
-      "order": 88,
+      "order": 92,
       "mode": 0,
       "inputs": [
         {
@@ -4071,7 +3800,7 @@
         122
       ],
       "flags": {},
-      "order": 86,
+      "order": 90,
       "mode": 0,
       "inputs": [
         {
@@ -4132,7 +3861,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 89,
+      "order": 93,
       "mode": 0,
       "inputs": [
         {
@@ -4208,7 +3937,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 91,
+      "order": 95,
       "mode": 0,
       "inputs": [
         {
@@ -4282,7 +4011,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 74,
+      "order": 76,
       "mode": 0,
       "inputs": [
         {
@@ -4398,7 +4127,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 65,
+      "order": 67,
       "mode": 0,
       "inputs": [
         {
@@ -4442,7 +4171,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 47,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -4654,59 +4383,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 104,
-      "type": "AIO_Preprocessor",
-      "pos": [
-        -81.8406753540039,
-        2084.577392578125
-      ],
-      "size": [
-        315,
-        102
-      ],
-      "flags": {},
-      "order": 72,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 718
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "widget": {
-            "name": "resolution"
-          },
-          "link": 700
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "shape": 3,
-          "type": "IMAGE",
-          "slot_index": 0,
-          "links": [
-            221,
-            675
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui_controlnet_aux",
-        "ver": "1.0.5",
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "CannyEdgePreprocessor",
-        512
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 393,
       "type": "KSampler",
       "pos": [
@@ -4718,7 +4394,7 @@
         278
       ],
       "flags": {},
-      "order": 83,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -4843,7 +4519,7 @@
         78
       ],
       "flags": {},
-      "order": 41,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -4935,7 +4611,7 @@
         26
       ],
       "flags": {},
-      "order": 31,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -4974,7 +4650,7 @@
         128
       ],
       "flags": {},
-      "order": 49,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -5035,7 +4711,7 @@
         88
       ],
       "flags": {},
-      "order": 53,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -5067,7 +4743,7 @@
         118
       ],
       "flags": {},
-      "order": 80,
+      "order": 84,
       "mode": 0,
       "inputs": [
         {
@@ -5127,7 +4803,7 @@
         212
       ],
       "flags": {},
-      "order": 48,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -5226,6 +4902,580 @@
       ],
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 438,
+      "type": "Image to Seed",
+      "pos": [
+        -710.7604370117188,
+        2168.51513671875
+      ],
+      "size": [
+        292.7738952636719,
+        26
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 883
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "shape": 6,
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            885,
+            888
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "ver": "056badacda52e88d29d6a65f9509cd3115ace0f2",
+        "Node name for S&R": "Image to Seed"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 349,
+      "type": "UniversalSwitch",
+      "pos": [
+        -676.232421875,
+        2466.23828125
+      ],
+      "size": [
+        292.7738952636719,
+        230
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 687
+        },
+        {
+          "name": "input2",
+          "shape": 7,
+          "type": "*",
+          "link": 688
+        },
+        {
+          "name": "input3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input6",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 713
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "slot_index": 0,
+          "links": [
+            780
+          ]
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Latent Switch",
+      "properties": {
+        "aux_id": "VykosX/ControlFlowUtils",
+        "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
+        "Node name for S&R": "UniversalSwitch",
+        "cnr_id": "ControlFlowUtils"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 315,
+      "type": "VAEEncode",
+      "pos": [
+        -681.0053100585938,
+        2509.874267578125
+      ],
+      "size": [
+        292.7738952636719,
+        98
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 696
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 898
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "shape": 3,
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            688
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.16",
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 352,
+      "type": "ImageResizeFaceAware",
+      "pos": [
+        -700.7780151367188,
+        2721.23828125
+      ],
+      "size": [
+        292.7738952636719,
+        218
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 720
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 872
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 879
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            696,
+            979
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "ImageResizeFaceAware"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "nearest",
+        "fill / crop",
+        "always",
+        0
+      ]
+    },
+    {
+      "id": 104,
+      "type": "AIO_Preprocessor",
+      "pos": [
+        -81.8406753540039,
+        2084.577392578125
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 718
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 700
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            980
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "1.0.5",
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "CannyEdgePreprocessor",
+        512
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 479,
+      "type": "Reroute",
+      "pos": [
+        317.0489196777344,
+        2481.0302734375
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 981
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            982,
+            983
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 478,
+      "type": "UniversalSwitch",
+      "pos": [
+        -94.06636810302734,
+        2530.70703125
+      ],
+      "size": [
+        315,
+        230
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 77,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 980
+        },
+        {
+          "name": "input2",
+          "shape": 7,
+          "type": "*",
+          "link": 979
+        },
+        {
+          "name": "input3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input6",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 978
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            981
+          ]
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "switch bypass preprocesor",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 476,
+      "type": "Eden_Bool",
+      "pos": [
+        -306.55242919921875,
+        2373.0390625
+      ],
+      "size": [
+        210,
+        64.81818389892578
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            977
+          ]
+        }
+      ],
+      "title": "bypass_preprocessor",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "a2c844fd379f9c1e3a8302ee22d52f0125e2f081",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 477,
+      "type": "DataMonitor",
+      "pos": [
+        -304.6165771484375,
+        2537.892822265625
+      ],
+      "size": [
+        344.3999938964844,
+        212
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 977
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            978
+          ]
+        }
+      ],
+      "title": "bool to int",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
     }
   ],
   "links": [
@@ -5244,14 +5494,6 @@
       97,
       1,
       "CONDITIONING"
-    ],
-    [
-      221,
-      104,
-      0,
-      97,
-      4,
-      "IMAGE"
     ],
     [
       247,
@@ -5404,14 +5646,6 @@
       337,
       1,
       "FLOAT"
-    ],
-    [
-      675,
-      104,
-      0,
-      342,
-      0,
-      "IMAGE"
     ],
     [
       687,
@@ -6292,6 +6526,62 @@
       8,
       0,
       "LATENT"
+    ],
+    [
+      977,
+      476,
+      0,
+      477,
+      1,
+      "*"
+    ],
+    [
+      978,
+      477,
+      0,
+      478,
+      6,
+      "INT"
+    ],
+    [
+      979,
+      352,
+      0,
+      478,
+      1,
+      "*"
+    ],
+    [
+      980,
+      104,
+      0,
+      478,
+      0,
+      "*"
+    ],
+    [
+      981,
+      478,
+      0,
+      479,
+      0,
+      "*"
+    ],
+    [
+      982,
+      479,
+      0,
+      342,
+      0,
+      "IMAGE"
+    ],
+    [
+      983,
+      479,
+      0,
+      97,
+      4,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -6355,8 +6645,8 @@
       "bounding": [
         -324.5768737792969,
         1798.2113037109375,
-        1289.117431640625,
-        650.2307739257812
+        1299.8748779296875,
+        768.0505981445312
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -6392,10 +6682,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.0591065033252598,
+      "scale": 1.2100000000000002,
       "offset": [
-        2633.466678596342,
-        -804.745176130217
+        1225.348802533572,
+        -1919.2456408281153
       ]
     },
     "ue_links": [],

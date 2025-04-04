@@ -596,7 +596,7 @@
         0
       ],
       "conditioning": [
-        "123",
+        "168",
         0
       ]
     },
@@ -705,27 +705,6 @@
     "class_type": "UltimateSDUpscale",
     "_meta": {
       "title": "Ultimate SD Upscale"
-    }
-  },
-  "123": {
-    "inputs": {
-      "select": [
-        "126",
-        0
-      ],
-      "sel_mode": false,
-      "input1": [
-        "109",
-        0
-      ],
-      "input2": [
-        "139",
-        0
-      ]
-    },
-    "class_type": "ImpactSwitch",
-    "_meta": {
-      "title": "1: AUTO │ 2: Manual"
     }
   },
   "125": {
@@ -880,7 +859,7 @@
   },
   "148": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
@@ -993,7 +972,7 @@
   },
   "158": {
     "inputs": {
-      "seed": 804844062413485
+      "seed": 283425452810321
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -1080,6 +1059,26 @@
     "class_type": "Eden_Math",
     "_meta": {
       "title": "Eden_Math"
+    }
+  },
+  "168": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": 1,
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "109",
+        0
+      ],
+      "input2": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch conditioning"
     }
   }
 }

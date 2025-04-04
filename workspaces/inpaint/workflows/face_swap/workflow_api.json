@@ -1,0 +1,187 @@
+{
+  "2": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "4",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "15",
+        0
+      ],
+      "input2": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "source"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to int"
+    }
+  },
+  "7": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "swap_a_b"
+    }
+  },
+  "9": {
+    "inputs": {
+      "output_path": "face_swap_reactor",
+      "filename_prefix": "ComfyUI",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "10": {
+    "inputs": {
+      "enabled": true,
+      "boost_model": "codeformer-v0.1.0.pth",
+      "interpolation": "Bicubic",
+      "visibility": 1,
+      "codeformer_weight": 0.5000000000000001,
+      "restore_with_main_after": false
+    },
+    "class_type": "ReActorFaceBoost",
+    "_meta": {
+      "title": "ReActor 🌌 Face Booster"
+    }
+  },
+  "11": {
+    "inputs": {
+      "enabled": true,
+      "swap_model": "inswapper_128.onnx",
+      "facedetection": "YOLOv5n",
+      "face_restore_model": "codeformer-v0.1.0.pth",
+      "face_restore_visibility": 1,
+      "codeformer_weight": 0.5,
+      "input_image": [
+        "13",
+        0
+      ],
+      "source_image": [
+        "2",
+        0
+      ],
+      "options": [
+        "12",
+        0
+      ],
+      "face_boost": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ReActorFaceSwapOpt",
+    "_meta": {
+      "title": "ReActor 🌌 Fast Face Swap [OPTIONS]"
+    }
+  },
+  "12": {
+    "inputs": {
+      "input_faces_order": "left-right",
+      "input_faces_index": "0",
+      "detect_gender_input": "no",
+      "source_faces_order": "right-left",
+      "source_faces_index": "0",
+      "detect_gender_source": "no",
+      "console_log_level": 1
+    },
+    "class_type": "ReActorOptions",
+    "_meta": {
+      "title": "ReActor 🌌 Options"
+    }
+  },
+  "13": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "4",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "14",
+        0
+      ],
+      "input2": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "input"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "face_b"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "face_b"
+    }
+  },
+  "16": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}
