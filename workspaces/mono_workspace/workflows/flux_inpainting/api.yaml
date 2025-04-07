@@ -25,19 +25,6 @@ parameters:
       node_id: 53
       field: inputs
       subfield: image
-  masking_prompt:
-    type: string
-    label: Region prompt
-    description: Description (just one or a few words) of what object / region you want to replace / inpaint.
-    tip: |-
-      This prompt will be used to highlight the object/region to inpaint, creating a mask.
-      Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences.
-      Some examples of good masking prompts are face, building, hair, headwear, hat, ...
-    required: false
-    comfyui:
-      node_id: 66
-      field: inputs
-      subfield: value
   inpainting_prompt:
     type: string
     label: Inpainting prompt
@@ -50,29 +37,17 @@ parameters:
       node_id: 67
       field: inputs
       subfield: value
-  activate_rembg:
-    type: boolean
-    label: Activate Foreground/Background separation (creates a mask)
-    description: Use background detection to create an inpainting mask
+  masking_prompt:
+    type: string
+    label: Region prompt
+    description: Description (just one or a few words) of what object / region you want to replace / inpaint.
     tip: |-
-      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image.
-      When activating this, you can typically reduce mask_expand and mask_blur to zero.
-      Make sure to leave masking_prompt empty when activating this!
-    default: false
-    hide_from_ui: true
+      This prompt will be used to highlight the object/region to inpaint, creating a mask.
+      Try to make this prompt as short, clean and simple as possible. use single words instead of full sentences.
+      Some examples of good masking prompts are face, building, hair, headwear, hat, ...
+    required: false
     comfyui:
-      node_id: 256
-      field: inputs
-      subfield: value
-  inpaint_foreground:
-    type: boolean
-    label: flip mask to inpaint foreground
-    description: By default, activating 'activate_rembg' will inpaint the background. Set this to true if you want to inpaint the foreground instead.
-    visible_if: activate_rembg=true
-    default: false
-    hide_from_ui: true
-    comfyui:
-      node_id: 261
+      node_id: 66
       field: inputs
       subfield: value
   resolution:
@@ -90,7 +65,7 @@ parameters:
       subfield: value
   use_lora:
     type: boolean
-    label: Use a trained model
+    label: Use a trained (LoRA) model
     description: Activate a custom, LoRA finetuned model
     tip: |-
       Models created with Eden LoRA trainer can add custom people, styles and objects into the diffusion model, giving it new and customized capabilities.
@@ -104,6 +79,7 @@ parameters:
     label: Trained model (LoRA)
     description: Activate a custom, LoRA finetuned model
     visible_if: use_lora=true
+    default: false
     comfyui:
       node_id: 268
       field: inputs
@@ -136,9 +112,9 @@ parameters:
     default: ""
     visible_if: use_lora=true
     comfyui:
-      node_id: 269
+      node_id: 280
       field: inputs
-      subfield: Prepend
+      subfield: value
   mask_image:
     type: image
     label: Mask Image
@@ -149,10 +125,33 @@ parameters:
       node_id: 48
       field: inputs
       subfield: image
+  use_rembg:
+    type: boolean
+    label: Inpaint background
+    description: Uses background detection to create an inpainting mask. Draw a random mask shape when using this (will get ignored)
+    tip: |-
+      rembg generates a very precise gradient mask that can be used for inpainting background / foreground regions in an image.
+      When activating this, you can typically reduce mask_expand and mask_blur to zero.
+      Make sure to leave masking_prompt empty when activating this!
+    default: false
+    comfyui:
+      node_id: 256
+      field: inputs
+      subfield: value
+  inpaint_foreground:
+    type: boolean
+    label: Invert mask to inpaint foreground
+    description: By default, activating 'use_rembg' will inpaint the background. Set this to true if you want to inpaint the foreground instead.
+    visible_if: use_rembg=true
+    default: false
+    comfyui:
+      node_id: 261
+      field: inputs
+      subfield: value
   creativity:
     type: float
-    label: AI creativity
-    description: How much the surrounding scene influences the inpainting. Recommended values 0.7-0.9
+    label: Context Control Strength
+    description: How much the surrounding scene context influences the inpainting. Recommended values 0.7-0.9
     tip: |-
       This controls how much the inpainting looks at the surrounding (fixed) content in the image.
       Lower values can produce more creative outputs that have better prompt adherence but they often tend to look misplaced and out of context with the rest of the scene.
