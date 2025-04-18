@@ -1,0 +1,2536 @@
+{
+  "10": {
+    "inputs": {
+      "lora_name": "froyd7sinsmodel_sdxl_lora.safetensors",
+      "strength_model": [
+        "95",
+        0
+      ],
+      "strength_clip": [
+        "95",
+        0
+      ],
+      "model": [
+        "86",
+        0
+      ],
+      "clip": [
+        "86",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "20": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 14,
+      "y_percent": 8,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "226",
+        0
+      ],
+      "layer_image": [
+        "330",
+        0
+      ],
+      "layer_mask": [
+        "330",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "36": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "overlay",
+      "opacity": 25,
+      "x_percent": 50,
+      "y_percent": 50.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "395",
+        0
+      ],
+      "layer_image": [
+        "208",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "51": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 13.5,
+      "y_percent": 95,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "212",
+        0
+      ],
+      "layer_image": [
+        "329",
+        0
+      ],
+      "layer_mask": [
+        "329",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "53": {
+    "inputs": {
+      "image": "aura-point-icon422x.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "aura_icon"
+    }
+  },
+  "54": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 80,
+      "y_percent": 95,
+      "mirror": "None",
+      "scale": 0.9400000000000001,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "51",
+        0
+      ],
+      "layer_image": [
+        "53",
+        0
+      ],
+      "layer_mask": [
+        "53",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "65": {
+    "inputs": {
+      "value": "Gaemaeg is a master of unwavering concentration. He is able to focus on a single task for extended periods of time, even as the world around him crumbles.\n"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "card_text"
+    }
+  },
+  "72": {
+    "inputs": {
+      "image": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "81": {
+    "inputs": {
+      "text": [
+        "65",
+        0
+      ],
+      "image_width": [
+        "72",
+        1
+      ],
+      "image_height": [
+        "72",
+        2
+      ],
+      "font_name": "GothamBook.ttf",
+      "font_size": 48,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": true,
+      "x_percent": 0,
+      "y_percent": 72,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 12,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "72",
+        0
+      ],
+      "margins": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "Draw Text 📝"
+    }
+  },
+  "85": {
+    "inputs": {
+      "width": [
+        "201",
+        1
+      ],
+      "height": [
+        "201",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "86": {
+    "inputs": {
+      "ckpt_name": "juggernautXL_version6Rundiffusion.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "87": {
+    "inputs": {
+      "seed": [
+        "294",
+        0
+      ],
+      "steps": [
+        "381",
+        0
+      ],
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "10",
+        0
+      ],
+      "positive": [
+        "98",
+        0
+      ],
+      "negative": [
+        "98",
+        1
+      ],
+      "latent_image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "88": {
+    "inputs": {
+      "text": [
+        "380",
+        0
+      ],
+      "clip": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "prompt"
+    }
+  },
+  "89": {
+    "inputs": {
+      "text": "wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft",
+      "clip": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "negative_prompt"
+    }
+  },
+  "90": {
+    "inputs": {
+      "samples": [
+        "87",
+        0
+      ],
+      "vae": [
+        "86",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "95": {
+    "inputs": {
+      "value": 0.6800000000000002
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength"
+    }
+  },
+  "97": {
+    "inputs": {
+      "preprocessor": [
+        "141",
+        0
+      ],
+      "resolution": [
+        "167",
+        0
+      ],
+      "image": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "controlnet_preprocessor"
+    }
+  },
+  "98": {
+    "inputs": {
+      "strength": [
+        "336",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "88",
+        0
+      ],
+      "negative": [
+        "89",
+        0
+      ],
+      "control_net": [
+        "135",
+        0
+      ],
+      "image": [
+        "97",
+        0
+      ],
+      "vae": [
+        "86",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "99": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "init_image"
+    }
+  },
+  "117": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2"
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_init_as_art_image"
+    }
+  },
+  "118": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "393",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "90",
+        0
+      ],
+      "input2": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "init_switch"
+    }
+  },
+  "119": {
+    "inputs": {
+      "text": "Gaemaeg",
+      "image_width": [
+        "208",
+        1
+      ],
+      "image_height": [
+        "208",
+        2
+      ],
+      "font_name": "horizon.ttf",
+      "font_size": 54,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": 0,
+      "x_percent": 26.900000000000002,
+      "y_percent": 6.8100000000000005,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "226",
+        0
+      ],
+      "margins": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "card_name"
+    }
+  },
+  "120": {
+    "inputs": {
+      "left": 144,
+      "right": 144,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "122": {
+    "inputs": {
+      "left": 0,
+      "right": 106,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "123": {
+    "inputs": {
+      "color": "black",
+      "opacity": 1,
+      "border_color": "black",
+      "border_opacity": 0,
+      "border_width": 6,
+      "corner_radius": 36,
+      "padding_left": 52,
+      "padding_right": 64,
+      "padding_top": 40,
+      "padding_bottom": 36,
+      "full_width": true,
+      "color_hex": "#FFFFFF",
+      "border_hex": "#000000"
+    },
+    "class_type": "TextBoxStyle",
+    "_meta": {
+      "title": "Text Box Style"
+    }
+  },
+  "128": {
+    "inputs": {
+      "text": "Undisturbed Concentration",
+      "image_width": [
+        "131",
+        1
+      ],
+      "image_height": [
+        "131",
+        2
+      ],
+      "font_name": "GothamMedium.ttf",
+      "font_size": 54,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": 0,
+      "x_percent": 11.700000000000001,
+      "y_percent": 66,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "119",
+        0
+      ],
+      "margins": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "trait"
+    }
+  },
+  "129": {
+    "inputs": {
+      "left": 0,
+      "right": 106,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "130": {
+    "inputs": {
+      "color": "black",
+      "opacity": 1,
+      "border_color": "black",
+      "border_opacity": 0,
+      "border_width": 6,
+      "corner_radius": 36,
+      "padding_left": 38,
+      "padding_right": 64,
+      "padding_top": 42,
+      "padding_bottom": 30,
+      "full_width": true,
+      "color_hex": "#FFFFFF",
+      "border_hex": "#000000"
+    },
+    "class_type": "TextBoxStyle",
+    "_meta": {
+      "title": "Text Box Style"
+    }
+  },
+  "131": {
+    "inputs": {
+      "image": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "133": {
+    "inputs": {
+      "menu": "controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,diffusers_xl_canny_full.safetensors,controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "135": {
+    "inputs": {
+      "control_net_name": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "136": {
+    "inputs": {
+      "menu": "none,CannyEdgePreprocessor,CannyEdgePreprocessor,DepthAnythingV2Preprocessor,Scribble_PiDiNet_Preprocessor,OpenposePreprocessor,ScribblePreprocessor,LineartStandardPreprocessor",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "137",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "137": {
+    "inputs": {
+      "menu": "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
+      "delimiter": ",",
+      "select_item": [
+        "384",
+        0
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "controlnet"
+    }
+  },
+  "141": {
+    "inputs": {
+      "any_type_input": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "142": {
+    "inputs": {
+      "any_type_input": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SD Any Converter"
+    }
+  },
+  "144": {
+    "inputs": {
+      "text": "420",
+      "image_width": [
+        "131",
+        1
+      ],
+      "image_height": [
+        "131",
+        2
+      ],
+      "font_name": "horizon.ttf",
+      "font_size": 54,
+      "font_color": "white",
+      "font_opacity": 1,
+      "background_color": "black",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": false,
+      "x_percent": 82.5,
+      "y_percent": 93.60000000000001,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "rng_points"
+    }
+  },
+  "167": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "201",
+        1
+      ],
+      "b": [
+        "201",
+        2
+      ]
+    },
+    "class_type": "DRMBT_MultiMinMax",
+    "_meta": {
+      "title": "Multi Min/Max"
+    }
+  },
+  "170": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_depthmap",
+      "images": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "save_controlnet_preprocessor"
+    }
+  },
+  "171": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "172": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "173": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "174": {
+    "inputs": {
+      "boolean": [
+        "196",
+        0
+      ],
+      "on_true": [
+        "199",
+        0
+      ],
+      "on_false": [
+        "179",
+        2
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "175": {
+    "inputs": {
+      "boolean": [
+        "196",
+        0
+      ],
+      "on_true": [
+        "195",
+        0
+      ],
+      "on_false": [
+        "179",
+        3
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "176": {
+    "inputs": {
+      "boolean": [
+        "196",
+        0
+      ],
+      "on_true": [
+        "198",
+        0
+      ],
+      "on_false": [
+        "179",
+        4
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "177": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "178": {
+    "inputs": {
+      "boolean": [
+        "196",
+        0
+      ],
+      "on_true": [
+        "197",
+        0
+      ],
+      "on_false": [
+        "179",
+        1
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "179": {
+    "inputs": {
+      "aspect_ratio": "16-9_landscape_1344x768",
+      "justification": "center",
+      "image": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "AspectPadImageForOutpainting",
+    "_meta": {
+      "title": "AspectPadImageForOutpainting"
+    }
+  },
+  "180": {
+    "inputs": {
+      "guidance": 30,
+      "conditioning": [
+        "183",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "181": {
+    "inputs": {
+      "unet_name": "flux1-fill-dev.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "182": {
+    "inputs": {
+      "left": [
+        "178",
+        0
+      ],
+      "top": [
+        "174",
+        0
+      ],
+      "right": [
+        "175",
+        0
+      ],
+      "bottom": [
+        "176",
+        0
+      ],
+      "feathering": 64,
+      "image": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "ImagePadForOutpaint",
+    "_meta": {
+      "title": "Pad Image for Outpainting"
+    }
+  },
+  "183": {
+    "inputs": {
+      "text": [
+        "193",
+        0
+      ],
+      "clip": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "184": {
+    "inputs": {
+      "seed": [
+        "294",
+        0
+      ],
+      "steps": [
+        "390",
+        0
+      ],
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "185",
+        0
+      ],
+      "positive": [
+        "191",
+        0
+      ],
+      "negative": [
+        "191",
+        1
+      ],
+      "latent_image": [
+        "191",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "185": {
+    "inputs": {
+      "model": [
+        "181",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "186": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "187": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "188": {
+    "inputs": {
+      "text": [
+        "200",
+        0
+      ],
+      "clip": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "190": {
+    "inputs": {
+      "samples": [
+        "184",
+        0
+      ],
+      "vae": [
+        "186",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "191": {
+    "inputs": {
+      "noise_mask": false,
+      "positive": [
+        "180",
+        0
+      ],
+      "negative": [
+        "188",
+        0
+      ],
+      "vae": [
+        "186",
+        0
+      ],
+      "pixels": [
+        "182",
+        0
+      ],
+      "mask": [
+        "182",
+        1
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "InpaintModelConditioning"
+    }
+  },
+  "192": {
+    "inputs": {
+      "images": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "193": {
+    "inputs": {
+      "string": [
+        "374",
+        0
+      ]
+    },
+    "class_type": "Primitive string multiline [Crystools]",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "194": {
+    "inputs": {
+      "boolean": [
+        "196",
+        0
+      ],
+      "on_true": [
+        "118",
+        0
+      ],
+      "on_false": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "Switch image [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch image"
+    }
+  },
+  "195": {
+    "inputs": {
+      "int": 112
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "right"
+    }
+  },
+  "196": {
+    "inputs": {
+      "boolean": true
+    },
+    "class_type": "Primitive boolean [Crystools]",
+    "_meta": {
+      "title": "Custom Expand"
+    }
+  },
+  "197": {
+    "inputs": {
+      "int": 112
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "left"
+    }
+  },
+  "198": {
+    "inputs": {
+      "int": 768
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "bottom"
+    }
+  },
+  "199": {
+    "inputs": {
+      "int": 208
+    },
+    "class_type": "Primitive integer [Crystools]",
+    "_meta": {
+      "title": "top"
+    }
+  },
+  "200": {
+    "inputs": {
+      "string": "text, watermark, caption, sentence, words, nude, naked, nsfw, signature, caption, letters, name"
+    },
+    "class_type": "Primitive string multiline [Crystools]",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "201": {
+    "inputs": {
+      "width": [
+        "209",
+        0
+      ],
+      "height": [
+        "209",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "crop to subject",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "202",
+        0
+      ]
+    },
+    "class_type": "ImageResizeFaceAware",
+    "_meta": {
+      "title": "Image Resize Face Aware"
+    }
+  },
+  "202": {
+    "inputs": {
+      "size": [
+        "209",
+        0
+      ],
+      "method": "NEAREST",
+      "image": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "ResizeShortestToNode",
+    "_meta": {
+      "title": "Resize Shortest To"
+    }
+  },
+  "203": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_outpaint",
+      "images": [
+        "395",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "outpaint_generation"
+    }
+  },
+  "204": {
+    "inputs": {
+      "images": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "206": {
+    "inputs": {
+      "mask": [
+        "326",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "207": {
+    "inputs": {
+      "image": [
+        "206",
+        0
+      ]
+    },
+    "class_type": "ImageInvert",
+    "_meta": {
+      "title": "Invert Image"
+    }
+  },
+  "208": {
+    "inputs": {
+      "width": 1248,
+      "height": 2000,
+      "interpolation": "nearest",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "207",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "209": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "212": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 86.00000000000001,
+      "y_percent": 8,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "20",
+        0
+      ],
+      "layer_image": [
+        "213",
+        0
+      ],
+      "layer_mask": [
+        "213",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "213": {
+    "inputs": {
+      "image": "lore-master-icon.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "loremaster_icon"
+    }
+  },
+  "217": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "saturation",
+      "opacity": 100,
+      "x_percent": 58.000000000000014,
+      "y_percent": 9.000000000000002,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "36",
+        0
+      ],
+      "layer_image": [
+        "327",
+        0
+      ],
+      "layer_mask": [
+        "327",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "character_box_blend"
+    }
+  },
+  "220": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "saturation",
+      "opacity": 100,
+      "x_percent": 50.00000000000001,
+      "y_percent": 75.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "348",
+        0
+      ],
+      "layer_image": [
+        "328",
+        0
+      ],
+      "layer_mask": [
+        "217",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "224": {
+    "inputs": {
+      "images": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "226": {
+    "inputs": {
+      "width": 1248,
+      "height": 2000,
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "EmptyImage"
+    }
+  },
+  "229": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "darken",
+      "opacity": 65,
+      "x_percent": 50.00000000000001,
+      "y_percent": 75.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "220",
+        0
+      ],
+      "layer_image": [
+        "328",
+        0
+      ],
+      "layer_mask": [
+        "328",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "232": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "linear dodge(add)",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 50.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "281",
+        0
+      ],
+      "layer_image": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "235": {
+    "inputs": {
+      "masks_a": [
+        "217",
+        1
+      ],
+      "masks_b": [
+        "244",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "244": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "darken",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 75.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "36",
+        0
+      ],
+      "layer_image": [
+        "328",
+        0
+      ],
+      "layer_mask": [
+        "328",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "260": {
+    "inputs": {
+      "masks_a": [
+        "20",
+        1
+      ],
+      "masks_b": [
+        "212",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "261": {
+    "inputs": {
+      "masks_a": [
+        "51",
+        1
+      ],
+      "masks_b": [
+        "54",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "262": {
+    "inputs": {
+      "masks_a": [
+        "260",
+        0
+      ],
+      "masks_b": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "263": {
+    "inputs": {
+      "mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "265": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_icons",
+      "images": [
+        "266",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "icon_overlays"
+    }
+  },
+  "266": {
+    "inputs": {
+      "RGB_image": [
+        "54",
+        0
+      ],
+      "mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageCombineAlpha",
+    "_meta": {
+      "title": "LayerUtility: ImageCombineAlpha"
+    }
+  },
+  "270": {
+    "inputs": {
+      "RGB_image": [
+        "229",
+        0
+      ],
+      "mask": [
+        "235",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageCombineAlpha",
+    "_meta": {
+      "title": "composit_alpha"
+    }
+  },
+  "273": {
+    "inputs": {
+      "red": 1,
+      "green": 1,
+      "blue": 1,
+      "threshold": 0,
+      "image": [
+        "229",
+        0
+      ]
+    },
+    "class_type": "MaskFromColor+",
+    "_meta": {
+      "title": "🔧 Mask From Color"
+    }
+  },
+  "275": {
+    "inputs": {
+      "mask": [
+        "235",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "277": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_text-overlay",
+      "images": [
+        "270",
+        0
+      ],
+      "mask": [
+        "235",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithAlpha",
+    "_meta": {
+      "title": "save_textbox"
+    }
+  },
+  "278": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 50.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "36",
+        0
+      ],
+      "layer_image": [
+        "270",
+        0
+      ],
+      "layer_mask": [
+        "235",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "comp_text_box"
+    }
+  },
+  "279": {
+    "inputs": {
+      "images": [
+        "278",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "281": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 50.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "278",
+        0
+      ],
+      "layer_image": [
+        "266",
+        0
+      ],
+      "layer_mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "comp_icons"
+    }
+  },
+  "282": {
+    "inputs": {
+      "images": [
+        "281",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "286": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_text-overlay",
+      "images": [
+        "81",
+        0
+      ],
+      "mask": [
+        "290",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithAlpha",
+    "_meta": {
+      "title": "Save Image With Alpha"
+    }
+  },
+  "288": {
+    "inputs": {
+      "masks_a": [
+        "119",
+        1
+      ],
+      "masks_b": [
+        "128",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "289": {
+    "inputs": {
+      "masks_a": [
+        "288",
+        0
+      ],
+      "masks_b": [
+        "144",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "290": {
+    "inputs": {
+      "masks_a": [
+        "289",
+        0
+      ],
+      "masks_b": [
+        "81",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "292": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_output",
+      "images": [
+        "232",
+        0
+      ],
+      "mask": [
+        "346",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithAlpha",
+    "_meta": {
+      "title": "save_output"
+    }
+  },
+  "294": {
+    "inputs": {
+      "seed": 985355136861480
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "305": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "306",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "190",
+        0
+      ],
+      "input2": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "306": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2"
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_init_as_full_art_image"
+    }
+  },
+  "310": {
+    "inputs": {
+      "text": "azure-clan-overlay-422x.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "311",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "311": {
+    "inputs": {
+      "text": "%aux%-clan-overlay-422x.png",
+      "output_type": "STRING",
+      "aux": [
+        "321",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "312": {
+    "inputs": {
+      "text": "azure-epic-rarity-badge.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "313",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "313": {
+    "inputs": {
+      "text": "%aux%-epic-rarity-badge.png",
+      "output_type": "STRING",
+      "aux": [
+        "321",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "314": {
+    "inputs": {
+      "text": "azure-ultra-rare-clan-badge.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "315",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "315": {
+    "inputs": {
+      "text": "%aux%-ultra-rare-clan-badge.png",
+      "output_type": "STRING",
+      "aux": [
+        "321",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "316": {
+    "inputs": {
+      "text": "llm-lore-box-brushed-1.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "318",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "317": {
+    "inputs": {
+      "text": "character-box-%aux%.png",
+      "output_type": "ANY",
+      "aux": [
+        "319",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "318": {
+    "inputs": {
+      "text": "llm-lore-box-brushed-%aux%.png",
+      "output_type": "ANY",
+      "aux": [
+        "320",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "319": {
+    "inputs": {
+      "text": "((%aux%)%4)+1",
+      "output_type": "FORMULA",
+      "aux": [
+        "322",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "320": {
+    "inputs": {
+      "text": "((%aux%)%4)+1",
+      "output_type": "FORMULA",
+      "aux": [
+        "323",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "321": {
+    "inputs": {
+      "menu": "jade,scarlet,azure,grey",
+      "delimiter": ",",
+      "select_item": "azure"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "clan_name"
+    }
+  },
+  "322": {
+    "inputs": {
+      "seed": 508712923460789
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "323": {
+    "inputs": {
+      "seed": 383224326796663
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "324": {
+    "inputs": {
+      "text": "character-box-1.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "317",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "326": {
+    "inputs": {
+      "path": [
+        "310",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 1732,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "clan_overlay"
+    }
+  },
+  "327": {
+    "inputs": {
+      "path": [
+        "324",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 1336,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "character_box"
+    }
+  },
+  "328": {
+    "inputs": {
+      "path": [
+        "316",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 745,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "lore_box"
+    }
+  },
+  "329": {
+    "inputs": {
+      "path": [
+        "312",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 1218,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "rarity_icon"
+    }
+  },
+  "330": {
+    "inputs": {
+      "path": [
+        "314",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 1233,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "clan_icon"
+    }
+  },
+  "334": {
+    "inputs": {
+      "value": 0.8000000000000002
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "335": {
+    "inputs": {
+      "images": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "336": {
+    "inputs": {
+      "text": "[%aux%,0.0][%aux2%==%aux3%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "334",
+        0
+      ],
+      "aux2": [
+        "335",
+        0
+      ],
+      "aux3": [
+        "350",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "non_default_init_image"
+    }
+  },
+  "345": {
+    "inputs": {
+      "image": "matte-for-card422x.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "346": {
+    "inputs": {
+      "mask": [
+        "345",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "348": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "darken",
+      "opacity": 85,
+      "x_percent": 58.000000000000014,
+      "y_percent": 9.000000000000002,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "217",
+        0
+      ],
+      "layer_image": [
+        "327",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "349": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "dummy_image"
+    }
+  },
+  "350": {
+    "inputs": {
+      "images": [
+        "349",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "374": {
+    "inputs": {
+      "max_token": 100,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4-vision Low",
+      "prompt": [
+        "375",
+        0
+      ],
+      "image": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "ImageDescriptionNode",
+    "_meta": {
+      "title": "ImageDescriptionNode"
+    }
+  },
+  "375": {
+    "inputs": {
+      "prompt1": [
+        "376",
+        0
+      ],
+      "prompt2": [
+        "380",
+        0
+      ],
+      "separator": ", "
+    },
+    "class_type": "easy promptConcat",
+    "_meta": {
+      "title": "PromptConcat"
+    }
+  },
+  "376": {
+    "inputs": {
+      "value": "this image will be outpainted at the bottom of the image. craft an outpaint image prompt based on the input image that describes the art style and subject matter that might be out of framte below this image.\n\nthe prompt that created this image is below; ignoring the embeddings trigger `in the style of (embedding:froyd7sinsmodel_sdxl_embeddings.safetensors),` , use the descriptors and describe the extended scene beneath the image, attempting to maintain stylistic consistency without repeating the main subject of the image. \n\nDon't instruct it like a NLP LLM referencing the original image at all with things like 'Below the image, extend the scene...', or 'A continuation of the scene beneath the image ', just describe what should be there. You should instruct the image generation model with what the top of the new image should look like in such a way as to evoke a consistent color and subject matter as the bottom of the input image you're given. \n\ndon't describe the sides or top, just describe what would be below the composition you're given"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "Eden_String"
+    }
+  },
+  "379": {
+    "inputs": {
+      "text": "Ancient roots intertwine with crumbling stone steps, leading deeper into an enigmatic cavern. The floor is a mosaic of scattered, glowing runes partially obscured by earthy debris. Subtle flickers of eerie blue light emanate from the depths, casting long shadows that dance across the textured ground. A partially collapsed archway reveals traces of ancient architecture, hinting at a forgotten civilization. The atmosphere is serene yet haunting, enveloped in tritone tones, with dramatic shadows enhancing the mystique of",
+      "output_type": "ANY",
+      "passthrough": [
+        "374",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "380": {
+    "inputs": {
+      "body": "in the style of (embedding:froyd7sinsmodel_sdxl_embeddings.safetensors), Ancient sigil partially covered by vines, resting against a stone pillar, in a dim, mysterious underground realm with hints of past glory.",
+      "delimiter": ", ",
+      "prepend": "aesthetic anime, akira, dark fantasy, thick bold linework, illustration,",
+      "append": "serene mood, contemplative, tritone, eerie, dark shadows, atmospheric, moody, highly detailed, (dramatic shadows:1.2)\","
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
+  },
+  "381": {
+    "inputs": {
+      "text": "[%aux%,1][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "382",
+        0
+      ],
+      "aux2": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "steps_bypass"
+    }
+  },
+  "382": {
+    "inputs": {
+      "value": 50
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "steps"
+    }
+  },
+  "384": {
+    "inputs": {
+      "text": "[\"%aux%\", \"cannyv2\"][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "385",
+        0
+      ],
+      "aux2": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "preprocessor_bypass"
+    }
+  },
+  "385": {
+    "inputs": {
+      "value": "depth"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "controlnet_preprocessor"
+    }
+  },
+  "389": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_creation",
+      "images": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "save_art_image"
+    }
+  },
+  "390": {
+    "inputs": {
+      "text": "[%aux%,1][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "391",
+        0
+      ],
+      "aux2": [
+        "306",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "steps_bypass"
+    }
+  },
+  "391": {
+    "inputs": {
+      "value": 35
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "steps_outpaint"
+    }
+  },
+  "393": {
+    "inputs": {
+      "text": "[%aux%,2][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "117",
+        2
+      ],
+      "aux2": [
+        "306",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "init_image_logic"
+    }
+  },
+  "395": {
+    "inputs": {
+      "width": 1248,
+      "height": 2000,
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "305",
+        0
+      ]
+    },
+    "class_type": "ImageResizeFaceAware",
+    "_meta": {
+      "title": "Image Resize Face Aware"
+    }
+  }
+}
