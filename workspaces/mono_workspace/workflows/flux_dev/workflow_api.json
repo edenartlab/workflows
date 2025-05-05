@@ -79,7 +79,7 @@
         2
       ],
       "image": [
-        "104",
+        "478",
         0
       ]
     },
@@ -498,7 +498,7 @@
     "inputs": {
       "filename_prefix": "controlnet",
       "images": [
-        "104",
+        "478",
         0
       ]
     },
@@ -1398,6 +1398,52 @@
     "class_type": "DataMonitor",
     "_meta": {
       "title": "round time"
+    }
+  },
+  "476": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "bypass_preprocessor"
+    }
+  },
+  "477": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "476",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to int"
+    }
+  },
+  "478": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "477",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "104",
+        0
+      ],
+      "input2": [
+        "352",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch bypass preprocesor"
     }
   }
 }

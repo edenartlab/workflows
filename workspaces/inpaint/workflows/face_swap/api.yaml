@@ -1,0 +1,105 @@
+name: Face Swap
+description: Swap faces between two images using advanced AI face detection and swapping technology.
+tip: |-
+  This tool allows you to swap faces between two images using the ReActor face swapping technology.
+  You can control various aspects of the face swap including face detection, restoration, and boost settings.
+thumbnail: app/face-swap-example.jpg
+cost_estimate: 1.0 * n_samples
+output_type: image
+handler: comfyui
+active: true
+visible: true
+base_model: sdxl
+comfyui_output_node_id: 9
+parameters:
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: Number of variations to generate for the card art. Only applies when generating new art rather than using a rendered image.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  face_a:
+    type: image
+    label: Face A
+    description: First face image (source or target depending on swap direction)
+    tip: The image to use as the source face.
+    required: true
+    comfyui:
+      node_id: 15
+      field: inputs
+      subfield: image
+  face_b:
+    type: image
+    label: Face B
+    description: Second face image (source or target depending on swap direction)
+    tip: The image to use as the target face.
+    required: true
+    comfyui:
+      node_id: 14
+      field: inputs
+      subfield: image
+  swap_a_b:
+    type: boolean
+    label: Swap Direction
+    description: Toggle to swap the direction of face replacement
+    tip: When true, Face B will be placed onto Face A. When false, Face A will be placed onto Face B.
+    default: true
+    comfyui:
+      node_id: 7
+      field: inputs
+      subfield: value
+  face_boost_enabled:
+    type: boolean
+    label: Enable Face Boost
+    description: Enable additional face enhancement
+    tip: Enable additional face enhancement
+    default: true
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: enabled
+  input_faces_order:
+    type: string
+    label: Input Face Order
+    tip: The order of faces in the input image.
+    description: Order of faces in the input image
+    default: left-right
+    choices: [left-right, right-left]
+    comfyui:
+      node_id: 12
+      field: inputs
+      subfield: input_faces_order
+  source_faces_order:
+    type: string
+    label: Source Face Order
+    tip: The order of faces in the source image.
+    description: Order of faces in the source image
+    default: left-right
+    choices: [left-right, right-left]
+    comfyui:
+      node_id: 12
+      field: inputs
+      subfield: source_faces_order
+  input_faces_index:
+    type: string
+    label: Input Face Index
+    tip: The index of the face to use from the input image.
+    description: Index of faces to use from input image
+    default: "0"
+    comfyui:
+      node_id: 12
+      field: inputs
+      subfield: input_faces_index
+  source_faces_index:
+    type: string
+    label: Source Face Index
+    tip: The index of the face to use from the source image.
+    description: Index of faces to use from source image
+    default: "0"
+    comfyui:
+      node_id: 12
+      field: inputs
+      subfield: source_faces_index 

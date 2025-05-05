@@ -1,0 +1,260 @@
+name: Temple Abyss Epic Lore Master Card Generator
+description: Create a custom Temple Abyss card with background art generation, clan-specific elements, and epic lore master styling.
+tip: |-
+  This tool generates custom Temple Abyss cards with epic lore master styling.
+  You can either generate new card art or use existing rendered images.
+  The workflow combines generated or supplied art with clan-specific elements, including clan overlays, icons, and rarity badges.
+  Card styling is enhanced with epic lore master elements and text effects, generating a 1024x1024 image and then outpainting it for full card art at 1248x2000 resolution.
+thumbnail: app/temple-abyss-epic-lore_opt.jpg
+cost_estimate: 4.0 * n_samples
+output_type: image
+resolutions: [21-9_1536x640, 16-9_1344x768, 3-2_1216x832, 4-3_1152x896, 5-4_1088x896, 1-1_1024x1024, 4-5_896x1088, 3-4_896x1152, 2-3_832x1216, 9-16_768x1344, 9-21_640x1536]
+handler: comfyui
+active: false
+base_model: sdxl
+comfyui_output_node_id: 292
+comfyui_intermediate_outputs:
+  generated_art: 389
+  control_signal: 170
+  icon_overlays: 265
+  text_box: 277
+  outpaint_generation: 203
+  text_overlay: 286
+parameters:
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      Number of variations to generate for the card art. 
+      Only applies when generating new art rather than using an init image.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  prompt:
+    type: string
+    label: Image Prompt
+    description: Body of the prompt where main details are described
+    tip: |-
+      This is the prompt body. This can be used by itself or combined with the prepend and append prompts 
+      These will be joined together and passed to the image generation node.
+    required: true
+    default: in the style of (embedding:froyd7sinsmodel_sdxl_embeddings.safetensors), Ancient sigil partially covered by vines, resting against a stone pillar, in a dim, mysterious underground realm with hints of past glory.
+    comfyui:
+      node_id: 380
+      field: inputs
+      subfield: body
+  prompt_prepend:
+    type: string
+    label: Image Prompt Prepend
+    description: Prepend to the image prompt body defined above as prompt
+    tip: |-
+      This will be added to the beginning of the image prompt. 
+      This can be used to add additional details or constraints to the image generation to maintain consistency.
+      This will be joined together with the prompt body with a comma and a space,and passed to the image generation node.
+    default: aesthetic anime, akira, dark fantasy, thick bold linework, illustration,
+    comfyui:
+      node_id: 380
+      field: inputs
+      subfield: prepend
+  prompt_append:
+    type: string
+    label: Image Prompt Append
+    description: This will be added to the end of the image prompt body defined above as prompt
+    tip: |-
+      This can be used to add additional details or constraints to the image generation to maintain consistency.
+      It is a good place to add additional details and modifier adjectives to the image prompt.
+      Expect the Body of the prompt above to be concatenated to the end of this prompt with a comma and a space as delimiter.
+    default: ''
+    comfyui:
+      node_id: 380
+      field: inputs
+      subfield: append
+  negative_prompt:
+    type: string
+    label: Art Generation Prompt
+    description: Describe what you don't want in the art
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+    default: wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft
+    comfyui:
+      node_id: 89
+      field: inputs
+      subfield: text
+  seed:
+    type: integer
+    label: Generation Seed
+    description: Set random seed for reproducible art generation
+    tip: |-
+      Leave blank for random results. Set a specific seed to reproduce previous generations.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 294
+      field: inputs
+      subfield: seed
+  steps:
+    type: integer
+    label: Steps
+    description: Set the number of diffusion steps
+    tip: |-
+      The default value is considered full quality, but can be as low as 20 for faster results with a trade-off in quality.
+    default: 50
+    step: 1
+    minimum: 10
+    maximum: 50
+    comfyui:
+      node_id: 382
+      field: inputs
+      subfield: value
+  steps_outpaint:
+    type: integer
+    label: Steps Outpaint
+    description: Set the number of diffusion steps for the outpainting pass
+    tip: |-
+      The default value is considered good enough quality, but can be as high as 30 for faster results with a trade-off in quality.
+    default: 35
+    step: 1
+    minimum: 10
+    maximum: 50
+    comfyui:
+      node_id: 391
+      field: inputs
+      subfield: value
+  use_init_as_art_image:
+    type: boolean
+    label: Use Init Image as Art
+    description: |-
+      Toggle between generating new art or using an existing rendered image.
+      When true, the init image will be used as the art image, bypassing image generation, and sending it to the outpainting pass.
+    default: false
+    comfyui:
+      node_id: 117
+      field: inputs
+      subfield: value
+  use_init_as_full_art_image:
+    type: boolean
+    label: Use Pre-rendered Full Art
+    description: |-
+      Toggle between using the generated/outpainted art or a pre-rendered full art image. 
+      When true, the init image will be used as the full art image, bypassing image generation.
+    default: false
+    comfyui:
+      node_id: 306
+      field: inputs
+      subfield: value
+  clan_name:
+    type: string
+    label: Clan Selection
+    description: Select the clan affiliation for the card
+    required: true
+    default: azure
+    choices: [jade, scarlet, azure, grey]
+    comfyui:
+      node_id: 321
+      field: inputs
+      subfield: select_item
+  card_name:
+    type: string
+    label: Card Name
+    description: Name of the card
+    required: true
+    default: "Ghughu"
+    comfyui:
+      node_id: 119
+      field: inputs
+      subfield: text
+  trait:
+    type: string
+    label: Trait
+    description: Card trait attribute 
+    required: true
+    default: "Explore The Vines"
+    comfyui:
+      node_id: 128
+      field: inputs
+      subfield: text
+  card_text:
+    type: string
+    label: Card Description
+    description: Main text/description for the card
+    required: true
+    default: "Ghughu whispers ancient words, revealing a pulsating sigil beneath the vines, sealing their fate in this veiled realm."
+    comfyui:
+      node_id: 65
+      field: inputs
+      subfield: value
+  rng_points:
+    type: string
+    label: RNG Points
+    description: Point value for the card
+    required: true
+    default: ""
+    comfyui:
+      node_id: 144
+      field: inputs
+      subfield: text
+  lora:
+    type: lora
+    label: LoRA
+    description: Use a custom model (LoRA)
+    tip: name of the custom (SDXL) LoRA model.
+    default: 67a222bae707584b6d669623
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: lora_name
+  lora_strength:
+    type: float
+    label: LoRA Strength
+    description: Strength of the LoRA effect on generation
+    default: 0.42
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 95
+      field: inputs
+      subfield: value
+  init_image:
+    type: image
+    label: Initial Image
+    description: Reference image for art generation, outpainting image if use_init_as_art_image is true, or pre-rendered full art as defined by use_init_as_full_art_image
+    tip: |-
+      Upload a reference image that can be used in multiple ways:
+      1. As a ControlNet reference for art generation
+      2. As pre-rendered art for the card
+      3. As a base image for outpainting
+      The workflow will automatically determine the best use based on other settings.
+    comfyui:
+      node_id: 99
+      field: inputs
+      subfield: image
+  controlnet:
+    type: string
+    label: Controlnet preprocessor
+    description: |-
+      What type of shape guidance to apply. Different types have subtly different effects on the output.
+    tip: |-
+      Use best judgement based on the supplied image and user request to select the correct controlnet preprocessor and model to suit their needs. Canny detects thin binary edges and is useful for tasks requiring fast edge detection, such as architectural designs or simple object outlines, but it may struggle with complex scenes or noise. Depth generates luminance-based depth maps and is ideal for creating realistic 3D-like compositions, such as emphasizing depth in landscapes or isolating foreground objects. HED excels at producing smooth, intricate edge detection and is suitable for detailed illustrations, artistic line work, or noise-sensitive scenes. OpenPose identifies human keypoints, making it a perfect choice for generating images with accurate human poses, such as action shots, dance scenes, or character positioning, but will fail if a person isn't detected, so only use this one if you have reason to believe an image containing a person was provided as init. LineArt converts images into detailed line drawings and is best for black-and-white artwork, manga-style illustrations, or clear contrast outlines. Scribble processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
+    default: depth
+    choices: [none, canny, depth, scribble, pose, threshold, lineart]
+    comfyui:
+      node_id: 385
+      field: inputs
+      subfield: value
+  controlnet_strength:
+    type: float
+    label: ControlNet Strength
+    description: Strength of the ControlNet guidance
+    tip: |-
+      Controls how strongly the generation follows the reference image. Higher values (closer to 1.0) follow the reference more closely,
+      while lower values allow more creative freedom.
+    default: 0.8
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 334
+      field: inputs
+      subfield: value

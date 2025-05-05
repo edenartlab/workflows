@@ -14,6 +14,15 @@ comfyui_output_node_id: 470
 comfyui_intermediate_outputs:
   controlnet_guidance: 342
 parameters:
+  n_samples:
+      type: integer
+      label: Number of samples
+      description: Number of samples to generate
+      tip: |-
+        This is the number of outputs generated for this prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
+      default: 1
+      minimum: 1
+      maximum: 4
   prompt:
     type: string
     label: Prompt
@@ -156,6 +165,18 @@ parameters:
       node_id: 104
       field: inputs
       subfield: preprocessor
+  bypass_preprocessor:
+    type: boolean
+    label: Bypass preprocessor
+    description: Use Init Image as Controlnet guidance
+    tip: |-
+      Activate this to use the starting image as controlnet guidance.
+    default: false
+    visible_if: use_controlnet=true
+    comfyui:
+      node_id: 476
+      field: inputs
+      subfield: value
   controlnet_strength:
     type: float
     label: Controlnet strength
@@ -244,7 +265,6 @@ parameters:
       subfield: value
   use_manual_quality:
     type: boolean
-    hide_from_ui: true
     hide_from_agent: true
     label: Use manual quality settings
     description: Override automatic quality settings derived from speed-quality tradeoff
@@ -258,12 +278,12 @@ parameters:
       subfield: value
   strength_fast:
     type: float
-    hide_from_ui: true
     hide_from_agent: true
     label: Fast mode strength
     description: Strength setting when using fast mode
     tip: |-
-      Only applies when manual quality settings are disabled.
+      The strength of turbo LoRA. 12 inference steps and .66 strength is a good tradeoff between speed and quality.
+      This parameter is only active when use_manual_quality is true, and should be set to .25 for fast mode.
       Lower values produce faster but potentially lower quality results.
     default: 0.0
     minimum: 0.0
@@ -271,6 +291,22 @@ parameters:
     visible_if: use_manual_quality=true
     comfyui:
       node_id: 451
+      field: inputs
+      subfield: value
+  steps:
+    type: integer
+    label: Steps fast
+    description: Number of steps to take in the diffusion process
+    tip: |-
+      The number of steps taken in the diffusion process. Higher values will result in more detailed images, but will also take longer to generate.
+      This parameter is only active when use_manual_quality is true, and should be set to 12 for fast mode.
+    default: 30
+    minimum: 1
+    maximum: 35
+    hide_from_agent: true
+    visible_if: use_manual_quality=true
+    comfyui:
+      node_id: 449
       field: inputs
       subfield: value
   use_style_image:
@@ -328,30 +364,6 @@ parameters:
       node_id: 330
       field: inputs
       subfield: seed
-  n_samples:
-    type: integer
-    label: Number of samples
-    description: Number of samples to generate
-    tip: |-
-      This is the number of outputs generated for this prompt. If you get a request for n_samples > 1, you are still using a *single* prompt for the whole set.
-    default: 1
-    minimum: 1
-    maximum: 4
-  steps:
-    type: integer
-    label: Steps
-    description: Number of steps to take in the diffusion process
-    hide_from_ui: true
-    hide_from_agent: true
-    tip: |-
-      The number of steps taken in the diffusion process. Higher values will result in more detailed images, but will also take longer to generate.
-    default: 30
-    minimum: 1
-    maximum: 35
-    comfyui:
-      node_id: 393
-      field: inputs
-      subfield: steps
   flux_guidance:
     type: float
     label: Prompt Conditioning

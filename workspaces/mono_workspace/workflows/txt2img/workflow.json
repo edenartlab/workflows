@@ -1,20 +1,22 @@
 {
-  "last_node_id": 440,
-  "last_link_id": 747,
+  "id": "b21097d3-d243-4472-aa75-dd6210e144a7",
+  "revision": 0,
+  "last_node_id": 449,
+  "last_link_id": 770,
   "nodes": [
     {
       "id": 2,
       "type": "Get resolution [Crystools]",
       "pos": [
-        -288.4292907714844,
-        704.85986328125
+        -346.7885437011719,
+        444.1886901855469
       ],
       "size": [
         214.04347229003906,
         96
       ],
       "flags": {},
-      "order": 42,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -26,21 +28,21 @@
       "outputs": [
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             2
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
           "links": [
             3
-          ],
-          "slot_index": 1
+          ]
         }
       ],
       "properties": {
@@ -68,27 +70,28 @@
       "outputs": [
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             4
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
           "links": [
             5
-          ],
-          "slot_index": 1
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "WidthHeightPicker"
+        "Node name for S&R": "WidthHeightPicker",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1024,
@@ -117,19 +120,20 @@
       "outputs": [
         {
           "name": "BOOLEAN",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             706
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "Use input image size",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -141,8 +145,8 @@
       "id": 10,
       "type": "Switch any [Crystools]",
       "pos": [
-        -580.5289916992188,
-        1340.9599609375
+        -638.8883666992188,
+        1080.2884521484375
       ],
       "size": [
         292.7738952636719,
@@ -176,12 +180,13 @@
       "outputs": [
         {
           "name": "*",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
-            41
-          ],
-          "slot_index": 0
+            41,
+            749
+          ]
         }
       ],
       "title": "switch width",
@@ -198,8 +203,8 @@
       "id": 11,
       "type": "Switch any [Crystools]",
       "pos": [
-        -550.719970703125,
-        1449.9207763671875
+        -609.079345703125,
+        1189.249267578125
       ],
       "size": [
         292.7738952636719,
@@ -233,13 +238,14 @@
       "outputs": [
         {
           "name": "*",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
             20,
-            46
-          ],
-          "slot_index": 0
+            46,
+            754
+          ]
         }
       ],
       "title": "switch height",
@@ -256,8 +262,8 @@
       "id": 13,
       "type": "easy compare",
       "pos": [
-        -617.0355224609375,
-        1120.0633544921875
+        -675.3948974609375,
+        859.39208984375
       ],
       "size": [
         293.3001403808594,
@@ -281,12 +287,12 @@
       "outputs": [
         {
           "name": "boolean",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             351
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "init_image_supplied",
@@ -303,8 +309,8 @@
       "id": 20,
       "type": "Display Any (rgthree)",
       "pos": [
-        -288.4292907714844,
-        1474.8603515625
+        -346.7885437011719,
+        1214.1888427734375
       ],
       "size": [
         210,
@@ -315,9 +321,9 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 712
         }
       ],
@@ -335,21 +341,21 @@
       "id": 21,
       "type": "Display Any (rgthree)",
       "pos": [
-        -298.42926025390625,
-        1614.8603515625
+        -356.78851318359375,
+        1354.1888427734375
       ],
       "size": [
         210,
         88
       ],
       "flags": {},
-      "order": 80,
+      "order": 79,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 20
         }
       ],
@@ -381,31 +387,31 @@
       "outputs": [
         {
           "name": "seed",
-          "type": "SEED",
           "shape": 3,
-          "links": null,
-          "slot_index": 0
+          "type": "SEED",
+          "slot_index": 0,
+          "links": null
         },
         {
           "name": "number",
-          "type": "NUMBER",
           "shape": 3,
+          "type": "NUMBER",
           "links": null
         },
         {
           "name": "float",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
           "links": null
         },
         {
           "name": "int",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 3,
           "links": [
             143
-          ],
-          "slot_index": 3
+          ]
         }
       ],
       "properties": {
@@ -434,7 +440,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 65,
+      "order": 61,
       "mode": 0,
       "inputs": [
         {
@@ -445,10 +451,6 @@
         {
           "name": "text",
           "type": "STRING",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "text"
           },
@@ -458,13 +460,13 @@
       "outputs": [
         {
           "name": "CONDITIONING",
-          "type": "CONDITIONING",
           "shape": 3,
+          "type": "CONDITIONING",
+          "slot_index": 0,
           "links": [
             537,
             546
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -496,19 +498,20 @@
       "outputs": [
         {
           "name": "STRING",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             25
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "Prompt (Negative)",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "embedding:negativeXL_D, (worst quality, low quality, normal quality:1.5)"
@@ -534,19 +537,20 @@
       "outputs": [
         {
           "name": "BOOLEAN",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             702
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "use_ipAdapter",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -572,20 +576,21 @@
       "outputs": [
         {
           "name": "FLOAT",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             551,
             730
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "controlnet_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.8
@@ -605,7 +610,7 @@
         574.0758056640625
       ],
       "flags": {},
-      "order": 101,
+      "order": 95,
       "mode": 0,
       "inputs": [
         {
@@ -626,15 +631,11 @@
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 722
+          "link": 748
         },
         {
           "name": "denoise",
           "type": "FLOAT",
-          "pos": [
-            10,
-            216
-          ],
           "widget": {
             "name": "denoise"
           },
@@ -643,10 +644,6 @@
         {
           "name": "seed",
           "type": "INT",
-          "pos": [
-            10,
-            96
-          ],
           "widget": {
             "name": "seed"
           },
@@ -655,10 +652,6 @@
         {
           "name": "steps",
           "type": "INT",
-          "pos": [
-            10,
-            120
-          ],
           "widget": {
             "name": "steps"
           },
@@ -667,10 +660,6 @@
         {
           "name": "cfg",
           "type": "FLOAT",
-          "pos": [
-            10,
-            144
-          ],
           "widget": {
             "name": "cfg"
           },
@@ -679,10 +668,6 @@
         {
           "name": "sampler_name",
           "type": "COMBO",
-          "pos": [
-            10,
-            168
-          ],
           "widget": {
             "name": "sampler_name"
           },
@@ -691,10 +676,6 @@
         {
           "name": "scheduler",
           "type": "COMBO",
-          "pos": [
-            10,
-            192
-          ],
           "widget": {
             "name": "scheduler"
           },
@@ -704,12 +685,12 @@
       "outputs": [
         {
           "name": "LATENT",
-          "type": "LATENT",
           "shape": 3,
+          "type": "LATENT",
+          "slot_index": 0,
           "links": [
             96
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -745,8 +726,8 @@
       "outputs": [
         {
           "name": "FLOAT",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
           "links": [
             736
           ]
@@ -754,9 +735,10 @@
       ],
       "title": "ipadapter_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0.8
@@ -784,30 +766,33 @@
       "outputs": [
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             42,
-            331
-          ],
-          "slot_index": 0
+            331,
+            750
+          ]
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
           "links": [
             45,
-            332
-          ],
-          "slot_index": 1
+            332,
+            753
+          ]
         }
       ],
       "title": "clamp_max_resolution",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "WidthHeightPicker"
+        "Node name for S&R": "WidthHeightPicker",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         2048,
@@ -817,106 +802,6 @@
       ],
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 61,
-      "type": "ImpactMinMax",
-      "pos": [
-        -635.4299926757812,
-        1591.8603515625
-      ],
-      "size": [
-        300,
-        80
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 79,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "link": 41
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "link": 42
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "shape": 3,
-          "links": [
-            328,
-            511
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "clamp_width",
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "808b0dedf03534a2594ecb60a9d6305a044efdc2",
-        "Node name for S&R": "ImpactMinMax"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 62,
-      "type": "ImpactMinMax",
-      "pos": [
-        -625.3682861328125,
-        1729.9215087890625
-      ],
-      "size": [
-        292.7738952636719,
-        79.75035858154297
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 81,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "link": 46
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "link": 45
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "shape": 3,
-          "links": [
-            329,
-            514
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "clamp_height",
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "808b0dedf03534a2594ecb60a9d6305a044efdc2",
-        "Node name for S&R": "ImpactMinMax"
-      },
-      "widgets_values": [
-        false
-      ]
     },
     {
       "id": 80,
@@ -930,7 +815,7 @@
         82
       ],
       "flags": {},
-      "order": 46,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -942,12 +827,12 @@
       "outputs": [
         {
           "name": "IMAGE",
-          "type": "IMAGE",
           "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             155
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -972,7 +857,7 @@
         46
       ],
       "flags": {},
-      "order": 91,
+      "order": 90,
       "mode": 0,
       "inputs": [
         {
@@ -989,12 +874,12 @@
       "outputs": [
         {
           "name": "LATENT",
-          "type": "LATENT",
           "shape": 3,
+          "type": "LATENT",
+          "slot_index": 0,
           "links": [
             695
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1016,7 +901,7 @@
         46
       ],
       "flags": {},
-      "order": 102,
+      "order": 96,
       "mode": 0,
       "inputs": [
         {
@@ -1033,15 +918,14 @@
       "outputs": [
         {
           "name": "IMAGE",
-          "type": "IMAGE",
           "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             140,
             323,
-            528,
             564
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1065,16 +949,12 @@
       "flags": {
         "collapsed": false
       },
-      "order": 93,
+      "order": 91,
       "mode": 0,
       "inputs": [
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "width"
           },
@@ -1083,10 +963,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "height"
           },
@@ -1096,12 +972,12 @@
       "outputs": [
         {
           "name": "LATENT",
-          "type": "LATENT",
           "shape": 3,
+          "type": "LATENT",
+          "slot_index": 0,
           "links": [
             696
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1133,20 +1009,21 @@
       "outputs": [
         {
           "name": "FLOAT",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             318,
             647
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "lora_strength",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -1166,7 +1043,7 @@
         648.35009765625
       ],
       "flags": {},
-      "order": 103,
+      "order": 97,
       "mode": 0,
       "inputs": [
         {
@@ -1195,7 +1072,7 @@
         106
       ],
       "flags": {},
-      "order": 58,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -1207,13 +1084,13 @@
       "outputs": [
         {
           "name": "IMAGE",
-          "type": "IMAGE",
           "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             168,
             733
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1239,7 +1116,7 @@
         246
       ],
       "flags": {},
-      "order": 71,
+      "order": 63,
       "mode": 0,
       "inputs": [
         {
@@ -1268,7 +1145,7 @@
         78
       ],
       "flags": {},
-      "order": 62,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -1278,29 +1155,29 @@
         },
         {
           "name": "ipadapter",
-          "type": "IPADAPTER",
           "shape": 7,
+          "type": "IPADAPTER",
           "link": null
         }
       ],
       "outputs": [
         {
           "name": "model",
-          "type": "MODEL",
           "shape": 3,
+          "type": "MODEL",
+          "slot_index": 0,
           "links": [
             734
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "ipadapter",
-          "type": "IPADAPTER",
           "shape": 3,
+          "type": "IPADAPTER",
+          "slot_index": 1,
           "links": [
             735
-          ],
-          "slot_index": 1
+          ]
         }
       ],
       "properties": {
@@ -1330,45 +1207,45 @@
       "outputs": [
         {
           "name": "STEPS",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             273
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "REFINER_STEP",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         },
         {
           "name": "CFG",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 2,
           "links": [
             272
-          ],
-          "slot_index": 2
+          ]
         },
         {
           "name": "SAMPLER",
-          "type": "COMBO",
           "shape": 3,
+          "type": "COMBO",
+          "slot_index": 3,
           "links": [
             271
-          ],
-          "slot_index": 3
+          ]
         },
         {
           "name": "SCHEDULER",
-          "type": "COMBO",
           "shape": 3,
+          "type": "COMBO",
+          "slot_index": 4,
           "links": [
             270
-          ],
-          "slot_index": 4
+          ]
         }
       ],
       "properties": {
@@ -1423,7 +1300,7 @@
         26
       ],
       "flags": {},
-      "order": 38,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -1436,10 +1313,10 @@
         {
           "name": "",
           "type": "MODEL",
+          "slot_index": 0,
           "links": [
             739
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1459,7 +1336,7 @@
         26
       ],
       "flags": {},
-      "order": 39,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -1472,10 +1349,10 @@
         {
           "name": "",
           "type": "CLIP",
+          "slot_index": 0,
           "links": [
             740
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1495,7 +1372,7 @@
         26
       ],
       "flags": {},
-      "order": 40,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -1508,11 +1385,11 @@
         {
           "name": "",
           "type": "VAE",
+          "slot_index": 0,
           "links": [
             301,
             302
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1538,19 +1415,20 @@
       "outputs": [
         {
           "name": "BOOLEAN",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             316
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "use_lora",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1576,21 +1454,22 @@
       "outputs": [
         {
           "name": "BOOLEAN",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             350,
             678,
             707
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "use_init_image",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1618,19 +1497,20 @@
       "outputs": [
         {
           "name": "FLOAT",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             459
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "lora_strength_off",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         0
@@ -1677,15 +1557,15 @@
       "outputs": [
         {
           "name": "*",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
             336,
             652,
             741,
             742
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -1700,66 +1580,25 @@
       "bgcolor": "#535"
     },
     {
-      "id": 210,
-      "type": "ControlNetAuxSimpleAddText",
-      "pos": [
-        1733.1361083984375,
-        473.7940673828125
-      ],
-      "size": [
-        373.9989929199219,
-        58
-      ],
-      "flags": {},
-      "order": 104,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 323
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "shape": 3,
-          "links": [
-            660
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui_controlnet_aux",
-        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
-        "Node name for S&R": "ControlNetAuxSimpleAddText"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
       "id": 212,
       "type": "Display Any (rgthree)",
       "pos": [
-        -288.4292907714844,
-        1744.8603515625
+        -346.7885437011719,
+        1484.1888427734375
       ],
       "size": [
         210,
         88
       ],
       "flags": {},
-      "order": 85,
+      "order": 84,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
-          "link": 328
+          "link": 751
         }
       ],
       "outputs": [],
@@ -1776,22 +1615,22 @@
       "id": 213,
       "type": "Display Any (rgthree)",
       "pos": [
-        -298.42926025390625,
-        1884.8603515625
+        -356.78851318359375,
+        1624.1888427734375
       ],
       "size": [
         210,
         88
       ],
       "flags": {},
-      "order": 87,
+      "order": 86,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
-          "link": 329
+          "link": 755
         }
       ],
       "outputs": [],
@@ -1808,15 +1647,15 @@
       "id": 214,
       "type": "ImageResize+",
       "pos": [
-        -629.0379028320312,
-        849.2342529296875
+        -687.3972778320312,
+        588.56298828125
       ],
       "size": [
         293.3001403808594,
         218
       ],
       "flags": {},
-      "order": 43,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -1827,10 +1666,6 @@
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            76
-          ],
           "widget": {
             "name": "width"
           },
@@ -1839,10 +1674,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            100
-          ],
           "widget": {
             "name": "height"
           },
@@ -1852,24 +1683,24 @@
       "outputs": [
         {
           "name": "IMAGE",
-          "type": "IMAGE",
           "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             500,
             509
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         }
       ],
@@ -1900,13 +1731,13 @@
         88
       ],
       "flags": {},
-      "order": 47,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 336
         }
       ],
@@ -1940,18 +1771,19 @@
       "outputs": [
         {
           "name": "FLOAT",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             348
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -1975,20 +1807,21 @@
       "outputs": [
         {
           "name": "FLOAT",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             347,
             670
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "denoise",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -2010,7 +1843,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 82,
+      "order": 81,
       "mode": 0,
       "inputs": [
         {
@@ -2035,12 +1868,12 @@
       "outputs": [
         {
           "name": "*",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
             358
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -2071,38 +1904,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 350
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 351
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -2110,10 +1943,10 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             349
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "ConditionalLogic",
@@ -2139,148 +1972,48 @@
         35.62735366821289
       ],
       "flags": {},
-      "order": 89,
+      "order": 88,
       "mode": 0,
       "inputs": [
         {
           "name": "any_type_input",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 358
         }
       ],
       "outputs": [
         {
           "name": "ANY_TYPE_OUTPUT",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
             359
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "SDAnyConverter"
+        "Node name for S&R": "SDAnyConverter",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": []
-    },
-    {
-      "id": 233,
-      "type": "ImpactMinMax",
-      "pos": [
-        -619.4299926757812,
-        1864.8603515625
-      ],
-      "size": [
-        282.971435546875,
-        78
-      ],
-      "flags": {},
-      "order": 92,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "*",
-          "link": 512
-        },
-        {
-          "name": "b",
-          "type": "*",
-          "link": 521
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "shape": 3,
-          "links": [
-            445
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "808b0dedf03534a2594ecb60a9d6305a044efdc2",
-        "Node name for S&R": "ImpactMinMax"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 238,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -447.9940185546875,
-        -63.69806671142578
-      ],
-      "size": [
-        210,
-        78
-      ],
-      "flags": {},
-      "order": 63,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 743
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "pos": [
-            10,
-            36
-          ],
-          "widget": {
-            "name": "text"
-          },
-          "link": 654
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "shape": 3,
-          "links": [
-            370
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "in the style of embedding:early-sd-eden2-v1_sdxl_lora, colorful chinese painting, black background, visionary painting"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 239,
       "type": "CLIPTextEncode",
       "pos": [
-        -442.99407958984375,
-        59.301963806152344
+        -441.9958190917969,
+        25.361467361450195
       ],
       "size": [
         210,
         78
       ],
       "flags": {},
-      "order": 64,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -2291,10 +2024,6 @@
         {
           "name": "text",
           "type": "STRING",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "text"
           },
@@ -2304,12 +2033,12 @@
       "outputs": [
         {
           "name": "CONDITIONING",
-          "type": "CONDITIONING",
           "shape": 3,
+          "type": "CONDITIONING",
+          "slot_index": 0,
           "links": [
             371
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -2335,7 +2064,7 @@
         98
       ],
       "flags": {},
-      "order": 77,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -2351,10 +2080,6 @@
         {
           "name": "conditioning_to_strength",
           "type": "FLOAT",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "conditioning_to_strength"
           },
@@ -2364,13 +2089,13 @@
       "outputs": [
         {
           "name": "CONDITIONING",
-          "type": "CONDITIONING",
           "shape": 3,
+          "type": "CONDITIONING",
+          "slot_index": 0,
           "links": [
             545,
             687
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "Token Strength",
@@ -2399,7 +2124,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 36,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -2414,19 +2139,20 @@
       "outputs": [
         {
           "name": "STRING",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             654
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "Prompt",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "colorful chinese painting, black background, visionary painting"
@@ -2450,19 +2176,20 @@
       "outputs": [
         {
           "name": "STRING",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             655
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "no_token_prompt",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         ""
@@ -2482,16 +2209,12 @@
         176
       ],
       "flags": {},
-      "order": 49,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
           "name": "text",
           "type": "STRING",
-          "pos": [
-            10,
-            123
-          ],
           "widget": {
             "name": "text"
           },
@@ -2501,10 +2224,10 @@
       "outputs": [
         {
           "name": "STRING",
-          "type": "STRING",
           "shape": 6,
-          "links": [],
-          "slot_index": 0
+          "type": "STRING",
+          "slot_index": 0,
+          "links": []
         }
       ],
       "properties": {
@@ -2532,13 +2255,13 @@
         88
       ],
       "flags": {},
-      "order": 32,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 416
         }
       ],
@@ -2553,141 +2276,6 @@
       ]
     },
     {
-      "id": 283,
-      "type": "DRMBT_String_Item_Menu",
-      "pos": [
-        -1340.7109375,
-        1841.2947998046875
-      ],
-      "size": [
-        466.12823486328125,
-        180
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "int_select",
-          "type": "INT",
-          "pos": [
-            10,
-            166
-          ],
-          "widget": {
-            "name": "int_select"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output_string",
-          "type": "STRING",
-          "shape": 3,
-          "links": [
-            595,
-            601
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "index",
-          "type": "INT",
-          "shape": 3,
-          "links": [
-            416,
-            593,
-            599,
-            617
-          ],
-          "slot_index": 1
-        }
-      ],
-      "title": "preprocessor",
-      "properties": {
-        "cnr_id": "comfyui-dreambait-nodes",
-        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
-        "Node name for S&R": "DRMBT_String_Item_Menu"
-      },
-      "widgets_values": [
-        "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
-        ",",
-        "lineart",
-        0
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 284,
-      "type": "AIO_Preprocessor",
-      "pos": [
-        1011.9209594726562,
-        1617.847900390625
-      ],
-      "size": [
-        268.79998779296875,
-        122
-      ],
-      "flags": {},
-      "order": 94,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 502
-        },
-        {
-          "name": "preprocessor",
-          "type": "COMBO",
-          "pos": [
-            10,
-            36
-          ],
-          "widget": {
-            "name": "preprocessor"
-          },
-          "link": 726
-        },
-        {
-          "name": "resolution",
-          "type": "INT",
-          "pos": [
-            10,
-            60
-          ],
-          "widget": {
-            "name": "resolution"
-          },
-          "link": 445
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "shape": 3,
-          "links": [
-            590,
-            591,
-            668
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui_controlnet_aux",
-        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
-        "Node name for S&R": "AIO_Preprocessor"
-      },
-      "widgets_values": [
-        "none",
-        512
-      ]
-    },
-    {
       "id": 285,
       "type": "DRMBT_String_Item_Menu",
       "pos": [
@@ -2699,16 +2287,12 @@
         180
       ],
       "flags": {},
-      "order": 33,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
           "name": "int_select",
           "type": "INT",
-          "pos": [
-            10,
-            166
-          ],
           "widget": {
             "name": "int_select"
           },
@@ -2718,21 +2302,21 @@
       "outputs": [
         {
           "name": "output_string",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             724
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "index",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
           "links": [
             598
-          ],
-          "slot_index": 1
+          ]
         }
       ],
       "properties": {
@@ -2759,13 +2343,13 @@
         88
       ],
       "flags": {},
-      "order": 59,
+      "order": 64,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 725
         }
       ],
@@ -2791,16 +2375,12 @@
         58
       ],
       "flags": {},
-      "order": 73,
+      "order": 75,
       "mode": 0,
       "inputs": [
         {
           "name": "control_net_name",
           "type": "COMBO",
-          "pos": [
-            10,
-            36
-          ],
           "widget": {
             "name": "control_net_name"
           },
@@ -2810,12 +2390,12 @@
       "outputs": [
         {
           "name": "CONTROL_NET",
-          "type": "CONTROL_NET",
           "shape": 3,
+          "type": "CONTROL_NET",
+          "slot_index": 0,
           "links": [
             589
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -2825,100 +2405,6 @@
       },
       "widgets_values": [
         "controlnet-canny-sdxl-1.0\\diffusion_pytorch_model_V2.safetensors"
-      ]
-    },
-    {
-      "id": 290,
-      "type": "DRMBT_String_Item_Menu",
-      "pos": [
-        231.92062377929688,
-        1267.847900390625
-      ],
-      "size": [
-        405.9139404296875,
-        238.14064025878906
-      ],
-      "flags": {},
-      "order": 51,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "int_select",
-          "type": "INT",
-          "pos": [
-            10,
-            224.14064025878906
-          ],
-          "widget": {
-            "name": "int_select"
-          },
-          "link": 598
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output_string",
-          "type": "STRING",
-          "shape": 3,
-          "links": [
-            727
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "index",
-          "type": "INT",
-          "shape": 3,
-          "links": [],
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-dreambait-nodes",
-        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
-        "Node name for S&R": "DRMBT_String_Item_Menu"
-      },
-      "widgets_values": [
-        "controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,diffusers_xl_canny_full.safetensors,controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors",
-        ",",
-        "",
-        0
-      ]
-    },
-    {
-      "id": 292,
-      "type": "Eden_Int",
-      "pos": [
-        261.9205627441406,
-        1627.847900390625
-      ],
-      "size": [
-        210,
-        61.5015754699707
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "shape": 3,
-          "links": [
-            605,
-            616
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Int"
-      },
-      "widgets_values": [
-        0
       ]
     },
     {
@@ -2933,13 +2419,13 @@
         88
       ],
       "flags": {},
-      "order": 72,
+      "order": 74,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 728
         }
       ],
@@ -2965,16 +2451,12 @@
         166
       ],
       "flags": {},
-      "order": 37,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
           "name": "text",
           "type": "STRING",
-          "pos": [
-            10,
-            118
-          ],
           "widget": {
             "name": "text"
           },
@@ -2984,10 +2466,10 @@
       "outputs": [
         {
           "name": "STRING",
-          "type": "STRING",
           "shape": 6,
-          "links": [],
-          "slot_index": 0
+          "type": "STRING",
+          "slot_index": 0,
+          "links": []
         }
       ],
       "properties": {
@@ -3017,16 +2499,12 @@
         244
       ],
       "flags": {},
-      "order": 31,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
           "name": "prepend",
           "type": "STRING",
-          "pos": [
-            10,
-            182
-          ],
           "widget": {
             "name": "prepend"
           },
@@ -3035,10 +2513,6 @@
         {
           "name": "override_body",
           "type": "STRING",
-          "pos": [
-            10,
-            206
-          ],
           "widget": {
             "name": "override_body"
           },
@@ -3047,10 +2521,6 @@
         {
           "name": "append",
           "type": "STRING",
-          "pos": [
-            10,
-            230
-          ],
           "widget": {
             "name": "append"
           },
@@ -3060,29 +2530,29 @@
       "outputs": [
         {
           "name": "text",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             461
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "prepend",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         },
         {
           "name": "body",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         },
         {
           "name": "append",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         }
       ],
@@ -3115,9 +2585,9 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 606
         }
       ],
@@ -3135,15 +2605,15 @@
       "id": 328,
       "type": "ImageResize+",
       "pos": [
-        -288.4292907714844,
-        844.8597412109375
+        -346.7885437011719,
+        584.1884765625
       ],
       "size": [
         210,
         218
       ],
       "flags": {},
-      "order": 90,
+      "order": 89,
       "mode": 0,
       "inputs": [
         {
@@ -3154,10 +2624,6 @@
         {
           "name": "width",
           "type": "INT",
-          "pos": [
-            10,
-            76
-          ],
           "widget": {
             "name": "width"
           },
@@ -3166,10 +2632,6 @@
         {
           "name": "height",
           "type": "INT",
-          "pos": [
-            10,
-            100
-          ],
           "widget": {
             "name": "height"
           },
@@ -3179,33 +2641,35 @@
       "outputs": [
         {
           "name": "IMAGE",
-          "type": "IMAGE",
           "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             501,
             502
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
           "links": [
             512,
-            523
-          ],
-          "slot_index": 1
+            523,
+            757
+          ]
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 2,
           "links": [
             521,
-            524
-          ],
-          "slot_index": 2
+            524,
+            758
+          ]
         }
       ],
       "properties": {
@@ -3228,8 +2692,8 @@
       "id": 333,
       "type": "CM_NearestSDXLResolution",
       "pos": [
-        -284.0690002441406,
-        1072.6260986328125
+        -342.4282531738281,
+        811.954833984375
       ],
       "size": [
         202.7971649169922,
@@ -3248,27 +2712,28 @@
       "outputs": [
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             510
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
           "links": [
             513
-          ],
-          "slot_index": 1
+          ]
         }
       ],
       "properties": {
-        "aux_id": "evanspearman/ComfyMath",
+        "cnr_id": "comfymath",
         "ver": "939bb813f1c0ace959b62f20bb2da47190c4e211",
-        "Node name for S&R": "CM_NearestSDXLResolution"
+        "Node name for S&R": "CM_NearestSDXLResolution",
+        "aux_id": "evanspearman/ComfyMath"
       },
       "widgets_values": []
     },
@@ -3276,8 +2741,8 @@
       "id": 335,
       "type": "Switch any [Crystools]",
       "pos": [
-        -298.42926025390625,
-        1194.8599853515625
+        -356.78851318359375,
+        934.1886596679688
       ],
       "size": [
         211.4800262451172,
@@ -3286,7 +2751,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 86,
+      "order": 85,
       "mode": 0,
       "inputs": [
         {
@@ -3297,15 +2762,11 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 511
+          "link": 752
         },
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "boolean"
           },
@@ -3315,12 +2776,12 @@
       "outputs": [
         {
           "name": "*",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
             519
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "SDXL_width",
@@ -3337,8 +2798,8 @@
       "id": 336,
       "type": "Switch any [Crystools]",
       "pos": [
-        -298.42926025390625,
-        1344.860107421875
+        -356.78851318359375,
+        1084.1885986328125
       ],
       "size": [
         210,
@@ -3347,7 +2808,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 88,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -3358,15 +2819,11 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 514
+          "link": 756
         },
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "boolean"
           },
@@ -3376,12 +2833,12 @@
       "outputs": [
         {
           "name": "*",
-          "type": "*",
           "shape": 3,
+          "type": "*",
+          "slot_index": 0,
           "links": [
             520
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "SDXL_height",
@@ -3406,157 +2863,33 @@
         60
       ],
       "flags": {},
-      "order": 19,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "BOOLEAN",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             517,
             518
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "Enforce_SDXL_resolution",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
       ],
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 340,
-      "type": "ImageSender",
-      "pos": [
-        1851.6002197265625,
-        1420.828857421875
-      ],
-      "size": [
-        315,
-        294
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 105,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 528
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "808b0dedf03534a2594ecb60a9d6305a044efdc2",
-        "Node name for S&R": "ImageSender"
-      },
-      "widgets_values": [
-        "ImgSender",
-        0
-      ]
-    },
-    {
-      "id": 341,
-      "type": "ImageReceiver",
-      "pos": [
-        2001.5999755859375,
-        1420.828857421875
-      ],
-      "size": [
-        315,
-        200
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 20,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "shape": 3,
-          "links": [
-            529
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "shape": 3,
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "808b0dedf03534a2594ecb60a9d6305a044efdc2",
-        "Node name for S&R": "ImageReceiver"
-      },
-      "widgets_values": [
-        "ImgSender_temp_mcnch_00001_.png [temp]",
-        0,
-        false,
-        "",
-        false
-      ]
-    },
-    {
-      "id": 342,
-      "type": "Image Comparer (rgthree)",
-      "pos": [
-        1725.60009765625,
-        1457.828857421875
-      ],
-      "size": [
-        601.1491088867188,
-        499.8784484863281
-      ],
-      "flags": {},
-      "order": 35,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image_a",
-          "type": "IMAGE",
-          "dir": 3,
-          "link": 529
-        },
-        {
-          "name": "image_b",
-          "type": "IMAGE",
-          "dir": 3,
-          "link": null
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "32142fe476878a354dda6e2d4b5ea98960de3ced",
-        "comparer_mode": "Slide"
-      },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_jdrxd_00031_.png&type=temp&subfolder=&rand=0.6143625391823522"
-          }
-        ]
-      ]
     },
     {
       "id": 345,
@@ -3572,43 +2905,43 @@
       "flags": {
         "collapsed": false
       },
-      "order": 78,
+      "order": 73,
       "mode": 0,
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 610
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -3616,12 +2949,12 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             681,
             718,
             720
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "BoolToIntswitch_345",
@@ -3647,7 +2980,7 @@
         250
       ],
       "flags": {},
-      "order": 106,
+      "order": 99,
       "mode": 0,
       "inputs": [
         {
@@ -3657,17 +2990,13 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 550
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            180
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -3675,26 +3004,26 @@
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -3702,11 +3031,11 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             538,
             719
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -3750,91 +3079,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 351,
-      "type": "ControlNetApplyAdvanced",
-      "pos": [
-        1006.6366577148438,
-        1278.2266845703125
-      ],
-      "size": [
-        268.79998779296875,
-        206
-      ],
-      "flags": {},
-      "order": 96,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 545
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 546
-        },
-        {
-          "name": "control_net",
-          "type": "CONTROL_NET",
-          "link": 589
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 590
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "strength",
-          "type": "FLOAT",
-          "pos": [
-            10,
-            116
-          ],
-          "widget": {
-            "name": "strength"
-          },
-          "link": 551
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "shape": 3,
-          "links": [
-            688
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "shape": 3,
-          "links": [
-            550
-          ],
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "ControlNetApplyAdvanced"
-      },
-      "widgets_values": [
-        0.8,
-        0,
-        1
-      ]
-    },
-    {
       "id": 361,
       "type": "Get resolution [Crystools]",
       "pos": [
@@ -3846,7 +3090,7 @@
         96
       ],
       "flags": {},
-      "order": 107,
+      "order": 101,
       "mode": 0,
       "inputs": [
         {
@@ -3858,14 +3102,14 @@
       "outputs": [
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         }
       ],
@@ -3888,13 +3132,13 @@
         88
       ],
       "flags": {},
-      "order": 48,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 652
         }
       ],
@@ -3920,26 +3164,26 @@
         96
       ],
       "flags": {},
-      "order": 97,
+      "order": 102,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 591
+          "link": 769
         }
       ],
       "outputs": [
         {
           "name": "width",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         },
         {
           "name": "height",
-          "type": "INT",
           "shape": 3,
+          "type": "INT",
           "links": null
         }
       ],
@@ -3962,16 +3206,12 @@
         246.14340209960938
       ],
       "flags": {},
-      "order": 21,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
           "name": "prepend",
           "type": "STRING",
-          "pos": [
-            10,
-            184.14340209960938
-          ],
           "widget": {
             "name": "prepend"
           },
@@ -3980,10 +3220,6 @@
         {
           "name": "override_body",
           "type": "STRING",
-          "pos": [
-            10,
-            208.14340209960938
-          ],
           "widget": {
             "name": "override_body"
           },
@@ -3992,10 +3228,6 @@
         {
           "name": "append",
           "type": "STRING",
-          "pos": [
-            10,
-            232.14340209960938
-          ],
           "widget": {
             "name": "append"
           },
@@ -4005,30 +3237,30 @@
       "outputs": [
         {
           "name": "text",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             579,
             651
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "prepend",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         },
         {
           "name": "body",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         },
         {
           "name": "append",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         }
       ],
@@ -4060,13 +3292,13 @@
         88
       ],
       "flags": {},
-      "order": 74,
+      "order": 76,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
-          "dir": 3,
           "link": 731
         }
       ],
@@ -4092,7 +3324,7 @@
         78
       ],
       "flags": {},
-      "order": 75,
+      "order": 77,
       "mode": 0,
       "inputs": [
         {
@@ -4109,19 +3341,20 @@
       "outputs": [
         {
           "name": "boolean",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             606,
             610
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Compare"
+        "Node name for S&R": "Eden_Compare",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a > b"
@@ -4131,15 +3364,15 @@
       "id": 391,
       "type": "Eden_Compare",
       "pos": [
-        261.9205627441406,
-        1747.8477783203125
+        250.3297119140625,
+        1683.7572021484375
       ],
       "size": [
         210,
         78
       ],
       "flags": {},
-      "order": 34,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -4156,131 +3389,22 @@
       "outputs": [
         {
           "name": "boolean",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             632
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Compare"
+        "Node name for S&R": "Eden_Compare",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a > b"
-      ]
-    },
-    {
-      "id": 400,
-      "type": "NumberPlusPlus",
-      "pos": [
-        501.920654296875,
-        1727.8477783203125
-      ],
-      "size": [
-        245.1999969482422,
-        246
-      ],
-      "flags": {},
-      "order": 52,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "pre_add",
-          "type": "*",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "override_number",
-          "type": "*",
-          "shape": 7,
-          "link": 632
-        },
-        {
-          "name": "multiplier",
-          "type": "*",
-          "shape": 7,
-          "link": 653
-        },
-        {
-          "name": "post_add",
-          "type": "FLOAT",
-          "pos": [
-            10,
-            224
-          ],
-          "widget": {
-            "name": "post_add"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output_number",
-          "type": "FLOAT",
-          "shape": 3,
-          "links": [
-            729
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "output_int",
-          "type": "INT",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "bool>0",
-          "type": "BOOLEAN",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "float_string",
-          "type": "STRING",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "int_string",
-          "type": "STRING",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "pre_add",
-          "type": "FLOAT",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "multiplier",
-          "type": "FLOAT",
-          "shape": 3,
-          "links": null
-        },
-        {
-          "name": "post_add",
-          "type": "FLOAT",
-          "shape": 3,
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-dreambait-nodes",
-        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
-        "Node name for S&R": "NumberPlusPlus"
-      },
-      "widgets_values": [
-        0,
-        "round",
-        0
       ]
     },
     {
@@ -4302,49 +3426,49 @@
       "inputs": [
         {
           "name": "override_number",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 647
         },
         {
           "name": "pre_multiply",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "clamp_min",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "clamp_max",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
       "outputs": [
         {
           "name": "output_number",
-          "type": "FLOAT",
           "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             648
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "float_string",
-          "type": "STRING",
           "shape": 3,
+          "type": "STRING",
           "links": null
         },
         {
           "name": "bool",
-          "type": "BOOLEAN",
           "shape": 3,
+          "type": "BOOLEAN",
           "links": null
         }
       ],
@@ -4373,25 +3497,25 @@
         206
       ],
       "flags": {},
-      "order": 22,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
           "name": "override_bool",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "override_on_false",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "override_on_true",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -4409,10 +3533,10 @@
         {
           "name": "INT",
           "type": "INT",
+          "slot_index": 2,
           "links": [
             653
-          ],
-          "slot_index": 2
+          ]
         },
         {
           "name": "FLOAT",
@@ -4456,33 +3580,33 @@
         98
       ],
       "flags": {},
-      "order": 23,
+      "order": 20,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "MODEL",
           "type": "MODEL",
+          "slot_index": 0,
           "links": [
             656
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "CLIP",
           "type": "CLIP",
+          "slot_index": 1,
           "links": [
             657
-          ],
-          "slot_index": 1
+          ]
         },
         {
           "name": "VAE",
           "type": "VAE",
+          "slot_index": 2,
           "links": [
             658
-          ],
-          "slot_index": 2
+          ]
         }
       ],
       "properties": {
@@ -4506,13 +3630,13 @@
         358.78485107421875
       ],
       "flags": {},
-      "order": 98,
+      "order": 103,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 668
+          "link": 761
         }
       ],
       "outputs": [],
@@ -4537,23 +3661,24 @@
         59.63507843017578
       ],
       "flags": {},
-      "order": 24,
+      "order": 21,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "FLOAT",
           "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             669
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Float"
+        "Node name for S&R": "Eden_Float",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -4571,7 +3696,7 @@
         78
       ],
       "flags": {},
-      "order": 41,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -4589,17 +3714,18 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             677
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "Eden_Compare_Latent switch",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Compare"
+        "Node name for S&R": "Eden_Compare",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a > b"
@@ -4617,16 +3743,12 @@
         126
       ],
       "flags": {},
-      "order": 54,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
           "name": "a",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            60
-          ],
           "widget": {
             "name": "a"
           },
@@ -4635,10 +3757,6 @@
         {
           "name": "b",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            84
-          ],
           "widget": {
             "name": "b"
           },
@@ -4649,16 +3767,17 @@
         {
           "name": "BOOLEAN",
           "type": "BOOLEAN",
+          "slot_index": 0,
           "links": [
             694
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_BoolBinaryOperation"
+        "Node name for S&R": "Eden_BoolBinaryOperation",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "And",
@@ -4678,7 +3797,7 @@
         250
       ],
       "flags": {},
-      "order": 100,
+      "order": 104,
       "mode": 0,
       "inputs": [
         {
@@ -4688,41 +3807,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 688
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -4733,10 +3848,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             689
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -4793,43 +3908,43 @@
       "flags": {
         "collapsed": true
       },
-      "order": 66,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 694
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -4837,10 +3952,10 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             693
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "BoolToIntswitch",
@@ -4866,7 +3981,7 @@
         250
       ],
       "flags": {},
-      "order": 95,
+      "order": 93,
       "mode": 0,
       "inputs": [
         {
@@ -4876,41 +3991,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 695
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -4921,10 +4032,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
-            721
-          ],
-          "slot_index": 0
+            748
+          ]
         },
         {
           "name": "*",
@@ -4984,38 +4095,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 702
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -5023,10 +4134,10 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             698
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "BoolToIntswitch",
@@ -5052,7 +4163,7 @@
         250
       ],
       "flags": {},
-      "order": 84,
+      "order": 82,
       "mode": 0,
       "inputs": [
         {
@@ -5062,41 +4173,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 737
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -5107,10 +4214,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             703
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -5155,8 +4262,8 @@
       "id": 429,
       "type": "DataMonitor",
       "pos": [
-        -668.7474975585938,
-        1282.1005859375
+        -727.1068725585938,
+        1021.4290771484375
       ],
       "size": [
         344.3999938964844,
@@ -5168,38 +4275,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 706
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 707
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 709
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 711
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -5207,12 +4314,12 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             712,
             713,
             714
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -5226,63 +4333,18 @@
       ]
     },
     {
-      "id": 430,
-      "type": "LoadImage",
-      "pos": [
-        -638.721923828125,
-        620.4011840820312
-      ],
-      "size": [
-        315,
-        314
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 25,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            704,
-            705,
-            708
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "Load Init Image",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "black_dummy.jpg",
-        "image"
-      ]
-    },
-    {
       "id": 431,
       "type": "Image to Seed",
       "pos": [
-        -292.3349609375,
-        625.9822998046875
+        -350.6942138671875,
+        365.3111877441406
       ],
       "size": [
         210,
         26
       ],
       "flags": {},
-      "order": 44,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -5294,13 +4356,13 @@
       "outputs": [
         {
           "name": "INT",
-          "type": "INT",
           "shape": 6,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             709,
             716
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -5314,8 +4376,8 @@
       "id": 433,
       "type": "LoadImage",
       "pos": [
-        -258.4292297363281,
-        694.8599243164062
+        -316.7884826660156,
+        434.1887512207031
       ],
       "size": [
         315,
@@ -5324,17 +4386,17 @@
       "flags": {
         "collapsed": true
       },
-      "order": 26,
+      "order": 22,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             715
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "MASK",
@@ -5354,62 +4416,6 @@
       ]
     },
     {
-      "id": 434,
-      "type": "PreviewBridgeLatent",
-      "pos": [
-        1380.792724609375,
-        338.1278076171875
-      ],
-      "size": [
-        315,
-        362
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 99,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "link": 721
-        },
-        {
-          "name": "vae_opt",
-          "type": "VAE",
-          "shape": 7,
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            722
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "808b0dedf03534a2594ecb60a9d6305a044efdc2",
-        "Node name for S&R": "PreviewBridgeLatent"
-      },
-      "widgets_values": [
-        "$434-0",
-        "Latent2RGB-SDXL",
-        false,
-        "never"
-      ]
-    },
-    {
       "id": 436,
       "type": "SDAnyConverter",
       "pos": [
@@ -5421,13 +4427,13 @@
         26
       ],
       "flags": {},
-      "order": 50,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
           "name": "any_type_input",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 724
         }
       ],
@@ -5435,17 +4441,18 @@
         {
           "name": "ANY_TYPE_OUTPUT",
           "type": "*",
+          "slot_index": 0,
           "links": [
             725,
             726
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "SDAnyConverter"
+        "Node name for S&R": "SDAnyConverter",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": []
     },
@@ -5461,13 +4468,13 @@
         32.540321350097656
       ],
       "flags": {},
-      "order": 60,
+      "order": 65,
       "mode": 0,
       "inputs": [
         {
           "name": "any_type_input",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 727
         }
       ],
@@ -5475,17 +4482,18 @@
         {
           "name": "ANY_TYPE_OUTPUT",
           "type": "*",
+          "slot_index": 0,
           "links": [
             728,
             738
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "SDAnyConverter"
+        "Node name for S&R": "SDAnyConverter",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": []
     },
@@ -5501,25 +4509,25 @@
         98
       ],
       "flags": {},
-      "order": 61,
+      "order": 66,
       "mode": 0,
       "inputs": [
         {
           "name": "a",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 729
         },
         {
           "name": "b",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 730
         },
         {
           "name": "c",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -5527,11 +4535,11 @@
         {
           "name": "result (float)",
           "type": "FLOAT",
+          "slot_index": 0,
           "links": [
             731,
             732
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "result (int)",
@@ -5545,9 +4553,10 @@
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden",
         "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_Math"
+        "Node name for S&R": "Eden_Math",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a*b"
@@ -5565,7 +4574,7 @@
         298
       ],
       "flags": {},
-      "order": 76,
+      "order": 71,
       "mode": 0,
       "inputs": [
         {
@@ -5585,29 +4594,25 @@
         },
         {
           "name": "image_negative",
-          "type": "IMAGE",
           "shape": 7,
+          "type": "IMAGE",
           "link": null
         },
         {
           "name": "attn_mask",
-          "type": "MASK",
           "shape": 7,
+          "type": "MASK",
           "link": null
         },
         {
           "name": "clip_vision",
-          "type": "CLIP_VISION",
           "shape": 7,
+          "type": "CLIP_VISION",
           "link": null
         },
         {
           "name": "weight",
           "type": "FLOAT",
-          "pos": [
-            10,
-            136
-          ],
           "widget": {
             "name": "weight"
           },
@@ -5618,10 +4623,10 @@
         {
           "name": "MODEL",
           "type": "MODEL",
+          "slot_index": 0,
           "links": [
             737
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -5650,7 +4655,7 @@
         166
       ],
       "flags": {},
-      "order": 53,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -5666,10 +4671,6 @@
         {
           "name": "strength_model",
           "type": "FLOAT",
-          "pos": [
-            10,
-            80
-          ],
           "widget": {
             "name": "strength_model"
           },
@@ -5678,10 +4679,6 @@
         {
           "name": "strength_clip",
           "type": "FLOAT",
-          "pos": [
-            10,
-            104
-          ],
           "widget": {
             "name": "strength_clip"
           },
@@ -5692,21 +4689,21 @@
         {
           "name": "MODEL",
           "type": "MODEL",
+          "slot_index": 0,
           "links": [
             745,
             746
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "CLIP",
           "type": "CLIP",
+          "slot_index": 1,
           "links": [
             743,
             744,
             747
-          ],
-          "slot_index": 1
+          ]
         }
       ],
       "properties": {
@@ -5724,15 +4721,15 @@
       "id": 432,
       "type": "Image to Seed",
       "pos": [
-        -281.74505615234375,
-        592.450927734375
+        -340.10430908203125,
+        331.77978515625
       ],
       "size": [
         210,
         26
       ],
       "flags": {},
-      "order": 45,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -5744,13 +4741,13 @@
       "outputs": [
         {
           "name": "INT",
-          "type": "INT",
           "shape": 6,
+          "type": "INT",
+          "slot_index": 0,
           "links": [
             711,
             717
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -5759,37 +4756,6 @@
         "Node name for S&R": "Image to Seed"
       },
       "widgets_values": []
-    },
-    {
-      "id": 412,
-      "type": "SaveImage",
-      "pos": [
-        2126.13623046875,
-        -166.71951293945312
-      ],
-      "size": [
-        225.91958618164062,
-        270
-      ],
-      "flags": {},
-      "order": 108,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 660
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "sdxl_eden_img"
-      ]
     },
     {
       "id": 145,
@@ -5803,23 +4769,23 @@
         314
       ],
       "flags": {},
-      "order": 27,
+      "order": 23,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "IMAGE",
-          "type": "IMAGE",
           "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             205
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "MASK",
-          "type": "MASK",
           "shape": 3,
+          "type": "MASK",
           "links": null
         }
       ],
@@ -5831,10 +4797,1083 @@
       },
       "widgets_values": [
         "black_dummy.jpg",
-        "image"
+        "image",
+        ""
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 442,
+      "type": "DataMonitor",
+      "pos": [
+        -672.9006958007812,
+        1307.54052734375
+      ],
+      "size": [
+        233.95535278320312,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 749
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": 750
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            751,
+            752
+          ]
+        }
+      ],
+      "title": "clamp width",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "min(%aux%, %aux2%)",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 443,
+      "type": "DataMonitor",
+      "pos": [
+        -680.1734619140625,
+        1371.8592529296875
+      ],
+      "size": [
+        233.95535278320312,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 754
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": 753
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            755,
+            756
+          ]
+        }
+      ],
+      "title": "clamp height",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "min(%aux%, %aux2%)",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 444,
+      "type": "DataMonitor",
+      "pos": [
+        -668.355224609375,
+        1462.0870361328125
+      ],
+      "size": [
+        233.95535278320312,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 92,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 757
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": 758
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            759
+          ]
+        }
+      ],
+      "title": "preprocessor resolution",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "min(%aux%, %aux2%)",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 351,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        1008.68212890625,
+        1278.9085693359375
+      ],
+      "size": [
+        268.79998779296875,
+        206
+      ],
+      "flags": {},
+      "order": 100,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 545
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 546
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 589
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 762
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength"
+          },
+          "link": 551
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "shape": 3,
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            688
+          ]
+        },
+        {
+          "name": "negative",
+          "shape": 3,
+          "type": "CONDITIONING",
+          "slot_index": 1,
+          "links": [
+            550
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        0.8,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 292,
+      "type": "Eden_Int",
+      "pos": [
+        250.3297119140625,
+        1563.75732421875
+      ],
+      "size": [
+        210,
+        61.5015754699707
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "shape": 3,
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            605,
+            616
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Eden_Int",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 400,
+      "type": "NumberPlusPlus",
+      "pos": [
+        501.9206848144531,
+        1588.0750732421875
+      ],
+      "size": [
+        245.1999969482422,
+        246
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pre_add",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "override_number",
+          "shape": 7,
+          "type": "*",
+          "link": 632
+        },
+        {
+          "name": "multiplier",
+          "shape": 7,
+          "type": "*",
+          "link": 653
+        },
+        {
+          "name": "post_add",
+          "type": "FLOAT",
+          "widget": {
+            "name": "post_add"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_number",
+          "shape": 3,
+          "type": "FLOAT",
+          "slot_index": 0,
+          "links": [
+            729
+          ]
+        },
+        {
+          "name": "output_int",
+          "shape": 3,
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "bool>0",
+          "shape": 3,
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "float_string",
+          "shape": 3,
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "int_string",
+          "shape": 3,
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "pre_add",
+          "shape": 3,
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "multiplier",
+          "shape": 3,
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "post_add",
+          "shape": 3,
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "NumberPlusPlus"
+      },
+      "widgets_values": [
+        0,
+        "round",
+        0
+      ]
+    },
+    {
+      "id": 283,
+      "type": "DRMBT_String_Item_Menu",
+      "pos": [
+        -1340.7109375,
+        1841.2947998046875
+      ],
+      "size": [
+        466.12823486328125,
+        180
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_select",
+          "type": "INT",
+          "widget": {
+            "name": "int_select"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            595,
+            601
+          ]
+        },
+        {
+          "name": "index",
+          "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
+          "links": [
+            416,
+            593,
+            599,
+            617
+          ]
+        }
+      ],
+      "title": "preprocessor",
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "DRMBT_String_Item_Menu"
+      },
+      "widgets_values": [
+        "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
+        ",",
+        "canny",
+        0
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 446,
+      "type": "Eden_Bool",
+      "pos": [
+        236.40797424316406,
+        1849.116943359375
+      ],
+      "size": [
+        210,
+        64.81818389892578
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            763,
+            764
+          ]
+        }
+      ],
+      "title": "bypass_preprocessor",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "a2c844fd379f9c1e3a8302ee22d52f0125e2f081",
+        "Node name for S&R": "Eden_Bool"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 430,
+      "type": "LoadImage",
+      "pos": [
+        -697.081298828125,
+        359.7300720214844
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            704,
+            705,
+            708,
+            766
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "Load Init Image",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "black_dummy.jpg",
+        "image",
+        ""
+      ]
+    },
+    {
+      "id": 284,
+      "type": "AIO_Preprocessor",
+      "pos": [
+        1012.1688842773438,
+        1573.9017333984375
+      ],
+      "size": [
+        268.79998779296875,
+        122
+      ],
+      "flags": {},
+      "order": 94,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 502
+        },
+        {
+          "name": "preprocessor",
+          "type": "COMBO",
+          "widget": {
+            "name": "preprocessor"
+          },
+          "link": 726
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 759
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            767
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
+        "Node name for S&R": "AIO_Preprocessor"
+      },
+      "widgets_values": [
+        "none",
+        512
+      ]
+    },
+    {
+      "id": 445,
+      "type": "Reroute",
+      "pos": [
+        1304.13525390625,
+        1529.3441162109375
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 105,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 768
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            761,
+            762,
+            769
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 290,
+      "type": "DRMBT_String_Item_Menu",
+      "pos": [
+        245.55694580078125,
+        1251.732421875
+      ],
+      "size": [
+        405.9139404296875,
+        238.14064025878906
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_select",
+          "type": "INT",
+          "widget": {
+            "name": "int_select"
+          },
+          "link": 598
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "shape": 3,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            727
+          ]
+        },
+        {
+          "name": "index",
+          "shape": 3,
+          "type": "INT",
+          "slot_index": 1,
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
+        "Node name for S&R": "DRMBT_String_Item_Menu"
+      },
+      "widgets_values": [
+        "controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,diffusers_xl_canny_full.safetensors,controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors",
+        ",",
+        "",
+        0
+      ]
+    },
+    {
+      "id": 238,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -446.9957580566406,
+        -97.63856506347656
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 743
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 654
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "shape": 3,
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            370
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "in the style of embedding:early-sd-eden2-v1_sdxl_lora, colorful chinese painting, black background, visionary painting"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 447,
+      "type": "DataMonitor",
+      "pos": [
+        257.1208190917969,
+        1976.216064453125
+      ],
+      "size": [
+        344.3999938964844,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 106,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": 763
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 764
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            765
+          ]
+        }
+      ],
+      "title": "bool to int",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor"
+      },
+      "widgets_values": [
+        "[1,2][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 448,
+      "type": "UniversalSwitch",
+      "pos": [
+        441.9898376464844,
+        1968.4193115234375
+      ],
+      "size": [
+        315,
+        230
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 107,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 767
+        },
+        {
+          "name": "input2",
+          "shape": 7,
+          "type": "*",
+          "link": 766
+        },
+        {
+          "name": "input3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input6",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 765
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            768
+          ]
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "switch bypass preprocesor",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch"
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 210,
+      "type": "ControlNetAuxSimpleAddText",
+      "pos": [
+        1733.1361083984375,
+        473.7940673828125
+      ],
+      "size": [
+        373.9989929199219,
+        58
+      ],
+      "flags": {},
+      "order": 98,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 323
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 3,
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            770
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "1e9eac6377c882da8bb360c7544607036904362c",
+        "Node name for S&R": "ControlNetAuxSimpleAddText"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 449,
+      "type": "Image Save",
+      "pos": [
+        2134.12646484375,
+        -156.52684020996094
+      ],
+      "size": [
+        315,
+        414
+      ],
+      "flags": {},
+      "order": 108,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 770
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "9ae952b1b435d2bd846bfe6516919b5a8b9201aa",
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "ComfyUI",
+        "_",
+        4,
+        "false",
+        "png",
+        300,
+        100,
+        "true",
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true"
+      ]
     }
   ],
   "links": [
@@ -5885,38 +5924,6 @@
       32,
       1,
       "STRING"
-    ],
-    [
-      41,
-      10,
-      0,
-      61,
-      0,
-      "*"
-    ],
-    [
-      42,
-      60,
-      0,
-      61,
-      1,
-      "*"
-    ],
-    [
-      45,
-      60,
-      1,
-      62,
-      1,
-      "*"
-    ],
-    [
-      46,
-      11,
-      0,
-      62,
-      0,
-      "*"
     ],
     [
       96,
@@ -6039,22 +6046,6 @@
       "IMAGE"
     ],
     [
-      328,
-      61,
-      0,
-      212,
-      0,
-      "*"
-    ],
-    [
-      329,
-      62,
-      0,
-      213,
-      0,
-      "*"
-    ],
-    [
       331,
       60,
       0,
@@ -6159,14 +6150,6 @@
       "*"
     ],
     [
-      445,
-      233,
-      0,
-      284,
-      2,
-      "INT"
-    ],
-    [
       459,
       204,
       0,
@@ -6223,35 +6206,11 @@
       "*"
     ],
     [
-      511,
-      61,
-      0,
-      335,
-      1,
-      "*"
-    ],
-    [
-      512,
-      328,
-      1,
-      233,
-      0,
-      "*"
-    ],
-    [
       513,
       333,
       1,
       336,
       0,
-      "*"
-    ],
-    [
-      514,
-      62,
-      0,
-      336,
-      1,
       "*"
     ],
     [
@@ -6287,14 +6246,6 @@
       "INT"
     ],
     [
-      521,
-      328,
-      2,
-      233,
-      1,
-      "*"
-    ],
-    [
       523,
       328,
       1,
@@ -6309,22 +6260,6 @@
       94,
       1,
       "INT"
-    ],
-    [
-      528,
-      91,
-      0,
-      340,
-      0,
-      "IMAGE"
-    ],
-    [
-      529,
-      341,
-      0,
-      342,
-      0,
-      "IMAGE"
     ],
     [
       537,
@@ -6389,22 +6324,6 @@
       351,
       2,
       "CONTROL_NET"
-    ],
-    [
-      590,
-      284,
-      0,
-      351,
-      3,
-      "IMAGE"
-    ],
-    [
-      591,
-      284,
-      0,
-      366,
-      0,
-      "IMAGE"
     ],
     [
       593,
@@ -6573,22 +6492,6 @@
       192,
       0,
       "*"
-    ],
-    [
-      660,
-      210,
-      0,
-      412,
-      0,
-      "IMAGE"
-    ],
-    [
-      668,
-      284,
-      0,
-      416,
-      0,
-      "IMAGE"
     ],
     [
       669,
@@ -6831,22 +6734,6 @@
       "INT"
     ],
     [
-      721,
-      426,
-      0,
-      434,
-      0,
-      "LATENT"
-    ],
-    [
-      722,
-      434,
-      0,
-      38,
-      3,
-      "LATENT"
-    ],
-    [
       724,
       285,
       0,
@@ -7037,6 +6924,174 @@
       32,
       0,
       "CLIP"
+    ],
+    [
+      748,
+      426,
+      0,
+      38,
+      3,
+      "LATENT"
+    ],
+    [
+      749,
+      10,
+      0,
+      442,
+      1,
+      "*"
+    ],
+    [
+      750,
+      60,
+      0,
+      442,
+      2,
+      "*"
+    ],
+    [
+      751,
+      442,
+      0,
+      212,
+      0,
+      "*"
+    ],
+    [
+      752,
+      442,
+      0,
+      335,
+      1,
+      "*"
+    ],
+    [
+      753,
+      60,
+      1,
+      443,
+      2,
+      "*"
+    ],
+    [
+      754,
+      11,
+      0,
+      443,
+      1,
+      "*"
+    ],
+    [
+      755,
+      443,
+      0,
+      213,
+      0,
+      "*"
+    ],
+    [
+      756,
+      443,
+      0,
+      336,
+      1,
+      "*"
+    ],
+    [
+      757,
+      328,
+      1,
+      444,
+      1,
+      "*"
+    ],
+    [
+      758,
+      328,
+      2,
+      444,
+      2,
+      "*"
+    ],
+    [
+      759,
+      444,
+      0,
+      284,
+      2,
+      "INT"
+    ],
+    [
+      761,
+      445,
+      0,
+      416,
+      0,
+      "IMAGE"
+    ],
+    [
+      762,
+      445,
+      0,
+      351,
+      3,
+      "IMAGE"
+    ],
+    [
+      764,
+      446,
+      0,
+      447,
+      1,
+      "*"
+    ],
+    [
+      765,
+      447,
+      0,
+      448,
+      6,
+      "INT"
+    ],
+    [
+      766,
+      430,
+      0,
+      448,
+      1,
+      "*"
+    ],
+    [
+      767,
+      284,
+      0,
+      448,
+      0,
+      "*"
+    ],
+    [
+      768,
+      448,
+      0,
+      445,
+      0,
+      "*"
+    ],
+    [
+      769,
+      445,
+      0,
+      366,
+      0,
+      "IMAGE"
+    ],
+    [
+      770,
+      210,
+      0,
+      449,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -7070,8 +7125,8 @@
       "id": 1,
       "title": "init image and resolution",
       "bounding": [
-        -645.4299926757812,
-        549.860107421875,
+        -703.7893676757812,
+        289.1889343261719,
         585.1315307617188,
         1447.789306640625
       ],
@@ -7130,19 +7185,6 @@
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
-    },
-    {
-      "id": 8,
-      "title": "send_receive_previous_compare",
-      "bounding": [
-        1715.8369140625,
-        1346.209228515625,
-        636,
-        628
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
     }
   ],
   "config": {
@@ -7150,10 +7192,10 @@
   },
   "extra": {
     "ds": {
-      "scale": 0.38554328942953164,
+      "scale": 1,
       "offset": [
-        1840.168187053403,
-        639.7265138879125
+        -314.12246925144257,
+        486.03465081073995
       ]
     },
     "controller_panel": {
@@ -7184,7 +7226,8 @@
       "comfyui-prompt-reader-node": "d1916686070917e07d1ac9e95d59bebf75ee5c9c"
     },
     "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true
+    "VHS_KeepIntermediate": true,
+    "groupNodes": {}
   },
   "version": 0.4
 }
