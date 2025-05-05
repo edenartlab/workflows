@@ -1,0 +1,2092 @@
+{
+  "6": {
+    "inputs": {
+      "text": [
+        "919",
+        0
+      ],
+      "clip": [
+        "216",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": [
+        "1033",
+        0
+      ],
+      "clip": [
+        "216",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "69": {
+    "inputs": {
+      "frame_rate": 25.000000000000004,
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "LTXVConditioning",
+    "_meta": {
+      "title": "LTXVConditioning"
+    }
+  },
+  "73": {
+    "inputs": {
+      "sampler_name": "euler_ancestral"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "79": {
+    "inputs": {
+      "model": [
+        "227",
+        0
+      ]
+    },
+    "class_type": "ModifyLTXModel",
+    "_meta": {
+      "title": "Modify LTX Model"
+    }
+  },
+  "80": {
+    "inputs": {
+      "scale": 1,
+      "rescale": 0.5,
+      "cfg": [
+        "939",
+        0
+      ],
+      "model": [
+        "79",
+        0
+      ],
+      "attn_override": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "LTXPerturbedAttention",
+    "_meta": {
+      "title": "LTX Apply Perturbed Attention"
+    }
+  },
+  "81": {
+    "inputs": {
+      "layers": "14"
+    },
+    "class_type": "LTXAttnOverride",
+    "_meta": {
+      "title": "LTX Attention Override"
+    }
+  },
+  "83": {
+    "inputs": {
+      "add_noise": true,
+      "noise_seed": [
+        "910",
+        0
+      ],
+      "cfg": 4,
+      "model": [
+        "927",
+        0
+      ],
+      "positive": [
+        "69",
+        0
+      ],
+      "negative": [
+        "69",
+        1
+      ],
+      "sampler": [
+        "73",
+        0
+      ],
+      "sigmas": [
+        "926",
+        0
+      ],
+      "latent_image": [
+        "925",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "SamplerCustom"
+    }
+  },
+  "93": {
+    "inputs": {
+      "frame_rate": [
+        "941",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "temp",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": [
+        "956",
+        0
+      ],
+      "save_metadata": false,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "1046",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "94": {
+    "inputs": {
+      "index": -1,
+      "filenames": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "VHS_SelectFilename",
+    "_meta": {
+      "title": "Select Filename 🎥🅥🅗🅢"
+    }
+  },
+  "95": {
+    "inputs": {
+      "video": [
+        "94",
+        0
+      ],
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideoPath",
+    "_meta": {
+      "title": "Load Video (Path) 🎥🅥🅗🅢"
+    }
+  },
+  "97": {
+    "inputs": {
+      "index": 0,
+      "strength": 1,
+      "model": [
+        "80",
+        0
+      ],
+      "latent": [
+        "314",
+        0
+      ],
+      "image_latent": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "AddLatentGuide",
+    "_meta": {
+      "title": "Add LTX Latent Guide"
+    }
+  },
+  "131": {
+    "inputs": {
+      "text_input": "",
+      "task": "more_detailed_caption",
+      "fill_mask": false,
+      "keep_model_loaded": false,
+      "max_new_tokens": 1024,
+      "num_beams": 5,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": 20954993833397,
+      "image": [
+        "1046",
+        0
+      ],
+      "florence2_model": [
+        "746",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "133": {
+    "inputs": {
+      "delimiter": ". ",
+      "clean_whitespace": "false",
+      "text_a": [
+        "1015",
+        0
+      ],
+      "text_b": [
+        "937",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "156": {
+    "inputs": {
+      "pixels": [
+        "232",
+        0
+      ],
+      "vae": [
+        "227",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "158": {
+    "inputs": {
+      "samples": [
+        "83",
+        0
+      ],
+      "vae": [
+        "227",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "198": {
+    "inputs": {
+      "find1": "image",
+      "replace1": "video",
+      "find2": "photo",
+      "replace2": "video",
+      "find3": "picture",
+      "replace3": "video",
+      "text": [
+        "131",
+        2
+      ]
+    },
+    "class_type": "CR Text Replace",
+    "_meta": {
+      "title": "🔤 CR Text Replace"
+    }
+  },
+  "201": {
+    "inputs": {
+      "find1": "illustration",
+      "replace1": "footage",
+      "find2": "digital art",
+      "replace2": "footage",
+      "find3": "painting",
+      "replace3": "video",
+      "text": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "CR Text Replace",
+    "_meta": {
+      "title": "🔤 CR Text Replace"
+    }
+  },
+  "216": {
+    "inputs": {
+      "clip_name": "t5xxl_fp16.safetensors",
+      "type": "ltxv",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "222": {
+    "inputs": {
+      "boolean": true,
+      "on_true": [
+        "911",
+        0
+      ],
+      "on_false": [
+        "1015",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "use prompt enhancement"
+    }
+  },
+  "227": {
+    "inputs": {
+      "ckpt_name": "ltxv-2b-0.9.6-dev-04-25.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "232": {
+    "inputs": {
+      "image": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "288": {
+    "inputs": {
+      "step": [
+        "966",
+        0
+      ],
+      "sigmas": [
+        "892",
+        0
+      ]
+    },
+    "class_type": "SplitSigmas",
+    "_meta": {
+      "title": "SplitSigmas"
+    }
+  },
+  "314": {
+    "inputs": {
+      "pixels": [
+        "692",
+        0
+      ],
+      "vae": [
+        "227",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "665": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "intensity",
+      "feature_mode": "relative",
+      "intensity": 6,
+      "reverse": false,
+      "loop": false,
+      "smooth": true,
+      "phase": 0,
+      "steady_value": 0.3
+    },
+    "class_type": "DepthflowMotionPresetHorizontal",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Preset Horizontal    #2"
+    }
+  },
+  "666": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "start",
+      "feature_mode": "relative",
+      "target": "OffsetX",
+      "start": 0,
+      "end": 1,
+      "low": 0,
+      "high": [
+        "940",
+        0
+      ],
+      "exponent": 1,
+      "reverse": false,
+      "cumulative": false,
+      "motion": [
+        "665",
+        0
+      ]
+    },
+    "class_type": "DepthflowMotionLinear",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Linear"
+    }
+  },
+  "667": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "intensity",
+      "feature_mode": "relative",
+      "intensity": 6,
+      "reverse": false,
+      "loop": true,
+      "smooth": true,
+      "phase": 0,
+      "steady_value": 0.3
+    },
+    "class_type": "DepthflowMotionPresetHorizontal",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Preset Horizontal    #2"
+    }
+  },
+  "668": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "start",
+      "feature_mode": "relative",
+      "target": "OffsetX",
+      "start": 0,
+      "end": 1,
+      "low": 0,
+      "high": [
+        "940",
+        0
+      ],
+      "exponent": 1,
+      "reverse": false,
+      "cumulative": false,
+      "motion": [
+        "667",
+        0
+      ]
+    },
+    "class_type": "DepthflowMotionLinear",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Linear"
+    }
+  },
+  "669": {
+    "inputs": {
+      "animation_speed": 1,
+      "input_fps": 1,
+      "output_fps": 1,
+      "num_frames": [
+        "977",
+        0
+      ],
+      "quality": 100,
+      "ssaa": 2,
+      "invert": 1,
+      "tiling_mode": "mirror",
+      "image": [
+        "95",
+        0
+      ],
+      "depth_map": [
+        "700",
+        0
+      ],
+      "motion": [
+        "668",
+        0
+      ]
+    },
+    "class_type": "Depthflow",
+    "_meta": {
+      "title": "🌊 Depthflow - Orbit Horizontal Left"
+    }
+  },
+  "670": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "start",
+      "feature_mode": "relative",
+      "target": "OffsetY",
+      "start": 0,
+      "end": 1,
+      "low": 0,
+      "high": [
+        "940",
+        0
+      ],
+      "exponent": 1,
+      "reverse": false,
+      "cumulative": false,
+      "motion": [
+        "671",
+        0
+      ]
+    },
+    "class_type": "DepthflowMotionLinear",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Linear"
+    }
+  },
+  "671": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "intensity",
+      "feature_mode": "relative",
+      "intensity": 3,
+      "reverse": false,
+      "loop": true,
+      "smooth": true,
+      "phase": 0,
+      "steady_value": 0.3
+    },
+    "class_type": "DepthflowMotionPresetVertical",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Preset Vertical"
+    }
+  },
+  "672": {
+    "inputs": {
+      "animation_speed": 1,
+      "input_fps": 1,
+      "output_fps": 1,
+      "num_frames": [
+        "977",
+        0
+      ],
+      "quality": 100,
+      "ssaa": 2,
+      "invert": 0,
+      "tiling_mode": "mirror",
+      "image": [
+        "95",
+        0
+      ],
+      "depth_map": [
+        "700",
+        0
+      ],
+      "motion": [
+        "666",
+        0
+      ]
+    },
+    "class_type": "Depthflow",
+    "_meta": {
+      "title": "🌊 Depthflow - Orbit Horizontal Right"
+    }
+  },
+  "673": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "intensity",
+      "feature_mode": "relative",
+      "intensity": 3,
+      "reverse": false,
+      "loop": true,
+      "smooth": true,
+      "phase": 0,
+      "steady_value": 0.3
+    },
+    "class_type": "DepthflowMotionPresetVertical",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Preset Vertical"
+    }
+  },
+  "674": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "start",
+      "feature_mode": "relative",
+      "target": "OffsetY",
+      "start": 0,
+      "end": 1,
+      "low": 0,
+      "high": [
+        "940",
+        0
+      ],
+      "exponent": 1,
+      "reverse": false,
+      "cumulative": false,
+      "motion": [
+        "673",
+        0
+      ]
+    },
+    "class_type": "DepthflowMotionLinear",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Linear"
+    }
+  },
+  "675": {
+    "inputs": {
+      "animation_speed": 1,
+      "input_fps": 1,
+      "output_fps": 1,
+      "num_frames": [
+        "977",
+        0
+      ],
+      "quality": 100,
+      "ssaa": 2,
+      "invert": 1,
+      "tiling_mode": "mirror",
+      "image": [
+        "95",
+        0
+      ],
+      "depth_map": [
+        "700",
+        0
+      ],
+      "motion": [
+        "670",
+        0
+      ]
+    },
+    "class_type": "Depthflow",
+    "_meta": {
+      "title": "🌊 Depthflow - Orbit Vertical Low"
+    }
+  },
+  "676": {
+    "inputs": {
+      "animation_speed": 1,
+      "input_fps": 1,
+      "output_fps": 1,
+      "num_frames": [
+        "977",
+        0
+      ],
+      "quality": 100,
+      "ssaa": 2,
+      "invert": 0,
+      "tiling_mode": "mirror",
+      "image": [
+        "95",
+        0
+      ],
+      "depth_map": [
+        "700",
+        0
+      ],
+      "motion": [
+        "674",
+        0
+      ]
+    },
+    "class_type": "Depthflow",
+    "_meta": {
+      "title": "🌊 Depthflow - Orbit Vertical High"
+    }
+  },
+  "677": {
+    "inputs": {
+      "animation_speed": 1,
+      "input_fps": 1,
+      "output_fps": 1,
+      "num_frames": [
+        "977",
+        0
+      ],
+      "quality": 100,
+      "ssaa": 2,
+      "invert": 0,
+      "tiling_mode": "mirror",
+      "image": [
+        "95",
+        0
+      ],
+      "depth_map": [
+        "700",
+        0
+      ],
+      "motion": [
+        "679",
+        0
+      ]
+    },
+    "class_type": "Depthflow",
+    "_meta": {
+      "title": "🌊 Depthflow - Zoom In"
+    }
+  },
+  "678": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "intensity",
+      "feature_mode": "relative",
+      "intensity": 1,
+      "reverse": false,
+      "smooth": true,
+      "phase": 0,
+      "loop": false
+    },
+    "class_type": "DepthflowMotionPresetZoom",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Preset Zoom"
+    }
+  },
+  "679": {
+    "inputs": {
+      "strength": 1,
+      "feature_threshold": 0,
+      "feature_param": "start",
+      "feature_mode": "relative",
+      "target": "Nothing",
+      "start": 0,
+      "end": 1,
+      "low": 0,
+      "high": [
+        "940",
+        0
+      ],
+      "exponent": 1,
+      "reverse": false,
+      "cumulative": false,
+      "motion": [
+        "678",
+        0
+      ]
+    },
+    "class_type": "DepthflowMotionLinear",
+    "_meta": {
+      "title": "🌊 Depthflow Motion Linear"
+    }
+  },
+  "684": {
+    "inputs": {
+      "border_handling": "edge",
+      "constant_color": "#000000",
+      "use_normalized": false,
+      "image": [
+        "737",
+        0
+      ],
+      "zoom": [
+        "688",
+        0
+      ]
+    },
+    "class_type": "Batch2d Transform (mtb)",
+    "_meta": {
+      "title": "Batch2d Transform (mtb)"
+    }
+  },
+  "687": {
+    "inputs": {
+      "mode": "Steps",
+      "count": [
+        "977",
+        0
+      ],
+      "min": 1,
+      "max": [
+        "690",
+        0
+      ],
+      "easing": "Linear"
+    },
+    "class_type": "Batch Float (mtb)",
+    "_meta": {
+      "title": "Batch Float (mtb)"
+    }
+  },
+  "688": {
+    "inputs": {
+      "mode": "Steps",
+      "count": [
+        "977",
+        0
+      ],
+      "min": 1,
+      "max": [
+        "713",
+        1
+      ],
+      "easing": "Linear"
+    },
+    "class_type": "Batch Float (mtb)",
+    "_meta": {
+      "title": "Batch Float (mtb)"
+    }
+  },
+  "690": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Float Constant"
+    }
+  },
+  "691": {
+    "inputs": {
+      "border_handling": "edge",
+      "constant_color": "#000000",
+      "use_normalized": false,
+      "image": [
+        "737",
+        0
+      ],
+      "zoom": [
+        "687",
+        0
+      ]
+    },
+    "class_type": "Batch2d Transform (mtb)",
+    "_meta": {
+      "title": "Batch2d Transform (mtb)"
+    }
+  },
+  "692": {
+    "inputs": {
+      "select": [
+        "970",
+        0
+      ],
+      "sel_mode": false,
+      "input1": [
+        "672",
+        0
+      ],
+      "input2": [
+        "669",
+        0
+      ],
+      "input3": [
+        "675",
+        0
+      ],
+      "input4": [
+        "676",
+        0
+      ],
+      "input5": [
+        "677",
+        0
+      ],
+      "input6": [
+        "684",
+        0
+      ],
+      "input7": [
+        "727",
+        0
+      ],
+      "input8": [
+        "726",
+        0
+      ],
+      "input9": [
+        "725",
+        0
+      ],
+      "input10": [
+        "724",
+        0
+      ],
+      "input11": [
+        "691",
+        0
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "699": {
+    "inputs": {
+      "expand": 4,
+      "incremental_expandrate": 4,
+      "tapered_corners": false,
+      "flip_input": false,
+      "blur_radius": 8,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "702",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "700": {
+    "inputs": {
+      "mask": [
+        "699",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "702": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "703",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  },
+  "703": {
+    "inputs": {
+      "ckpt_name": "depth_anything_v2_vits.pth",
+      "resolution": 256,
+      "image": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "DepthAnythingV2Preprocessor",
+    "_meta": {
+      "title": "Depth Anything V2 - Relative"
+    }
+  },
+  "713": {
+    "inputs": {
+      "expression": "max(0, min(1, - (1 / 70) * a + 0.95))",
+      "a": [
+        "714",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "714": {
+    "inputs": {
+      "value": [
+        "940",
+        0
+      ]
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Float Constant"
+    }
+  },
+  "724": {
+    "inputs": {
+      "border_handling": "edge",
+      "constant_color": "#000000",
+      "use_normalized": false,
+      "image": [
+        "737",
+        0
+      ],
+      "y": [
+        "728",
+        0
+      ]
+    },
+    "class_type": "Batch2d Transform (mtb)",
+    "_meta": {
+      "title": "Batch2d Transform (mtb)"
+    }
+  },
+  "725": {
+    "inputs": {
+      "border_handling": "edge",
+      "constant_color": "#000000",
+      "use_normalized": false,
+      "image": [
+        "737",
+        0
+      ],
+      "y": [
+        "742",
+        0
+      ]
+    },
+    "class_type": "Batch2d Transform (mtb)",
+    "_meta": {
+      "title": "Batch2d Transform (mtb)"
+    }
+  },
+  "726": {
+    "inputs": {
+      "border_handling": "edge",
+      "constant_color": "#000000",
+      "use_normalized": false,
+      "image": [
+        "737",
+        0
+      ],
+      "x": [
+        "741",
+        0
+      ]
+    },
+    "class_type": "Batch2d Transform (mtb)",
+    "_meta": {
+      "title": "Batch2d Transform (mtb)"
+    }
+  },
+  "727": {
+    "inputs": {
+      "border_handling": "edge",
+      "constant_color": "#000000",
+      "use_normalized": false,
+      "image": [
+        "737",
+        0
+      ],
+      "x": [
+        "729",
+        0
+      ]
+    },
+    "class_type": "Batch2d Transform (mtb)",
+    "_meta": {
+      "title": "Batch2d Transform (mtb)"
+    }
+  },
+  "728": {
+    "inputs": {
+      "mode": "Steps",
+      "count": [
+        "977",
+        0
+      ],
+      "min": [
+        "733",
+        0
+      ],
+      "max": [
+        "739",
+        1
+      ],
+      "easing": "Linear"
+    },
+    "class_type": "Batch Float (mtb)",
+    "_meta": {
+      "title": "Batch Float (mtb)"
+    }
+  },
+  "729": {
+    "inputs": {
+      "mode": "Steps",
+      "count": [
+        "977",
+        0
+      ],
+      "min": [
+        "733",
+        0
+      ],
+      "max": [
+        "734",
+        1
+      ],
+      "easing": "Linear"
+    },
+    "class_type": "Batch Float (mtb)",
+    "_meta": {
+      "title": "Batch Float (mtb)"
+    }
+  },
+  "733": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Float Constant"
+    }
+  },
+  "734": {
+    "inputs": {
+      "expression": "a*10",
+      "a": [
+        "714",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "735": {
+    "inputs": {
+      "expression": "a*-10",
+      "a": [
+        "714",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "736": {
+    "inputs": {
+      "radius_x": 1,
+      "radius_y": 1,
+      "images": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "BlurImageFast",
+    "_meta": {
+      "title": "Blur Image (Fast)"
+    }
+  },
+  "737": {
+    "inputs": {
+      "multiply_by": [
+        "977",
+        0
+      ],
+      "images": [
+        "736",
+        0
+      ]
+    },
+    "class_type": "VHS_DuplicateImages",
+    "_meta": {
+      "title": "Repeat Images 🎥🅥🅗🅢"
+    }
+  },
+  "739": {
+    "inputs": {
+      "expression": "a*-17",
+      "a": [
+        "714",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "740": {
+    "inputs": {
+      "expression": "a*17",
+      "a": [
+        "714",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "741": {
+    "inputs": {
+      "mode": "Steps",
+      "count": [
+        "977",
+        0
+      ],
+      "min": [
+        "733",
+        0
+      ],
+      "max": [
+        "735",
+        1
+      ],
+      "easing": "Linear"
+    },
+    "class_type": "Batch Float (mtb)",
+    "_meta": {
+      "title": "Batch Float (mtb)"
+    }
+  },
+  "742": {
+    "inputs": {
+      "mode": "Steps",
+      "count": [
+        "977",
+        0
+      ],
+      "min": [
+        "733",
+        0
+      ],
+      "max": [
+        "740",
+        1
+      ],
+      "easing": "Linear"
+    },
+    "class_type": "Batch Float (mtb)",
+    "_meta": {
+      "title": "Batch Float (mtb)"
+    }
+  },
+  "746": {
+    "inputs": {
+      "model": "MiaoshouAI/Florence-2-base-PromptGen-v2.0",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "DownloadAndLoadFlorence2Model"
+    }
+  },
+  "813": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "LTX/LTX",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 10,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "1023",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "video output"
+    }
+  },
+  "892": {
+    "inputs": {
+      "steps": [
+        "955",
+        0
+      ],
+      "max_shift": 2.05,
+      "base_shift": 0.95,
+      "stretch": true,
+      "terminal": 0.1,
+      "latent": [
+        "97",
+        1
+      ]
+    },
+    "class_type": "LTXVScheduler",
+    "_meta": {
+      "title": "LTXVScheduler"
+    }
+  },
+  "898": {
+    "inputs": {
+      "image": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "899": {
+    "inputs": {
+      "image": [
+        "998",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "910": {
+    "inputs": {
+      "seed": 42
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "911": {
+    "inputs": {
+      "prompt": [
+        "1015",
+        0
+      ],
+      "max_resulting_tokens": 256,
+      "prompt_enhancer": [
+        "912",
+        0
+      ],
+      "image_prompt": [
+        "1046",
+        0
+      ]
+    },
+    "class_type": "LTXVPromptEnhancer",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Prompt Enhancer"
+    }
+  },
+  "912": {
+    "inputs": {
+      "llm_name": "unsloth/Llama-3.2-3B-Instruct",
+      "image_captioner_name": "MiaoshouAI/Florence-2-large-PromptGen-v2.0"
+    },
+    "class_type": "LTXVPromptEnhancerLoader",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Prompt Enhancer Loader"
+    }
+  },
+  "919": {
+    "inputs": {
+      "delimiter": ". ",
+      "clean_whitespace": "false",
+      "text_a": [
+        "1014",
+        0
+      ],
+      "text_b": [
+        "1015",
+        0
+      ],
+      "text_c": [
+        "222",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "920": {
+    "inputs": {
+      "width": 960,
+      "height": 960,
+      "length": [
+        "977",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLTXVLatentVideo",
+    "_meta": {
+      "title": "EmptyLTXVLatentVideo"
+    }
+  },
+  "922": {
+    "inputs": {
+      "steps": [
+        "955",
+        0
+      ],
+      "max_shift": 2.05,
+      "base_shift": 0.95,
+      "stretch": true,
+      "terminal": 0.1,
+      "latent": [
+        "920",
+        0
+      ]
+    },
+    "class_type": "LTXVScheduler",
+    "_meta": {
+      "title": "LTXVScheduler"
+    }
+  },
+  "923": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "928",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to int"
+    }
+  },
+  "925": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "923",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "920",
+        0
+      ],
+      "input2": [
+        "97",
+        1
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_latent"
+    }
+  },
+  "926": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "923",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "922",
+        0
+      ],
+      "input2": [
+        "288",
+        1
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_sigmas"
+    }
+  },
+  "927": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "923",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "80",
+        0
+      ],
+      "input2": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_model"
+    }
+  },
+  "928": {
+    "inputs": {
+      "value": [
+        "1058",
+        0
+      ]
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_i2v"
+    }
+  },
+  "937": {
+    "inputs": {
+      "text": "[\"\", \"%aux2%\"][%aux% or %aux3%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "1058",
+        0
+      ],
+      "aux2": [
+        "201",
+        0
+      ],
+      "aux3": [
+        "1041",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "logic missing init image"
+    }
+  },
+  "939": {
+    "inputs": {
+      "value": 3.0000000000000004
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "CFG"
+    }
+  },
+  "940": {
+    "inputs": {
+      "value": 10.000000000000002
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "Camera Animation Value"
+    }
+  },
+  "941": {
+    "inputs": {
+      "value": 5.000000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "FRate"
+    }
+  },
+  "955": {
+    "inputs": {
+      "value": 22
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Steps"
+    }
+  },
+  "956": {
+    "inputs": {
+      "value": 25
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "CRF"
+    }
+  },
+  "958": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Camera Steps"
+    }
+  },
+  "961": {
+    "inputs": {
+      "menu": "none, Orbit Horizontal Right, Orbit Horizontal Left, Orbit Vertical Low, Orbit Vertical High, Zoom In, Zoom Out, left pan, right pan, up, down, static",
+      "delimiter": ", ",
+      "select_item": "Zoom In"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "cam selection logic"
+    }
+  },
+  "962": {
+    "inputs": {
+      "text": "%aux%>0 and %aux2%",
+      "output_type": "FORMULA",
+      "aux": [
+        "961",
+        1
+      ],
+      "aux2": [
+        "967",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "cam selection logic"
+    }
+  },
+  "965": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "easy int",
+    "_meta": {
+      "title": "Camera Steps"
+    }
+  },
+  "966": {
+    "inputs": {
+      "boolean": [
+        "962",
+        0
+      ],
+      "on_true": [
+        "958",
+        0
+      ],
+      "on_false": [
+        "965",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "967": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use Camera"
+    }
+  },
+  "970": {
+    "inputs": {
+      "boolean": [
+        "962",
+        0
+      ],
+      "on_true": [
+        "961",
+        1
+      ],
+      "on_false": [
+        "971",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "🪛 Switch any"
+    }
+  },
+  "971": {
+    "inputs": {
+      "value": 5
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "no cam"
+    }
+  },
+  "972": {
+    "inputs": {
+      "text": "0",
+      "output_type": "ANY",
+      "passthrough": [
+        "966",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "977": {
+    "inputs": {
+      "expression": "((floor((a*4))*b)/4)/c +1",
+      "a": [
+        "1007",
+        0
+      ],
+      "b": [
+        "979",
+        0
+      ],
+      "c": [
+        "1027",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "979": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "FPS"
+    }
+  },
+  "998": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "1040",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "898",
+        0
+      ],
+      "input2": [
+        "999",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch output video extend"
+    }
+  },
+  "999": {
+    "inputs": {
+      "reverse": false,
+      "on_mismatch": "Smallest",
+      "image_1": [
+        "1042",
+        0
+      ],
+      "image_2": [
+        "898",
+        0
+      ]
+    },
+    "class_type": "Concat Images (mtb)",
+    "_meta": {
+      "title": "Concat Images (mtb)"
+    }
+  },
+  "1007": {
+    "inputs": {
+      "value": 4.000000000000001
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "duration_seconds"
+    }
+  },
+  "1008": {
+    "inputs": {
+      "value": 640
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Resolution"
+    }
+  },
+  "1014": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "prompt prefix"
+    }
+  },
+  "1015": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "prompt"
+    }
+  },
+  "1023": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "1027",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "899",
+        0
+      ],
+      "input2": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch frame interpolation"
+    }
+  },
+  "1025": {
+    "inputs": {
+      "ckpt_name": "rife49.pth",
+      "clear_cache_after_n_frames": 32,
+      "multiplier": 2,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "899",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "Video Frame Interpolation"
+    }
+  },
+  "1026": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_frame_interpolation"
+    }
+  },
+  "1027": {
+    "inputs": {
+      "text": "[1, 2][%aux%] ",
+      "output_type": "FORMULA",
+      "aux": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rife bool to int"
+    }
+  },
+  "1032": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use advanced parameters"
+    }
+  },
+  "1033": {
+    "inputs": {
+      "value": "worst quality, inconsistent motion, blurry, jittery, distorted, watermarks, text, title, watermark, shaky, glitchy, low quality, deformed, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "negative_prompt"
+    }
+  },
+  "1039": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "crop": "center",
+      "image": [
+        "1057",
+        0
+      ]
+    },
+    "class_type": "Resize Image for SDXL",
+    "_meta": {
+      "title": "Resize Image for SDXL (Mikey)"
+    }
+  },
+  "1040": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "1041",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "is video int"
+    }
+  },
+  "1041": {
+    "inputs": {
+      "text": "%aux%>1",
+      "output_type": "FORMULA",
+      "aux": [
+        "1042",
+        3
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "multi frames?"
+    }
+  },
+  "1042": {
+    "inputs": {
+      "image": [
+        "1051",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "1046": {
+    "inputs": {
+      "start": [
+        "1042",
+        3
+      ],
+      "length": 1,
+      "image": [
+        "1042",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch+",
+    "_meta": {
+      "title": "🔧 Image From Batch"
+    }
+  },
+  "1049": {
+    "inputs": {
+      "image": [
+        "1039",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "1051": {
+    "inputs": {
+      "width": [
+        "1008",
+        0
+      ],
+      "height": [
+        "1008",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "1049",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "1053": {
+    "inputs": {
+      "images": [
+        "1046",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image start"
+    }
+  },
+  "1056": {
+    "inputs": {
+      "path": "fire-pulse.mp4",
+      "image_load_cap": [
+        "1065",
+        0
+      ],
+      "force_rate": 0,
+      "max_res": [
+        "1008",
+        0
+      ],
+      "sort": "None"
+    },
+    "class_type": "Eden_AllMediaLoader",
+    "_meta": {
+      "title": "All Media Loader 📁"
+    }
+  },
+  "1057": {
+    "inputs": {
+      "image": [
+        "1056",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "1058": {
+    "inputs": {
+      "text": "\"%aux%\" == \"black_dummy\"",
+      "output_type": "FORMULA",
+      "aux": [
+        "1056",
+        4
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "test_hasInitImage"
+    }
+  },
+  "1065": {
+    "inputs": {
+      "value": 384
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "max_input_frames"
+    }
+  }
+}

@@ -1,19 +1,17 @@
-name: Talking Heads
+name: Lipsync (Sonic)
 description: Generate talking head videos from an image and audio input.
 tip: |-
-  This tool uses the SVD-XT model to generate talking head videos from a single image and audio input.
+  This tool uses the SVD-XT with Sonicmodel to generate talking head videos from a single image and audio input.
   The model will animate the face in the image to match the audio input, creating a realistic talking head effect.
 output_type: video
 cost_estimate: duration_cap * 5
-thumbnail: app/talking_heads_opt.mp4
+thumbnail: app/lipsync_sonic_opt.mp4
 status: prod
 visible: true
 active: true
 handler: comfyui
 base_model: svd-xt
 comfyui_output_node_id: 18
-comfyui_intermediate_outputs:
-  grid: 30
 parameters:
   image:
     type: image
@@ -35,11 +33,11 @@ parameters:
       subfield: audio
   duration_cap:
     type: float
-    label: Duration Cap
+    label: Duration Cap (seconds)
     description: Maximum duration of the output video in seconds. Set to 0 for no limit.
     default: 15
     minimum: 0
-    maximum: 300
+    maximum: 30
     comfyui:
       node_id: 21
       field: inputs
@@ -56,9 +54,9 @@ parameters:
       node_id: 1
       field: inputs
       subfield: seed
-  inference_steps:
+  steps:
     type: integer
-    label: Inference Steps
+    label: Steps
     description: Number of inference steps for video generation
     default: 25
     minimum: 1

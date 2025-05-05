@@ -1,119 +1,154 @@
 name: Start End Frame Interpolation
-description: Create smooth start to end frame transitions between two images using either LTXV or WanVideo models.
+description: Create smooth start to end frame transition or intermediary scene between two images using either LTXV or WanVideo models.
 tip: |-
   This tool creates smooth transitions between two images using either LTXV (Lightricks Video) or WanVideo models.
   The LTXV model is optimized for shorter, high-quality transitions while WanVideo is better for longer, more stylized animations.
-  Key features:
-  Switch between LTXV and WanVideo models
-  LTXV works best with 16 FPS and shorter durations (2-4 seconds)
-  WanVideo works well with 24 FPS and longer durations (4-8 seconds)
+  At this time, LTXV is great at non humnan motion and scenery, but artifacts are more pronounced with human generations.
+  Seed has a strong effect on the output. If you are unhappy with the output, try again with a different seed.
   Use prompt enhancement for more detailed control over the transition
   Enable frame interpolation for smoother results at the cost of longer processing time
 output_type: video
-cost_estimate: '10 * duration_seconds * (width + height)/(2*640) * (use_frame_interpolation ? 2 : 1)'
-thumbnail: app/sei_ltxv_wan_opt.mp4
+cost_estimate: '10 * duration_seconds * (resolution*1.5)/(2*640) * (frame_interpolation ? 2:1)'
+thumbnail: app/sei_ltx_wan_opt.mp4
 visible: true
 active: true
-resolutions: [16-9_1024x576, 3-2_768x512, 1-1_640x640, 2-3_512x768, 9-16_576x1024]
+status: prod
 handler: comfyui
 base_model: ltxv
 comfyui_output_node_id: 103
 comfyui_intermediate_outputs:
-  no-interpolation: 189
-  grid: 30
+  1st-pass: 332
+  debug: 30
 parameters:
-  start_image:
-    type: image
-    label: Start Image
-    description: The image to start the transition from
+  start_media:
+    anyOf:
+    - type: image
+    - type: video
+    label: Start Media
+    description: The image or video to start the transition from
+    tip: |-
+      The start media will be used as the first frame of the video if provided.
+      If prompt enhancement is enabled, the image will be processed with an llm vision model to create a more detailed description.
+      If a video is provided, the video will be used as the first frame of the video extension.
+      All results will be concatenated together to form a single video.
     required: true
     comfyui:
-      node_id: 63
+      node_id: 329
       field: inputs
-      subfield: image
-  end_image:
-    type: image
-    label: End Image
-    description: The image to transition to
+      subfield: path
+  end_media:
+    anyOf:
+    - type: image
+    - type: video
+    label: End Media
+    description: The image or video to transition to
+    tip: |-
+      The end media will be used as the last frame of the video if provided.
+      If prompt enhancement is enabled, the image will be processed with an llm vision model to create a more detailed description.
+      If a video is provided, the first frame of the video will be used as the last frame of the video extension.
+      all results will be concatenated together to form a single video.
     required: true
     comfyui:
-      node_id: 58
+      node_id: 330
       field: inputs
-      subfield: image
+      subfield: path
   duration_seconds:
     type: float
     label: Duration (seconds)
     description: Length of the transition in seconds
-    default: 6.0
-    minimum: 2.0
-    maximum: 12.0
-    step: 0.5
+    tip: |-
+      The duration of the transition.
+      The default is 4 seconds, but you can increase it to 32 seconds with frame interpolation.
     required: true
+    default: 4.0
+    minimum: 2.0
+    maximum: 32.0
+    step: 0.5
     comfyui:
       node_id: 173
       field: inputs
       subfield: value
-  use_wan_video:
-    type: boolean
-    label: High Quality (wan)
-    description: Switch between LTXV (false) and WanVideo (true) models
-    default: false
+  resolution:
+    type: integer
+    label: Resolution (longest side)
+    description: Output video resolution will maintain aspect of input media limited to this value
+    tip: |-
+      The output video will be scaled to this resolution, with speed tradeoffs at higher resolutions.
+      Set the resolution to the longest side of your input media to maintain a consistent scale.
+      Best practice is to use media of the same size to avoid scaling artifacts.
+    default: 960
+    minimum: 640
+    maximum: 1280
+    step: 32
     comfyui:
-      node_id: 148
+      node_id: 203
       field: inputs
       subfield: value
   prompt:
     type: string
-    label: Transition Description
+    label: Transition Prompt
     description: Describe how the transition should happen between the images
     default: "the first image smoothly transitions into the second image"
-    required: true
     comfyui:
       node_id: 135
       field: inputs
       subfield: value
-  use_prompt_enhance:
+  prompt_enhance:
     type: boolean
     label: Enhance Prompt
-    description: Use AI to enhance the transition prompt for better results
+    description: Use LLM vision models to enhance the text prompt with verbose details from the input images.
+    tip: |-
+      This will add more details to the prompt, but may cause hallucinations of new details.
+      This is recommended for low effort prompts, but is unnecessary when the prompt is detailed.
     default: true
     comfyui:
       node_id: 156
       field: inputs
       subfield: value
-  width:
-    type: integer
-    label: Width
-    description: Width of the output video in pixels
-    default: 512
-    minimum: 320
-    maximum: 1280
-    step: 64
-    required: true
-    comfyui:
-      node_id: 76
-      field: inputs
-      subfield: width
-  height:
-    type: integer
-    label: Height
-    description: Height of the output video in pixels
-    default: 512
-    minimum: 320
-    maximum: 1280
-    step: 64
-    required: true
-    comfyui:
-      node_id: 76
-      field: inputs
-      subfield: height
-  use_frame_interpolation:
+  frame_interpolation:
     type: boolean
     label: Enable Frame Interpolation
-    description: Use RIFE to generate additional frames for smoother motion
+    description: Use RIFE to generate additional frames for smoother motion.
+    tip: |-
+      This will halve the rendered frames, with no affect on clip length resulting in faster generation time.
+      This is recommended for landscapes and low action scenes, but will feel slow motion for natural movements.
     default: true
     comfyui:
       node_id: 177
+      field: inputs
+      subfield: value
+  seed:
+    type: integer
+    label: Seed
+    description: Random seed for reproducible results. Leave at 1 for random.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 160
+      field: inputs
+      subfield: seed
+  max_input_frames:
+    type: integer
+    label: Max Input Frames
+    description: Maximum number of frames to use for input
+    default: 384
+    minimum: 1
+    maximum: 384
+    step: 12
+    comfyui:
+      node_id: 333
+      field: inputs
+      subfield: value
+  use_ltx:
+    type: boolean
+    label: High Quality (wan)
+    description: Switch between WAN (false) and LTX (true) models
+    default: true
+    # hide_from_ui: true
+    # hide_from_agent: true
+    comfyui:
+      node_id: 148
       field: inputs
       subfield: value
   use_manual_fps:
@@ -121,6 +156,8 @@ parameters:
     label: Use Manual Frame Count
     description: Override automatic frame count calculation
     default: false
+    hide_from_ui: true
+    hide_from_agent: true
     comfyui:
       node_id: 183
       field: inputs
@@ -129,7 +166,7 @@ parameters:
     type: integer
     label: FPS
     description: Frames per second for the output video
-    default: 16
+    default: 24
     minimum: 8
     maximum: 30
     step: 1 
@@ -151,22 +188,13 @@ parameters:
       node_id: 166
       field: inputs
       subfield: value
-  seed:
-    type: integer
-    label: Seed
-    description: Random seed for reproducible results. Leave at 1 for random.
-    default: 1
-    minimum: 0
-    maximum: 2147483647
-    comfyui:
-      node_id: 160
-      field: inputs
-      subfield: seed
   add_caption:
     type: boolean
     label: Add Debug Caption
     description: Add technical information overlay to the output video
     default: true
+    hide_from_ui: true
+    hide_from_agent: true
     comfyui:
       node_id: 141
       field: inputs
@@ -176,6 +204,8 @@ parameters:
     label: Show Advanced Parameters
     description: Enable advanced WanVideo model parameters for fine-tuning
     default: false
+    hide_from_ui: true
+    hide_from_agent: true
     comfyui:
       node_id: 199
       field: inputs
