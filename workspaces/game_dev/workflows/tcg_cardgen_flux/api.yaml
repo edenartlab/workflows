@@ -1,6 +1,6 @@
 name: TCG Card Generator (FLUX)
 description: Create a custom TCG card with background art generation and card layout composition.
-tip: >-
+tip: |-
   This tool generates custom TCG cards. You can either generate new card art or use an existing rendered image.
   The workflow combines generated or supplied art with card template elements including card type, rarity, and card text.
 thumbnail: app/tcg_cardgen_flux.jpg
@@ -75,6 +75,51 @@ parameters:
     visible_if: use_lora=true
     comfyui:
       node_id: 179
+      field: inputs
+      subfield: value
+  world_prompt:
+    type: string
+    label: World Prompt
+    description: Worldbuilding prompt for the universe of the game.
+    tip: |-
+      The world prompt that guides the card generation process. This controls the overall style, theme, and behavior of the card generation.
+      Verbosity is key here.
+    default: |-
+
+      world building prompt:
+
+      The world you're crafting in is the universe of Mars College, an off grid encampment in the desert near the Salton Sea just outside of Bombay Beach California 
+
+      Mars College is a research institute for AI enthusiasts, van-lifers, off gridders, crypto degens and hippy/philosopher types.
+
+      Some of the in joke references are followe; Use this information in helping generate cards or interacting with user card prompts. 
+
+      the Vanlifers and techies of Mars and Bombay Beach live either off grid or in the bombed out trailer park beach town of Bombay Beach. 
+
+      They go on adventures, attempt to solve conflicts and reinvent governence, experiment with Dao's and crypto, ride electric unicycles, dance, and experiment with elicit substances. 
+
+      This world is set in the present to near future, cos-playing the decline of civilization. 
+
+      be creative, irreverent, witty and exaserberate the off grid problems of low privacy, low-cost survival and the tropes of cyber techie future optimistic off grid high tech low cost living.  
+
+      You can make up new names and archetypes, or pull from this lore. when you write flavor text, it should be about 12-15 words, witty, irreverent, sarcastic, hilarious, subversive, can contain adult language, be lewd or blue, and should always be clever
+
+      The following are jokes, people / characters, places and card ideas to draw inspiration from. You don't have to always stay in universe, and can also pull from MTG archetypes, and loosely follow color flavor and abilities
+
+      Townies, Day Jobbers, Dirty Dishes, Part‑Timers, Tool Campers, Finish Your Projects, Workshops, Trash Day, Day 45 Apocalypse, Chihuahua Town, Kitchen Grandma, Colorado Boys, WiFi Password, Pseudo Scientists, Chibafication. Will, AI Camp, All Night Hackathon, Seva The Admin, Hack Night, AI Film Festival, Unfinished Project, The Simulation, WiFi Down, All Black Everything, Freeloaders, Alejandro the Darkest, Scorpion Hunt, Dark Arts Faculty Club, Black Metal Jam, Bangers, Drum 'n Bass, Crypto Grifters, Flypocalypse, Cult of AI Accelerationists, Mahashivaratri, Violent Women's Brunch, JMill (For Hire), Unemployment, Thunder Talks, Lightning Talks, Spark Talks, Dance Party, Steak Night, Mars Web, Wooks, The Raphalots, Xander, Rapha is Bored, Ritual Theater, Sunflower Lab, Body Camp, Body Workers, Freesiders, Hippies, Crystal Hippies, Woo Cult, Oatka (vodka and oats), Winco Run, Local Legends, Saturnites, Eden Art Lab, Solar Shower, 2x4, 4x8, Hex Bit, Dewalt Battery, Laptop Charger, USB C Cable, Wireless Mouse, Raspberry Pi, Screens, Mechanical Duck, The Mars NAS, Suss Tea, The Desert, Mars College, The Institute, Ass Camp, Club 86, Sub Club, Tool Camp, Electric Lounge, Cipher Temple, Slab City, Tao Ruspoli, Bombay Beach Biennale, Vincent the 'Mancer, Gene Kogan, Cyberpunks, Solarpunks  
+
+      Make some great fantasy card art. shouldn't be photorealistic, should have a concept art vibe
+    comfyui:
+      node_id: 445
+      field: inputs
+      subfield: value
+  card_name:
+    type: string
+    label: Card Name
+    description: Name of the card
+    default: ""
+    comfyui:
+      node_id: 313
       field: inputs
       subfield: value
   prompt_art:
@@ -199,7 +244,7 @@ parameters:
     tip: |-
       Turn this on if you want to use a flux model for the card art. 
       This should be true if using a flux lora model.
-    default: false
+    default: true
     comfyui:
       node_id: 271
       field: inputs
@@ -211,7 +256,7 @@ parameters:
     tip: |-
       Turn this on if you want to use a flux model for the background card frame and art. 
       This should be true if using a flux lora model.
-    default: false
+    default: true
     comfyui:
       node_id: 260
       field: inputs
@@ -437,6 +482,7 @@ parameters:
     default: 0.93
     minimum: 0.0
     maximum: 1.0
+    step: 0.01
     comfyui:
       node_id: 491
       field: inputs

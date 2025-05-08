@@ -14,7 +14,7 @@
   "16": {
     "inputs": {
       "positive_prompt": [
-        "136",
+        "163",
         0
       ],
       "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
@@ -40,10 +40,6 @@
       "quantization": "fp8_e5m2",
       "load_device": "offload_device",
       "attention_mode": "sageattn",
-      "compile_args": [
-        "35",
-        0
-      ],
       "block_swap_args": [
         "39",
         0
@@ -98,7 +94,7 @@
   "30": {
     "inputs": {
       "frame_rate": [
-        "168",
+        "188",
         0
       ],
       "loop_count": 0,
@@ -109,10 +105,7 @@
       "save_metadata": true,
       "trim_to_audio": false,
       "pingpong": false,
-      "save_output": [
-        "141",
-        0
-      ],
+      "save_output": true,
       "images": [
         "142",
         0
@@ -120,7 +113,7 @@
     },
     "class_type": "VHS_VideoCombine",
     "_meta": {
-      "title": "Video Combine CAPTION debug"
+      "title": "Video Combine 🎥🅥🅗🅢"
     }
   },
   "35": {
@@ -130,8 +123,7 @@
       "mode": "default",
       "dynamic": true,
       "dynamo_cache_size_limit": 64,
-      "compile_transformer_blocks_only": true,
-      "dynamo_recompile_limit": 128
+      "compile_transformer_blocks_only": true
     },
     "class_type": "WanVideoTorchCompileSettings",
     "_meta": {
@@ -153,8 +145,7 @@
       "blocks_to_swap": 20,
       "offload_img_emb": false,
       "offload_txt_emb": false,
-      "use_non_blocking": true,
-      "vace_blocks_to_swap": 0
+      "use_non_blocking": true
     },
     "class_type": "WanVideoBlockSwap",
     "_meta": {
@@ -195,10 +186,28 @@
       "title": "Load WanVideo Clip Encoder"
     }
   },
+  "58": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image: End image"
+    }
+  },
+  "63": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image: Start image"
+    }
+  },
   "68": {
     "inputs": {
       "image": [
-        "265",
+        "179",
         0
       ]
     },
@@ -262,6 +271,48 @@
       "title": "WanVideo SLG"
     }
   },
+  "76": {
+    "inputs": {
+      "width": 720,
+      "height": 1280,
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 16,
+      "image": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "77": {
+    "inputs": {
+      "width": [
+        "76",
+        1
+      ],
+      "height": [
+        "76",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 16,
+      "image": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
   "88": {
     "inputs": {
       "strength_1": 1,
@@ -292,32 +343,32 @@
   "89": {
     "inputs": {
       "width": [
-        "296",
+        "76",
         1
       ],
       "height": [
-        "296",
+        "76",
         2
       ],
       "num_frames": [
-        "168",
+        "172",
         0
       ],
       "noise_aug_strength": 0,
       "start_latent_strength": 1,
       "end_latent_strength": true,
       "force_offload": true,
-      "fun_or_fl2v_model": false,
+      "fun_model": false,
+      "start_image": [
+        "150",
+        0
+      ],
       "vae": [
         "38",
         0
       ],
       "clip_embeds": [
         "88",
-        0
-      ],
-      "start_image": [
-        "150",
         0
       ],
       "end_image": [
@@ -342,7 +393,7 @@
       "text": "start_frame",
       "direction": "up",
       "image": [
-        "303",
+        "76",
         0
       ]
     },
@@ -363,7 +414,7 @@
       "text": "end_frame",
       "direction": "up",
       "image": [
-        "313",
+        "77",
         0
       ]
     },
@@ -415,7 +466,7 @@
         0
       ],
       "loop_count": 0,
-      "filename_prefix": "SEI_LTX_WAN",
+      "filename_prefix": "LTX_WAN_SEI",
       "format": "video/h264-mp4",
       "pix_fmt": "yuv420p",
       "crf": 19,
@@ -437,7 +488,7 @@
     "inputs": {
       "img_compression": 40,
       "image": [
-        "327",
+        "114",
         0
       ]
     },
@@ -450,7 +501,7 @@
     "inputs": {
       "img_compression": 40,
       "image": [
-        "326",
+        "113",
         0
       ]
     },
@@ -470,10 +521,7 @@
   },
   "107": {
     "inputs": {
-      "steps": [
-        "269",
-        0
-      ],
+      "steps": 20,
       "max_shift": 2.05,
       "base_shift": 0.95,
       "stretch": true,
@@ -541,6 +589,54 @@
       "title": "VAE Decode"
     }
   },
+  "113": {
+    "inputs": {
+      "width": [
+        "117",
+        0
+      ],
+      "height": [
+        "117",
+        1
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "crop": "center",
+      "image": [
+        "147",
+        1
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "114": {
+    "inputs": {
+      "width": [
+        "117",
+        0
+      ],
+      "height": [
+        "117",
+        1
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "crop": "center",
+      "image": [
+        "150",
+        1
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
   "115": {
     "inputs": {
       "frame_idx": [
@@ -586,6 +682,24 @@
       "title": "RandomNoise"
     }
   },
+  "117": {
+    "inputs": {
+      "width": [
+        "76",
+        1
+      ],
+      "height": [
+        "76",
+        2
+      ],
+      "output_multiplier": 1,
+      "multiple_off": 64
+    },
+    "class_type": "WidthHeightPicker",
+    "_meta": {
+      "title": "WidthHeightPicker"
+    }
+  },
   "118": {
     "inputs": {
       "frame_idx": 0,
@@ -618,7 +732,7 @@
   },
   "119": {
     "inputs": {
-      "ckpt_name": "ltxv-2b-0.9.6-dev-04-25.safetensors"
+      "ckpt_name": "ltx-video-2b-v0.9.5.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -664,12 +778,12 @@
   "123": {
     "inputs": {
       "width": [
-        "296",
-        1
+        "117",
+        0
       ],
       "height": [
-        "296",
-        2
+        "117",
+        1
       ],
       "length": [
         "121",
@@ -698,8 +812,8 @@
   "125": {
     "inputs": {
       "text": [
-        "136",
-        0
+        "163",
+        1
       ],
       "clip": [
         "122",
@@ -788,11 +902,11 @@
   },
   "135": {
     "inputs": {
-      "value": "the tree gradually fades between seasons"
+      "value": "the man in the pool falls below the frame into the water, and the scene erupts into an explosion out of which a man in a black suit emerges from the flames"
     },
     "class_type": "Eden_String",
     "_meta": {
-      "title": "prompt"
+      "title": "Eden_String"
     }
   },
   "136": {
@@ -800,7 +914,7 @@
       "mode": "start",
       "name": "Timer",
       "any_input": [
-        "282",
+        "158",
         0
       ]
     },
@@ -935,7 +1049,7 @@
       ],
       "validate_typing": false,
       "input1": [
-        "313",
+        "77",
         0
       ]
     },
@@ -946,11 +1060,11 @@
   },
   "148": {
     "inputs": {
-      "value": true
+      "value": false
     },
     "class_type": "Eden_Bool",
     "_meta": {
-      "title": "WAN / LTX"
+      "title": "use_wan_video"
     }
   },
   "149": {
@@ -977,7 +1091,7 @@
       ],
       "validate_typing": false,
       "input1": [
-        "303",
+        "76",
         0
       ]
     },
@@ -1006,7 +1120,7 @@
     },
     "class_type": "UniversalSwitch",
     "_meta": {
-      "title": "switch input WAN / LTX"
+      "title": "switch input"
     }
   },
   "156": {
@@ -1015,7 +1129,7 @@
     },
     "class_type": "Eden_Bool",
     "_meta": {
-      "title": "use_prompt_enhance"
+      "title": "prompt_enhance"
     }
   },
   "157": {
@@ -1057,7 +1171,7 @@
   },
   "160": {
     "inputs": {
-      "seed": 27
+      "seed": 1
     },
     "class_type": "Eden_Seed",
     "_meta": {
@@ -1078,9 +1192,28 @@
       "title": "round exec"
     }
   },
+  "163": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": 1,
+      "selection_out": [
+        "149",
+        0
+      ],
+      "validate_typing": false,
+      "input1": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_start_WAN_LTXV"
+    }
+  },
   "164": {
     "inputs": {
-      "text": "The scene is a transition featuring:\nthe tree gradually fades between seasons\nit begins with the tree gradually fades between seasons ending with The camera pans out from the digital illustration of the tree, slowly moving away from the tree's trunk, revealing the vast, pink desert landscape. The scene transitions from a dreamy, ethereal quality to a more surreal and fantastical atmosphere. As the camera continues to pull back, the soft, pastel gradient of light blue and pale yellow begins to morph into a hazy, warm orange glow, casting a warm light on the desert landscape. The twisted branches of the tree come into focus, with the camera lingering on the delicate leaves and flowers, their The scene is captured in a studio..",
+      "text": "The man's body tumbles through the air, his arms flailing wildly as he loses his grip on the surfboard, and his head disappears below the surface of the turquoise water, sending ripples through the calm surface. As he plunges downwards, the camera follows, a low-angle shot from beneath the water's surface, the sunlight filtering down in shimmering shafts. Suddenly, the scene erupts into a blaze of flames, a fiery explosion that engulfs the pool, and a man in a sleek black suit emerges from the inferno, his chiseled features illuminated by the intense heat, his piercing blue eyes fixed intently on the camera. The black suit is tailored to perfection, accentuating his broad shoulders and powerful physique. The tropical setting remains visible in the background, with palm trees swaying in the distance, their green canopies a stark contrast to the fiery chaos. The camera zooms in on the man's face, a mix of determination and intensity etched on his features, as the flames dance around him. The scene is captured in a studio..",
       "output_type": "ANY",
       "passthrough": [
         "136",
@@ -1089,7 +1222,7 @@
     },
     "class_type": "DataMonitor",
     "_meta": {
-      "title": "end image prompt"
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
     }
   },
   "165": {
@@ -1098,13 +1231,13 @@
         "135",
         0
       ],
-      "max_resulting_tokens": 112,
+      "max_resulting_tokens": 256,
       "prompt_enhancer": [
         "127",
         0
       ],
       "image_prompt": [
-        "303",
+        "76",
         0
       ]
     },
@@ -1134,6 +1267,20 @@
     "class_type": "DataMonitor",
     "_meta": {
       "title": "fps wan / ltxv"
+    }
+  },
+  "169": {
+    "inputs": {
+      "text": "(True, ['/home/drmbt/comfy4/ComfyUI/output/LTX_WAN_SEI_debug_00032.png', '/home/drmbt/comfy4/ComfyUI/output/LTX_WAN_SEI_debug_00032.mp4'])",
+      "output_type": "ANY",
+      "passthrough": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
     }
   },
   "172": {
@@ -1227,7 +1374,7 @@
   "180": {
     "inputs": {
       "ckpt_name": "rife49.pth",
-      "clear_cache_after_n_frames": 32,
+      "clear_cache_after_n_frames": 10,
       "multiplier": 2,
       "fast_mode": true,
       "ensemble": true,
@@ -1273,9 +1420,23 @@
       "title": "frame switch"
     }
   },
+  "187": {
+    "inputs": {
+      "text": "65",
+      "output_type": "ANY",
+      "passthrough": [
+        "185",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
   "188": {
     "inputs": {
-      "text": "24",
+      "text": "16",
       "output_type": "ANY",
       "passthrough": [
         "168",
@@ -1285,6 +1446,43 @@
     "class_type": "DataMonitor",
     "_meta": {
       "title": "monitor fps"
+    }
+  },
+  "189": {
+    "inputs": {
+      "frame_rate": [
+        "188",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "LTX_WAN_SEI-noRIFE",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "190",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine OUTPUT"
+    }
+  },
+  "190": {
+    "inputs": {
+      "image": [
+        "151",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
     }
   },
   "192": {
@@ -1343,7 +1541,7 @@
   },
   "195": {
     "inputs": {
-      "text": "fps: 24 dur_frames: 577 dur_secs: 24.04 (s)",
+      "text": "fps: 16 dur_frames: 129 dur_secs: 8.06 (s)",
       "output_type": "ANY",
       "passthrough": [
         "194",
@@ -1352,7 +1550,7 @@
     },
     "class_type": "DataMonitor",
     "_meta": {
-      "title": "generation data"
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
     }
   },
   "199": {
@@ -1362,626 +1560,6 @@
     "class_type": "Eden_Bool",
     "_meta": {
       "title": "use_advanced_parameters"
-    }
-  },
-  "203": {
-    "inputs": {
-      "value": 960
-    },
-    "class_type": "Eden_Int",
-    "_meta": {
-      "title": "Resolution (longest side)"
-    }
-  },
-  "204": {
-    "inputs": {
-      "text": "24",
-      "output_type": "ANY",
-      "passthrough": [
-        "168",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "fps"
-    }
-  },
-  "205": {
-    "inputs": {
-      "text": "193",
-      "output_type": "ANY",
-      "passthrough": [
-        "185",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "frames"
-    }
-  },
-  "216": {
-    "inputs": {
-      "images": [
-        "303",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image start"
-    }
-  },
-  "217": {
-    "inputs": {
-      "text": "%aux%>1",
-      "output_type": "FORMULA",
-      "aux": [
-        "296",
-        3
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "multi frames?"
-    }
-  },
-  "219": {
-    "inputs": {
-      "text": "[1,2][%aux%]",
-      "output_type": "FORMULA",
-      "aux": [
-        "217",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "is video int"
-    }
-  },
-  "228": {
-    "inputs": {
-      "mode": "SWITCH",
-      "selection_in": [
-        "219",
-        0
-      ],
-      "selection_out": 1,
-      "validate_typing": false,
-      "input1": [
-        "151",
-        0
-      ],
-      "input2": [
-        "229",
-        0
-      ]
-    },
-    "class_type": "UniversalSwitch",
-    "_meta": {
-      "title": "switch input is video"
-    }
-  },
-  "229": {
-    "inputs": {
-      "reverse": false,
-      "on_mismatch": "Smallest",
-      "image_1": [
-        "296",
-        0
-      ],
-      "image_2": [
-        "179",
-        0
-      ]
-    },
-    "class_type": "Concat Images (mtb)",
-    "_meta": {
-      "title": "Concat Images (mtb)"
-    }
-  },
-  "262": {
-    "inputs": {
-      "reverse": false,
-      "on_mismatch": "Smallest",
-      "image_1": [
-        "228",
-        0
-      ],
-      "image_2": [
-        "312",
-        0
-      ]
-    },
-    "class_type": "Concat Images (mtb)",
-    "_meta": {
-      "title": "Concat Images (mtb)"
-    }
-  },
-  "265": {
-    "inputs": {
-      "mode": "SWITCH",
-      "selection_in": [
-        "314",
-        0
-      ],
-      "selection_out": 1,
-      "validate_typing": false,
-      "input1": [
-        "228",
-        0
-      ],
-      "input2": [
-        "262",
-        0
-      ]
-    },
-    "class_type": "UniversalSwitch",
-    "_meta": {
-      "title": "switch input is video"
-    }
-  },
-  "269": {
-    "inputs": {
-      "value": 22
-    },
-    "class_type": "Eden_Int",
-    "_meta": {
-      "title": "steps"
-    }
-  },
-  "278": {
-    "inputs": {
-      "prompt": [
-        "280",
-        0
-      ],
-      "max_resulting_tokens": 112,
-      "prompt_enhancer": [
-        "127",
-        0
-      ],
-      "image_prompt": [
-        "313",
-        0
-      ]
-    },
-    "class_type": "LTXVPromptEnhancer",
-    "_meta": {
-      "title": "🅛🅣🅧 LTXV Prompt Enhancer"
-    }
-  },
-  "280": {
-    "inputs": {
-      "text": "%aux%\n\nyou are describing the scene that transitions between an image described as \"%aux2%\" and this ending frame you are receiving. make an LTXV iamge to image prompt scene description that describes the transition or scenery between these two frames, describing a longer scene if the duration is over 3 seconds, and a shorter transition of its three seconds or less.\n\nthe video generation you are describing is %aux3% seconds long.",
-      "output_type": "STRING",
-      "aux": [
-        "165",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "prompt enhance instructions"
-    }
-  },
-  "281": {
-    "inputs": {
-      "text": "The tree's branches sway gently in the soft breeze as petals drop from its blossoms, drifting lazily to the ground, where they mingle with the pink flowers. The camera pans down to reveal the trunk, its bark weathered to a soft gray, with moss and lichen clinging to its surface. The delicate flowers on the tree's branches begin to wilt, their petals drooping as the seasons change. The camera moves in on a single flower, its once-vibrant color fading to a soft peach, as the light catches the delicate edges. The The scene appears to be from a movie..",
-      "output_type": "ANY",
-      "passthrough": [
-        "165",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "start image prompt"
-    }
-  },
-  "282": {
-    "inputs": {
-      "text": "The scene is a transition featuring:\n%aux%\nit begins with %aux2% ending with %aux3%",
-      "output_type": "STRING",
-      "aux": [
-        "135",
-        0
-      ],
-      "aux2": [
-        "135",
-        0
-      ],
-      "aux3": [
-        "278",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "prompt enhance instructions"
-    }
-  },
-  "283": {
-    "inputs": {
-      "text": "The camera pans out from the digital illustration of the tree, slowly moving away from the tree's trunk, revealing the vast, pink desert landscape. The scene transitions from a dreamy, ethereal quality to a more surreal and fantastical atmosphere. As the camera continues to pull back, the soft, pastel gradient of light blue and pale yellow begins to morph into a hazy, warm orange glow, casting a warm light on the desert landscape. The twisted branches of the tree come into focus, with the camera lingering on the delicate leaves and flowers, their The scene is captured in a studio..",
-      "output_type": "ANY",
-      "passthrough": [
-        "278",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "end image prompt"
-    }
-  },
-  "295": {
-    "inputs": {
-      "image": [
-        "151",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "296": {
-    "inputs": {
-      "image": [
-        "341",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "297": {
-    "inputs": {
-      "image": [
-        "298",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "298": {
-    "inputs": {
-      "upscale_method": "nearest-exact",
-      "crop": "center",
-      "image": [
-        "339",
-        0
-      ]
-    },
-    "class_type": "Resize Image for SDXL",
-    "_meta": {
-      "title": "Resize Image for SDXL (Mikey)"
-    }
-  },
-  "303": {
-    "inputs": {
-      "start": [
-        "296",
-        3
-      ],
-      "length": 1,
-      "image": [
-        "296",
-        0
-      ]
-    },
-    "class_type": "ImageFromBatch+",
-    "_meta": {
-      "title": "🔧 Image From Batch"
-    }
-  },
-  "309": {
-    "inputs": {
-      "upscale_method": "nearest-exact",
-      "crop": "center",
-      "image": [
-        "340",
-        0
-      ]
-    },
-    "class_type": "Resize Image for SDXL",
-    "_meta": {
-      "title": "Resize Image for SDXL (Mikey)"
-    }
-  },
-  "312": {
-    "inputs": {
-      "image": [
-        "323",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "313": {
-    "inputs": {
-      "start": 0,
-      "length": 1,
-      "image": [
-        "312",
-        0
-      ]
-    },
-    "class_type": "ImageFromBatch+",
-    "_meta": {
-      "title": "🔧 Image From Batch"
-    }
-  },
-  "314": {
-    "inputs": {
-      "text": "[1,2][%aux%]",
-      "output_type": "FORMULA",
-      "aux": [
-        "315",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "is video int"
-    }
-  },
-  "315": {
-    "inputs": {
-      "text": "%aux%>1",
-      "output_type": "FORMULA",
-      "aux": [
-        "312",
-        3
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "multi frames?"
-    }
-  },
-  "318": {
-    "inputs": {
-      "images": [
-        "313",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image end"
-    }
-  },
-  "323": {
-    "inputs": {
-      "width": [
-        "296",
-        1
-      ],
-      "height": [
-        "296",
-        2
-      ],
-      "interpolation": "lanczos",
-      "method": "fill / crop",
-      "condition": "always",
-      "multiple_of": 0,
-      "image": [
-        "309",
-        0
-      ]
-    },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
-    }
-  },
-  "324": {
-    "inputs": {
-      "image": [
-        "150",
-        1
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "326": {
-    "inputs": {
-      "width": [
-        "296",
-        1
-      ],
-      "height": [
-        "296",
-        2
-      ],
-      "upscale_method": "nearest-exact",
-      "keep_proportion": "crop",
-      "pad_color": "0, 0, 0",
-      "crop_position": "center",
-      "divisible_by": 2,
-      "image": [
-        "147",
-        1
-      ]
-    },
-    "class_type": "ImageResizeKJv2",
-    "_meta": {
-      "title": "Resize Image v2"
-    }
-  },
-  "327": {
-    "inputs": {
-      "width": [
-        "296",
-        1
-      ],
-      "height": [
-        "296",
-        2
-      ],
-      "upscale_method": "nearest-exact",
-      "keep_proportion": "crop",
-      "pad_color": "0, 0, 0",
-      "crop_position": "center",
-      "divisible_by": 2,
-      "image": [
-        "324",
-        0
-      ]
-    },
-    "class_type": "ImageResizeKJv2",
-    "_meta": {
-      "title": "Resize Image v2"
-    }
-  },
-  "329": {
-    "inputs": {
-      "path": "B:\\AI\\comfy\\ComfyUI\\output\\SEI_LTX_WAN_00135.mp4",
-      "image_load_cap": [
-        "333",
-        0
-      ],
-      "force_rate": 0,
-      "max_res": [
-        "203",
-        0
-      ],
-      "sort": "None"
-    },
-    "class_type": "Eden_AllMediaLoader",
-    "_meta": {
-      "title": "All Media Loader 📁"
-    }
-  },
-  "330": {
-    "inputs": {
-      "path": "\"B:\\AI\\data\\output\\SEI_LTX_WAN_00141.mp4\"",
-      "image_load_cap": [
-        "333",
-        0
-      ],
-      "force_rate": 0,
-      "max_res": [
-        "203",
-        0
-      ],
-      "sort": "None"
-    },
-    "class_type": "Eden_AllMediaLoader",
-    "_meta": {
-      "title": "All Media Loader 📁"
-    }
-  },
-  "331": {
-    "inputs": {
-      "text": "(True, ['B:\\\\AI\\\\comfy\\\\ComfyUI\\\\output\\\\LTX_WAN_SEI_debug_00157.png', 'B:\\\\AI\\\\comfy\\\\ComfyUI\\\\output\\\\LTX_WAN_SEI_debug_00157.mp4'])",
-      "output_type": "ANY",
-      "passthrough": [
-        "30",
-        0
-      ]
-    },
-    "class_type": "DataMonitor",
-    "_meta": {
-      "title": "output paths"
-    }
-  },
-  "332": {
-    "inputs": {
-      "frame_rate": [
-        "168",
-        0
-      ],
-      "loop_count": 0,
-      "filename_prefix": "SEI_LTX_WAN-noRIFE",
-      "format": "video/h264-mp4",
-      "pix_fmt": "yuv420p",
-      "crf": 19,
-      "save_metadata": true,
-      "trim_to_audio": false,
-      "pingpong": false,
-      "save_output": true,
-      "images": [
-        "295",
-        0
-      ]
-    },
-    "class_type": "VHS_VideoCombine",
-    "_meta": {
-      "title": "Video Combine OUTPUT (pre_interpolation)"
-    }
-  },
-  "333": {
-    "inputs": {
-      "value": 96
-    },
-    "class_type": "Eden_Int",
-    "_meta": {
-      "title": "max_input_frames"
-    }
-  },
-  "339": {
-    "inputs": {
-      "image": [
-        "329",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "340": {
-    "inputs": {
-      "image": [
-        "330",
-        0
-      ]
-    },
-    "class_type": "GetImageSizeAndCount",
-    "_meta": {
-      "title": "Get Image Size & Count"
-    }
-  },
-  "341": {
-    "inputs": {
-      "width": [
-        "203",
-        0
-      ],
-      "height": [
-        "203",
-        0
-      ],
-      "interpolation": "lanczos",
-      "method": "keep proportion",
-      "condition": "always",
-      "multiple_of": 32,
-      "image": [
-        "297",
-        0
-      ]
-    },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
     }
   }
 }
