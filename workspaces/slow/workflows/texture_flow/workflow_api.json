@@ -278,25 +278,9 @@
       "title": "WidthHeightPicker"
     }
   },
-  "29": {
-    "inputs": {
-      "text": "12",
-      "anything": [
-        "8",
-        1
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "Final n_steps"
-    }
-  },
   "37": {
     "inputs": {
-      "path": [
-        "38",
-        0
-      ],
+      "path": "a_black_video.mp4",
       "image_load_cap": [
         "18",
         1
@@ -305,56 +289,12 @@
         "11",
         0
       ],
-      "max_res": 2048,
+      "max_res": 1280,
       "sort": "None"
     },
     "class_type": "Eden_AllMediaLoader",
     "_meta": {
       "title": "All Media Loader 📁"
-    }
-  },
-  "38": {
-    "inputs": {
-      "directory_path": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_VIDEOS/twisting_animations",
-      "seed": [
-        "20",
-        0
-      ],
-      "file_extension": "",
-      "include_subdirectories": false,
-      "filter_string": "",
-      "filter_mode": "contains",
-      "case_sensitive": false
-    },
-    "class_type": "Eden_RandomFilepathSampler",
-    "_meta": {
-      "title": "Load Controlnet Shape"
-    }
-  },
-  "39": {
-    "inputs": {
-      "text": "51",
-      "anything": [
-        "37",
-        3
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "Shape input n_frames"
-    }
-  },
-  "40": {
-    "inputs": {
-      "text": "/data/xander/Projects/cog/xander_eden_stuff/STYLE_VIDEOS/twisting_animations/863924c752c9fdb09afa74a1d784e16b.gif",
-      "anything": [
-        "37",
-        5
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "Show Any"
     }
   },
   "43": {
@@ -432,32 +372,6 @@
     "class_type": "Switch any [Crystools]",
     "_meta": {
       "title": "IP-Driver Color Video"
-    }
-  },
-  "55": {
-    "inputs": {
-      "text": "704",
-      "anything": [
-        "113",
-        1
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "Width"
-    }
-  },
-  "56": {
-    "inputs": {
-      "text": "432",
-      "anything": [
-        "113",
-        2
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "Height"
     }
   },
   "58": {
@@ -1320,21 +1234,12 @@
       "title": "Load ControlNet Model"
     }
   },
-  "135": {
-    "inputs": {
-      "value": false
-    },
-    "class_type": "Bool-🔬",
-    "_meta": {
-      "title": "Use Controlnet_!"
-    }
-  },
   "137": {
     "inputs": {
       "text": "[1,2][%aux%]",
       "output_type": "FORMULA",
       "aux": [
-        "135",
+        "382",
         0
       ]
     },
@@ -1432,7 +1337,7 @@
       "text": "[1,2][%aux%]",
       "output_type": "FORMULA",
       "aux": [
-        "135",
+        "382",
         0
       ]
     },
@@ -1441,18 +1346,9 @@
       "title": "bool2int use_controlnet logic"
     }
   },
-  "181": {
-    "inputs": {
-      "value": false
-    },
-    "class_type": "Bool-🔬",
-    "_meta": {
-      "title": "Use Controlnet_2"
-    }
-  },
   "182": {
     "inputs": {
-      "control_net_name": "control_v11p_sd15_depth_fp16.safetensors"
+      "control_net_name": "control_v11f1p_sd15_depth.pth"
     },
     "class_type": "ControlNetLoader",
     "_meta": {
@@ -1461,7 +1357,7 @@
   },
   "184": {
     "inputs": {
-      "preprocessor": "DepthAnythingV2Preprocessor",
+      "preprocessor": "none",
       "resolution": [
         "130",
         1
@@ -1511,7 +1407,7 @@
       "text": "[1,2][%aux%]",
       "output_type": "FORMULA",
       "aux": [
-        "181",
+        "383",
         0
       ]
     },
@@ -1548,7 +1444,7 @@
       "text": "[1,2][%aux%]",
       "output_type": "FORMULA",
       "aux": [
-        "181",
+        "383",
         0
       ]
     },
@@ -2470,32 +2366,6 @@
       "title": "Extend_Sequence"
     }
   },
-  "365": {
-    "inputs": {
-      "text": "153",
-      "anything": [
-        "9",
-        0
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "n_frames"
-    }
-  },
-  "367": {
-    "inputs": {
-      "text": "153",
-      "anything": [
-        "9",
-        0
-      ]
-    },
-    "class_type": "easy showAnything",
-    "_meta": {
-      "title": "n_frames"
-    }
-  },
   "372": {
     "inputs": {
       "value": 1.1000000000000003
@@ -2521,6 +2391,115 @@
     "class_type": "Eden_Float",
     "_meta": {
       "title": "Set controlnet2 strength"
+    }
+  },
+  "375": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "8",
+        1
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Display Any (rgthree)"
+    }
+  },
+  "376": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "113",
+        1
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "377": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "113",
+        2
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "378": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "n_frames"
+    }
+  },
+  "379": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "n_frames"
+    }
+  },
+  "380": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "37",
+        3
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "count"
+    }
+  },
+  "381": {
+    "inputs": {
+      "output": "",
+      "source": [
+        "37",
+        5
+      ]
+    },
+    "class_type": "Display Any (rgthree)",
+    "_meta": {
+      "title": "n_frames"
+    }
+  },
+  "382": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use Controlnet_1"
+    }
+  },
+  "383": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "Use Controlnet_2"
     }
   }
 }
