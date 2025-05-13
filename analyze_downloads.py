@@ -51,7 +51,14 @@ def analyze_model_usage():
         # it implies matching the file name or the full path.
         # Using the full path seems more robust to avoid ambiguous matches if
         # different models share the same filename but different paths.
-        search_string = model_path_key
+        # search_string = model_path_key # Old approach
+
+        # New approach: Search for the filename only, as observed in workflow_api.json files.
+        # Also, ensure the search string is quoted to avoid partial matches, e.g.,
+        # matching "file.safetensors" when searching for "other_file.safetensors".
+        # We will search for `"filename.ext"`.
+        filename_only = os.path.basename(model_path_key)
+        search_string = f'"{filename_only}"'
 
         for wf_api_file_path in workflow_api_files:
             try:

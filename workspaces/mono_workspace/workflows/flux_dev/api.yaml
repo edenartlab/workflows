@@ -69,11 +69,11 @@ parameters:
   speed_quality_tradeoff:
     type: float
     label: Speed <-> Quality
-    description: Balance between generation speed and quality
+    description: Balance between fastest generation speed (0) and highest quality (1)
     tip: |-
-      Lower values (0.0-0.3) prioritize speed with more steps and less turbo lora.
-      Higher values (0.7-1.0) prioritize quality with fewer steps and more turbo lora.
-      A value of 0.25 provides a sweet spot balance of speed and quality.
+      Lower values (0.0-0.3) prioritize speed with less steps and more turbo lora.
+      Higher values (0.7-1.0) prioritize quality with more steps and less turbo lora.
+      A value of 0.25 provides a sweet spot.
     default: 0.25
     minimum: 0.0
     maximum: 1.0
@@ -169,6 +169,8 @@ parameters:
     type: boolean
     label: Bypass preprocessor
     description: Use Init Image as Controlnet guidance
+    hide_from_ui: true
+    hide_from_agent: true
     tip: |-
       Activate this to use the starting image as controlnet guidance.
     default: false
@@ -267,6 +269,8 @@ parameters:
     type: boolean
     hide_from_agent: true
     label: Use manual quality settings
+    hide_from_ui: true
+    hide_from_agent: true
     description: Override automatic quality settings derived from speed-quality tradeoff
     tip: |-
       When enabled, allows manual control of steps and strength through the steps and denoise parameters.
@@ -312,6 +316,8 @@ parameters:
   use_style_image:
     type: boolean
     label: Use a style image
+    hide_from_ui: true
+    hide_from_agent: true
     description: Apply a style image to the generation
     tip: |-
       Style images can be used to guide the color palette, texture, and overall style of the generated image. 
