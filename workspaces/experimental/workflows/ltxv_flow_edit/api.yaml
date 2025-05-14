@@ -1,5 +1,5 @@
 name: Image Video Extension (LTX)
-description: Create Image to Video, text to video, or movie extension video generations using LTXV.
+description: img-to-video, txt-to-video or movie extension using LTX
 tip: |-
   This tool creates smooth transitions between two images using either LTXV (Lightricks Video).
   The LTXV model is optimized for shorter, medium-quality image generations and can be driven with text prompts and camera controls.
@@ -10,7 +10,7 @@ tip: |-
   Seed is an important parameter for getting different results from the same prompt.
   Use prompt enhancement for verbose LLM descriptions to get more creative results.
 output_type: video
-cost_estimate: '10 * duration_seconds * (resolution*1.5)/(2*640) * (use_frame_interpolation ? 2 : 1)'
+cost_estimate: '10 * duration_seconds * (resolution*1.5)/(2*640) * (frame_interpolation ? 2 : 1)'
 thumbnail: app/ltxv_flow_edit_opt.mp4
 status: prod
 visible: true
