@@ -1,0 +1,1987 @@
+{
+  "11": {
+    "inputs": {
+      "model_name": "umt5-xxl-enc-bf16.safetensors",
+      "precision": "bf16",
+      "load_device": "offload_device",
+      "quantization": "disabled"
+    },
+    "class_type": "LoadWanVideoT5TextEncoder",
+    "_meta": {
+      "title": "Load WanVideo T5 TextEncoder"
+    }
+  },
+  "16": {
+    "inputs": {
+      "positive_prompt": [
+        "136",
+        0
+      ],
+      "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+      "force_offload": true,
+      "t5": [
+        "11",
+        0
+      ],
+      "model_to_offload": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "WanVideoTextEncode",
+    "_meta": {
+      "title": "WanVideo TextEncode"
+    }
+  },
+  "22": {
+    "inputs": {
+      "model": "Wan2_1-I2V-14B-480P_fp8_e5m2.safetensors",
+      "base_precision": "fp16_fast",
+      "quantization": "fp8_e5m2",
+      "load_device": "offload_device",
+      "attention_mode": "sageattn",
+      "compile_args": [
+        "35",
+        0
+      ],
+      "block_swap_args": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "WanVideoModelLoader",
+    "_meta": {
+      "title": "WanVideo Model Loader"
+    }
+  },
+  "27": {
+    "inputs": {
+      "steps": 20,
+      "cfg": 4.000000000000001,
+      "shift": 7.000000000000002,
+      "seed": [
+        "160",
+        0
+      ],
+      "force_offload": true,
+      "scheduler": "unipc",
+      "riflex_freq_index": 0,
+      "denoise_strength": 1,
+      "batched_cfg": "",
+      "rope_function": "comfy",
+      "model": [
+        "22",
+        0
+      ],
+      "text_embeds": [
+        "16",
+        0
+      ],
+      "image_embeds": [
+        "89",
+        0
+      ],
+      "teacache_args": [
+        "52",
+        0
+      ],
+      "slg_args": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "WanVideoSampler",
+    "_meta": {
+      "title": "WanVideo Sampler"
+    }
+  },
+  "30": {
+    "inputs": {
+      "frame_rate": [
+        "168",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "LTX_WAN_SEI_debug",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": [
+        "141",
+        0
+      ],
+      "images": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine CAPTION debug"
+    }
+  },
+  "35": {
+    "inputs": {
+      "backend": "inductor",
+      "fullgraph": false,
+      "mode": "default",
+      "dynamic": true,
+      "dynamo_cache_size_limit": 64,
+      "compile_transformer_blocks_only": true,
+      "dynamo_recompile_limit": 128
+    },
+    "class_type": "WanVideoTorchCompileSettings",
+    "_meta": {
+      "title": "WanVideo Torch Compile Settings"
+    }
+  },
+  "38": {
+    "inputs": {
+      "model_name": "Wan2_1_VAE_bf16.safetensors",
+      "precision": "bf16"
+    },
+    "class_type": "WanVideoVAELoader",
+    "_meta": {
+      "title": "WanVideo VAE Loader"
+    }
+  },
+  "39": {
+    "inputs": {
+      "blocks_to_swap": 20,
+      "offload_img_emb": false,
+      "offload_txt_emb": false,
+      "use_non_blocking": true,
+      "vace_blocks_to_swap": 0
+    },
+    "class_type": "WanVideoBlockSwap",
+    "_meta": {
+      "title": "WanVideo BlockSwap"
+    }
+  },
+  "45": {
+    "inputs": {
+      "offload_percent": 1
+    },
+    "class_type": "WanVideoVRAMManagement",
+    "_meta": {
+      "title": "WanVideo VRAM Management"
+    }
+  },
+  "52": {
+    "inputs": {
+      "rel_l1_thresh": 0.22000000000000006,
+      "start_step": 1,
+      "end_step": -1,
+      "cache_device": "offload_device",
+      "use_coefficients": "true",
+      "mode": "e"
+    },
+    "class_type": "WanVideoTeaCache",
+    "_meta": {
+      "title": "WanVideo TeaCache"
+    }
+  },
+  "56": {
+    "inputs": {
+      "model_name": "open-clip-xlm-roberta-large-vit-huge-14_visual_fp32.safetensors",
+      "precision": "fp16",
+      "load_device": "offload_device"
+    },
+    "class_type": "LoadWanVideoClipTextEncoder",
+    "_meta": {
+      "title": "Load WanVideo Clip Encoder"
+    }
+  },
+  "68": {
+    "inputs": {
+      "image": [
+        "265",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "70": {
+    "inputs": {
+      "inputcount": 2,
+      "direction": "down",
+      "match_image_size": true,
+      "Update inputs": null,
+      "image_1": [
+        "95",
+        0
+      ],
+      "image_2": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "ImageConcatMulti",
+    "_meta": {
+      "title": "Image Concatenate Multi"
+    }
+  },
+  "71": {
+    "inputs": {
+      "inputcount": 3,
+      "direction": "left",
+      "match_image_size": true,
+      "Update inputs": null,
+      "image_1": [
+        "68",
+        0
+      ],
+      "image_2": [
+        "97",
+        0
+      ],
+      "image_3": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "ImageConcatMulti",
+    "_meta": {
+      "title": "Image Concatenate Multi"
+    }
+  },
+  "72": {
+    "inputs": {
+      "blocks": "9",
+      "start_percent": 0.20000000000000004,
+      "end_percent": 0.8000000000000002
+    },
+    "class_type": "WanVideoSLG",
+    "_meta": {
+      "title": "WanVideo SLG"
+    }
+  },
+  "88": {
+    "inputs": {
+      "strength_1": 1,
+      "strength_2": 1,
+      "crop": "center",
+      "combine_embeds": "average",
+      "force_offload": true,
+      "tiles": 0,
+      "ratio": 0.5,
+      "clip_vision": [
+        "56",
+        0
+      ],
+      "image_1": [
+        "150",
+        0
+      ],
+      "image_2": [
+        "147",
+        0
+      ]
+    },
+    "class_type": "WanVideoClipVisionEncode",
+    "_meta": {
+      "title": "WanVideo ClipVision Encode"
+    }
+  },
+  "89": {
+    "inputs": {
+      "width": [
+        "296",
+        1
+      ],
+      "height": [
+        "296",
+        2
+      ],
+      "num_frames": [
+        "168",
+        0
+      ],
+      "noise_aug_strength": 0,
+      "start_latent_strength": 1,
+      "end_latent_strength": true,
+      "force_offload": true,
+      "fun_or_fl2v_model": false,
+      "vae": [
+        "38",
+        0
+      ],
+      "clip_embeds": [
+        "88",
+        0
+      ],
+      "start_image": [
+        "150",
+        0
+      ],
+      "end_image": [
+        "147",
+        0
+      ]
+    },
+    "class_type": "WanVideoImageToVideoEncode",
+    "_meta": {
+      "title": "WanVideo ImageToVideo Encode"
+    }
+  },
+  "95": {
+    "inputs": {
+      "text_x": 10,
+      "text_y": 2,
+      "height": 48,
+      "font_size": 32,
+      "font_color": "white",
+      "label_color": "black",
+      "font": "FreeMono.ttf",
+      "text": "start_frame",
+      "direction": "up",
+      "image": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "AddLabel",
+    "_meta": {
+      "title": "Add Label"
+    }
+  },
+  "96": {
+    "inputs": {
+      "text_x": 10,
+      "text_y": 2,
+      "height": 48,
+      "font_size": 32,
+      "font_color": "white",
+      "label_color": "black",
+      "font": "FreeMono.ttf",
+      "text": "end_frame",
+      "direction": "up",
+      "image": [
+        "313",
+        0
+      ]
+    },
+    "class_type": "AddLabel",
+    "_meta": {
+      "title": "Add Label"
+    }
+  },
+  "97": {
+    "inputs": {
+      "width": 1,
+      "height": [
+        "68",
+        2
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "EmptyImage"
+    }
+  },
+  "101": {
+    "inputs": {
+      "enable_vae_tiling": false,
+      "tile_x": 272,
+      "tile_y": 272,
+      "tile_stride_x": 144,
+      "tile_stride_y": 128,
+      "vae": [
+        "38",
+        0
+      ],
+      "samples": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "WanVideoDecode",
+    "_meta": {
+      "title": "WanVideo Decode"
+    }
+  },
+  "103": {
+    "inputs": {
+      "frame_rate": [
+        "168",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "SEI_LTX_WAN",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine OUTPUT"
+    }
+  },
+  "104": {
+    "inputs": {
+      "img_compression": 40,
+      "image": [
+        "327",
+        0
+      ]
+    },
+    "class_type": "LTXVPreprocess",
+    "_meta": {
+      "title": "LTXVPreprocess"
+    }
+  },
+  "105": {
+    "inputs": {
+      "img_compression": 40,
+      "image": [
+        "326",
+        0
+      ]
+    },
+    "class_type": "LTXVPreprocess",
+    "_meta": {
+      "title": "LTXVPreprocess"
+    }
+  },
+  "106": {
+    "inputs": {
+      "sampler_name": "gradient_estimation"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "107": {
+    "inputs": {
+      "steps": [
+        "269",
+        0
+      ],
+      "max_shift": 2.05,
+      "base_shift": 0.95,
+      "stretch": true,
+      "terminal": 0.1,
+      "latent": [
+        "115",
+        2
+      ]
+    },
+    "class_type": "LTXVScheduler",
+    "_meta": {
+      "title": "LTXVScheduler"
+    }
+  },
+  "110": {
+    "inputs": {
+      "frame_rate": 25,
+      "positive": [
+        "115",
+        0
+      ],
+      "negative": [
+        "115",
+        1
+      ]
+    },
+    "class_type": "LTXVConditioning",
+    "_meta": {
+      "title": "LTXVConditioning"
+    }
+  },
+  "111": {
+    "inputs": {
+      "positive": [
+        "110",
+        0
+      ],
+      "negative": [
+        "110",
+        1
+      ],
+      "latent": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "LTXVCropGuides",
+    "_meta": {
+      "title": "LTXVCropGuides"
+    }
+  },
+  "112": {
+    "inputs": {
+      "samples": [
+        "111",
+        2
+      ],
+      "vae": [
+        "119",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "115": {
+    "inputs": {
+      "frame_idx": [
+        "121",
+        0
+      ],
+      "strength": 1,
+      "positive": [
+        "118",
+        0
+      ],
+      "negative": [
+        "118",
+        1
+      ],
+      "vae": [
+        "119",
+        2
+      ],
+      "latent": [
+        "118",
+        2
+      ],
+      "image": [
+        "105",
+        0
+      ]
+    },
+    "class_type": "LTXVAddGuide",
+    "_meta": {
+      "title": "LTXVAddGuide"
+    }
+  },
+  "116": {
+    "inputs": {
+      "noise_seed": [
+        "160",
+        0
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "118": {
+    "inputs": {
+      "frame_idx": 0,
+      "strength": 1,
+      "positive": [
+        "125",
+        0
+      ],
+      "negative": [
+        "124",
+        0
+      ],
+      "vae": [
+        "119",
+        2
+      ],
+      "latent": [
+        "123",
+        0
+      ],
+      "image": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "LTXVAddGuide",
+    "_meta": {
+      "title": "LTXVAddGuide"
+    }
+  },
+  "119": {
+    "inputs": {
+      "ckpt_name": "ltxv-2b-0.9.6-dev-04-25.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "120": {
+    "inputs": {
+      "block_indices": "14",
+      "model": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "LTXVApplySTG",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Apply STG"
+    }
+  },
+  "121": {
+    "inputs": {
+      "value": [
+        "185",
+        0
+      ]
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "FRAMES"
+    }
+  },
+  "122": {
+    "inputs": {
+      "clip_name": "t5xxl_fp16.safetensors",
+      "type": "ltxv",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "123": {
+    "inputs": {
+      "width": [
+        "296",
+        1
+      ],
+      "height": [
+        "296",
+        2
+      ],
+      "length": [
+        "121",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLTXVLatentVideo",
+    "_meta": {
+      "title": "EmptyLTXVLatentVideo"
+    }
+  },
+  "124": {
+    "inputs": {
+      "text": "shaky, glitchy, low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly, transition",
+      "clip": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "125": {
+    "inputs": {
+      "text": [
+        "136",
+        0
+      ],
+      "clip": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "127": {
+    "inputs": {
+      "llm_name": "unsloth/Llama-3.2-3B-Instruct",
+      "image_captioner_name": "MiaoshouAI/Florence-2-large-PromptGen-v2.0"
+    },
+    "class_type": "LTXVPromptEnhancerLoader",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Prompt Enhancer Loader"
+    }
+  },
+  "130": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "141",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "add caption"
+    }
+  },
+  "131": {
+    "inputs": {
+      "cfg": 3,
+      "stg": 1,
+      "rescale": 0.75,
+      "model": [
+        "120",
+        0
+      ],
+      "positive": [
+        "110",
+        0
+      ],
+      "negative": [
+        "110",
+        1
+      ]
+    },
+    "class_type": "STGGuider",
+    "_meta": {
+      "title": "🅛🅣🅧 STG Guider"
+    }
+  },
+  "133": {
+    "inputs": {
+      "noise": [
+        "116",
+        0
+      ],
+      "guider": [
+        "131",
+        0
+      ],
+      "sampler": [
+        "106",
+        0
+      ],
+      "sigmas": [
+        "107",
+        0
+      ],
+      "latent_image": [
+        "115",
+        2
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "135": {
+    "inputs": {
+      "value": "the tree gradually fades between seasons"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "prompt"
+    }
+  },
+  "136": {
+    "inputs": {
+      "mode": "start",
+      "name": "Timer",
+      "any_input": [
+        "282",
+        0
+      ]
+    },
+    "class_type": "TimerNodeKJ",
+    "_meta": {
+      "title": "Timer Node KJ"
+    }
+  },
+  "137": {
+    "inputs": {
+      "image": [
+        "112",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "139": {
+    "inputs": {
+      "mode": "stop",
+      "name": "Timer",
+      "any_input": [
+        "71",
+        0
+      ],
+      "timer": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "TimerNodeKJ",
+    "_meta": {
+      "title": "Timer Node KJ"
+    }
+  },
+  "140": {
+    "inputs": {
+      "text": "exec: %aux% w: %aux3% h: %aux4% %aux5% prompt: %aux2%",
+      "output_type": "STRING",
+      "aux": [
+        "162",
+        0
+      ],
+      "aux2": [
+        "136",
+        0
+      ],
+      "aux3": [
+        "68",
+        1
+      ],
+      "aux4": [
+        "68",
+        2
+      ],
+      "aux5": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "concat_prompt_exec"
+    }
+  },
+  "141": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_caption"
+    }
+  },
+  "142": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "130",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "71",
+        0
+      ],
+      "input2": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "add caption"
+    }
+  },
+  "143": {
+    "inputs": {
+      "text_x": 10,
+      "text_y": 2,
+      "height": 300,
+      "font_size": 18,
+      "font_color": "white",
+      "label_color": "black",
+      "font": "FreeMono.ttf",
+      "text": [
+        "140",
+        0
+      ],
+      "direction": "down",
+      "image": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "AddLabel",
+    "_meta": {
+      "title": "Add Label"
+    }
+  },
+  "147": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": 1,
+      "selection_out": [
+        "149",
+        0
+      ],
+      "validate_typing": false,
+      "input1": [
+        "313",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_end_WAN_LTXV"
+    }
+  },
+  "148": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "WAN / LTX"
+    }
+  },
+  "149": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to switch LTXV / WAN"
+    }
+  },
+  "150": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": 1,
+      "selection_out": [
+        "149",
+        0
+      ],
+      "validate_typing": false,
+      "input1": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_start_WAN_LTXV"
+    }
+  },
+  "151": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "149",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "101",
+        0
+      ],
+      "input2": [
+        "137",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch input WAN / LTX"
+    }
+  },
+  "156": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_prompt_enhance"
+    }
+  },
+  "157": {
+    "inputs": {
+      "text": "[1,2][%AUX%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to switch prompt_enhance"
+    }
+  },
+  "158": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "157",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "135",
+        0
+      ],
+      "input2": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch_prompt_enhance"
+    }
+  },
+  "160": {
+    "inputs": {
+      "seed": 27
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "162": {
+    "inputs": {
+      "text": "round(%aux%/1000,1)",
+      "output_type": "FORMULA",
+      "aux": [
+        "139",
+        2
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "round exec"
+    }
+  },
+  "164": {
+    "inputs": {
+      "text": "The scene is a transition featuring:\nthe tree gradually fades between seasons\nit begins with the tree gradually fades between seasons ending with The camera pans out from the digital illustration of the tree, slowly moving away from the tree's trunk, revealing the vast, pink desert landscape. The scene transitions from a dreamy, ethereal quality to a more surreal and fantastical atmosphere. As the camera continues to pull back, the soft, pastel gradient of light blue and pale yellow begins to morph into a hazy, warm orange glow, casting a warm light on the desert landscape. The twisted branches of the tree come into focus, with the camera lingering on the delicate leaves and flowers, their The scene is captured in a studio..",
+      "output_type": "ANY",
+      "passthrough": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "end image prompt"
+    }
+  },
+  "165": {
+    "inputs": {
+      "prompt": [
+        "135",
+        0
+      ],
+      "max_resulting_tokens": 112,
+      "prompt_enhancer": [
+        "127",
+        0
+      ],
+      "image_prompt": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "LTXVPromptEnhancer",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Prompt Enhancer"
+    }
+  },
+  "166": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "duration_frames"
+    }
+  },
+  "168": {
+    "inputs": {
+      "text": "[16, 24][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "fps wan / ltxv"
+    }
+  },
+  "172": {
+    "inputs": {
+      "expression": "((floor((a*4))*b)/4)/c +1",
+      "a": [
+        "173",
+        0
+      ],
+      "b": [
+        "168",
+        0
+      ],
+      "c": [
+        "192",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "173": {
+    "inputs": {
+      "value": 8.000000000000002
+    },
+    "class_type": "easy float",
+    "_meta": {
+      "title": "duration_seconds"
+    }
+  },
+  "174": {
+    "inputs": {
+      "value": 16
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "FPS"
+    }
+  },
+  "175": {
+    "inputs": {
+      "expression": "a*b\n",
+      "a": [
+        "173",
+        0
+      ],
+      "b": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math Expression 🐍"
+    }
+  },
+  "177": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_frame_interpolation"
+    }
+  },
+  "179": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "192",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "151",
+        0
+      ],
+      "input2": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch frame interpolation"
+    }
+  },
+  "180": {
+    "inputs": {
+      "ckpt_name": "rife49.pth",
+      "clear_cache_after_n_frames": 32,
+      "multiplier": 2,
+      "fast_mode": true,
+      "ensemble": true,
+      "scale_factor": 1,
+      "frames": [
+        "151",
+        0
+      ]
+    },
+    "class_type": "RIFE VFI",
+    "_meta": {
+      "title": "Video Frame Interpolation"
+    }
+  },
+  "183": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_manual_fps"
+    }
+  },
+  "185": {
+    "inputs": {
+      "text": "[%aux%, %aux2%][%aux3%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "172",
+        0
+      ],
+      "aux2": [
+        "166",
+        0
+      ],
+      "aux3": [
+        "183",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "frame switch"
+    }
+  },
+  "188": {
+    "inputs": {
+      "text": "24",
+      "output_type": "ANY",
+      "passthrough": [
+        "168",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "monitor fps"
+    }
+  },
+  "192": {
+    "inputs": {
+      "text": "[1, 2][%aux%] ",
+      "output_type": "FORMULA",
+      "aux": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rife bool to int"
+    }
+  },
+  "193": {
+    "inputs": {
+      "text": "round(%aux2%/%aux%, 2)",
+      "output_type": "FORMULA",
+      "aux": [
+        "188",
+        0
+      ],
+      "aux2": [
+        "68",
+        3
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "monitor fps"
+    }
+  },
+  "194": {
+    "inputs": {
+      "text": "fps: %aux% dur_frames: %aux2% dur_secs: %aux3% (s)",
+      "output_type": "STRING",
+      "aux": [
+        "188",
+        0
+      ],
+      "aux2": [
+        "68",
+        3
+      ],
+      "aux3": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "monitor fps"
+    }
+  },
+  "195": {
+    "inputs": {
+      "text": "fps: 24 dur_frames: 577 dur_secs: 24.04 (s)",
+      "output_type": "ANY",
+      "passthrough": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "generation data"
+    }
+  },
+  "199": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_advanced_parameters"
+    }
+  },
+  "203": {
+    "inputs": {
+      "value": 960
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Resolution (longest side)"
+    }
+  },
+  "204": {
+    "inputs": {
+      "text": "24",
+      "output_type": "ANY",
+      "passthrough": [
+        "168",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "fps"
+    }
+  },
+  "205": {
+    "inputs": {
+      "text": "193",
+      "output_type": "ANY",
+      "passthrough": [
+        "185",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "frames"
+    }
+  },
+  "216": {
+    "inputs": {
+      "images": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image start"
+    }
+  },
+  "217": {
+    "inputs": {
+      "text": "%aux%>1",
+      "output_type": "FORMULA",
+      "aux": [
+        "296",
+        3
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "multi frames?"
+    }
+  },
+  "219": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "is video int"
+    }
+  },
+  "228": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "219",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "151",
+        0
+      ],
+      "input2": [
+        "229",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch input is video"
+    }
+  },
+  "229": {
+    "inputs": {
+      "reverse": false,
+      "on_mismatch": "Smallest",
+      "image_1": [
+        "296",
+        0
+      ],
+      "image_2": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "Concat Images (mtb)",
+    "_meta": {
+      "title": "Concat Images (mtb)"
+    }
+  },
+  "262": {
+    "inputs": {
+      "reverse": false,
+      "on_mismatch": "Smallest",
+      "image_1": [
+        "228",
+        0
+      ],
+      "image_2": [
+        "312",
+        0
+      ]
+    },
+    "class_type": "Concat Images (mtb)",
+    "_meta": {
+      "title": "Concat Images (mtb)"
+    }
+  },
+  "265": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "314",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "228",
+        0
+      ],
+      "input2": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "switch input is video"
+    }
+  },
+  "269": {
+    "inputs": {
+      "value": 22
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "steps"
+    }
+  },
+  "278": {
+    "inputs": {
+      "prompt": [
+        "280",
+        0
+      ],
+      "max_resulting_tokens": 112,
+      "prompt_enhancer": [
+        "127",
+        0
+      ],
+      "image_prompt": [
+        "313",
+        0
+      ]
+    },
+    "class_type": "LTXVPromptEnhancer",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Prompt Enhancer"
+    }
+  },
+  "280": {
+    "inputs": {
+      "text": "%aux%\n\nyou are describing the scene that transitions between an image described as \"%aux2%\" and this ending frame you are receiving. make an LTXV iamge to image prompt scene description that describes the transition or scenery between these two frames, describing a longer scene if the duration is over 3 seconds, and a shorter transition of its three seconds or less.\n\nthe video generation you are describing is %aux3% seconds long.",
+      "output_type": "STRING",
+      "aux": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "prompt enhance instructions"
+    }
+  },
+  "281": {
+    "inputs": {
+      "text": "The tree's branches sway gently in the soft breeze as petals drop from its blossoms, drifting lazily to the ground, where they mingle with the pink flowers. The camera pans down to reveal the trunk, its bark weathered to a soft gray, with moss and lichen clinging to its surface. The delicate flowers on the tree's branches begin to wilt, their petals drooping as the seasons change. The camera moves in on a single flower, its once-vibrant color fading to a soft peach, as the light catches the delicate edges. The The scene appears to be from a movie..",
+      "output_type": "ANY",
+      "passthrough": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "start image prompt"
+    }
+  },
+  "282": {
+    "inputs": {
+      "text": "The scene is a transition featuring:\n%aux%\nit begins with %aux2% ending with %aux3%",
+      "output_type": "STRING",
+      "aux": [
+        "135",
+        0
+      ],
+      "aux2": [
+        "135",
+        0
+      ],
+      "aux3": [
+        "278",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "prompt enhance instructions"
+    }
+  },
+  "283": {
+    "inputs": {
+      "text": "The camera pans out from the digital illustration of the tree, slowly moving away from the tree's trunk, revealing the vast, pink desert landscape. The scene transitions from a dreamy, ethereal quality to a more surreal and fantastical atmosphere. As the camera continues to pull back, the soft, pastel gradient of light blue and pale yellow begins to morph into a hazy, warm orange glow, casting a warm light on the desert landscape. The twisted branches of the tree come into focus, with the camera lingering on the delicate leaves and flowers, their The scene is captured in a studio..",
+      "output_type": "ANY",
+      "passthrough": [
+        "278",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "end image prompt"
+    }
+  },
+  "295": {
+    "inputs": {
+      "image": [
+        "151",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "296": {
+    "inputs": {
+      "image": [
+        "341",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "297": {
+    "inputs": {
+      "image": [
+        "298",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "298": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "crop": "center",
+      "image": [
+        "339",
+        0
+      ]
+    },
+    "class_type": "Resize Image for SDXL",
+    "_meta": {
+      "title": "Resize Image for SDXL (Mikey)"
+    }
+  },
+  "303": {
+    "inputs": {
+      "start": [
+        "296",
+        3
+      ],
+      "length": 1,
+      "image": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch+",
+    "_meta": {
+      "title": "🔧 Image From Batch"
+    }
+  },
+  "309": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "crop": "center",
+      "image": [
+        "340",
+        0
+      ]
+    },
+    "class_type": "Resize Image for SDXL",
+    "_meta": {
+      "title": "Resize Image for SDXL (Mikey)"
+    }
+  },
+  "312": {
+    "inputs": {
+      "image": [
+        "323",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "313": {
+    "inputs": {
+      "start": 0,
+      "length": 1,
+      "image": [
+        "312",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch+",
+    "_meta": {
+      "title": "🔧 Image From Batch"
+    }
+  },
+  "314": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "315",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "is video int"
+    }
+  },
+  "315": {
+    "inputs": {
+      "text": "%aux%>1",
+      "output_type": "FORMULA",
+      "aux": [
+        "312",
+        3
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "multi frames?"
+    }
+  },
+  "318": {
+    "inputs": {
+      "images": [
+        "313",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image end"
+    }
+  },
+  "323": {
+    "inputs": {
+      "width": [
+        "296",
+        1
+      ],
+      "height": [
+        "296",
+        2
+      ],
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "309",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "324": {
+    "inputs": {
+      "image": [
+        "150",
+        1
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "326": {
+    "inputs": {
+      "width": [
+        "296",
+        1
+      ],
+      "height": [
+        "296",
+        2
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": "crop",
+      "pad_color": "0, 0, 0",
+      "crop_position": "center",
+      "divisible_by": 2,
+      "image": [
+        "147",
+        1
+      ]
+    },
+    "class_type": "ImageResizeKJv2",
+    "_meta": {
+      "title": "Resize Image v2"
+    }
+  },
+  "327": {
+    "inputs": {
+      "width": [
+        "296",
+        1
+      ],
+      "height": [
+        "296",
+        2
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": "crop",
+      "pad_color": "0, 0, 0",
+      "crop_position": "center",
+      "divisible_by": 2,
+      "image": [
+        "324",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJv2",
+    "_meta": {
+      "title": "Resize Image v2"
+    }
+  },
+  "329": {
+    "inputs": {
+      "path": "B:\\AI\\comfy\\ComfyUI\\output\\SEI_LTX_WAN_00135.mp4",
+      "image_load_cap": [
+        "333",
+        0
+      ],
+      "force_rate": 0,
+      "max_res": [
+        "203",
+        0
+      ],
+      "sort": "None"
+    },
+    "class_type": "Eden_AllMediaLoader",
+    "_meta": {
+      "title": "All Media Loader 📁"
+    }
+  },
+  "330": {
+    "inputs": {
+      "path": "\"B:\\AI\\data\\output\\SEI_LTX_WAN_00141.mp4\"",
+      "image_load_cap": [
+        "333",
+        0
+      ],
+      "force_rate": 0,
+      "max_res": [
+        "203",
+        0
+      ],
+      "sort": "None"
+    },
+    "class_type": "Eden_AllMediaLoader",
+    "_meta": {
+      "title": "All Media Loader 📁"
+    }
+  },
+  "331": {
+    "inputs": {
+      "text": "(True, ['B:\\\\AI\\\\comfy\\\\ComfyUI\\\\output\\\\LTX_WAN_SEI_debug_00157.png', 'B:\\\\AI\\\\comfy\\\\ComfyUI\\\\output\\\\LTX_WAN_SEI_debug_00157.mp4'])",
+      "output_type": "ANY",
+      "passthrough": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "output paths"
+    }
+  },
+  "332": {
+    "inputs": {
+      "frame_rate": [
+        "168",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "SEI_LTX_WAN-noRIFE",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "295",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine OUTPUT (pre_interpolation)"
+    }
+  },
+  "333": {
+    "inputs": {
+      "value": 96
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "max_input_frames"
+    }
+  },
+  "339": {
+    "inputs": {
+      "image": [
+        "329",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "340": {
+    "inputs": {
+      "image": [
+        "330",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "341": {
+    "inputs": {
+      "width": [
+        "203",
+        0
+      ],
+      "height": [
+        "203",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "297",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  }
+}
