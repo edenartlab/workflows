@@ -76,10 +76,8 @@ parameters:
     maximum: 4
   use_lora:
     type: boolean
-    label: Use custom model
-    description: Activate a LoRA finetuned model
-    tip: |-
-      Activate this to generate using a custom, trained LoRA (SDXL) model.
+    label: Use a trained, custom model
+    description: Activate a LoRA finetuned model (SDXL)
     default: false
     comfyui:
       node_id: 193
@@ -88,7 +86,7 @@ parameters:
   lora:
     type: lora
     label: LoRA
-    description: Use a custom model (LoRA)
+    description: Use a trained model (LoRA)
     tip: |-
       Name of the custom SDXL LoRA model. Do not use Flux Loras for this tool.
     visible_if: use_lora=true
@@ -227,6 +225,8 @@ parameters:
   bypass_preprocessor:
     type: boolean
     label: Bypass preprocessor
+    hide_from_agent: true
+    hide_from_ui: true
     description: Use Init Image as Controlnet guidance
     tip: |-
       Activate this to use the starting image as controlnet guidance.
@@ -254,7 +254,7 @@ parameters:
   use_ipadapter:
     type: boolean
     label: Use style image
-    description: Apply style elements from a given image
+    description: Apply style elements / textures from a given image
     tip: |-
       Ipadapter takes compositional concepts, subjects and aesthetic elements from a style image and applies it to the generated image. 
       It essentially interprets prompt conditioning from the use of an input image, and is often referred to vernacularly throughout Eden tools as a style image. 
