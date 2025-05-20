@@ -6,7 +6,7 @@ tip: |-
   Otherwise you should always prefer one of the Flux models for image generation. 
   Although lower quality, SDXL can produce artistic results with more unusual characteristics.
 output_type: image
-cost_estimate: 3 * n_samples
+cost_estimate: '3 * n_samples * (width / 1024) * (height / 1024) * (steps / 35) * (use_controlnet ? 1.2 : 1)'
 thumbnail: app/txt2img.png
 status: prod
 visible: true
@@ -40,7 +40,7 @@ parameters:
     required: true
     default: 1024
     minimum: 256
-    maximum: 2048
+    maximum: 3072
     visible_if: use_init_image=false
     step: 8
     comfyui:
@@ -56,7 +56,7 @@ parameters:
     required: true
     default: 1024
     minimum: 256
-    maximum: 2048
+    maximum: 3072
     visible_if: use_init_image=false
     step: 8
     comfyui:

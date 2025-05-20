@@ -42,8 +42,8 @@ parameters:
     description: Strength of AI denoising
     tip: |-
       This parameter controls the amount of added detail to the image. 
-      Low values (.01-.25) are better at preserving likeness, wheras high values (>.5) are prone to hallucination of details that are not present in the original image.
-    default: 0.15
+      Low values (.15-.25) are better at preserving likeness, wheras high values (>.5) are prone to hallucination of details that are not present in the original image.
+    default: 0.2
     minimum: 0.0
     maximum: 1.0
     step: 0.01
@@ -125,6 +125,8 @@ parameters:
     type: integer
     label: Tile Size
     description: Size of tiles for high quality upscaling
+    hide_from_ui: true
+    hide_from_agent: true
     default: 512
     minimum: 64
     maximum: 1024
@@ -138,6 +140,8 @@ parameters:
     type: float
     label: Guidance Scale
     description: Guidance scale for high quality upscaling
+    hide_from_ui: true
+    hide_from_agent: true
     default: 2.5
     minimum: 1.0
     maximum: 4.0
