@@ -1,6 +1,8 @@
 {
-  "last_node_id": 223,
-  "last_link_id": 338,
+  "id": "1fa3e153-e9d4-4311-873f-cde5e3027d9e",
+  "revision": 0,
+  "last_node_id": 224,
+  "last_link_id": 340,
   "nodes": [
     {
       "id": 15,
@@ -11,10 +13,10 @@
       ],
       "size": [
         750,
-        414
+        334
       ],
       "flags": {},
-      "order": 39,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -24,81 +26,61 @@
         },
         {
           "name": "audio",
-          "type": "AUDIO",
           "shape": 7,
+          "type": "AUDIO",
           "link": null
         },
         {
           "name": "meta_batch",
-          "type": "VHS_BatchManager",
           "shape": 7,
+          "type": "VHS_BatchManager",
           "link": null
         },
         {
           "name": "vae",
-          "type": "VAE",
           "shape": 7,
+          "type": "VAE",
           "link": null
         },
         {
-          "name": "pingpong",
-          "type": "BOOLEAN",
-          "pos": [
-            10,
-            288
-          ],
-          "widget": {
-            "name": "pingpong"
-          },
-          "link": 286,
-          "slot_index": 4
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "pos": [
-            10,
-            144
-          ],
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": 163,
-          "slot_index": 5
-        },
-        {
-          "name": "save_output",
-          "type": "BOOLEAN",
-          "pos": [
-            10,
-            312
-          ],
-          "widget": {
-            "name": "save_output"
-          },
-          "link": 101,
-          "slot_index": 6
-        },
-        {
           "name": "frame_rate",
-          "type": "*",
-          "pos": [
-            10,
-            96
-          ],
+          "type": "FLOAT",
           "widget": {
             "name": "frame_rate"
           },
           "link": 320
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 163
+        },
+        {
+          "name": "pingpong",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "pingpong"
+          },
+          "link": 286
+        },
+        {
+          "name": "save_output",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_output"
+          },
+          "link": 101
         }
       ],
       "outputs": [
         {
           "name": "Filenames",
           "type": "VHS_FILENAMES",
-          "shape": 3,
-          "links": [],
-          "slot_index": 0
+          "slot_index": 0,
+          "links": []
         }
       ],
       "properties": {
@@ -147,21 +129,20 @@
       "inputs": [
         {
           "name": "a",
-          "type": "INT,FLOAT,IMAGE,LATENT",
           "shape": 7,
-          "link": 170,
-          "slot_index": 0
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": 170
         },
         {
           "name": "b",
-          "type": "INT,FLOAT,IMAGE,LATENT",
           "shape": 7,
+          "type": "INT,FLOAT,IMAGE,LATENT",
           "link": 304
         },
         {
           "name": "c",
-          "type": "INT,FLOAT,IMAGE,LATENT",
           "shape": 7,
+          "type": "INT,FLOAT,IMAGE,LATENT",
           "link": null
         }
       ],
@@ -169,16 +150,14 @@
         {
           "name": "INT",
           "type": "INT",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             90
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "FLOAT",
           "type": "FLOAT",
-          "shape": 3,
           "links": null
         }
       ],
@@ -205,7 +184,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 30,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -215,17 +194,13 @@
         },
         {
           "name": "optional_interpolation_states",
-          "type": "INTERPOLATION_STATES",
           "shape": 7,
+          "type": "INTERPOLATION_STATES",
           "link": null
         },
         {
           "name": "clear_cache_after_n_frames",
           "type": "INT",
-          "pos": [
-            10,
-            80
-          ],
           "widget": {
             "name": "clear_cache_after_n_frames"
           },
@@ -234,26 +209,20 @@
         {
           "name": "multiplier",
           "type": "INT",
-          "pos": [
-            10,
-            104
-          ],
           "widget": {
             "name": "multiplier"
           },
-          "link": 172,
-          "slot_index": 3
+          "link": 172
         }
       ],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             326
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -281,7 +250,7 @@
         98
       ],
       "flags": {},
-      "order": 26,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
@@ -292,33 +261,26 @@
         {
           "name": "on_false",
           "type": "*",
-          "link": 167,
-          "slot_index": 1
+          "link": 167
         },
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            56
-          ],
           "widget": {
             "name": "boolean"
           },
-          "link": 166,
-          "slot_index": 2
+          "link": 166
         }
       ],
       "outputs": [
         {
           "name": "*",
           "type": "*",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             138,
             140
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -377,7 +339,7 @@
         258
       ],
       "flags": {},
-      "order": 29,
+      "order": 30,
       "mode": 0,
       "inputs": [
         {
@@ -387,17 +349,21 @@
         },
         {
           "name": "optional_interpolation_states",
-          "type": "INTERPOLATION_STATES",
           "shape": 7,
+          "type": "INTERPOLATION_STATES",
           "link": null
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": 291
         },
         {
           "name": "clear_cache_after_n_frames",
           "type": "INT",
-          "pos": [
-            10,
-            80
-          ],
           "widget": {
             "name": "clear_cache_after_n_frames"
           },
@@ -406,37 +372,20 @@
         {
           "name": "multiplier",
           "type": "INT",
-          "pos": [
-            10,
-            104
-          ],
           "widget": {
             "name": "multiplier"
           },
           "link": 173
-        },
-        {
-          "name": "ckpt_name",
-          "type": "COMBO",
-          "pos": [
-            10,
-            56
-          ],
-          "widget": {
-            "name": "ckpt_name"
-          },
-          "link": 291
         }
       ],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             331
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -467,40 +416,20 @@
         244
       ],
       "flags": {},
-      "order": 32,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
           "name": "prepend",
           "type": "STRING",
-          "pos": [
-            10,
-            182
-          ],
           "widget": {
             "name": "prepend"
           },
           "link": 142
         },
         {
-          "name": "override_body",
-          "type": "STRING",
-          "pos": [
-            10,
-            206
-          ],
-          "widget": {
-            "name": "override_body"
-          },
-          "link": null
-        },
-        {
           "name": "append",
           "type": "STRING",
-          "pos": [
-            10,
-            230
-          ],
           "widget": {
             "name": "append"
           },
@@ -511,28 +440,24 @@
         {
           "name": "text",
           "type": "STRING",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             161
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "prepend",
           "type": "STRING",
-          "shape": 3,
           "links": null
         },
         {
           "name": "body",
           "type": "STRING",
-          "shape": 3,
           "links": null
         },
         {
           "name": "append",
           "type": "STRING",
-          "shape": 3,
           "links": null
         }
       ],
@@ -543,7 +468,6 @@
       },
       "widgets_values": [
         "-intFrms",
-        "",
         "",
         "",
         ""
@@ -561,72 +485,40 @@
         244
       ],
       "flags": {},
-      "order": 28,
+      "order": 29,
       "mode": 0,
       "inputs": [
         {
           "name": "prepend",
           "type": "STRING",
-          "pos": [
-            10,
-            182
-          ],
           "widget": {
             "name": "prepend"
           },
           "link": 119
-        },
-        {
-          "name": "override_body",
-          "type": "STRING",
-          "pos": [
-            10,
-            206
-          ],
-          "widget": {
-            "name": "override_body"
-          },
-          "link": null
-        },
-        {
-          "name": "append",
-          "type": "STRING",
-          "pos": [
-            10,
-            230
-          ],
-          "widget": {
-            "name": "append"
-          },
-          "link": null
         }
       ],
       "outputs": [
         {
           "name": "text",
           "type": "STRING",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             142
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "prepend",
           "type": "STRING",
-          "shape": 3,
           "links": null
         },
         {
           "name": "body",
           "type": "STRING",
-          "shape": 3,
           "links": null
         },
         {
           "name": "append",
           "type": "STRING",
-          "shape": 3,
           "links": null
         }
       ],
@@ -637,7 +529,6 @@
       },
       "widgets_values": [
         "-interpolation_",
-        "",
         "",
         "",
         ""
@@ -661,10 +552,6 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "pos": [
-            10,
-            84
-          ],
           "widget": {
             "name": "boolean"
           },
@@ -675,11 +562,10 @@
         {
           "name": "string",
           "type": "STRING",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             119
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -715,9 +601,6 @@
             10,
             56
           ],
-          "widget": {
-            "name": "int_"
-          },
           "link": 171
         }
       ],
@@ -725,27 +608,24 @@
         {
           "name": "STRING",
           "type": "STRING",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             144
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "show_help",
           "type": "STRING",
-          "shape": 3,
           "links": null
         }
       ],
       "properties": {
-        "aux_id": "Suzie1/ComfyUI_Comfyroll_CustomNodes",
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
         "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
-        "Node name for S&R": "CR Integer To String"
+        "Node name for S&R": "CR Integer To String",
+        "aux_id": "Suzie1/ComfyUI_Comfyroll_CustomNodes"
       },
-      "widgets_values": [
-        0
-      ]
+      "widgets_values": []
     },
     {
       "id": 121,
@@ -756,12 +636,12 @@
       ],
       "size": [
         460,
-        328
+        594.4000244140625
       ],
       "flags": {
         "collapsed": false
       },
-      "order": 36,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -771,21 +651,18 @@
             10,
             282.4
           ],
-          "widget": {
-            "name": "text"
-          },
           "link": 161
         }
       ],
       "outputs": [
         {
           "name": "STRING",
-          "type": "STRING",
           "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
           "links": [
             163
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
@@ -794,9 +671,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        [
-          "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23"
-        ],
+        "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
         "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
         "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
         "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
@@ -825,7 +700,6 @@
         {
           "name": "BOOLEAN",
           "type": "BOOLEAN",
-          "shape": 3,
           "links": [
             166
           ]
@@ -833,9 +707,10 @@
       ],
       "title": "Cache All Frames",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -860,18 +735,18 @@
         {
           "name": "INT",
           "type": "INT",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             167
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "clear cache after n frames",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Int"
+        "Node name for S&R": "Eden_Int",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         10
@@ -886,7 +761,7 @@
       ],
       "size": [
         245.1999969482422,
-        246
+        284
       ],
       "flags": {},
       "order": 3,
@@ -894,32 +769,30 @@
       "inputs": [
         {
           "name": "pre_add",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "override_number",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "multiplier",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "post_add",
+          "shape": 7,
           "type": "FLOAT",
           "pos": [
             10,
             224
           ],
-          "widget": {
-            "name": "post_add"
-          },
           "link": null
         }
       ],
@@ -927,59 +800,51 @@
         {
           "name": "output_number",
           "type": "FLOAT",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             224
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "output_int",
           "type": "INT",
-          "shape": 3,
+          "slot_index": 1,
           "links": [
             170,
             171,
             172,
             173
-          ],
-          "slot_index": 1
+          ]
         },
         {
           "name": "bool>0",
           "type": "BOOLEAN",
-          "shape": 3,
           "links": null
         },
         {
           "name": "float_string",
           "type": "STRING",
-          "shape": 3,
-          "links": null,
-          "slot_index": 3
+          "slot_index": 3,
+          "links": null
         },
         {
           "name": "int_string",
           "type": "STRING",
-          "shape": 3,
           "links": null
         },
         {
           "name": "pre_add",
           "type": "FLOAT",
-          "shape": 3,
           "links": null
         },
         {
           "name": "multiplier",
           "type": "FLOAT",
-          "shape": 3,
           "links": null
         },
         {
           "name": "post_add",
           "type": "FLOAT",
-          "shape": 3,
           "links": null
         }
       ],
@@ -991,50 +856,10 @@
       },
       "widgets_values": [
         2,
-        "round",
-        0
+        "round"
       ],
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 131,
-      "type": "Reroute",
-      "pos": [
-        -1390,
-        -210
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 303
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "IMAGE",
-          "links": [
-            177,
-            178,
-            325,
-            330
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      }
     },
     {
       "id": 154,
@@ -1066,18 +891,18 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             323,
             324
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Compare"
+        "Node name for S&R": "Eden_Compare",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a > b"
@@ -1102,18 +927,18 @@
         {
           "name": "BOOLEAN",
           "type": "BOOLEAN",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             319
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "use_input_video_fps",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1138,19 +963,19 @@
         {
           "name": "INT",
           "type": "INT",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             311,
             316
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "FPS",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Int"
+        "Node name for S&R": "Eden_Int",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         30
@@ -1175,18 +1000,18 @@
         {
           "name": "BOOLEAN",
           "type": "BOOLEAN",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             286
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "pingpong",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1211,16 +1036,16 @@
         {
           "name": "BOOLEAN",
           "type": "BOOLEAN",
-          "shape": 3,
-          "links": [],
-          "slot_index": 0
+          "slot_index": 0,
+          "links": []
         }
       ],
       "title": "show_advanced",
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Bool"
+        "Node name for S&R": "Eden_Bool",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         false
@@ -1235,7 +1060,7 @@
       ],
       "size": [
         230.57754516601562,
-        180
+        276
       ],
       "flags": {},
       "order": 8,
@@ -1243,15 +1068,12 @@
       "inputs": [
         {
           "name": "int_select",
-          "type": "INT",
           "shape": 7,
+          "type": "INT",
           "pos": [
             10,
             166
           ],
-          "widget": {
-            "name": "int_select"
-          },
           "link": null
         }
       ],
@@ -1259,11 +1081,11 @@
         {
           "name": "output_string",
           "type": "STRING",
+          "slot_index": 0,
           "links": [
             290,
             295
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "index",
@@ -1280,8 +1102,7 @@
       "widgets_values": [
         "rife49.pth, rife49.pth, FILM",
         ", ",
-        "rife49.pth",
-        -1
+        "rife49.pth"
       ]
     },
     {
@@ -1301,8 +1122,8 @@
       "inputs": [
         {
           "name": "any_type_input",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 290
         }
       ],
@@ -1310,16 +1131,17 @@
         {
           "name": "ANY_TYPE_OUTPUT",
           "type": "*",
+          "slot_index": 0,
           "links": [
             291
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "SDAnyConverter"
+        "Node name for S&R": "SDAnyConverter",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": []
     },
@@ -1342,16 +1164,17 @@
         {
           "name": "STRING",
           "type": "STRING",
+          "slot_index": 0,
           "links": [
             294
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_String"
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "FILM"
@@ -1387,18 +1210,18 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             296,
             328
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Compare"
+        "Node name for S&R": "Eden_Compare",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a == b"
@@ -1423,110 +1246,21 @@
         {
           "name": "INT",
           "type": "INT",
+          "slot_index": 0,
           "links": [
             298
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Int"
+        "Node name for S&R": "Eden_Int",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
       ]
-    },
-    {
-      "id": 207,
-      "type": "VHS_LoadVideo",
-      "pos": [
-        -1809,
-        -672
-      ],
-      "size": [
-        247.455078125,
-        403.9434814453125
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "shape": 7,
-          "link": null
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "shape": 7,
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            303
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": [
-            304
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "links": null
-        },
-        {
-          "name": "video_info",
-          "type": "VHS_VIDEOINFO",
-          "links": [
-            306
-          ],
-          "slot_index": 3
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "f24f4e10f448913eb8c0d8ce5ff6190a8be84454",
-        "Node name for S&R": "VHS_LoadVideo"
-      },
-      "widgets_values": {
-        "video": "Count.mov",
-        "force_rate": 0,
-        "force_size": "Disabled",
-        "custom_width": 512,
-        "custom_height": 512,
-        "frame_load_cap": 0,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "choose video to upload": "image",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "force_rate": 0,
-            "frame_load_cap": 0,
-            "skip_first_frames": 0,
-            "select_every_nth": 1,
-            "filename": "Count.mov",
-            "type": "input",
-            "format": "video/mov"
-          },
-          "muted": false
-        }
-      }
     },
     {
       "id": 208,
@@ -1553,8 +1287,8 @@
         {
           "name": "source_fps🟨",
           "type": "FLOAT",
-          "links": [],
-          "slot_index": 0
+          "slot_index": 0,
+          "links": []
         },
         {
           "name": "source_frame_count🟨",
@@ -1579,8 +1313,8 @@
         {
           "name": "loaded_fps🟦",
           "type": "FLOAT",
-          "links": null,
-          "slot_index": 5
+          "slot_index": 5,
+          "links": null
         },
         {
           "name": "loaded_frame_count🟦",
@@ -1622,23 +1356,24 @@
         58
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "INT",
           "type": "INT",
+          "slot_index": 0,
           "links": [
             314
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Int"
+        "Node name for S&R": "Eden_Int",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         1
@@ -1656,7 +1391,7 @@
         78
       ],
       "flags": {},
-      "order": 27,
+      "order": 28,
       "mode": 0,
       "inputs": [
         {
@@ -1674,17 +1409,17 @@
         {
           "name": "boolean",
           "type": "BOOLEAN",
-          "shape": 3,
+          "slot_index": 0,
           "links": [
             315
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "properties": {
-        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "cnr_id": "eden_comfy_pipelines",
         "ver": "35af96dba9df83a53013a48cda08a9556a1c8fef",
-        "Node name for S&R": "Eden_Compare"
+        "Node name for S&R": "Eden_Compare",
+        "aux_id": "edenartlab/eden_comfy_pipelines"
       },
       "widgets_values": [
         "a > b"
@@ -1704,43 +1439,43 @@
       "flags": {
         "collapsed": true
       },
-      "order": 31,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 315
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -1748,17 +1483,18 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             318
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "bool-to-int",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -1784,38 +1520,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 319
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -1823,17 +1559,18 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             312
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "bool-to-int",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -1852,7 +1589,7 @@
         250
       ],
       "flags": {},
-      "order": 35,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -1862,41 +1599,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 317
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            159.99996948242188
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -1907,10 +1640,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             320
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -1939,9 +1672,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -1972,41 +1706,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2017,11 +1747,11 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             313,
             317
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -2050,9 +1780,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -2080,38 +1811,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 323
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -2119,17 +1850,18 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             332
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "bool-to-int",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -2155,38 +1887,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 324
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -2194,17 +1926,18 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             327
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "bool-to-int",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -2223,7 +1956,7 @@
         250
       ],
       "flags": {},
-      "order": 34,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -2233,41 +1966,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 326
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2278,10 +2007,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             334
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -2310,9 +2039,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -2340,38 +2070,38 @@
       "inputs": [
         {
           "name": "passthrough",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 328
         },
         {
           "name": "aux2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "aux5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         }
       ],
@@ -2379,17 +2109,18 @@
         {
           "name": "output",
           "type": "*",
+          "slot_index": 0,
           "links": [
             335
-          ],
-          "slot_index": 0
+          ]
         }
       ],
       "title": "bool-to-int",
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "DataMonitor"
+        "Node name for S&R": "DataMonitor",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "[1,2][%aux%]",
@@ -2408,7 +2139,7 @@
         250
       ],
       "flags": {},
-      "order": 37,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -2418,41 +2149,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 334
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2463,10 +2190,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             329
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -2495,9 +2222,10 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
@@ -2518,7 +2246,7 @@
         86
       ],
       "flags": {},
-      "order": 38,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
@@ -2531,10 +2259,10 @@
         {
           "name": "image",
           "type": "IMAGE",
+          "slot_index": 0,
           "links": [
             336
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "width",
@@ -2571,7 +2299,7 @@
         250
       ],
       "flags": {},
-      "order": 33,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -2581,41 +2309,37 @@
         },
         {
           "name": "input2",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": 331
         },
         {
           "name": "input3",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input4",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input5",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "input6",
-          "type": "*",
           "shape": 7,
+          "type": "*",
           "link": null
         },
         {
           "name": "selection_in",
           "type": "INT",
-          "pos": [
-            10,
-            160
-          ],
           "widget": {
             "name": "selection_in"
           },
@@ -2626,10 +2350,10 @@
         {
           "name": "*",
           "type": "*",
+          "slot_index": 0,
           "links": [
             333
-          ],
-          "slot_index": 0
+          ]
         },
         {
           "name": "*",
@@ -2658,15 +2382,199 @@
         }
       ],
       "properties": {
-        "aux_id": "VykosX/ControlFlowUtils",
+        "cnr_id": "ControlFlowUtils",
         "ver": "b675bc6c2c6847d53d8a010fed1497a1b565c144",
-        "Node name for S&R": "UniversalSwitch"
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "VykosX/ControlFlowUtils"
       },
       "widgets_values": [
         "SWITCH",
         1,
         1,
         false
+      ]
+    },
+    {
+      "id": 207,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -2233.4052734375,
+        -662.3950805664062
+      ],
+      "size": [
+        252.056640625,
+        310
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            339
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "slot_index": 1,
+          "links": [
+            304
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "slot_index": 3,
+          "links": [
+            306
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "f24f4e10f448913eb8c0d8ce5ff6190a8be84454",
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "Count.mov",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 600,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "AnimateDiff",
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "force_rate": 0,
+            "frame_load_cap": 600,
+            "skip_first_frames": 0,
+            "select_every_nth": 1,
+            "filename": "Count.mov",
+            "type": "input",
+            "format": "video/mov"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 131,
+      "type": "Reroute",
+      "pos": [
+        -1536.3736572265625,
+        -292.77984619140625
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 340
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            177,
+            178,
+            325,
+            330
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 224,
+      "type": "ImageResize+",
+      "pos": [
+        -1925.5457763671875,
+        -549.4544677734375
+      ],
+      "size": [
+        272.5186462402344,
+        218
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 339
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            340
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "1.1.0",
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        2048,
+        2048,
+        "lanczos",
+        "keep proportion",
+        "downscale if bigger",
+        2
       ]
     }
   ],
@@ -2684,7 +2592,7 @@
       73,
       0,
       15,
-      6,
+      7,
       "BOOLEAN"
     ],
     [
@@ -2700,7 +2608,7 @@
       68,
       0,
       80,
-      2,
+      3,
       "INT"
     ],
     [
@@ -2724,7 +2632,7 @@
       109,
       0,
       81,
-      2,
+      1,
       "STRING"
     ],
     [
@@ -2788,7 +2696,7 @@
       129,
       1,
       80,
-      3,
+      4,
       "INT"
     ],
     [
@@ -2820,7 +2728,7 @@
       190,
       0,
       15,
-      4,
+      6,
       "*"
     ],
     [
@@ -2836,7 +2744,7 @@
       195,
       0,
       80,
-      4,
+      2,
       "COMBO"
     ],
     [
@@ -2869,14 +2777,6 @@
       0,
       154,
       1,
-      "*"
-    ],
-    [
-      303,
-      207,
-      0,
-      131,
-      0,
       "*"
     ],
     [
@@ -2972,7 +2872,7 @@
       215,
       0,
       15,
-      7,
+      4,
       "*"
     ],
     [
@@ -3086,6 +2986,22 @@
       15,
       0,
       "IMAGE"
+    ],
+    [
+      339,
+      207,
+      0,
+      224,
+      0,
+      "IMAGE"
+    ],
+    [
+      340,
+      224,
+      0,
+      131,
+      0,
+      "*"
     ]
   ],
   "groups": [
@@ -3121,16 +3037,19 @@
   },
   "extra": {
     "ds": {
-      "scale": 0.7513148009015777,
+      "scale": 0.9646149645000016,
       "offset": [
-        1436.4275261840817,
-        1574.5729526824957
+        2188.2318758409483,
+        765.4365147736597
       ]
     },
     "groupNodes": {},
     "ue_links": [],
     "VHS_latentpreview": false,
-    "VHS_latentpreviewrate": 0
+    "VHS_latentpreviewrate": 0,
+    "frontendVersion": "1.17.11",
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
   },
   "version": 0.4
 }

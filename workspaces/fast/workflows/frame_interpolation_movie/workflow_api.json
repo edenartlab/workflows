@@ -59,7 +59,7 @@
         1
       ],
       "frames": [
-        "207",
+        "224",
         0
       ]
     },
@@ -106,7 +106,7 @@
       "ensemble": true,
       "scale_factor": 1,
       "frames": [
-        "207",
+        "224",
         0
       ]
     },
@@ -117,16 +117,16 @@
   },
   "81": {
     "inputs": {
-      "body": "-intFrms",
-      "delimiter": "",
       "prepend": [
         "92",
         0
       ],
+      "body": "",
       "append": [
         "109",
         0
-      ]
+      ],
+      "delimiter": ""
     },
     "class_type": "TextPlusPlus",
     "_meta": {
@@ -135,12 +135,13 @@
   },
   "92": {
     "inputs": {
-      "body": "-interpolation_",
-      "delimiter": "",
       "prepend": [
         "93",
         0
-      ]
+      ],
+      "body": "",
+      "append": "",
+      "delimiter": ""
     },
     "class_type": "TextPlusPlus",
     "_meta": {
@@ -175,6 +176,12 @@
   },
   "121": {
     "inputs": {
+      "text_0": "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
+      "text_1": "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
+      "text_2": "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
+      "text_3": "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
+      "text_4": "RIFE-interpolation['Eden_creation_drmbt_the-garden-of-eden-in-a-crystal-orb_66fd3ffadfcf30625923de27_2 - Copy']23",
+      "text_5": "RIFE-interpolation_-intFrms4",
       "text": [
         "81",
         0
@@ -286,7 +293,7 @@
     },
     "class_type": "SDAnyConverter",
     "_meta": {
-      "title": "SD Any Converter"
+      "title": "SDAnyConverter"
     }
   },
   "196": {
@@ -328,12 +335,12 @@
     "inputs": {
       "video": "Count.mov",
       "force_rate": 0,
-      "force_size": "Disabled",
-      "custom_width": 512,
-      "custom_height": 512,
-      "frame_load_cap": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 600,
       "skip_first_frames": 0,
-      "select_every_nth": 1
+      "select_every_nth": 1,
+      "format": "AnimateDiff"
     },
     "class_type": "VHS_LoadVideo",
     "_meta": {
@@ -486,7 +493,7 @@
       "selection_out": 1,
       "validate_typing": false,
       "input1": [
-        "207",
+        "224",
         0
       ],
       "input2": [
@@ -535,7 +542,7 @@
       "selection_out": 1,
       "validate_typing": false,
       "input1": [
-        "207",
+        "224",
         0
       ],
       "input2": [
@@ -569,6 +576,24 @@
     "class_type": "UniversalSwitch",
     "_meta": {
       "title": "💠 Universal Switch"
+    }
+  },
+  "224": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "downscale if bigger",
+      "multiple_of": 2,
+      "image": [
+        "207",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
     }
   }
 }
