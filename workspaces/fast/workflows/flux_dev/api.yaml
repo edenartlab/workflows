@@ -139,7 +139,7 @@ parameters:
     label: Use starting image as shape guide (controlnet)
     description: Activate Controlnet to use the starting image shape in the generation.
     tip: |-
-      Controlnet guides the generated output towards the shape of the Starting Image.
+      Controlnet guides the generated output towards the shape of the Starting Image. Useful for restyling or recoloring images while keeping their shape / main features intact.
     default: false
     comfyui:
       node_id: 133
@@ -151,12 +151,12 @@ parameters:
     description: Determines the type of shape guidance controlnet model used
     tip: |-
       Help the user determine the best preprocessor for their input image. 
-      CannyEdgePreprocessor detects thin binary edges and is useful for tasks requiring fast edge detection, such as architectural designs or simple object outlines, but it may struggle with complex scenes or noise. 
-      MiDaS-DepthMapPreprocessor generates luminance-based depth maps and is ideal for creating realistic 3D-like compositions, such as emphasizing depth in landscapes or isolating foreground objects. 
+      CannyEdgePreprocessor detects thin binary edges and is useful for tasks such as architectural designs or simple object outlines, but it may struggle with scenes that have high frequency spatial patterns or noise. 
+      MiDaS-DepthMapPreprocessor generates leverages depth and is ideal for maintaining 3D layout of the input image.
       HEDPreprocessor excels at producing smooth, intricate edge detection and is suitable for detailed illustrations, artistic line work, or noise-sensitive scenes. 
       DWPreprocessor, as an OpenPose-based preprocessor, identifies human keypoints and is perfect for generating images with accurate human poses, such as action shots, dance scenes, or character positioning. 
       AnyLineArtPreprocessor_aux converts images into detailed line drawings and is best for black-and-white artwork, manga-style illustrations, or clear contrast outlines. 
-      ScribblePreprocessor processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
+      ScribblePreprocessor uses a rough sketch of the input, ideal for refining rough concepts or using subtle guidance with loads of room for reinterpretation.
     visible_if: use_controlnet=true
     default: CannyEdgePreprocessor
     choices: [CannyEdgePreprocessor, MiDaS-DepthMapPreprocessor, AnyLineArtPreprocessor_aux, HEDPreprocessor, DWPreprocessor, ScribblePreprocessor, none]
