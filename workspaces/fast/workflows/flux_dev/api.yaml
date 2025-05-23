@@ -283,6 +283,7 @@ parameters:
   strength_fast:
     type: float
     hide_from_agent: true
+    hide_from_ui: true
     label: Fast mode strength
     description: Strength setting when using fast mode
     tip: |-
@@ -308,6 +309,7 @@ parameters:
     minimum: 1
     maximum: 35
     hide_from_agent: true
+    hide_from_ui: true
     visible_if: use_manual_quality=true
     comfyui:
       node_id: 449
