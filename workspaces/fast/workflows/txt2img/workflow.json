@@ -2,7 +2,7 @@
   "id": "b21097d3-d243-4472-aa75-dd6210e144a7",
   "revision": 0,
   "last_node_id": 449,
-  "last_link_id": 770,
+  "last_link_id": 771,
   "nodes": [
     {
       "id": 2,
@@ -48,8 +48,7 @@
         "ver": "1.22.0",
         "Node name for S&R": "Get resolution [Crystools]",
         "widget_ue_connectable": {}
-      },
-      "widgets_values": []
+      }
     },
     {
       "id": 7,
@@ -153,7 +152,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 68,
+      "order": 67,
       "mode": 0,
       "inputs": [
         {
@@ -213,7 +212,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 69,
+      "order": 68,
       "mode": 0,
       "inputs": [
         {
@@ -272,7 +271,7 @@
         78
       ],
       "flags": {},
-      "order": 56,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -319,7 +318,7 @@
         88
       ],
       "flags": {},
-      "order": 67,
+      "order": 66,
       "mode": 0,
       "inputs": [
         {
@@ -352,7 +351,7 @@
         88
       ],
       "flags": {},
-      "order": 79,
+      "order": 78,
       "mode": 0,
       "inputs": [
         {
@@ -421,7 +420,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        916810945813549,
+        916810945813552,
         "increment"
       ],
       "color": "#233",
@@ -441,7 +440,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 61,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -563,123 +562,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 38,
-      "type": "KSampler",
-      "pos": [
-        1741.8372802734375,
-        -166.71633911132812
-      ],
-      "size": [
-        366.0758056640625,
-        574.0758056640625
-      ],
-      "flags": {},
-      "order": 95,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 703
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 689
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 719
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 748
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          },
-          "link": 143
-        },
-        {
-          "name": "steps",
-          "type": "INT",
-          "widget": {
-            "name": "steps"
-          },
-          "link": 273
-        },
-        {
-          "name": "cfg",
-          "type": "FLOAT",
-          "widget": {
-            "name": "cfg"
-          },
-          "link": 272
-        },
-        {
-          "name": "sampler_name",
-          "type": "COMBO",
-          "widget": {
-            "name": "sampler_name"
-          },
-          "link": 271
-        },
-        {
-          "name": "scheduler",
-          "type": "COMBO",
-          "widget": {
-            "name": "scheduler"
-          },
-          "link": 270
-        },
-        {
-          "name": "denoise",
-          "type": "FLOAT",
-          "widget": {
-            "name": "denoise"
-          },
-          "link": 359
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "slot_index": 0,
-          "links": [
-            96
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "KSampler",
-        "widget_ue_connectable": {
-          "denoise": true,
-          "seed": true,
-          "steps": true,
-          "cfg": true,
-          "sampler_name": true,
-          "scheduler": true
-        }
-      },
-      "widgets_values": [
-        129193777189016,
-        "randomize",
-        30,
-        7.47,
-        "euler",
-        "normal",
-        1
-      ]
-    },
-    {
       "id": 59,
       "type": "Eden_Float",
       "pos": [
@@ -771,7 +653,7 @@
         46
       ],
       "flags": {},
-      "order": 90,
+      "order": 89,
       "mode": 0,
       "inputs": [
         {
@@ -815,7 +697,7 @@
         46
       ],
       "flags": {},
-      "order": 96,
+      "order": 95,
       "mode": 0,
       "inputs": [
         {
@@ -863,7 +745,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 91,
+      "order": 90,
       "mode": 0,
       "inputs": [
         {
@@ -960,7 +842,7 @@
         648.35009765625
       ],
       "flags": {},
-      "order": 97,
+      "order": 96,
       "mode": 0,
       "inputs": [
         {
@@ -990,7 +872,7 @@
         106
       ],
       "flags": {},
-      "order": 50,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -1034,7 +916,7 @@
         246
       ],
       "flags": {},
-      "order": 63,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
@@ -1064,7 +946,7 @@
         78
       ],
       "flags": {},
-      "order": 58,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -1108,76 +990,6 @@
       ]
     },
     {
-      "id": 171,
-      "type": "KSampler Config (rgthree)",
-      "pos": [
-        1733.3206787109375,
-        184.68504333496094
-      ],
-      "size": [
-        373.9989929199219,
-        234
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STEPS",
-          "type": "INT",
-          "slot_index": 0,
-          "links": [
-            273
-          ]
-        },
-        {
-          "name": "REFINER_STEP",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "CFG",
-          "type": "FLOAT",
-          "slot_index": 2,
-          "links": [
-            272
-          ]
-        },
-        {
-          "name": "SAMPLER",
-          "type": "COMBO",
-          "slot_index": 3,
-          "links": [
-            271
-          ]
-        },
-        {
-          "name": "SCHEDULER",
-          "type": "COMBO",
-          "slot_index": 4,
-          "links": [
-            270
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "32142fe476878a354dda6e2d4b5ea98960de3ced",
-        "Node name for S&R": "KSampler Config (rgthree)",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        30,
-        999,
-        8,
-        "euler",
-        "normal"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
       "id": 177,
       "type": "Note",
       "pos": [
@@ -1189,7 +1001,7 @@
         120.3559799194336
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1327,7 +1139,7 @@
         59.978424072265625
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1366,7 +1178,7 @@
         65.1552734375
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1409,7 +1221,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1511,7 +1323,7 @@
         88
       ],
       "flags": {},
-      "order": 84,
+      "order": 83,
       "mode": 0,
       "inputs": [
         {
@@ -1544,7 +1356,7 @@
         88
       ],
       "flags": {},
-      "order": 86,
+      "order": 85,
       "mode": 0,
       "inputs": [
         {
@@ -1577,7 +1389,7 @@
         218
       ],
       "flags": {},
-      "order": 45,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -1654,7 +1466,7 @@
         88
       ],
       "flags": {},
-      "order": 46,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -1689,7 +1501,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1725,7 +1537,7 @@
         58
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1767,7 +1579,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 81,
+      "order": 80,
       "mode": 0,
       "inputs": [
         {
@@ -1825,7 +1637,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 70,
+      "order": 69,
       "mode": 0,
       "inputs": [
         {
@@ -1900,7 +1712,7 @@
         35.62735366821289
       ],
       "flags": {},
-      "order": 88,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -1941,7 +1753,7 @@
         88
       ],
       "flags": {},
-      "order": 60,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -1994,7 +1806,7 @@
         98
       ],
       "flags": {},
-      "order": 72,
+      "order": 71,
       "mode": 0,
       "inputs": [
         {
@@ -2043,95 +1855,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 241,
-      "type": "Eden_String",
-      "pos": [
-        -591.9942626953125,
-        -37.698020935058594
-      ],
-      "size": [
-        315.2989807128906,
-        116.03885650634766
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 43,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "STRING",
-          "widget": {
-            "name": "value"
-          },
-          "link": 579
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            654
-          ]
-        }
-      ],
-      "title": "Prompt",
-      "properties": {
-        "cnr_id": "eden",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_String",
-        "aux_id": "edenartlab/eden_comfy_pipelines",
-        "widget_ue_connectable": {
-          "value": true
-        }
-      },
-      "widgets_values": [
-        "colorful chinese painting, black background, visionary painting"
-      ]
-    },
-    {
-      "id": 243,
-      "type": "Eden_String",
-      "pos": [
-        -674.9943237304688,
-        22.30193328857422
-      ],
-      "size": [
-        210,
-        88
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            655
-          ]
-        }
-      ],
-      "title": "no_token_prompt",
-      "properties": {
-        "cnr_id": "eden",
-        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
-        "Node name for S&R": "Eden_String",
-        "aux_id": "edenartlab/eden_comfy_pipelines",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 281,
       "type": "ShowText|pysssss",
       "pos": [
@@ -2143,7 +1866,7 @@
         176
       ],
       "flags": {},
-      "order": 51,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -2168,9 +1891,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "preprocessor_lineart",
-        "preprocessor_lineart",
-        "preprocessor_lineart"
+        "preprocessor_canny"
       ]
     },
     {
@@ -2270,7 +1991,7 @@
         88
       ],
       "flags": {},
-      "order": 64,
+      "order": 63,
       "mode": 0,
       "inputs": [
         {
@@ -2303,7 +2024,7 @@
         58
       ],
       "flags": {},
-      "order": 75,
+      "order": 74,
       "mode": 0,
       "inputs": [
         {
@@ -2349,7 +2070,7 @@
         88
       ],
       "flags": {},
-      "order": 74,
+      "order": 73,
       "mode": 0,
       "inputs": [
         {
@@ -2369,50 +2090,6 @@
       "widgets_values": [
         ""
       ]
-    },
-    {
-      "id": 309,
-      "type": "ShowText|pysssss",
-      "pos": [
-        -199.74566650390625,
-        -159.6980743408203
-      ],
-      "size": [
-        310,
-        176
-      ],
-      "flags": {},
-      "order": 44,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 651
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "slot_index": 0,
-          "links": []
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-custom-scripts",
-        "ver": "bbda5e52ad580c13ceaa53136d9c2bed9137bd2e",
-        "Node name for S&R": "ShowText|pysssss",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant",
-        "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant",
-        "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 311,
@@ -2491,7 +2168,7 @@
         88
       ],
       "flags": {},
-      "order": 83,
+      "order": 82,
       "mode": 0,
       "inputs": [
         {
@@ -2524,7 +2201,7 @@
         218
       ],
       "flags": {},
-      "order": 89,
+      "order": 88,
       "mode": 0,
       "inputs": [
         {
@@ -2612,7 +2289,7 @@
         46
       ],
       "flags": {},
-      "order": 57,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
@@ -2662,7 +2339,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 85,
+      "order": 84,
       "mode": 0,
       "inputs": [
         {
@@ -2721,7 +2398,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 87,
+      "order": 86,
       "mode": 0,
       "inputs": [
         {
@@ -2778,7 +2455,7 @@
         60
       ],
       "flags": {},
-      "order": 15,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2820,7 +2497,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 73,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -2897,7 +2574,7 @@
         250
       ],
       "flags": {},
-      "order": 99,
+      "order": 98,
       "mode": 0,
       "inputs": [
         {
@@ -3011,7 +2688,7 @@
         96
       ],
       "flags": {},
-      "order": 101,
+      "order": 100,
       "mode": 0,
       "inputs": [
         {
@@ -3037,8 +2714,7 @@
         "ver": "1.22.0",
         "Node name for S&R": "Get resolution [Crystools]",
         "widget_ue_connectable": {}
-      },
-      "widgets_values": []
+      }
     },
     {
       "id": 362,
@@ -3052,7 +2728,7 @@
         88
       ],
       "flags": {},
-      "order": 47,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -3085,7 +2761,7 @@
         96
       ],
       "flags": {},
-      "order": 102,
+      "order": 101,
       "mode": 0,
       "inputs": [
         {
@@ -3111,8 +2787,7 @@
         "ver": "1.22.0",
         "Node name for S&R": "Get resolution [Crystools]",
         "widget_ue_connectable": {}
-      },
-      "widgets_values": []
+      }
     },
     {
       "id": 382,
@@ -3126,7 +2801,7 @@
         88
       ],
       "flags": {},
-      "order": 76,
+      "order": 75,
       "mode": 0,
       "inputs": [
         {
@@ -3159,7 +2834,7 @@
         78
       ],
       "flags": {},
-      "order": 77,
+      "order": 76,
       "mode": 0,
       "inputs": [
         {
@@ -3330,7 +3005,7 @@
         206
       ],
       "flags": {},
-      "order": 16,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -3414,7 +3089,7 @@
         98
       ],
       "flags": {},
-      "order": 17,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3465,7 +3140,7 @@
         358.78485107421875
       ],
       "flags": {},
-      "order": 103,
+      "order": 102,
       "mode": 0,
       "inputs": [
         {
@@ -3497,7 +3172,7 @@
         59.63507843017578
       ],
       "flags": {},
-      "order": 18,
+      "order": 16,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3581,7 +3256,7 @@
         126
       ],
       "flags": {},
-      "order": 49,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -3639,7 +3314,7 @@
         250
       ],
       "flags": {},
-      "order": 104,
+      "order": 103,
       "mode": 0,
       "inputs": [
         {
@@ -3754,7 +3429,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 62,
+      "order": 61,
       "mode": 0,
       "inputs": [
         {
@@ -3829,7 +3504,7 @@
         250
       ],
       "flags": {},
-      "order": 93,
+      "order": 92,
       "mode": 0,
       "inputs": [
         {
@@ -4017,7 +3692,7 @@
         250
       ],
       "flags": {},
-      "order": 82,
+      "order": 81,
       "mode": 0,
       "inputs": [
         {
@@ -4128,7 +3803,7 @@
         217.91116333007812
       ],
       "flags": {},
-      "order": 55,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -4247,7 +3922,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 19,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4289,7 +3964,7 @@
         26
       ],
       "flags": {},
-      "order": 52,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -4331,7 +4006,7 @@
         32.540321350097656
       ],
       "flags": {},
-      "order": 65,
+      "order": 64,
       "mode": 0,
       "inputs": [
         {
@@ -4369,11 +4044,11 @@
         1857.847900390625
       ],
       "size": [
-        210,
+        245.1999969482422,
         98
       ],
       "flags": {},
-      "order": 66,
+      "order": 65,
       "mode": 0,
       "inputs": [
         {
@@ -4439,7 +4114,7 @@
         298
       ],
       "flags": {},
-      "order": 71,
+      "order": 70,
       "mode": 0,
       "inputs": [
         {
@@ -4523,7 +4198,7 @@
         166
       ],
       "flags": {},
-      "order": 48,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
@@ -4642,7 +4317,7 @@
         314
       ],
       "flags": {},
-      "order": 20,
+      "order": 18,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4688,7 +4363,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 78,
+      "order": 77,
       "mode": 0,
       "inputs": [
         {
@@ -4765,7 +4440,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 80,
+      "order": 79,
       "mode": 0,
       "inputs": [
         {
@@ -4842,7 +4517,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 92,
+      "order": 91,
       "mode": 0,
       "inputs": [
         {
@@ -4916,7 +4591,7 @@
         206
       ],
       "flags": {},
-      "order": 100,
+      "order": 99,
       "mode": 0,
       "inputs": [
         {
@@ -4967,9 +4642,7 @@
           "name": "negative",
           "type": "CONDITIONING",
           "slot_index": 1,
-          "links": [
-            550
-          ]
+          "links": []
         }
       ],
       "properties": {
@@ -4998,7 +4671,7 @@
         61.5015754699707
       ],
       "flags": {},
-      "order": 21,
+      "order": 19,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5035,7 +4708,7 @@
         246
       ],
       "flags": {},
-      "order": 54,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -5131,7 +4804,7 @@
         180
       ],
       "flags": {},
-      "order": 22,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -5147,7 +4820,6 @@
           "type": "STRING",
           "slot_index": 0,
           "links": [
-            595,
             601
           ]
         },
@@ -5157,7 +4829,6 @@
           "slot_index": 1,
           "links": [
             416,
-            593,
             599,
             617
           ]
@@ -5190,7 +4861,7 @@
         64.81818389892578
       ],
       "flags": {},
-      "order": 23,
+      "order": 21,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5228,7 +4899,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 24,
+      "order": 22,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5273,7 +4944,7 @@
         122
       ],
       "flags": {},
-      "order": 94,
+      "order": 93,
       "mode": 0,
       "inputs": [
         {
@@ -5336,7 +5007,7 @@
         26
       ],
       "flags": {},
-      "order": 105,
+      "order": 104,
       "mode": 0,
       "inputs": [
         {
@@ -5374,7 +5045,7 @@
         238.14064025878906
       ],
       "flags": {},
-      "order": 53,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -5413,59 +5084,6 @@
       ]
     },
     {
-      "id": 238,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -446.9957580566406,
-        -97.63856506347656
-      ],
-      "size": [
-        210.29940795898438,
-        88
-      ],
-      "flags": {},
-      "order": 59,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 743
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 654
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            370
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "CLIPTextEncode",
-        "widget_ue_connectable": {
-          "text": true
-        }
-      },
-      "widgets_values": [
-        "in the style of embedding:early-sd-eden2-v1_sdxl_lora, colorful chinese painting, black background, visionary painting"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 447,
       "type": "DataMonitor",
       "pos": [
@@ -5479,7 +5097,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 106,
+      "order": 105,
       "mode": 0,
       "inputs": [
         {
@@ -5555,7 +5173,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 107,
+      "order": 106,
       "mode": 0,
       "inputs": [
         {
@@ -5665,7 +5283,7 @@
         58
       ],
       "flags": {},
-      "order": 98,
+      "order": 97,
       "mode": 0,
       "inputs": [
         {
@@ -5703,10 +5321,10 @@
       ],
       "size": [
         315,
-        414
+        626
       ],
       "flags": {},
-      "order": 108,
+      "order": 107,
       "mode": 0,
       "inputs": [
         {
@@ -5752,66 +5370,6 @@
       ]
     },
     {
-      "id": 370,
-      "type": "TextPlusPlus",
-      "pos": [
-        -1360.7109375,
-        -168.7051544189453
-      ],
-      "size": [
-        500.77374267578125,
-        220
-      ],
-      "flags": {},
-      "order": 25,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            579,
-            651
-          ]
-        },
-        {
-          "name": "prepend",
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "body",
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "append",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Prompt (Positive)",
-      "properties": {
-        "cnr_id": "comfyui-dreambait-nodes",
-        "ver": "90c97c75d5030a89fccfb8a84a163fe9db802b41",
-        "Node name for S&R": "TextPlusPlus",
-        "widget_ue_connectable": {
-          "prepend": true,
-          "append": true
-        }
-      },
-      "widgets_values": [
-        "A captivating and vibrant illustration of an abstract face, predominantly focusing on the mesmerizing eyes and bold red lips. The face appears fragmented, with shards of glass or paper overlapping it, creating a sense of chaos. The eyes are intricately detailed, with the iris and pupil clearly visible, adding depth to the face. The striking red lips contrast with the predominantly dark and monotone background, which consists of grays, whites, and splashes of red. This cinematic piece exudes a dark fantasy vibe, drawing viewers in with its chaotic beauty, dark fantasy, illustration, cinematic, vibrant",
-        " ",
-        "",
-        ""
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 33,
       "type": "Eden_String",
       "pos": [
@@ -5823,7 +5381,7 @@
         95.78118896484375
       ],
       "flags": {},
-      "order": 26,
+      "order": 23,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5864,7 +5422,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 27,
+      "order": 24,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -5905,6 +5463,371 @@
       ],
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 38,
+      "type": "KSampler",
+      "pos": [
+        1737.6041259765625,
+        -261.8342590332031
+      ],
+      "size": [
+        366.0758056640625,
+        574.0758056640625
+      ],
+      "flags": {},
+      "order": 94,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 703
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 689
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 719
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 748
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 143
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": 273
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": 272
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": 271
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": 270
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": 359
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            96
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "KSampler",
+        "widget_ue_connectable": {
+          "denoise": true,
+          "seed": true,
+          "steps": true,
+          "cfg": true,
+          "sampler_name": true,
+          "scheduler": true
+        }
+      },
+      "widgets_values": [
+        418338029500313,
+        "randomize",
+        30,
+        7.47,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 171,
+      "type": "KSampler Config (rgthree)",
+      "pos": [
+        1466.2640380859375,
+        248.02386474609375
+      ],
+      "size": [
+        217.98497009277344,
+        234
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STEPS",
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            273
+          ]
+        },
+        {
+          "name": "REFINER_STEP",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "CFG",
+          "type": "FLOAT",
+          "slot_index": 2,
+          "links": [
+            272
+          ]
+        },
+        {
+          "name": "SAMPLER",
+          "type": "COMBO",
+          "slot_index": 3,
+          "links": [
+            271
+          ]
+        },
+        {
+          "name": "SCHEDULER",
+          "type": "COMBO",
+          "slot_index": 4,
+          "links": [
+            270
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "32142fe476878a354dda6e2d4b5ea98960de3ced",
+        "Node name for S&R": "KSampler Config (rgthree)",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        30,
+        999,
+        8,
+        "euler",
+        "normal"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 243,
+      "type": "Eden_String",
+      "pos": [
+        -682.2201538085938,
+        47.13113784790039
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            655
+          ]
+        }
+      ],
+      "title": "no_token_prompt",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 309,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -198.56320190429688,
+        -251.9331512451172
+      ],
+      "size": [
+        310,
+        176
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 771
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "bbda5e52ad580c13ceaa53136d9c2bed9137bd2e",
+        "Node name for S&R": "ShowText|pysssss",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "colorful chinese painting, black background, visionary painting"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 238,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -467.1341552734375,
+        -133.33958435058594
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 743
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 654
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            370
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "CLIPTextEncode",
+        "widget_ue_connectable": {
+          "text": true
+        }
+      },
+      "widgets_values": [
+        "in the style of embedding:early-sd-eden2-v1_sdxl_lora, colorful chinese painting, black background, visionary painting"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 241,
+      "type": "Eden_String",
+      "pos": [
+        -854.0206909179688,
+        -163.86483764648438
+      ],
+      "size": [
+        343.3275146484375,
+        116.32801055908203
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            654,
+            771
+          ]
+        }
+      ],
+      "title": "Prompt",
+      "properties": {
+        "cnr_id": "eden",
+        "ver": "0f4320122950e493b44abb0f0a242e9cea2ef564",
+        "Node name for S&R": "Eden_String",
+        "aux_id": "edenartlab/eden_comfy_pipelines",
+        "widget_ue_connectable": {
+          "value": true
+        }
+      },
+      "widgets_values": [
+        "colorful chinese painting, black background, visionary painting"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -6317,14 +6240,6 @@
       "CONDITIONING"
     ],
     [
-      550,
-      351,
-      1,
-      345,
-      1,
-      "*"
-    ],
-    [
       551,
       36,
       0,
@@ -6341,36 +6256,12 @@
       "IMAGE"
     ],
     [
-      579,
-      370,
-      0,
-      241,
-      0,
-      "STRING"
-    ],
-    [
       589,
       289,
       0,
       351,
       2,
       "CONTROL_NET"
-    ],
-    [
-      593,
-      283,
-      1,
-      374,
-      0,
-      "INT"
-    ],
-    [
-      595,
-      283,
-      0,
-      376,
-      0,
-      "STRING"
     ],
     [
       598,
@@ -6459,14 +6350,6 @@
       240,
       2,
       "FLOAT"
-    ],
-    [
-      651,
-      370,
-      0,
-      309,
-      0,
-      "STRING"
     ],
     [
       652,
@@ -7123,6 +7006,14 @@
       449,
       0,
       "IMAGE"
+    ],
+    [
+      771,
+      241,
+      0,
+      309,
+      0,
+      "STRING"
     ]
   ],
   "groups": [
@@ -7223,12 +7114,13 @@
   },
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 0.49500000000000277,
       "offset": [
-        2351.9248752311987,
-        -253.90946801615968
+        2082.743119457819,
+        -408.031990571963
       ]
     },
+    "frontendVersion": "1.17.11",
     "controller_panel": {
       "controllers": {},
       "hidden": true,
@@ -7237,7 +7129,7 @@
       "default_order": []
     },
     "ue_links": [],
-    "VHS_latentpreview": true,
+    "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "node_versions": {
       "comfyui-crystools": "03a61d690379f22c6bffc42ea4845f797deb316c",
@@ -7258,8 +7150,7 @@
     },
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
-    "groupNodes": {},
-    "frontendVersion": "1.18.9"
+    "groupNodes": {}
   },
   "version": 0.4
 }
