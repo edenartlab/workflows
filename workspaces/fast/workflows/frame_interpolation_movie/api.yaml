@@ -4,7 +4,7 @@ tip: |-
   This workflow creates a slow motion movie, by adding interpolation frames to the input video with RIFE or FILM models. 
   It is best used to slow down and smooth the resulting creations from other video tools, resulting in an output movie that is 2, 3 or 4 times slower then the original input video.
 output_type: video
-cost_estimate: 30
+cost_estimate: 30 * interpolation_frames / 2
 thumbnail: app/slow-motion-video.mp4
 status: prod
 visible: true
