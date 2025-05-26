@@ -1,0 +1,2597 @@
+{
+  "10": {
+    "inputs": {
+      "lora_name": "froyd7sinsmodel_sdxl_lora.safetensors",
+      "strength_model": [
+        "95",
+        0
+      ],
+      "strength_clip": [
+        "95",
+        0
+      ],
+      "model": [
+        "86",
+        0
+      ],
+      "clip": [
+        "463",
+        0
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "20": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 14,
+      "y_percent": 8,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "226",
+        0
+      ],
+      "layer_image": [
+        "330",
+        0
+      ],
+      "layer_mask": [
+        "330",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "51": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 13.5,
+      "y_percent": 95,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "212",
+        0
+      ],
+      "layer_image": [
+        "329",
+        0
+      ],
+      "layer_mask": [
+        "329",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "53": {
+    "inputs": {
+      "image": "aura-point-icon422x.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "aura_icon"
+    }
+  },
+  "54": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": [
+        "677",
+        0
+      ],
+      "opacity": 100,
+      "x_percent": 80,
+      "y_percent": 94.75000000000001,
+      "mirror": "None",
+      "scale": 1.0000000000000002,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "51",
+        0
+      ],
+      "layer_image": [
+        "53",
+        0
+      ],
+      "layer_mask": [
+        "53",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "65": {
+    "inputs": {
+      "value": "The elder's eyes reflect the depth of ancient wisdom. They offer cryptic insights about the revealing paths, hinting at the Scarlet's role in the world's balance."
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "card_text"
+    }
+  },
+  "72": {
+    "inputs": {
+      "image": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "81": {
+    "inputs": {
+      "text": [
+        "65",
+        0
+      ],
+      "image_width": [
+        "72",
+        1
+      ],
+      "image_height": [
+        "72",
+        2
+      ],
+      "font_name": [
+        "678",
+        0
+      ],
+      "font_size": 48,
+      "font_color": [
+        "643",
+        0
+      ],
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": true,
+      "x_percent": 0,
+      "y_percent": 72,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 12,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "72",
+        0
+      ],
+      "margins": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "card_text"
+    }
+  },
+  "85": {
+    "inputs": {
+      "width": [
+        "201",
+        1
+      ],
+      "height": [
+        "201",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "86": {
+    "inputs": {
+      "ckpt_name": "juggernautXL_version6Rundiffusion.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "87": {
+    "inputs": {
+      "seed": [
+        "473",
+        0
+      ],
+      "steps": [
+        "381",
+        0
+      ],
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "10",
+        0
+      ],
+      "positive": [
+        "98",
+        0
+      ],
+      "negative": [
+        "98",
+        1
+      ],
+      "latent_image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "88": {
+    "inputs": {
+      "text": [
+        "380",
+        0
+      ],
+      "clip": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "prompt"
+    }
+  },
+  "89": {
+    "inputs": {
+      "text": "wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft",
+      "clip": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "negative_prompt"
+    }
+  },
+  "90": {
+    "inputs": {
+      "samples": [
+        "87",
+        0
+      ],
+      "vae": [
+        "86",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "95": {
+    "inputs": {
+      "value": 0.6800000000000002
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "lora_strength"
+    }
+  },
+  "97": {
+    "inputs": {
+      "preprocessor": [
+        "141",
+        0
+      ],
+      "resolution": [
+        "167",
+        0
+      ],
+      "image": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "controlnet_preprocessor"
+    }
+  },
+  "98": {
+    "inputs": {
+      "strength": [
+        "336",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "88",
+        0
+      ],
+      "negative": [
+        "89",
+        0
+      ],
+      "control_net": [
+        "135",
+        0
+      ],
+      "image": [
+        "97",
+        0
+      ],
+      "vae": [
+        "86",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "99": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "init_image"
+    }
+  },
+  "117": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2"
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_init_as_art_image"
+    }
+  },
+  "118": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "393",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "90",
+        0
+      ],
+      "input2": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "init_switch"
+    }
+  },
+  "119": {
+    "inputs": {
+      "text": "",
+      "image_width": 1248,
+      "image_height": 2000,
+      "font_name": "horizon.ttf",
+      "font_size": 54,
+      "font_color": [
+        "643",
+        0
+      ],
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": 0,
+      "x_percent": 26.900000000000002,
+      "y_percent": 6.8100000000000005,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "226",
+        0
+      ],
+      "margins": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "card_name"
+    }
+  },
+  "120": {
+    "inputs": {
+      "left": 144,
+      "right": 144,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "122": {
+    "inputs": {
+      "left": 0,
+      "right": 106,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "123": {
+    "inputs": {
+      "color": "black",
+      "opacity": 1,
+      "border_color": "black",
+      "border_opacity": 0,
+      "border_width": 6,
+      "corner_radius": 36,
+      "padding_left": 52,
+      "padding_right": 64,
+      "padding_top": 40,
+      "padding_bottom": 36,
+      "full_width": true,
+      "color_hex": "#FFFFFF",
+      "border_hex": "#000000"
+    },
+    "class_type": "TextBoxStyle",
+    "_meta": {
+      "title": "Text Box Style"
+    }
+  },
+  "128": {
+    "inputs": {
+      "text": "Rusted Azurian Blade",
+      "image_width": [
+        "131",
+        1
+      ],
+      "image_height": [
+        "131",
+        2
+      ],
+      "font_name": [
+        "676",
+        0
+      ],
+      "font_size": 54,
+      "font_color": [
+        "643",
+        0
+      ],
+      "font_opacity": 1,
+      "background_color": "transparent",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": 0,
+      "x_percent": 11.700000000000001,
+      "y_percent": 66,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "119",
+        0
+      ],
+      "margins": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "trait"
+    }
+  },
+  "129": {
+    "inputs": {
+      "left": 0,
+      "right": 106,
+      "top": 0,
+      "bottom": 0
+    },
+    "class_type": "TextMargins",
+    "_meta": {
+      "title": "Text Margins"
+    }
+  },
+  "130": {
+    "inputs": {
+      "color": "black",
+      "opacity": 1,
+      "border_color": "black",
+      "border_opacity": 0,
+      "border_width": 6,
+      "corner_radius": 36,
+      "padding_left": 38,
+      "padding_right": 64,
+      "padding_top": 42,
+      "padding_bottom": 30,
+      "full_width": true,
+      "color_hex": "#FFFFFF",
+      "border_hex": "#000000"
+    },
+    "class_type": "TextBoxStyle",
+    "_meta": {
+      "title": "Text Box Style"
+    }
+  },
+  "131": {
+    "inputs": {
+      "image": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "133": {
+    "inputs": {
+      "menu": "controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,diffusers_xl_canny_full.safetensors,controlnet-canny-sdxl-1.0/diffusion_pytorch_model_V2.safetensors,controlnet-depth-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors,controlnet-scribble-sdxl-1.0/diffusion_pytorch_model.safetensors,t2i-adapter-lineart-sdxl-1.0/diffusion_pytorch_model.safetensors",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "136",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "135": {
+    "inputs": {
+      "control_net_name": [
+        "142",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "136": {
+    "inputs": {
+      "menu": "none,CannyEdgePreprocessor,CannyEdgePreprocessor,DepthAnythingV2Preprocessor,Scribble_PiDiNet_Preprocessor,OpenposePreprocessor,ScribblePreprocessor,LineartStandardPreprocessor",
+      "delimiter": ",",
+      "select_item": "",
+      "int_select": [
+        "137",
+        1
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "String Item Menu"
+    }
+  },
+  "137": {
+    "inputs": {
+      "menu": "none,cannyv2,canny,depth,scribble,pose,threshold,lineart",
+      "delimiter": ",",
+      "select_item": [
+        "384",
+        0
+      ]
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "controlnet"
+    }
+  },
+  "141": {
+    "inputs": {
+      "any_type_input": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SDAnyConverter"
+    }
+  },
+  "142": {
+    "inputs": {
+      "any_type_input": [
+        "133",
+        0
+      ]
+    },
+    "class_type": "SDAnyConverter",
+    "_meta": {
+      "title": "SDAnyConverter"
+    }
+  },
+  "144": {
+    "inputs": {
+      "text": "211",
+      "image_width": [
+        "131",
+        1
+      ],
+      "image_height": [
+        "131",
+        2
+      ],
+      "font_name": "horizon.ttf",
+      "font_size": 63,
+      "font_color": [
+        "643",
+        0
+      ],
+      "font_opacity": 1,
+      "background_color": "black",
+      "background_opacity": 1,
+      "vertical_align": "top",
+      "horizontal_align": "left",
+      "justify": false,
+      "x_percent": 82.5,
+      "y_percent": 93.19000000000001,
+      "x_offset": 0,
+      "y_offset": 0,
+      "line_spacing": 6,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "language": "en_US",
+      "font_color_hex": "#FFFFFF",
+      "bg_color_hex": "#000000",
+      "img_composite": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "DrawText",
+    "_meta": {
+      "title": "rng_points"
+    }
+  },
+  "167": {
+    "inputs": {
+      "mode": false,
+      "a": [
+        "201",
+        1
+      ],
+      "b": [
+        "201",
+        2
+      ]
+    },
+    "class_type": "DRMBT_MultiMinMax",
+    "_meta": {
+      "title": "Multi Min/Max"
+    }
+  },
+  "201": {
+    "inputs": {
+      "width": [
+        "209",
+        0
+      ],
+      "height": [
+        "209",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "crop to subject",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "202",
+        0
+      ]
+    },
+    "class_type": "ImageResizeFaceAware",
+    "_meta": {
+      "title": "Image Resize Face Aware"
+    }
+  },
+  "202": {
+    "inputs": {
+      "size": [
+        "209",
+        0
+      ],
+      "method": "NEAREST",
+      "image": [
+        "542",
+        0
+      ]
+    },
+    "class_type": "ResizeShortestToNode",
+    "_meta": {
+      "title": "Resize Shortest To"
+    }
+  },
+  "209": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "Eden_Int"
+    }
+  },
+  "212": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 86.00000000000001,
+      "y_percent": 8,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "20",
+        0
+      ],
+      "layer_image": [
+        "601",
+        0
+      ],
+      "layer_mask": [
+        "601",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "224": {
+    "inputs": {
+      "images": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "226": {
+    "inputs": {
+      "width": 1248,
+      "height": 2000,
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "EmptyImage"
+    }
+  },
+  "232": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 50.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "281",
+        0
+      ],
+      "layer_image": [
+        "81",
+        0
+      ],
+      "layer_mask": [
+        "290",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "260": {
+    "inputs": {
+      "masks_a": [
+        "20",
+        1
+      ],
+      "masks_b": [
+        "212",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "261": {
+    "inputs": {
+      "masks_a": [
+        "51",
+        1
+      ],
+      "masks_b": [
+        "54",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "262": {
+    "inputs": {
+      "masks_a": [
+        "260",
+        0
+      ],
+      "masks_b": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "263": {
+    "inputs": {
+      "mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "265": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_icons",
+      "images": [
+        "266",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "icon_overlays"
+    }
+  },
+  "266": {
+    "inputs": {
+      "RGB_image": [
+        "54",
+        0
+      ],
+      "mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageCombineAlpha",
+    "_meta": {
+      "title": "LayerUtility: ImageCombineAlpha"
+    }
+  },
+  "281": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50,
+      "y_percent": 50.00000000000001,
+      "mirror": "None",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "395",
+        0
+      ],
+      "layer_image": [
+        "266",
+        0
+      ],
+      "layer_mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "comp_icons"
+    }
+  },
+  "282": {
+    "inputs": {
+      "images": [
+        "281",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "286": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_text-overlay",
+      "images": [
+        "81",
+        0
+      ],
+      "mask": [
+        "290",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithAlpha",
+    "_meta": {
+      "title": "Save Image With Alpha"
+    }
+  },
+  "288": {
+    "inputs": {
+      "masks_a": [
+        "119",
+        1
+      ],
+      "masks_b": [
+        "128",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "289": {
+    "inputs": {
+      "masks_a": [
+        "288",
+        0
+      ],
+      "masks_b": [
+        "144",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "290": {
+    "inputs": {
+      "masks_a": [
+        "289",
+        0
+      ],
+      "masks_b": [
+        "81",
+        1
+      ]
+    },
+    "class_type": "Masks Add",
+    "_meta": {
+      "title": "Masks Add"
+    }
+  },
+  "291": {
+    "inputs": {
+      "rounded_rect_radius": 13,
+      "anti_aliasing": 2,
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "detect": "mask_area",
+      "obj_ext_top": 0,
+      "obj_ext_bottom": 0,
+      "obj_ext_left": 0,
+      "obj_ext_right": 8,
+      "image": [
+        "232",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: RoundedRectangle",
+    "_meta": {
+      "title": "LayerUtility: RoundedRectangle"
+    }
+  },
+  "292": {
+    "inputs": {
+      "filename_prefix": [
+        "681",
+        0
+      ],
+      "images": [
+        "291",
+        0
+      ],
+      "mask": [
+        "346",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithAlpha",
+    "_meta": {
+      "title": "save_output"
+    }
+  },
+  "305": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "306",
+        2
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "547",
+        0
+      ],
+      "input2": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "306": {
+    "inputs": {
+      "value": false,
+      "on_false": "1",
+      "on_true": "2"
+    },
+    "class_type": "BoolPlusPlus",
+    "_meta": {
+      "title": "use_init_as_full_art_image"
+    }
+  },
+  "329": {
+    "inputs": {
+      "path": [
+        "647",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 871,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false,
+      "force_rate": 0
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "rarity_icon"
+    }
+  },
+  "330": {
+    "inputs": {
+      "path": [
+        "591",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 585,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false,
+      "force_rate": 0
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "clan_icon"
+    }
+  },
+  "334": {
+    "inputs": {
+      "value": 0.8000000000000002
+    },
+    "class_type": "Eden_Float",
+    "_meta": {
+      "title": "controlnet_strength"
+    }
+  },
+  "335": {
+    "inputs": {
+      "images": [
+        "542",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "336": {
+    "inputs": {
+      "text": "[%aux%,0.0][%aux2%==%aux3%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "334",
+        0
+      ],
+      "aux2": [
+        "335",
+        0
+      ],
+      "aux3": [
+        "350",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "non_default_init_image"
+    }
+  },
+  "345": {
+    "inputs": {
+      "image": "main_card_mask.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "346": {
+    "inputs": {
+      "mask": [
+        "693",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "349": {
+    "inputs": {
+      "image": "black_dummy.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "dummy_image"
+    }
+  },
+  "350": {
+    "inputs": {
+      "images": [
+        "349",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "380": {
+    "inputs": {
+      "prepend": [
+        "485",
+        0
+      ],
+      "body": [
+        "487",
+        0
+      ],
+      "append": [
+        "482",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "TextPlusPlus",
+    "_meta": {
+      "title": "Text ++"
+    }
+  },
+  "381": {
+    "inputs": {
+      "text": "[%aux%,1][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "382",
+        0
+      ],
+      "aux2": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "steps_bypass"
+    }
+  },
+  "382": {
+    "inputs": {
+      "value": 50
+    },
+    "class_type": "Eden_Int",
+    "_meta": {
+      "title": "steps"
+    }
+  },
+  "384": {
+    "inputs": {
+      "text": "[\"%aux%\", \"cannyv2\"][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "385",
+        0
+      ],
+      "aux2": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "preprocessor_bypass"
+    }
+  },
+  "385": {
+    "inputs": {
+      "value": "depth"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "controlnet_preprocessor"
+    }
+  },
+  "393": {
+    "inputs": {
+      "text": "[%aux%,2][%aux2%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "117",
+        2
+      ],
+      "aux2": [
+        "306",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "init_image_logic"
+    }
+  },
+  "395": {
+    "inputs": {
+      "width": 1248,
+      "height": 2000,
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "305",
+        0
+      ]
+    },
+    "class_type": "ImageResizeFaceAware",
+    "_meta": {
+      "title": "Image Resize Face Aware"
+    }
+  },
+  "404": {
+    "inputs": {
+      "text": "['common','uncommon','rare_superrare','rare_superrare','ultrarare','condemned'][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "418",
+        1
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "405": {
+    "inputs": {
+      "menu": "ancient,blessed,cursed,forged",
+      "delimiter": ",",
+      "select_item": "ancient"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "essence"
+    }
+  },
+  "407": {
+    "inputs": {
+      "text": "[1,2]",
+      "output_type": "ANY"
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "408": {
+    "inputs": {
+      "menu": "brutal_swirl,cruel_claws,cursed_curves,darknight_rises,lost_river,night_tiger,raw_and_ripped,ripsofthe_void,torn_beyond,whirling_void",
+      "delimiter": ",",
+      "select_item": "brutal_swirl"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "variation"
+    }
+  },
+  "409": {
+    "inputs": {
+      "text": "%aux%_background_%aux2%_%aux3%.png",
+      "output_type": "STRING",
+      "aux": [
+        "404",
+        0
+      ],
+      "aux2": [
+        "405",
+        0
+      ],
+      "aux3": [
+        "408",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "411": {
+    "inputs": {
+      "text": "condemned_background_%aux%.png",
+      "output_type": "STRING",
+      "aux": [
+        "408",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned"
+    }
+  },
+  "412": {
+    "inputs": {
+      "value": "uncommon_background_ancient_all_essence_light.png"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "uncommon"
+    }
+  },
+  "413": {
+    "inputs": {
+      "value": "common_background_ancient_all_essence_dark.png"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "common"
+    }
+  },
+  "414": {
+    "inputs": {
+      "text": "%aux%+1\n",
+      "output_type": "FORMULA",
+      "aux": [
+        "418",
+        1
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "int+1"
+    }
+  },
+  "415": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "414",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "413",
+        0
+      ],
+      "input2": [
+        "412",
+        0
+      ],
+      "input3": [
+        "409",
+        0
+      ],
+      "input4": [
+        "409",
+        0
+      ],
+      "input5": [
+        "409",
+        0
+      ],
+      "input6": [
+        "411",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "416": {
+    "inputs": {
+      "path": [
+        "415",
+        0
+      ],
+      "resize_images_to_first": true,
+      "image_load_cap": 0,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 642,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false,
+      "force_rate": 0
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "Load Media (img, vid or dir)"
+    }
+  },
+  "417": {
+    "inputs": {
+      "text": "ultrarare_background_ancient_brutal_swirl.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "415",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "assembled_filepath"
+    }
+  },
+  "418": {
+    "inputs": {
+      "menu": "common,uncommon,rare,superrare,ultrarare,condemned",
+      "delimiter": ",",
+      "select_item": "ultrarare"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "rarity"
+    }
+  },
+  "419": {
+    "inputs": {
+      "images": [
+        "416",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "437": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "440",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "438": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "439": {
+    "inputs": {
+      "seed": [
+        "473",
+        0
+      ],
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "440",
+        0
+      ],
+      "positive": [
+        "444",
+        0
+      ],
+      "negative": [
+        "437",
+        0
+      ],
+      "latent_image": [
+        "438",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "440": {
+    "inputs": {
+      "ckpt_name": "flux1-schnell-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "443": {
+    "inputs": {
+      "samples": [
+        "439",
+        0
+      ],
+      "vae": [
+        "440",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "444": {
+    "inputs": {
+      "text": [
+        "539",
+        0
+      ],
+      "clip": [
+        "440",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "451": {
+    "inputs": {
+      "text": "[1,2][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "454",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "bool to int"
+    }
+  },
+  "454": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "use_init as controlnet"
+    }
+  },
+  "463": {
+    "inputs": {
+      "clip_name": "longclip-L.pt",
+      "clip": [
+        "86",
+        1
+      ]
+    },
+    "class_type": "SeaArtLongXLClipMerge",
+    "_meta": {
+      "title": "SeaArtLongXLClipMerge"
+    }
+  },
+  "473": {
+    "inputs": {
+      "seed": 1
+    },
+    "class_type": "Eden_Seed",
+    "_meta": {
+      "title": "Eden_Seed"
+    }
+  },
+  "476": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Eden_Bool",
+    "_meta": {
+      "title": "disable save intermediate images (debug)"
+    }
+  },
+  "482": {
+    "inputs": {
+      "value": ",  the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, "
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "append"
+    }
+  },
+  "485": {
+    "inputs": {
+      "value": "in the style of (embedding:froyd7sinsmodel_sdxl_embeddings.safetensors), japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, "
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "prepend"
+    }
+  },
+  "487": {
+    "inputs": {
+      "value": "An ancient rusted sword with blue-tinted metal blade emerging from a pool of swirling crimson liquid, dramatic lighting, dark fantasy, high detail, weathered metal texture with azure patina, ominous atmosphere, flowing red energy surrounding the blade, cinematic composition, 8k, photorealistic rendering, dark background, artifact photography, sharp focus, volumetric lighting\n"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "prompt"
+    }
+  },
+  "493": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_init_image",
+      "only_preview": [
+        "476",
+        0
+      ],
+      "images": [
+        "542",
+        0
+      ]
+    },
+    "class_type": "easy imageSave",
+    "_meta": {
+      "title": "Save Image (Simple)"
+    }
+  },
+  "515": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_depth-map",
+      "only_preview": [
+        "476",
+        0
+      ],
+      "images": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "easy imageSave",
+    "_meta": {
+      "title": "save depth map cn preprocessor"
+    }
+  },
+  "523": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_art_image",
+      "only_preview": [
+        "476",
+        0
+      ],
+      "images": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "easy imageSave",
+    "_meta": {
+      "title": "save card_art"
+    }
+  },
+  "530": {
+    "inputs": {
+      "filename_prefix": "temple_abyss_merged-art-BG",
+      "only_preview": [
+        "476",
+        0
+      ],
+      "images": [
+        "395",
+        0
+      ]
+    },
+    "class_type": "easy imageSave",
+    "_meta": {
+      "title": "save card_art"
+    }
+  },
+  "539": {
+    "inputs": {
+      "value": "An ancient rusted sword with blue-tinted metal blade emerging from a pool of swirling crimson liquid, dramatic lighting, dark fantasy, high detail, weathered metal texture with azure patina, ominous atmosphere, flowing red energy surrounding the blade, cinematic composition, 8k, photorealistic rendering, dark background, artifact photography, sharp focus, volumetric lighting\n"
+    },
+    "class_type": "Eden_String",
+    "_meta": {
+      "title": "prompt_init_image"
+    }
+  },
+  "542": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "451",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "443",
+        0
+      ],
+      "input2": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "544": {
+    "inputs": {
+      "image": "image-placement-mask.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "547": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": 50.00000000000001,
+      "y_percent": 36.400000000000006,
+      "mirror": "None",
+      "scale": 0.9600000000000002,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "background_image": [
+        "416",
+        0
+      ],
+      "layer_image": [
+        "549",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance V2",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance V2"
+    }
+  },
+  "549": {
+    "inputs": {
+      "image": [
+        "118",
+        0
+      ],
+      "alpha": [
+        "544",
+        1
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "557": {
+    "inputs": {
+      "image": [
+        "395",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "size"
+    }
+  },
+  "581": {
+    "inputs": {
+      "menu": "jade,scarlet,azure,grey",
+      "delimiter": ",",
+      "select_item": "azure"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "clan_name"
+    }
+  },
+  "588": {
+    "inputs": {
+      "text": "['common_uncommon', 'common_uncommon', 'rare_ur', 'rare_ur', 'rare_ur', 'condemned'][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "418",
+        1
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "589": {
+    "inputs": {
+      "text": "%aux%_%aux2%_clan_icon.png ",
+      "output_type": "STRING",
+      "aux": [
+        "588",
+        0
+      ],
+      "aux2": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "591": {
+    "inputs": {
+      "text": "rare_ur_azure_clan_icon.png ",
+      "output_type": "STRING",
+      "passthrough": [
+        "589",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "assembled_filepath"
+    }
+  },
+  "593": {
+    "inputs": {
+      "images": [
+        "594",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "preview_clan_icon"
+    }
+  },
+  "594": {
+    "inputs": {
+      "path": [
+        "591",
+        0
+      ],
+      "resize_images_to_first": true,
+      "image_load_cap": 0,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 832,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false,
+      "force_rate": 0
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "Load Media (img, vid or dir)"
+    }
+  },
+  "600": {
+    "inputs": {
+      "images": [
+        "330",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "601": {
+    "inputs": {
+      "path": [
+        "617",
+        0
+      ],
+      "resize_images_to_first": false,
+      "image_load_cap": 1,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 81,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false,
+      "force_rate": 0
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "item_icon"
+    }
+  },
+  "603": {
+    "inputs": {
+      "images": [
+        "601",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "605": {
+    "inputs": {
+      "menu": "potion,scroll,spell,weapon",
+      "delimiter": ",",
+      "select_item": "weapon"
+    },
+    "class_type": "DRMBT_String_Item_Menu",
+    "_meta": {
+      "title": "item"
+    }
+  },
+  "609": {
+    "inputs": {
+      "text": "[1,2][%aux%==5]",
+      "output_type": "FORMULA",
+      "aux": [
+        "418",
+        1
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "is_condemned"
+    }
+  },
+  "611": {
+    "inputs": {
+      "text": "%aux%_%aux2%_icon.png",
+      "output_type": "STRING",
+      "aux": [
+        "405",
+        0
+      ],
+      "aux2": [
+        "605",
+        0
+      ],
+      "aux3": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "item_icon_logic"
+    }
+  },
+  "617": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "609",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "611",
+        0
+      ],
+      "input2": [
+        "619",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "619": {
+    "inputs": {
+      "text": "condemned_%aux2%_%aux3%_icon.png",
+      "output_type": "STRING",
+      "aux2": [
+        "605",
+        0
+      ],
+      "aux3": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned"
+    }
+  },
+  "623": {
+    "inputs": {
+      "path": [
+        "617",
+        0
+      ],
+      "resize_images_to_first": true,
+      "image_load_cap": 0,
+      "start_index": 0,
+      "start_index_use_seed": false,
+      "seed": 1471,
+      "error_after_last_frame": false,
+      "skip_n": 0,
+      "sort": "None",
+      "reverse_order": false,
+      "loop_first_frame": false,
+      "force_rate": 0
+    },
+    "class_type": "DRMBT_LoadMedia",
+    "_meta": {
+      "title": "Load Media (img, vid or dir)"
+    }
+  },
+  "624": {
+    "inputs": {
+      "images": [
+        "623",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "626": {
+    "inputs": {
+      "mask": [
+        "330",
+        1
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "628": {
+    "inputs": {
+      "text": "[1,2][%aux%==4]",
+      "output_type": "FORMULA",
+      "aux": [
+        "418",
+        1
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "is_ultrarare"
+    }
+  },
+  "629": {
+    "inputs": {
+      "mode": "SWITCH",
+      "selection_in": [
+        "628",
+        0
+      ],
+      "selection_out": 1,
+      "validate_typing": false,
+      "input1": [
+        "630",
+        0
+      ],
+      "input2": [
+        "631",
+        0
+      ]
+    },
+    "class_type": "UniversalSwitch",
+    "_meta": {
+      "title": "💠 Universal Switch"
+    }
+  },
+  "630": {
+    "inputs": {
+      "text": "%aux%_rarity_icon.png",
+      "output_type": "STRING",
+      "aux": [
+        "418",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rarity_path logic"
+    }
+  },
+  "631": {
+    "inputs": {
+      "text": "%aux%_rarity_icon_%aux2%.png",
+      "output_type": "STRING",
+      "aux": [
+        "418",
+        0
+      ],
+      "aux2": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rarity_path logic"
+    }
+  },
+  "632": {
+    "inputs": {
+      "text": "ultrarare_rarity_icon_azure.png",
+      "output_type": "STRING",
+      "passthrough": [
+        "629",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rarity_path logic"
+    }
+  },
+  "638": {
+    "inputs": {
+      "images": [
+        "395",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "640": {
+    "inputs": {
+      "text": "condemned_weapon_azure_icon.png",
+      "output_type": "STRING",
+      "passthrough": [
+        "619",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned"
+    }
+  },
+  "643": {
+    "inputs": {
+      "text": "['white', 'white', 'black'][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "609",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned color logic"
+    }
+  },
+  "647": {
+    "inputs": {
+      "text": "ultrarare_rarity_icon_azure.png",
+      "output_type": "ANY",
+      "passthrough": [
+        "629",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "648": {
+    "inputs": {
+      "text": "1",
+      "output_type": "ANY",
+      "passthrough": [
+        "609",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "651": {
+    "inputs": {
+      "text": "white",
+      "output_type": "ANY",
+      "passthrough": [
+        "643",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "652": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_fkhvo_00029_.png&type=temp&subfolder=&rand=0.5335048420316858"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_fkhvo_00030_.png&type=temp&subfolder=&rand=0.07595394052395965"
+          }
+        ]
+      },
+      "image_a": [
+        "291",
+        0
+      ],
+      "image_b": [
+        "653",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "653": {
+    "inputs": {
+      "image": "CARD-EXAMPLE-Ancient-Scroll-R@4.22x.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "662": {
+    "inputs": {
+      "text": "brutal_swirl",
+      "output_type": "STRING",
+      "passthrough": [
+        "408",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "item_icon_logic"
+    }
+  },
+  "665": {
+    "inputs": {
+      "text": "2",
+      "output_type": "STRING",
+      "passthrough": [
+        "628",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rarity_path logic"
+    }
+  },
+  "666": {
+    "inputs": {
+      "text": "ultrarare_rarity_icon.png",
+      "output_type": "STRING",
+      "passthrough": [
+        "630",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "rarity_path logic"
+    }
+  },
+  "676": {
+    "inputs": {
+      "text": "['GothamMedium.ttf', 'GothamMedium.ttf', 'The Sonnyfive Regular-d655.otf'][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "609",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned font logic"
+    }
+  },
+  "677": {
+    "inputs": {
+      "text": "['linear dodge(add)', 'linear dodge(add)', 'subtract'][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "609",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned blend logic"
+    }
+  },
+  "678": {
+    "inputs": {
+      "text": "['GothamBook.ttf', 'GothamBook.ttf', 'GothamMedium.ttf'][%aux%]",
+      "output_type": "FORMULA",
+      "aux": [
+        "609",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "condemned font logic"
+    }
+  },
+  "679": {
+    "inputs": {
+      "text": "DepthAnythingV2Preprocessor",
+      "output_type": "ANY",
+      "passthrough": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "681": {
+    "inputs": {
+      "text": "%aux%_%aux2%_%aux3%_%aux4%_%aux5%",
+      "output_type": "STRING",
+      "aux": [
+        "418",
+        0
+      ],
+      "aux2": [
+        "405",
+        0
+      ],
+      "aux3": [
+        "605",
+        0
+      ],
+      "aux4": [
+        "408",
+        0
+      ],
+      "aux5": [
+        "581",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "assembled_filepath"
+    }
+  },
+  "690": {
+    "inputs": {
+      "text": "ultrarare_ancient_weapon_brutal_swirl_azure",
+      "output_type": "ANY",
+      "passthrough": [
+        "681",
+        0
+      ]
+    },
+    "class_type": "DataMonitor",
+    "_meta": {
+      "title": "👁‍🗨Data Monitor ⁄ Generator ⁄ Converter"
+    }
+  },
+  "691": {
+    "inputs": {
+      "images": [
+        "416",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "693": {
+    "inputs": {
+      "width": 1248,
+      "height": 2000,
+      "keep_proportions": false,
+      "upscale_method": "nearest-exact",
+      "crop": "disabled",
+      "mask": [
+        "345",
+        1
+      ]
+    },
+    "class_type": "ResizeMask",
+    "_meta": {
+      "title": "Resize Mask"
+    }
+  }
+}

@@ -1,0 +1,309 @@
+name: Temple Abyss Crafting Card Generator
+description: Create a custom Temple Abyss SE02 card with background art generation, clan-specific elements, and epic lore master styling.
+tip: |-
+  This tool generates custom Temple Abyss SE02 cards with epic lore master styling.
+  You can either generate new card art or use existing rendered images.
+  The workflow combines generated or supplied art with clan-specific elements, including clan overlays, icons, and rarity badges.
+  Card styling is enhanced with epic lore master elements and text effects, generating a 1024x1024 image and then outpainting it for full card art at 1248x2000 resolution.
+thumbnail: app/temple-abyss-se02.jpg
+cost_estimate: 4.0 * n_samples
+output_type: image
+resolutions: null
+handler: comfyui
+active: true
+visible: false
+base_model: sdxl
+comfyui_output_node_id: 292
+comfyui_intermediate_outputs:
+  generated_art: 523
+  control_signal: 493
+  icon_overlays: 265
+  card_art_composite: 530
+  text_overlay: 286
+parameters:
+  n_samples:
+    type: integer
+    label: Number of samples
+    description: Number of samples to generate
+    tip: |-
+      Number of variations to generate for the card art. 
+      Only applies when generating new art rather than using an init image.
+    required: true
+    default: 1
+    minimum: 1
+    maximum: 4
+  prompt_init_image:
+    type: string
+    label: Initial Image Prompt
+    description: Prompt to use when generating from an initial image
+    default: "An ancient rusted sword with blue-tinted metal blade emerging from a pool of swirling crimson liquid, dramatic lighting, dark fantasy, high detail, weathered metal texture with azure patina, ominous atmosphere, flowing red energy surrounding the blade, cinematic composition, 8k, photorealistic rendering, dark background, artifact photography, sharp focus, volumetric lighting"
+    comfyui:
+      node_id: 539
+      field: inputs
+      subfield: value
+  prompt_prepend:
+    type: string
+    label: Prompt Prepend
+    description: Text to prepend to the main prompt
+    default: "in the style of (embedding:froyd7sinsmodel_sdxl_embeddings.safetensors), japanese anime style, comic book dark fantasy style, thick thick thick bold linework, illustration, "
+    comfyui:
+      node_id: 485
+      field: inputs
+      subfield: value
+  prompt:
+    type: string
+    label: Main Prompt
+    description: The main prompt for image generation
+    default: "An ancient rusted sword with blue-tinted metal blade emerging from a pool of swirling crimson liquid, dramatic lighting, dark fantasy, high detail, weathered metal texture with azure patina, ominous atmosphere, flowing red energy surrounding the blade, cinematic composition, 8k, photorealistic rendering, dark background, artifact photography, sharp focus, volumetric lighting"
+    comfyui:
+      node_id: 487
+      field: inputs
+      subfield: value
+  prompt_append:
+    type: string
+    label: Prompt Append
+    description: Text to append to the main prompt
+    default: ",  the overall style of the artwork is moody, with a focus on texture and light, creating a sense of depth and mystery, serene mood, tritone tritone tritone, eerie, dark shadows, "
+    comfyui:
+      node_id: 482
+      field: inputs
+      subfield: value
+  negative_prompt:
+    type: string
+    label: Art Generation Prompt
+    description: Describe what you don't want in the art
+    tip: |-
+      Detailed prompts work best. Describe the scene, style, mood, and important elements you want in the card art.
+    default: wobly lines, arms, screen, feminine, girly, skulls, faces, demons, creatures, bodies, people, hands, watermark, text, nude, naked, nsfw, poorly drawn face, ugly, tiling, out of frame, blurry, blurred, grainy, signature, cut off, draft
+    comfyui:
+      node_id: 89
+      field: inputs
+      subfield: text
+  seed:
+    type: integer
+    label: Generation Seed
+    description: Set random seed for reproducible art generation
+    tip: |-
+      Leave blank for random results. Set a specific seed to reproduce previous generations.
+    default: random
+    minimum: 0
+    maximum: 2147483647
+    comfyui:
+      node_id: 473
+      field: inputs
+      subfield: seed
+  steps:
+    type: integer
+    label: Steps
+    description: Set the number of diffusion steps
+    tip: |-
+      The default value is considered full quality, but can be as low as 20 for faster results with a trade-off in quality.
+    default: 50
+    step: 1
+    minimum: 10
+    maximum: 50
+    comfyui:
+      node_id: 382
+      field: inputs
+      subfield: value
+  use_init_as_controlnet:
+    type: boolean
+    label: Use Init as ControlNet
+    description: Use a supplied init image as a ControlNet reference
+    default: false
+    comfyui:
+      node_id: 454
+      field: inputs
+      subfield: value
+  use_init_as_art_image:
+    type: boolean
+    label: Use Init Image as Art
+    description: |-
+      Toggle between generating new art or using an existing rendered image.
+      When true, the init image will be used as the art image, bypassing image generation, and sending it to the outpainting pass.
+    default: false
+    comfyui:
+      node_id: 117
+      field: inputs
+      subfield: value
+  use_init_as_full_art_image:
+    type: boolean
+    label: Use Pre-rendered Full Art
+    description: |-
+      Toggle between using the generated/outpainted art or a pre-rendered full art image. 
+      When true, the init image will be used as the full art image, bypassing image generation.
+    default: false
+    comfyui:
+      node_id: 306
+      field: inputs
+      subfield: value
+  clan_name:
+    type: string
+    label: Clan Selection
+    description: Select the clan affiliation for the card
+    required: true
+    default: azure
+    choices: [jade, scarlet, azure, grey]
+    comfyui:
+      node_id: 581
+      field: inputs
+      subfield: select_item
+  # card_name:
+  #   type: string
+  #   label: Card Name
+  #   description: Name of the card
+  #   required: true
+  #   default: "Ghughu"
+  #   comfyui:
+  #     node_id: 119
+  #     field: inputs
+  #     subfield: text
+  trait:
+    type: string
+    label: Trait
+    description: Card trait attribute 
+    required: true
+    default: "Rusted Azurian Blade"
+    comfyui:
+      node_id: 128
+      field: inputs
+      subfield: text
+  card_text:
+    type: string
+    label: Card Description
+    description: Main text/description for the card
+    required: true
+    default: "The elder's eyes reflect the depth of ancient wisdom. They offer cryptic insights about the revealing paths, hinting at the Scarlet's role in the world's balance."
+    comfyui:
+      node_id: 65
+      field: inputs
+      subfield: value
+  rng_points:
+    type: string
+    label: RNG Points
+    description: Point value for the card
+    required: true
+    default: ""
+    comfyui:
+      node_id: 144
+      field: inputs
+      subfield: text
+  lora:
+    type: lora
+    label: LoRA
+    description: Use a custom model (LoRA)
+    tip: name of the custom (SDXL) LoRA model.
+    default: 67a222bae707584b6d669623
+    comfyui:
+      node_id: 10
+      field: inputs
+      subfield: lora_name
+  lora_strength:
+    type: float
+    label: LoRA Strength
+    description: Strength of the LoRA effect on generation
+    default: 0.42
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 95
+      field: inputs
+      subfield: value
+  init_image:
+    type: image
+    label: Initial Image
+    description: Reference image for art generation, outpainting image if use_init_as_art_image is true, or pre-rendered full art as defined by use_init_as_full_art_image
+    tip: |-
+      Upload a reference image that can be used in multiple ways:
+      1. As a ControlNet reference for art generation
+      2. As pre-rendered art for the card
+      3. As pre composited full art awaiting text and icons
+    comfyui:
+      node_id: 99
+      field: inputs
+      subfield: image
+  controlnet:
+    type: string
+    label: Controlnet preprocessor
+    description: |-
+      What type of shape guidance to apply. Different types have subtly different effects on the output.
+    tip: |-
+      Use best judgement based on the supplied image and user request to select the correct controlnet preprocessor and model to suit their needs. Canny detects thin binary edges and is useful for tasks requiring fast edge detection, such as architectural designs or simple object outlines, but it may struggle with complex scenes or noise. Depth generates luminance-based depth maps and is ideal for creating realistic 3D-like compositions, such as emphasizing depth in landscapes or isolating foreground objects. HED excels at producing smooth, intricate edge detection and is suitable for detailed illustrations, artistic line work, or noise-sensitive scenes. OpenPose identifies human keypoints, making it a perfect choice for generating images with accurate human poses, such as action shots, dance scenes, or character positioning, but will fail if a person isn't detected, so only use this one if you have reason to believe an image containing a person was provided as init. LineArt converts images into detailed line drawings and is best for black-and-white artwork, manga-style illustrations, or clear contrast outlines. Scribble processes rough sketches into structured inputs, ideal for refining rough concepts or integrating hand-drawn elements into finished compositions with a sketch-like aesthetic.
+    default: depth
+    choices: [none, canny, depth, scribble, pose, threshold, lineart]
+    comfyui:
+      node_id: 385
+      field: inputs
+      subfield: value
+  controlnet_strength:
+    type: float
+    label: ControlNet Strength
+    description: Strength of the ControlNet guidance
+    tip: |-
+      Controls how strongly the generation follows the reference image. Higher values (closer to 1.0) follow the reference more closely,
+      while lower values allow more creative freedom.
+    default: 0.8
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 334
+      field: inputs
+      subfield: value
+  denoise:
+    type: float
+    label: Denoise Strength
+    description: Controls how much of the original image to preserve during generation
+    default: 0.9
+    minimum: 0.0
+    maximum: 1.0
+    comfyui:
+      node_id: 439
+      field: inputs
+      subfield: denoise
+  essence:
+    type: string
+    label: Essence Type
+    description: Select the essence type for the card
+    required: true
+    default: "ancient"
+    choices: [ancient, blessed, cursed, forged]
+    comfyui:
+      node_id: 405
+      field: inputs
+      subfield: select_item
+  variation:
+    type: string
+    label: Background Variation
+    description: Select the background variation style
+    required: true
+    default: "brutal_swirl"
+    choices: [brutal_swirl, cruel_claws, cursed_curves, darknight_rises, lost_river, night_tiger, raw_and_ripped, ripsofthe_void, torn_beyond, whirling_void]
+    comfyui:
+      node_id: 408
+      field: inputs
+      subfield: select_item
+  item:
+    type: string
+    label: Item Type
+    description: Select the type of item for the card
+    required: true
+    default: "weapon"
+    choices: [potion, scroll, spell, weapon]
+    comfyui:
+      node_id: 605
+      field: inputs
+      subfield: select_item
+  # steps_outpaint:
+  #   type: integer
+  #   label: Steps Outpaint
+  #   description: Set the number of diffusion steps for the outpainting pass
+  #   tip: |-
+  #     The default value is considered good enough quality, but can be as high as 30 for faster results with a trade-off in quality.
+  #   default: 35
+  #   step: 1
+  #   minimum: 10
+  #   maximum: 50
+  #   comfyui:
+  #     node_id: 391
+  #     field: inputs
+  #     subfield: value

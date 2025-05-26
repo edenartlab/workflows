@@ -2,7 +2,7 @@
   "id": "b21097d3-d243-4472-aa75-dd6210e144a7",
   "revision": 0,
   "last_node_id": 449,
-  "last_link_id": 771,
+  "last_link_id": 772,
   "nodes": [
     {
       "id": 2,
@@ -425,62 +425,6 @@
       ],
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 32,
-      "type": "CLIPTextEncode",
-      "pos": [
-        970.3341064453125,
-        268.67010498046875
-      ],
-      "size": [
-        305.6722412109375,
-        88
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 60,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 747
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 25
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            537,
-            546
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "CLIPTextEncode",
-        "widget_ue_connectable": {
-          "text": true
-        }
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 35,
@@ -2563,120 +2507,6 @@
       ]
     },
     {
-      "id": 346,
-      "type": "UniversalSwitch",
-      "pos": [
-        1340,
-        1140
-      ],
-      "size": [
-        268.79998779296875,
-        250
-      ],
-      "flags": {},
-      "order": 98,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 537
-        },
-        {
-          "name": "input2",
-          "shape": 7,
-          "type": "*",
-          "link": 550
-        },
-        {
-          "name": "input3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input6",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 718
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "slot_index": 0,
-          "links": [
-            538,
-            719
-          ]
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "switch_conditioning_controlnet_w",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "UniversalSwitch",
-        "aux_id": "drmbt/ControlFlowUtils",
-        "widget_ue_connectable": {
-          "selection_in": true
-        }
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 361,
       "type": "Get resolution [Crystools]",
       "pos": [
@@ -3301,119 +3131,6 @@
         false,
         false
       ]
-    },
-    {
-      "id": 423,
-      "type": "UniversalSwitch",
-      "pos": [
-        1330,
-        810
-      ],
-      "size": [
-        268.79998779296875,
-        250
-      ],
-      "flags": {},
-      "order": 103,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input1",
-          "type": "*",
-          "link": 687
-        },
-        {
-          "name": "input2",
-          "shape": 7,
-          "type": "*",
-          "link": 688
-        },
-        {
-          "name": "input3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "input6",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "selection_in",
-          "type": "INT",
-          "widget": {
-            "name": "selection_in"
-          },
-          "link": 720
-        }
-      ],
-      "outputs": [
-        {
-          "name": "*",
-          "type": "*",
-          "slot_index": 0,
-          "links": [
-            689
-          ]
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        },
-        {
-          "name": "*",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "Universal Switch_conditionioning",
-      "properties": {
-        "cnr_id": "ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "UniversalSwitch",
-        "aux_id": "drmbt/ControlFlowUtils",
-        "widget_ue_connectable": {
-          "selection_in": true
-        }
-      },
-      "widgets_values": [
-        "SWITCH",
-        1,
-        1,
-        false
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 425,
@@ -4577,86 +4294,6 @@
       "widgets_values": [
         "min(%aux%, %aux2%)",
         "FORMULA"
-      ]
-    },
-    {
-      "id": 351,
-      "type": "ControlNetApplyAdvanced",
-      "pos": [
-        1008.68212890625,
-        1278.9085693359375
-      ],
-      "size": [
-        268.79998779296875,
-        206
-      ],
-      "flags": {},
-      "order": 99,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 545
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 546
-        },
-        {
-          "name": "control_net",
-          "type": "CONTROL_NET",
-          "link": 589
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 762
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "strength",
-          "type": "FLOAT",
-          "widget": {
-            "name": "strength"
-          },
-          "link": 551
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            688
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "slot_index": 1,
-          "links": []
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "ControlNetApplyAdvanced",
-        "widget_ue_connectable": {
-          "strength": true
-        }
-      },
-      "widgets_values": [
-        0.8,
-        0,
-        1
       ]
     },
     {
@@ -5828,6 +5465,371 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 32,
+      "type": "CLIPTextEncode",
+      "pos": [
+        980.5261840820312,
+        297.8653259277344
+      ],
+      "size": [
+        303.7286376953125,
+        88
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 747
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            537,
+            546
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "CLIPTextEncode",
+        "widget_ue_connectable": {
+          "text": true
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 351,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        1008.68212890625,
+        1278.9085693359375
+      ],
+      "size": [
+        268.79998779296875,
+        206
+      ],
+      "flags": {},
+      "order": 99,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 545
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 546
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 589
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 762
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength"
+          },
+          "link": 551
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            688
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "slot_index": 1,
+          "links": [
+            772
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "ControlNetApplyAdvanced",
+        "widget_ue_connectable": {
+          "strength": true
+        }
+      },
+      "widgets_values": [
+        0.8,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 423,
+      "type": "UniversalSwitch",
+      "pos": [
+        1336.4637451171875,
+        810.3358764648438
+      ],
+      "size": [
+        268.79998779296875,
+        250
+      ],
+      "flags": {},
+      "order": 103,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 687
+        },
+        {
+          "name": "input2",
+          "shape": 7,
+          "type": "*",
+          "link": 688
+        },
+        {
+          "name": "input3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input6",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 720
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "slot_index": 0,
+          "links": [
+            689
+          ]
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Universal Switch_conditionioning",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "drmbt/ControlFlowUtils",
+        "widget_ue_connectable": {
+          "selection_in": true
+        }
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 346,
+      "type": "UniversalSwitch",
+      "pos": [
+        1342.3731689453125,
+        1103.30859375
+      ],
+      "size": [
+        268.79998779296875,
+        250
+      ],
+      "flags": {},
+      "order": 98,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "*",
+          "link": 537
+        },
+        {
+          "name": "input2",
+          "shape": 7,
+          "type": "*",
+          "link": 772
+        },
+        {
+          "name": "input3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "input6",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "selection_in",
+          "type": "INT",
+          "widget": {
+            "name": "selection_in"
+          },
+          "link": 718
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "slot_index": 0,
+          "links": [
+            538,
+            719
+          ]
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "switch_conditioning_controlnet_w",
+      "properties": {
+        "cnr_id": "ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "UniversalSwitch",
+        "aux_id": "drmbt/ControlFlowUtils",
+        "widget_ue_connectable": {
+          "selection_in": true
+        }
+      },
+      "widgets_values": [
+        "SWITCH",
+        1,
+        1,
+        false
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -7014,6 +7016,14 @@
       309,
       0,
       "STRING"
+    ],
+    [
+      772,
+      351,
+      1,
+      346,
+      1,
+      "*"
     ]
   ],
   "groups": [
@@ -7114,10 +7124,10 @@
   },
   "extra": {
     "ds": {
-      "scale": 0.49500000000000277,
+      "scale": 0.8140274938683993,
       "offset": [
-        2082.743119457819,
-        -408.031990571963
+        -406.951281997101,
+        -586.4026308529235
       ]
     },
     "frontendVersion": "1.17.11",
