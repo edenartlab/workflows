@@ -30,7 +30,7 @@ curl -X POST "https://api.eden.art/v2/tasks/create" \
     "essence": "ancient",
     "variation": "brutal_swirl",
     "item": "weapon",
-    "rarity": "condemned"
+    "rarity": "ultrarare"
   }
 }
 EOF

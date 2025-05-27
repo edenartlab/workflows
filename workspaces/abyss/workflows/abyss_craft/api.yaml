@@ -169,6 +169,26 @@ parameters:
   #     node_id: 119
   #     field: inputs
   #     subfield: text
+  trait:
+    type: string
+    label: Trait
+    description: Select the trait for the card
+    required: true
+    default: "Rusted Azurian Blade"
+    comfyui:
+      node_id: 128
+      field: inputs
+      subfield: text
+  card_text:
+    type: string
+    label: Card Description
+    description: Main text/description for the card
+    required: true
+    default: "Card effect description goes here"
+    comfyui:
+      node_id: 65
+      field: inputs
+      subfield: value
   lora:
     type: lora
     label: LoRA
