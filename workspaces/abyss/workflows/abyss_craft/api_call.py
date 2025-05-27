@@ -73,6 +73,7 @@ class EdenAIClient:
                 "use_init_as_art_image": args.use_init_as_art_image,
                 "use_init_as_full_art_image": args.use_init_as_full_art_image,
                 "init_image": args.init_image,
+                "card_name": args.card_name,
                 "clan_name": args.clan_name,
                 "trait": args.trait,
                 "card_text": args.card_text,
@@ -86,9 +87,6 @@ class EdenAIClient:
                 "variation": args.variation,
                 "item": args.item,
                 "rarity": args.rarity,
-                "sampler_name": args.sampler_name,
-                "scheduler": args.scheduler,
-                "cfg": args.cfg
             }
         }
 

@@ -159,16 +159,16 @@ parameters:
       node_id: 418
       field: inputs
       subfield: select_item
-  # card_name:
-  #   type: string
-  #   label: Card Name
-  #   description: Name of the card
-  #   required: true
-  #   default: "Ghughu"
-  #   comfyui:
-  #     node_id: 119
-  #     field: inputs
-  #     subfield: text
+  card_name:
+    type: string
+    label: Card Name
+    description: Name of the card
+    tip: leave blank for nameless craft cards, use trait for item names
+    default: ""
+    comfyui:
+      node_id: 119
+      field: inputs
+      subfield: text
   trait:
     type: string
     label: Trait
@@ -189,6 +189,16 @@ parameters:
       node_id: 65
       field: inputs
       subfield: value
+  rng_points:
+    type: string
+    label: RNG Points
+    description: Point value for the card
+    required: true
+    default: "420"
+    comfyui:
+      node_id: 144
+      field: inputs
+      subfield: text
   lora:
     type: lora
     label: LoRA
