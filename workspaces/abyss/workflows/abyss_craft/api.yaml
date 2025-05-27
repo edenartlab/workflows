@@ -1,4 +1,4 @@
-name: Temple Abyss Crafting Card Generator
+name: Temple Abyss Craft Workflow
 description: Create a custom Temple Abyss SE02 card with background art generation, clan-specific elements, and epic lore master styling.
 tip: |-
   This tool generates custom Temple Abyss SE02 cards with epic lore master styling.
@@ -148,6 +148,17 @@ parameters:
       node_id: 581
       field: inputs
       subfield: select_item
+  rarity:
+    type: string
+    label: Rarity
+    description: Select the rarity for the card
+    required: true
+    default: "ultrarare"
+    choices: [common, uncommon, rare, superrare, ultrarare, condemned]
+    comfyui:
+      node_id: 418
+      field: inputs
+      subfield: select_item
   # card_name:
   #   type: string
   #   label: Card Name
@@ -158,36 +169,6 @@ parameters:
   #     node_id: 119
   #     field: inputs
   #     subfield: text
-  trait:
-    type: string
-    label: Trait
-    description: Card trait attribute 
-    required: true
-    default: "Rusted Azurian Blade"
-    comfyui:
-      node_id: 128
-      field: inputs
-      subfield: text
-  card_text:
-    type: string
-    label: Card Description
-    description: Main text/description for the card
-    required: true
-    default: "The elder's eyes reflect the depth of ancient wisdom. They offer cryptic insights about the revealing paths, hinting at the Scarlet's role in the world's balance."
-    comfyui:
-      node_id: 65
-      field: inputs
-      subfield: value
-  rng_points:
-    type: string
-    label: RNG Points
-    description: Point value for the card
-    required: true
-    default: ""
-    comfyui:
-      node_id: 144
-      field: inputs
-      subfield: text
   lora:
     type: lora
     label: LoRA
@@ -202,7 +183,7 @@ parameters:
     type: float
     label: LoRA Strength
     description: Strength of the LoRA effect on generation
-    default: 0.42
+    default: 0.55
     minimum: 0.0
     maximum: 1.0
     comfyui:
@@ -253,7 +234,7 @@ parameters:
     type: float
     label: Denoise Strength
     description: Controls how much of the original image to preserve during generation
-    default: 0.9
+    default: 0.95
     minimum: 0.0
     maximum: 1.0
     comfyui:

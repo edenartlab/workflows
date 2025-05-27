@@ -4387,7 +4387,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 236,
+      "order": 235,
       "mode": 0,
       "inputs": [
         {
@@ -4496,7 +4496,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 170,
+      "order": 169,
       "mode": 0,
       "inputs": [
         {
@@ -4757,48 +4757,6 @@
       "widgets_values": []
     },
     {
-      "id": 463,
-      "type": "SeaArtLongXLClipMerge",
-      "pos": [
-        -8135.5068359375,
-        595.3268432617188
-      ],
-      "size": [
-        305.43121337890625,
-        62.8315315246582
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 172,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 867
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            868
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Long-CLIP",
-        "ver": "889e552b12809101784dd764268456d36e00bcff",
-        "Node name for S&R": "SeaArtLongXLClipMerge",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "longclip-L.pt"
-      ]
-    },
-    {
       "id": 442,
       "type": "MarkdownNote",
       "pos": [
@@ -4835,7 +4793,7 @@
         474
       ],
       "flags": {},
-      "order": 209,
+      "order": 208,
       "mode": 0,
       "inputs": [
         {
@@ -5053,7 +5011,7 @@
         122.3552017211914
       ],
       "flags": {},
-      "order": 243,
+      "order": 242,
       "mode": 0,
       "inputs": [
         {
@@ -5099,7 +5057,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 242,
+      "order": 241,
       "mode": 0,
       "inputs": [
         {
@@ -6688,7 +6646,7 @@
         164.30999755859375
       ],
       "flags": {},
-      "order": 171,
+      "order": 170,
       "mode": 0,
       "inputs": [
         {
@@ -6859,7 +6817,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 169,
+      "order": 168,
       "mode": 0,
       "inputs": [
         {
@@ -6934,7 +6892,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 239,
+      "order": 238,
       "mode": 0,
       "inputs": [
         {
@@ -7230,7 +7188,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 155,
+      "order": 154,
       "mode": 0,
       "inputs": [
         {
@@ -7304,7 +7262,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 204,
+      "order": 203,
       "mode": 0,
       "inputs": [
         {
@@ -7380,7 +7338,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 156,
+      "order": 155,
       "mode": 0,
       "inputs": [
         {
@@ -7453,7 +7411,7 @@
         218
       ],
       "flags": {},
-      "order": 271,
+      "order": 270,
       "mode": 4,
       "inputs": [
         {
@@ -7819,7 +7777,7 @@
         338
       ],
       "flags": {},
-      "order": 203,
+      "order": 202,
       "mode": 0,
       "inputs": [
         {
@@ -7978,7 +7936,7 @@
         58
       ],
       "flags": {},
-      "order": 152,
+      "order": 172,
       "mode": 0,
       "inputs": [
         {
@@ -8087,7 +8045,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 161,
+      "order": 160,
       "mode": 0,
       "inputs": [
         {
@@ -8128,7 +8086,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 158,
+      "order": 157,
       "mode": 0,
       "inputs": [
         {
@@ -8203,7 +8161,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 270,
+      "order": 274,
       "mode": 0,
       "inputs": [
         {
@@ -8221,154 +8179,6 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": []
-    },
-    {
-      "id": 591,
-      "type": "DataMonitor",
-      "pos": [
-        -9409.3271484375,
-        -3201.533447265625
-      ],
-      "size": [
-        281.0850830078125,
-        212
-      ],
-      "flags": {},
-      "order": 234,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "passthrough",
-          "shape": 7,
-          "type": "*",
-          "link": 1014
-        },
-        {
-          "name": "aux",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux2",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            1017,
-            1021
-          ]
-        }
-      ],
-      "title": "assembled_filepath",
-      "properties": {
-        "aux_id": "drmbt/ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "DataMonitor",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "rare_ur_azure_clan_icon.png ",
-        "STRING"
-      ]
-    },
-    {
-      "id": 589,
-      "type": "DataMonitor",
-      "pos": [
-        -9402.634765625,
-        -3265.40576171875
-      ],
-      "size": [
-        400,
-        212
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 202,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "passthrough",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux",
-          "shape": 7,
-          "type": "*",
-          "link": 1013
-        },
-        {
-          "name": "aux2",
-          "shape": 7,
-          "type": "*",
-          "link": 1020
-        },
-        {
-          "name": "aux3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            1014
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "drmbt/ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "DataMonitor",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "%aux%_%aux2%_clan_icon.png ",
-        "STRING"
-      ]
     },
     {
       "id": 413,
@@ -8421,7 +8231,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 159,
+      "order": 158,
       "mode": 0,
       "inputs": [
         {
@@ -9218,7 +9028,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 258,
+      "order": 261,
       "mode": 0,
       "inputs": [
         {
@@ -9691,7 +9501,7 @@
         60
       ],
       "flags": {},
-      "order": 262,
+      "order": 260,
       "mode": 0,
       "inputs": [
         {
@@ -10178,7 +9988,7 @@
         60
       ],
       "flags": {},
-      "order": 163,
+      "order": 162,
       "mode": 0,
       "inputs": [
         {
@@ -10406,7 +10216,7 @@
         58
       ],
       "flags": {},
-      "order": 168,
+      "order": 167,
       "mode": 0,
       "inputs": [
         {
@@ -10788,7 +10598,7 @@
         46
       ],
       "flags": {},
-      "order": 241,
+      "order": 240,
       "mode": 0,
       "inputs": [
         {
@@ -11544,7 +11354,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 160,
+      "order": 159,
       "mode": 0,
       "inputs": [
         {
@@ -11690,7 +11500,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 157,
+      "order": 156,
       "mode": 0,
       "inputs": [
         {
@@ -11731,7 +11541,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 154,
+      "order": 153,
       "mode": 0,
       "inputs": [
         {
@@ -11921,7 +11731,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 206,
+      "order": 205,
       "mode": 0,
       "inputs": [
         {
@@ -12067,7 +11877,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 167,
+      "order": 166,
       "mode": 0,
       "inputs": [
         {
@@ -12140,7 +11950,7 @@
         230
       ],
       "flags": {},
-      "order": 207,
+      "order": 206,
       "mode": 0,
       "inputs": [
         {
@@ -12539,7 +12349,7 @@
         212
       ],
       "flags": {},
-      "order": 261,
+      "order": 259,
       "mode": 0,
       "inputs": [
         {
@@ -12612,7 +12422,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 162,
+      "order": 161,
       "mode": 0,
       "inputs": [
         {
@@ -13136,7 +12946,7 @@
         60
       ],
       "flags": {},
-      "order": 272,
+      "order": 271,
       "mode": 0,
       "inputs": [
         {
@@ -14575,7 +14385,7 @@
       ],
       "flags": {},
       "order": 315,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "image_a",
@@ -14623,7 +14433,7 @@
       ],
       "flags": {},
       "order": 90,
-      "mode": 0,
+      "mode": 4,
       "inputs": [],
       "outputs": [
         {
@@ -14722,57 +14532,6 @@
       ]
     },
     {
-      "id": 581,
-      "type": "DRMBT_String_Item_Menu",
-      "pos": [
-        -10080.8291015625,
-        -3286.037353515625
-      ],
-      "size": [
-        309.17132568359375,
-        202.6978759765625
-      ],
-      "flags": {},
-      "order": 91,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "int_select",
-          "shape": 7,
-          "type": "INT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output_string",
-          "type": "STRING",
-          "links": [
-            1006
-          ]
-        },
-        {
-          "name": "index",
-          "type": "INT",
-          "links": []
-        }
-      ],
-      "title": "clan_name",
-      "properties": {
-        "cnr_id": "comfyui-dreambait-nodes",
-        "ver": "4342d8973112d20650be55b9a32fb082960451ac",
-        "Node name for S&R": "DRMBT_String_Item_Menu",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "jade,scarlet,azure,grey",
-        ",",
-        "azure"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 630,
       "type": "DataMonitor",
       "pos": [
@@ -14786,7 +14545,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 166,
+      "order": 165,
       "mode": 0,
       "inputs": [
         {
@@ -14860,7 +14619,7 @@
         60
       ],
       "flags": {},
-      "order": 238,
+      "order": 237,
       "mode": 0,
       "inputs": [
         {
@@ -14899,7 +14658,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 259,
+      "order": 262,
       "mode": 0,
       "inputs": [
         {
@@ -14938,7 +14697,7 @@
         102
       ],
       "flags": {},
-      "order": 92,
+      "order": 91,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -14978,7 +14737,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 235,
+      "order": 234,
       "mode": 0,
       "inputs": [
         {
@@ -15017,7 +14776,7 @@
         326
       ],
       "flags": {},
-      "order": 93,
+      "order": 92,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -15059,7 +14818,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 94,
+      "order": 93,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -15095,7 +14854,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 153,
+      "order": 152,
       "mode": 0,
       "inputs": [
         {
@@ -15138,7 +14897,7 @@
         579.965087890625
       ],
       "flags": {},
-      "order": 273,
+      "order": 272,
       "mode": 0,
       "inputs": [
         {
@@ -15168,7 +14927,7 @@
         58
       ],
       "flags": {},
-      "order": 274,
+      "order": 273,
       "mode": 0,
       "inputs": [
         {
@@ -15207,7 +14966,7 @@
         566
       ],
       "flags": {},
-      "order": 260,
+      "order": 258,
       "mode": 0,
       "inputs": [
         {
@@ -15320,8 +15079,8 @@
         1442.1207275390625
       ],
       "flags": {},
-      "order": 164,
-      "mode": 0,
+      "order": 163,
+      "mode": 4,
       "inputs": [
         {
           "name": "images",
@@ -15350,7 +15109,7 @@
         202.6978759765625
       ],
       "flags": {},
-      "order": 95,
+      "order": 94,
       "mode": 0,
       "inputs": [
         {
@@ -15405,7 +15164,7 @@
         202.6978759765625
       ],
       "flags": {},
-      "order": 96,
+      "order": 95,
       "mode": 0,
       "inputs": [
         {
@@ -15459,7 +15218,7 @@
         202.6978759765625
       ],
       "flags": {},
-      "order": 97,
+      "order": 96,
       "mode": 0,
       "inputs": [
         {
@@ -15510,7 +15269,7 @@
         202.6978759765625
       ],
       "flags": {},
-      "order": 98,
+      "order": 97,
       "mode": 0,
       "inputs": [
         {
@@ -15564,7 +15323,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 208,
+      "order": 207,
       "mode": 0,
       "inputs": [
         {
@@ -15673,7 +15432,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 99,
+      "order": 98,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -15707,7 +15466,7 @@
         102
       ],
       "flags": {},
-      "order": 100,
+      "order": 99,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -15749,8 +15508,8 @@
       "flags": {
         "collapsed": true
       },
-      "order": 101,
-      "mode": 0,
+      "order": 100,
+      "mode": 4,
       "inputs": [],
       "outputs": [
         {
@@ -15783,7 +15542,7 @@
         212
       ],
       "flags": {},
-      "order": 165,
+      "order": 164,
       "mode": 0,
       "inputs": [
         {
@@ -15857,7 +15616,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 205,
+      "order": 204,
       "mode": 0,
       "inputs": [
         {
@@ -15974,7 +15733,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 102,
+      "order": 101,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -16023,80 +15782,6 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": []
-    },
-    {
-      "id": 588,
-      "type": "DataMonitor",
-      "pos": [
-        -9403.919921875,
-        -3298.642333984375
-      ],
-      "size": [
-        400,
-        212
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 125,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "passthrough",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux",
-          "shape": 7,
-          "type": "*",
-          "link": 1012
-        },
-        {
-          "name": "aux2",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux3",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux4",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        },
-        {
-          "name": "aux5",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            1013
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "drmbt/ControlFlowUtils",
-        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
-        "Node name for S&R": "DataMonitor",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "['common_uncommon', 'common_uncommon', 'rare_ur', 'rare_ur', 'rare_ur', 'condemned'][%aux%]",
-        "FORMULA"
-      ]
     },
     {
       "id": 648,
@@ -16328,7 +16013,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 103,
+      "order": 102,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -16403,7 +16088,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 237,
+      "order": 236,
       "mode": 0,
       "inputs": [
         {
@@ -16474,7 +16159,7 @@
         58
       ],
       "flags": {},
-      "order": 104,
+      "order": 103,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -16509,7 +16194,7 @@
         174.4838104248047
       ],
       "flags": {},
-      "order": 105,
+      "order": 104,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -16814,7 +16499,7 @@
         58
       ],
       "flags": {},
-      "order": 106,
+      "order": 105,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -16884,7 +16569,7 @@
         126
       ],
       "flags": {},
-      "order": 210,
+      "order": 209,
       "mode": 0,
       "inputs": [
         {
@@ -16960,7 +16645,7 @@
         98
       ],
       "flags": {},
-      "order": 107,
+      "order": 106,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -17012,7 +16697,7 @@
         98
       ],
       "flags": {},
-      "order": 108,
+      "order": 107,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -17066,7 +16751,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 240,
+      "order": 239,
       "mode": 0,
       "inputs": [
         {
@@ -17107,7 +16792,7 @@
         314.0000305175781
       ],
       "flags": {},
-      "order": 109,
+      "order": 108,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -17136,6 +16821,321 @@
       "widgets_values": [
         "black_dummy.jpg",
         "image"
+      ]
+    },
+    {
+      "id": 463,
+      "type": "SeaArtLongXLClipMerge",
+      "pos": [
+        -8135.5068359375,
+        595.3268432617188
+      ],
+      "size": [
+        305.43121337890625,
+        62.8315315246582
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 171,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 867
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            868
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Long-CLIP",
+        "ver": "889e552b12809101784dd764268456d36e00bcff",
+        "Node name for S&R": "SeaArtLongXLClipMerge",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "longclip-L.pt"
+      ]
+    },
+    {
+      "id": 581,
+      "type": "DRMBT_String_Item_Menu",
+      "pos": [
+        -10080.8291015625,
+        -3286.037353515625
+      ],
+      "size": [
+        309.17132568359375,
+        202.6978759765625
+      ],
+      "flags": {},
+      "order": 109,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_select",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_string",
+          "type": "STRING",
+          "links": [
+            1006
+          ]
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "title": "clan_name",
+      "properties": {
+        "cnr_id": "comfyui-dreambait-nodes",
+        "ver": "4342d8973112d20650be55b9a32fb082960451ac",
+        "Node name for S&R": "DRMBT_String_Item_Menu",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "jade,scarlet,azure,grey",
+        ",",
+        "azure"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 589,
+      "type": "DataMonitor",
+      "pos": [
+        -9403.3857421875,
+        -3249.628173828125
+      ],
+      "size": [
+        400,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 210,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 1013
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": 1020
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1014
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "%aux%_%aux2%_clan_icon.png",
+        "STRING"
+      ]
+    },
+    {
+      "id": 588,
+      "type": "DataMonitor",
+      "pos": [
+        -9405.423828125,
+        -3305.403564453125
+      ],
+      "size": [
+        400,
+        212
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 125,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": 1012
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1013
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "['common_uncommon', 'common_uncommon', 'rare_ur', 'rare_ur', 'rare_ur', 'condemned'][%aux%]",
+        "FORMULA"
+      ]
+    },
+    {
+      "id": 591,
+      "type": "DataMonitor",
+      "pos": [
+        -9409.3271484375,
+        -3201.533447265625
+      ],
+      "size": [
+        281.0850830078125,
+        212
+      ],
+      "flags": {},
+      "order": 243,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "passthrough",
+          "shape": 7,
+          "type": "*",
+          "link": 1014
+        },
+        {
+          "name": "aux",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux2",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux3",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux4",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "aux5",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1017,
+            1021
+          ]
+        }
+      ],
+      "title": "assembled_filepath",
+      "properties": {
+        "aux_id": "drmbt/ControlFlowUtils",
+        "ver": "45127f08ac627ca79242c800fdba945ae40f200c",
+        "Node name for S&R": "DataMonitor",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "rare_ur_azure_clan_icon.png",
+        "STRING"
       ]
     }
   ],
@@ -20406,8 +20406,8 @@
     "ds": {
       "scale": 0.21762913579014867,
       "offset": [
-        17474.41884978237,
-        3928.173755448018
+        9967.681311312794,
+        3487.7240221814204
       ]
     },
     "node_versions": {
