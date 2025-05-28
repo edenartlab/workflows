@@ -30,6 +30,7 @@ parameters:
     default: 512
     minimum: 320
     maximum: 1280
+    required: true
     step: 64
     comfyui:
       node_id: 10
@@ -39,6 +40,7 @@ parameters:
     type: integer
     label: Height
     description: Height in pixels
+    required: true
     default: 512
     minimum: 320
     maximum: 1280
@@ -53,6 +55,7 @@ parameters:
     description: |-
       Number of video frames to generate. 
       The final video length will be n_frames / 12 seconds long.
+    required: true
     default: 32
     minimum: 16
     maximum: 128
@@ -84,7 +87,7 @@ parameters:
     label: Number of diffusion steps
     description: |-
       Number of diffusion sampling steps
-    default: 25
+    default: 20
     minimum: 10
     maximum: 40
     step: 1
@@ -113,6 +116,14 @@ parameters:
       node_id: 14
       field: inputs
       subfield: closed_loop
+  negative_prompt:
+    type: string
+    label: NegativePrompt
+    description: Add tags you don't want to see in the output
+    comfyui:
+      node_id: 8
+      field: inputs
+      subfield: text
   seed:
     type: integer
     label: Seed
