@@ -1,16 +1,16 @@
-name: Create a video from text (fast)
-description: Abstract text-driven animations using animateDiff v2 and LCM sampler.
+name: Create a video from text (slow / creative)
+description: Creative, abstract text-driven animations (slow) using animateDiff v3.
 tip: |-
-  Fast but old txt2vid workflow using animateDiff v2 and LCM sampler.
+  Slow but creative and artistic txt2vid workflow using animateDiff v3. Terrible for storytelling, great for abstract art animations.
 output_type: video
-cost_estimate: 1 * n_frames * (width / 1024) * (height / 1024)
+cost_estimate: 1 * n_frames * (width / 512) * (height / 512) * (n_steps / 8)
 thumbnail: app/txt2vid_lora_opt.mp4
 status: prod
 visible: true
-resolutions: [16-9_2048x1152, 3-2_1782x1024, 1-1_1024x1024, 2-3_1024x1782, 9-16_1152x2048]
+resolutions: [16-9_896x512, 3-2_768x512, 1-1_512x512, 2-3_512x768, 9-16_512x896]
 handler: comfyui
 base_model: sd15
-comfyui_output_node_id: 329
+comfyui_output_node_id: 33
 parameters:
   prompt:
     type: string
@@ -20,31 +20,31 @@ parameters:
       Use the same tips / prompt guidelines as for the txt2img tool.
     required: true
     comfyui:
-      node_id: 290
+      node_id: 46
       field: inputs
       subfield: text
   width:
     type: integer
     label: Width
     description: Width in pixels
-    default: 1024
-    minimum: 512
-    maximum: 2048
+    default: 512
+    minimum: 320
+    maximum: 1280
     step: 64
     comfyui:
-      node_id: 335
+      node_id: 10
       field: inputs
       subfield: width
   height:
     type: integer
     label: Height
     description: Height in pixels
-    default: 1024
-    minimum: 512
-    maximum: 2048
+    default: 512
+    minimum: 320
+    maximum: 1280
     step: 64
     comfyui:
-      node_id: 335
+      node_id: 10
       field: inputs
       subfield: height
   n_frames:
@@ -54,13 +54,31 @@ parameters:
       Number of video frames to generate. 
       The final video length will be n_frames / 12 seconds long.
     default: 64
-    minimum: 24
+    minimum: 16
     maximum: 128
     step: 8
     comfyui:
-      node_id: 321
+      node_id: 10
       field: inputs
       subfield: batch_size
+  base_model:
+    type: string
+    label: Base SD model (style)
+    description: Choose between different SD15 base models, each with its own aesthetic.
+    required: true
+    default: SD15/juggernaut_reborn.safetensors
+    choices: 
+      - SD15/juggernaut_reborn.safetensors
+      - SD15/darkSushiMixMix_225D.safetensors
+      - SD15/protogenV22Anime_protogenV22.safetensors
+    choices_labels: 
+      - Realistic (Juggernaut)
+      - Creative (DarkMix)
+      - Anime/Cartoon (Protogen)
+    comfyui:
+      node_id: 1
+      field: inputs
+      subfield: ckpt_name
   seed:
     type: integer
     label: Seed
@@ -71,9 +89,22 @@ parameters:
     minimum: 0
     maximum: 2147483647
     comfyui:
-      node_id: 333
+      node_id: 9
       field: inputs
       subfield: seed
+  n_steps:
+    type: integer
+    label: Number of diffusion steps
+    description: |-
+      Number of diffusion sampling steps
+    default: 25
+    minimum: 10
+    maximum: 40
+    step: 1
+    comfyui:
+      node_id: 9
+      field: inputs
+      subfield: steps
   motion_strength:
     type: float
     label: Motion Strength
@@ -83,7 +114,7 @@ parameters:
     minimum: 0.7
     maximum: 1.3
     comfyui:
-      node_id: 330
+      node_id: 51
       field: inputs
       subfield: float_val
   closed_loop:
@@ -92,6 +123,6 @@ parameters:
     description: True creates a seamlessly looping animation where end frame is identical to starting frame.
     default: true
     comfyui:
-      node_id: 279
+      node_id: 14
       field: inputs
       subfield: closed_loop

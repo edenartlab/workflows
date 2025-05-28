@@ -2175,99 +2175,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 249,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        5793.93408203125,
-        -3017.350341796875
-      ],
-      "size": [
-        794.6804809570312,
-        816.0361328125
-      ],
-      "flags": {},
-      "order": 155,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 505
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "frame_rate",
-          "type": "FLOAT",
-          "widget": {
-            "name": "frame_rate"
-          },
-          "link": 428
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": [
-            324
-          ]
-        }
-      ],
-      "title": "OUTPUT_upscale_Pass2",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "598e181e97d50174cc18677dfcdaa7b9b6ec0cb2",
-        "Node name for S&R": "VHS_VideoCombine",
-        "widget_ue_connectable": {
-          "frame_rate": true
-        }
-      },
-      "widgets_values": {
-        "frame_rate": 8,
-        "loop_count": 0,
-        "filename_prefix": "TextureFlow",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": true,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "TextureFlow_00003.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 32.00000000000001,
-            "workflow": "TextureFlow_00003.png",
-            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/output/TextureFlow_00003.mp4"
-          }
-        }
-      },
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
       "id": 198,
       "type": "ADE_LoadAnimateDiffModel",
       "pos": [
@@ -11432,98 +11339,6 @@
       "bgcolor": "#000"
     },
     {
-      "id": 226,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        4981.0771484375,
-        -3016.643310546875
-      ],
-      "size": [
-        796.2724609375,
-        816.9979248046875
-      ],
-      "flags": {},
-      "order": 114,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 506
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "frame_rate",
-          "type": "FLOAT",
-          "widget": {
-            "name": "frame_rate"
-          },
-          "link": 266
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
-        }
-      ],
-      "title": "OUTPUT_Pass1",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "598e181e97d50174cc18677dfcdaa7b9b6ec0cb2",
-        "Node name for S&R": "VHS_VideoCombine",
-        "widget_ue_connectable": {
-          "frame_rate": true,
-          "save_output": true
-        }
-      },
-      "widgets_values": {
-        "frame_rate": 8,
-        "loop_count": 0,
-        "filename_prefix": "TextureFlow_LD",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "TextureFlow_LD_00003.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 8.000000000000002,
-            "workflow": "TextureFlow_LD_00003.png",
-            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/output/TextureFlow_LD_00003.mp4"
-          }
-        }
-      },
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
       "id": 369,
       "type": "Eden_RandomNumberSampler",
       "pos": [
@@ -12249,6 +12064,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 514
@@ -12280,6 +12096,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 515
@@ -12396,6 +12213,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 516
@@ -12465,6 +12283,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 517
@@ -12538,6 +12357,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 519
@@ -12570,6 +12390,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 518
@@ -12602,6 +12423,7 @@
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "source",
           "type": "*",
           "link": 520
@@ -13229,6 +13051,189 @@
       ],
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 249,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        5793.93408203125,
+        -3017.350341796875
+      ],
+      "size": [
+        794.6804809570312,
+        310
+      ],
+      "flags": {},
+      "order": 155,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 505
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 428
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": [
+            324
+          ]
+        }
+      ],
+      "title": "OUTPUT_upscale_Pass2",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "598e181e97d50174cc18677dfcdaa7b9b6ec0cb2",
+        "Node name for S&R": "VHS_VideoCombine",
+        "widget_ue_connectable": {
+          "frame_rate": true
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "TextureFlow",
+        "format": "video/eden-video-faststart",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "TextureFlow_00003.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 32.00000000000001,
+            "workflow": "TextureFlow_00003.png",
+            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/output/TextureFlow_00003.mp4"
+          }
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 226,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        4981.0771484375,
+        -3016.643310546875
+      ],
+      "size": [
+        796.2724609375,
+        310
+      ],
+      "flags": {},
+      "order": 114,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 506
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 266
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "title": "OUTPUT_Pass1",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "598e181e97d50174cc18677dfcdaa7b9b6ec0cb2",
+        "Node name for S&R": "VHS_VideoCombine",
+        "widget_ue_connectable": {
+          "frame_rate": true,
+          "save_output": true
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "TextureFlow_LD",
+        "format": "video/eden-video-faststart",
+        "pix_fmt": "yuv420p",
+        "crf": 23,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "TextureFlow_LD_00003.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 8.000000000000002,
+            "workflow": "TextureFlow_LD_00003.png",
+            "fullpath": "/data/xander/Projects/cog/GitHub_repos/ComfyUI/output/TextureFlow_LD_00003.mp4"
+          }
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
     }
   ],
   "links": [
@@ -15826,10 +15831,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6588450000000011,
+      "scale": 0.25401326852420014,
       "offset": [
-        1586.2507906208778,
-        2212.325262013649
+        -3543.9513341829097,
+        4732.487302913842
       ]
     },
     "frontendVersion": "1.17.11",
