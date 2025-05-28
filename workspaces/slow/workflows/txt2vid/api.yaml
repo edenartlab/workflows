@@ -3,7 +3,7 @@ description: Abstract text-driven animations using animateDiff v2 and LCM sample
 tip: |-
   Fast but old txt2vid workflow using animateDiff v2 and LCM sampler.
 output_type: video
-cost_estimate: 1 * n_frames * (width / 1024) * (height / 1024)
+cost_estimate: 0.5 * n_frames * (width / 512) * (height / 512)
 thumbnail: app/txt2vid_lora_opt.mp4
 status: prod
 visible: true
@@ -53,8 +53,8 @@ parameters:
     description: |-
       Number of video frames to generate. 
       The final video length will be n_frames / 12 seconds long.
-    default: 64
-    minimum: 24
+    default: 32
+    minimum: 16
     maximum: 128
     step: 8
     comfyui:
