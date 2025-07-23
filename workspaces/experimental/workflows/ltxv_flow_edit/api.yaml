@@ -12,10 +12,9 @@ tip: |-
 output_type: video
 cost_estimate: '2 * duration_seconds * (resolution*1.5)/(2*640) * (frame_interpolation ? 1 : 2)'
 thumbnail: app/ltxv_flow_edit_opt.mp4
-status: prod
-visible: true
-active: true
-required: true
+status: staging
+visible: false
+active: false
 #resolutions: [16-10_1120x640, 16-9_960x544, 3-2_768x512, 1-1_640x640, 2-3_512x768, 9-16_544x960, 10-16_640x1120]
 handler: comfyui
 base_model: ltxv

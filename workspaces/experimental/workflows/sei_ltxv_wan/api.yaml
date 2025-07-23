@@ -10,9 +10,9 @@ tip: |-
 output_type: video
 cost_estimate: '2 * duration_seconds * (resolution*1.5)/(2*640) * (frame_interpolation ? 1:2)'
 thumbnail: app/sei_ltx_wan_opt.mp4
-visible: true
-active: true
-status: prod
+visible: false
+active: false
+status: staging
 handler: comfyui
 base_model: ltxv
 comfyui_output_node_id: 103
