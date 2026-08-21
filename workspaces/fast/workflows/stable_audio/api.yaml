@@ -5,7 +5,7 @@ tip: |-
   Ideal for loops and stems rather than full audio arrangements. Makes good drum beats, instrument riffs, ambient sounds, foley recordings, and other audio samples. 
   The model was trained on data from Freesound and the Free Music Archive, respecting creator rights, and natively supports clip lengths of up to 47 seconds of audio.
 output_type: audio
-cost_estimate: (3 + 0.3 * duration) * n_samples
+cost_estimate: '(5 + 0.4 * duration) * n_samples'
 thumbnail: app/audio_craft_opt.mp4
 status: prod
 visible: true
