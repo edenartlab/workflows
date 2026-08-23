@@ -6,7 +6,11 @@ tip: |-
   Otherwise you should always prefer one of the Flux models for image generation. 
   Although lower quality, SDXL can produce artistic results with more unusual characteristics.
 output_type: image
-cost_estimate: '8 * n_samples * (width / 1024) * (height / 1024) * (steps / 35) * (use_controlnet ? 1.2 : 1)'
+# Priced to ~10% margin from measured usage (2026-08): 30d of prod runs show a
+# 28.7s median on A100-40GB; with a ~20s cold start and the 60s scaledown window
+# that is ~8.4 manna of real cost per run. 13 (set directly in the DB by the
+# 2026-07-10 audit, never committed here) was running a 69% margin.
+cost_estimate: '6 + 4 * n_samples * (width / 1024) * (height / 1024) * (steps / 35) * (use_controlnet ? 1.2 : 1)'
 thumbnail: app/txt2img.png
 status: prod
 visible: true
